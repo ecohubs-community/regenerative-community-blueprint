@@ -1,0 +1,343 @@
+/* Import Google Fonts - must be before other imports */
+@import url('https://fonts.googleapis.com/css2?family=Ledger&family=Pridi:wght@200;300;400;500;600;700&family=Stack+Sans+Headline:wght@200..700&display=swap');
+
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+/* Configure dark mode variant to use class-based selector */
+@variant dark (.dark &);
+
+/* Tailwind v4 Theme Configuration */
+@theme {
+  /* Color Palette - Forest Greens (Primary) */
+  --color-forest-900: #1a3009;
+  --color-forest-800: #2d5016;
+  --color-forest-700: #4a7c2a;
+  --color-forest-600: #6b9f3d;
+  --color-forest-500: #7fb84a;
+  --color-forest-400: #9ac966;
+  --color-forest-300: #b5da82;
+  --color-forest-200: #d0eb9e;
+  --color-forest-100: #ebfcba;
+  --color-forest-50: #f5fde5;
+
+  /* Color Palette - Soil Browns (Secondary) */
+  --color-soil-900: #4a3d2a;
+  --color-soil-800: #5d4d35;
+  --color-soil-700: #8b6f47;
+  --color-soil-600: #a0826d;
+  --color-soil-500: #b8957d;
+  --color-soil-400: #c4a484;
+  --color-soil-300: #d1b39a;
+  --color-soil-200: #dec2b0;
+  --color-soil-100: #ebd1c6;
+  --color-soil-50: #f8e0dc;
+
+  /* Color Palette - Soft Blues/Turquoise (Accent) */
+  --color-blue-900: #1e3a47;
+  --color-blue-800: #2d4f5c;
+  --color-blue-700: #4a90a4;
+  --color-blue-600: #6bb3c7;
+  --color-blue-500: #7cc5d9;
+  --color-blue-400: #8dd4e8;
+  --color-blue-300: #a3dff0;
+  --color-blue-200: #b9eaf8;
+  --color-blue-100: #cff5ff;
+  --color-blue-50: #e5faff;
+
+  /* Color Palette - Warm Amber (Highlight) */
+  --color-amber-900: #8b5a2a;
+  --color-amber-800: #a66b3a;
+  --color-amber-700: #c47d4a;
+  --color-amber-600: #d4a574;
+  --color-amber-500: #e0b586;
+  --color-amber-400: #e8b886;
+  --color-amber-300: #f0c99a;
+  --color-amber-200: #f5d4ae;
+  --color-amber-100: #fae0c2;
+  --color-amber-50: #ffecd6;
+
+  /* Semantic Colors - Light Mode */
+  --color-primary: #6b9f3d;
+  --color-primary-dark: #4a7c2a;
+  --color-primary-light: #7fb84a;
+  --color-secondary: var(--color-soil-700);
+  --color-secondary-dark: var(--color-soil-800);
+  --color-secondary-light: var(--color-soil-600);
+  --color-accent: var(--color-blue-600);
+  --color-accent-dark: var(--color-blue-700);
+  --color-accent-light: var(--color-blue-500);
+  --color-highlight: var(--color-amber-500);
+  --color-highlight-dark: var(--color-amber-600);
+  --color-highlight-light: var(--color-amber-400);
+
+  /* Background Colors - Light Mode */
+  --color-background: #ffffff;
+  --color-surface: #fafafa;
+  --color-surface-elevated: #ffffff;
+  --color-border: #e5e7eb;
+
+  /* Text Colors - Light Mode */
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #6b7280;
+  --color-text-tertiary: #9ca3af;
+
+  /* Max Width */
+  --max-width-sm: 24rem;    /* 384px */
+  --max-width-md: 28rem;    /* 448px */
+  --max-width-lg: 32rem;    /* 512px */
+  --max-width-xl: 36rem;    /* 576px */
+  --max-width-2xl: 42rem;   /* 672px */
+  --max-width-3xl: 48rem;   /* 768px */
+  --max-width-4xl: 56rem;   /* 896px */
+  --max-width-5xl: 64rem;   /* 1024px */
+  --max-width-6xl: 72rem;   /* 1152px */
+  --max-width-7xl: 80rem;   /* 1280px */
+  --max-width-full: 100%;
+
+  /* Typography */
+  --font-serif: 'Pridi', serif;
+  --font-sans: 'Stack Sans Headline', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* EcoHubs Colors */
+  --color-ecohubs-base: #fbfbf9;
+  --color-ecohubs-text: #1c1917;
+  --color-ecohubs-primary: #059669;
+  --color-ecohubs-dark: #064e3b;
+  --color-ecohubs-accent: #d97706;
+  --color-ecohubs-light: #a7f3d0;
+
+  /* Spacing Scale */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  --spacing-4xl: 6rem;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Dark Mode Overrides - Class-based */
+:root.dark,
+html.dark {
+  /* Semantic Colors - Dark Mode */
+  --color-primary: var(--color-forest-400);
+  --color-primary-dark: var(--color-forest-500);
+  --color-primary-light: var(--color-forest-300);
+  --color-secondary: var(--color-soil-500);
+  --color-secondary-dark: var(--color-soil-600);
+  --color-secondary-light: var(--color-soil-400);
+  --color-accent: var(--color-blue-500);
+  --color-accent-dark: var(--color-blue-600);
+  --color-accent-light: var(--color-blue-400);
+  --color-highlight: var(--color-amber-400);
+  --color-highlight-dark: var(--color-amber-500);
+  --color-highlight-light: var(--color-amber-300);
+
+  /* Background Colors - Dark Mode */
+  --color-background: #0f1419;
+  --color-surface: #1a1f26;
+  --color-surface-elevated: #252b33;
+  --color-border: #374151;
+
+  /* Text Colors - Dark Mode */
+  --color-text-primary: #f9fafb;
+  --color-text-secondary: #d1d5db;
+  --color-text-tertiary: #9ca3af;
+}
+
+/* System preference fallback */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light):not(.dark),
+  html:not(.light):not(.dark) {
+    /* Semantic Colors - Dark Mode */
+    --color-primary: var(--color-forest-400);
+    --color-primary-dark: var(--color-forest-500);
+    --color-primary-light: var(--color-forest-300);
+    --color-secondary: var(--color-soil-500);
+    --color-secondary-dark: var(--color-soil-600);
+    --color-secondary-light: var(--color-soil-400);
+    --color-accent: var(--color-blue-500);
+    --color-accent-dark: var(--color-blue-600);
+    --color-accent-light: var(--color-blue-400);
+    --color-highlight: var(--color-amber-400);
+    --color-highlight-dark: var(--color-amber-500);
+    --color-highlight-light: var(--color-amber-300);
+
+    /* Background Colors - Dark Mode */
+    --color-background: #0f1419;
+    --color-surface: #1a1f26;
+    --color-surface-elevated: #252b33;
+    --color-border: #374151;
+
+    /* Text Colors - Dark Mode */
+    --color-text-primary: #f9fafb;
+    --color-text-secondary: #d1d5db;
+    --color-text-tertiary: #9ca3af;
+  }
+}
+
+/* Base Styles */
+:root {
+  color-scheme: light dark;
+}
+
+html {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+body {
+  background-color: #fbfbf9;
+  color: var(--color-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+
+/* Focus Styles for Accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f0fdf4;
+}
+::-webkit-scrollbar-thumb {
+  background: #059669;
+  border-radius: 4px;
+}
+
+/* Organic Glassmorphism (Light) */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(5, 150, 105, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(5, 150, 105, 0.1);
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(5, 150, 105, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px -10px rgba(5, 150, 105, 0.2);
+}
+
+/* Organic Text Gradient */
+.text-gradient {
+  background: linear-gradient(135deg, #059669 0%, #0d9488 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Image Masks for Organic Feel */
+.organic-shape {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  overflow: hidden;
+  transition: border-radius 1s ease;
+}
+.organic-shape:hover {
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+}
+
+/* Subtle Leaf Float Animation */
+.floating-leaf {
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-leaf-delay-2000 {
+  animation-delay: 2000ms;
+}
+.floating-leaf-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+
+.animate-spin-slow-80 {
+  animation: spin-slow 80s linear infinite;
+}
+
+/* Spin Slow Animation */
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Button Micro-interactions */
+button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Tailwind Transition Utilities */
+.transition-all-smooth {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
