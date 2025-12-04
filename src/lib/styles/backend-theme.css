@@ -1,0 +1,14 @@
+/* Import Google Fonts - must be before other imports */
+@import url('https://fonts.googleapis.com/css2?family=Ledger&family=Pridi:wght@200;300;400;500;600;700&family=Stack+Sans+Headline:wght@200..700&display=swap');
+
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+/* Configure dark mode variant to use class-based selector */
+@variant dark (.dark &);
+
+/* Tailwind v4 Theme Configuration */
+@theme {
+  
+}
