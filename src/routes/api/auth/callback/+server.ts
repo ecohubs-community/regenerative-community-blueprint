@@ -1,7 +1,6 @@
 import { json, redirect } from '@sveltejs/kit';
 import { githubConfig, appUrl } from '$lib/server/env';
 import { Octokit } from '@octokit/rest';
-import { NODE_ENV } from '$env/static/private';
 
 
 interface GitHubTokenResponse {
@@ -127,7 +126,7 @@ export async function GET({ url, cookies }) {
 		cookies.set('session', JSON.stringify(sessionData), {
 			path: '/',
 			httpOnly: true,
-			secure: NODE_ENV === 'production',
+			secure: process.env.NODE_ENV === 'production',
 			sameSite: 'lax',
 			maxAge: 8 * 60 * 60 // 8 hours
 		});
