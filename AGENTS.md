@@ -1,5 +1,14 @@
 You are able to use the Svelte MCP server, where you have access to comprehensive Svelte 5 and SvelteKit documentation. Here's how to use the available tools effectively:
 
+## Project Description
+
+### Frontend
+Please read the `FRONTEND.md` file for information about the frontend.
+
+### Backend
+Please read the `BACKEND.md` file for information about the backend.
+
+
 ## Available MCP Tools:
 
 ### 1. list-sections
