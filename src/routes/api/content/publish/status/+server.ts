@@ -1,6 +1,16 @@
 import { json, type RequestHandler } from '@sveltejs/kit';
-import { getOctokit } from '$lib/server/github';
-import { githubConfig } from '$lib/server/env';
+import { Octokit } from '@octokit/rest';
+
+function getGitHubClient(): Octokit {
+	const token = process.env.GITHUB_TOKEN;
+	if (!token) {
+		throw new Error('GITHUB_TOKEN environment variable is not set');
+	}
+
+	return new Octokit({
+		auth: token
+	});
+}
 
 export const GET: RequestHandler = async ({ url, cookies }) => {
 	const sessionCookie = cookies.get('session');
@@ -9,31 +19,21 @@ export const GET: RequestHandler = async ({ url, cookies }) => {
 		return json({ error: 'Unauthorized' }, { status: 401 });
 	}
 
-	let session;
-	try {
-		session = JSON.parse(sessionCookie);
-	} catch {
-		return json({ error: 'Invalid session' }, { status: 401 });
-	}
-
 	const path = url.searchParams.get('path');
 	if (!path) {
 		return json({ error: 'Path parameter is required' }, { status: 400 });
 	}
 
-	// Normalize to repository path (all content lives under content/)
-	const repoPath = `content/${path}`;
-
 	try {
-		const octokit = getOctokit(session.access_token);
-		const owner = githubConfig.owner!;
-		const repo = githubConfig.repo!;
+		const octokit = getGitHubClient();
+		const owner = process.env.GITHUB_OWNER!;
+		const repo = process.env.GITHUB_REPO!;
 
-		// Get file content and metadata from the default branch (main)
+		// Get file content and metadata
 		const { data: fileData } = await octokit.rest.repos.getContent({
 			owner,
 			repo,
-			path: repoPath
+			path
 		});
 
 		if (!('sha' in fileData)) {
@@ -44,12 +44,12 @@ export const GET: RequestHandler = async ({ url, cookies }) => {
 		const { data: commits } = await octokit.rest.repos.listCommits({
 			owner,
 			repo,
-			path: repoPath,
+			path,
 			per_page: 10
 		});
 
 		// Check if file has been published (look for publish-related commits)
-		const publishCommits = commits.filter((commit) =>
+		const publishCommits = commits.filter((commit) => 
 			commit.commit.message?.toLowerCase().includes('publish') ||
 			commit.commit.message?.toLowerCase().includes('release')
 		);
@@ -68,19 +68,6 @@ export const GET: RequestHandler = async ({ url, cookies }) => {
 
 		return json({ status });
 	} catch (error) {
-		// If the file does not exist on the default branch, treat it as an unpublished draft
-		if (error && typeof error === 'object' && 'status' in error && error.status === 404) {
-			const draftStatus = {
-				isPublished: false,
-				publishDate: undefined,
-				publishedBy: undefined,
-				version: 0,
-				lastModified: new Date().toISOString(),
-				sha: undefined
-			};
-			return json({ status: draftStatus });
-		}
-
 		console.error('Error fetching publishing status:', error);
 		return json({ error: 'Failed to fetch publishing status' }, { status: 500 });
 	}
