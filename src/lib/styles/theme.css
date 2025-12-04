@@ -267,12 +267,18 @@ html {
   box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.08);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
+.dark .glass-card {
+  background: rgba(50, 50, 50, 0.7);
+}
 
 .glass-card:hover {
   background: rgba(255, 255, 255, 0.95);
   border-color: rgba(5, 150, 105, 0.3);
   transform: translateY(-5px);
   box-shadow: 0 15px 30px -10px rgba(5, 150, 105, 0.2);
+}
+.dark .glass-card:hover {
+  background: rgba(50, 50, 50, 0.95);
 }
 
 /* Organic Text Gradient */

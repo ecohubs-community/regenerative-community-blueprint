@@ -226,7 +226,7 @@ Structure:
 Theme integration examples (class names only; actual code to be written in components):
 
 - Root container:
-  - `class="min-h-screen bg-[--color-background] text-[--color-text-primary]"`
+  - `class="min-h-screen bg-[--color-background] text-primary"`
 - Top bar:
   - `class="glass-panel sticky top-0 z-30 flex items-center justify-between px-[--spacing-lg] py-[--spacing-md]"`
 - Sidebar:
@@ -421,7 +421,7 @@ File: `src/lib/stores/search.ts`.
 
 - Use MiniSearch highlighting or custom match logic to wrap matches in `<mark>` tags.
 - In UI, style `<mark>` using theme:
-  - `class="bg-[--color-highlight-light] text-[--color-text-primary] rounded-[--radius-sm] px-1"`
+  - `class="bg-[--color-highlight-light] text-primary rounded-[--radius-sm] px-1"`
 - Ensure you escape any user content and only trust `<mark>` tags you inject.
 
 ---
@@ -479,7 +479,7 @@ Use semantic CSS variables from `theme.css` instead of hard-coded hex values.
 Examples:
 
 - Layout background and text:
-  - `bg-[--color-background] text-[--color-text-primary]`
+  - `bg-[--color-background] text-primary`
 
 - Card surfaces:
   - `glass-card rounded-[--radius-xl] p-[--spacing-lg]`
@@ -488,7 +488,7 @@ Examples:
   - `rounded-[--radius-full] bg-[--color-primary] px-4 py-2 text-white hover:bg-[--color-primary-dark]`
 
 - Filter pills:
-  - `inline-flex items-center rounded-[--radius-full] bg-[--color-surface] px-3 py-1 text-xs text-[--color-text-secondary] hover:bg-[--color-primary-light] hover:text-[--color-text-primary]`
+  - `inline-flex items-center rounded-[--radius-full] bg-[--color-surface] px-3 py-1 text-xs text-secondary hover:bg-[--color-primary-light] hover:text-primary`
 
 ### 7.4 Accessibility
 
@@ -629,4 +629,23 @@ When an AI coding agent starts implementing this frontend, it should:
 9. **Optionally scaffold `/workbench` and AI assistant endpoints/components** for future enhancements.
 
 Following this order ensures a stable, graph-backed core before layering navigation UX, search, and AI tooling.
+
+
+---
+
+## Implementation Progress
+
+1. **Graph refactor (server layer) – completed (Dec 3, 2025)**
+   - Added reusable content helpers in `src/lib/server/content.ts` to read JSON collections and article metadata/bodies.
+   - Implemented normalized graph builder in `src/lib/server/graph.ts` producing domains/topics/modules/articles with bidirectional links and facets.
+   - Refactored `src/routes/api/graph/+server.ts` to serve the enriched graph via the new helper.
+
+2. **App layout shell and graph store – completed (Dec 3, 2025)**
+   - Created `(app)` layout group with server-side graph loading and client-side store initialization.
+   - Implemented responsive app shell with sidebar navigation, breadcrumbs, and top bar search.
+   - Added UI store for sidebar state and theme persistence.
+   - Built navigation pages for home, domains, topics, modules, and article detail with related content.
+   - Integrated full-text search with MiniSearch and faceted filters on client and server.
+
+All lint and type errors resolved. Ready for next phases: AI workbench, authoring tools, and advanced features.
 

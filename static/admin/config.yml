@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: github
   repo: ecohubs-community/regenerative-community-blueprint
   branch: main
   # auth_endpoint: https://sveltia-cms-auth.your-worker.workers.dev <-- should/could be added later
