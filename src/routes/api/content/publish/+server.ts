@@ -1,9 +1,8 @@
 import { json, type RequestHandler } from '@sveltejs/kit';
 import { Octokit } from '@octokit/rest';
-import { GITHUB_OWNER, GITHUB_REPO, GITHUB_TOKEN } from '$env/static/private';
 
 function getGitHubClient(): Octokit {
-	const token = GITHUB_TOKEN;
+	const token = process.env.GITHUB_TOKEN;
 	if (!token) {
 		throw new Error('GITHUB_TOKEN environment variable is not set');
 	}
@@ -28,8 +27,8 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 		}
 
 		const octokit = getGitHubClient();
-		const owner = GITHUB_OWNER!;
-		const repo = GITHUB_REPO!;
+		const owner = process.env.GITHUB_OWNER!;
+		const repo = process.env.GITHUB_REPO!;
 
 		// Get current branch
 		const { data: branchData } = await octokit.rest.repos.getBranch({
