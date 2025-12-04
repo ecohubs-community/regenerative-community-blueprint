@@ -1,7 +1,6 @@
 import { json } from '@sveltejs/kit';
 import { githubConfig } from '$lib/server/env';
 import { Octokit } from '@octokit/rest';
-import matter from 'gray-matter';
 
 interface ContentNode {
 	path: string;
@@ -115,9 +114,36 @@ async function organizeContentTree(items: GitHubTreeItem[], octokit: Octokit, br
 						if (node.name.endsWith('.json')) {
 							node.metadata = JSON.parse(content);
 						} else if (node.name.endsWith('.md')) {
-							// Parse frontmatter from markdown using gray-matter
-							const parsed = matter(content);
-							node.metadata = parsed.data;
+							// Parse frontmatter from markdown
+							const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
+							if (frontmatterMatch) {
+								const frontmatterStr = frontmatterMatch[1];
+								const metadata: Record<string, any> = {};
+								
+								// Simple YAML parser for frontmatter
+								frontmatterStr.split('\n').forEach(line => {
+									const colonIndex = line.indexOf(':');
+									if (colonIndex > 0) {
+										const key = line.substring(0, colonIndex).trim();
+										let value: any = line.substring(colonIndex + 1).trim();
+										
+										// Handle arrays
+										if (value.startsWith('[') && value.endsWith(']')) {
+											value = value.slice(1, -1).split(',').map((v: string) => v.trim().replace(/^["']|["']$/g, ''));
+										} else if (value.startsWith('-')) {
+											// Multi-line array
+											value = [value.substring(1).trim().replace(/^["']|["']$/g, '')];
+										} else {
+											// Remove quotes
+											value = value.replace(/^["']|["']$/g, '');
+										}
+										
+										metadata[key] = value;
+									}
+								});
+								
+								node.metadata = metadata;
+							}
 						}
 					}
 				} catch (error) {

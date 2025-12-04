@@ -93,16 +93,14 @@ export async function GET({ params, url, cookies }) {
 
 	} catch (error) {
 		console.error('Failed to fetch content:', error);
-		// Error is logged but handled by specific responses where possible
+		// Error is logged but handled by generic response
 		
 		if (error && typeof error === 'object' && 'status' in (error as GitHubError)) {
-			const status = (error as GitHubError).status;
-			if (status === 422) {
+			if ((error as GitHubError).status === 422) {
 				return json({ error: 'Branch already exists' }, { status: 409 });
 			}
-			if (status === 404) {
-				// Most common case: the requested content file does not exist in this branch
-				return json({ error: 'File not found' }, { status: 404 });
+			if ((error as GitHubError).status === 404) {
+				return json({ error: 'Source branch not found' }, { status: 404 });
 			}
 		}
 		
@@ -163,68 +161,32 @@ export async function POST({ params, request, cookies }) {
 			commitMessage = commitMessage || `Update ${path}`;
 		}
 
-		// Helper to get the current file SHA (if it exists)
-		const getCurrentSha = async (): Promise<string | undefined> => {
-			try {
-				const { data: currentFile } = await octokit.rest.repos.getContent({
-					owner: githubConfig.owner!,
-					repo: githubConfig.repo!,
-					path: `content/${path}`,
-					ref: branch
-				});
-				if ('sha' in currentFile) {
-					return currentFile.sha;
-				}
-			} catch {
-				// File doesn't exist, that's okay for creation
-			}
-			return undefined;
-		};
-
-		// Function to perform the save with the latest SHA
-		const performSave = async () => {
-			const currentSha = await getCurrentSha();
-			const { data } = await octokit.rest.repos.createOrUpdateFileContents({
+		// Get current file info (if it exists)
+		let currentSha: string | undefined;
+		try {
+			const { data: currentFile } = await octokit.rest.repos.getContent({
 				owner: githubConfig.owner!,
 				repo: githubConfig.repo!,
 				path: `content/${path}`,
-				message: commitMessage,
-				content: Buffer.from(fileContent).toString('base64'),
-				sha: currentSha,
-				branch
+				ref: branch
 			});
-			return data;
-		};
-
-		let updatedFile;
-		try {
-			updatedFile = await performSave();
-		} catch (error: unknown) {
-			if (error && typeof error === 'object' && 'status' in error && (error as { status?: number }).status === 409) {
-				// Conflict: refetch SHA and retry once
-				try {
-					updatedFile = await performSave();
-				} catch (retryError: unknown) {
-					if (
-						retryError &&
-						typeof retryError === 'object' &&
-						'status' in retryError &&
-						(retryError as { status?: number }).status === 409
-					) {
-						return json(
-							{
-								error:
-									'Content conflict: this file has changed since you opened it. Please reload and try again.'
-							},
-							{ status: 409 }
-						);
-					}
-					throw retryError;
-				}
-			} else {
-				throw error;
+			if ('sha' in currentFile) {
+				currentSha = currentFile.sha;
 			}
+		} catch {
+			// File doesn't exist, that's okay for creation
 		}
+
+		// Create or update the file
+		const { data: updatedFile } = await octokit.rest.repos.createOrUpdateFileContents({
+			owner: githubConfig.owner!,
+			repo: githubConfig.repo!,
+			path: `content/${path}`,
+			message: commitMessage,
+			content: Buffer.from(fileContent).toString('base64'),
+			sha: currentSha,
+			branch: branch
+		});
 
 		// Check if this is the first commit in a personal workspace and auto-publish
 		let autoPublished = false;

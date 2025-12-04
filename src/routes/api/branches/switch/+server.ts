@@ -1,7 +1,6 @@
 import { json } from '@sveltejs/kit';
 import { githubConfig } from '$lib/server/env';
 import { Octokit } from '@octokit/rest';
-import { NODE_ENV } from '$env/static/private';
 
 export async function POST({ request, cookies }) {
 	const sessionCookie = cookies.get('session');
@@ -53,7 +52,7 @@ export async function POST({ request, cookies }) {
 		cookies.set('session', JSON.stringify(updatedSession), {
 			path: '/',
 			httpOnly: true,
-			secure: NODE_ENV === 'production',
+			secure: process.env.NODE_ENV === 'production',
 			sameSite: 'lax',
 			maxAge: 8 * 60 * 60 // 8 hours
 		});
