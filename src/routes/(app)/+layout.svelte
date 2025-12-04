@@ -1,5 +1,5 @@
 <script lang="ts">
-  import '../layout.css';
+  import './layout.css';
   import { setContext, onMount } from 'svelte';
   import { graph } from '$lib/stores/graph';
   import { sidebarOpen, theme, setTheme } from '$lib/stores/ui';
