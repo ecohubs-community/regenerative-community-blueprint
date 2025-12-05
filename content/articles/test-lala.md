@@ -4,6 +4,7 @@ modules:
   - Test module
 climate: 
   - temperate
+  - arid
 budget: null
 size: null
 summary: null
