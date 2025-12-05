@@ -2,7 +2,8 @@
 title: Miauzifix
 modules: 
   - Master module
-climate: null
+climate: 
+  - temperate
 budget: low
 size: null
 summary: null
