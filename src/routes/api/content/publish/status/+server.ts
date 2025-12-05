@@ -1,16 +1,6 @@
 import { json, type RequestHandler } from '@sveltejs/kit';
-import { Octokit } from '@octokit/rest';
-
-function getGitHubClient(): Octokit {
-	const token = process.env.GITHUB_TOKEN;
-	if (!token) {
-		throw new Error('GITHUB_TOKEN environment variable is not set');
-	}
-
-	return new Octokit({
-		auth: token
-	});
-}
+import { getOctokit } from '$lib/server/github';
+import { githubConfig } from '$lib/server/env';
 
 export const GET: RequestHandler = async ({ url, cookies }) => {
 	const sessionCookie = cookies.get('session');
@@ -19,15 +9,22 @@ export const GET: RequestHandler = async ({ url, cookies }) => {
 		return json({ error: 'Unauthorized' }, { status: 401 });
 	}
 
+	let session;
+	try {
+		session = JSON.parse(sessionCookie);
+	} catch {
+		return json({ error: 'Invalid session' }, { status: 401 });
+	}
+
 	const path = url.searchParams.get('path');
 	if (!path) {
 		return json({ error: 'Path parameter is required' }, { status: 400 });
 	}
 
 	try {
-		const octokit = getGitHubClient();
-		const owner = process.env.GITHUB_OWNER!;
-		const repo = process.env.GITHUB_REPO!;
+		const octokit = getOctokit(session.access_token);
+		const owner = githubConfig.owner!;
+		const repo = githubConfig.repo!;
 
 		// Get file content and metadata
 		const { data: fileData } = await octokit.rest.repos.getContent({

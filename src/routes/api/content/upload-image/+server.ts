@@ -19,14 +19,10 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 	try {
 		const formData = await request.formData();
 		const file = formData.get('file') as File;
-		const articleId = formData.get('articleId') as string | null;
+		const customPath = formData.get('path') as string | null;
 
 		if (!file) {
 			return json({ error: 'No file provided' }, { status: 400 });
-		}
-
-		if (!articleId) {
-			return json({ error: 'Article ID is required' }, { status: 400 });
 		}
 
 		// Read file as base64
@@ -34,10 +30,10 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 		const buffer = Buffer.from(arrayBuffer);
 		const base64Content = buffer.toString('base64');
 
-		// Generate path in static/uploads/{articleId}/
+		// Generate path
 		const timestamp = Date.now();
 		const sanitizedName = file.name.replace(/[^a-zA-Z0-9.-]/g, '_');
-		const path = `static/uploads/${articleId}/${timestamp}-${sanitizedName}`;
+		const path = customPath || `content/images/${timestamp}-${sanitizedName}`;
 
 		const octokit = getOctokit(session.access_token);
 		const branch = session.currentBranch || `${session.user.login}/workspace`;
@@ -47,20 +43,15 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 			owner: githubConfig.owner!,
 			repo: githubConfig.repo!,
 			path,
-			message: `Upload image for article ${articleId}: ${file.name}`,
+			message: `Upload image: ${file.name}`,
 			content: base64Content,
 			branch
 		});
 
-		// Return the proxy URL for workspace content (will work immediately in editor/preview)
-		// The path will be correct for published content too (static files)
-		const proxyUrl = `/api/image-proxy/uploads/${articleId}/${timestamp}-${sanitizedName}?branch=${encodeURIComponent(branch)}`;
-		const staticUrl = `/uploads/${articleId}/${timestamp}-${sanitizedName}`;
-		
+		// Return the path that can be used in markdown
 		return json({
 			success: true,
-			url: proxyUrl,  // Use proxy URL so it works immediately
-			staticUrl,      // Also return static URL for reference
+			url: `/${path}`,
 			path
 		});
 	} catch (error) {

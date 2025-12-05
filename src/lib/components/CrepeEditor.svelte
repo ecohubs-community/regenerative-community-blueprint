@@ -3,22 +3,15 @@
 	import { Crepe } from '@milkdown/crepe';
 	import '@milkdown/crepe/theme/common/style.css';
 	import '@milkdown/crepe/theme/frame.css';
-	import Icon from '@iconify/svelte';
 	
 	interface Frontmatter {
-		id?: string;
 		title?: string;
 		climate?: string[];
 		budget?: string;
-		size?: string[];
+		size?: string;
 		modules?: string[];
 		description?: string;
 		[key: string]: unknown;
-	}
-
-	// Generate a short unique ID (8 characters from UUID)
-	function generateArticleId(): string {
-		return crypto.randomUUID().split('-')[0];
 	}
 
 	interface EditorContent {
@@ -31,15 +24,18 @@
 		readonly = false,
 		onSave = () => {},
 		autoSave = true,
-		autoSaveDelay = 2000,
-		showSidebarButton = false,
-		onOpenSidebar = undefined as (() => void) | undefined
+		autoSaveDelay = 2000
 	} = $props();
 
 	let editorContainer: HTMLDivElement;
 	let crepeInstance: Crepe | null = null;
 	let saveTimeout: ReturnType<typeof setTimeout> | null = null;
 	let saveStatus = $state<'saved' | 'saving' | 'unsaved'>('saved');
+
+	// Climate options
+	const climateOptions = ['tropical', 'temperate', 'arid', 'continental', 'mediterranean', 'polar'];
+	const budgetOptions = ['low', 'medium', 'high'];
+	const sizeOptions = ['small', 'medium', 'large', 'regional', 'national'];
 
 	async function handleSave() {
 		if (onSave && !readonly) {
@@ -70,15 +66,30 @@
 		}, autoSaveDelay);
 	}
 
-	async function uploadImage(file: File): Promise<string> {
-		// Ensure article has an ID
-		if (!content.frontmatter.id) {
-			content.frontmatter.id = generateArticleId();
+	function addArrayItem(key: keyof Frontmatter, value: string) {
+		if (!content.frontmatter[key]) {
+			content.frontmatter[key] = [];
 		}
+		if (Array.isArray(content.frontmatter[key])) {
+			(content.frontmatter[key] as string[]).push(value);
+		}
+		triggerAutoSave();
+	}
 
+	function removeArrayItem(key: keyof Frontmatter, index: number) {
+		if (Array.isArray(content.frontmatter[key])) {
+			(content.frontmatter[key] as string[]).splice(index, 1);
+		}
+		triggerAutoSave();
+	}
+
+	async function uploadImage(file: File): Promise<string> {
 		const formData = new FormData();
 		formData.append('file', file);
-		formData.append('articleId', content.frontmatter.id);
+		
+		// Upload to a dedicated images directory
+		const imagePath = `content/images/${Date.now()}-${file.name}`;
+		formData.append('path', imagePath);
 
 		const response = await fetch('/api/content/upload-image', {
 			method: 'POST',
@@ -90,16 +101,11 @@
 		}
 
 		const data = await response.json();
-		return data.url;
+		return data.url || `/${imagePath}`;
 	}
 
 	onMount(async () => {
 		if (!editorContainer) return;
-
-		// Ensure article has an ID when editor is mounted
-		if (!content.frontmatter.id) {
-			content.frontmatter.id = generateArticleId();
-		}
 
 		try {
 			crepeInstance = new Crepe({
@@ -158,90 +164,186 @@
 	});
 </script>
 
-<div class="crepe-editor bg-white">
-	<!-- Save Status Bar -->
-	<div class="sticky top-0 z-10 bg-white/95 backdrop-blur-sm border-b border-gray-100 px-4 py-2">
-		<div class="flex justify-between items-center max-w-4xl mx-auto">
-			<div class="flex items-center gap-2">
-				{#if saveStatus === 'saving'}
-					<div class="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
-					<span class="text-xs text-amber-600 font-medium">Saving...</span>
-				{:else if saveStatus === 'unsaved'}
-					<div class="w-2 h-2 bg-orange-500 rounded-full"></div>
-					<span class="text-xs text-orange-600 font-medium">Unsaved changes</span>
-				{:else}
-					<div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
-					<span class="text-xs text-emerald-600 font-medium">Saved</span>
-				{/if}
+<div class="crepe-editor border border-gray-200 rounded-lg overflow-hidden bg-white">
+	<!-- Frontmatter Editor -->
+	<div class="bg-gray-50 border-b border-gray-200 p-4">
+		<h3 class="text-sm font-medium text-gray-900 mb-3">Article Metadata</h3>
+		
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+			<!-- Title -->
+			<div>
+				<label for="title" class="block text-xs font-medium text-gray-700 mb-1">Title</label>
+				<input
+					id="title"
+					type="text"
+					bind:value={content.frontmatter.title}
+					placeholder="Article title"
+					disabled={readonly}
+					class="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+				/>
 			</div>
-			
-			{#if !readonly}
-				<div class="flex items-center gap-2">
+
+			<!-- Description -->
+			<div>
+				<label for="description" class="block text-xs font-medium text-gray-700 mb-1">Description</label>
+				<input
+					id="description"
+					type="text"
+					bind:value={content.frontmatter.description}
+					placeholder="Brief description"
+					disabled={readonly}
+					class="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+				/>
+			</div>
+
+			<!-- Climate -->
+			<div>
+				<label class="block text-xs font-medium text-gray-700 mb-1">Climate</label>
+				<div class="space-y-1">
+				{#each climateOptions as climate}
+					<label class="flex items-center text-xs">
+						<input
+							type="checkbox"
+							checked={Array.isArray(content.frontmatter.climate) && content.frontmatter.climate.includes(climate)}
+							onchange={(e) => {
+								const target = e.target as HTMLInputElement;
+								if (target.checked) {
+									addArrayItem('climate', climate);
+								} else {
+									const index = content.frontmatter.climate?.indexOf(climate);
+									if (index !== undefined && index > -1) {
+										removeArrayItem('climate', index);
+									}
+								}
+							}}
+							disabled={readonly}
+							class="mr-1"
+						/>
+						{climate}
+					</label>
+				{/each}
+				</div>
+			</div>
+
+			<!-- Budget -->
+			<div>
+				<label class="block text-xs font-medium text-gray-700 mb-1">Budget</label>
+				<div class="space-y-1">
+				{#each budgetOptions as budget}
+					<label class="flex items-center text-xs">
+						<input
+							type="radio"
+							name="budget"
+							checked={content.frontmatter.budget === budget}
+							onchange={() => {
+								content.frontmatter.budget = budget;
+								triggerAutoSave();
+							}}
+							disabled={readonly}
+							class="mr-1"
+						/>
+						{budget}
+					</label>
+				{/each}
+				</div>
+			</div>
+
+			<!-- Size -->
+			<div>
+				<label class="block text-xs font-medium text-gray-700 mb-1">Size</label>
+				<div class="space-y-1">
+				{#each sizeOptions as size}
+					<label class="flex items-center text-xs">
+						<input
+							type="radio"
+							name="size"
+							checked={content.frontmatter.size === size}
+							onchange={() => {
+								content.frontmatter.size = size;
+								triggerAutoSave();
+							}}
+							disabled={readonly}
+							class="mr-1"
+						/>
+						{size}
+					</label>
+				{/each}
+				</div>
+			</div>
+
+			<!-- Modules -->
+			<div>
+				<label for="modules" class="block text-xs font-medium text-gray-700 mb-1">Modules</label>
+				<input
+					id="modules"
+					type="text"
+					value={Array.isArray(content.frontmatter.modules) ? content.frontmatter.modules.join(', ') : ''}
+					onchange={(e) => {
+						const target = e.target as HTMLInputElement;
+						const modules = target.value.split(',').map((m: string) => m.trim()).filter((m: string) => m);
+						content.frontmatter.modules = modules;
+						triggerAutoSave();
+					}}
+					placeholder="module1, module2, module3"
+					disabled={readonly}
+					class="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+				/>
+			</div>
+		</div>
+	</div>
+
+	<!-- Crepe Editor -->
+	<div class="bg-white">
+		<div class="border-b border-gray-200 px-4 py-2">
+			<div class="flex justify-between items-center">
+				<div class="flex items-center space-x-3">
+					<span class="text-xs font-medium text-gray-700">Content</span>
 					
-					<button
-						onclick={handleSave}
-						class="px-3 py-1.5 text-xs font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors disabled:opacity-50"
-						disabled={saveStatus === 'saving'}
-					>
-						{saveStatus === 'saving' ? 'Saving...' : 'Save'}
-					</button>
-					{#if showSidebarButton}
+					<!-- Save Status Indicator -->
+					<div class="flex items-center space-x-1">
+						{#if saveStatus === 'saving'}
+							<div class="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
+							<span class="text-xs text-yellow-600">Saving...</span>
+						{:else if saveStatus === 'unsaved'}
+							<div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+							<span class="text-xs text-orange-600">Unsaved</span>
+						{:else}
+							<div class="w-2 h-2 bg-green-500 rounded-full"></div>
+							<span class="text-xs text-green-600">Saved</span>
+						{/if}
+					</div>
+				</div>
+				
+				<div class="flex space-x-2">
+					{#if !readonly}
 						<button
-							type="button"
-							onclick={() => onOpenSidebar?.()}
-							class="p-1.5 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors border border-gray-200"
-							aria-label="Open article settings"
+							onclick={handleSave}
+							class="px-3 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700 disabled:opacity-50"
+							disabled={saveStatus === 'saving'}
 						>
-							<Icon icon="tabler:layout-sidebar-right-filled" class="w-4 h-4" />
+							{saveStatus === 'saving' ? 'Saving...' : 'Save Now'}
 						</button>
 					{/if}
 				</div>
-			{/if}
+			</div>
 		</div>
+		
+		<!-- Editor Container -->
+		<div 
+			bind:this={editorContainer}
+			class="crepe-container min-h-[500px]"
+		></div>
 	</div>
-	
-	<!-- Editor Container -->
-	<div 
-		bind:this={editorContainer}
-		class="crepe-container"
-	></div>
 </div>
 
 <style>
 	:global(.crepe-container .crepe) {
-		min-height: calc(100vh - 200px);
-		padding: 2rem 1rem;
-		max-width: 65ch;
-		margin: 0 auto;
+		min-height: 500px;
+		padding: 1rem;
 	}
 	
 	:global(.crepe-container .ProseMirror) {
 		outline: none;
-		min-height: calc(100vh - 250px);
-	}
-	
-	:global(.crepe-container .ProseMirror p) {
-		margin-bottom: 1em;
-	}
-	
-	:global(.crepe-container .ProseMirror h1) {
-		font-size: 2rem;
-		font-weight: 700;
-		margin-bottom: 1rem;
-		margin-top: 2rem;
-	}
-	
-	:global(.crepe-container .ProseMirror h2) {
-		font-size: 1.5rem;
-		font-weight: 600;
-		margin-bottom: 0.75rem;
-		margin-top: 1.5rem;
-	}
-	
-	:global(.crepe-container .ProseMirror h3) {
-		font-size: 1.25rem;
-		font-weight: 600;
-		margin-bottom: 0.5rem;
-		margin-top: 1.25rem;
+		min-height: 450px;
 	}
 </style>

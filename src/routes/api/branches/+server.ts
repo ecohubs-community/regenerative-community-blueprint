@@ -79,7 +79,9 @@ export async function GET({ cookies }) {
 		return json({
 			workspaces,
 			currentUser: user.login,
-			defaultWorkspace: `${user.login}/workspace`
+			defaultWorkspace: `${user.login}/workspace`,
+			currentWorkspace: session.currentWorkspace || 'workspace',
+			currentBranch: session.currentBranch || `${user.login}/workspace`
 		});
 
 	} catch (error) {

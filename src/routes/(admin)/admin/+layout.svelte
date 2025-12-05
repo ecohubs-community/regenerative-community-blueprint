@@ -49,6 +49,8 @@
 		workspaces: Workspace[];
 		currentUser: string;
 		defaultWorkspace: string;
+		currentWorkspace?: string;
+		currentBranch?: string;
 	}
 
 	let { children, data } = $props();
@@ -91,8 +93,12 @@
 				const data: WorkspacesResponse = await response.json();
 				workspaces = data.workspaces;
 				
-				// Auto-select default workspace if none is selected
-				if (!currentWorkspace || currentWorkspace === 'main') {
+				// Set current workspace from session
+				if (data.currentWorkspace) {
+					currentWorkspace = data.currentWorkspace;
+					currentBranch = data.currentBranch || currentBranch;
+				} else {
+					// Auto-select default workspace if none is selected
 					const defaultWorkspace = workspaces.find(w => w.isDefault) || workspaces[0];
 					if (defaultWorkspace) {
 						await switchWorkspace(defaultWorkspace.name);
