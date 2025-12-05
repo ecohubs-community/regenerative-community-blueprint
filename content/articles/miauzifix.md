@@ -7,7 +7,8 @@ climate:
   - continental
   - polar
 budget: low
-size: null
+size: 
+  - 100-200
 summary: null
 id: 1772b937
 ---
