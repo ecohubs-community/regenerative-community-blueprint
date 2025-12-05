@@ -33,5 +33,5 @@ asdasd
 
 <br />
 
-![1.00]()
+![1.00](/content/images/1764945437400-Gemini_Generated_Image_izp7xdizp7xdizp7.png)
 
