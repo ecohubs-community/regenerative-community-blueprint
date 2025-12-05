@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { contentSidebarMode, setContentSidebarMode } from '$lib/stores/ui';
-	import SimpleEditor from '$lib/components/SimpleEditor.svelte';
+	import CrepeEditor from '$lib/components/CrepeEditor.svelte';
 	import ContentPreview from '$lib/components/ContentPreview.svelte';
 	import PublishingWorkflow from '$lib/components/PublishingWorkflow.svelte';
 	import ContentSidebar from '$lib/components/ContentSidebar.svelte';
@@ -353,7 +353,7 @@
 					<div class="flex justify-center py-8 text-gray-500">Loading file content…</div>
 				{:else if fileContent}
 					{#if activeTab === 'edit'}
-						<SimpleEditor bind:content={fileContent} onSave={saveContent} />
+						<CrepeEditor bind:content={fileContent} onSave={saveContent} />
 					{:else if activeTab === 'preview'}
 						<ContentPreview content={fileContent} />
 					{:else}
