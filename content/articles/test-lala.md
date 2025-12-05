@@ -6,7 +6,7 @@ climate:
   - temperate
   - arid
   - continental
-budget: medium
+budget: high
 size: null
 summary: null
 id: ea7405cd
