@@ -7,7 +7,8 @@ climate:
   - continental
   - mediterranean
 budget: low
-size: null
+size: 
+  - 5-10
 summary: null
 id: 8b49ffa8
 ---
