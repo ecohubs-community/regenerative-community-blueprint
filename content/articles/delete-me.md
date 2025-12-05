@@ -4,7 +4,8 @@ modules:
   - Test module
 climate: 
   - continental
-budget: null
+  - arid
+budget: low
 size: null
 summary: null
 id: 9431cafc
