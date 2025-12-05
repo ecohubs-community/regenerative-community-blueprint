@@ -6,7 +6,8 @@ climate:
   - continental
   - arid
 budget: low
-size: null
+size: 
+  - 10-50
 summary: null
 id: 9431cafc
 ---
