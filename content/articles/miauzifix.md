@@ -4,6 +4,8 @@ modules:
   - Master module
 climate: 
   - temperate
+  - continental
+  - polar
 budget: low
 size: null
 summary: null
