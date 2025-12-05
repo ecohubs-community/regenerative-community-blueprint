@@ -31,5 +31,5 @@ asdasd
 
 <br />
 
-![1.00]()
+![1.00](/content/images/1764945369115-gaialogo.png)
 
