@@ -1,7 +1,6 @@
 ---
 title: Test lala
 modules: 
-  - Test module
 climate: 
   - temperate
   - arid
