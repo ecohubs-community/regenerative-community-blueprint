@@ -25,7 +25,7 @@ id: 8b49ffa8
 
 ***
 
-```
+```JSON
 Ui, some code!! Hear hear!
 ```
 
