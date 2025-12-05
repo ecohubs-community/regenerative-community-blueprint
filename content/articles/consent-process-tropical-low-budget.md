@@ -12,7 +12,7 @@ summary: How consent governance can be implemented in resource-limited tropical 
 id: 43585e4e
 ---
 
-**ntroduction**
+**Introduction**
 
 Consent-based decision making is particularly well-suited for **\*\*tropical, low-budget communities\*\*** that prioritize harmony and sustainable living.
 
