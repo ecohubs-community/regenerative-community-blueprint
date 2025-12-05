@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
 	import { backToMainMenu } from '$lib/stores/ui';
+	import Icon from '@iconify/svelte';
 
 	interface ContentNode {
 		path: string;
@@ -11,17 +12,50 @@
 		metadata?: Record<string, any>;
 	}
 
-	const props = $props<{ 
-		tree?: ContentNode[]; 
-		isLoading?: boolean; 
+	interface FileChange {
+		filename: string;
+		status: 'added' | 'modified' | 'removed' | 'renamed';
+	}
+
+	interface Props {
+		tree?: ContentNode[];
+		isLoading?: boolean;
 		selectedPath?: string | null;
 		showBackButton?: boolean;
-	}>();
+		workspaceChanges?: FileChange[];
+	}
+
+	const props: Props = $props();
 
 	const tree = $derived(props.tree ?? []);
 	const isLoading = $derived(props.isLoading ?? false);
 	const selectedPath = $derived(props.selectedPath ?? null);
 	const showBackButton = $derived(props.showBackButton ?? false);
+	const workspaceChanges = $derived(props.workspaceChanges ?? []);
+
+	// Build a map of changed files for quick lookup
+	const changedFilesMap = $derived(() => {
+		const map = new Map<string, FileChange>();
+		for (const change of workspaceChanges) {
+			// Normalize the path (remove 'content/' prefix if present)
+			const normalizedPath = change.filename.replace(/^content\//, '');
+			map.set(normalizedPath, change);
+		}
+		return map;
+	});
+
+	// Helper to get change status for a file
+	function getFileChangeStatus(path: string): FileChange | undefined {
+		return changedFilesMap().get(path);
+	}
+
+	// Helper to check if any children have changes
+	function hasChildChanges(items: ContentNode[]): boolean {
+		for (const item of items) {
+			if (getFileChangeStatus(item.path)) return true;
+		}
+		return false;
+	}
 
 	const dispatch = createEventDispatcher<{ 
 		select: string; 
@@ -291,6 +325,21 @@
 		}
 		return item.name.replace('.json', '').replace('.md', '');
 	}
+
+	function getStatusBadge(status: string): { icon: string; color: string; label: string } {
+		switch (status) {
+			case 'added':
+				return { icon: 'tabler:plus', color: 'text-green-600 bg-green-100', label: 'New' };
+			case 'modified':
+				return { icon: 'tabler:pencil', color: 'text-blue-600 bg-blue-100', label: 'Draft' };
+			case 'removed':
+				return { icon: 'tabler:trash', color: 'text-red-600 bg-red-100', label: 'Deleted' };
+			case 'renamed':
+				return { icon: 'tabler:arrows-right', color: 'text-purple-600 bg-purple-100', label: 'Renamed' };
+			default:
+				return { icon: 'tabler:file', color: 'text-gray-600 bg-gray-100', label: 'Changed' };
+		}
+	}
 </script>
 
 <div class="flex flex-col h-full">
@@ -358,6 +407,8 @@
 		<!-- Content List -->
 		<ul class="space-y-1">
 			{#each currentContent() as item}
+				{@const changeStatus = getFileChangeStatus(item.path)}
+				{@const badge = changeStatus ? getStatusBadge(changeStatus.status) : null}
 				<li>
 					<button 
 						onclick={() => handleItemClick(item)}
@@ -365,10 +416,16 @@
 							currentLevel === 'articles' && selectedPath === item.path 
 								? 'bg-blue-100 text-blue-700' 
 								: 'hover:bg-gray-100'
-						}`}
+						} ${changeStatus?.status === 'removed' ? 'opacity-60 line-through' : ''}`}
 					>
 						<span>{getContentTypeIcon(currentLevel)}</span>
-						<span class="flex-1">{getItemDisplayName(item)}</span>
+						<span class="flex-1 truncate">{getItemDisplayName(item)}</span>
+						{#if badge}
+							<span class={`flex items-center gap-1 px-1.5 py-0.5 rounded text-xs font-medium ${badge.color}`} title={badge.label}>
+								<Icon icon={badge.icon} class="w-3 h-3" />
+								<span class="hidden sm:inline">{badge.label}</span>
+							</span>
+						{/if}
 						{#if currentLevel !== 'articles'}
 							<span class="text-gray-400">→</span>
 						{/if}
