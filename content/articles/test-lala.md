@@ -28,8 +28,8 @@ asdasd
 
 <br />
 
-| <br /> | <br /> | <br /> |
-| :----- | :----- | :----- |
-| <br /> | <br /> | <br /> |
-| <br /> | <br /> | <br /> |
+| Nice Table 1 | Column 2 | Col 3 |
+| :----------- | :------- | :---- |
+| lala         | puli     | culi  |
+| papa         | mama     | culi  |
 
