@@ -4,6 +4,8 @@ modules:
   - Test module
 climate: 
   - temperate
+  - continental
+  - mediterranean
 budget: null
 size: null
 summary: null
