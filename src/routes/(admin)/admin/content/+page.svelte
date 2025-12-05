@@ -2,9 +2,7 @@
 	import { onMount } from 'svelte';
 	import { contentSidebarMode, setContentSidebarMode } from '$lib/stores/ui';
 	import CrepeEditor from '$lib/components/CrepeEditor.svelte';
-	import ContentPreview from '$lib/components/ContentPreview.svelte';
-	import PublishingWorkflow from '$lib/components/PublishingWorkflow.svelte';
-	import ContentSidebar from '$lib/components/ContentSidebar.svelte';
+	import ArticleSidebar from '$lib/components/admin/ArticleSidebar.svelte';
 
 	interface ContentNode {
 		path: string;
@@ -19,7 +17,7 @@
 		title?: string;
 		climate?: string[];
 		budget?: string;
-		size?: string;
+		size?: string[];
 		modules?: string[];
 		description?: string;
 		domain?: string;
@@ -38,7 +36,7 @@
 	let fileContent = $state<EditorContent | null>(null);
 	let isLoadingFile = $state(false);
 	let isSaving = $state(false);
-	let activeTab = $state<'edit' | 'preview' | 'publish'>('edit');
+	let showSidebar = $state(false);
 	let showNewContentDialog = $state(false);
 	let newContentType = $state<'domain' | 'topic' | 'module' | 'article' | null>(null);
 	let newContentParent = $state<string | null>(null);
@@ -132,6 +130,7 @@
 				// Clear selection and reload tree
 				selectedFile = null;
 				fileContent = null;
+				showSidebar = false;
 				await loadContentTree();
 			} else {
 				console.error('Failed to delete file');
@@ -141,10 +140,23 @@
 		}
 	}
 
+	function triggerAutoSave() {
+		// Trigger auto-save in the editor when metadata changes
+		if (fileContent) {
+			saveContent(fileContent);
+		}
+	}
+
 	async function handlePublish(action: string) {
 		if (!selectedFile) return;
 
 		try {
+
+			if (action === 'delete') {
+				await deleteFile();
+				return;
+			}
+
 			const response = await fetch('/api/content/publish', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
@@ -304,72 +316,58 @@
 	<title>Content Management - EcoHubs Admin</title>
 </svelte:head>
 
-<div class="space-y-6">
-	<section class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 min-h-[500px]">
-		{#if selectedFile}
-			<div class="border-b border-gray-100 pb-4 mb-6">
-				<div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-					<div>
-						<p class="text-xs uppercase tracking-wide text-gray-500">Editing file</p>
-						<h2 class="text-lg font-semibold text-gray-900 break-all">{selectedFile}</h2>
-					</div>
-					<div class="flex gap-2">
-						<button
-							onclick={deleteFile}
-							class="px-3 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 text-sm disabled:opacity-50"
-							disabled={isSaving}
-						>
-							Delete
-						</button>
+<div class="min-h-screen bg-white">
+	{#if selectedFile}
+		<!-- Editor Area -->
+		<div class="max-w-4xl mx-auto px-4 py-8">
+			{#if isLoadingFile}
+				<div class="flex justify-center py-16">
+					<div class="flex items-center gap-3 text-gray-500">
+						<svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+							<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+							<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+						</svg>
+						<span>Loading article...</span>
 					</div>
 				</div>
-			</div>
-
-			<div>
-				<div class="border-b border-gray-200 mb-6">
-					<nav class="-mb-px flex space-x-6">
-						<button
-							onclick={() => activeTab = 'edit'}
-							class={`py-2 px-1 border-b-2 font-medium text-sm ${activeTab === 'edit' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
-						>
-							Edit
-						</button>
-						<button
-							onclick={() => activeTab = 'preview'}
-							class={`py-2 px-1 border-b-2 font-medium text-sm ${activeTab === 'preview' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
-						>
-							Preview
-						</button>
-						<button
-							onclick={() => activeTab = 'publish'}
-							class={`py-2 px-1 border-b-2 font-medium text-sm ${activeTab === 'publish' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
-						>
-							Publish
-						</button>
-					</nav>
+			{:else if fileContent}
+				<CrepeEditor
+					bind:content={fileContent}
+					onSave={saveContent}
+					showSidebarButton={true}
+					onOpenSidebar={() => (showSidebar = true)}
+				/>
+			{:else}
+				<div class="text-center py-16 text-gray-500">
+					<p>Failed to load article content</p>
 				</div>
+			{/if}
+		</div>
 
-				{#if isLoadingFile}
-					<div class="flex justify-center py-8 text-gray-500">Loading file content…</div>
-				{:else if fileContent}
-					{#if activeTab === 'edit'}
-						<CrepeEditor bind:content={fileContent} onSave={saveContent} />
-					{:else if activeTab === 'preview'}
-						<ContentPreview content={fileContent} />
-					{:else}
-						<PublishingWorkflow filePath={selectedFile} content={fileContent} onPublish={handlePublish} />
-					{/if}
-				{:else}
-					<div class="text-center py-8 text-gray-500">Failed to load file content</div>
-				{/if}
-			</div>
-		{:else}
-			<div class="flex flex-col items-center justify-center text-center text-gray-500 py-16">
-				<p class="text-lg font-semibold mb-2">No file selected</p>
-				<p class="text-sm">Select a file from the sidebar to start editing the blueprint content.</p>
-			</div>
+		<!-- Article Sidebar -->
+		{#if fileContent}
+			<ArticleSidebar
+				bind:isOpen={showSidebar}
+				bind:content={fileContent}
+				filePath={selectedFile}
+				onchange={triggerAutoSave}
+				onPublish={handlePublish}
+			/>
 		{/if}
-	</section>
+	{:else}
+		<!-- Empty State -->
+		<div class="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
+			<div class="w-16 h-16 mb-6 rounded-full bg-gray-100 flex items-center justify-center">
+				<svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+				</svg>
+			</div>
+			<h2 class="text-xl font-semibold text-gray-900 mb-2">No article selected</h2>
+			<p class="text-gray-500 max-w-sm">
+				Select an article from the sidebar to start editing, or create a new one.
+			</p>
+		</div>
+	{/if}
 </div>
 
 {#if showNewContentDialog}
