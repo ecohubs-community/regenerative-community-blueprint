@@ -6,7 +6,7 @@ climate:
   - temperate
   - arid
   - continental
-budget: medium
+budget: high
 size: 
   - 5-10
 summary: null
