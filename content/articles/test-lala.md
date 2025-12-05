@@ -22,14 +22,12 @@ asdasd
 
 <br />
 
-| Nice Table 1 | Column 2 | Col 3 |
-| :----------- | :------- | :---- |
-| lala         | puli     | culi  |
-| papa         | mama     | culi  |
+| Nice Table 1 | Column 2 | Col 3  |
+| :----------- | :------- | :----- |
+| lala         | puli     | culi   |
+| papa         | <br />   | <br /> |
 
 <br />
 
 <br />
-
-![1.00]()
 
