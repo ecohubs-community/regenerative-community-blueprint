@@ -32,5 +32,5 @@ asdasd
 
 <br />
 
-![1.00]()
+![1.00](/api/image-proxy/uploads/ea7405cd/1764947688434-WhatsApp_Image_2025-11-18_at_21.04.57.jpeg?branch=st3v3y%2Ftest-workspace)
 
