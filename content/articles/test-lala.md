@@ -5,6 +5,7 @@ modules:
 climate: 
   - temperate
   - arid
+  - continental
 budget: null
 size: null
 summary: null
