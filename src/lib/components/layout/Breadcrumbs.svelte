@@ -1,7 +1,6 @@
 <script lang="ts">
   import { page } from '$app/state';
   import { domainBySlug, topicBySlug, moduleBySlug, articleBySlug } from '$lib/stores/graph';
-  import Icon from '@iconify/svelte';
 
   const segments = $derived(() => {
     const { params } = page;

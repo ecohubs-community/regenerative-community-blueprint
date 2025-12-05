@@ -70,7 +70,6 @@
 		"dompurify": "^3.3.0",
 		"gray-matter": "^4.0.3",
 		"js-yaml": "^4.1.1",
-		"marked": "^17.0.1",
 		"prosemirror-model": "^1.25.4",
 		"prosemirror-view": "^1.41.4"
 	}
