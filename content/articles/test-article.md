@@ -6,7 +6,7 @@ climate:
   - temperate
   - continental
   - mediterranean
-budget: null
+budget: low
 size: null
 summary: null
 id: 8b49ffa8
