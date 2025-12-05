@@ -1,7 +1,6 @@
 <script lang="ts">
 	import ArticleMetadataEditor from './ArticleMetadataEditor.svelte';
-	import WorkspaceStatus from './WorkspaceStatus.svelte';
-	import Icon from '@iconify/svelte';
+	import PublishingWorkflow from '../PublishingWorkflow.svelte';
 
 	interface Frontmatter {
 		id?: string;
@@ -36,7 +35,7 @@
 		onPublish?: (action: string) => Promise<void>;
 	} = $props();
 
-	let activeTab = $state<'metadata' | 'status'>('metadata');
+	let activeTab = $state<'metadata' | 'publish'>('metadata');
 
 	function closeSidebar() {
 		isOpen = false;
@@ -75,7 +74,14 @@
 			class="p-1.5 rounded-lg hover:bg-gray-200 transition-colors"
 			aria-label="Close sidebar"
 		>
-			<Icon icon="tabler:x" class="w-5 h-5 text-gray-500" />
+			<svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M6 18L18 6M6 6l12 12"
+				/>
+			</svg>
 		</button>
 	</div>
 
@@ -90,12 +96,12 @@
 			Metadata
 		</button>
 		<button
-			onclick={() => (activeTab = 'status')}
-			class="flex-1 px-4 py-2.5 text-sm font-medium transition-colors {activeTab === 'status'
+			onclick={() => (activeTab = 'publish')}
+			class="flex-1 px-4 py-2.5 text-sm font-medium transition-colors {activeTab === 'publish'
 				? 'text-blue-600 border-b-2 border-blue-600 bg-blue-50/50'
 				: 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'}"
 		>
-			Status
+			Publish
 		</button>
 	</div>
 
@@ -111,7 +117,7 @@
 			</div>
 		{:else}
 			<div class="p-4">
-				<WorkspaceStatus {filePath} {content} {onPublish} />
+				<PublishingWorkflow {filePath} {content} {onPublish} />
 			</div>
 		{/if}
 	</div>
