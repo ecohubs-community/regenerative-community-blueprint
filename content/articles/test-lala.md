@@ -31,5 +31,5 @@ asdasd
 
 <br />
 
-![1.00]()
+![1.00](blob:http://localhost:5175/0fb64701-ace9-42f8-874a-5eb45ef1ac92)
 
