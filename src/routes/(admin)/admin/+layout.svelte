@@ -6,6 +6,9 @@
 	import { sidebarOpen, toggleSidebar, closeSidebar, contentSidebarMode, setContentSidebarMode } from '$lib/stores/ui';
 	import ContentSidebar from '$lib/components/ContentSidebar.svelte';
 	import ReviewChangesModal from '$lib/components/admin/ReviewChangesModal.svelte';
+	import UserMenu from '$lib/components/admin/UserMenu.svelte';
+	import WorkspaceModal from '$lib/components/admin/WorkspaceModal.svelte';
+	import Icon from '@iconify/svelte';
 
 	interface Workspace {
 		name: string;
@@ -13,38 +16,6 @@
 		commit: string;
 		isDefault: boolean;
 	}
-
-	interface NavItem {
-		label: string;
-		href: string;
-		icon: string;
-		description: string;
-		match: (path: string) => boolean;
-	}
-
-	const navItems: NavItem[] = [
-		{
-			label: 'Dashboard',
-			href: '/admin',
-			icon: '🏠',
-			description: 'Overview & workspace status',
-			match: (path) => path === '/admin'
-		},
-		{
-			label: 'Content',
-			href: '/admin/content',
-			icon: '📁',
-			description: 'Manage blueprint files',
-			match: (path) => path.startsWith('/admin/content')
-		},
-		{
-			label: 'Settings',
-			href: '/admin/settings',
-			icon: '⚙️',
-			description: 'Account & workspace controls',
-			match: (path) => path.startsWith('/admin/settings')
-		}
-	];
 
 	interface WorkspacesResponse {
 		workspaces: Workspace[];
@@ -59,6 +30,7 @@
 	// Track current route for layout state
 	const currentPath = $derived(page.url.pathname);
 	const isLoginPage = $derived(currentPath === '/admin/login');
+	const isContentPage = $derived(currentPath.startsWith('/admin/content'));
 
 	// Workspace management
 	let workspaces = $state<Workspace[]>([]);
@@ -66,8 +38,7 @@
 	let currentBranch = $state('main');
 	let isLoadingWorkspaces = $state(true);
 	let isSwitchingWorkspace = $state(false);
-	let showCreateWorkspaceDialog = $state(false);
-	let newWorkspaceName = $state('');
+	let showWorkspaceModal = $state(false);
 	let isSidebarOpen = $state(false);
 	let currentContentSidebarMode = $state<'main' | 'content'>('main');
 	let sidebarUnsubscribe: (() => void) | null = null;
@@ -92,17 +63,20 @@
 	let isLoadingChanges = $state(false);
 	let showReviewModal = $state(false);
 
+	// Count of uncommitted changes for badge
+	const uncommittedCount = $derived(workspaceChanges?.files.length ?? 0);
+
 	async function loadWorkspaces() {
 		try {
 			const response = await fetch('/api/branches');
 			if (response.ok) {
-				const data: WorkspacesResponse = await response.json();
-				workspaces = data.workspaces;
+				const responseData: WorkspacesResponse = await response.json();
+				workspaces = responseData.workspaces;
 				
 				// Set current workspace from session
-				if (data.currentWorkspace) {
-					currentWorkspace = data.currentWorkspace;
-					currentBranch = data.currentBranch || currentBranch;
+				if (responseData.currentWorkspace) {
+					currentWorkspace = responseData.currentWorkspace;
+					currentBranch = responseData.currentBranch || currentBranch;
 				} else {
 					// Auto-select default workspace if none is selected
 					const defaultWorkspace = workspaces.find(w => w.isDefault) || workspaces[0];
@@ -146,16 +120,14 @@
 		}
 	}
 
-	async function createWorkspace() {
-		if (!newWorkspaceName.trim()) return;
-
+	async function createWorkspace(name: string, baseBranch?: string) {
 		try {
 			const response = await fetch('/api/branches/create', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({ 
-					workspaceName: newWorkspaceName.trim(),
-					fromWorkspace: currentWorkspace 
+					workspaceName: name,
+					fromWorkspace: baseBranch || currentWorkspace 
 				})
 			});
 
@@ -166,10 +138,6 @@
 				// Reload workspaces and switch to new one
 				await loadWorkspaces();
 				await switchWorkspace(result.workspace.name);
-				
-				// Reset form
-				newWorkspaceName = '';
-				showCreateWorkspaceDialog = false;
 			} else {
 				const error = await response.json();
 				console.error('Failed to create workspace:', error.error);
@@ -181,22 +149,13 @@
 		}
 	}
 
-	async function logout() {
-		try {
-			await fetch('/api/auth/logout', { method: 'POST' });
-			goto('/admin/login');
-		} catch (error) {
-			console.error('Logout failed:', error);
-		}
-	}
-
 	async function loadContentTree() {
 		isLoadingContentTree = true;
 		try {
 			const response = await fetch('/api/content/tree');
 			if (response.ok) {
-				const data = await response.json();
-				contentTree = data.tree || [];
+				const responseData = await response.json();
+				contentTree = responseData.tree || [];
 			}
 		} catch (error) {
 			console.error('Failed to load content tree:', error);
@@ -210,10 +169,10 @@
 		try {
 			const response = await fetch('/api/content/workspace-changes');
 			if (response.ok) {
-				const data = await response.json();
+				const responseData = await response.json();
 				workspaceChanges = {
-					files: data.files,
-					commitCount: data.commitCount
+					files: responseData.files,
+					commitCount: responseData.commitCount
 				};
 			}
 		} catch (error) {
@@ -325,220 +284,156 @@
 			setContentSidebarMode('main');
 		}
 	});
-
-	function isNavActive(item: NavItem) {
-		return item.match(currentPath);
-	}
-
-	async function handleNavClick(item: NavItem) {
-		if (isNavActive(item)) {
-			closeSidebar();
-			return;
-		}
-		await goto(item.href);
-		closeSidebar();
-	}
 </script>
 
 {#if !isLoginPage}
-	<div class="min-h-screen bg-gray-50 flex">
-		<div class={`fixed inset-0 bg-black/40 z-30 transition-opacity duration-200 lg:hidden ${isSidebarOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onclick={closeSidebar}></div>
-
-		<aside class={`fixed inset-y-0 left-0 z-40 w-64 bg-white border-r border-gray-200 shadow-xl transform transition-transform duration-300 lg:static lg:translate-x-0 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`} aria-label="Workspace navigation">
-			<div class="flex items-center justify-between px-4 h-16 border-b border-gray-100 lg:hidden">
-				<span class="text-sm font-semibold text-gray-900">Workspace menu</span>
-				<button
-					onclick={closeSidebar}
-					class="inline-flex h-8 w-8 items-center justify-center rounded-md text-gray-500 hover:bg-gray-100"
-					aria-label="Close sidebar"
-				>
-					✕
-				</button>
-			</div>
-			<div class="h-[calc(100%-4rem)] lg:h-full overflow-y-auto px-4 py-6 space-y-8">
-				{#if currentContentSidebarMode === 'content' && currentPath.startsWith('/admin/content')}
-					<!-- Content Sidebar -->
-					<ContentSidebar
-						tree={contentTree}
-						isLoading={isLoadingContentTree}
-						selectedPath={selectedContentFile}
-						showBackButton={true}
-						on:select={handleContentSelect}
-						on:addDomain={() => handleAddContent('domain', null)}
-						on:addTopic={(event) => handleAddContent('topic', event.detail)}
-						on:addModule={(event) => handleAddContent('module', event.detail)}
-						on:addArticle={(event) => handleAddContent('article', event.detail)}
-						on:backToMainMenu={() => setContentSidebarMode('main')}
-					/>
-				{:else}
-					<!-- Main Navigation -->
-					{#if currentPath.startsWith('/admin/content')}
-						<!-- Show button to go back to content sidebar when on content page -->
-						<button
-							onclick={() => setContentSidebarMode('content')}
-							class="w-full flex items-center gap-2 text-sm text-blue-600 hover:text-blue-800 mb-4 font-medium px-3 py-2 rounded-md hover:bg-blue-50"
-						>
-							<span>→</span> Go to Content Navigation
-						</button>
-					{/if}
-					
-					<div>
-						<p class="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-3">Navigation</p>
-						<nav class="space-y-1">
-							{#each navItems as item}
-								<button
-									onclick={() => handleNavClick(item)}
-									class={`w-full text-left flex gap-3 rounded-lg px-3 py-2 transition ${isNavActive(item) ? 'bg-blue-50 text-blue-700' : 'text-gray-600 hover:bg-gray-50'}`}
-								>
-									<span class="text-base leading-6">{item.icon}</span>
-									<div class="flex-1">
-										<p class="text-sm font-semibold">{item.label}</p>
-										<p class="text-xs text-gray-500">{item.description}</p>
-									</div>
-								</button>
-							{/each}
-						</nav>
-					</div>
-
-					<div>
-						<p class="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-3">Workspace</p>
-						{#if isLoadingWorkspaces}
-							<p class="text-sm text-gray-500">Loading workspaces…</p>
-						{:else if workspaces.length > 0}
-							<p class="text-base font-semibold text-gray-900">{currentWorkspace}</p>
-							<p class="text-xs text-gray-500">Active workspace</p>
-						{:else}
-							<p class="text-sm text-gray-500">No workspace found</p>
-						{/if}
-						<button
-							onclick={() => showCreateWorkspaceDialog = true}
-							class="mt-4 w-full px-3 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none"
-						>
-							New Workspace
-						</button>
-					</div>
-				{/if}
-			</div>
-		</aside>
-
-		<div class="flex-1 flex flex-col min-h-screen">
-			<header class="bg-white border-b border-gray-200">
-				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-					<div class="flex items-center gap-3">
+	<div class="min-h-screen bg-gray-50 flex flex-col">
+		<!-- Header -->
+		<header class="bg-white border-b border-gray-200 sticky top-0 z-30">
+			<div class="px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+				<!-- Left: Logo + Mobile menu + Workspace -->
+				<div class="flex items-center gap-4">
+					{#if isContentPage}
 						<button
 							onclick={toggleSidebar}
 							class="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 text-gray-600 hover:bg-gray-50"
 							aria-label="Toggle navigation"
 						>
-							☰
+							<Icon icon="tabler:menu-2" class="w-5 h-5" />
 						</button>
-						<div>
-							<p class="text-xs uppercase tracking-wide text-gray-500">Current workspace</p>
-							<p class="text-base font-semibold text-gray-900">{currentWorkspace || 'Loading…'}</p>
+					{/if}
+					
+					<!-- Logo -->
+					<a href="/admin" class="flex items-center gap-2 group">
+						<div class="w-8 h-8 rounded-lg bg-linear-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-sm">
+							E
+						</div>
+						<span class="text-lg font-bold text-gray-900 hidden sm:block">EcoHubs</span>
+					</a>
+
+					<!-- Workspace indicator with edit button -->
+					<div class="flex items-center gap-2 ml-4 pl-4 border-l border-gray-200">
+						<div class="text-sm">
+							<p class="text-xs text-gray-500">Workspace</p>
+							<div class="flex items-center gap-1.5">
+								<span class="font-medium text-gray-900">{currentWorkspace || 'Loading…'}</span>
+								<button
+									onclick={() => showWorkspaceModal = true}
+									class="p-1 rounded hover:bg-gray-100 text-gray-400 hover:text-gray-600 transition-colors"
+									aria-label="Change workspace"
+								>
+									<Icon icon="tabler:edit" class="w-4 h-4" />
+								</button>
+							</div>
 						</div>
 					</div>
+				</div>
 
-					<div class="flex items-center space-x-4">
-						{#if isLoadingChanges}
-							<div class="text-sm text-gray-500">Loading changes…</div>
-						{:else if workspaceChanges && workspaceChanges.files.length > 0}
+				<!-- Right: Actions + User menu -->
+				<div class="flex items-center gap-3">
+					{#if !isContentPage}
+						<button
+							onclick={() => goto('/admin/content')}
+							class="px-3 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center gap-2 transition-colors"
+						>
+							<Icon icon="tabler:layout-sidebar" class="w-4 h-4" />
+							<span class="hidden sm:inline">Content</span>
+						</button>
+					{/if}
+
+					<!-- Review & Publish button -->
+					{#if !isLoadingChanges}
+						{#if uncommittedCount > 0}
 							<button
 								onclick={() => showReviewModal = true}
-								class="px-4 py-2 text-sm bg-green-600 text-white rounded-md hover:bg-green-700 focus:outline-none flex items-center gap-2"
+								class="px-3 py-2 text-sm bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 flex items-center gap-2 transition-colors"
 							>
-								Review & Publish Changes
-								<span class="bg-green-700 text-white text-xs px-2 py-1 rounded-full">
-									{workspaceChanges.files.length}
+								<Icon icon="tabler:git-pull-request" class="w-4 h-4" />
+								<span class="hidden sm:inline">Review & Publish</span>
+								<span class="bg-green-500 text-white text-xs px-1.5 py-0.5 rounded-full min-w-[20px] text-center">
+									{uncommittedCount}
 								</span>
 							</button>
 						{:else}
-							<div class="text-sm text-gray-500">No changes to publish</div>
+							<div class="text-sm text-gray-400 hidden sm:flex items-center gap-1.5">
+								<Icon icon="tabler:check" class="w-4 h-4" />
+								No pending changes
+							</div>
 						{/if}
+					{/if}
 
-						{#if isLoadingWorkspaces}
-							<div class="text-sm text-gray-500">Loading workspaces…</div>
-						{:else if workspaces.length > 0}
-							<select 
-								value={currentWorkspace}
-								onchange={(e) => switchWorkspace(e.currentTarget.value)}
-								disabled={isSwitchingWorkspace}
-								class="block w-48 px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-							>
-								{#each workspaces as workspace}
-									<option value={workspace.name}>
-										{workspace.name}
-										{#if workspace.isDefault} (default){/if}
-									</option>
-								{/each}
-							</select>
-						{/if}
+					<!-- User Menu -->
+					<UserMenu user={data?.user} />
+				</div>
+			</div>
+		</header>
 
+		<!-- Main layout -->
+		<div class="flex flex-1">
+			<!-- Mobile sidebar overlay -->
+			{#if isContentPage}
+				<div 
+					class={`fixed inset-0 bg-black/40 z-30 transition-opacity duration-200 lg:hidden ${isSidebarOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} 
+					onclick={closeSidebar}
+					onkeydown={(e) => e.key === 'Escape' && closeSidebar()}
+					role="button"
+					tabindex="-1"
+					aria-label="Close sidebar"
+				></div>
+
+				<!-- Sidebar - only on content page -->
+				<aside 
+					class={`fixed inset-y-0 left-0 z-40 w-72 bg-white border-r border-gray-200 shadow-xl transform transition-transform duration-300 lg:static lg:translate-x-0 lg:shadow-none lg:mt-0 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`} 
+					aria-label="Content navigation"
+				>
+					<!-- Mobile header -->
+					<div class="flex items-center justify-between px-4 h-16 border-b border-gray-100 lg:hidden">
+						<span class="text-sm font-semibold text-gray-900">Content</span>
 						<button
-							onclick={() => showCreateWorkspaceDialog = true}
-							class="px-3 py-2 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none"
+							onclick={closeSidebar}
+							class="inline-flex h-8 w-8 items-center justify-center rounded-md text-gray-500 hover:bg-gray-100"
+							aria-label="Close sidebar"
 						>
-							New Workspace
-						</button>
-
-						<button
-							onclick={logout}
-							class="px-3 py-2 text-sm text-gray-600 hover:text-gray-900 focus:outline-none"
-						>
-							Logout
+							<Icon icon="tabler:x" class="w-5 h-5" />
 						</button>
 					</div>
-				</div>
-			</header>
+					
+					<div class="h-[calc(100%-4rem)] lg:h-full overflow-y-auto px-4 py-6">
+						<ContentSidebar
+							tree={contentTree}
+							isLoading={isLoadingContentTree}
+							selectedPath={selectedContentFile}
+							showBackButton={false}
+							workspaceChanges={workspaceChanges?.files}
+							on:select={handleContentSelect}
+							on:addDomain={() => handleAddContent('domain', null)}
+							on:addTopic={(event) => handleAddContent('topic', event.detail)}
+							on:addModule={(event) => handleAddContent('module', event.detail)}
+							on:addArticle={(event) => handleAddContent('article', event.detail)}
+						/>
+					</div>
+				</aside>
+			{/if}
 
+			<!-- Main content area -->
 			<main class="flex-1 w-full">
-				<div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+				<div class={`py-6 px-4 sm:px-6 lg:px-8 ${isContentPage ? '' : 'max-w-5xl mx-auto'}`}>
 					{@render children()}
 				</div>
 			</main>
 		</div>
 	</div>
 
-	{#if showCreateWorkspaceDialog}
-		<div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-			<div class="bg-white rounded-lg p-6 w-96">
-				<h3 class="text-lg font-medium text-gray-900 mb-4">Create New Workspace</h3>
-				
-				<div class="mb-4">
-					<label class="block text-sm font-medium text-gray-700 mb-2">
-						Workspace Name
-					</label>
-					<input
-						type="text"
-						bind:value={newWorkspaceName}
-						placeholder="my-new-workspace"
-						class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-					/>
-					<p class="mt-1 text-xs text-gray-500">
-						Use letters, numbers, dots, hyphens, and underscores only
-					</p>
-				</div>
-
-				<div class="flex justify-end space-x-2">
-					<button
-						onclick={() => {
-							showCreateWorkspaceDialog = false;
-							newWorkspaceName = '';
-						}}
-						class="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 focus:outline-none"
-					>
-						Cancel
-					</button>
-					<button
-						onclick={createWorkspace}
-						disabled={!newWorkspaceName.trim()}
-						class="px-4 py-2 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500"
-					>
-						Create Workspace
-					</button>
-				</div>
-			</div>
-		</div>
-	{/if}
+	<!-- Workspace Modal -->
+	<WorkspaceModal
+		bind:isOpen={showWorkspaceModal}
+		workspaces={workspaces}
+		currentWorkspace={currentWorkspace}
+		isLoading={isLoadingWorkspaces}
+		onClose={() => showWorkspaceModal = false}
+		onSwitch={switchWorkspace}
+		onCreate={createWorkspace}
+	/>
 
 	<!-- Review Changes Modal -->
 	<ReviewChangesModal
