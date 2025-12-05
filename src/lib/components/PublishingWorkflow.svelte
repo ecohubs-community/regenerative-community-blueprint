@@ -15,6 +15,7 @@
 		action: () => Promise<void>;
 		disabled?: boolean;
 		disabledReason?: string;
+		isDangerous?: boolean;
 	}
 
 	let { 
@@ -69,6 +70,14 @@
 			description: 'Remove content from publication',
 			icon: '🔒',
 			action: async () => await onPublish('unpublish')
+		},
+		{
+			id: 'delete',
+			name: 'Delete',
+			description: 'Delete article',
+			icon: '🗑️',
+			action: async () => await onPublish('delete'),
+			isDangerous: true
 		}
 	];
 
@@ -150,7 +159,7 @@
 	});
 </script>
 
-<div class="publishing-workflow bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+<div class="">
 	<h2 class="text-lg font-semibold text-gray-900 mb-4">Publishing Workflow</h2>
 
 	<!-- Publishing Status -->
@@ -207,12 +216,12 @@
 		<h3 class="text-sm font-medium text-gray-900">Available Actions</h3>
 		
 		{#each publishActions as action}
-			<div class="flex items-center justify-between p-3 border border-gray-200 rounded-lg hover:bg-gray-50 {getActionDisabled(action) ? 'opacity-50' : ''}">
+			<div class="flex items-center justify-between p-3 border { action.isDangerous ? 'border-red-200 hover:bg-red-50' : 'border-gray-200 hover:bg-gray-50'} rounded-lg  {getActionDisabled(action) ? 'opacity-50' : ''}">
 				<div class="flex items-center space-x-3">
 					<span class="text-xl">{action.icon}</span>
 					<div>
-						<div class="font-medium text-gray-900">{action.name}</div>
-						<div class="text-sm text-gray-600">{action.description}</div>
+						<div class="font-medium {action.isDangerous ? 'text-red-600' : 'text-gray-900'}">{action.name}</div>
+						<div class="text-sm {action.isDangerous ? 'text-red-600' : 'text-gray-600'}">{action.description}</div>
 						{#if getActionDisabled(action) && getActionDisabledReason(action)}
 							<div class="text-xs text-red-600 mt-1">{getActionDisabledReason(action)}</div>
 						{/if}
@@ -222,7 +231,7 @@
 				<button
 					onclick={() => executeAction(action)}
 					disabled={getActionDisabled(action) || isPublishing}
-					class="px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+					class="px-3 py-1 {action.isDangerous ? 'bg-red-600 hover:bg-red-700' : 'bg-blue-600 hover:bg-blue-700'} text-white text-sm rounded  disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
 				>
 					Execute
 				</button>
