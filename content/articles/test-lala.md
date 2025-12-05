@@ -9,7 +9,6 @@ climate:
 budget: high
 size: 
   - 5-10
-  - 10-50
 summary: null
 id: ea7405cd
 ---
