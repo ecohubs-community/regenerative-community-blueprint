@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from '$app/state';
   import { domainBySlug, topicBySlug, moduleBySlug, articleBySlug } from '$lib/stores/graph';
+  import Icon from '@iconify/svelte';
 
   const segments = $derived(() => {
     const { params } = page;
@@ -48,9 +49,7 @@
           <span class="text-text-primary font-medium">{segment.label}</span>
         {/if}
         {#if i < segments().length - 1}
-          <svg class="w-4 h-4 mx-2 text-text-tertiary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
+          <Icon icon="tabler:chevron-right" class="w-4 h-4 mx-2 text-text-tertiary" />
         {/if}
       </li>
     {/each}

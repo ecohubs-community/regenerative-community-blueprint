@@ -46,6 +46,7 @@
 		]
 	},
 	"dependencies": {
+		"@iconify/svelte": "^5.1.0",
 		"@milkdown/core": "^7.17.2",
 		"@milkdown/crepe": "^7.17.2",
 		"@milkdown/ctx": "^7.17.2",

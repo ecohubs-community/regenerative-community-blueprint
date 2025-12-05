@@ -1,6 +1,7 @@
 <script lang="ts">
 	import ArticleMetadataEditor from './ArticleMetadataEditor.svelte';
 	import PublishingWorkflow from '../PublishingWorkflow.svelte';
+	import Icon from '@iconify/svelte';
 
 	interface Frontmatter {
 		id?: string;
@@ -74,14 +75,7 @@
 			class="p-1.5 rounded-lg hover:bg-gray-200 transition-colors"
 			aria-label="Close sidebar"
 		>
-			<svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-				<path
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					stroke-width="2"
-					d="M6 18L18 6M6 6l12 12"
-				/>
-			</svg>
+			<Icon icon="tabler:x" class="w-5 h-5 text-gray-500" />
 		</button>
 	</div>
 
