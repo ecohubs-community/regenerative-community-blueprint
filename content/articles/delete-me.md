@@ -2,10 +2,11 @@
 title: Delete me!
 modules: 
   - Test module
-climate: 
-budget: 
-size: 
-summary: 
+climate: null
+budget: null
+size: null
+summary: null
 ---
+
 
 Content goes here...
