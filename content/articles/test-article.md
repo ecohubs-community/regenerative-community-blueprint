@@ -16,6 +16,7 @@ id: 8b49ffa8
 <br />
 
 * Some bullet list
+
 * Some other point
 
 | Nice table col 1 | col 2  | cool col 3 |
