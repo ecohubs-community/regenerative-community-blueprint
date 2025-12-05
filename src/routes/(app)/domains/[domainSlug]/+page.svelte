@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { page } from '$app/stores';
-  import { domains, topics, modules, articles, getDomainBySlug } from '$lib/stores/graph';
+  import { page } from '$app/state';
+  import { domainBySlug, topics, modules } from '$lib/stores/graph';
   import type { Topic } from '$lib/server/graph';
   import Card from '$lib/components/common/Card.svelte';
 
-  const domain = $derived(() => getDomainBySlug($page.params.domainSlug!));
+  const domain = $derived(() => $domainBySlug.get(page.params.domainSlug!));
   const domainTopics = $derived(() => {
     const d = domain();
     if (!d) return [];
@@ -47,6 +47,6 @@
 {:else}
   <section class="space-y-4">
     <h1 class="text-3xl font-bold text-primary">Domain not found</h1>
-    <p class="text-secondary">The domain you requested does not exist.</p>
+    <p class="text-text-secondary">The domain you requested does not exist.</p>
   </section>
 {/if}

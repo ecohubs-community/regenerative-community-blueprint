@@ -28,6 +28,7 @@
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.13.0",
 		"globals": "^16.5.0",
+		"mdsvex": "^0.12.6",
 		"minisearch": "^7.2.0",
 		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",
@@ -69,7 +70,6 @@
 		"dompurify": "^3.3.0",
 		"gray-matter": "^4.0.3",
 		"js-yaml": "^4.1.1",
-		"marked": "^17.0.1",
 		"prosemirror-model": "^1.25.4",
 		"prosemirror-view": "^1.41.4"
 	}

@@ -1,28 +1,34 @@
 <script lang="ts">
-  import { page } from '$app/stores';
-  import { getDomainBySlug, getTopicBySlug, getModuleBySlug, getArticleBySlug } from '$lib/stores/graph';
+  import { page } from '$app/state';
+  import { domainBySlug, topicBySlug, moduleBySlug, articleBySlug } from '$lib/stores/graph';
 
   const segments = $derived(() => {
-    const { params } = $page;
+    const { params } = page;
     const items: { label: string; href?: string }[] = [{ label: 'Home', href: '/' }];
 
+    // Access stores reactively using $
+    const domainMap = $domainBySlug;
+    const topicMap = $topicBySlug;
+    const moduleMap = $moduleBySlug;
+    const articleMap = $articleBySlug;
+
     if (params.domainSlug) {
-      const domain = getDomainBySlug(params.domainSlug);
+      const domain = domainMap.get(params.domainSlug);
       if (domain) items.push({ label: domain.title, href: `/domains/${domain.slug}` });
     }
 
     if (params.domainSlug && params.topicSlug) {
-      const topic = getTopicBySlug(params.topicSlug);
+      const topic = topicMap.get(params.topicSlug);
       if (topic) items.push({ label: topic.title, href: `/domains/${params.domainSlug}/${topic.slug}` });
     }
 
     if (params.domainSlug && params.topicSlug && params.moduleSlug) {
-      const module = getModuleBySlug(params.moduleSlug);
+      const module = moduleMap.get(params.moduleSlug);
       if (module) items.push({ label: module.title, href: `/domains/${params.domainSlug}/${params.topicSlug}/${module.slug}` });
     }
 
     if (params.domainSlug && params.topicSlug && params.moduleSlug && params.articleSlug) {
-      const article = getArticleBySlug(params.articleSlug);
+      const article = articleMap.get(params.articleSlug);
       if (article) items.push({ label: article.title });
     }
 
