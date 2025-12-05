@@ -2,6 +2,7 @@
   import { sidebarOpen, toggleTheme } from '$lib/stores/ui';
   import SearchBar from '$lib/components/search/SearchBar.svelte';
   import Button from '$lib/components/common/Button.svelte';
+  import Icon from '@iconify/svelte';
 </script>
 
 <header class="sticky top-0 z-30 border-b border-border bg-background/80 backdrop-blur-md">
@@ -15,9 +16,7 @@
         onclick={() => sidebarOpen.update((v) => !v)}
         aria-label="Toggle navigation"
       >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+        <Icon icon="tabler:menu-2" class="w-6 h-6" />
       </Button>
       
       <a href="/" class="flex items-center gap-2 group">
@@ -41,9 +40,7 @@
         onclick={toggleTheme}
         aria-label="Toggle theme"
       >
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-        </svg>
+        <Icon icon="tabler:sun-moon" class="w-5 h-5" />
       </Button>
       
       <div class="hidden md:flex gap-2">

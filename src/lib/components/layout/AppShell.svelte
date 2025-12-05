@@ -4,6 +4,7 @@
   import Breadcrumbs from './Breadcrumbs.svelte';
   import Footer from './Footer.svelte';
   import { sidebarOpen } from '$lib/stores/ui';
+  import Icon from '@iconify/svelte';
 
   let { children } = $props();
 </script>
@@ -34,7 +35,7 @@
         <aside class="fixed left-0 top-0 h-full w-72 bg-surface border-r border-border z-50 shadow-2xl p-4 overflow-y-auto">
           <div class="flex justify-end mb-4">
              <button onclick={() => sidebarOpen.set(false)} aria-label="Close sidebar" class="p-2 rounded-md hover:bg-border">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                <Icon icon="tabler:x" class="w-5 h-5" />
              </button>
           </div>
           <SidebarNav />
