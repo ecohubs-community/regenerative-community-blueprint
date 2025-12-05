@@ -2,7 +2,8 @@
 title: Test Article
 modules: 
   - Test module
-climate: null
+climate: 
+  - temperate
 budget: null
 size: null
 summary: null
