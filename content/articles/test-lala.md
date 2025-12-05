@@ -20,3 +20,11 @@ asdasd
 
 ***
 
+<br />
+
+> My Quote of the day: ... quote end
+
+<br />
+
+<br />
+
