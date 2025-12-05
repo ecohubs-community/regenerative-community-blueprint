@@ -2,7 +2,8 @@
 title: Delete me!
 modules: 
   - Test module
-climate: null
+climate: 
+  - temperate
 budget: null
 size: null
 summary: null
