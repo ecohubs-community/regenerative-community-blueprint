@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
+import { compile } from 'mdsvex';
 
 const CONTENT_ROOT = 'content';
 
@@ -87,13 +88,25 @@ export async function readArticleBody(slug: string): Promise<ArticleBody | null>
   try {
     const raw = await fs.readFile(file, 'utf8');
     const parsed = matter(raw);
+    const compiled = await compile(parsed.content);
+    
     return {
       slug,
-      body: parsed.content,
+      body: compiled?.code || parsed.content,
       data: parsed.data
     };
   } catch (error) {
     console.warn(`[content] Failed to load article body for slug "${slug}":`, error);
     return null;
+  }
+}
+
+export async function compileMarkdown(markdown: string): Promise<string> {
+  try {
+    const compiled = await compile(markdown);
+    return compiled?.code || markdown;
+  } catch (error) {
+    console.warn('[content] Failed to compile markdown:', error);
+    return markdown;
   }
 }

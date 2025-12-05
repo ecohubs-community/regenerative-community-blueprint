@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { page } from '$app/stores';
-  import { domains, topics, modules, articles, getDomainBySlug, getTopicBySlug } from '$lib/stores/graph';
+  import { page } from '$app/state';
+  import { domainBySlug, topicBySlug, modules } from '$lib/stores/graph';
   import type { Module } from '$lib/server/graph';
   import Card from '$lib/components/common/Card.svelte';
 
-  const domain = $derived(() => getDomainBySlug($page.params.domainSlug!));
-  const topic = $derived(() => getTopicBySlug($page.params.topicSlug!));
+  const domain = $derived(() => $domainBySlug.get(page.params.domainSlug!));
+  const topic = $derived(() => $topicBySlug.get(page.params.topicSlug!));
   const topicModules = $derived(() => {
     const t = topic();
     if (!t) return [];
@@ -45,6 +45,6 @@
 {:else}
   <section class="space-y-4">
     <h1 class="text-3xl font-bold text-primary">Topic not found</h1>
-    <p class="text-secondary">The topic you requested does not exist.</p>
+    <p class="text-text-secondary">The topic you requested does not exist.</p>
   </section>
 {/if}

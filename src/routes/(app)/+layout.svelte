@@ -9,7 +9,9 @@
 
   // Initialize graph store from server data
   $effect(() => {
-    graph.set(data.graph);
+    if (data.graph) {
+      graph.set(data.graph);
+    }
   });
 
   // Persist theme preference

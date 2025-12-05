@@ -1,12 +1,12 @@
 <script lang="ts">
   import { page } from '$app/state';
-  import { articles, getDomainBySlug, getTopicBySlug, getModuleBySlug } from '$lib/stores/graph';
+  import { domainBySlug, topicBySlug, moduleBySlug, articles } from '$lib/stores/graph';
   import type { Article } from '$lib/server/graph';
   import Card from '$lib/components/common/Card.svelte';
 
-  const domain = $derived(() => getDomainBySlug(page.params.domainSlug!));
-  const topic = $derived(() => getTopicBySlug(page.params.topicSlug!));
-  const module = $derived(() => getModuleBySlug(page.params.moduleSlug!));
+  const domain = $derived(() => $domainBySlug.get(page.params.domainSlug!));
+  const topic = $derived(() => $topicBySlug.get(page.params.topicSlug!));
+  const module = $derived(() => $moduleBySlug.get(page.params.moduleSlug!));
   const moduleArticles = $derived(() => {
     const m = module();
     if (!m) return [];
@@ -53,6 +53,6 @@
 {:else}
   <section class="space-y-4">
     <h1 class="text-3xl font-bold text-primary">Module not found</h1>
-    <p class="text-secondary">The module you requested does not exist.</p>
+    <p class="text-text-secondary">The module you requested does not exist.</p>
   </section>
 {/if}
