@@ -73,6 +73,13 @@
 					frontmatter: data.frontmatter || {},
 					content: data.content || ''
 				};
+			} else if (response.status === 404) {
+				// File no longer exists (e.g. deleted in this workspace)
+				console.warn('File not found, clearing selection:', path);
+				selectedFile = null;
+				fileContent = null;
+				showSidebar = false;
+				await loadContentTree();
 			} else {
 				fileContent = null;
 			}
@@ -100,7 +107,12 @@
 			});
 
 			if (!response.ok) {
-				throw new Error('Failed to save content');
+				if (response.status === 409) {
+					const data = await response.json().catch(() => ({}));
+					alert(data.error || 'Content conflict: this file has changed since you opened it. Please reload and try again.');
+				} else {
+					throw new Error('Failed to save content');
+				}
 			}
 			
 			// Return success for the editor to update its status
@@ -127,7 +139,7 @@
 				body: JSON.stringify({ path: selectedFile })
 			});
 
-			if (response.ok) {
+			if (response.ok || response.status === 404) {
 				// Clear selection and reload tree
 				selectedFile = null;
 				fileContent = null;
