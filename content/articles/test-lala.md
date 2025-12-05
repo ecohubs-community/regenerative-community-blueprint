@@ -7,7 +7,8 @@ climate:
   - arid
   - continental
 budget: high
-size: null
+size: 
+  - 5-10
 summary: null
 id: ea7405cd
 ---
