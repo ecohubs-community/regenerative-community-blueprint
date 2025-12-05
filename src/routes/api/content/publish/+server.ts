@@ -1,23 +1,19 @@
 import { json, type RequestHandler } from '@sveltejs/kit';
-import { Octokit } from '@octokit/rest';
-import { GITHUB_OWNER, GITHUB_REPO, GITHUB_TOKEN } from '$env/static/private';
-
-function getGitHubClient(): Octokit {
-	const token = GITHUB_TOKEN;
-	if (!token) {
-		throw new Error('GITHUB_TOKEN environment variable is not set');
-	}
-
-	return new Octokit({
-		auth: token
-	});
-}
+import { getOctokit } from '$lib/server/github';
+import { githubConfig } from '$lib/server/env';
 
 export const POST: RequestHandler = async ({ request, cookies }) => {
 	const sessionCookie = cookies.get('session');
 
 	if (!sessionCookie) {
 		return json({ error: 'Unauthorized' }, { status: 401 });
+	}
+
+	let session;
+	try {
+		session = JSON.parse(sessionCookie);
+	} catch {
+		return json({ error: 'Invalid session' }, { status: 401 });
 	}
 
 	try {
@@ -27,9 +23,10 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 			return json({ error: 'Path and action are required' }, { status: 400 });
 		}
 
-		const octokit = getGitHubClient();
-		const owner = GITHUB_OWNER!;
-		const repo = GITHUB_REPO!;
+		const octokit = getOctokit(session.access_token);
+		const owner = githubConfig.owner!;
+		const repo = githubConfig.repo!;
+		const branch = session.currentBranch || `${session.user.login}/workspace`;
 
 		// Get current branch
 		const { data: branchData } = await octokit.rest.repos.getBranch({
@@ -74,8 +71,29 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 			}
 		}
 
-		// For publish action, we might want to merge to main or create a release
+		// For publish action, cleanup orphaned images and create a release
 		if (action === 'publish') {
+			// First, cleanup orphaned images
+			try {
+				const url = new URL(request.url);
+				const cleanupResponse = await fetch(`${url.origin}/api/content/cleanup-orphaned-images`, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+						'Cookie': `session=${sessionCookie}`
+					},
+					body: JSON.stringify({ branch })
+				});
+
+				if (cleanupResponse.ok) {
+					const cleanupData = await cleanupResponse.json();
+					console.log('Cleanup completed:', cleanupData);
+				}
+			} catch (cleanupError) {
+				console.warn('Failed to cleanup orphaned images:', cleanupError);
+				// Continue even if cleanup fails
+			}
+
 			// Create a tag for the published version
 			const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
 			const tagName = `publish-${path.replace(/[^a-zA-Z0-9]/g, '-')}-${timestamp}`;
