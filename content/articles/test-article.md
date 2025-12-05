@@ -35,5 +35,5 @@ Ui, some code!! Hear hear!
 
 <br />
 
-![1.00]()
+![1.00](/api/image-proxy/uploads/8b49ffa8/1764954265444-gaialogo.png?branch=st3v3y%2Ftest-workspace)
 
