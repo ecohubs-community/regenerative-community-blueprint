@@ -52,12 +52,15 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 			branch
 		});
 
-		// Return the URL that will be served by SvelteKit static files
-		const url = `/uploads/${articleId}/${timestamp}-${sanitizedName}`;
+		// Return the proxy URL for workspace content (will work immediately in editor/preview)
+		// The path will be correct for published content too (static files)
+		const proxyUrl = `/api/image-proxy/uploads/${articleId}/${timestamp}-${sanitizedName}?branch=${encodeURIComponent(branch)}`;
+		const staticUrl = `/uploads/${articleId}/${timestamp}-${sanitizedName}`;
 		
 		return json({
 			success: true,
-			url,
+			url: proxyUrl,  // Use proxy URL so it works immediately
+			staticUrl,      // Also return static URL for reference
 			path
 		});
 	} catch (error) {
