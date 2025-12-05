@@ -5,6 +5,7 @@
 	import '@milkdown/crepe/theme/frame.css';
 	
 	interface Frontmatter {
+		id?: string;
 		title?: string;
 		climate?: string[];
 		budget?: string;
@@ -12,6 +13,11 @@
 		modules?: string[];
 		description?: string;
 		[key: string]: unknown;
+	}
+
+	// Generate a short unique ID (8 characters from UUID)
+	function generateArticleId(): string {
+		return crypto.randomUUID().split('-')[0];
 	}
 
 	interface EditorContent {
@@ -84,12 +90,14 @@
 	}
 
 	async function uploadImage(file: File): Promise<string> {
+		// Ensure article has an ID
+		if (!content.frontmatter.id) {
+			content.frontmatter.id = generateArticleId();
+		}
+
 		const formData = new FormData();
 		formData.append('file', file);
-		
-		// Upload to a dedicated images directory
-		const imagePath = `content/images/${Date.now()}-${file.name}`;
-		formData.append('path', imagePath);
+		formData.append('articleId', content.frontmatter.id);
 
 		const response = await fetch('/api/content/upload-image', {
 			method: 'POST',
@@ -101,11 +109,16 @@
 		}
 
 		const data = await response.json();
-		return data.url || `/${imagePath}`;
+		return data.url;
 	}
 
 	onMount(async () => {
 		if (!editorContainer) return;
+
+		// Ensure article has an ID when editor is mounted
+		if (!content.frontmatter.id) {
+			content.frontmatter.id = generateArticleId();
+		}
 
 		try {
 			crepeInstance = new Crepe({

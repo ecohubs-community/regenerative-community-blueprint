@@ -19,10 +19,14 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 	try {
 		const formData = await request.formData();
 		const file = formData.get('file') as File;
-		const customPath = formData.get('path') as string | null;
+		const articleId = formData.get('articleId') as string | null;
 
 		if (!file) {
 			return json({ error: 'No file provided' }, { status: 400 });
+		}
+
+		if (!articleId) {
+			return json({ error: 'Article ID is required' }, { status: 400 });
 		}
 
 		// Read file as base64
@@ -30,10 +34,10 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 		const buffer = Buffer.from(arrayBuffer);
 		const base64Content = buffer.toString('base64');
 
-		// Generate path
+		// Generate path in static/uploads/{articleId}/
 		const timestamp = Date.now();
 		const sanitizedName = file.name.replace(/[^a-zA-Z0-9.-]/g, '_');
-		const path = customPath || `content/images/${timestamp}-${sanitizedName}`;
+		const path = `static/uploads/${articleId}/${timestamp}-${sanitizedName}`;
 
 		const octokit = getOctokit(session.access_token);
 		const branch = session.currentBranch || `${session.user.login}/workspace`;
@@ -43,15 +47,17 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 			owner: githubConfig.owner!,
 			repo: githubConfig.repo!,
 			path,
-			message: `Upload image: ${file.name}`,
+			message: `Upload image for article ${articleId}: ${file.name}`,
 			content: base64Content,
 			branch
 		});
 
-		// Return the path that can be used in markdown
+		// Return the URL that will be served by SvelteKit static files
+		const url = `/uploads/${articleId}/${timestamp}-${sanitizedName}`;
+		
 		return json({
 			success: true,
-			url: `/${path}`,
+			url,
 			path
 		});
 	} catch (error) {
