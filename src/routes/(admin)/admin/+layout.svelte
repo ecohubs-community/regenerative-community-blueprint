@@ -260,8 +260,17 @@
 		};
 		window.addEventListener('reloadContentTree', handleReloadContentTree);
 		
+		// Listen for open review modal event (from dashboard quick actions)
+		const handleOpenReviewModal = () => {
+			if (workspaceChanges && workspaceChanges.files.length > 0) {
+				showReviewModal = true;
+			}
+		};
+		window.addEventListener('openReviewModal', handleOpenReviewModal);
+		
 		return () => {
 			window.removeEventListener('reloadContentTree', handleReloadContentTree);
+			window.removeEventListener('openReviewModal', handleOpenReviewModal);
 		};
 	});
 
@@ -331,15 +340,6 @@
 
 				<!-- Right: Actions + User menu -->
 				<div class="flex items-center gap-3">
-					{#if !isContentPage}
-						<button
-							onclick={() => goto('/admin/content')}
-							class="px-3 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center gap-2 transition-colors"
-						>
-							<Icon icon="tabler:layout-sidebar" class="w-4 h-4" />
-							<span class="hidden sm:inline">Content</span>
-						</button>
-					{/if}
 
 					<!-- Review & Publish button -->
 					{#if !isLoadingChanges}
