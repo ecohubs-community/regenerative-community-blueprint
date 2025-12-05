@@ -259,7 +259,13 @@ async function getPendingChanges(octokit: Octokit, workspaceBranch: string): Pro
 			head: workspaceBranch
 		});
 
-		return comparison.files?.length || 0;
+		// Filter to only include content/ directory changes
+		// This excludes config files, .env.example, etc. that may differ between branches
+		const contentFiles = comparison.files?.filter(file => 
+			file.filename.startsWith('content/')
+		) || [];
+
+		return contentFiles.length;
 	} catch {
 		return 0;
 	}

@@ -64,7 +64,83 @@
 		addModule: string;
 		addArticle: string;
 		backToMainMenu: void;
+		rename: { path: string; currentName: string; type: string };
+		delete: { path: string; name: string; type: string };
 	}>();
+
+	// Context menu state
+	let showContextMenu = $state<string | null>(null);
+	let showRenameModal = $state<{ path: string; currentName: string; type: string } | null>(null);
+	let showDeleteConfirm = $state<{ path: string; name: string; type: string } | null>(null);
+	let newName = $state('');
+	let isRenaming = $state(false);
+	let isDeleting = $state(false);
+
+	function toggleContextMenu(path: string, event: MouseEvent) {
+		event.stopPropagation();
+		showContextMenu = showContextMenu === path ? null : path;
+	}
+
+	function openRenameModal(item: ContentNode) {
+		const name = item.metadata?.title || item.name.replace(/\.(json|md)$/, '');
+		showRenameModal = { 
+			path: item.path, 
+			currentName: name, 
+			type: currentLevel.slice(0, -1) // Remove 's' from level name
+		};
+		newName = name;
+		showContextMenu = null;
+	}
+
+	function openDeleteConfirm(item: ContentNode) {
+		const name = item.metadata?.title || item.name.replace(/\.(json|md)$/, '');
+		showDeleteConfirm = { 
+			path: item.path, 
+			name, 
+			type: currentLevel.slice(0, -1)
+		};
+		showContextMenu = null;
+	}
+
+	async function handleRename() {
+		if (!showRenameModal || !newName.trim()) return;
+		
+		isRenaming = true;
+		try {
+			dispatch('rename', { 
+				path: showRenameModal.path, 
+				currentName: newName.trim(),
+				type: showRenameModal.type
+			});
+			showRenameModal = null;
+			newName = '';
+		} finally {
+			isRenaming = false;
+		}
+	}
+
+	async function handleDelete() {
+		if (!showDeleteConfirm) return;
+		
+		isDeleting = true;
+		try {
+			dispatch('delete', { 
+				path: showDeleteConfirm.path, 
+				name: showDeleteConfirm.name,
+				type: showDeleteConfirm.type
+			});
+			showDeleteConfirm = null;
+		} finally {
+			isDeleting = false;
+		}
+	}
+
+	// Close context menu when clicking outside
+	function handleClickOutside(event: MouseEvent) {
+		if (showContextMenu) {
+			showContextMenu = null;
+		}
+	}
 
 	// Navigation state
 	type NavigationLevel = 'domains' | 'topics' | 'modules' | 'articles';
@@ -342,7 +418,8 @@
 	}
 </script>
 
-<div class="flex flex-col h-full">
+<!-- svelte-ignore a11y_click_events_have_key_events a11y_no_static_element_interactions -->
+<div class="flex flex-col h-full" onclick={handleClickOutside}>
 	<!-- Back button for content sidebar mode -->
 	{#if showBackButton}
 		<button
@@ -409,27 +486,60 @@
 			{#each currentContent() as item}
 				{@const changeStatus = getFileChangeStatus(item.path)}
 				{@const badge = changeStatus ? getStatusBadge(changeStatus.status) : null}
-				<li>
-					<button 
-						onclick={() => handleItemClick(item)}
-						class={`flex items-center gap-2 px-2 py-2 rounded-md text-sm w-full text-left transition ${
-							currentLevel === 'articles' && selectedPath === item.path 
-								? 'bg-blue-100 text-blue-700' 
-								: 'hover:bg-gray-100'
-						} ${changeStatus?.status === 'removed' ? 'opacity-60 line-through' : ''}`}
-					>
-						<span>{getContentTypeIcon(currentLevel)}</span>
-						<span class="flex-1 truncate">{getItemDisplayName(item)}</span>
-						{#if badge}
-							<span class={`flex items-center gap-1 px-1.5 py-0.5 rounded text-xs font-medium ${badge.color}`} title={badge.label}>
-								<Icon icon={badge.icon} class="w-3 h-3" />
-								<span class="hidden sm:inline">{badge.label}</span>
-							</span>
-						{/if}
+				<li class="relative group">
+					<div class="flex items-center">
+						<button 
+							onclick={() => handleItemClick(item)}
+							class={`flex items-center gap-2 px-2 py-2 rounded-md text-sm flex-1 text-left transition ${
+								currentLevel === 'articles' && selectedPath === item.path 
+									? 'bg-blue-100 text-blue-700' 
+									: 'hover:bg-gray-100'
+							} ${changeStatus?.status === 'removed' ? 'opacity-60 line-through' : ''}`}
+						>
+							<span>{getContentTypeIcon(currentLevel)}</span>
+							<span class="flex-1 truncate">{getItemDisplayName(item)}</span>
+							{#if badge}
+								<span class={`flex items-center gap-1 px-1.5 py-0.5 rounded text-xs font-medium ${badge.color}`} title={badge.label}>
+									<Icon icon={badge.icon} class="w-3 h-3" />
+									<span class="hidden sm:inline">{badge.label}</span>
+								</span>
+							{/if}
+							{#if currentLevel !== 'articles'}
+								<span class="text-gray-400">→</span>
+							{/if}
+						</button>
+						
+						<!-- Context menu button (only for non-articles) -->
 						{#if currentLevel !== 'articles'}
-							<span class="text-gray-400">→</span>
+							<button
+								onclick={(e) => toggleContextMenu(item.path, e)}
+								class="p-1.5 rounded hover:bg-gray-200 opacity-0 group-hover:opacity-100 transition-opacity"
+								title="More actions"
+							>
+								<Icon icon="tabler:dots-vertical" class="w-4 h-4 text-gray-500" />
+							</button>
 						{/if}
-					</button>
+					</div>
+
+					<!-- Context menu dropdown -->
+					{#if showContextMenu === item.path}
+						<div class="absolute right-0 top-full mt-1 z-50 bg-white rounded-lg shadow-lg border border-gray-200 py-1 min-w-[140px]">
+							<button
+								onclick={() => openRenameModal(item)}
+								class="flex items-center gap-2 w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
+							>
+								<Icon icon="tabler:pencil" class="w-4 h-4" />
+								Rename
+							</button>
+							<button
+								onclick={() => openDeleteConfirm(item)}
+								class="flex items-center gap-2 w-full px-3 py-2 text-sm text-red-600 hover:bg-red-50"
+							>
+								<Icon icon="tabler:trash" class="w-4 h-4" />
+								Delete
+							</button>
+						</div>
+					{/if}
 				</li>
 			{/each}
 		</ul>
@@ -449,3 +559,99 @@
 		{/if}
 	{/if}
 </div>
+
+<!-- Rename Modal -->
+{#if showRenameModal}
+	<div class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+		<div class="bg-white rounded-xl shadow-xl max-w-md w-full overflow-hidden">
+			<div class="px-5 py-4 border-b border-gray-100">
+				<h3 class="font-semibold text-gray-900">Rename {showRenameModal.type}</h3>
+			</div>
+			<div class="px-5 py-4">
+				<label for="rename-input" class="block text-sm font-medium text-gray-700 mb-2">
+					New name
+				</label>
+				<input
+					id="rename-input"
+					type="text"
+					bind:value={newName}
+					class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+					placeholder="Enter new name..."
+				/>
+				<p class="text-xs text-gray-500 mt-2">
+					This will update the title in the content file.
+				</p>
+			</div>
+			<div class="flex items-center justify-end gap-3 px-5 py-4 bg-gray-50 border-t border-gray-100">
+				<button
+					onclick={() => { showRenameModal = null; newName = ''; }}
+					class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900"
+				>
+					Cancel
+				</button>
+				<button
+					onclick={handleRename}
+					disabled={isRenaming || !newName.trim()}
+					class="px-4 py-2 text-sm font-medium bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 flex items-center gap-2"
+				>
+					{#if isRenaming}
+						<Icon icon="tabler:loader-2" class="w-4 h-4 animate-spin" />
+						Renaming...
+					{:else}
+						Rename
+					{/if}
+				</button>
+			</div>
+		</div>
+	</div>
+{/if}
+
+<!-- Delete Confirmation Modal -->
+{#if showDeleteConfirm}
+	<div class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+		<div class="bg-white rounded-xl shadow-xl max-w-md w-full overflow-hidden">
+			<div class="px-5 py-4 border-b border-gray-100">
+				<div class="flex items-center gap-3">
+					<div class="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center">
+						<Icon icon="tabler:trash" class="w-5 h-5 text-red-600" />
+					</div>
+					<div>
+						<h3 class="font-semibold text-gray-900">Delete {showDeleteConfirm.type}</h3>
+						<p class="text-sm text-gray-500">This action cannot be undone</p>
+					</div>
+				</div>
+			</div>
+			<div class="px-5 py-4">
+				<p class="text-gray-700">
+					Are you sure you want to delete <strong>"{showDeleteConfirm.name}"</strong>?
+				</p>
+				{#if showDeleteConfirm.type !== 'article'}
+					<p class="text-sm text-amber-600 mt-2">
+						<Icon icon="tabler:alert-triangle" class="w-4 h-4 inline-block mr-1" />
+						This will also delete all associated content (topics, modules, or articles).
+					</p>
+				{/if}
+			</div>
+			<div class="flex items-center justify-end gap-3 px-5 py-4 bg-gray-50 border-t border-gray-100">
+				<button
+					onclick={() => showDeleteConfirm = null}
+					class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900"
+				>
+					Cancel
+				</button>
+				<button
+					onclick={handleDelete}
+					disabled={isDeleting}
+					class="px-4 py-2 text-sm font-medium bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:opacity-50 flex items-center gap-2"
+				>
+					{#if isDeleting}
+						<Icon icon="tabler:loader-2" class="w-4 h-4 animate-spin" />
+						Deleting...
+					{:else}
+						Delete
+					{/if}
+				</button>
+			</div>
+		</div>
+	</div>
+{/if}

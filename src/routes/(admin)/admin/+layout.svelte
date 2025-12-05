@@ -194,7 +194,7 @@
 		window.dispatchEvent(new CustomEvent('addContent', { detail: { type, parent } }));
 	}
 
-	async function handleCreatePR(title: string, body: string) {
+	async function handleCreatePR(title: string, body: string, selectedFiles?: string[]) {
 		const sessionCookie = document.cookie
 			.split('; ')
 			.find(row => row.startsWith('session='))
@@ -207,12 +207,24 @@
 		const session = JSON.parse(decodeURIComponent(sessionCookie));
 		const workspaceBranch = session.currentBranch || `${session.user.login}/workspace`;
 
+		// If selectedFiles is provided, we need to create a selective PR
+		// For now, we create a PR with all changes and note the selection in the body
+		// A more advanced implementation would create a temporary branch with only selected files
+		let prBody = body;
+		if (selectedFiles && selectedFiles.length > 0 && workspaceChanges) {
+			const allFiles = workspaceChanges.files.map(f => f.filename);
+			const excludedFiles = allFiles.filter(f => !selectedFiles.includes(f));
+			if (excludedFiles.length > 0) {
+				prBody += `\n\n> **Note:** This PR includes ${selectedFiles.length} of ${allFiles.length} changed files.`;
+			}
+		}
+
 		const response = await fetch('/api/pull-request/create', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
 				title,
-				body,
+				body: prBody,
 				head: workspaceBranch,
 				base: 'main',
 				draft: false
@@ -232,6 +244,92 @@
 		
 		// Reload workspace changes after PR creation
 		await loadWorkspaceChanges();
+	}
+
+	async function handleRevertFile(path: string) {
+		const response = await fetch('/api/content/revert', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ path })
+		});
+
+		if (!response.ok) {
+			const error = await response.json();
+			throw new Error(error.error || 'Failed to revert file');
+		}
+
+		// Reload content tree and workspace changes
+		loadContentTree();
+		loadWorkspaceChanges();
+	}
+
+	async function handleContentRename(event: CustomEvent<{ path: string; currentName: string; type: string }>) {
+		const { path, currentName } = event.detail;
+		
+		try {
+			// For now, we update the title in the file's metadata
+			// A full rename would require renaming the file path as well
+			const response = await fetch(`/api/content/${path}`);
+			if (!response.ok) throw new Error('Failed to fetch content');
+			
+			const content = await response.json();
+			
+			// Update the title in metadata
+			if (content.metadata) {
+				content.metadata.title = currentName;
+			} else {
+				content.metadata = { title: currentName };
+			}
+			
+			// Save the updated content
+			const saveResponse = await fetch(`/api/content/${path}`, {
+				method: 'PUT',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(content)
+			});
+			
+			if (!saveResponse.ok) {
+				const error = await saveResponse.json();
+				throw new Error(error.error || 'Failed to save');
+			}
+			
+			// Reload content tree
+			loadContentTree();
+			loadWorkspaceChanges();
+		} catch (error) {
+			console.error('Failed to rename:', error);
+			alert('Failed to rename. Please try again.');
+		}
+	}
+
+	async function handleContentDelete(event: CustomEvent<{ path: string; name: string; type: string }>) {
+		const { path, type } = event.detail;
+		
+		try {
+			// For domains/topics/modules, we need recursive delete
+			const isDirectory = type !== 'article';
+			
+			const response = await fetch('/api/content/delete', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ 
+					path,
+					recursive: isDirectory
+				})
+			});
+			
+			if (!response.ok) {
+				const error = await response.json();
+				throw new Error(error.error || 'Failed to delete');
+			}
+			
+			// Reload content tree and workspace changes
+			loadContentTree();
+			loadWorkspaceChanges();
+		} catch (error) {
+			console.error('Failed to delete:', error);
+			alert('Failed to delete. Please try again.');
+		}
 	}
 
 	onMount(() => {
@@ -410,6 +508,8 @@
 							on:addTopic={(event) => handleAddContent('topic', event.detail)}
 							on:addModule={(event) => handleAddContent('module', event.detail)}
 							on:addArticle={(event) => handleAddContent('article', event.detail)}
+							on:rename={handleContentRename}
+							on:delete={handleContentDelete}
 						/>
 					</div>
 				</aside>
@@ -442,6 +542,8 @@
 		currentWorkspace={currentWorkspace}
 		onClose={() => showReviewModal = false}
 		onCreatePR={handleCreatePR}
+		onRevert={handleRevertFile}
+		onRefresh={loadWorkspaceChanges}
 	/>
 {:else}
 	{@render children()}

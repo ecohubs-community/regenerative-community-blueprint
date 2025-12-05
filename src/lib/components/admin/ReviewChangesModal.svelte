@@ -25,7 +25,9 @@
 		workspaceChanges = $bindable<WorkspaceChanges | null>(null),
 		currentWorkspace = '',
 		onClose = () => {},
-		onCreatePR = (_title: string, _body: string) => {}
+		onCreatePR = (_title: string, _body: string, _selectedFiles?: string[]) => {},
+		onRevert = (_path: string) => {},
+		onRefresh = () => {}
 	} = $props();
 
 	let prTitle = $state('');
@@ -34,19 +36,34 @@
 	let selectedFile = $state<FileChange | null>(null);
 	let showDiff = $state(false);
 	let activeStep = $state<'review' | 'details'>('review');
+	let selectedFiles = $state<Set<string>>(new Set());
+	let isReverting = $state<string | null>(null);
+	let showRevertConfirm = $state<FileChange | null>(null);
 
-	// Computed counts
-	const addedCount = $derived(workspaceChanges?.files.filter((f: FileChange) => f.status === 'added').length ?? 0);
-	const modifiedCount = $derived(workspaceChanges?.files.filter((f: FileChange) => f.status === 'modified').length ?? 0);
-	const removedCount = $derived(workspaceChanges?.files.filter((f: FileChange) => f.status === 'removed').length ?? 0);
+	// Computed counts - based on selected files only
+	const selectedFilesArray = $derived(Array.from(selectedFiles));
+	const selectedChanges = $derived(workspaceChanges?.files.filter((f: FileChange) => selectedFiles.has(f.filename)) ?? []);
+	const addedCount = $derived(selectedChanges.filter((f: FileChange) => f.status === 'added').length);
+	const modifiedCount = $derived(selectedChanges.filter((f: FileChange) => f.status === 'modified').length);
+	const removedCount = $derived(selectedChanges.filter((f: FileChange) => f.status === 'removed').length);
+	const allSelected = $derived(workspaceChanges?.files.length === selectedFiles.size);
+	const someSelected = $derived(selectedFiles.size > 0 && !allSelected);
+
+	// Initialize selected files when changes are loaded
+	$effect(() => {
+		if (workspaceChanges && workspaceChanges.files.length > 0) {
+			// Select all files by default
+			selectedFiles = new Set(workspaceChanges.files.map((f: FileChange) => f.filename));
+		}
+	});
 
 	// Auto-generate PR title and body when changes are loaded
 	$effect(() => {
-		if (workspaceChanges && workspaceChanges.files.length > 0) {
+		if (workspaceChanges && selectedChanges.length > 0) {
 			const workspaceName = currentWorkspace.split('/')[1] || currentWorkspace;
 			prTitle = `Update ${workspaceName} workspace`;
 			
-			const fileDescriptions = workspaceChanges.files.map((file: FileChange) => {
+			const fileDescriptions = selectedChanges.map((file: FileChange) => {
 				const status = file.status.charAt(0).toUpperCase() + file.status.slice(1);
 				const filename = file.filename.replace(/^content\//, '');
 				return `- ${status}: ${filename}`;
@@ -60,6 +77,24 @@ ${fileDescriptions}
 *This pull request was created from the admin panel.*`;
 		}
 	});
+
+	function toggleFileSelection(filename: string) {
+		const newSet = new Set(selectedFiles);
+		if (newSet.has(filename)) {
+			newSet.delete(filename);
+		} else {
+			newSet.add(filename);
+		}
+		selectedFiles = newSet;
+	}
+
+	function toggleAllFiles() {
+		if (allSelected) {
+			selectedFiles = new Set();
+		} else {
+			selectedFiles = new Set(workspaceChanges?.files.map((f: FileChange) => f.filename) ?? []);
+		}
+	}
 
 	// Reset step when modal opens
 	$effect(() => {
@@ -113,17 +148,38 @@ ${fileDescriptions}
 	}
 
 	async function handleCreatePR() {
-		if (!prTitle.trim()) return;
+		if (!prTitle.trim() || selectedFiles.size === 0) return;
 		
 		isCreatingPR = true;
 		try {
-			await onCreatePR(prTitle.trim(), prBody.trim());
+			// Pass selected files if not all are selected
+			const filesToInclude = allSelected ? undefined : selectedFilesArray;
+			await onCreatePR(prTitle.trim(), prBody.trim(), filesToInclude);
 			onClose();
 		} catch (error) {
 			console.error('Failed to create PR:', error);
 			alert('Failed to create pull request. Please try again.');
 		} finally {
 			isCreatingPR = false;
+		}
+	}
+
+	async function handleRevert(file: FileChange) {
+		isReverting = file.filename;
+		try {
+			await onRevert(file.filename);
+			// Remove from selected files
+			const newSet = new Set(selectedFiles);
+			newSet.delete(file.filename);
+			selectedFiles = newSet;
+			// Refresh the changes list
+			onRefresh();
+			showRevertConfirm = null;
+		} catch (error) {
+			console.error('Failed to revert file:', error);
+			alert('Failed to revert file. Please try again.');
+		} finally {
+			isReverting = null;
 		}
 	}
 
@@ -226,38 +282,69 @@ ${fileDescriptions}
 					{#if activeStep === 'review'}
 						<!-- Summary Stats -->
 						<div class="px-6 py-4 bg-gray-50 border-b border-gray-100">
-							<div class="flex items-center gap-4">
-								<div class="flex items-center gap-2">
-									<span class="text-2xl font-bold text-gray-900">{workspaceChanges.files.length}</span>
-									<span class="text-sm text-gray-500">changes</span>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center gap-4">
+									<div class="flex items-center gap-2">
+										<span class="text-2xl font-bold text-gray-900">{selectedFiles.size}</span>
+										<span class="text-sm text-gray-500">of {workspaceChanges.files.length} selected</span>
+									</div>
+									<div class="h-8 w-px bg-gray-200"></div>
+									{#if addedCount > 0}
+										<div class="flex items-center gap-1.5 text-green-600">
+											<Icon icon="tabler:plus" class="w-4 h-4" />
+											<span class="text-sm font-medium">{addedCount} new</span>
+										</div>
+									{/if}
+									{#if modifiedCount > 0}
+										<div class="flex items-center gap-1.5 text-amber-600">
+											<Icon icon="tabler:pencil" class="w-4 h-4" />
+											<span class="text-sm font-medium">{modifiedCount} modified</span>
+										</div>
+									{/if}
+									{#if removedCount > 0}
+										<div class="flex items-center gap-1.5 text-red-600">
+											<Icon icon="tabler:trash" class="w-4 h-4" />
+											<span class="text-sm font-medium">{removedCount} deleted</span>
+										</div>
+									{/if}
 								</div>
-								<div class="h-8 w-px bg-gray-200"></div>
-								{#if addedCount > 0}
-									<div class="flex items-center gap-1.5 text-green-600">
-										<Icon icon="tabler:plus" class="w-4 h-4" />
-										<span class="text-sm font-medium">{addedCount} new</span>
-									</div>
-								{/if}
-								{#if modifiedCount > 0}
-									<div class="flex items-center gap-1.5 text-amber-600">
-										<Icon icon="tabler:pencil" class="w-4 h-4" />
-										<span class="text-sm font-medium">{modifiedCount} modified</span>
-									</div>
-								{/if}
-								{#if removedCount > 0}
-									<div class="flex items-center gap-1.5 text-red-600">
-										<Icon icon="tabler:trash" class="w-4 h-4" />
-										<span class="text-sm font-medium">{removedCount} deleted</span>
-									</div>
-								{/if}
+								<button
+									onclick={toggleAllFiles}
+									class="text-sm text-blue-600 hover:text-blue-700 font-medium"
+								>
+									{allSelected ? 'Deselect all' : 'Select all'}
+								</button>
 							</div>
+							{#if someSelected}
+								<p class="text-xs text-amber-600 mt-2">
+									<Icon icon="tabler:info-circle" class="w-3.5 h-3.5 inline-block mr-1" />
+									Unselected changes will remain in your workspace as pending changes.
+								</p>
+							{/if}
 						</div>
 
 						<!-- Files List -->
 						<div class="px-6 py-4">
 							<div class="space-y-2">
 								{#each workspaceChanges.files as file}
-									<div class={`flex items-center gap-3 p-3 rounded-xl border transition-colors ${getStatusColor(file.status)}`}>
+									<div class={`flex items-center gap-3 p-3 rounded-xl border transition-colors ${
+										selectedFiles.has(file.filename) ? getStatusColor(file.status) : 'bg-gray-50 border-gray-200 opacity-60'
+									}`}>
+										<!-- Checkbox -->
+										<button
+											onclick={() => toggleFileSelection(file.filename)}
+											class={`w-5 h-5 rounded border-2 flex items-center justify-center transition-colors cursor-pointer ${
+												selectedFiles.has(file.filename) 
+													? 'bg-green-600 border-green-600 text-white' 
+													: 'border-gray-300 hover:border-gray-400'
+											}`}
+											aria-label={selectedFiles.has(file.filename) ? 'Deselect file' : 'Select file'}
+										>
+											{#if selectedFiles.has(file.filename)}
+												<Icon icon="tabler:check" class="w-3 h-3" />
+											{/if}
+										</button>
+
 										<div class={`w-8 h-8 rounded-lg flex items-center justify-center ${
 											file.status === 'added' ? 'bg-green-100' :
 											file.status === 'modified' ? 'bg-amber-100' :
@@ -285,14 +372,28 @@ ${fileDescriptions}
 												{/if}
 											</div>
 										</div>
-										{#if file.patch}
+										<div class="flex items-center gap-1">
+											{#if file.patch}
+												<button
+													onclick={() => viewFileDiff(file)}
+													class="px-2.5 py-1.5 text-xs font-medium text-gray-600 bg-white rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors cursor-pointer"
+												>
+													Diff
+												</button>
+											{/if}
 											<button
-												onclick={() => viewFileDiff(file)}
-												class="px-2.5 py-1.5 text-xs font-medium text-gray-600 bg-white rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors"
+												onclick={() => showRevertConfirm = file}
+												disabled={isReverting === file.filename}
+												class="px-2.5 py-1.5 text-xs font-medium text-red-600 bg-white rounded-lg border border-red-200 hover:bg-red-50 transition-colors disabled:opacity-50 cursor-pointer"
+												title="Revert to main"
 											>
-												View diff
+												{#if isReverting === file.filename}
+													<Icon icon="tabler:loader-2" class="w-3.5 h-3.5 animate-spin" />
+												{:else}
+													<Icon icon="tabler:arrow-back-up" class="w-3.5 h-3.5" />
+												{/if}
 											</button>
-										{/if}
+										</div>
 									</div>
 								{/each}
 							</div>
@@ -384,6 +485,60 @@ ${fileDescriptions}
 						{/if}
 					</button>
 				{/if}
+			</div>
+		</div>
+	</div>
+{/if}
+
+<!-- Revert Confirmation Modal -->
+{#if showRevertConfirm}
+	<div class="fixed inset-0 bg-black/40 backdrop-blur-sm z-60 flex items-center justify-center p-4">
+		<div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden">
+			<div class="px-6 py-5 border-b border-gray-100">
+				<div class="flex items-center gap-3">
+					<div class="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center">
+						<Icon icon="tabler:arrow-back-up" class="w-5 h-5 text-red-600" />
+					</div>
+					<div>
+						<h3 class="font-semibold text-gray-900">Revert to Main</h3>
+						<p class="text-sm text-gray-500">This action cannot be undone</p>
+					</div>
+				</div>
+			</div>
+			<div class="px-6 py-4">
+				<p class="text-gray-700">
+					Are you sure you want to revert <strong class="capitalize">{getFileName(showRevertConfirm.filename)}</strong> to its state on the main branch?
+				</p>
+				{#if showRevertConfirm.status === 'added'}
+					<p class="text-sm text-amber-600 mt-2">
+						<Icon icon="tabler:alert-triangle" class="w-4 h-4 inline-block mr-1" />
+						This file was added in your workspace and will be deleted.
+					</p>
+				{:else}
+					<p class="text-sm text-gray-500 mt-2">
+						Your changes will be replaced with the version from main.
+					</p>
+				{/if}
+			</div>
+			<div class="flex items-center justify-end gap-3 px-6 py-4 bg-gray-50 border-t border-gray-100">
+				<button
+					onclick={() => showRevertConfirm = null}
+					class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 cursor-pointer"
+				>
+					Cancel
+				</button>
+				<button
+					onclick={() => handleRevert(showRevertConfirm!)}
+					disabled={isReverting !== null}
+					class="px-4 py-2 text-sm font-medium bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:opacity-50 flex items-center gap-2 cursor-pointer"
+				>
+					{#if isReverting}
+						<Icon icon="tabler:loader-2" class="w-4 h-4 animate-spin" />
+						Reverting...
+					{:else}
+						Revert
+					{/if}
+				</button>
 			</div>
 		</div>
 	</div>

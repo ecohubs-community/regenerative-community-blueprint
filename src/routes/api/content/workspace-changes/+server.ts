@@ -54,14 +54,20 @@ export async function GET({ cookies }) {
 			per_page: 10
 		});
 
+		// Filter to only include content/ directory changes
+		// This excludes config files, .env.example, etc. that may differ between branches
+		const contentFiles = comparison.files?.filter(file => 
+			file.filename.startsWith('content/')
+		) || [];
+
 		const changes: WorkspaceChanges = {
-			files: comparison.files?.map(file => ({
+			files: contentFiles.map(file => ({
 				filename: file.filename,
 				status: file.status as 'added' | 'modified' | 'removed' | 'renamed',
 				patch: file.patch,
 				additions: file.additions,
 				deletions: file.deletions
-			})) || [],
+			})),
 			commitCount: comparison.commits?.length || 0,
 			lastCommit: commits[0] ? {
 				sha: commits[0].sha,
