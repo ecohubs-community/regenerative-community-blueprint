@@ -5,6 +5,7 @@
 	import { onMount, onDestroy } from 'svelte';
 	import { sidebarOpen, toggleSidebar, closeSidebar, contentSidebarMode, setContentSidebarMode } from '$lib/stores/ui';
 	import ContentSidebar from '$lib/components/ContentSidebar.svelte';
+	import ReviewChangesModal from '$lib/components/admin/ReviewChangesModal.svelte';
 
 	interface Workspace {
 		name: string;
@@ -85,6 +86,11 @@
 	let contentTree = $state<ContentNode[]>([]);
 	let isLoadingContentTree = $state(false);
 	let selectedContentFile = $state<string | null>(null);
+	
+	// Workspace changes tracking
+	let workspaceChanges = $state<{ files: any[], commitCount: number } | null>(null);
+	let isLoadingChanges = $state(false);
+	let showReviewModal = $state(false);
 
 	async function loadWorkspaces() {
 		try {
@@ -199,6 +205,25 @@
 		}
 	}
 
+	async function loadWorkspaceChanges() {
+		isLoadingChanges = true;
+		try {
+			const response = await fetch('/api/content/workspace-changes');
+			if (response.ok) {
+				const data = await response.json();
+				workspaceChanges = {
+					files: data.files,
+					commitCount: data.commitCount
+				};
+			}
+		} catch (error) {
+			console.error('Failed to load workspace changes:', error);
+			workspaceChanges = null;
+		} finally {
+			isLoadingChanges = false;
+		}
+	}
+
 	function handleContentSelect(event: CustomEvent<string>) {
 		selectedContentFile = event.detail;
 		// Dispatch event to content page
@@ -210,8 +235,49 @@
 		window.dispatchEvent(new CustomEvent('addContent', { detail: { type, parent } }));
 	}
 
+	async function handleCreatePR(title: string, body: string) {
+		const sessionCookie = document.cookie
+			.split('; ')
+			.find(row => row.startsWith('session='))
+			?.split('=')[1];
+
+		if (!sessionCookie) {
+			throw new Error('No session found');
+		}
+
+		const session = JSON.parse(decodeURIComponent(sessionCookie));
+		const workspaceBranch = session.currentBranch || `${session.user.login}/workspace`;
+
+		const response = await fetch('/api/pull-request/create', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({
+				title,
+				body,
+				head: workspaceBranch,
+				base: 'main',
+				draft: false
+			})
+		});
+
+		if (!response.ok) {
+			const error = await response.json();
+			throw new Error(error.error || 'Failed to create pull request');
+		}
+
+		const result = await response.json();
+		
+		// Show success message and open PR in new tab
+		alert(`Pull request created successfully!\n\nPR #${result.pullRequest.number}: ${result.pullRequest.title}\n\nOpening in GitHub for review...`);
+		window.open(result.pullRequest.html_url, '_blank');
+		
+		// Reload workspace changes after PR creation
+		await loadWorkspaceChanges();
+	}
+
 	onMount(() => {
 		loadWorkspaces();
+		loadWorkspaceChanges();
 		
 		// Subscribe to sidebar states
 		sidebarUnsubscribe = sidebarOpen.subscribe((value) => {
@@ -231,6 +297,7 @@
 		// Listen for reload content tree event
 		const handleReloadContentTree = () => {
 			loadContentTree();
+			loadWorkspaceChanges(); // Also reload changes when content changes
 		};
 		window.addEventListener('reloadContentTree', handleReloadContentTree);
 		
@@ -372,6 +439,22 @@
 					</div>
 
 					<div class="flex items-center space-x-4">
+						{#if isLoadingChanges}
+							<div class="text-sm text-gray-500">Loading changes…</div>
+						{:else if workspaceChanges && workspaceChanges.files.length > 0}
+							<button
+								onclick={() => showReviewModal = true}
+								class="px-4 py-2 text-sm bg-green-600 text-white rounded-md hover:bg-green-700 focus:outline-none flex items-center gap-2"
+							>
+								Review & Publish Changes
+								<span class="bg-green-700 text-white text-xs px-2 py-1 rounded-full">
+									{workspaceChanges.files.length}
+								</span>
+							</button>
+						{:else}
+							<div class="text-sm text-gray-500">No changes to publish</div>
+						{/if}
+
 						{#if isLoadingWorkspaces}
 							<div class="text-sm text-gray-500">Loading workspaces…</div>
 						{:else if workspaces.length > 0}
@@ -456,6 +539,15 @@
 			</div>
 		</div>
 	{/if}
+
+	<!-- Review Changes Modal -->
+	<ReviewChangesModal
+		bind:isOpen={showReviewModal}
+		bind:workspaceChanges={workspaceChanges}
+		currentWorkspace={currentWorkspace}
+		onClose={() => showReviewModal = false}
+		onCreatePR={handleCreatePR}
+	/>
 {:else}
 	{@render children()}
 {/if}

@@ -25,12 +25,13 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 
 		const octokit = getOctokit(session.access_token);
 		const branch = session.currentBranch || `${session.user.login}/workspace`;
+		const repoPath = path.startsWith('content/') ? path : `content/${path}`;
 
 		// Get the file to get its SHA
 		const { data: fileData } = await octokit.rest.repos.getContent({
 			owner: githubConfig.owner!,
 			repo: githubConfig.repo!,
-			path,
+			path: repoPath,
 			ref: branch
 		});
 
@@ -42,8 +43,8 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 		await octokit.rest.repos.deleteFile({
 			owner: githubConfig.owner!,
 			repo: githubConfig.repo!,
-			path,
-			message: `Delete ${path}`,
+			path: repoPath,
+			message: `Delete ${repoPath}`,
 			sha: fileData.sha,
 			branch
 		});
@@ -51,6 +52,12 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 		return json({ success: true });
 	} catch (error) {
 		console.error('Delete error:', error);
+		if (error && typeof error === 'object' && 'status' in (error as { status?: number })) {
+			const status = (error as { status?: number }).status;
+			if (status === 404) {
+				return json({ error: 'File not found' }, { status: 404 });
+			}
+		}
 		return json(
 			{ error: error instanceof Error ? error.message : 'Failed to delete file' },
 			{ status: 500 }
