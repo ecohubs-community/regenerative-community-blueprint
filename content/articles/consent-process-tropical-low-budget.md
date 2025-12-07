@@ -5,7 +5,7 @@ modules:
 climate: 
   - Tropical Wet
 budget: 
-  - low
+  - medium
 size: 
   - 10–50 people
 summary: How consent governance can be implemented in resource-limited tropical eco-communities.
