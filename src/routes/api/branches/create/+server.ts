@@ -18,7 +18,7 @@ export async function POST({ request, cookies }) {
 			return json({ error: 'Session expired' }, { status: 401 });
 		}
 
-		const { workspaceName, fromWorkspace = 'workspace' } = await request.json();
+		const { workspaceName, fromWorkspace } = await request.json();
 
 		if (!workspaceName) {
 			return json({ error: 'Workspace name is required' }, { status: 400 });
@@ -36,7 +36,20 @@ export async function POST({ request, cookies }) {
 
 		// Create personal workspace name with user prefix
 		const fullWorkspaceName = `${user.login}/${workspaceName}`;
-		const fromBranchName = fromWorkspace === 'workspace' ? `${user.login}/workspace` : `${user.login}/${fromWorkspace}`;
+		
+		// Determine source branch:
+		// - If fromWorkspace is empty/undefined/null, use 'main' (fresh start)
+		// - If fromWorkspace is 'workspace', use user's default workspace
+		// - Otherwise, use the specified workspace with user prefix
+		let fromBranchName: string;
+		if (!fromWorkspace) {
+			// Empty selection = start from main branch
+			fromBranchName = 'main';
+		} else if (fromWorkspace === 'workspace') {
+			fromBranchName = `${user.login}/workspace`;
+		} else {
+			fromBranchName = `${user.login}/${fromWorkspace}`;
+		}
 
 		// Get the reference of the source workspace
 		const { data: sourceRef } = await octokit.rest.git.getRef({

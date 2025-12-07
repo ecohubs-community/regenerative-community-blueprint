@@ -68,7 +68,8 @@
 
 		isCreating = true;
 		try {
-			await onCreate(newWorkspaceName.trim(), selectedBaseBranch || undefined);
+			// Pass selectedBaseBranch as-is: empty string means "start from main"
+			await onCreate(newWorkspaceName.trim(), selectedBaseBranch);
 			closeModal();
 		} finally {
 			isCreating = false;

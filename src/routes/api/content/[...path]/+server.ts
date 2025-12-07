@@ -227,57 +227,17 @@ export async function POST({ params, request, cookies }) {
 			}
 		}
 
-		// Check if this is the first commit in a personal workspace and auto-publish
-		let autoPublished = false;
-		if (branch.includes('/') && updatedFile.commit?.sha) {
-			try {
-				// Get commit count for this branch
-				const { data: commits } = await octokit.rest.repos.listCommits({
-					owner: githubConfig.owner!,
-					repo: githubConfig.repo!,
-					sha: branch,
-					per_page: 1
-				});
-
-				// If this is the first commit, auto-publish the workspace
-				if (commits.length === 1) {
-					const workspaceName = branch.split('/')[1]; // Extract workspace name from "username/workspace"
-					
-					// Create publish tag
-					const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-					const tagName = `published-${workspaceName}-${timestamp}`;
-
-					await octokit.rest.git.createTag({
-						owner: githubConfig.owner!,
-						repo: githubConfig.repo!,
-						tag: tagName,
-						message: `Auto-publish workspace: ${workspaceName} (first commit)`,
-						object: updatedFile.commit.sha,
-						type: 'commit'
-					});
-
-					await octokit.rest.git.createRef({
-						owner: githubConfig.owner!,
-						repo: githubConfig.repo!,
-						ref: `refs/tags/${tagName}`,
-						sha: updatedFile.commit.sha
-					});
-
-					autoPublished = true;
-				}
-			} catch (publishError) {
-				console.warn('Failed to auto-publish workspace:', publishError);
-				// Don't fail the save operation if auto-publish fails
-			}
-		}
+		// Note: Auto-publish on first commit was removed because:
+		// 1. The "first commit" detection was buggy (always triggered)
+		// 2. It created excessive tags in the repository
+		// Users should publish via PR when ready
 
 		return json({
 			success: true,
 			path,
 			branch,
 			sha: updatedFile.commit.sha,
-			message: commitMessage,
-			autoPublished
+			message: commitMessage
 		});
 
 	} catch (error) {

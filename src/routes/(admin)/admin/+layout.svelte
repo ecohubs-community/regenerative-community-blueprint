@@ -120,7 +120,10 @@
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({ 
 					workspaceName: name,
-					fromWorkspace: baseBranch || currentWorkspace 
+					// Pass baseBranch as-is: empty/undefined means "start from main"
+					// Only use currentWorkspace if baseBranch is explicitly not provided (undefined)
+					// but if baseBranch is empty string "", that means user chose "main"
+					fromWorkspace: baseBranch
 				})
 			});
 
