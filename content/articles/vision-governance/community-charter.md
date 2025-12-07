@@ -10,5 +10,5 @@ dsf sdaf asdf das
 
 <br />
 
-![1.00]()
+![1.00](/api/image-proxy/uploads/b50b25a3/1765131167840-gaialogo.png?branch=st3v3y%2Fworkspace)
 
