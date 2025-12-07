@@ -266,9 +266,14 @@
 		// Listen for reload article tree event
 		const handleReloadArticleTree = () => {
 			loadArticleTree();
-			loadWorkspaceChanges(); // Also reload changes when content changes
 		};
 		window.addEventListener('reloadArticleTree', handleReloadArticleTree);
+		
+		// Listen for reload workspace changes event (separate from tree reload)
+		const handleReloadWorkspaceChanges = () => {
+			loadWorkspaceChanges();
+		};
+		window.addEventListener('reloadWorkspaceChanges', handleReloadWorkspaceChanges);
 		
 		// Listen for open review modal event (from dashboard quick actions)
 		const handleOpenReviewModal = () => {
@@ -280,6 +285,7 @@
 		
 		return () => {
 			window.removeEventListener('reloadArticleTree', handleReloadArticleTree);
+			window.removeEventListener('reloadWorkspaceChanges', handleReloadWorkspaceChanges);
 			window.removeEventListener('openReviewModal', handleOpenReviewModal);
 		};
 	});

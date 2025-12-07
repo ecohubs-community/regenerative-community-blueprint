@@ -4,6 +4,7 @@
 	import '@milkdown/crepe/theme/common/style.css';
 	import '@milkdown/crepe/theme/frame.css';
 	import Icon from '@iconify/svelte';
+	import ArticleLinkModal from './admin/ArticleLinkModal.svelte';
 	
 	interface Frontmatter {
 		id?: string;
@@ -40,22 +41,46 @@
 	let crepeInstance: Crepe | null = null;
 	let saveTimeout: ReturnType<typeof setTimeout> | null = null;
 	let saveStatus = $state<'saved' | 'saving' | 'unsaved'>('saved');
+	
+	// Article link modal state
+	let showArticleLinkModal = $state(false);
+	
+	// Track original content to detect actual changes
+	let originalContent = $state<string>('');
+	let originalFrontmatter = $state<string>('');
+	
+	// Check if there are actual changes
+	function hasActualChanges(): boolean {
+		const currentFrontmatter = JSON.stringify(content.frontmatter);
+		return content.content !== originalContent || currentFrontmatter !== originalFrontmatter;
+	}
 
 	async function handleSave() {
-		if (onSave && !readonly) {
+		if (onSave && !readonly && hasActualChanges()) {
 			saveStatus = 'saving';
 			try {
 				await onSave(content);
+				// Update original values after successful save
+				originalContent = content.content;
+				originalFrontmatter = JSON.stringify(content.frontmatter);
 				saveStatus = 'saved';
 			} catch (error) {
 				saveStatus = 'unsaved';
 				console.error('Save failed:', error);
 			}
+		} else if (!hasActualChanges()) {
+			// No actual changes, just mark as saved
+			saveStatus = 'saved';
 		}
 	}
 
 	function triggerAutoSave() {
 		if (!autoSave || readonly) return;
+		
+		// Only trigger if there are actual changes
+		if (!hasActualChanges()) {
+			return;
+		}
 
 		saveStatus = 'unsaved';
 
@@ -64,10 +89,27 @@
 			clearTimeout(saveTimeout);
 		}
 
-		// Set new timeout
+		// Set new timeout (15 seconds as requested)
 		saveTimeout = setTimeout(() => {
 			handleSave();
-		}, autoSaveDelay);
+		}, 15000);
+	}
+
+	// Handle article link selection
+	function handleArticleLinkSelect(article: { id: string; title: string; slug: string }) {
+		// Insert a markdown link using the article ID for robustness
+		// Format: [Article Title](/articles/slug?id=article-id)
+		// The ID parameter helps resolve the link even if slug changes
+		const linkMarkdown = `[${article.title}](/articles/${article.slug}?id=${article.id})`;
+		
+		// Copy to clipboard so user can paste it
+		navigator.clipboard.writeText(linkMarkdown).then(() => {
+			// Show a brief notification
+			alert(`Link copied to clipboard!\n\nPaste it in the editor: ${linkMarkdown}`);
+		}).catch(() => {
+			// Fallback: show the link for manual copy
+			prompt('Copy this link:', linkMarkdown);
+		});
 	}
 
 	async function uploadImage(file: File): Promise<string> {
@@ -101,6 +143,10 @@
 			content.frontmatter.id = generateArticleId();
 		}
 
+		// Store original values for change detection
+		originalContent = content.content || '';
+		originalFrontmatter = JSON.stringify(content.frontmatter);
+		
 		try {
 			crepeInstance = new Crepe({
 				root: editorContainer,
@@ -151,10 +197,14 @@
 	});
 
 	// Watch for frontmatter changes and trigger auto-save
+	// Use a more specific check to avoid triggering on initial load
+	let frontmatterInitialized = false;
 	$effect(() => {
-		if (content.frontmatter) {
+		const currentFrontmatter = JSON.stringify(content.frontmatter);
+		if (frontmatterInitialized && currentFrontmatter !== originalFrontmatter) {
 			triggerAutoSave();
 		}
+		frontmatterInitialized = true;
 	});
 </script>
 
@@ -177,6 +227,16 @@
 			
 			{#if !readonly}
 				<div class="flex items-center gap-2">
+					<!-- Link to Article button -->
+					<button
+						type="button"
+						onclick={() => showArticleLinkModal = true}
+						class="flex items-center gap-1 px-2 py-1.5 text-xs font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors border border-gray-200"
+						title="Insert link to another article"
+					>
+						<Icon icon="tabler:link" class="w-3.5 h-3.5" />
+						<span class="hidden sm:inline">Link Article</span>
+					</button>
 					
 					<button
 						onclick={handleSave}
@@ -206,6 +266,13 @@
 		class="crepe-container"
 	></div>
 </div>
+
+<!-- Article Link Modal -->
+<ArticleLinkModal
+	bind:isOpen={showArticleLinkModal}
+	onSelect={handleArticleLinkSelect}
+	onClose={() => showArticleLinkModal = false}
+/>
 
 <style>
 	:global(.crepe-container .crepe) {

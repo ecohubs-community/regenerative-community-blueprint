@@ -19,6 +19,9 @@
 	let draftParentId = $state<string | null>(null);
 	let draftParentPath = $state<string | null>(null);
 	let originalDraftTitle = $state('');
+	
+	// Track original title to detect title changes (for tree reload)
+	let originalTitle = $state<string>('');
 
 	// Find child articles for the current article
 	const childArticles = $derived(() => {
@@ -69,6 +72,9 @@
 					content: data.content || ''
 				};
 				
+				// Store original title for change detection
+				originalTitle = fileContent.frontmatter.title || '';
+				
 				// Ensure article has an ID
 				if (!fileContent.frontmatter.id) {
 					fileContent.frontmatter.id = generateArticleId();
@@ -113,8 +119,15 @@
 				}
 			}
 			
-			// Notify layout to reload article tree (title may have changed)
-			window.dispatchEvent(new CustomEvent('reloadArticleTree'));
+			// Only reload article tree if title changed (not for content-only changes)
+			const currentTitle = content.frontmatter.title || '';
+			if (currentTitle !== originalTitle) {
+				originalTitle = currentTitle;
+				window.dispatchEvent(new CustomEvent('reloadArticleTree'));
+			}
+			
+			// Always reload workspace changes after save (to update change markers)
+			window.dispatchEvent(new CustomEvent('reloadWorkspaceChanges'));
 			
 			return Promise.resolve();
 		} catch (error) {

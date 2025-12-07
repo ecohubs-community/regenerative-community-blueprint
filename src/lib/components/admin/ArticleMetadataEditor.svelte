@@ -46,6 +46,7 @@
 
 	// Dropdown states
 	let showClimateDropdown = $state(false);
+	let showBudgetDropdown = $state(false);
 	let showSizeDropdown = $state(false);
 
 	// Load available tags from all articles
@@ -110,6 +111,19 @@
 			current.push(value);
 		}
 		frontmatter.climate = current;
+		onchange();
+	}
+
+	function toggleBudget(value: string) {
+		if (readonly) return;
+		const current = Array.isArray(frontmatter.budget) ? [...frontmatter.budget] : [];
+		const index = current.indexOf(value);
+		if (index > -1) {
+			current.splice(index, 1);
+		} else {
+			current.push(value);
+		}
+		frontmatter.budget = current;
 		onchange();
 	}
 
@@ -182,6 +196,9 @@
 		const target = event.target as HTMLElement;
 		if (!target.closest('.climate-dropdown')) {
 			showClimateDropdown = false;
+		}
+		if (!target.closest('.budget-dropdown')) {
+			showBudgetDropdown = false;
 		}
 		if (!target.closest('.size-dropdown')) {
 			showSizeDropdown = false;
@@ -363,26 +380,68 @@
 		{/if}
 	</div>
 
-	<!-- Budget -->
-	<div>
-		<span class="block text-sm font-medium text-gray-700 mb-1.5">Budget Level</span>
-		<div class="flex gap-2">
-			{#each budgetOptions as option}
-				<button
-					type="button"
-					onclick={() => {
-						frontmatter.budget = [option.value];
-						onchange();
-					}}
-					disabled={readonly}
-					class="flex-1 px-3 py-2 text-sm border rounded-lg transition-all {(frontmatter.budget || [])[0] === option.value
-						? 'bg-blue-600 text-white border-blue-600'
-						: 'bg-white text-gray-700 border-gray-200 hover:border-gray-300'} disabled:opacity-50"
-				>
-					{option.label}
-				</button>
-			{/each}
-		</div>
+	<!-- Budget Multi-select -->
+	<div class="budget-dropdown relative">
+		<span id="budget-label" class="block text-sm font-medium text-gray-700 mb-1.5">Budget Level</span>
+		<button
+			type="button"
+			onclick={() => (showBudgetDropdown = !showBudgetDropdown)}
+			disabled={readonly}
+			aria-labelledby="budget-label"
+			class="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg bg-white text-left flex items-center justify-between hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500 transition-all"
+		>
+			<span class="truncate">
+				{#if (frontmatter.budget || []).length > 0}
+					{(frontmatter.budget || []).length} selected
+				{:else}
+					<span class="text-gray-400">Select budget levels...</span>
+				{/if}
+			</span>
+			<Icon icon="tabler:chevron-down" class="w-4 h-4 text-gray-400 transition-transform {showBudgetDropdown ? 'rotate-180' : ''}" />
+		</button>
+
+		{#if showBudgetDropdown}
+			<div
+				class="absolute z-20 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-auto"
+			>
+				{#each budgetOptions as option}
+					<label
+						class="flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer transition-colors"
+					>
+						<input
+							type="checkbox"
+							checked={(frontmatter.budget || []).includes(option.value)}
+							onchange={() => toggleBudget(option.value)}
+							class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+						/>
+						<span class="ml-2 text-sm text-gray-700">{option.label}</span>
+					</label>
+				{/each}
+			</div>
+		{/if}
+
+		<!-- Selected tags -->
+		{#if (frontmatter.budget || []).length > 0}
+			<div class="flex flex-wrap gap-1.5 mt-2">
+				{#each frontmatter.budget || [] as budget}
+					<span
+						class="inline-flex items-center gap-1 px-2 py-1 text-xs font-medium bg-amber-50 text-amber-700 rounded-md"
+					>
+						{budgetOptions.find((o) => o.value === budget)?.label || budget}
+						{#if !readonly}
+							<button
+								type="button"
+								onclick={() => toggleBudget(budget)}
+								aria-label="Remove {budget}"
+								class="hover:text-amber-900"
+							>
+								<Icon icon="tabler:x" class="w-3 h-3" />
+							</button>
+						{/if}
+					</span>
+				{/each}
+			</div>
+		{/if}
 	</div>
 
 	<!-- Size Multi-select -->
