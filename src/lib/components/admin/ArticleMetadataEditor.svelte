@@ -1,30 +1,14 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Icon from '@iconify/svelte';
-
-	interface Frontmatter {
-		id?: string;
-		title?: string;
-		summary?: string;
-		climate?: string[];
-		budget?: string;
-		size?: string[];
-		modules?: string[];
-		description?: string;
-		[key: string]: unknown;
-	}
-
-	interface Module {
-		title: string;
-		slug: string;
-	}
+	import type { ArticleFrontmatter } from '$lib/types/article';
 
 	let {
-		frontmatter = $bindable<Frontmatter>({}),
+		frontmatter = $bindable<ArticleFrontmatter>({}),
 		readonly = false,
 		onchange = () => {}
 	}: {
-		frontmatter: Frontmatter;
+		frontmatter: ArticleFrontmatter;
 		readonly?: boolean;
 		onchange?: () => void;
 	} = $props();
@@ -54,58 +38,66 @@
 		{ value: '+200', label: '+200 people' }
 	];
 
-	// Module autocomplete state
-	let availableModules = $state<Module[]>([]);
-	let moduleSearchQuery = $state('');
-	let showModuleSuggestions = $state(false);
-	let moduleInputRef: HTMLInputElement;
+	// Tags autocomplete state
+	let availableTags = $state<string[]>([]);
+	let tagSearchQuery = $state('');
+	let showTagSuggestions = $state(false);
+	let tagInputRef: HTMLInputElement;
 
 	// Dropdown states
 	let showClimateDropdown = $state(false);
 	let showSizeDropdown = $state(false);
 
-	// Load available modules
-	async function loadModules() {
+	// Load available tags from all articles
+	async function loadTags() {
 		try {
-			const response = await fetch('/api/content/tree');
+			const response = await fetch('/api/content/tree?format=tree');
 			if (response.ok) {
 				const data = await response.json();
-				// Extract modules from tree
-				const modules: Module[] = [];
-				function extractModules(nodes: any[]) {
+				// Extract unique tags from all articles
+				const tagSet = new Set<string>();
+				function extractTags(nodes: any[]) {
 					for (const node of nodes) {
-						if (node.content_type === 'module') {
-							modules.push({
-								title: node.metadata?.title || node.name.replace('.json', ''),
-								slug: node.name.replace('.json', '')
-							});
+						if (Array.isArray(node.tags)) {
+							node.tags.forEach((tag: string) => tagSet.add(tag));
 						}
 						if (node.children) {
-							extractModules(node.children);
+							extractTags(node.children);
 						}
 					}
 				}
-				extractModules(data.tree || []);
-				availableModules = modules;
+				extractTags(data.articles || []);
+				availableTags = Array.from(tagSet).sort();
 			}
 		} catch (error) {
-			console.error('Failed to load modules:', error);
+			console.error('Failed to load tags:', error);
 		}
 	}
 
 	onMount(() => {
-		loadModules();
+		loadTags();
 	});
 
-	// Filtered module suggestions
-	const filteredModules = $derived(() => {
-		if (!moduleSearchQuery.trim()) return availableModules;
-		const query = moduleSearchQuery.toLowerCase();
-		return availableModules.filter(
-			(m) =>
-				m.title.toLowerCase().includes(query) &&
-				!(frontmatter.modules || []).includes(m.title)
+	// Filtered tag suggestions - show matching existing tags or allow creating new
+	const filteredTags = $derived(() => {
+		const currentTags = frontmatter.tags || [];
+		const query = tagSearchQuery.trim().toLowerCase();
+		
+		if (!query) {
+			return availableTags.filter(t => !currentTags.includes(t)).slice(0, 10);
+		}
+		
+		return availableTags.filter(
+			(t) => t.toLowerCase().includes(query) && !currentTags.includes(t)
 		);
+	});
+
+	// Check if the current query is a new tag (not in available tags)
+	const isNewTag = $derived(() => {
+		const query = tagSearchQuery.trim();
+		if (!query) return false;
+		const currentTags = frontmatter.tags || [];
+		return !availableTags.includes(query) && !currentTags.includes(query);
 	});
 
 	function toggleClimate(value: string) {
@@ -134,26 +126,50 @@
 		onchange();
 	}
 
-	function addModule(moduleTitle: string) {
+	function addTag(tag: string) {
 		if (readonly) return;
-		const current = Array.isArray(frontmatter.modules) ? [...frontmatter.modules] : [];
-		if (!current.includes(moduleTitle)) {
-			current.push(moduleTitle);
-			frontmatter.modules = current;
+		const trimmedTag = tag.trim();
+		if (!trimmedTag) return;
+		
+		const current = Array.isArray(frontmatter.tags) ? [...frontmatter.tags] : [];
+		if (!current.includes(trimmedTag)) {
+			current.push(trimmedTag);
+			frontmatter.tags = current;
+			// Also add to available tags for future suggestions
+			if (!availableTags.includes(trimmedTag)) {
+				availableTags = [...availableTags, trimmedTag].sort();
+			}
 			onchange();
 		}
-		moduleSearchQuery = '';
-		showModuleSuggestions = false;
+		tagSearchQuery = '';
+		showTagSuggestions = false;
 	}
 
-	function removeModule(moduleTitle: string) {
+	function removeTag(tag: string) {
 		if (readonly) return;
-		const current = Array.isArray(frontmatter.modules) ? [...frontmatter.modules] : [];
-		const index = current.indexOf(moduleTitle);
+		const current = Array.isArray(frontmatter.tags) ? [...frontmatter.tags] : [];
+		const index = current.indexOf(tag);
 		if (index > -1) {
 			current.splice(index, 1);
-			frontmatter.modules = current;
+			frontmatter.tags = current;
 			onchange();
+		}
+	}
+
+	function handleTagKeydown(event: KeyboardEvent) {
+		if (event.key === 'Enter') {
+			event.preventDefault();
+			const query = tagSearchQuery.trim();
+			if (query) {
+				// Add the first suggestion or create new tag
+				if (filteredTags().length > 0) {
+					addTag(filteredTags()[0]);
+				} else {
+					addTag(query);
+				}
+			}
+		} else if (event.key === 'Escape') {
+			showTagSuggestions = false;
 		}
 	}
 
@@ -170,8 +186,8 @@
 		if (!target.closest('.size-dropdown')) {
 			showSizeDropdown = false;
 		}
-		if (!target.closest('.module-autocomplete')) {
-			showModuleSuggestions = false;
+		if (!target.closest('.tag-autocomplete')) {
+			showTagSuggestions = false;
 		}
 	}
 </script>
@@ -209,6 +225,78 @@
 			rows="3"
 			class="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white disabled:bg-gray-50 disabled:text-gray-500 resize-none transition-shadow"
 		></textarea>
+	</div>
+
+	<!-- Tags Autocomplete -->
+	<div class="tag-autocomplete relative">
+		<span id="tags-label" class="block text-sm font-medium text-gray-700 mb-1.5">Tags</span>
+
+		<!-- Selected tags -->
+		{#if (frontmatter.tags || []).length > 0}
+			<div class="flex flex-wrap gap-1.5 mb-2">
+				{#each frontmatter.tags || [] as tag}
+					<span
+						class="inline-flex items-center gap-1 px-2 py-1 text-xs font-medium bg-purple-50 text-purple-700 rounded-md"
+					>
+						{tag}
+						{#if !readonly}
+							<button
+								type="button"
+								onclick={() => removeTag(tag)}
+								aria-label="Remove {tag}"
+								class="hover:text-purple-900"
+							>
+								<Icon icon="tabler:x" class="w-3 h-3" />
+							</button>
+						{/if}
+					</span>
+				{/each}
+			</div>
+		{/if}
+
+		<!-- Search input -->
+		<div class="relative">
+			<input
+				bind:this={tagInputRef}
+				type="text"
+				bind:value={tagSearchQuery}
+				onfocus={() => (showTagSuggestions = true)}
+				onkeydown={handleTagKeydown}
+				placeholder="Type to add tags..."
+				disabled={readonly}
+				class="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white disabled:bg-gray-50 disabled:text-gray-500 transition-shadow pr-8"
+			/>
+			<Icon icon="tabler:tag" class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+		</div>
+
+		<!-- Suggestions dropdown -->
+		{#if showTagSuggestions && (filteredTags().length > 0 || isNewTag())}
+			<div
+				class="absolute z-20 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg max-h-48 overflow-auto"
+			>
+				{#if isNewTag()}
+					<button
+						type="button"
+						onclick={() => addTag(tagSearchQuery)}
+						class="w-full px-3 py-2 text-left text-sm hover:bg-purple-50 transition-colors flex items-center gap-2 border-b border-gray-100"
+					>
+						<Icon icon="tabler:plus" class="w-4 h-4 text-purple-600" />
+						<span class="text-purple-700">Create tag "<span class="font-medium">{tagSearchQuery.trim()}</span>"</span>
+					</button>
+				{/if}
+				{#each filteredTags() as tag}
+					<button
+						type="button"
+						onclick={() => addTag(tag)}
+						class="w-full px-3 py-2 text-left text-sm hover:bg-gray-50 transition-colors"
+					>
+						<span class="text-gray-900">{tag}</span>
+					</button>
+				{/each}
+			</div>
+		{/if}
+		
+		<p class="mt-1.5 text-xs text-gray-400">Press Enter to add a tag, or select from suggestions</p>
 	</div>
 
 	<!-- Climate Multi-select -->
@@ -283,12 +371,11 @@
 				<button
 					type="button"
 					onclick={() => {
-						frontmatter.budget = option.value;
+						frontmatter.budget = [option.value];
 						onchange();
 					}}
 					disabled={readonly}
-					class="flex-1 px-3 py-2 text-sm border rounded-lg transition-all {frontmatter.budget ===
-					option.value
+					class="flex-1 px-3 py-2 text-sm border rounded-lg transition-all {(frontmatter.budget || [])[0] === option.value
 						? 'bg-blue-600 text-white border-blue-600'
 						: 'bg-white text-gray-700 border-gray-200 hover:border-gray-300'} disabled:opacity-50"
 				>
@@ -357,69 +444,4 @@
 		{/if}
 	</div>
 
-	<!-- Modules Autocomplete -->
-	<div class="module-autocomplete relative">
-		<span id="modules-label" class="block text-sm font-medium text-gray-700 mb-1.5">Modules</span>
-
-		<!-- Selected modules as tags -->
-		{#if (frontmatter.modules || []).length > 0}
-			<div class="flex flex-wrap gap-1.5 mb-2">
-				{#each frontmatter.modules || [] as moduleTitle}
-					<span
-						class="inline-flex items-center gap-1 px-2 py-1 text-xs font-medium bg-purple-50 text-purple-700 rounded-md"
-					>
-						{moduleTitle}
-						{#if !readonly}
-							<button
-								type="button"
-								onclick={() => removeModule(moduleTitle)}
-								aria-label="Remove {moduleTitle}"
-								class="hover:text-purple-900"
-							>
-								<Icon icon="tabler:x" class="w-3 h-3" />
-							</button>
-						{/if}
-					</span>
-				{/each}
-			</div>
-		{/if}
-
-		<!-- Search input -->
-		<div class="relative">
-			<input
-				bind:this={moduleInputRef}
-				type="text"
-				bind:value={moduleSearchQuery}
-				onfocus={() => (showModuleSuggestions = true)}
-				placeholder="Search and add modules..."
-				disabled={readonly}
-				class="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white disabled:bg-gray-50 disabled:text-gray-500 transition-shadow"
-			/>
-			<Icon icon="tabler:search" class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-		</div>
-
-		<!-- Suggestions dropdown -->
-		{#if showModuleSuggestions && filteredModules().length > 0}
-			<div
-				class="absolute z-20 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg max-h-48 overflow-auto"
-			>
-				{#each filteredModules() as module}
-					<button
-						type="button"
-						onclick={() => addModule(module.title)}
-						class="w-full px-3 py-2 text-left text-sm hover:bg-gray-50 transition-colors"
-					>
-						<span class="font-medium text-gray-900">{module.title}</span>
-						<span class="text-gray-400 text-xs ml-2">({module.slug})</span>
-					</button>
-				{/each}
-			</div>
-		{:else if showModuleSuggestions && moduleSearchQuery && filteredModules().length === 0}
-			<div
-				class="absolute z-20 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg p-3"
-			>
-				<p class="text-sm text-gray-500">No modules found matching "{moduleSearchQuery}"</p>
-			</div>
-		{/if}
-	</div>
 </div>

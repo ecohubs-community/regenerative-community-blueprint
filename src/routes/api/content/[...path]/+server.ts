@@ -135,7 +135,8 @@ export async function POST({ params, request, cookies }) {
 
 		const { content, frontmatter, message } = await request.json() as ContentRequest;
 
-		if (!content) {
+		// Allow empty content for new articles (content can be empty string)
+		if (content === undefined || content === null) {
 			return json({ error: 'Content is required' }, { status: 400 });
 		}
 

@@ -2,23 +2,7 @@
 	import ArticleMetadataEditor from './ArticleMetadataEditor.svelte';
 	import WorkspaceStatus from './WorkspaceStatus.svelte';
 	import Icon from '@iconify/svelte';
-
-	interface Frontmatter {
-		id?: string;
-		title?: string;
-		summary?: string;
-		climate?: string[];
-		budget?: string;
-		size?: string[];
-		modules?: string[];
-		description?: string;
-		[key: string]: unknown;
-	}
-
-	interface EditorContent {
-		frontmatter: Frontmatter;
-		content: string;
-	}
+	import type { EditorContent } from '$lib/types/article';
 
 	let {
 		isOpen = $bindable(false),
@@ -26,7 +10,7 @@
 		filePath = '',
 		readonly = false,
 		onchange = () => {},
-		onPublish = async (action: string) => {},
+		onPublish = async (_action: string) => {},
 	}: {
 		isOpen: boolean;
 		content: EditorContent;

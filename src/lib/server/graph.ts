@@ -1,4 +1,4 @@
-import { readArticleMeta, type ArticleMeta } from './content';
+import { readArticleMeta } from './content';
 
 /**
  * Unified Article - the single content type in the new system
@@ -9,12 +9,14 @@ export type Article = {
   slug: string;
   title: string;
   summary?: string;
+  icon?: string;
   parentId?: string | null;
   order?: number;
   children: Article[];
   climate?: string[];
   budget?: string[];
   size?: string[];
+  tags?: string[];
   attachments?: { file: string; caption?: string }[];
 };
 
@@ -54,12 +56,14 @@ export async function buildArticleTree(): Promise<ArticleTree> {
       slug: entry.slug,
       title: coerceTitle(entry.title, entry.slug),
       summary: coerceOptionalString(entry.summary),
+      icon: coerceOptionalString(entry.icon),
       parentId: entry.parentId as string | null | undefined,
       order: coerceOptionalNumber(entry.order),
       children: [],
       climate: normalizeList(entry.climate),
       budget: normalizeList(entry.budget),
       size: normalizeList(entry.size),
+      tags: normalizeList(entry.tags),
       attachments: Array.isArray(entry.attachments) ? entry.attachments : undefined
     };
     articleMap.set(id, article);

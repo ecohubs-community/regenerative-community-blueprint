@@ -49,15 +49,14 @@ export interface ArticleFrontmatter {
 	icon?: string;
 	parentId?: string | null;
 	order?: number;
-	// Legacy fields
+	// Content fields
+	summary?: string;
+	description?: string;
+	tags?: string[];
+	// Filter fields
 	climate?: string[];
 	budget?: string[];
 	size?: string[];
-	summary?: string;
-	description?: string;
-	modules?: string[];
-	domain?: string;
-	topic?: string;
 	[key: string]: unknown;
 }
 

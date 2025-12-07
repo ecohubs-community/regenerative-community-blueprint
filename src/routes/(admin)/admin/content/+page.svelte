@@ -3,26 +3,8 @@
 	import ArticleEditor from '$lib/components/admin/ArticleEditor.svelte';
 	import ArticleSidebar from '$lib/components/admin/ArticleSidebar.svelte';
 	import Icon from '@iconify/svelte';
-	import type { ArticleTreeNode } from '$lib/types/article';
+	import type { ArticleTreeNode, EditorContent } from '$lib/types/article';
 	import { generateArticleId, generateSlug } from '$lib/types/article';
-
-	interface ArticleFrontmatter {
-		id?: string;
-		title?: string;
-		icon?: string;
-		parentId?: string | null;
-		order?: number;
-		climate?: string[];
-		budget?: string[];
-		size?: string[];
-		summary?: string;
-		[key: string]: unknown;
-	}
-
-	interface EditorContent {
-		frontmatter: ArticleFrontmatter;
-		content: string;
-	}
 
 	// Article tree for finding children
 	let articleTree = $state<ArticleTreeNode[]>([]);
@@ -31,9 +13,12 @@
 	let isLoadingFile = $state(false);
 	let isSaving = $state(false);
 	let showSidebar = $state(false);
-	let showNewArticleDialog = $state(false);
-	let newArticleParentId = $state<string | null>(null);
-	let newArticleTitle = $state('');
+	
+	// Draft article state - for creating new articles inline
+	let isDraftArticle = $state(false);
+	let draftParentId = $state<string | null>(null);
+	let draftParentPath = $state<string | null>(null);
+	let originalDraftTitle = $state('');
 
 	// Find child articles for the current article
 	const childArticles = $derived(() => {
@@ -210,16 +195,88 @@
 		}
 	}
 
-	function handleAddArticle(parentId: string | null) {
-		newArticleParentId = parentId;
-		newArticleTitle = '';
-		showNewArticleDialog = true;
+	function handleAddArticle(parentId: string | null, parentPath: string | null = null) {
+		// Create a draft article inline instead of showing dialog
+		isDraftArticle = true;
+		draftParentId = parentId;
+		draftParentPath = parentPath;
+		originalDraftTitle = '';
+		selectedFile = null; // Clear any existing selection
+		
+		// Create draft content
+		const id = generateArticleId();
+		fileContent = {
+			frontmatter: {
+				id,
+				title: '',
+				parentId: parentId,
+				order: 0
+			},
+			content: ''
+		};
 	}
 
-	function handleTitleChange(newTitle: string) {
+	async function handleTitleChange(newTitle: string) {
 		// Title is already updated in fileContent via binding
-		// Just trigger a save
-		triggerAutoSave();
+		
+		// If this is a draft article and we now have a title, save it
+		if (isDraftArticle && newTitle.trim()) {
+			await saveDraftArticle();
+		} else if (!isDraftArticle) {
+			// For existing articles, trigger auto-save
+			triggerAutoSave();
+		}
+	}
+
+	async function saveDraftArticle() {
+		if (!fileContent?.frontmatter?.title?.trim()) return;
+		
+		const title = fileContent.frontmatter.title.trim();
+		const slug = generateSlug(title);
+		
+		// Determine the file path based on parent
+		// If parent exists, create as child in parent's folder
+		let path: string;
+		if (draftParentPath) {
+			// Extract folder from parent path (e.g., "articles/governance.md" -> "governance")
+			const parentFolder = draftParentPath.replace(/^articles\//, '').replace(/\.md$/, '').replace(/_index$/, '');
+			path = `articles/${parentFolder}/${slug}.md`;
+		} else {
+			path = `articles/${slug}.md`;
+		}
+		
+		isSaving = true;
+		try {
+			const response = await fetch(`/api/content/${path}`, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					content: fileContent.content || '',
+					frontmatter: fileContent.frontmatter,
+					message: `Create new article: ${title}`
+				})
+			});
+			
+			if (response.ok) {
+				// Successfully created - switch from draft to real article
+				isDraftArticle = false;
+				selectedFile = path;
+				originalDraftTitle = title;
+				
+				// Reload tree
+				await loadArticleTree();
+				window.dispatchEvent(new CustomEvent('reloadArticleTree'));
+			} else {
+				const error = await response.json();
+				console.error('Failed to create article:', error);
+				alert(`Failed to create article: ${error.error || 'Unknown error'}`);
+			}
+		} catch (error) {
+			console.error('Failed to create article:', error);
+			alert('Failed to create article');
+		} finally {
+			isSaving = false;
+		}
 	}
 
 	function handleSelectChild(path: string) {
@@ -229,51 +286,6 @@
 	function handleAddChildFromEditor() {
 		if (fileContent?.frontmatter?.id) {
 			handleAddArticle(fileContent.frontmatter.id);
-		}
-	}
-
-	async function createNewArticle() {
-		if (!newArticleTitle.trim()) return;
-		
-		const id = generateArticleId();
-		const slug = generateSlug(newArticleTitle);
-		const path = `articles/${slug}.md`;
-		
-		const frontmatter: ArticleFrontmatter = {
-			id,
-			title: newArticleTitle,
-			parentId: newArticleParentId,
-			order: 0
-		};
-		
-		try {
-			const response = await fetch(`/api/content/${path}`, {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({
-					content: '',
-					frontmatter,
-					message: `Create new article: ${newArticleTitle}`
-				})
-			});
-			
-			if (response.ok) {
-				showNewArticleDialog = false;
-				newArticleParentId = null;
-				newArticleTitle = '';
-				
-				// Reload tree and select the new article
-				await loadArticleTree();
-				window.dispatchEvent(new CustomEvent('reloadArticleTree'));
-				await loadFileContent(path);
-			} else {
-				const error = await response.json();
-				console.error('Failed to create article:', error);
-				alert(`Failed to create article: ${error.error || 'Unknown error'}`);
-			}
-		} catch (error) {
-			console.error('Failed to create article:', error);
-			alert('Failed to create article');
 		}
 	}
 
@@ -289,7 +301,7 @@
 		// Listen for add article events from layout sidebar
 		const handleAddArticleEvent = (event: Event) => {
 			const customEvent = event as CustomEvent<{ parentId: string | null; parentPath: string | null }>;
-			handleAddArticle(customEvent.detail.parentId);
+			handleAddArticle(customEvent.detail.parentId, customEvent.detail.parentPath);
 		};
 		
 		window.addEventListener('articleSelect', handleArticleSelectEvent);
@@ -307,7 +319,7 @@
 </svelte:head>
 
 <div class="h-full bg-white">
-	{#if selectedFile}
+	{#if selectedFile || isDraftArticle}
 		<!-- Editor Area -->
 		<div class="h-full">
 			{#if isLoadingFile}
@@ -318,12 +330,22 @@
 					</div>
 				</div>
 			{:else if fileContent}
+				<!-- Draft indicator -->
+				{#if isDraftArticle}
+					<div class="bg-amber-50 border-b border-amber-200 px-4 py-2 flex items-center gap-2 text-sm text-amber-800">
+						<Icon icon="tabler:file-plus" class="w-4 h-4" />
+						<span>New article — enter a title and start writing. The file will be created when you save.</span>
+						{#if isSaving}
+							<Icon icon="tabler:loader-2" class="w-4 h-4 animate-spin ml-auto" />
+						{/if}
+					</div>
+				{/if}
 				<ArticleEditor
 					bind:content={fileContent}
-					filePath={selectedFile}
-					childArticles={childArticles()}
-					onSave={saveContent}
-					onOpenSidebar={() => (showSidebar = true)}
+					filePath={selectedFile || 'articles/new-article.md'}
+					childArticles={isDraftArticle ? [] : childArticles()}
+					onSave={isDraftArticle ? saveDraftArticle : saveContent}
+					onOpenSidebar={isDraftArticle ? undefined : () => (showSidebar = true)}
 					on:titleChange={(e) => handleTitleChange(e.detail)}
 					on:selectChild={(e) => handleSelectChild(e.detail)}
 					on:addChild={handleAddChildFromEditor}
@@ -335,12 +357,12 @@
 			{/if}
 		</div>
 
-		<!-- Article Sidebar -->
-		{#if fileContent}
+		<!-- Article Sidebar (not shown for drafts) -->
+		{#if fileContent && !isDraftArticle}
 			<ArticleSidebar
 				bind:isOpen={showSidebar}
 				bind:content={fileContent}
-				filePath={selectedFile}
+				filePath={selectedFile || ''}
 				onchange={triggerAutoSave}
 				onPublish={handlePublish}
 			/>
@@ -366,56 +388,3 @@
 	{/if}
 </div>
 
-<!-- New Article Dialog -->
-{#if showNewArticleDialog}
-	<div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-		<div class="bg-white rounded-xl shadow-xl p-6 w-96 max-w-[90vw]">
-			<h3 class="text-lg font-semibold text-gray-900 mb-4">
-				{#if newArticleParentId}
-					Create Child Article
-				{:else}
-					Create New Article
-				{/if}
-			</h3>
-			
-			<div class="mb-4">
-				<label for="article-title" class="block text-sm font-medium text-gray-700 mb-2">
-					Title
-				</label>
-				<input
-					id="article-title"
-					type="text"
-					bind:value={newArticleTitle}
-					placeholder="Enter article title..."
-					class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-					onkeydown={(e) => e.key === 'Enter' && createNewArticle()}
-				/>
-				<p class="mt-1 text-xs text-gray-500">
-					The filename will be auto-generated from the title
-				</p>
-			</div>
-
-			<div class="flex justify-end gap-2">
-				<button
-					type="button"
-					onclick={() => {
-						showNewArticleDialog = false;
-						newArticleParentId = null;
-						newArticleTitle = '';
-					}}
-					class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900"
-				>
-					Cancel
-				</button>
-				<button
-					type="button"
-					onclick={createNewArticle}
-					disabled={!newArticleTitle.trim()}
-					class="px-4 py-2 text-sm font-medium bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
-				>
-					Create Article
-				</button>
-			</div>
-		</div>
-	</div>
-{/if}

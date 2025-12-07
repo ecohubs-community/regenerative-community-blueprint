@@ -188,18 +188,6 @@
 	}
 
 	async function handleCreatePR(title: string, body: string, selectedFiles?: string[]) {
-		const sessionCookie = document.cookie
-			.split('; ')
-			.find(row => row.startsWith('session='))
-			?.split('=')[1];
-
-		if (!sessionCookie) {
-			throw new Error('No session found');
-		}
-
-		const session = JSON.parse(decodeURIComponent(sessionCookie));
-		const branch = url.searchParams.get('branch') || session.currentBranch || 'main';
-
 		// If selectedFiles is provided, we need to create a selective PR
 		// For now, we create a PR with all changes and note the selection in the body
 		// A more advanced implementation would create a temporary branch with only selected files
@@ -218,7 +206,7 @@
 			body: JSON.stringify({
 				title,
 				body: prBody,
-				head: workspaceBranch,
+				head: currentBranch,
 				base: 'main',
 				draft: false
 			})
@@ -449,7 +437,7 @@
 			{/if}
 
 			<!-- Main content area -->
-			<main class="flex-1 w-full overflow-hidden">
+			<main class={`flex-1 w-full ${isContentPage ? 'overflow-hidden' : 'overflow-y-auto'}`}>
 				<div class={`h-full ${isContentPage ? '' : 'py-6 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto'}`}>
 					{@render children()}
 				</div>
