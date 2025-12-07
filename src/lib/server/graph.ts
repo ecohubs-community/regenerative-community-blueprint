@@ -1,222 +1,123 @@
-import { readArticleMeta, readJsonCollection, type ArticleMeta, type JsonEntry } from './content';
+import { readArticleMeta, type ArticleMeta } from './content';
 
-type DomainData = {
-  title?: string;
-  description?: string;
-  order?: number;
-};
-
-type TopicData = {
-  title?: string;
-  domain?: string;
-  description?: string;
-  order?: number;
-};
-
-type ModuleData = {
-  title?: string;
-  topic?: string;
-  description?: string;
-  order?: number;
-};
-
-type DomainJson = JsonEntry<DomainData>;
-type TopicJson = JsonEntry<TopicData>;
-type ModuleJson = JsonEntry<ModuleData>;
-
-export type Domain = {
-  id: string;
-  slug: string;
-  title: string;
-  description?: string;
-  order?: number;
-  topicIds: string[];
-};
-
-export type Topic = {
-  id: string;
-  slug: string;
-  title: string;
-  description?: string;
-  order?: number;
-  domainId: string;
-  moduleIds: string[];
-};
-
-export type Module = {
-  id: string;
-  slug: string;
-  title: string;
-  description?: string;
-  order?: number;
-  topicId: string;
-  articleIds: string[];
-};
-
+/**
+ * Unified Article - the single content type in the new system
+ * Articles can have parent-child relationships forming a tree hierarchy
+ */
 export type Article = {
   id: string;
   slug: string;
   title: string;
   summary?: string;
-  moduleIds: string[];
-  topicIds: string[];
-  domainIds: string[];
-  climate: string[];
-  budget: string[];
-  size: string[];
+  parentId?: string | null;
+  order?: number;
+  children: Article[];
+  climate?: string[];
+  budget?: string[];
+  size?: string[];
   attachments?: { file: string; caption?: string }[];
 };
 
-export type RawGraph = {
-  domains: DomainJson[];
-  topics: TopicJson[];
-  modules: ModuleJson[];
-  articles: ArticleMeta[];
-};
+export type ArticleTree = Article[];
 
 export type Graph = {
-  domains: Domain[];
-  topics: Topic[];
-  modules: Module[];
   articles: Article[];
+  articleTree: ArticleTree;
 };
 
-export async function loadRawGraph(): Promise<RawGraph> {
-  const [domains, topics, modules, articles] = await Promise.all([
-    readJsonCollection<DomainData>('domains'),
-    readJsonCollection<TopicData>('topics'),
-    readJsonCollection<ModuleData>('modules'),
-    readArticleMeta()
-  ]);
-
+/**
+ * Build the unified article graph with tree structure
+ */
+export async function buildGraph(): Promise<Graph> {
+  const articleTree = await buildArticleTree();
+  const articles = flattenArticleTree(articleTree);
+  
   return {
-    domains: domains as DomainJson[],
-    topics: topics as TopicJson[],
-    modules: modules as ModuleJson[],
-    articles
+    articles,
+    articleTree
   };
 }
 
-export async function buildGraph(): Promise<Graph> {
-  const raw = await loadRawGraph();
-
-  const domains = new Map<string, Domain>();
-  const domainTitleMap = new Map<string, string>();
-  for (const entry of raw.domains) {
-    const id = entry.slug;
-    const title = coerceTitle(entry.title, id);
-    const domain: Domain = {
-      id,
-      slug: entry.slug,
-      title,
-      description: coerceOptionalString(entry.description),
-      order: coerceOptionalNumber(entry.order),
-      topicIds: []
-    };
-    domains.set(id, domain);
-    domainTitleMap.set(normalize(title), id);
-  }
-
-  const topics = new Map<string, Topic>();
-  const topicTitleMap = new Map<string, string>();
-  for (const entry of raw.topics) {
-    const id = entry.slug;
-    const title = coerceTitle(entry.title, id);
-    const domainId = resolveByTitle(entry.domain, domainTitleMap);
-    if (!domainId) {
-      console.warn(`[graph] Topic "${title}" missing valid domain reference.`);
-      continue;
-    }
-
-    const topic: Topic = {
-      id,
-      slug: entry.slug,
-      title,
-      description: coerceOptionalString(entry.description),
-      order: coerceOptionalNumber(entry.order),
-      domainId,
-      moduleIds: []
-    };
-    topics.set(id, topic);
-    topicTitleMap.set(normalize(title), id);
-    domains.get(domainId)?.topicIds.push(id);
-  }
-
-  const modules = new Map<string, Module>();
-  const moduleTitleMap = new Map<string, string>();
-  for (const entry of raw.modules) {
-    const id = entry.slug;
-    const title = coerceTitle(entry.title, id);
-    const topicId = resolveByTitle(entry.topic, topicTitleMap);
-    if (!topicId) {
-      console.warn(`[graph] Module "${title}" missing valid topic reference.`);
-      continue;
-    }
-
-    const module: Module = {
-      id,
-      slug: entry.slug,
-      title,
-      description: coerceOptionalString(entry.description),
-      order: coerceOptionalNumber(entry.order),
-      topicId,
-      articleIds: []
-    };
-    modules.set(id, module);
-    moduleTitleMap.set(normalize(title), id);
-    topics.get(topicId)?.moduleIds.push(id);
-  }
-
-  const articles: Article[] = [];
-  for (const entry of raw.articles) {
-    const id = entry.slug;
-    const title = coerceTitle(entry.title, id);
-    const moduleIds = normalizeList(entry.modules)
-      .map((moduleTitle) => resolveByTitle(moduleTitle, moduleTitleMap))
-      .filter((value): value is string => Boolean(value));
-
-    const topicIds = dedupe(
-      moduleIds
-        .map((moduleId) => modules.get(moduleId)?.topicId)
-        .filter((value): value is string => Boolean(value))
-    );
-
-    const domainIds = dedupe(
-      topicIds
-        .map((topicId) => topics.get(topicId)?.domainId)
-        .filter((value): value is string => Boolean(value))
-    );
-
+/**
+ * Build a unified article tree from articles with parentId relationships
+ */
+export async function buildArticleTree(): Promise<ArticleTree> {
+  const rawArticles = await readArticleMeta();
+  
+  const articleMap = new Map<string, Article>();
+  
+  // First pass: create all article nodes
+  for (const entry of rawArticles) {
+    const id = entry.id || entry.slug;
     const article: Article = {
       id,
       slug: entry.slug,
-      title,
+      title: coerceTitle(entry.title, entry.slug),
       summary: coerceOptionalString(entry.summary),
-      moduleIds,
-      topicIds,
-      domainIds,
+      parentId: entry.parentId as string | null | undefined,
+      order: coerceOptionalNumber(entry.order),
+      children: [],
       climate: normalizeList(entry.climate),
       budget: normalizeList(entry.budget),
       size: normalizeList(entry.size),
       attachments: Array.isArray(entry.attachments) ? entry.attachments : undefined
     };
-
-    moduleIds.forEach((moduleId) => modules.get(moduleId)?.articleIds.push(id));
-    articles.push(article);
+    articleMap.set(id, article);
   }
-
-  return {
-    domains: Array.from(domains.values()),
-    topics: Array.from(topics.values()),
-    modules: Array.from(modules.values()),
-    articles
-  };
+  
+  // Second pass: build tree structure
+  const rootArticles: Article[] = [];
+  
+  articleMap.forEach((article) => {
+    if (article.parentId && articleMap.has(article.parentId)) {
+      const parent = articleMap.get(article.parentId)!;
+      parent.children.push(article);
+    } else {
+      rootArticles.push(article);
+    }
+  });
+  
+  // Sort by order, then by title
+  sortArticles(rootArticles);
+  return rootArticles;
 }
 
-function normalize(value?: string) {
-  return (value ?? '').trim().toLowerCase();
+/**
+ * Flatten article tree into a flat array
+ */
+function flattenArticleTree(tree: ArticleTree): Article[] {
+  const result: Article[] = [];
+  
+  function traverse(articles: Article[]) {
+    for (const article of articles) {
+      result.push(article);
+      if (article.children.length > 0) {
+        traverse(article.children);
+      }
+    }
+  }
+  
+  traverse(tree);
+  return result;
 }
 
+/**
+ * Sort articles recursively by order, then by title
+ */
+function sortArticles(articles: Article[]) {
+  articles.sort((a, b) => {
+    const orderDiff = (a.order ?? 0) - (b.order ?? 0);
+    if (orderDiff !== 0) return orderDiff;
+    return a.title.localeCompare(b.title);
+  });
+  articles.forEach(article => {
+    if (article.children.length > 0) {
+      sortArticles(article.children);
+    }
+  });
+}
+
+// Helper functions
 function coerceTitle(value: unknown, fallback: string) {
   const str = coerceOptionalString(value) ?? fallback;
   return str.trim() || fallback;
@@ -237,12 +138,6 @@ function coerceOptionalNumber(value: unknown): number | undefined {
   return undefined;
 }
 
-function resolveByTitle(value: unknown, map: Map<string, string>) {
-  if (typeof value !== 'string') return undefined;
-  const key = normalize(value);
-  return key ? map.get(key) : undefined;
-}
-
 function normalizeList(value: unknown): string[] {
   if (Array.isArray(value)) {
     return value
@@ -254,8 +149,4 @@ function normalizeList(value: unknown): string[] {
     return trimmed ? [trimmed] : [];
   }
   return [];
-}
-
-function dedupe<T>(values: T[]): T[] {
-  return Array.from(new Set(values));
 }

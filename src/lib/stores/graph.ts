@@ -1,71 +1,72 @@
-import type { Graph, Domain, Topic, Module, Article } from '$lib/server/graph';
+import type { Graph, Article, ArticleTree } from '$lib/server/graph';
 import { writable, derived } from 'svelte/store';
 
+// Main graph store
 export const graph = writable<Graph>();
-export const domains = derived(graph, ($graph) => $graph?.domains ?? []);
-export const topics = derived(graph, ($graph) => $graph?.topics ?? []);
-export const modules = derived(graph, ($graph) => $graph?.modules ?? []);
+
+// Flat list of all articles
 export const articles = derived(graph, ($graph) => $graph?.articles ?? []);
 
-export const domainBySlug = derived(domains, ($domains) => {
-  const map = new Map<string, Domain>();
-  for (const d of $domains) map.set(d.slug, d);
-  return map;
-});
+// Hierarchical article tree
+export const articleTree = derived(graph, ($graph) => $graph?.articleTree ?? []);
 
-export const topicBySlug = derived(topics, ($topics) => {
-  const map = new Map<string, Topic>();
-  for (const t of $topics) map.set(t.slug, t);
-  return map;
-});
-
-export const moduleBySlug = derived(modules, ($modules) => {
-  const map = new Map<string, Module>();
-  for (const m of $modules) map.set(m.slug, m);
-  return map;
-});
-
+// Lookup article by slug
 export const articleBySlug = derived(articles, ($articles) => {
   const map = new Map<string, Article>();
   for (const a of $articles) map.set(a.slug, a);
   return map;
 });
 
-export const domainTree = derived([domains, topics, modules], ([$domains, $topics, $modules]) => {
-  return $domains.map((domain) => ({
-    ...domain,
-    topics: domain.topicIds
-      .map((tid) => $topics.find((t) => t.id === tid))
-      .filter((t): t is Topic => Boolean(t))
-      .map((topic) => ({
-        ...topic,
-        modules: topic.moduleIds
-          .map((mid) => $modules.find((m) => m.id === mid))
-          .filter((m): m is Module => Boolean(m))
-      }))
-  }));
+// Lookup article by ID
+export const articleById = derived(articles, ($articles) => {
+  const map = new Map<string, Article>();
+  for (const a of $articles) map.set(a.id, a);
+  return map;
 });
 
-export function getDomainBySlug(slug: string) {
-  let value: Domain | undefined;
-  domainBySlug.subscribe((map) => (value = map.get(slug)))();
-  return value;
-}
+// Get root-level articles (no parent)
+export const rootArticles = derived(articles, ($articles) => 
+  $articles.filter(a => !a.parentId)
+);
 
-export function getTopicBySlug(slug: string) {
-  let value: Topic | undefined;
-  topicBySlug.subscribe((map) => (value = map.get(slug)))();
-  return value;
-}
-
-export function getModuleBySlug(slug: string) {
-  let value: Module | undefined;
-  moduleBySlug.subscribe((map) => (value = map.get(slug)))();
-  return value;
-}
-
-export function getArticleBySlug(slug: string) {
+// Helper function to get article by slug
+export function getArticleBySlug(slug: string): Article | undefined {
   let value: Article | undefined;
   articleBySlug.subscribe((map) => (value = map.get(slug)))();
   return value;
+}
+
+// Helper function to get article by ID
+export function getArticleById(id: string): Article | undefined {
+  let value: Article | undefined;
+  articleById.subscribe((map) => (value = map.get(id)))();
+  return value;
+}
+
+// Helper function to get children of an article
+export function getChildArticles(parentId: string): Article[] {
+  let children: Article[] = [];
+  articles.subscribe(($articles) => {
+    children = $articles.filter(a => a.parentId === parentId);
+  })();
+  return children;
+}
+
+// Helper function to get parent of an article
+export function getParentArticle(article: Article): Article | undefined {
+  if (!article.parentId) return undefined;
+  return getArticleById(article.parentId);
+}
+
+// Helper function to get breadcrumb path for an article
+export function getArticleBreadcrumbs(article: Article): Article[] {
+  const breadcrumbs: Article[] = [];
+  let current: Article | undefined = article;
+  
+  while (current) {
+    breadcrumbs.unshift(current);
+    current = current.parentId ? getArticleById(current.parentId) : undefined;
+  }
+  
+  return breadcrumbs;
 }

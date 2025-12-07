@@ -69,7 +69,7 @@
 					<button
 						on:click={loginWithGitHub}
 						disabled={loading}
-						class="w-full flex justify-center items-center px-4 py-3 border border-transparent text-sm font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+						class="w-full flex justify-center items-center px-4 py-3 border border-transparent text-sm font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer"
 					>
 						{#if loading}
 							<Icon icon="tabler:loader-2" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" />

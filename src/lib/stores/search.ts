@@ -3,11 +3,11 @@ import MiniSearch from 'minisearch';
 
 export type SearchResult = {
   id: string;
-  type: 'domain' | 'topic' | 'module' | 'article';
   slug: string;
   title: string;
   snippet?: string;
   meta?: string;
+  parentId?: string | null;
   climate?: string[];
   budget?: string[];
   size?: string[];
@@ -32,7 +32,6 @@ export const filteredResults = derived(
   [results, filters],
   ([$results, $filters]) =>
     $results.filter((r) => {
-      if (r.type !== 'article') return true;
       return (
         ($filters.climate.size === 0 || r.climate?.some((c) => $filters.climate.has(c))) &&
         ($filters.budget.size === 0 || r.budget?.some((b) => $filters.budget.has(b))) &&
@@ -88,11 +87,11 @@ function runSearch() {
   const raw = idx.search(q, { fuzzy: 0.2, prefix: true });
   const mapped: SearchResult[] = raw.map((doc) => ({
     id: doc.id,
-    type: doc.type,
     slug: doc.slug,
     title: doc.title,
     snippet: doc.snippet,
     meta: doc.meta,
+    parentId: doc.parentId,
     climate: doc.climate,
     budget: doc.budget,
     size: doc.size

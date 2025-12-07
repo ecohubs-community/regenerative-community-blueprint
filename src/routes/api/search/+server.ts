@@ -8,27 +8,11 @@ interface SearchDocument {
 	id: string;
 	title: string;
 	content: string;
-	type: 'domain' | 'topic' | 'module' | 'article';
 	path: string;
+	parentId?: string | null;
 	climate?: string[];
 	budget?: string[];
 	size?: string[];
-	domain?: string;
-	topic?: string;
-}
-
-interface ContentMetadata {
-	climate?: string[];
-	budget?: string[];
-	size?: string[];
-	domain?: string;
-	topic?: string;
-}
-
-interface ExtractedContent {
-	title?: string;
-	content: string;
-	[metadata: string]: unknown;
 }
 
 interface SearchResponse {
@@ -37,21 +21,18 @@ interface SearchResponse {
 		id: string;
 		title: string;
 		content: string;
-		type: string;
 		path: string;
 		score: number;
 		metadata?: {
+			parentId?: string | null;
 			climate?: string[];
 			budget?: string[];
 			size?: string[];
-			domain?: string;
-			topic?: string;
 		};
 	}>;
 	total?: number;
 	query?: string;
 	filters?: {
-		type?: string;
 		climate?: string;
 		budget?: string;
 		size?: string;
@@ -61,76 +42,19 @@ interface SearchResponse {
 
 function createSearchIndex(documents: SearchDocument[]): MiniSearch<SearchDocument> {
 	const index = new MiniSearch({
-		fields: ['title', 'content', 'type'],
-		storeFields: ['id', 'title', 'content', 'type', 'path', 'climate', 'budget', 'size', 'domain', 'topic'],
+		fields: ['title', 'content'],
+		storeFields: ['id', 'title', 'content', 'path', 'parentId', 'climate', 'budget', 'size'],
 		searchOptions: {
 			fuzzy: 0.2,
 			prefix: true,
 			boost: {
-				title: 2,
-				type: 1.5
+				title: 2
 			}
 		}
 	});
 
 	index.addAll(documents);
 	return index;
-}
-
-async function extractContentFromFile(octokit: Octokit, path: string, branch: string): Promise<ExtractedContent | null> {
-	try {
-		const { data: file } = await octokit.rest.repos.getContent({
-			owner: githubConfig.owner!,
-			repo: githubConfig.repo!,
-			path: `content/${path}`,
-			ref: branch
-		});
-
-		if (!('content' in file) || !('encoding' in file)) {
-			return null;
-		}
-
-		const content = Buffer.from(file.content, file.encoding as 'base64').toString('utf-8');
-		const extension = path.split('.').pop()?.toLowerCase();
-
-		let title = '';
-		let processedContent = content;
-		let metadata: ContentMetadata = {};
-
-		if (extension === 'md') {
-			// Parse markdown frontmatter
-			const parsed = matter(content);
-			title = parsed.data.title || path.split('/').pop()?.replace('.md', '') || '';
-			processedContent = parsed.content;
-			metadata = {
-				climate: parsed.data.climate || [],
-				budget: parsed.data.budget || [],
-				size: parsed.data.size || []
-			};
-		} else if (extension === 'json') {
-			// Parse JSON
-			try {
-				const jsonData = JSON.parse(content);
-				title = jsonData.title || '';
-				metadata = {
-					domain: jsonData.domain || undefined,
-					topic: jsonData.topic || undefined
-				};
-				processedContent = `${jsonData.title} ${jsonData.description || ''}`;
-			} catch {
-				return null;
-			}
-		}
-
-		return {
-			title,
-			content: processedContent,
-			...metadata
-		};
-
-	} catch {
-		return null;
-	}
 }
 
 async function buildSearchIndex(octokit: Octokit, branch: string): Promise<MiniSearch<SearchDocument>> {
@@ -144,48 +68,48 @@ async function buildSearchIndex(octokit: Octokit, branch: string): Promise<MiniS
 
 	const documents: SearchDocument[] = [];
 
-	// Process each content file
+	// Process only article files
 	for (const item of tree.tree || []) {
-		if (!item.path?.startsWith('content/') || item.type !== 'blob') {
+		if (!item.path?.startsWith('content/articles/') || 
+			!item.path?.endsWith('.md') || 
+			item.type !== 'blob') {
 			continue;
 		}
 
-		const relativePath = item.path.replace('content/', '');
-		const pathParts = relativePath.split('/');
+		try {
+			const { data: file } = await octokit.rest.repos.getContent({
+				owner: githubConfig.owner!,
+				repo: githubConfig.repo!,
+				path: item.path,
+				ref: branch
+			});
 
-		// Determine content type from path
-		let type: 'domain' | 'topic' | 'module' | 'article';
-		if (pathParts[0] === 'domains') {
-			type = 'domain';
-		} else if (pathParts[0] === 'topics') {
-			type = 'topic';
-		} else if (pathParts[0] === 'modules') {
-			type = 'module';
-		} else if (pathParts[0] === 'articles') {
-			type = 'article';
-		} else {
-			continue; // Skip other directories
+			if (!('content' in file) || !('encoding' in file)) {
+				continue;
+			}
+
+			const content = Buffer.from(file.content, file.encoding as 'base64').toString('utf-8');
+			const parsed = matter(content);
+			
+			const relativePath = item.path.replace('content/', '');
+			const slug = relativePath.replace('articles/', '').replace('.md', '');
+			const id = parsed.data.id || slug;
+
+			const document: SearchDocument = {
+				id,
+				title: parsed.data.title || slug,
+				content: parsed.content,
+				path: relativePath,
+				parentId: parsed.data.parentId || null,
+				climate: parsed.data.climate || [],
+				budget: parsed.data.budget || [],
+				size: parsed.data.size || []
+			};
+
+			documents.push(document);
+		} catch (error) {
+			console.error(`Failed to process ${item.path}:`, error);
 		}
-
-		const contentData = await extractContentFromFile(octokit, relativePath, branch);
-		if (!contentData || !contentData.title) {
-			continue;
-		}
-
-		const document: SearchDocument = {
-			id: relativePath,
-			title: contentData.title || '',
-			content: contentData.content || '',
-			type,
-			path: relativePath,
-			climate: contentData.climate as string[] | undefined,
-			budget: contentData.budget as string[] | undefined,
-			size: contentData.size as string[] | undefined,
-			domain: contentData.domain as string | undefined,
-			topic: contentData.topic as string | undefined
-		};
-
-		documents.push(document);
 	}
 
 	return createSearchIndex(documents);
@@ -208,7 +132,6 @@ export async function GET({ url, cookies }): Promise<Response> {
 		}
 
 		const query = url.searchParams.get('q') || '';
-		const type = url.searchParams.get('type') || undefined;
 		const climate = url.searchParams.get('climate') || undefined;
 		const budget = url.searchParams.get('budget') || undefined;
 		const size = url.searchParams.get('size') || undefined;
@@ -228,17 +151,13 @@ export async function GET({ url, cookies }): Promise<Response> {
 			fuzzy: 0.2,
 			prefix: true,
 			boost: {
-				title: 2,
-				type: 1.5
+				title: 2
 			}
 		});
 
 		// Apply filters
-		const filters = { type, climate, budget, size };
+		const filters = { climate, budget, size };
 		const filteredResults = searchResults.filter(result => {
-			if (filters.type && result.type !== filters.type) {
-				return false;
-			}
 			if (filters.climate && result.climate && !result.climate.includes(filters.climate)) {
 				return false;
 			}
@@ -255,16 +174,14 @@ export async function GET({ url, cookies }): Promise<Response> {
 		const formattedResults = filteredResults.map(result => ({
 			id: result.id,
 			title: result.title,
-			content: result.content,
-			type: result.type,
+			content: result.content.slice(0, 200), // Truncate content for response
 			path: result.path,
 			score: result.score,
 			metadata: {
+				parentId: result.parentId,
 				climate: result.climate,
 				budget: result.budget,
-				size: result.size,
-				domain: result.domain,
-				topic: result.topic
+				size: result.size
 			}
 		}));
 
@@ -278,7 +195,7 @@ export async function GET({ url, cookies }): Promise<Response> {
 
 		return json(response);
 
-		} catch {
-			return json({ error: 'Search failed' }, { status: 500 });
-		}
+	} catch {
+		return json({ error: 'Search failed' }, { status: 500 });
+	}
 }

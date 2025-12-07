@@ -2,16 +2,25 @@ import { json } from '@sveltejs/kit';
 import { githubConfig } from '$lib/server/env';
 import { Octokit } from '@octokit/rest';
 import matter from 'gray-matter';
+import type { ArticleTreeNode } from '$lib/types/article';
 
-interface ContentNode {
+// Article metadata from frontmatter
+interface ArticleMetadata {
+	id?: string;
+	title?: string;
+	icon?: string;
+	parentId?: string | null;
+	order?: number;
+	[key: string]: unknown;
+}
+
+interface GitHubTreeItem {
 	path: string;
-	type: 'file' | 'dir';
-	name: string;
-	sha?: string;
+	mode: string;
+	type: string;
+	sha: string;
 	size?: number;
 	url?: string;
-	children?: ContentNode[];
-	metadata?: Record<string, any>;
 }
 
 export async function GET({ url, cookies }) {
@@ -42,12 +51,12 @@ export async function GET({ url, cookies }) {
 			recursive: '1'
 		});
 
-		// Filter and organize content tree
-		const contentTree = await organizeContentTree(tree.tree || [], octokit, branch);
-
+		// Build unified article tree
+		const articleTree = await buildArticleTree(tree.tree || [], octokit, branch);
+		
 		return json({
 			branch,
-			tree: contentTree,
+			articles: articleTree,
 			sha: tree.sha
 		});
 
@@ -57,112 +66,85 @@ export async function GET({ url, cookies }) {
 	}
 }
 
-interface GitHubTreeItem {
-	path: string;
-	mode: string;
-	type: string;
-	sha: string;
-	size?: number;
-	url?: string;
-}
-
-async function organizeContentTree(items: GitHubTreeItem[], octokit: Octokit, branch: string): Promise<ContentNode[]> {
-	// Filter to only include content directory items
-	const contentItems = items.filter(item => 
-		item.path?.startsWith('content/') && 
-		!item.path?.includes('.gitkeep')
+/**
+ * Build a unified article tree from markdown files in content/articles
+ * Articles are organized by parentId relationships defined in frontmatter
+ */
+async function buildArticleTree(items: GitHubTreeItem[], octokit: Octokit, branch: string): Promise<ArticleTreeNode[]> {
+	// Filter to only include markdown files in articles directory
+	const articleItems = items.filter(item => 
+		item.path?.startsWith('content/articles/') && 
+		item.path?.endsWith('.md') &&
+		item.type === 'blob'
 	);
 
-	// Create a hierarchical structure
-	const root: ContentNode[] = [];
-	const nodeMap = new Map<string, ContentNode>();
-
-	// First pass: create all nodes
-	contentItems.forEach(item => {
-		const path = item.path?.replace('content/', '') || '';
-		const parts = path.split('/');
-		const name = parts[parts.length - 1];
-		
-		const node: ContentNode = {
-			path,
-			type: item.type === 'blob' ? 'file' : 'dir',
-			name,
-			sha: item.sha,
-			size: item.size,
-			url: item.url,
-			children: []
-		};
-
-		nodeMap.set(path, node);
-	});
-
-	// Second pass: fetch metadata for JSON and Markdown files
-	const metadataPromises: Promise<void>[] = [];
-	nodeMap.forEach((node) => {
-		if (node.type === 'file' && (node.name.endsWith('.json') || node.name.endsWith('.md'))) {
-			const promise = (async () => {
-				try {
-					const { data } = await octokit.rest.repos.getContent({
-						owner: githubConfig.owner!,
-						repo: githubConfig.repo!,
-						path: `content/${node.path}`,
-						ref: branch
-					});
-					
-					if ('content' in data && typeof data.content === 'string') {
-						const content = Buffer.from(data.content, 'base64').toString('utf-8');
-						
-						if (node.name.endsWith('.json')) {
-							node.metadata = JSON.parse(content);
-						} else if (node.name.endsWith('.md')) {
-							// Parse frontmatter from markdown using gray-matter
-							const parsed = matter(content);
-							node.metadata = parsed.data;
-						}
-					}
-				} catch (error) {
-					console.error(`Failed to fetch metadata for ${node.path}:`, error);
-				}
-			})();
-			metadataPromises.push(promise);
+	// Fetch all article metadata in parallel
+	const articleMap = new Map<string, ArticleTreeNode>();
+	
+	await Promise.all(articleItems.map(async (item) => {
+		try {
+			const { data } = await octokit.rest.repos.getContent({
+				owner: githubConfig.owner!,
+				repo: githubConfig.repo!,
+				path: item.path,
+				ref: branch
+			});
+			
+			if ('content' in data && typeof data.content === 'string') {
+				const content = Buffer.from(data.content, 'base64').toString('utf-8');
+				const parsed = matter(content);
+				const metadata = parsed.data as ArticleMetadata;
+				
+				const path = item.path.replace('content/', '');
+				const slug = path.replace('articles/', '').replace('.md', '');
+				const id = metadata.id || slug;
+				
+				const node: ArticleTreeNode = {
+					id,
+					slug,
+					path,
+					title: metadata.title || slug,
+					icon: metadata.icon,
+					parentId: metadata.parentId || null,
+					order: metadata.order ?? 0,
+					children: [],
+					hasChanges: false
+				};
+				
+				articleMap.set(id, node);
+			}
+		} catch (error) {
+			console.error(`Failed to fetch article ${item.path}:`, error);
 		}
-	});
+	}));
 
-	// Wait for all metadata to be fetched
-	await Promise.all(metadataPromises);
-
-	// Third pass: build hierarchy
-	nodeMap.forEach((node, path) => {
-		const parts = path.split('/');
-		
-		if (parts.length === 1) {
-			// Root level item
-			root.push(node);
+	// Build tree structure based on parentId relationships
+	const rootNodes: ArticleTreeNode[] = [];
+	
+	articleMap.forEach((node) => {
+		if (node.parentId && articleMap.has(node.parentId)) {
+			const parent = articleMap.get(node.parentId)!;
+			parent.children.push(node);
 		} else {
-			// Find parent and add as child
-			const parentPath = parts.slice(0, -1).join('/');
-			const parent = nodeMap.get(parentPath);
-			if (parent && parent.children) {
-				parent.children.push(node);
-			}
+			// Root level article (no parent or parent not found)
+			rootNodes.push(node);
 		}
 	});
 
-	// Sort by type (directories first) then by name
-	const sortNodes = (nodes: ContentNode[]) => {
+	// Sort nodes by order, then by title
+	const sortNodes = (nodes: ArticleTreeNode[]) => {
 		nodes.sort((a, b) => {
-			if (a.type !== b.type) {
-				return a.type === 'dir' ? -1 : 1;
-			}
-			return a.name.localeCompare(b.name);
+			const orderDiff = (a.order ?? 0) - (b.order ?? 0);
+			if (orderDiff !== 0) return orderDiff;
+			return a.title.localeCompare(b.title);
 		});
 		nodes.forEach(node => {
-			if (node.children) {
+			if (node.children.length > 0) {
 				sortNodes(node.children);
 			}
 		});
 	};
 
-	sortNodes(root);
-	return root;
+	sortNodes(rootNodes);
+	return rootNodes;
 }

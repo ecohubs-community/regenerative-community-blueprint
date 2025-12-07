@@ -12,3 +12,7 @@
 @theme {
   
 }
+
+button {
+  @apply cursor-pointer;
+}

@@ -15,7 +15,9 @@ export type JsonEntry<T extends JsonValue = JsonValue> = T & {
 export type ArticleMeta = JsonEntry<{
   title?: string;
   summary?: string;
-  modules?: string[] | string;
+  parentId?: string | null;
+  order?: number;
+  icon?: string;
   climate?: string[] | string;
   budget?: string[] | string;
   size?: string[] | string;

@@ -1,61 +1,71 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { contentSidebarMode, setContentSidebarMode } from '$lib/stores/ui';
-	import CrepeEditor from '$lib/components/CrepeEditor.svelte';
+	import ArticleEditor from '$lib/components/admin/ArticleEditor.svelte';
 	import ArticleSidebar from '$lib/components/admin/ArticleSidebar.svelte';
 	import Icon from '@iconify/svelte';
+	import type { ArticleTreeNode } from '$lib/types/article';
+	import { generateArticleId, generateSlug } from '$lib/types/article';
 
-	interface ContentNode {
-		path: string;
-		type: 'file' | 'dir';
-		name: string;
-		children?: ContentNode[];
-		content_type?: 'domain' | 'topic' | 'module' | 'article';
-		metadata?: Record<string, any>;
-	}
-
-	interface Frontmatter {
+	interface ArticleFrontmatter {
+		id?: string;
 		title?: string;
+		icon?: string;
+		parentId?: string | null;
+		order?: number;
 		climate?: string[];
-		budget?: string;
+		budget?: string[];
 		size?: string[];
-		modules?: string[];
-		description?: string;
-		domain?: string;
-		topic?: string;
+		summary?: string;
 		[key: string]: unknown;
 	}
 
 	interface EditorContent {
-		frontmatter: Frontmatter;
+		frontmatter: ArticleFrontmatter;
 		content: string;
 	}
 
-	let contentTree = $state<ContentNode[]>([]);
-	let isLoadingTree = $state(true);
+	// Article tree for finding children
+	let articleTree = $state<ArticleTreeNode[]>([]);
 	let selectedFile = $state<string | null>(null);
 	let fileContent = $state<EditorContent | null>(null);
 	let isLoadingFile = $state(false);
 	let isSaving = $state(false);
 	let showSidebar = $state(false);
-	let showNewContentDialog = $state(false);
-	let newContentType = $state<'domain' | 'topic' | 'module' | 'article' | null>(null);
-	let newContentParent = $state<string | null>(null);
-	let newContentName = $state('');
-	let newContentTitle = $state('');
-	let currentSidebarMode = $state<'main' | 'content'>('content');
+	let showNewArticleDialog = $state(false);
+	let newArticleParentId = $state<string | null>(null);
+	let newArticleTitle = $state('');
 
-	async function loadContentTree() {
+	// Find child articles for the current article
+	const childArticles = $derived(() => {
+		if (!fileContent?.frontmatter?.id) return [];
+		const currentId = fileContent.frontmatter.id;
+		
+		// Recursively find direct children in the tree
+		function findDirectChildren(nodes: ArticleTreeNode[]): ArticleTreeNode[] {
+			const children: ArticleTreeNode[] = [];
+			for (const node of nodes) {
+				if (node.parentId === currentId) {
+					children.push(node);
+				}
+				if (node.children.length > 0) {
+					children.push(...findDirectChildren(node.children));
+				}
+			}
+			return children;
+		}
+		
+		return findDirectChildren(articleTree);
+	});
+
+	async function loadArticleTree() {
 		try {
-			const response = await fetch('/api/content/tree');
+			const response = await fetch('/api/content/tree?format=tree');
 			if (response.ok) {
 				const data = await response.json();
-				contentTree = data.tree || [];
+				articleTree = data.articles || [];
 			}
 		} catch (error) {
-			console.error('Failed to load content tree:', error);
-		} finally {
-			isLoadingTree = false;
+			console.error('Failed to load article tree:', error);
 		}
 	}
 
@@ -73,13 +83,16 @@
 					frontmatter: data.frontmatter || {},
 					content: data.content || ''
 				};
+				
+				// Ensure article has an ID
+				if (!fileContent.frontmatter.id) {
+					fileContent.frontmatter.id = generateArticleId();
+				}
 			} else if (response.status === 404) {
-				// File no longer exists (e.g. deleted in this workspace)
 				console.warn('File not found, clearing selection:', path);
 				selectedFile = null;
 				fileContent = null;
 				showSidebar = false;
-				await loadContentTree();
 			} else {
 				fileContent = null;
 			}
@@ -115,7 +128,9 @@
 				}
 			}
 			
-			// Return success for the editor to update its status
+			// Notify layout to reload article tree (title may have changed)
+			window.dispatchEvent(new CustomEvent('reloadArticleTree'));
+			
 			return Promise.resolve();
 		} catch (error) {
 			console.error('Failed to save content:', error);
@@ -128,7 +143,7 @@
 	async function deleteFile() {
 		if (!selectedFile) return;
 
-		if (!confirm(`Are you sure you want to delete ${selectedFile}?`)) {
+		if (!confirm(`Are you sure you want to delete this article?`)) {
 			return;
 		}
 
@@ -140,11 +155,10 @@
 			});
 
 			if (response.ok || response.status === 404) {
-				// Clear selection and reload tree
 				selectedFile = null;
 				fileContent = null;
 				showSidebar = false;
-				await loadContentTree();
+				window.dispatchEvent(new CustomEvent('reloadArticleTree'));
 			} else {
 				console.error('Failed to delete file');
 			}
@@ -154,7 +168,6 @@
 	}
 
 	function triggerAutoSave() {
-		// Trigger auto-save in the editor when metadata changes
 		if (fileContent) {
 			saveContent(fileContent);
 		}
@@ -164,7 +177,6 @@
 		if (!selectedFile) return;
 
 		try {
-
 			if (action === 'delete') {
 				await deleteFile();
 				return;
@@ -185,8 +197,6 @@
 
 			const result = await response.json();
 			console.log('Publish action completed:', result);
-			
-			// Show success message
 			alert(`Successfully executed ${action} action for ${selectedFile}`);
 		} catch (error) {
 			console.error('Publish action failed:', error);
@@ -194,145 +204,112 @@
 		}
 	}
 
-	onMount(() => {
-		loadContentTree();
-		
-		// Listen for content selection from layout sidebar
-		const handleContentSelectEvent = (event: Event) => {
-			const customEvent = event as CustomEvent<string>;
-			handleSelect(customEvent.detail);
-		};
-		
-		// Listen for add content events from layout sidebar
-		const handleAddContentEvent = (event: Event) => {
-			const customEvent = event as CustomEvent<{ type: 'domain' | 'topic' | 'module' | 'article'; parent: string | null }>;
-			handleAddContent(customEvent.detail.type, customEvent.detail.parent);
-		};
-		
-		window.addEventListener('contentSelect', handleContentSelectEvent);
-		window.addEventListener('addContent', handleAddContentEvent);
-		
-		return () => {
-			window.removeEventListener('contentSelect', handleContentSelectEvent);
-			window.removeEventListener('addContent', handleAddContentEvent);
-		};
-	});
-
-	function handleSelect(path: string) {
-		// Only load content for articles (markdown files)
+	function handleArticleSelect(path: string) {
 		if (path.endsWith('.md')) {
 			loadFileContent(path);
 		}
 	}
 
-	function handleAddContent(type: 'domain' | 'topic' | 'module' | 'article', parent: string | null) {
-		newContentType = type;
-		newContentParent = parent;
-		newContentName = '';
-		newContentTitle = '';
-		showNewContentDialog = true;
+	function handleAddArticle(parentId: string | null) {
+		newArticleParentId = parentId;
+		newArticleTitle = '';
+		showNewArticleDialog = true;
 	}
 
-	async function createNewContent() {
-		if (!newContentType || !newContentTitle) return;
+	function handleTitleChange(newTitle: string) {
+		// Title is already updated in fileContent via binding
+		// Just trigger a save
+		triggerAutoSave();
+	}
+
+	function handleSelectChild(path: string) {
+		handleArticleSelect(path);
+	}
+
+	function handleAddChildFromEditor() {
+		if (fileContent?.frontmatter?.id) {
+			handleAddArticle(fileContent.frontmatter.id);
+		}
+	}
+
+	async function createNewArticle() {
+		if (!newArticleTitle.trim()) return;
 		
-		// Auto-generate filename from title
-		const autoGeneratedName = newContentTitle
-			.toLowerCase()
-			.replace(/[^a-z0-9]+/g, '-')
-			.replace(/^-+|-+$/g, '');
+		const id = generateArticleId();
+		const slug = generateSlug(newArticleTitle);
+		const path = `articles/${slug}.md`;
 		
-		const fileName = newContentName || autoGeneratedName;
+		const frontmatter: ArticleFrontmatter = {
+			id,
+			title: newArticleTitle,
+			parentId: newArticleParentId,
+			order: 0
+		};
 		
 		try {
-			let path = '';
-			let content = '';
-			let frontmatter: Record<string, any> = {};
-			
-			switch (newContentType) {
-				case 'domain':
-					path = `domains/${fileName}.json`;
-					content = JSON.stringify({
-						title: newContentTitle,
-						description: ''
-					}, null, 2);
-					break;
-				case 'topic':
-					path = `topics/${fileName}.json`;
-					content = JSON.stringify({
-						title: newContentTitle,
-						domain: newContentParent,
-						description: ''
-					}, null, 2);
-					break;
-				case 'module':
-					path = `modules/${fileName}.json`;
-					content = JSON.stringify({
-						title: newContentTitle,
-						topic: newContentParent,
-						description: ''
-					}, null, 2);
-					break;
-				case 'article':
-					path = `articles/${fileName}.md`;
-					frontmatter = {
-						title: newContentTitle,
-						modules: [newContentParent],
-						climate: [],
-						budget: '',
-						size: '',
-						summary: ''
-					};
-					content = 'Content goes here...';
-					break;
-			}
-			
 			const response = await fetch(`/api/content/${path}`, {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
-					content,
+					content: '',
 					frontmatter,
-					message: `Create new ${newContentType}: ${newContentTitle}`
+					message: `Create new article: ${newArticleTitle}`
 				})
 			});
 			
 			if (response.ok) {
-				// Reset form and reload tree
-				showNewContentDialog = false;
-				newContentType = null;
-				newContentParent = null;
-				newContentName = '';
-				newContentTitle = '';
-				await loadContentTree();
+				showNewArticleDialog = false;
+				newArticleParentId = null;
+				newArticleTitle = '';
 				
-				// Notify layout to reload content tree
-				window.dispatchEvent(new CustomEvent('reloadContentTree'));
-				
-				// Select the newly created file only if it's an article
-				if (newContentType === 'article') {
-					await loadFileContent(path);
-				}
+				// Reload tree and select the new article
+				await loadArticleTree();
+				window.dispatchEvent(new CustomEvent('reloadArticleTree'));
+				await loadFileContent(path);
 			} else {
 				const error = await response.json();
-				console.error('Failed to create content:', error);
-				alert(`Failed to create content: ${error.error || 'Unknown error'}`);
+				console.error('Failed to create article:', error);
+				alert(`Failed to create article: ${error.error || 'Unknown error'}`);
 			}
 		} catch (error) {
-			console.error('Failed to create content:', error);
-			alert('Failed to create content');
+			console.error('Failed to create article:', error);
+			alert('Failed to create article');
 		}
 	}
+
+	onMount(() => {
+		loadArticleTree();
+		
+		// Listen for article selection from layout sidebar
+		const handleArticleSelectEvent = (event: Event) => {
+			const customEvent = event as CustomEvent<string>;
+			handleArticleSelect(customEvent.detail);
+		};
+		
+		// Listen for add article events from layout sidebar
+		const handleAddArticleEvent = (event: Event) => {
+			const customEvent = event as CustomEvent<{ parentId: string | null; parentPath: string | null }>;
+			handleAddArticle(customEvent.detail.parentId);
+		};
+		
+		window.addEventListener('articleSelect', handleArticleSelectEvent);
+		window.addEventListener('addArticle', handleAddArticleEvent);
+		
+		return () => {
+			window.removeEventListener('articleSelect', handleArticleSelectEvent);
+			window.removeEventListener('addArticle', handleAddArticleEvent);
+		};
+	});
 </script>
 
 <svelte:head>
 	<title>Content Management - EcoHubs Admin</title>
 </svelte:head>
 
-<div class="min-h-screen bg-white">
+<div class="h-full bg-white">
 	{#if selectedFile}
 		<!-- Editor Area -->
-		<div class="max-w-4xl mx-auto px-4 py-8">
+		<div class="h-full">
 			{#if isLoadingFile}
 				<div class="flex justify-center py-16">
 					<div class="flex items-center gap-3 text-gray-500">
@@ -341,11 +318,15 @@
 					</div>
 				</div>
 			{:else if fileContent}
-				<CrepeEditor
+				<ArticleEditor
 					bind:content={fileContent}
+					filePath={selectedFile}
+					childArticles={childArticles()}
 					onSave={saveContent}
-					showSidebarButton={true}
 					onOpenSidebar={() => (showSidebar = true)}
+					on:titleChange={(e) => handleTitleChange(e.detail)}
+					on:selectChild={(e) => handleSelectChild(e.detail)}
+					on:addChild={handleAddChildFromEditor}
 				/>
 			{:else}
 				<div class="text-center py-16 text-gray-500">
@@ -371,69 +352,68 @@
 				<Icon icon="tabler:file-text" class="w-8 h-8 text-gray-400" />
 			</div>
 			<h2 class="text-xl font-semibold text-gray-900 mb-2">No article selected</h2>
-			<p class="text-gray-500 max-w-sm">
+			<p class="text-gray-500 max-w-sm mb-4">
 				Select an article from the sidebar to start editing, or create a new one.
 			</p>
+			<button
+				type="button"
+				onclick={() => handleAddArticle(null)}
+				class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+			>
+				Create New Article
+			</button>
 		</div>
 	{/if}
 </div>
 
-{#if showNewContentDialog}
-	<div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-		<div class="bg-white rounded-lg p-6 w-96">
-			<h3 class="text-lg font-medium text-gray-900 mb-4">
-				{#if newContentType === 'domain'}
-					Create New Domain
-				{:else if newContentType === 'topic'}
-					Create New Topic in {newContentParent}
-				{:else if newContentType === 'module'}
-					Create New Module in {newContentParent}
-				{:else if newContentType === 'article'}
-					Create New Article for {newContentParent}
+<!-- New Article Dialog -->
+{#if showNewArticleDialog}
+	<div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+		<div class="bg-white rounded-xl shadow-xl p-6 w-96 max-w-[90vw]">
+			<h3 class="text-lg font-semibold text-gray-900 mb-4">
+				{#if newArticleParentId}
+					Create Child Article
 				{:else}
-					Create New Content
+					Create New Article
 				{/if}
 			</h3>
 			
 			<div class="mb-4">
-				<label for="content-title" class="block text-sm font-medium text-gray-700 mb-2">
-					{#if newContentType === 'article'}
-						Title
-					{:else}
-						Name
-					{/if}
+				<label for="article-title" class="block text-sm font-medium text-gray-700 mb-2">
+					Title
 				</label>
 				<input
-					id="content-title"
+					id="article-title"
 					type="text"
-					bind:value={newContentTitle}
-					placeholder={newContentType === 'article' ? 'Article title' : `${newContentType?.charAt(0).toUpperCase()}${newContentType?.slice(1)} name`}
-					class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+					bind:value={newArticleTitle}
+					placeholder="Enter article title..."
+					class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+					onkeydown={(e) => e.key === 'Enter' && createNewArticle()}
 				/>
 				<p class="mt-1 text-xs text-gray-500">
-					Filename will be auto-generated from this {newContentType === 'article' ? 'title' : 'name'}
+					The filename will be auto-generated from the title
 				</p>
 			</div>
 
-			<div class="flex justify-end space-x-2">
+			<div class="flex justify-end gap-2">
 				<button
+					type="button"
 					onclick={() => {
-						showNewContentDialog = false;
-						newContentType = null;
-						newContentParent = null;
-						newContentName = '';
-						newContentTitle = '';
+						showNewArticleDialog = false;
+						newArticleParentId = null;
+						newArticleTitle = '';
 					}}
-					class="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 focus:outline-none"
+					class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900"
 				>
 					Cancel
 				</button>
 				<button
-					onclick={createNewContent}
-					disabled={!newContentTitle.trim()}
-					class="px-4 py-2 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500"
+					type="button"
+					onclick={createNewArticle}
+					disabled={!newArticleTitle.trim()}
+					class="px-4 py-2 text-sm font-medium bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
 				>
-					Create {newContentType || 'Content'}
+					Create Article
 				</button>
 			</div>
 		</div>

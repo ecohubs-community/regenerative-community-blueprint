@@ -1,37 +1,10 @@
 <script lang="ts">
-  import { page } from '$app/stores';
   import type { SearchResult } from '$lib/stores/search';
 
   let { result } = $props();
 
   function hrefForResult(r: SearchResult) {
-    switch (r.type) {
-      case 'domain':
-        return `/domains/${r.slug}`;
-      case 'topic':
-        return `/domains/${$page.params.domainSlug}/${r.slug}`;
-      case 'module':
-        return `/domains/${$page.params.domainSlug}/${$page.params.topicSlug}/${r.slug}`;
-      case 'article':
-        return `/domains/${$page.params.domainSlug}/${$page.params.topicSlug}/${$page.params.moduleSlug}/${r.slug}`;
-      default:
-        return '#';
-    }
-  }
-
-  function typeLabel(r: SearchResult) {
-    switch (r.type) {
-      case 'domain':
-        return 'Domain';
-      case 'topic':
-        return 'Topic';
-      case 'module':
-        return 'Module';
-      case 'article':
-        return 'Article';
-      default:
-        return '';
-    }
+    return `/articles/${r.slug}`;
   }
 </script>
 
@@ -39,7 +12,7 @@
   <div class="flex items-start justify-between mb-2">
     <h3 class="text-lg font-semibold text-primary">{result.title}</h3>
     <span class="text-xs px-2 py-1 rounded-full bg-surface text-tertiary">
-      {typeLabel(result)}
+      Article
     </span>
   </div>
   {#if result.snippet}

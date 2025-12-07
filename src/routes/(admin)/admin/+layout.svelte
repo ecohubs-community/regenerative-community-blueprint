@@ -4,11 +4,13 @@
 	import { goto } from '$app/navigation';
 	import { onMount, onDestroy } from 'svelte';
 	import { sidebarOpen, toggleSidebar, closeSidebar, contentSidebarMode, setContentSidebarMode } from '$lib/stores/ui';
-	import ContentSidebar from '$lib/components/ContentSidebar.svelte';
+	import ArticleTreeSidebar from '$lib/components/admin/ArticleTreeSidebar.svelte';
+	import ResizableSidebar from '$lib/components/admin/ResizableSidebar.svelte';
 	import ReviewChangesModal from '$lib/components/admin/ReviewChangesModal.svelte';
 	import UserMenu from '$lib/components/admin/UserMenu.svelte';
 	import WorkspaceModal from '$lib/components/admin/WorkspaceModal.svelte';
 	import Icon from '@iconify/svelte';
+	import type { ArticleTreeNode } from '$lib/types/article';
 
 	interface Workspace {
 		name: string;
@@ -44,19 +46,10 @@
 	let sidebarUnsubscribe: (() => void) | null = null;
 	let contentSidebarModeUnsubscribe: (() => void) | null = null;
 	
-	// Content tree state
-	interface ContentNode {
-		path: string;
-		type: 'file' | 'dir';
-		name: string;
-		children?: ContentNode[];
-		content_type?: 'domain' | 'topic' | 'module' | 'article';
-		metadata?: Record<string, any>;
-	}
-	
-	let contentTree = $state<ContentNode[]>([]);
-	let isLoadingContentTree = $state(false);
-	let selectedContentFile = $state<string | null>(null);
+	// Article tree state (new unified structure)
+	let articleTree = $state<ArticleTreeNode[]>([]);
+	let isLoadingArticleTree = $state(false);
+	let selectedArticlePath = $state<string | null>(null);
 	
 	// Workspace changes tracking
 	let workspaceChanges = $state<{ files: any[], commitCount: number } | null>(null);
@@ -149,18 +142,18 @@
 		}
 	}
 
-	async function loadContentTree() {
-		isLoadingContentTree = true;
+	async function loadArticleTree() {
+		isLoadingArticleTree = true;
 		try {
-			const response = await fetch('/api/content/tree');
+			const response = await fetch('/api/content/tree?format=tree');
 			if (response.ok) {
 				const responseData = await response.json();
-				contentTree = responseData.tree || [];
+				articleTree = responseData.articles || [];
 			}
 		} catch (error) {
-			console.error('Failed to load content tree:', error);
+			console.error('Failed to load article tree:', error);
 		} finally {
-			isLoadingContentTree = false;
+			isLoadingArticleTree = false;
 		}
 	}
 
@@ -183,15 +176,15 @@
 		}
 	}
 
-	function handleContentSelect(event: CustomEvent<string>) {
-		selectedContentFile = event.detail;
+	function handleArticleSelect(event: CustomEvent<string>) {
+		selectedArticlePath = event.detail;
 		// Dispatch event to content page
-		window.dispatchEvent(new CustomEvent('contentSelect', { detail: event.detail }));
+		window.dispatchEvent(new CustomEvent('articleSelect', { detail: event.detail }));
 	}
 
-	function handleAddContent(type: 'domain' | 'topic' | 'module' | 'article', parent: string | null) {
+	function handleAddArticle(event: CustomEvent<{ parentId: string | null; parentPath: string | null }>) {
 		// Dispatch event to content page
-		window.dispatchEvent(new CustomEvent('addContent', { detail: { type, parent } }));
+		window.dispatchEvent(new CustomEvent('addArticle', { detail: event.detail }));
 	}
 
 	async function handleCreatePR(title: string, body: string, selectedFiles?: string[]) {
@@ -205,7 +198,7 @@
 		}
 
 		const session = JSON.parse(decodeURIComponent(sessionCookie));
-		const workspaceBranch = session.currentBranch || `${session.user.login}/workspace`;
+		const branch = url.searchParams.get('branch') || session.currentBranch || 'main';
 
 		// If selectedFiles is provided, we need to create a selective PR
 		// For now, we create a PR with all changes and note the selection in the body
@@ -258,78 +251,9 @@
 			throw new Error(error.error || 'Failed to revert file');
 		}
 
-		// Reload content tree and workspace changes
-		loadContentTree();
+		// Reload article tree and workspace changes
+		loadArticleTree();
 		loadWorkspaceChanges();
-	}
-
-	async function handleContentRename(event: CustomEvent<{ path: string; currentName: string; type: string }>) {
-		const { path, currentName } = event.detail;
-		
-		try {
-			// For now, we update the title in the file's metadata
-			// A full rename would require renaming the file path as well
-			const response = await fetch(`/api/content/${path}`);
-			if (!response.ok) throw new Error('Failed to fetch content');
-			
-			const content = await response.json();
-			
-			// Update the title in metadata
-			if (content.metadata) {
-				content.metadata.title = currentName;
-			} else {
-				content.metadata = { title: currentName };
-			}
-			
-			// Save the updated content
-			const saveResponse = await fetch(`/api/content/${path}`, {
-				method: 'PUT',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(content)
-			});
-			
-			if (!saveResponse.ok) {
-				const error = await saveResponse.json();
-				throw new Error(error.error || 'Failed to save');
-			}
-			
-			// Reload content tree
-			loadContentTree();
-			loadWorkspaceChanges();
-		} catch (error) {
-			console.error('Failed to rename:', error);
-			alert('Failed to rename. Please try again.');
-		}
-	}
-
-	async function handleContentDelete(event: CustomEvent<{ path: string; name: string; type: string }>) {
-		const { path, type } = event.detail;
-		
-		try {
-			// For domains/topics/modules, we need recursive delete
-			const isDirectory = type !== 'article';
-			
-			const response = await fetch('/api/content/delete', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ 
-					path,
-					recursive: isDirectory
-				})
-			});
-			
-			if (!response.ok) {
-				const error = await response.json();
-				throw new Error(error.error || 'Failed to delete');
-			}
-			
-			// Reload content tree and workspace changes
-			loadContentTree();
-			loadWorkspaceChanges();
-		} catch (error) {
-			console.error('Failed to delete:', error);
-			alert('Failed to delete. Please try again.');
-		}
 	}
 
 	onMount(() => {
@@ -345,18 +269,18 @@
 			currentContentSidebarMode = value;
 		});
 		
-		// Load content tree when on content page
+		// Load article tree when on content page
 		if (currentPath.startsWith('/admin/content')) {
-			loadContentTree();
+			loadArticleTree();
 			setContentSidebarMode('content');
 		}
 		
-		// Listen for reload content tree event
-		const handleReloadContentTree = () => {
-			loadContentTree();
+		// Listen for reload article tree event
+		const handleReloadArticleTree = () => {
+			loadArticleTree();
 			loadWorkspaceChanges(); // Also reload changes when content changes
 		};
-		window.addEventListener('reloadContentTree', handleReloadContentTree);
+		window.addEventListener('reloadArticleTree', handleReloadArticleTree);
 		
 		// Listen for open review modal event (from dashboard quick actions)
 		const handleOpenReviewModal = () => {
@@ -367,7 +291,7 @@
 		window.addEventListener('openReviewModal', handleOpenReviewModal);
 		
 		return () => {
-			window.removeEventListener('reloadContentTree', handleReloadContentTree);
+			window.removeEventListener('reloadArticleTree', handleReloadArticleTree);
 			window.removeEventListener('openReviewModal', handleOpenReviewModal);
 		};
 	});
@@ -384,8 +308,8 @@
 		// Switch sidebar mode based on route
 		if (currentPath.startsWith('/admin/content')) {
 			setContentSidebarMode('content');
-			if (contentTree.length === 0 && !isLoadingContentTree) {
-				loadContentTree();
+			if (articleTree.length === 0 && !isLoadingArticleTree) {
+				loadArticleTree();
 			}
 		} else {
 			setContentSidebarMode('main');
@@ -394,7 +318,7 @@
 </script>
 
 {#if !isLoginPage}
-	<div class="min-h-screen bg-gray-50 flex flex-col">
+	<div class="h-screen bg-gray-50 flex flex-col overflow-hidden">
 		<!-- Header -->
 		<header class="bg-white border-b border-gray-200 sticky top-0 z-30">
 			<div class="px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -467,7 +391,7 @@
 		</header>
 
 		<!-- Main layout -->
-		<div class="flex flex-1">
+		<div class="flex flex-1 overflow-hidden">
 			<!-- Mobile sidebar overlay -->
 			{#if isContentPage}
 				<div 
@@ -481,12 +405,12 @@
 
 				<!-- Sidebar - only on content page -->
 				<aside 
-					class={`fixed inset-y-0 left-0 z-40 w-72 bg-white border-r border-gray-200 shadow-xl transform transition-transform duration-300 lg:static lg:translate-x-0 lg:shadow-none lg:mt-0 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`} 
+					class={`fixed inset-y-0 left-0 z-40 bg-white border-r border-gray-200 shadow-xl transform transition-transform duration-300 lg:static lg:translate-x-0 lg:shadow-none lg:mt-0 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`} 
 					aria-label="Content navigation"
 				>
 					<!-- Mobile header -->
 					<div class="flex items-center justify-between px-4 h-16 border-b border-gray-100 lg:hidden">
-						<span class="text-sm font-semibold text-gray-900">Content</span>
+						<span class="text-sm font-semibold text-gray-900">Articles</span>
 						<button
 							onclick={closeSidebar}
 							class="inline-flex h-8 w-8 items-center justify-center rounded-md text-gray-500 hover:bg-gray-100"
@@ -496,28 +420,37 @@
 						</button>
 					</div>
 					
-					<div class="h-[calc(100%-4rem)] lg:h-full overflow-y-auto px-4 py-6">
-						<ContentSidebar
-							tree={contentTree}
-							isLoading={isLoadingContentTree}
-							selectedPath={selectedContentFile}
-							showBackButton={false}
+					<!-- Desktop: Resizable sidebar -->
+					<div class="hidden lg:block h-full">
+						<ResizableSidebar minWidth={220} maxWidth={450} defaultWidth={280} storageKey="article-sidebar-width">
+							<ArticleTreeSidebar
+								articles={articleTree}
+								isLoading={isLoadingArticleTree}
+								selectedPath={selectedArticlePath}
+								workspaceChanges={workspaceChanges?.files}
+								on:select={handleArticleSelect}
+								on:addArticle={handleAddArticle}
+							/>
+						</ResizableSidebar>
+					</div>
+					
+					<!-- Mobile: Fixed width sidebar -->
+					<div class="lg:hidden h-[calc(100%-4rem)] w-72 overflow-y-auto">
+						<ArticleTreeSidebar
+							articles={articleTree}
+							isLoading={isLoadingArticleTree}
+							selectedPath={selectedArticlePath}
 							workspaceChanges={workspaceChanges?.files}
-							on:select={handleContentSelect}
-							on:addDomain={() => handleAddContent('domain', null)}
-							on:addTopic={(event) => handleAddContent('topic', event.detail)}
-							on:addModule={(event) => handleAddContent('module', event.detail)}
-							on:addArticle={(event) => handleAddContent('article', event.detail)}
-							on:rename={handleContentRename}
-							on:delete={handleContentDelete}
+							on:select={handleArticleSelect}
+							on:addArticle={handleAddArticle}
 						/>
 					</div>
 				</aside>
 			{/if}
 
 			<!-- Main content area -->
-			<main class="flex-1 w-full">
-				<div class={`py-6 px-4 sm:px-6 lg:px-8 ${isContentPage ? '' : 'max-w-5xl mx-auto'}`}>
+			<main class="flex-1 w-full overflow-hidden">
+				<div class={`h-full ${isContentPage ? '' : 'py-6 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto'}`}>
 					{@render children()}
 				</div>
 			</main>

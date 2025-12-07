@@ -3,9 +3,6 @@ import { githubConfig } from '$lib/server/env';
 import { Octokit } from '@octokit/rest';
 
 interface ContentStats {
-	domains: number;
-	topics: number;
-	modules: number;
 	articles: number;
 	totalFiles: number;
 }
@@ -97,31 +94,19 @@ async function getContentStats(octokit: Octokit, branch: string): Promise<Conten
 			item.type === 'blob'
 		) || [];
 
-		const stats: ContentStats = {
-			domains: 0,
-			topics: 0,
-			modules: 0,
-			articles: 0,
+		// Count only markdown articles
+		const articles = contentItems.filter(item => 
+			item.path?.startsWith('content/articles/') && 
+			item.path?.endsWith('.md')
+		).length;
+
+		return {
+			articles,
 			totalFiles: contentItems.length
 		};
-
-		contentItems.forEach(item => {
-			const path = item.path || '';
-			if (path.includes('/domains/') && path.endsWith('.json')) {
-				stats.domains++;
-			} else if (path.includes('/topics/') && path.endsWith('.json')) {
-				stats.topics++;
-			} else if (path.includes('/modules/') && path.endsWith('.json')) {
-				stats.modules++;
-			} else if (path.includes('/articles/') && path.endsWith('.md')) {
-				stats.articles++;
-			}
-		});
-
-		return stats;
 	} catch (error) {
 		console.error('Failed to get content stats:', error);
-		return { domains: 0, topics: 0, modules: 0, articles: 0, totalFiles: 0 };
+		return { articles: 0, totalFiles: 0 };
 	}
 }
 

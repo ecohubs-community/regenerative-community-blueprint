@@ -4,9 +4,6 @@
 	import Icon from '@iconify/svelte';
 
 	interface ContentStats {
-		domains: number;
-		topics: number;
-		modules: number;
 		articles: number;
 		totalFiles: number;
 	}
@@ -48,7 +45,6 @@
 	// Quick actions
 	const quickActions = [
 		{ icon: 'tabler:file-plus', label: 'New Article', href: '/admin/content', color: 'bg-blue-500' },
-		{ icon: 'tabler:folder-plus', label: 'New Domain', href: '/admin/content', color: 'bg-purple-500' },
 		{ icon: 'tabler:git-pull-request', label: 'Create PR', action: 'pr', color: 'bg-green-500' },
 		{ icon: 'tabler:refresh', label: 'Sync Changes', action: 'sync', color: 'bg-amber-500' }
 	];
@@ -162,39 +158,15 @@
 		</div>
 	{:else if stats}
 		<!-- Stats Cards -->
-		<div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+		<div class="grid grid-cols-2 gap-4">
 			<div class="bg-white rounded-xl border border-gray-200 p-5 hover:shadow-md transition-shadow">
 				<div class="flex items-center gap-3">
 					<div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
-						<Icon icon="tabler:category" class="w-6 h-6 text-blue-600" />
+						<Icon icon="tabler:article" class="w-6 h-6 text-blue-600" />
 					</div>
 					<div>
-						<p class="text-2xl font-bold text-gray-900">{stats.content.domains}</p>
-						<p class="text-sm text-gray-500">Domains</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="bg-white rounded-xl border border-gray-200 p-5 hover:shadow-md transition-shadow">
-				<div class="flex items-center gap-3">
-					<div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center">
-						<Icon icon="tabler:tags" class="w-6 h-6 text-purple-600" />
-					</div>
-					<div>
-						<p class="text-2xl font-bold text-gray-900">{stats.content.topics}</p>
-						<p class="text-sm text-gray-500">Topics</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="bg-white rounded-xl border border-gray-200 p-5 hover:shadow-md transition-shadow">
-				<div class="flex items-center gap-3">
-					<div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center">
-						<Icon icon="tabler:puzzle" class="w-6 h-6 text-amber-600" />
-					</div>
-					<div>
-						<p class="text-2xl font-bold text-gray-900">{stats.content.modules}</p>
-						<p class="text-sm text-gray-500">Modules</p>
+						<p class="text-2xl font-bold text-gray-900">{stats.content.articles}</p>
+						<p class="text-sm text-gray-500">Articles</p>
 					</div>
 				</div>
 			</div>
@@ -202,11 +174,11 @@
 			<div class="bg-white rounded-xl border border-gray-200 p-5 hover:shadow-md transition-shadow">
 				<div class="flex items-center gap-3">
 					<div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center">
-						<Icon icon="tabler:article" class="w-6 h-6 text-green-600" />
+						<Icon icon="tabler:files" class="w-6 h-6 text-green-600" />
 					</div>
 					<div>
-						<p class="text-2xl font-bold text-gray-900">{stats.content.articles}</p>
-						<p class="text-sm text-gray-500">Articles</p>
+						<p class="text-2xl font-bold text-gray-900">{stats.content.totalFiles}</p>
+						<p class="text-sm text-gray-500">Total Files</p>
 					</div>
 				</div>
 			</div>
