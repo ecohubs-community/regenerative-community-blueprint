@@ -23,6 +23,7 @@ id: 5b928c05
 
 
 
+
 ## Introduction
 
 Consent-based decision making is particularly well-suited for **tropical, low-budget communities** that prioritize harmony and sustainable living.
