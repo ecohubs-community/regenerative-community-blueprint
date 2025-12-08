@@ -1,5 +1,5 @@
 ---
-title: Consent Decision-Making 
+title: Consent Decision-Making Pro
 modules: 
   - Consent Decision-Making
 climate: 
