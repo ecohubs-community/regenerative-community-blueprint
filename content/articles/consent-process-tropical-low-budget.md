@@ -1,5 +1,5 @@
 ---
-title: Consent Decision-Making Principles
+title: Consent Decision-Making Principles in tropical areas
 modules: 
   - Consent Decision-Making
 climate: 
@@ -13,6 +13,7 @@ summary: How consent governance can be implemented in resource-limited tropical 
 id: 5b928c05
 parentId: a33763b3
 ---
+
 
 
 
