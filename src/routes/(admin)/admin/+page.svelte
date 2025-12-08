@@ -120,7 +120,7 @@
 	<meta name="description" content="EcoHubs Admin Dashboard" />
 </svelte:head>
 
-<div class="space-y-6">
+<div class="space-y-6 pb-18">
 	<!-- Welcome Header -->
 	<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
 		<div>
