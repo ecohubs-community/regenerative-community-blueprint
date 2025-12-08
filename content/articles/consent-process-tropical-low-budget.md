@@ -12,7 +12,7 @@ summary: >-
   How consent governance can be implemented in resource-limited tropical
   eco-communities.
 id: 5b928c05
-parentId: 7fea8d59
+parentId: 30b45b37
 ---
 
 
