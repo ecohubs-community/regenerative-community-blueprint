@@ -20,27 +20,22 @@
 
 {#if article}
   <div class="max-w-4xl mx-auto space-y-8 pb-12">
-    <!-- Breadcrumbs -->
+    <!-- Article hierarchy breadcrumbs (no Home / Articles) -->
     {#if breadcrumbs.length > 1}
       <nav class="flex items-center gap-2 text-sm text-text-tertiary">
-        <a href="/articles" class="hover:text-primary transition-colors">Articles</a>
         {#each breadcrumbs as crumb, i}
-          <Icon icon="tabler:chevron-right" class="w-4 h-4" />
-          {#if i === breadcrumbs.length - 1}
-            <span class="text-text-primary font-medium">{crumb.title}</span>
-          {:else}
+          {#if i > 0}
+            <Icon icon="tabler:chevron-right" class="w-4 h-4" />
+          {/if}
+
+          {#if i < breadcrumbs.length - 1}
             <a href="/articles/{crumb.slug}" class="hover:text-primary transition-colors">
               {crumb.title}
             </a>
+          {:else}
+            <span class="text-text-primary font-medium">{crumb.title}</span>
           {/if}
         {/each}
-      </nav>
-    {:else}
-      <nav class="flex items-center gap-2 text-sm text-text-tertiary">
-        <a href="/articles" class="hover:text-primary transition-colors flex items-center gap-1">
-          <Icon icon="tabler:arrow-left" class="w-4 h-4" />
-          Back to Articles
-        </a>
       </nav>
     {/if}
 
@@ -68,7 +63,7 @@
     </header>
 
     <!-- Article Content -->
-    <article class="prose prose-lg max-w-none">
+    <article class="prose prose-article prose-lg max-w-none ">
       {#if data.body}
         {@html data.body}
       {:else}
@@ -128,3 +123,9 @@
     <Button href="/articles">Browse All Articles</Button>
   </div>
 {/if}
+
+<style>
+  article blockquote p {
+    @apply text-text-primary!important;
+  }
+</style>
