@@ -1,5 +1,5 @@
 ---
-title: Consent Decision-Making , Low-Budget Communities
+title: Consent Decision-Making, Low-Budget Communities
 modules: 
   - Consent Decision-Making
 climate: 
