@@ -123,9 +123,3 @@
     <Button href="/articles">Browse All Articles</Button>
   </div>
 {/if}
-
-<style>
-  article blockquote p {
-    @apply text-text-primary!important;
-  }
-</style>
