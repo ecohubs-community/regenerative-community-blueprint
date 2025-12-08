@@ -1,5 +1,5 @@
 ---
-title: Consent Decision-Making Princip
+title: Consent Decision-Making Principles
 modules: 
   - Consent Decision-Making
 climate: 
