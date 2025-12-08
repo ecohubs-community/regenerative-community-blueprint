@@ -34,40 +34,6 @@ export async function GET({ cookies }) {
 			branch.name.startsWith(`${user.login}/`)
 		);
 
-		// If user has no personal branches, create a default one
-		if (personalBranches.length === 0) {
-			const defaultBranchName = `${user.login}/workspace`;
-			
-			try {
-				// Get the main branch reference
-				const { data: mainRef } = await octokit.rest.git.getRef({
-					owner: githubConfig.owner!,
-					repo: githubConfig.repo!,
-					ref: 'heads/main'
-				});
-
-				// Create the default workspace branch
-				await octokit.rest.git.createRef({
-					owner: githubConfig.owner!,
-					repo: githubConfig.repo!,
-					ref: `refs/heads/${defaultBranchName}`,
-					sha: mainRef.object.sha
-				});
-
-				// Add the newly created branch to the list
-				const { data: newBranch } = await octokit.rest.repos.getBranch({
-					owner: githubConfig.owner!,
-					repo: githubConfig.repo!,
-					branch: defaultBranchName
-				});
-				
-				personalBranches.push(newBranch);
-			} catch (createError) {
-				console.error('Failed to create default workspace branch:', createError);
-				// Continue even if creation fails
-			}
-		}
-
 		// Transform branches to user-friendly format (remove username prefix)
 		const workspaces = personalBranches.map(branch => ({
 			name: branch.name.replace(`${user.login}/`, ''),
@@ -76,12 +42,18 @@ export async function GET({ cookies }) {
 			isDefault: branch.name === `${user.login}/workspace`
 		}));
 
+		// Check if user has a valid workspace selected
+		const hasValidWorkspace = session.currentBranch && 
+			workspaces.some(w => w.fullName === session.currentBranch);
+
 		return json({
 			workspaces,
 			currentUser: user.login,
-			defaultWorkspace: `${user.login}/workspace`,
-			currentWorkspace: session.currentWorkspace || 'workspace',
-			currentBranch: session.currentBranch || `${user.login}/workspace`
+			// Only return current workspace if it's valid
+			currentWorkspace: hasValidWorkspace ? session.currentWorkspace : null,
+			currentBranch: hasValidWorkspace ? session.currentBranch : null,
+			// Flag to indicate if user needs to create/select a workspace
+			needsWorkspace: workspaces.length === 0 || !hasValidWorkspace
 		});
 
 	} catch (error) {
