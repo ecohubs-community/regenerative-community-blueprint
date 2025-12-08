@@ -427,6 +427,7 @@
 								workspaceChanges={workspaceChanges?.files}
 								on:select={handleArticleSelect}
 								on:addArticle={handleAddArticle}
+								on:refresh={loadArticleTree}
 							/>
 						</ResizableSidebar>
 					</div>
@@ -440,6 +441,7 @@
 							workspaceChanges={workspaceChanges?.files}
 							on:select={handleArticleSelect}
 							on:addArticle={handleAddArticle}
+							on:refresh={loadArticleTree}
 						/>
 					</div>
 				</aside>
