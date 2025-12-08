@@ -131,7 +131,7 @@
 		</div>
 		<button
 			onclick={() => goto('/admin/content')}
-			class="inline-flex items-center gap-2 px-4 py-2.5 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors font-medium cursor-pointer"
+			class="inline-flex items-center gap-2 px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium cursor-pointer"
 		>
 			<Icon icon="tabler:edit" class="w-5 h-5" />
 			Edit Content

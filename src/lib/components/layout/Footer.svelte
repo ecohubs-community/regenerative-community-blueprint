@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Icon from "@iconify/svelte";
+
   const year = new Date().getFullYear();
 </script>
 
@@ -17,9 +19,8 @@
       <div class="space-y-4">
         <h4 class="font-semibold text-primary">Resources</h4>
         <ul class="space-y-2 text-sm text-text-secondary">
-          <li><a href="/about" class="hover:text-text-primary transition-colors">About Us</a></li>
-          <li><a href="/domains" class="hover:text-text-primary transition-colors">Domains</a></li>
-          <li><a href="/guides" class="hover:text-text-primary transition-colors">Guides</a></li>
+          <li><a href="https://ecohubs.community" class="hover:text-text-primary transition-colors flex items-center gap-1">About Us <Icon icon="tabler:arrow-up-right" class="w-4 h-4" /></a></li>
+          <li><a href="https://ecohubs.community/join" class="hover:text-text-primary transition-colors flex items-center gap-1">Join us <Icon icon="tabler:arrow-up-right" class="w-4 h-4" /></a></li>
         </ul>
       </div>
 
@@ -27,9 +28,8 @@
       <div class="space-y-4">
         <h4 class="font-semibold text-primary">Connect</h4>
         <ul class="space-y-2 text-sm text-text-secondary">
-          <li><a href="https://github.com" target="_blank" rel="noreferrer" class="hover:text-text-primary transition-colors">GitHub</a></li>
-          <li><a href="https://discord.com" target="_blank" rel="noreferrer" class="hover:text-text-primary transition-colors">Discord</a></li>
-          <li><a href="/contact" class="hover:text-text-primary transition-colors">Contact</a></li>
+          <li><a href="https://github.com/ecohubs-community/regenerative-community-blueprint" target="_blank" rel="noreferrer" class="hover:text-text-primary transition-colors flex items-center gap-1">GitHub <Icon icon="tabler:arrow-up-right" class="w-4 h-4" /></a></li>
+          <!-- <li><a href="https://discord.com" target="_blank" rel="noreferrer" class="hover:text-text-primary transition-colors flex items-center gap-1">Discord <Icon icon="tabler:arrow-up-right" class="w-4 h-4" /></a></li> -->
         </ul>
       </div>
     </div>
