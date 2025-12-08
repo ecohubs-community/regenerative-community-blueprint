@@ -16,7 +16,7 @@ parentId: a33763b3
 
 ## Introduction
 
-Consent-based decision making is particularly well-suited for **tropical, low-budget communities** that prioritize harmony and sustainable living.
+[Consent-based decision making](/articles/vision-governance/decision-making-systems/consensus-based-decision-making?id=a33763b3) is particularly well-suited for **tropical, low-budget communities** that prioritize harmony and sustainable living.
 
 ## Key Principles
 
