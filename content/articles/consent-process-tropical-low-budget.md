@@ -1,5 +1,5 @@
 ---
-title: Consent Decision-Making Prin
+title: Consent Decision-Making Princ
 modules: 
   - Consent Decision-Making
 climate: 
