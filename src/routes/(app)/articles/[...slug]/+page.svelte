@@ -118,7 +118,7 @@
     <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center">
       <Icon icon="tabler:file-off" class="w-8 h-8 text-gray-400" />
     </div>
-    <h2 class="text-xl font-semibold text-gray-900 mb-2">Article not found</h2>
+    <h2 class="text-xl font-semibold text-text-primary mb-2">Article not found</h2>
     <p class="text-gray-500 mb-4">The article you're looking for doesn't exist.</p>
     <Button href="/articles">Browse All Articles</Button>
   </div>
