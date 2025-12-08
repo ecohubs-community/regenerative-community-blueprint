@@ -204,6 +204,12 @@
 
 	function handleArticleSelect(path: string) {
 		if (path.endsWith('.md')) {
+			// Cancel any draft article when selecting an existing article
+			if (isDraftArticle) {
+				isDraftArticle = false;
+				draftParentId = null;
+				draftParentPath = null;
+			}
 			loadFileContent(path);
 		}
 	}
@@ -353,16 +359,19 @@
 						{/if}
 					</div>
 				{/if}
-				<ArticleEditor
-					bind:content={fileContent}
-					filePath={selectedFile || 'articles/new-article.md'}
-					childArticles={isDraftArticle ? [] : childArticles()}
-					onSave={isDraftArticle ? saveDraftArticle : saveContent}
-					onOpenSidebar={isDraftArticle ? undefined : () => (showSidebar = true)}
-					on:titleChange={(e) => handleTitleChange(e.detail)}
-					on:selectChild={(e) => handleSelectChild(e.detail)}
-					on:addChild={handleAddChildFromEditor}
-				/>
+				<!-- Key forces editor recreation when switching articles or creating new drafts -->
+				{#key isDraftArticle ? 'draft-' + fileContent.frontmatter?.id : selectedFile}
+					<ArticleEditor
+						bind:content={fileContent}
+						filePath={selectedFile || 'articles/new-article.md'}
+						childArticles={isDraftArticle ? [] : childArticles()}
+						onSave={isDraftArticle ? saveDraftArticle : saveContent}
+						onOpenSidebar={isDraftArticle ? undefined : () => (showSidebar = true)}
+						on:titleChange={(e) => handleTitleChange(e.detail)}
+						on:selectChild={(e) => handleSelectChild(e.detail)}
+						on:addChild={handleAddChildFromEditor}
+					/>
+				{/key}
 			{:else}
 				<div class="text-center py-16 text-gray-500">
 					<p>Failed to load article content</p>
