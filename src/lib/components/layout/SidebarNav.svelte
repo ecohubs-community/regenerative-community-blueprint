@@ -64,7 +64,7 @@
                 />
               </button>
             {:else}
-              <span class="w-6"></span>
+              <span class="w-5"></span>
             {/if}
             
             <a
@@ -92,7 +92,7 @@
                       >
                         <Icon 
                           icon={childIsExpanded ? 'tabler:chevron-down' : 'tabler:chevron-right'} 
-                          class="w-3 h-3 transition-transform" 
+                          class="w-4 h-4 transition-transform" 
                         />
                       </button>
                     {:else}
@@ -111,13 +111,31 @@
                   {#if childHasChildren && childIsExpanded}
                     <div class="ml-4 pl-2 border-l border-border mt-0.5 space-y-0.5">
                       {#each child.children as grandchild}
-                        <a
-                          href="/articles/{grandchild.slug}"
-                          class="flex items-center gap-2 px-2 py-1 text-sm rounded-lg transition-colors {isActive(grandchild.slug) ? 'bg-primary/10 text-primary font-medium' : 'text-text-secondary hover:bg-surface-hover hover:text-text-primary'}"
-                        >
-                          <Icon icon={grandchild.icon || 'tabler:file-text'} class="w-3 h-3 shrink-0" />
-                          <span class="truncate">{grandchild.title}</span>
-                        </a>
+                        {@const grandchildHasChildren = grandchild.children.length > 0}
+
+                        <div>
+                          <a
+                            href="/articles/{grandchild.slug}"
+                            class="flex items-center gap-2 px-2 py-1 text-sm rounded-lg transition-colors {isActive(grandchild.slug) ? 'bg-primary/10 text-primary font-medium' : 'text-text-secondary hover:bg-surface-hover hover:text-text-primary'}"
+                          >
+                            <Icon icon={grandchild.icon || 'tabler:file-text'} class="w-3 h-3 shrink-0" />
+                            <span class="truncate">{grandchild.title}</span>
+                          </a>
+
+                          {#if grandchildHasChildren}
+                            <div class="ml-4 pl-2 border-l border-border mt-0.5 space-y-0.5">
+                              {#each grandchild.children as greatGrandchild}
+                                <a
+                                  href="/articles/{greatGrandchild.slug}"
+                                  class="flex items-center gap-2 px-2 py-1 text-sm rounded-lg transition-colors {isActive(greatGrandchild.slug) ? 'bg-primary/10 text-primary font-medium' : 'text-text-secondary hover:bg-surface-hover hover:text-text-primary'}"
+                                >
+                                  <Icon icon={greatGrandchild.icon || 'tabler:file-text'} class="w-3 h-3 shrink-0" />
+                                  <span class="truncate">{greatGrandchild.title}</span>
+                                </a>
+                              {/each}
+                            </div>
+                          {/if}
+                        </div>
                       {/each}
                     </div>
                   {/if}

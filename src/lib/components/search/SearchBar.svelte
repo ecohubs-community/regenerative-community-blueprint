@@ -25,7 +25,7 @@
     bind:value={query}
     type="search"
     placeholder="Search knowledge base…"
-    class="w-full px-4 py-2 rounded-full bg-surface text-text-primary placeholder-text-tertiary focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+    class="w-full px-4 py-2 rounded-full bg-surface text-text-primary placeholder-text-tertiary focus:outline-none focus-visible:ring-2 focus-visible:ring-accent border-0"
     onkeydown={handleKeydown}
   />
   <button

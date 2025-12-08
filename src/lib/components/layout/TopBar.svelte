@@ -21,9 +21,12 @@
       
       <a href="/" class="flex items-center gap-2 group">
         <div class="w-8 h-8 rounded-lg bg-linear-to-br from-primary to-primary-dark flex items-center justify-center text-white font-serif font-bold text-xl shadow-md group-hover:shadow-lg transition-all">
-          B
+          E
         </div>
-        <span class="text-xl font-bold text-primary tracking-tight group-hover:text-primary transition-colors">EcoHubs</span>
+        <div class="flex flex-col">
+          <span class="text-xl font-bold text-primary tracking-tight group-hover:text-primary transition-colors leading-5">EcoHubs</span>
+          <span class="text-xs font-bold text-gray-500 transition-colors">Blueprint</span>
+        </div>
       </a>
     </div>
 
@@ -44,8 +47,7 @@
       </Button>
       
       <div class="hidden md:flex gap-2">
-         <Button variant="ghost" href="/about">About</Button>
-         <Button variant="primary" href="/blueprint">The Blueprint</Button>
+         <Button variant="ghost" href="https://ecohubs.community" target="_blank">About <Icon icon="tabler:arrow-up-right" class="w-4 h-4" /></Button>
       </div>
     </div>
   </div>

@@ -382,9 +382,12 @@
 					<!-- Logo -->
 					<a href="/admin" class="flex items-center gap-2 group">
 						<div class="w-8 h-8 rounded-lg bg-linear-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-sm">
-							E
+							B
 						</div>
-						<span class="text-lg font-bold text-gray-900 hidden sm:block">EcoHubs</span>
+						<div class="flex flex-col">
+							<span class="text-lg font-bold text-gray-900 hidden sm:block leading-5">EcoHubs</span>
+							<span class="text-xs font-bold text-gray-500 transition-colors">Blueprint</span>
+						</div>
 					</a>
 
 					<!-- Workspace indicator with edit button -->

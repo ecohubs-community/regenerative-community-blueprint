@@ -101,7 +101,21 @@
 					Dashboard
 				</a>
 
-				<button
+				<a
+					href="/"
+					onclick={closeMenu}
+					class="flex items-center justify-between gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+					role="menuitem"
+					target="_blank"
+				>
+				<span class="flex items-center gap-3">
+					<Icon icon="tabler:home" class="w-4 h-4 text-gray-400" />
+					Website
+				</span>
+				<Icon icon="tabler:arrow-up-right" class="w-4 h-4 text-gray-400" />
+				</a>
+
+				<!--<button
 					disabled
 					class="flex items-center gap-3 px-4 py-2 text-sm text-gray-400 cursor-not-allowed w-full text-left"
 					role="menuitem"
@@ -109,7 +123,7 @@
 					<Icon icon="tabler:settings" class="w-4 h-4" />
 					Settings
 					<span class="ml-auto text-xs bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded">Soon</span>
-				</button>
+				</button>-->
 			</div>
 
 			<!-- Logout -->
