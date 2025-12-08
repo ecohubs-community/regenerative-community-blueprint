@@ -39,8 +39,8 @@
         &copy; {year} EcoHubs Platform. All rights reserved.
       </p>
       <div class="flex gap-4 text-xs text-text-tertiary">
-        <a href="/privacy" class="hover:text-text-primary transition-colors">Privacy Policy</a>
-        <a href="/terms" class="hover:text-text-primary transition-colors">Terms of Service</a>
+        <a href="https://ecohubs.community/privacy" class="hover:text-text-primary transition-colors flex items-center gap-1" target="_blank">Privacy Policy <Icon icon="tabler:arrow-up-right" class="w-4 h-4" /> </a>
+        <a href="https://ecohubs.community/terms" class="hover:text-text-primary transition-colors flex items-center gap-1" target="_blank">Terms of Service <Icon icon="tabler:arrow-up-right" class="w-4 h-4" /></a>
       </div>
     </div>
   </div>

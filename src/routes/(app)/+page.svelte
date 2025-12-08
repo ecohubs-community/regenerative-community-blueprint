@@ -2,6 +2,7 @@
   import { articles, rootArticles } from '$lib/stores/graph';
   import Card from '$lib/components/common/Card.svelte';
   import Button from '$lib/components/common/Button.svelte';
+  import Icon from '@iconify/svelte';
 
   // Calculate stats
   let stats = $derived([
@@ -25,7 +26,7 @@
       
       <div class="flex flex-wrap justify-center gap-4">
         <Button variant="primary" size="lg" href="/articles">Explore Articles</Button>
-        <Button variant="outline" size="lg" href="/about">Learn More</Button>
+        <Button variant="outline" size="lg" href="https://ecohubs.community" target="_blank" class="gap-2">Learn More <Icon icon="tabler:arrow-up-right" class="w-4 h-4" />  </Button>
       </div>
 
       <!-- Stats Row -->
