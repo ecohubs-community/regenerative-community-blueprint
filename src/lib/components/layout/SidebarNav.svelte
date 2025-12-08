@@ -4,6 +4,14 @@
   import Icon from '@iconify/svelte';
   import type { Article } from '$lib/server/graph';
 
+  // Optional props
+  interface Props {
+    maxDepth?: number;
+  }
+
+  const props: Props = $props();
+  const maxDepth = $derived(props.maxDepth ?? 4);
+
   // Track expanded state for each article
   let expandedIds = $state<Set<string>>(new Set());
 
@@ -47,103 +55,7 @@
   {#if $articleTree.length > 0}
     <div class="space-y-0.5">
       {#each $articleTree as article}
-        {@const hasChildren = article.children.length > 0}
-        {@const isExpanded = expandedIds.has(article.id) || isParentOfActive(article)}
-        
-        <div>
-          <div class="flex items-center">
-            {#if hasChildren}
-              <button
-                onclick={() => toggleExpanded(article.id)}
-                class="p-1 rounded hover:bg-surface-hover text-text-tertiary"
-                aria-label={isExpanded ? 'Collapse' : 'Expand'}
-              >
-                <Icon 
-                  icon={isExpanded ? 'tabler:chevron-down' : 'tabler:chevron-right'} 
-                  class="w-4 h-4 transition-transform" 
-                />
-              </button>
-            {:else}
-              <span class="w-5"></span>
-            {/if}
-            
-            <a
-              href="/articles/{article.slug}"
-              class="flex-1 flex items-center gap-2 px-2 py-1.5 text-sm rounded-lg transition-colors {isActive(article.slug) ? 'bg-primary/10 text-primary font-medium' : 'text-text-secondary hover:bg-surface-hover hover:text-text-primary'}"
-            >
-              <Icon icon={article.icon || 'tabler:file-text'} class="w-4 h-4 shrink-0" />
-              <span class="truncate">{article.title}</span>
-            </a>
-          </div>
-
-          {#if hasChildren && isExpanded}
-            <div class="ml-4 pl-2 border-l border-border mt-0.5 space-y-0.5">
-              {#each article.children as child}
-                {@const childHasChildren = child.children.length > 0}
-                {@const childIsExpanded = expandedIds.has(child.id) || isParentOfActive(child)}
-                
-                <div>
-                  <div class="flex items-center">
-                    {#if childHasChildren}
-                      <button
-                        onclick={() => toggleExpanded(child.id)}
-                        class="p-1 rounded hover:bg-surface-hover text-text-tertiary"
-                        aria-label={childIsExpanded ? 'Collapse' : 'Expand'}
-                      >
-                        <Icon 
-                          icon={childIsExpanded ? 'tabler:chevron-down' : 'tabler:chevron-right'} 
-                          class="w-4 h-4 transition-transform" 
-                        />
-                      </button>
-                    {:else}
-                      <span class="w-5"></span>
-                    {/if}
-                    
-                    <a
-                      href="/articles/{child.slug}"
-                      class="flex-1 flex items-center gap-2 px-2 py-1 text-sm rounded-lg transition-colors {isActive(child.slug) ? 'bg-primary/10 text-primary font-medium' : 'text-text-secondary hover:bg-surface-hover hover:text-text-primary'}"
-                    >
-                      <Icon icon={child.icon || 'tabler:file-text'} class="w-3.5 h-3.5 shrink-0" />
-                      <span class="truncate">{child.title}</span>
-                    </a>
-                  </div>
-
-                  {#if childHasChildren && childIsExpanded}
-                    <div class="ml-4 pl-2 border-l border-border mt-0.5 space-y-0.5">
-                      {#each child.children as grandchild}
-                        {@const grandchildHasChildren = grandchild.children.length > 0}
-
-                        <div>
-                          <a
-                            href="/articles/{grandchild.slug}"
-                            class="flex items-center gap-2 px-2 py-1 text-sm rounded-lg transition-colors {isActive(grandchild.slug) ? 'bg-primary/10 text-primary font-medium' : 'text-text-secondary hover:bg-surface-hover hover:text-text-primary'}"
-                          >
-                            <Icon icon={grandchild.icon || 'tabler:file-text'} class="w-3 h-3 shrink-0" />
-                            <span class="truncate">{grandchild.title}</span>
-                          </a>
-
-                          {#if grandchildHasChildren}
-                            <div class="ml-4 pl-2 border-l border-border mt-0.5 space-y-0.5">
-                              {#each grandchild.children as greatGrandchild}
-                                <a
-                                  href="/articles/{greatGrandchild.slug}"
-                                  class="flex items-center gap-2 px-2 py-1 text-sm rounded-lg transition-colors {isActive(greatGrandchild.slug) ? 'bg-primary/10 text-primary font-medium' : 'text-text-secondary hover:bg-surface-hover hover:text-text-primary'}"
-                                >
-                                  <Icon icon={greatGrandchild.icon || 'tabler:file-text'} class="w-3 h-3 shrink-0" />
-                                  <span class="truncate">{greatGrandchild.title}</span>
-                                </a>
-                              {/each}
-                            </div>
-                          {/if}
-                        </div>
-                      {/each}
-                    </div>
-                  {/if}
-                </div>
-              {/each}
-            </div>
-          {/if}
-        </div>
+        {@render NavItem({ node: article, level: 0 })}
       {/each}
     </div>
   {:else}
@@ -152,3 +64,43 @@
     </div>
   {/if}
 </nav>
+
+{#snippet NavItem({ node, level }: { node: Article; level: number })}
+  {@const hasChildren = node.children.length > 0}
+  {@const isExpanded = hasChildren && (expandedIds.has(node.id) || isParentOfActive(node))}
+
+  <div>
+    <div class="flex items-center">
+      {#if hasChildren && level < maxDepth}
+        <button
+          onclick={() => toggleExpanded(node.id)}
+          class="p-1 rounded hover:bg-surface-hover text-text-tertiary"
+          aria-label={isExpanded ? 'Collapse' : 'Expand'}
+        >
+          <Icon 
+            icon={isExpanded ? 'tabler:chevron-down' : 'tabler:chevron-right'} 
+            class="w-4 h-4 transition-transform -ml-1" 
+          />
+        </button>
+      {:else}
+        <span class="w-5"></span>
+      {/if}
+      
+      <a
+        href="/articles/{node.slug}"
+        class={`flex-1 min-w-0 flex items-center gap-2 px-2 ${level === 0 ? 'py-1.5' : 'py-1'} text-sm rounded-lg transition-colors ${isActive(node.slug) ? 'bg-primary/10 text-primary font-medium' : 'text-text-secondary hover:bg-surface-hover hover:text-text-primary'}`}
+      >
+        <Icon icon={node.icon || 'tabler:file-text'} class="w-4 h-4 min-w-4 max-w-4" />
+        <span class="truncate">{node.title}</span>
+      </a>
+    </div>
+
+    {#if hasChildren && isExpanded && level < maxDepth}
+      <div class="ml-2 pl-4 border-l border-border mt-0.5 space-y-0.5">
+        {#each node.children as child}
+          {@render NavItem({ node: child, level: level + 1 })}
+        {/each}
+      </div>
+    {/if}
+  </div>
+{/snippet}

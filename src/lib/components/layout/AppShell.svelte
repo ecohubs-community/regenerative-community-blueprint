@@ -6,6 +6,7 @@
   import { sidebarOpen } from '$lib/stores/ui';
   import Icon from '@iconify/svelte';
   import { page } from '$app/state';
+  import ResizableSidebar from '$lib/components/admin/ResizableSidebar.svelte';
 
   let { children } = $props();
 
@@ -17,11 +18,13 @@
   <TopBar />
 
   <div class="flex flex-1 relative">
-    <!-- Desktop Sidebar -->
-    <aside class="hidden md:block w-72 border-r border-border bg-surface/50 backdrop-blur-sm fixed h-[calc(100vh-4rem)] overflow-y-auto top-18 left-0 z-20">
-      <div class="p-4">
-        <SidebarNav />
-      </div>
+    <!-- Desktop Sidebar (resizable) -->
+    <aside class="hidden md:block h-[calc(100vh-4rem)] border-r border-border bg-surface/50 backdrop-blur-sm">
+      <ResizableSidebar minWidth={220} maxWidth={420} defaultWidth={280} storageKey="frontend-articles-sidebar-width">
+        <div class="p-4 h-full overflow-y-auto">
+          <SidebarNav />
+        </div>
+      </ResizableSidebar>
     </aside>
 
     <!-- Mobile Sidebar Overlay -->
@@ -47,7 +50,7 @@
     {/if}
 
     <!-- Main Content Area -->
-    <main class="flex-1 w-full md:pl-72 flex flex-col min-h-[calc(100vh-4rem)]">
+    <main class="flex-1 w-full flex flex-col min-h-[calc(100vh-4rem)]">
       <div class="flex-1 max-w-7xl mx-auto w-full px-lg py-xl">
         <div class="mb-6">
           {#if !isArticlesPage}
