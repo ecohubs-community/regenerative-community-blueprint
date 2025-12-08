@@ -22,9 +22,17 @@
 	interface WorkspacesResponse {
 		workspaces: Workspace[];
 		currentUser: string;
-		defaultWorkspace: string;
-		currentWorkspace?: string;
-		currentBranch?: string;
+		currentWorkspace?: string | null;
+		currentBranch?: string | null;
+		needsWorkspace?: boolean;
+	}
+
+	interface OpenPR {
+		number: number;
+		title: string;
+		html_url: string;
+		state: 'open' | 'closed';
+		created_at: string;
 	}
 
 	let { children, data } = $props();
@@ -36,11 +44,16 @@
 
 	// Workspace management
 	let workspaces = $state<Workspace[]>([]);
-	let currentWorkspace = $state('workspace');
-	let currentBranch = $state('main');
+	let currentWorkspace = $state<string | null>(null);
+	let currentBranch = $state<string | null>(null);
 	let isLoadingWorkspaces = $state(true);
 	let isSwitchingWorkspace = $state(false);
 	let showWorkspaceModal = $state(false);
+	let needsWorkspace = $state(false);
+	
+	// PR status for current workspace
+	let openPR = $state<OpenPR | null>(null);
+	let isCheckingPR = $state(false);
 	let isSidebarOpen = $state(false);
 	let currentContentSidebarMode = $state<'main' | 'content'>('main');
 	let sidebarUnsubscribe: (() => void) | null = null;
@@ -65,23 +78,46 @@
 			if (response.ok) {
 				const responseData: WorkspacesResponse = await response.json();
 				workspaces = responseData.workspaces;
+				needsWorkspace = responseData.needsWorkspace ?? false;
 				
-				// Set current workspace from session
-				if (responseData.currentWorkspace) {
+				// Set current workspace from session if valid
+				if (responseData.currentWorkspace && responseData.currentBranch) {
 					currentWorkspace = responseData.currentWorkspace;
-					currentBranch = responseData.currentBranch || currentBranch;
-				} else {
-					// Auto-select default workspace if none is selected
+					currentBranch = responseData.currentBranch;
+					// Check for open PRs on this workspace
+					await checkOpenPR();
+				} else if (workspaces.length > 0 && !needsWorkspace) {
+					// Auto-select first workspace if available
 					const defaultWorkspace = workspaces.find(w => w.isDefault) || workspaces[0];
 					if (defaultWorkspace) {
 						await switchWorkspace(defaultWorkspace.name);
 					}
+				} else {
+					// User needs to create a workspace
+					needsWorkspace = true;
 				}
 			}
 		} catch (error) {
 			console.error('Failed to load workspaces:', error);
 		} finally {
 			isLoadingWorkspaces = false;
+		}
+	}
+
+	async function checkOpenPR() {
+		if (!currentBranch) return;
+		
+		isCheckingPR = true;
+		try {
+			const response = await fetch('/api/pull-request/check');
+			if (response.ok) {
+				const data = await response.json();
+				openPR = data.openPR;
+			}
+		} catch (error) {
+			console.error('Failed to check for open PRs:', error);
+		} finally {
+			isCheckingPR = false;
 		}
 	}
 
@@ -100,6 +136,7 @@
 				const result = await response.json();
 				currentWorkspace = result.currentWorkspace;
 				currentBranch = result.currentBranch;
+				needsWorkspace = false;
 				
 				// Reload the page to refresh content
 				window.location.reload();
@@ -130,6 +167,8 @@
 			if (response.ok) {
 				const result = await response.json();
 				console.log('Workspace created:', result);
+				needsWorkspace = false;
+				openPR = null; // New workspace has no PR
 				
 				// Reload workspaces and switch to new one
 				await loadWorkspaces();
@@ -225,6 +264,15 @@
 		// Show success message and open PR in new tab
 		alert(`Pull request created successfully!\n\nPR #${result.pullRequest.number}: ${result.pullRequest.title}\n\nOpening in GitHub for review...`);
 		window.open(result.pullRequest.html_url, '_blank');
+		
+		// Update PR status
+		openPR = {
+			number: result.pullRequest.number,
+			title: result.pullRequest.title,
+			html_url: result.pullRequest.html_url,
+			state: 'open',
+			created_at: result.pullRequest.created_at
+		};
 		
 		// Reload workspace changes after PR creation
 		await loadWorkspaceChanges();
@@ -341,19 +389,43 @@
 
 					<!-- Workspace indicator with edit button -->
 					<div class="flex items-center gap-2 ml-4 pl-4 border-l border-gray-200">
-						<div class="text-sm">
-							<p class="text-xs text-gray-500">Workspace</p>
-							<div class="flex items-center gap-1.5">
-								<span class="font-medium text-gray-900">{currentWorkspace || 'Loading…'}</span>
-								<button
-									onclick={() => showWorkspaceModal = true}
-									class="p-1 rounded hover:bg-gray-100 text-gray-400 hover:text-gray-600 transition-colors"
-									aria-label="Change workspace"
-								>
-									<Icon icon="tabler:edit" class="w-4 h-4" />
-								</button>
+						{#if needsWorkspace}
+							<!-- No workspace - prompt to create -->
+							<button
+								onclick={() => showWorkspaceModal = true}
+								class="flex items-center gap-2 px-3 py-1.5 bg-amber-100 text-amber-800 rounded-lg hover:bg-amber-200 transition-colors"
+							>
+								<Icon icon="tabler:alert-triangle" class="w-4 h-4" />
+								<span class="text-sm font-medium">Create Workspace</span>
+							</button>
+						{:else}
+							<div class="text-sm">
+								<p class="text-xs text-gray-500">Workspace</p>
+								<div class="flex items-center gap-1.5">
+									<span class="font-medium text-gray-900">{currentWorkspace || 'Loading…'}</span>
+									{#if openPR}
+										<!-- PR indicator -->
+										<a
+											href={openPR.html_url}
+											target="_blank"
+											rel="noopener noreferrer"
+											class="flex items-center gap-1 px-1.5 py-0.5 bg-purple-100 text-purple-700 rounded text-xs font-medium hover:bg-purple-200 transition-colors"
+											title="Open pull request #{openPR.number}"
+										>
+											<Icon icon="tabler:git-pull-request" class="w-3 h-3" />
+											PR #{openPR.number}
+										</a>
+									{/if}
+									<button
+										onclick={() => showWorkspaceModal = true}
+										class="p-1 rounded hover:bg-gray-100 text-gray-400 hover:text-gray-600 transition-colors"
+										aria-label="Change workspace"
+									>
+										<Icon icon="tabler:edit" class="w-4 h-4" />
+									</button>
+								</div>
 							</div>
-						</div>
+						{/if}
 					</div>
 				</div>
 
@@ -387,8 +459,55 @@
 			</div>
 		</header>
 
+		<!-- PR Banner - shown when workspace has an open PR -->
+		{#if openPR && !needsWorkspace}
+			<div class="bg-purple-50 border-b border-purple-200 px-4 py-2">
+				<div class="flex items-center justify-between max-w-7xl mx-auto">
+					<div class="flex items-center gap-2 text-sm text-purple-800">
+						<Icon icon="tabler:git-pull-request" class="w-4 h-4" />
+						<span>
+							This workspace has an open pull request 
+							<a href={openPR.html_url} target="_blank" rel="noopener noreferrer" class="font-medium underline hover:text-purple-900">
+								#{openPR.number}
+							</a>. 
+							You can continue editing, or create a new workspace for fresh changes.
+						</span>
+					</div>
+					<button
+						onclick={() => showWorkspaceModal = true}
+						class="flex items-center gap-1 px-3 py-1 bg-purple-600 text-white text-sm font-medium rounded-lg hover:bg-purple-700 transition-colors"
+					>
+						<Icon icon="tabler:plus" class="w-4 h-4" />
+						New Workspace
+					</button>
+				</div>
+			</div>
+		{/if}
+
 		<!-- Main layout -->
 		<div class="flex flex-1 overflow-hidden">
+			<!-- No workspace overlay -->
+			{#if needsWorkspace && !isLoadingWorkspaces}
+				<div class="absolute inset-0 z-50 bg-white/90 flex items-center justify-center">
+					<div class="text-center max-w-md px-6">
+						<div class="w-16 h-16 mx-auto mb-4 rounded-full bg-amber-100 flex items-center justify-center">
+							<Icon icon="tabler:folder-plus" class="w-8 h-8 text-amber-600" />
+						</div>
+						<h2 class="text-xl font-semibold text-gray-900 mb-2">Create a Workspace</h2>
+						<p class="text-gray-600 mb-6">
+							You need to create a workspace before you can start editing content. 
+							A workspace is your personal area where you can make changes without affecting others.
+						</p>
+						<button
+							onclick={() => showWorkspaceModal = true}
+							class="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+						>
+							Create Your First Workspace
+						</button>
+					</div>
+				</div>
+			{/if}
+
 			<!-- Mobile sidebar overlay -->
 			{#if isContentPage}
 				<div 
@@ -460,7 +579,7 @@
 	<WorkspaceModal
 		bind:isOpen={showWorkspaceModal}
 		workspaces={workspaces}
-		currentWorkspace={currentWorkspace}
+		currentWorkspace={currentWorkspace ?? ''}
 		isLoading={isLoadingWorkspaces}
 		onClose={() => showWorkspaceModal = false}
 		onSwitch={switchWorkspace}
@@ -471,7 +590,7 @@
 	<ReviewChangesModal
 		bind:isOpen={showReviewModal}
 		bind:workspaceChanges={workspaceChanges}
-		currentWorkspace={currentWorkspace}
+		currentWorkspace={currentWorkspace ?? ''}
 		onClose={() => showReviewModal = false}
 		onCreatePR={handleCreatePR}
 		onRevert={handleRevertFile}

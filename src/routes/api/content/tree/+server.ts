@@ -39,6 +39,7 @@ export async function GET({ url, cookies }) {
 			return json({ error: 'Session expired' }, { status: 401 });
 		}
 
+		// Use explicit branch from query, then session branch, then fall back to main for viewing
 		const branch = url.searchParams.get('branch') || session.currentBranch || 'main';
 
 		const octokit = new Octokit({ auth: session.access_token });

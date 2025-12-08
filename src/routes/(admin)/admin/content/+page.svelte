@@ -23,6 +23,10 @@
 	// Track original title to detect title changes (for tree reload)
 	let originalTitle = $state<string>('');
 
+	// Debounce for title-based saves
+	const TITLE_SAVE_DELAY = 1000; // ms
+	let titleSaveTimeout: ReturnType<typeof setTimeout> | null = null;
+
 	// Find child articles for the current article
 	const childArticles = $derived(() => {
 		if (!fileContent?.frontmatter?.id) return [];
@@ -210,6 +214,11 @@
 				draftParentId = null;
 				draftParentPath = null;
 			}
+			// Clear any pending title save when switching articles
+			if (titleSaveTimeout) {
+				clearTimeout(titleSaveTimeout);
+				titleSaveTimeout = null;
+			}
 			loadFileContent(path);
 		}
 	}
@@ -221,6 +230,12 @@
 		draftParentPath = parentPath;
 		originalDraftTitle = '';
 		selectedFile = null; // Clear any existing selection
+		
+		// Clear any pending title save when starting a new draft
+		if (titleSaveTimeout) {
+			clearTimeout(titleSaveTimeout);
+			titleSaveTimeout = null;
+		}
 		
 		// Create draft content
 		const id = generateArticleId();
@@ -238,13 +253,25 @@
 	async function handleTitleChange(newTitle: string) {
 		// Title is already updated in fileContent via binding
 		
-		// If this is a draft article and we now have a title, save it
-		if (isDraftArticle && newTitle.trim()) {
-			await saveDraftArticle();
-		} else if (!isDraftArticle) {
-			// For existing articles, trigger auto-save
-			triggerAutoSave();
+		// Debounce saves so we don't hit the API on every keystroke
+		if (titleSaveTimeout) {
+			clearTimeout(titleSaveTimeout);
 		}
+		
+		// If field is empty, don't schedule a save yet
+		if (!newTitle.trim()) {
+			return;
+		}
+		
+		titleSaveTimeout = setTimeout(async () => {
+			// If this is a draft article and we now have a title, save it
+			if (isDraftArticle) {
+				await saveDraftArticle();
+			} else if (!isDraftArticle && fileContent) {
+				// For existing articles, trigger auto-save once after user pauses
+				await saveContent(fileContent);
+			}
+		}, TITLE_SAVE_DELAY);
 	}
 
 	async function saveDraftArticle() {

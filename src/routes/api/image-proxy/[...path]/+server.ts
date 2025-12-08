@@ -19,7 +19,8 @@ export const GET: RequestHandler = async ({ params, url, cookies }) => {
 
 	try {
 		const imagePath = params.path;
-		const branch = url.searchParams.get('branch') || session.currentBranch || `${session.user.login}/workspace`;
+		// Use explicit branch from query, then session branch, then fall back to main for viewing
+		const branch = url.searchParams.get('branch') || session.currentBranch || 'main';
 
 		if (!imagePath) {
 			throw error(400, 'Image path is required');

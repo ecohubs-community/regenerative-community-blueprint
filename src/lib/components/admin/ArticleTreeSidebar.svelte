@@ -163,8 +163,13 @@
 			newParentId = targetNode?.parentId ?? null;
 		}
 		
-		// Don't move if parent hasn't changed
-		if (dragged.parentId === newParentId) {
+		// For reordering (before/after), we need to check if it's just a reorder within same parent
+		const isReorder = (position === 'before' || position === 'after') && 
+			dragged.parentId === newParentId && 
+			targetNode !== null;
+		
+		// Don't move if parent hasn't changed AND it's not a reorder operation
+		if (dragged.parentId === newParentId && !isReorder) {
 			handleDragEnd();
 			return;
 		}
@@ -179,7 +184,9 @@
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
 					articlePath: dragged.path,
-					newParentId
+					newParentId,
+					targetSiblingId: targetNode?.id ?? null,
+					position
 				})
 			});
 			
