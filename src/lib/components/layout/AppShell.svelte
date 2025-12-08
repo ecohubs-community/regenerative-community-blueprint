@@ -13,13 +13,14 @@
   const isArticlesPage = $derived(page.url.pathname.startsWith('/articles'));
 </script>
 
-<div class="flex flex-col min-h-screen bg-background text-text-primary transition-colors duration-300">
+<div class="h-screen flex flex-col bg-background text-text-primary transition-colors duration-300 overflow-hidden">
   <!-- Top Bar -->
   <TopBar />
 
-  <div class="flex flex-1 relative">
+  <!-- Main shell: sidebar + content, full height under TopBar -->
+  <div class="flex flex-1 overflow-hidden">
     <!-- Desktop Sidebar (resizable) -->
-    <aside class="hidden md:block h-[calc(100vh-4rem)] border-r border-border bg-surface/50 backdrop-blur-sm">
+    <aside class="hidden md:block h-full border-r border-border bg-surface/50 backdrop-blur-sm">
       <ResizableSidebar minWidth={220} maxWidth={420} defaultWidth={280} storageKey="frontend-articles-sidebar-width">
         <div class="p-4 h-full overflow-y-auto">
           <SidebarNav />
@@ -50,8 +51,8 @@
     {/if}
 
     <!-- Main Content Area -->
-    <main class="flex-1 w-full flex flex-col min-h-[calc(100vh-4rem)]">
-      <div class="flex-1 max-w-7xl mx-auto w-full px-lg py-xl">
+    <main class="flex-1 w-full flex flex-col overflow-y-auto">
+      <div class="max-w-7xl mx-auto w-full px-lg py-xl">
         <div class="mb-6">
           {#if !isArticlesPage}
             <Breadcrumbs />
