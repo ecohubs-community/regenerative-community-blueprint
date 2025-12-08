@@ -1,5 +1,5 @@
 ---
-title: Consent Decision-Making Principles in tropical areas
+title: Consent Decision-Making Principles
 modules: 
   - Consent Decision-Making
 climate: 
