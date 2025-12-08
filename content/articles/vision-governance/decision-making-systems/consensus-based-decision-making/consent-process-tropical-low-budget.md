@@ -66,6 +66,8 @@ parentId: a33763b3
 
 * ✅ Minimal resource requirements
 
+***
+
 ## Conclusion
 
 Consent decision-making provides a **sustainable framework** for tropical communities to thrive while maintaining harmony and effective governance.
