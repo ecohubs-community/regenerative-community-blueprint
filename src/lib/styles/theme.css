@@ -133,6 +133,20 @@
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
+
+@utility prose-article {
+  --tw-prose-quotes: var(--color-text-primary);
+  --tw-prose-quote-borders: var(--color-secondary);
+  --tw-prose-body: var(--color-text-primary);
+  --tw-prose-headings: var(--color-primary);
+  --tw-prose-strong: var(--color-text-primary);
+  --tw-prose-bold: var(--color-text-primary);
+  --tw-prose-links: var(--color-secondary);
+  --tw-prose-em: var(--color-text-primary);
+  --tw-prose-hr: var(--color-gray-300);
+}
+
+
 /* Dark Mode Overrides - Class-based */
 :root.dark,
 html.dark {

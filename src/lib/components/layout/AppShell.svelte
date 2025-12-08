@@ -5,8 +5,11 @@
   import Footer from './Footer.svelte';
   import { sidebarOpen } from '$lib/stores/ui';
   import Icon from '@iconify/svelte';
+  import { page } from '$app/state';
 
   let { children } = $props();
+
+  const isArticlesPage = $derived(page.url.pathname.startsWith('/articles'));
 </script>
 
 <div class="flex flex-col min-h-screen bg-background text-text-primary transition-colors duration-300">
@@ -47,7 +50,9 @@
     <main class="flex-1 w-full md:pl-72 flex flex-col min-h-[calc(100vh-4rem)]">
       <div class="flex-1 max-w-7xl mx-auto w-full px-lg py-xl">
         <div class="mb-6">
-          <Breadcrumbs />
+          {#if !isArticlesPage}
+            <Breadcrumbs />
+          {/if}
         </div>
         {@render children()}
       </div>
