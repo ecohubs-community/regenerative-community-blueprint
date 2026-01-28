@@ -110,4 +110,4 @@ RCOS turns:
 * Implicit ownership → declared rights
 
 **Known Failure Modes RCOS Is Designed to Prevent**\
-See [Stress-Test Cases](https://file+.vscode-resource.vscode-cdn.net/Users/el_stefano/Library/CloudStorage/OneDrive-Personal/Projects/mediakular%20Projekte/ecohubs.community/RCOS/RCOS%20-%20Core%20Structure.md?tab=t.mciixoc7dn77)
+See RCOS Stress Tests
