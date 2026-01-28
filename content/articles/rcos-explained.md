@@ -5,6 +5,8 @@ parentId: null
 order: 0
 ---
 
+## **Regenerative Community Operating System (RCOS)**
+
 ## **Design principles (non-negotiable)**
 
 * **Constraint-based, not value-based**\
