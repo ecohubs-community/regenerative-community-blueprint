@@ -1,6 +1,6 @@
 ---
 id: 5c693112
-title: cultural
+title: Cultural
 parentId: 6acbe9a7
 order: 0
 ---
