@@ -110,4 +110,4 @@ RCOS turns:
 * Implicit ownership → declared rights
 
 **Known Failure Modes RCOS Is Designed to Prevent**\
-See RCOS Stress Tests
+See [RCOS Stress Tests](/articles/rcos-stress-tests?id=6acbe9a7)
