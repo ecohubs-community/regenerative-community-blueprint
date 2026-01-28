@@ -30,7 +30,7 @@ Purpose: create hard limits that even consensus cannot override casually.
 
 * **What *cannot* be changed without dissolution or reboot**
 
-#### **Examples:**
+### **Examples**
 
 * “Land cannot be sold”
 * “This community is non-speculative”
