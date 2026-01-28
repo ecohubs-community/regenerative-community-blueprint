@@ -58,9 +58,9 @@ Purpose: create hard limits that even consensus cannot override casually.
 * **Invariant 0.4: Protected invariants**\
   Declared invariants cannot be changed without following the highest constitutional threshold or dissolution.
 
-### **Explicitness Rules**
+## Explicitness Rules
 
-#### **MUST be explicit**
+### MUST be explicit
 
 * Primary purpose
 * Governed scope (assets, domains, authority)
@@ -69,13 +69,13 @@ Purpose: create hard limits that even consensus cannot override casually.
 
 **Why:** ambiguity here creates silent power grabs.
 
-#### **MAY be explicit**
+### MAY be explicit
 
 * Secondary purposes
 * External affiliations
 * Long-term vision statements
 
-#### **MUST remain optional**
+### MUST remain optional
 
 * Ideology
 * Spiritual framing
