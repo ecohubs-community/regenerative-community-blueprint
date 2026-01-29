@@ -1,6 +1,6 @@
 ---
-id: 7f25f268
-title: Test Case - Dominant Speakers in Decision Spaces
+id: 6acfe5f7
+title: Dominant Speakers in Decision Spaces
 parentId: 7f25f268
 order: 0
 ---

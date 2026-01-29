@@ -1,6 +1,6 @@
 ---
 id: 1agdfya7
-title: Change Emergencies
+title: Emergency Rule Bypass Precedent
 parentId: 6acde7a7
 order: 0
 ---

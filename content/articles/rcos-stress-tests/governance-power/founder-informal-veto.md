@@ -1,6 +1,6 @@
 ---
 id: 9e4c3b21
-title: Test Case - Founder Informal Veto
+title: Founder Informal Veto
 parentId: 7f25f268
 order: 1
 ---

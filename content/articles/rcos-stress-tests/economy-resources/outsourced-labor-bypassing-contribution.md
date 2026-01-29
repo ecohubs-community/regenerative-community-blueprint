@@ -1,7 +1,7 @@
 ---
 id: 9e4c3b21
 title: Outsourced Labor Bypassing Contribution
-parentId: cbd2804b
+parentId: 6acbe9a7
 order: 1
 ---
 

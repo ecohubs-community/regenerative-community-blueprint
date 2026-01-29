@@ -1,6 +1,6 @@
 ---
-id: a9e4c65d
-title: Test Case - Informal Clique Decision Making
+id: 6gcf15u
+title: Informal Clique Decision Making
 parentId: 7f25f268
 order: 2
 ---
