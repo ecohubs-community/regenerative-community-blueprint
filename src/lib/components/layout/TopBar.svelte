@@ -25,7 +25,7 @@
         </div>
         <div class="flex flex-col">
           <span class="text-xl font-bold text-primary tracking-tight group-hover:text-primary transition-colors leading-5">EcoHubs</span>
-          <span class="text-xs font-bold text-gray-500 transition-colors">Blueprint</span>
+          <span class="text-xs font-bold text-gray-500 transition-colors">Blueprint / RCOS</span>
         </div>
       </a>
     </div>
