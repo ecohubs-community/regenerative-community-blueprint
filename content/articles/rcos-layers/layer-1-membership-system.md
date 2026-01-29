@@ -48,7 +48,7 @@ order: 0
 * Rights vs obligations  
 * Forced exit due process
 
-**Why:** unclear membership is the \#1 source of abuse and burnout.
+**Why:** unclear membership is the #1 source of abuse and burnout.
 
 #### **MAY be explicit**
 

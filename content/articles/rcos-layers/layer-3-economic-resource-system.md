@@ -43,13 +43,13 @@ order: 0
 
 ### **Layer Invariants**
 
-* **Invariant 3.1: Economic transparency by default**\
+* **Invariant 3.1: Economic transparency by default**
   Shared resources, flows, and obligations must be visible to the community (with limited, explicit exceptions).
-* **Invariant 3.2: Commons protection**\
+* **Invariant 3.2: Commons protection**
   Resources declared as commons cannot be privatized through informal or unilateral action.
-* **Invariant 3.3: Contribution recognition is explicit**\
+* **Invariant 3.3: Contribution recognition is explicit**
   Unpaid or invisible labor must not be structurally required for system survival.
-* **Invariant 3.4: No unbounded accumulation of internal power**\
+* **Invariant 3.4: No unbounded accumulation of internal power**
   Economic mechanisms must prevent indefinite concentration of internal influence.
 
 ### **Explicitness Rules**

@@ -43,13 +43,13 @@ order: 0
 
 ### **Layer Invariants**
 
-* **Invariant 5.1: Roles must be defined**\
+* **Invariant 5.1: Roles must be defined**
   Ongoing responsibilities cannot exist without a named role.
-* **Invariant 5.2: Operational knowledge is documented**\
+* **Invariant 5.2: Operational knowledge is documented**
   Critical operational processes must not live only in people’s heads.
-* **Invariant 5.3: Time and attention are finite resources**\
+* **Invariant 5.3: Time and attention are finite resources**
   Meeting load, coordination burden, and unpaid labor must be bounded.
-* **Invariant 5.4: Information access rules are explicit**\
+* **Invariant 5.4: Information access rules are explicit**
   What is transparent and what is private must be clearly defined.
 
 ### **Explicitness Rules**

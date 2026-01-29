@@ -30,13 +30,13 @@ order: 0
 
 ### **Layer Invariants**
 
-* **Invariant 6.1: Change is possible but constrained**\
+* **Invariant 6.1: Change is possible but constrained**
   No system component is frozen forever, but no change is instantaneous.
-* **Invariant 6.2: Changes are versioned**\
+* **Invariant 6.2: Changes are versioned**
   Rule changes must be documented, dated, and traceable.
-* **Invariant 6.3: Experiments are reversible**\
+* **Invariant 6.3: Experiments are reversible**
   All experiments must define scope, duration, and rollback conditions.
-* **Invariant 6.4: Learning is captured**\
+* **Invariant 6.4: Learning is captured**
   Major failures and adaptations must be recorded and accessible.
 
 ### **Explicitness Rules**

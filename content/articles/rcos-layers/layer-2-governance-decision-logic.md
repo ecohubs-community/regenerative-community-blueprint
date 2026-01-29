@@ -9,16 +9,16 @@ order: 0
 
 ### **Decision types**
 
-* **Operational**\
+* **Operational**
   Day-to-day decisions; reversible; low risk.
-* **Strategic**\
+* **Strategic**
   Medium-term direction; resource allocation; partially reversible.
-* **Constitutional**\
+* **Constitutional**
   Changes to core rules, purpose, or invariants; high threshold.
 
 ### **Mechanisms**
 
-How a decision is made.\
+How a decision is made.
 **Purpose:** match decision risk to decision method.
 
 * Consent (no reasoned objection)
@@ -28,7 +28,7 @@ How a decision is made.\
 
 ### **Authority boundaries**
 
-Who can decide.\
+Who can decide.
 **Purpose:** avoid decision paralysis and power leakage.
 
 * **Individual** – autonomy within role
@@ -51,13 +51,13 @@ Who can decide.\
 
 ### **Layer Invariants**
 
-* **Invariant 2.1: Decision type precedes decision content**\
+* **Invariant 2.1: Decision type precedes decision content**
   How a decision is made must be agreed *before* what is decided.
-* **Invariant 2.2: Authority must be explicit**\
+* **Invariant 2.2: Authority must be explicit**
   No one may exercise decision power without a defined role, mandate, or consent.
-* **Invariant 2.3: Constitutional rules outrank all others**\
+* **Invariant 2.3: Constitutional rules outrank all others**
   Operational or strategic decisions cannot override constitutional agreements.
-* **Invariant 2.4: Decisions are reviewable**\
+* **Invariant 2.4: Decisions are reviewable**
   All decisions must be traceable to their authority, method, and record.
 
 ### **Explicitness Rules**
