@@ -1,5 +1,5 @@
 ---
-id: 6acbe9a7
+id: 65cde9a1
 title: Invisible Power via Responsibilities
 parentId: a9e4c65d
 order: 1
