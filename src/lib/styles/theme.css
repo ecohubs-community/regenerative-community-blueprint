@@ -144,6 +144,7 @@
   --tw-prose-links: var(--color-secondary);
   --tw-prose-em: var(--color-text-primary);
   --tw-prose-hr: var(--color-gray-300);
+  --tw-prose-code: var(--color-gray-400);
 }
 
 

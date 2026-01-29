@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
+	import { createEventDispatcher, untrack } from 'svelte';
 	import Icon from '@iconify/svelte';
 	import ArticleTree from './ArticleTree.svelte';
 	import type { ArticleTreeNode } from '$lib/types/article';
@@ -24,6 +24,61 @@
 
 	// Track expanded nodes
 	let expandedIds = $state(new Set<string>());
+	
+	// Track state for auto-expansion to avoid overriding manual toggles
+	let lastSearchQuery = $state('');
+	let lastSelectedPath = $state<string | null>(null);
+
+	// Auto-expand when search query changes
+	$effect(() => {
+		if (searchQuery !== lastSearchQuery) {
+			const oldQuery = lastSearchQuery;
+			lastSearchQuery = searchQuery;
+			
+			if (searchQuery.trim() && searchQuery.length > oldQuery.length) {
+				const query = searchQuery.toLowerCase();
+				const autoExpand = (nodes: ArticleTreeNode[]) => {
+					let found = false;
+					for (const node of nodes) {
+						const hasMatch = node.title.toLowerCase().includes(query);
+						const childrenMatch = node.children && autoExpand(node.children);
+						if (childrenMatch) {
+							expandedIds.add(node.id);
+							found = true;
+						}
+						if (hasMatch) found = true;
+					}
+					return found;
+				};
+				autoExpand(articles);
+				expandedIds = new Set(expandedIds);
+			}
+		}
+	});
+
+	// Auto-expand when selected path changes
+	$effect(() => {
+		if (selectedPath !== lastSelectedPath) {
+			lastSelectedPath = selectedPath;
+			if (selectedPath) {
+				untrack(() => {
+					const autoExpand = (nodes: ArticleTreeNode[]): boolean => {
+						for (const node of nodes) {
+							if (node.path === selectedPath) return true;
+							if (node.children && autoExpand(node.children)) {
+								expandedIds.add(node.id);
+								return true;
+							}
+						}
+						return false;
+					};
+					if (autoExpand(articles)) {
+						expandedIds = new Set(expandedIds);
+					}
+				});
+			}
+		}
+	});
 	
 	// Drag & drop state
 	let draggedNode = $state<ArticleTreeNode | null>(null);
@@ -80,10 +135,6 @@
 					...node,
 					children: filteredChildren
 				});
-				// Auto-expand nodes with matching children
-				if (filteredChildren.length > 0) {
-					expandedIds.add(node.id);
-				}
 			}
 			return acc;
 		}, []);
