@@ -22,6 +22,7 @@ export type ArticleMeta = JsonEntry<{
   budget?: string[] | string;
   size?: string[] | string;
   attachments?: { file: string; caption?: string }[];
+  filePath?: string;
   [key: string]: unknown;
 }>;
 
@@ -29,6 +30,7 @@ export type ArticleBody = {
   slug: string;
   body: string;
   data: Record<string, unknown>;
+  filePath?: string;
 };
 
 function resolvePath(...segments: string[]) {
@@ -154,7 +156,8 @@ export async function readArticleMeta(): Promise<ArticleMeta[]> {
             id,
             slug,
             parentId,
-            order: parsed.data.order ?? orderFromPrefix ?? 0
+            order: parsed.data.order ?? orderFromPrefix ?? 0,
+            filePath: fullPath
           });
         } catch (error) {
           console.warn(`[content] Failed to parse article ${fullPath}:`, error);
@@ -183,14 +186,32 @@ function extractNumericPrefix(segment: string): number | undefined {
 }
 
 export async function readArticleBody(slug: string): Promise<ArticleBody | null> {
-  // Try multiple possible file locations:
-  // 1. Direct file: articles/{slug}.md
-  // 2. Folder index: articles/{slug}/_index.md
-  // 3. Nested path with slashes converted
+  // Use readArticleMeta to find the correct file path for this slug
+  // This correctly handles numeric prefixes (01-, 02-) which are stripped from slugs
+  const articles = await readArticleMeta();
+  const article = articles.find(a => a.slug === slug);
+  
+  if (article?.filePath) {
+    try {
+      const raw = await fs.readFile(article.filePath, 'utf8');
+      const parsed = matter(raw);
+      const compiled = await compile(parsed.content);
+      
+      return {
+        slug,
+        body: compiled?.code || parsed.content,
+        data: parsed.data,
+        filePath: article.filePath
+      };
+    } catch (error) {
+      console.warn(`[content] Failed to read article file ${article.filePath}:`, error);
+    }
+  }
+
+  // Fallback for slugs that might not be in the meta scan yet (e.g. newly created)
   const possiblePaths = [
     resolvePath('articles', `${slug}.md`),
     resolvePath('articles', slug, '_index.md'),
-    // Also try with numeric prefixes restored (for legacy support)
   ];
   
   for (const filePath of possiblePaths) {
@@ -202,7 +223,8 @@ export async function readArticleBody(slug: string): Promise<ArticleBody | null>
       return {
         slug,
         body: compiled?.code || parsed.content,
-        data: parsed.data
+        data: parsed.data,
+        filePath
       };
     } catch {
       // Try next path
