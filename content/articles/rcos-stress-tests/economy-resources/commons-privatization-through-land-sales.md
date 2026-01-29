@@ -1,7 +1,7 @@
 ---
 id: 1afbg1a7
 title: Commons Privatization through Land Sales
-parentId: 6acbe9a7
+parentId: cbd2804b
 order: 0
 ---
 
