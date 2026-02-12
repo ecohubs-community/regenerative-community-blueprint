@@ -67,6 +67,7 @@ Layer 0 defines the constitutional identity of the community. It establishes wha
 - Purpose Charter
 - Scope Declaration
 - Invariants Register
+- Identity Constraints Register
 
 2.5.2 Layer 0 artifacts MUST be:
 - Publicly accessible to all members
