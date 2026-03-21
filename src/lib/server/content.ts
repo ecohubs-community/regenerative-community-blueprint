@@ -18,9 +18,6 @@ export type ArticleMeta = JsonEntry<{
   parentId?: string | null;
   order?: number;
   icon?: string;
-  climate?: string[] | string;
-  budget?: string[] | string;
-  size?: string[] | string;
   attachments?: { file: string; caption?: string }[];
   filePath?: string;
   [key: string]: unknown;

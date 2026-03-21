@@ -18,10 +18,10 @@
     
     <div class="relative z-10 px-xl py-3xl text-center max-w-3xl mx-auto">
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-gradient mb-6 leading-tight">
-        Regenerative Community Blueprint
+        RCOS - Regenerative Community Operating System
       </h1>
       <p class="text-lg md:text-xl text-text-secondary mb-8 leading-relaxed">
-        A comprehensive knowledge platform for designing, building, and sustaining regenerative communities. Explore our curated articles and guides.
+        RCOS is an open-source, shared system for organizing intentional communities. It gives you clear, ready-to-use structures for decision-making, roles, resource sharing, and handling conflicts — so you can focus on building your community instead of figuring everything out from scratch. Explore the core system, optional modules, and how to apply them.
       </p>
       
       <div class="flex flex-wrap justify-center gap-4">

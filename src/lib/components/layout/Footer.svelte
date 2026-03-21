@@ -9,9 +9,9 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 ">
       <!-- Brand -->
       <div class="space-y-4">
-        <h3 class="text-lg font-bold text-gradient">EcoHubs</h3>
+        <h3 class="text-lg font-bold text-gradient">RCOS Blueprint by <a href="https://ecohubs.community" class="hover:text-text-primary transition-colors underline">EcoHubs</a></h3>
         <p class="text-sm text-text-secondary max-w-full">
-          Empowering communities with regenerative blueprints for a sustainable future.
+          A modular operating system that defines how intentional communities organize — from governance and roles to resource sharing and conflict resolution — in support of resilience, fairness, and regeneration.
         </p>
       </div>
 
@@ -20,7 +20,7 @@
         <h4 class="font-semibold text-primary">Resources</h4>
         <ul class="space-y-2 text-sm text-text-secondary">
           <li><a href="https://ecohubs.community" class="hover:text-text-primary transition-colors flex items-center gap-1">About Us <Icon icon="tabler:arrow-up-right" class="w-4 h-4" /></a></li>
-          <li><a href="https://ecohubs.community/join" class="hover:text-text-primary transition-colors flex items-center gap-1">Join us <Icon icon="tabler:arrow-up-right" class="w-4 h-4" /></a></li>
+          <li><a href="https://ecohubs.community/membership" class="hover:text-text-primary transition-colors flex items-center gap-1">Join us <Icon icon="tabler:arrow-up-right" class="w-4 h-4" /></a></li>
         </ul>
       </div>
 

@@ -53,10 +53,6 @@ export interface ArticleFrontmatter {
 	summary?: string;
 	description?: string;
 	tags?: string[];
-	// Filter fields
-	climate?: string[];
-	budget?: string[];
-	size?: string[];
 	[key: string]: unknown;
 }
 

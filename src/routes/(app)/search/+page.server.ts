@@ -17,17 +17,14 @@ export const load: PageServerLoad = async () => {
         slug: a.slug,
         title: a.title,
         body: [a.summary ?? '', snippet].join(' '),
-        parentId: a.parentId,
-        climate: a.climate,
-        budget: a.budget,
-        size: a.size
+        parentId: a.parentId
       };
     })
   );
 
   const miniSearch = new MiniSearch({
     fields: ['title', 'body'],
-    storeFields: ['id', 'slug', 'title', 'parentId', 'climate', 'budget', 'size'],
+    storeFields: ['id', 'slug', 'title', 'parentId'],
     searchOptions: {
       fuzzy: 0.2,
       prefix: true,

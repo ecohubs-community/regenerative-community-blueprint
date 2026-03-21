@@ -49,7 +49,7 @@
 				Admin Login
 			</h2>
 			<p class="mt-2 text-center text-sm text-gray-600">
-				Sign in to manage the EcoHubs Community Blueprint
+				Sign in to manage the EcoHubs RCOS
 			</p>
 		</div>
 		

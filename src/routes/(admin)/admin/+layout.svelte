@@ -386,7 +386,7 @@
 						</div>
 						<div class="flex flex-col">
 							<span class="text-lg font-bold text-gray-900 hidden sm:block leading-5">EcoHubs</span>
-							<span class="text-xs font-bold text-gray-500 transition-colors">Blueprint</span>
+							<span class="text-xs font-bold text-gray-500 transition-colors">RCOS Blueprint</span>
 						</div>
 					</a>
 

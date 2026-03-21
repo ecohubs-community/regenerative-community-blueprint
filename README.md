@@ -1,6 +1,6 @@
-# Regenerative Community Blueprint (RCOS)
+# RCOS - Regenerative Community Operating System
 
-Welcome to the **Regenerative Community Blueprint**, the software implementation and digital home for the **Regenerative Community Operating System (RCOS)**.
+Welcome to **RCOS**, the software implementation and digital home for the **Regenerative Community Operating System**.
 
 ## What is RCOS?
 

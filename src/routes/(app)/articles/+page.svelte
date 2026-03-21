@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-  <title>Articles - Regenerative Community Blueprint</title>
+  <title>Articles - RCOS</title>
 </svelte:head>
 
 <div class="space-y-8 pb-12">

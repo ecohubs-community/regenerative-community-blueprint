@@ -8,59 +8,18 @@ export type SearchResult = {
   snippet?: string;
   meta?: string;
   parentId?: string | null;
-  climate?: string[];
-  budget?: string[];
-  size?: string[];
 };
 
 export const searchIndex = writable<MiniSearch<SearchResult>>();
 export const query = writable('');
-export const filters = writable({
-  climate: new Set<string>(),
-  budget: new Set<string>(),
-  size: new Set<string>()
-});
 export const results = writable<SearchResult[]>([]);
 export const status = writable<'idle' | 'loading' | 'ready'>('idle');
 
-export const hasActiveFilters = derived(
-  filters,
-  ($filters) => $filters.climate.size + $filters.budget.size + $filters.size.size > 0
-);
-
-export const filteredResults = derived(
-  [results, filters],
-  ([$results, $filters]) =>
-    $results.filter((r) => {
-      return (
-        ($filters.climate.size === 0 || r.climate?.some((c) => $filters.climate.has(c))) &&
-        ($filters.budget.size === 0 || r.budget?.some((b) => $filters.budget.has(b))) &&
-        ($filters.size.size === 0 || r.size?.some((s) => $filters.size.has(s)))
-      );
-    })
-);
+// Keep as alias for backwards compatibility with SearchResults component
+export const filteredResults = results;
 
 export function setQuery(q: string) {
   query.set(q);
-  runSearch();
-}
-
-export function toggleFilter(type: 'climate' | 'budget' | 'size', value: string) {
-  filters.update(($filters) => {
-    const set = $filters[type];
-    if (set.has(value)) set.delete(value);
-    else set.add(value);
-    return { ...$filters, [type]: set };
-  });
-  runSearch();
-}
-
-export function clearFilters() {
-  filters.set({
-    climate: new Set(),
-    budget: new Set(),
-    size: new Set()
-  });
   runSearch();
 }
 
@@ -91,10 +50,7 @@ function runSearch() {
     title: doc.title,
     snippet: doc.snippet,
     meta: doc.meta,
-    parentId: doc.parentId,
-    climate: doc.climate,
-    budget: doc.budget,
-    size: doc.size
+    parentId: doc.parentId
   }));
   results.set(mapped);
   status.set('ready');

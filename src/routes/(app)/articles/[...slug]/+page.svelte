@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-  <title>{article?.title || 'Article'} - Regenerative Community Blueprint</title>
+  <title>{article?.title || 'Article'} - RCOS</title>
 </svelte:head>
 
 {#if article}
@@ -47,16 +47,10 @@
       {/if}
       
       <!-- Tags -->
-      {#if (article.climate?.length || article.budget?.length || article.size?.length)}
+      {#if article.tags?.length}
         <div class="flex flex-wrap gap-2">
-          {#each article.climate || [] as tag}
+          {#each article.tags as tag}
             <span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-700">{tag}</span>
-          {/each}
-          {#each article.budget || [] as tag}
-            <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-700">{tag}</span>
-          {/each}
-          {#each article.size || [] as tag}
-            <span class="px-2 py-1 text-xs rounded-full bg-purple-100 text-purple-700">{tag}</span>
           {/each}
         </div>
       {/if}

@@ -10,9 +10,6 @@ interface SearchDocument {
 	content: string;
 	path: string;
 	parentId?: string | null;
-	climate?: string[];
-	budget?: string[];
-	size?: string[];
 }
 
 interface SearchResponse {
@@ -25,25 +22,17 @@ interface SearchResponse {
 		score: number;
 		metadata?: {
 			parentId?: string | null;
-			climate?: string[];
-			budget?: string[];
-			size?: string[];
 		};
 	}>;
 	total?: number;
 	query?: string;
-	filters?: {
-		climate?: string;
-		budget?: string;
-		size?: string;
-	};
 	error?: string;
 }
 
 function createSearchIndex(documents: SearchDocument[]): MiniSearch<SearchDocument> {
 	const index = new MiniSearch({
 		fields: ['title', 'content'],
-		storeFields: ['id', 'title', 'content', 'path', 'parentId', 'climate', 'budget', 'size'],
+		storeFields: ['id', 'title', 'content', 'path', 'parentId'],
 		searchOptions: {
 			fuzzy: 0.2,
 			prefix: true,
@@ -70,8 +59,8 @@ async function buildSearchIndex(octokit: Octokit, branch: string): Promise<MiniS
 
 	// Process only article files
 	for (const item of tree.tree || []) {
-		if (!item.path?.startsWith('content/articles/') || 
-			!item.path?.endsWith('.md') || 
+		if (!item.path?.startsWith('content/articles/') ||
+			!item.path?.endsWith('.md') ||
 			item.type !== 'blob') {
 			continue;
 		}
@@ -90,7 +79,7 @@ async function buildSearchIndex(octokit: Octokit, branch: string): Promise<MiniS
 
 			const content = Buffer.from(file.content, file.encoding as 'base64').toString('utf-8');
 			const parsed = matter(content);
-			
+
 			const relativePath = item.path.replace('content/', '');
 			const slug = relativePath.replace('articles/', '').replace('.md', '');
 			const id = parsed.data.id || slug;
@@ -100,10 +89,7 @@ async function buildSearchIndex(octokit: Octokit, branch: string): Promise<MiniS
 				title: parsed.data.title || slug,
 				content: parsed.content,
 				path: relativePath,
-				parentId: parsed.data.parentId || null,
-				climate: parsed.data.climate || [],
-				budget: parsed.data.budget || [],
-				size: parsed.data.size || []
+				parentId: parsed.data.parentId || null
 			};
 
 			documents.push(document);
@@ -124,7 +110,7 @@ export async function GET({ url, cookies }): Promise<Response> {
 
 	try {
 		const session = JSON.parse(sessionCookie);
-		
+
 		// Check if session has expired
 		if (new Date(session.expires_at) < new Date()) {
 			cookies.delete('session', { path: '/' });
@@ -132,9 +118,6 @@ export async function GET({ url, cookies }): Promise<Response> {
 		}
 
 		const query = url.searchParams.get('q') || '';
-		const climate = url.searchParams.get('climate') || undefined;
-		const budget = url.searchParams.get('budget') || undefined;
-		const size = url.searchParams.get('size') || undefined;
 
 		if (!query.trim()) {
 			return json({ error: 'Search query is required' }, { status: 400 });
@@ -155,33 +138,15 @@ export async function GET({ url, cookies }): Promise<Response> {
 			}
 		});
 
-		// Apply filters
-		const filters = { climate, budget, size };
-		const filteredResults = searchResults.filter(result => {
-			if (filters.climate && result.climate && !result.climate.includes(filters.climate)) {
-				return false;
-			}
-			if (filters.budget && result.budget && !result.budget.includes(filters.budget)) {
-				return false;
-			}
-			if (filters.size && result.size && !result.size.includes(filters.size)) {
-				return false;
-			}
-			return true;
-		});
-
 		// Format results
-		const formattedResults = filteredResults.map(result => ({
+		const formattedResults = searchResults.map(result => ({
 			id: result.id,
 			title: result.title,
-			content: result.content.slice(0, 200), // Truncate content for response
+			content: result.content.slice(0, 200),
 			path: result.path,
 			score: result.score,
 			metadata: {
-				parentId: result.parentId,
-				climate: result.climate,
-				budget: result.budget,
-				size: result.size
+				parentId: result.parentId
 			}
 		}));
 
@@ -189,8 +154,7 @@ export async function GET({ url, cookies }): Promise<Response> {
 			success: true,
 			results: formattedResults,
 			total: formattedResults.length,
-			query,
-			filters: Object.fromEntries(Object.entries(filters).filter(([, v]) => v !== undefined))
+			query
 		};
 
 		return json(response);
