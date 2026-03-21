@@ -20,6 +20,20 @@
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-gradient mb-6 leading-tight">
         RCOS - Regenerative Community Operating System
       </h1>
+
+
+      <!-- Video -->
+      <div class="mt-10 mb-10 max-w-2xl mx-auto w-full aspect-video rounded-xl overflow-hidden shadow-lg">
+        <iframe
+          src="https://www.youtube.com/embed/YNQN5PxXPt0"
+          title="RCOS Introduction"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          class="w-full h-full"
+        ></iframe>
+      </div>
+
       <p class="text-lg md:text-xl text-text-secondary mb-8 leading-relaxed">
         RCOS is an open-source, shared system for organizing intentional communities. It gives you clear, ready-to-use structures for decision-making, roles, resource sharing, and handling conflicts — so you can focus on building your community instead of figuring everything out from scratch. Explore the core system, optional modules, and how to apply them.
       </p>
@@ -28,6 +42,8 @@
         <Button variant="primary" size="lg" href="/articles">Explore Articles</Button>
         <Button variant="outline" size="lg" href="https://ecohubs.community" target="_blank" class="gap-2">Learn More <Icon icon="tabler:arrow-up-right" class="w-4 h-4" />  </Button>
       </div>
+
+      <iframe src="https://player.rss.com/the-regenerative-future-podcast/2620815?theme=dark&v=2&skip=false" width="100%" height="195px" title="Redesigning Community: Inside the Regenerative Com" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen scrolling="no" class="rounded-xl mt-10"><a href="https://rss.com/podcasts/the-regenerative-future-podcast/2620815/">Redesigning Community: Inside the Regenerative Com | RSS.com</a></iframe>
 
       <!-- Stats Row -->
       <div class="grid grid-cols-2 gap-8 mt-12 pt-8 border-t border-border/50">

@@ -7,6 +7,8 @@ order: 0
 
 **Protocol stack: higher layers cannot override lower ones.**
 
+![RCOS Layers Overview](/rcos_layers.webp)
+
 ## [Layer 0 - Identity & Scope](/articles/rcos-layers/layer-0-identity-scope?id=4a376956)
 
 **What problem does this community exist to solve?**
