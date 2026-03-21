@@ -3,6 +3,8 @@
   import SearchBar from '$lib/components/search/SearchBar.svelte';
   import Button from '$lib/components/common/Button.svelte';
   import Icon from '@iconify/svelte';
+  import { resolve } from '$app/paths';
+  import logo from '$lib/assets/logo.webp';
 </script>
 
 <header class="sticky top-0 z-30 border-b border-border bg-background/80 backdrop-blur-md">
@@ -19,12 +21,13 @@
         <Icon icon="tabler:menu-2" class="w-6 h-6" />
       </Button>
       
-      <a href="/" class="flex items-center gap-2 group">
-        <div class="w-8 h-8 rounded-lg bg-linear-to-br from-primary to-primary-dark flex items-center justify-center text-white font-serif font-bold text-xl shadow-md group-hover:shadow-lg transition-all">
+      <a href={resolve("/")} class="flex items-center gap-2 group">
+        <!-- <div class="w-8 h-8 rounded-lg bg-linear-to-br from-primary to-primary-dark flex items-center justify-center text-white font-serif font-bold text-xl shadow-md group-hover:shadow-lg transition-all">
           E
-        </div>
+        </div> -->
+        <img src={logo} alt="EcoHubs Logo" class="w-10 h-10" />
         <div class="flex flex-col">
-          <span class="text-xl font-bold text-primary tracking-tight group-hover:text-primary transition-colors leading-5">EcoHubs</span>
+          <span class="text-xl font-bold tracking-tight group-hover:text-primary transition-colors leading-5 font-serif">EcoHubs</span>
           <span class="text-xs font-bold text-gray-500 transition-colors">Blueprint / RCOS</span>
         </div>
       </a>

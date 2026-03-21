@@ -1,6 +1,6 @@
 <script lang="ts">
   import './layout.css';
-  import { setContext, onMount } from 'svelte';
+  import { onMount } from 'svelte';
   import { graph } from '$lib/stores/graph';
   import { sidebarOpen, theme, setTheme } from '$lib/stores/ui';
   import AppShell from '$lib/components/layout/AppShell.svelte';
