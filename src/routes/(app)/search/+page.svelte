@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { searchIndex, setQuery } from '$lib/stores/search';
+  import { browser } from '$app/environment';
+  import { searchIndex, setQuery, query } from '$lib/stores/search';
   import { onMount } from 'svelte';
   import MiniSearch from 'minisearch';
   import type { SearchResult } from '$lib/stores/search';
@@ -23,6 +24,7 @@
   });
 
   $effect(() => {
+    if (!browser) return;
     const q = $page.url.searchParams.get('q') ?? '';
     setQuery(q);
   });
@@ -33,7 +35,7 @@
 <section class="space-y-6">
   <header>
     <h1 class="text-3xl font-bold text-gradient">Search</h1>
-    <p class="text-text-secondary">Results for: <strong>{$page.url.searchParams.get('q') || '(empty)'}</strong></p>
+    <p class="text-text-secondary">Results for: <strong>{$query || '(empty)'}</strong></p>
   </header>
 
   <SearchResults />
