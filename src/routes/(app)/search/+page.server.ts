@@ -3,7 +3,7 @@ import { readArticleBody } from '$lib/server/content';
 import MiniSearch from 'minisearch';
 import type { PageServerLoad } from './$types';
 
-export const prerender = false;
+export const prerender = true;
 
 export const load: PageServerLoad = async () => {
   const graph = await buildGraph();

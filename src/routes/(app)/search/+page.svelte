@@ -20,6 +20,9 @@
       }
     }) as MiniSearch<SearchResult>;
     searchIndex.set(idx);
+  });
+
+  $effect(() => {
     const q = $page.url.searchParams.get('q') ?? '';
     setQuery(q);
   });
