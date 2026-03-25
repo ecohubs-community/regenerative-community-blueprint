@@ -3,6 +3,8 @@
   import Card from '$lib/components/common/Card.svelte';
   import Icon from '@iconify/svelte';
   import type { Article } from '$lib/server/graph';
+  import SEO from '$lib/components/seo/SEO.svelte';
+  import { buildBreadcrumbSchema } from '$lib/utils/jsonld';
 
   // Recursive component to render article tree
   function getChildCount(article: Article): number {
@@ -14,9 +16,12 @@
   }
 </script>
 
-<svelte:head>
-  <title>Articles - RCOS</title>
-</svelte:head>
+<SEO
+  title="All Articles"
+  description="Browse all RCOS knowledge articles organized hierarchically. Explore topics on governance, membership, economics, conflict resolution, and more."
+  url="/articles"
+  jsonLd={buildBreadcrumbSchema([])}
+/>
 
 <div class="space-y-8 pb-12">
   <div class="flex items-center justify-between">

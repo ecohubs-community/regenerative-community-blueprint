@@ -3,6 +3,9 @@
   import Card from '$lib/components/common/Card.svelte';
   import Button from '$lib/components/common/Button.svelte';
   import Icon from '@iconify/svelte';
+  import SEO from '$lib/components/seo/SEO.svelte';
+  import { SITE_NAME, SITE_DESCRIPTION } from '$lib/config/site';
+  import { buildWebSiteSchema } from '$lib/utils/jsonld';
 
   // Calculate stats
   let stats = $derived([
@@ -10,6 +13,8 @@
     { label: 'Root Topics', value: $rootArticles.length }
   ]);
 </script>
+
+<SEO title={SITE_NAME} description={SITE_DESCRIPTION} url="/" type="website" jsonLd={buildWebSiteSchema()} />
 
 <div class="space-y-16 pb-12">
   <!-- Hero Section -->

@@ -5,6 +5,8 @@
   import Button from '$lib/components/common/Button.svelte';
   import Icon from '@iconify/svelte';
   import type { Article } from '$lib/server/graph';
+  import SEO from '$lib/components/seo/SEO.svelte';
+  import { buildArticleSchema, buildBreadcrumbSchema } from '$lib/utils/jsonld';
 
   let { data } = $props();
 
@@ -14,9 +16,13 @@
   const parent = $derived(article ? getParentArticle(article) : undefined);
 </script>
 
-<svelte:head>
-  <title>{article?.title || 'Article'} - RCOS</title>
-</svelte:head>
+<SEO
+  title={article?.title || 'Article'}
+  description={article?.summary || ''}
+  url={`/articles/${slug}`}
+  type="article"
+  jsonLd={article ? [buildArticleSchema(article, breadcrumbs), buildBreadcrumbSchema(breadcrumbs)] : undefined}
+/>
 
 {#if article}
   <div class="max-w-4xl mx-auto space-y-8 pb-12">

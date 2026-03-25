@@ -5,6 +5,7 @@
   import MiniSearch from 'minisearch';
   import type { SearchResult } from '$lib/stores/search';
   import SearchResults from '$lib/components/search/SearchResults.svelte';
+  import SEO from '$lib/components/seo/SEO.svelte';
 
   let { data } = $props();
 
@@ -23,6 +24,8 @@
     setQuery(q);
   });
 </script>
+
+<SEO title="Search" url="/search" noindex={true} />
 
 <section class="space-y-6">
   <header>
