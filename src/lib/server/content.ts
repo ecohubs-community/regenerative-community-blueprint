@@ -1,7 +1,12 @@
 import fs from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
-import { compile } from 'mdsvex';
+import { compile, type MdsvexCompileOptions } from 'mdsvex';
+import rehypeSlug from 'rehype-slug';
+
+const mdsvexOptions = {
+  rehypePlugins: [rehypeSlug]
+} as unknown as MdsvexCompileOptions;
 
 const CONTENT_ROOT = 'content';
 
@@ -192,8 +197,8 @@ export async function readArticleBody(slug: string): Promise<ArticleBody | null>
     try {
       const raw = await fs.readFile(article.filePath, 'utf8');
       const parsed = matter(raw);
-      const compiled = await compile(parsed.content);
-      
+      const compiled = await compile(parsed.content, mdsvexOptions);
+
       return {
         slug,
         body: compiled?.code || parsed.content,
@@ -215,8 +220,8 @@ export async function readArticleBody(slug: string): Promise<ArticleBody | null>
     try {
       const raw = await fs.readFile(filePath, 'utf8');
       const parsed = matter(raw);
-      const compiled = await compile(parsed.content);
-      
+      const compiled = await compile(parsed.content, mdsvexOptions);
+
       return {
         slug,
         body: compiled?.code || parsed.content,
@@ -234,7 +239,7 @@ export async function readArticleBody(slug: string): Promise<ArticleBody | null>
 
 export async function compileMarkdown(markdown: string): Promise<string> {
   try {
-    const compiled = await compile(markdown);
+    const compiled = await compile(markdown, mdsvexOptions);
     return compiled?.code || markdown;
   } catch (error) {
     console.warn('[content] Failed to compile markdown:', error);

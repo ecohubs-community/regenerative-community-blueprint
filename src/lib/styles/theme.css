@@ -145,6 +145,10 @@
   --tw-prose-em: var(--color-text-primary);
   --tw-prose-hr: var(--color-gray-300);
   --tw-prose-code: var(--color-gray-400);
+
+  & :is(h1, h2, h3, h4, h5, h6) {
+    scroll-margin-top: 5rem;
+  }
 }
 
 
