@@ -1,5 +1,6 @@
 import { buildGraph } from '$lib/server/graph';
 import { readArticleBody } from '$lib/server/content';
+import { getTemplateDownloads } from '$lib/server/downloads';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
 export const entries: EntryGenerator = async () => {
@@ -10,8 +11,10 @@ export const entries: EntryGenerator = async () => {
 
 export const load: PageServerLoad = async ({ params }) => {
   const article = await readArticleBody(params.slug);
-  
+  const downloads = getTemplateDownloads(params.slug);
+
   return {
-    body: article?.body || null
+    body: article?.body || null,
+    downloads
   };
 };

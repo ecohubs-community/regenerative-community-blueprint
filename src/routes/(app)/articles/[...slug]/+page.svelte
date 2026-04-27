@@ -7,6 +7,7 @@
   import type { Article } from '$lib/server/graph';
   import SEO from '$lib/components/seo/SEO.svelte';
   import { buildArticleSchema, buildBreadcrumbSchema } from '$lib/utils/jsonld';
+  import TemplateDownloads from '$lib/components/templates/TemplateDownloads.svelte';
 
   let { data } = $props();
 
@@ -62,6 +63,10 @@
       {/if}
     </header>
 
+    {#if data.downloads && data.downloads.type === 'single'}
+      <TemplateDownloads downloads={data.downloads} />
+    {/if}
+
     <!-- Article Content -->
     <article class="prose prose-article prose-lg max-w-none ">
       {#if data.body}
@@ -70,6 +75,10 @@
         <p class="text-text-tertiary italic">No content available for this article.</p>
       {/if}
     </article>
+
+    {#if data.downloads && data.downloads.type === 'index'}
+      <TemplateDownloads downloads={data.downloads} />
+    {/if}
 
     <!-- Child Articles -->
     {#if article.children.length > 0}

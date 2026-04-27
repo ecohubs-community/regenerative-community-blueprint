@@ -5,6 +5,8 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev --port 5175",
+		"build:downloads": "node scripts/build-templates.mjs",
+		"prebuild": "node scripts/build-templates.mjs",
 		"build": "vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",

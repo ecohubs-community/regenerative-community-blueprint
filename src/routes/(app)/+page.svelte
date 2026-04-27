@@ -45,6 +45,9 @@
       
       <div class="flex flex-wrap justify-center gap-4">
         <Button variant="primary" size="lg" href="/articles">Explore Articles</Button>
+        <Button variant="secondary" size="lg" href="/articles/rcos-templates#downloads" class="gap-2">
+          <Icon icon="tabler:download" class="w-4 h-4" /> Download Templates
+        </Button>
         <Button variant="outline" size="lg" href="https://ecohubs.community" target="_blank" class="gap-2">Learn More <Icon icon="tabler:arrow-up-right" class="w-4 h-4" />  </Button>
       </div>
 
