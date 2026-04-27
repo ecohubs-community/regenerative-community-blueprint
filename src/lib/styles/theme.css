@@ -134,7 +134,7 @@
 }
 
 
-@utility prose-article {
+.prose.prose-article {
   --tw-prose-quotes: var(--color-text-primary);
   --tw-prose-quote-borders: var(--color-secondary);
   --tw-prose-body: var(--color-text-primary);
@@ -148,6 +148,52 @@
 
   & :is(h1, h2, h3, h4, h5, h6) {
     scroll-margin-top: 5rem;
+  }
+
+  & details {
+    margin: 1rem 0;
+    padding: 0.25rem 1rem;
+    background: var(--color-surface-elevated);
+    border-left: 3px solid var(--color-primary-light);
+    border-radius: 0.375rem;
+  }
+
+  & details[open] {
+    padding-bottom: 0.75rem;
+  }
+
+  & details > summary {
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    list-style: none;
+    padding: 0.5rem 0;
+    user-select: none;
+    transition: color 0.15s ease;
+  }
+
+  & details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  & details > summary::before {
+    content: '▸';
+    display: inline-block;
+    margin-right: 0.5rem;
+    color: var(--color-primary);
+    transition: transform 0.15s ease;
+  }
+
+  & details[open] > summary::before {
+    transform: rotate(90deg);
+  }
+
+  & details > summary:hover {
+    color: var(--color-primary);
+  }
+
+  & details > *:not(summary) {
+    margin-top: 0;
   }
 }
 
