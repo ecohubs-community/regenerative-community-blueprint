@@ -212,7 +212,25 @@ async function zipFormat(format) {
 	return zipPath;
 }
 
+async function ensurePandoc() {
+	try {
+		await run('pandoc', ['--version']);
+	} catch {
+		console.error(
+			'\nERROR: pandoc is required to build template downloads but was not found on PATH.\n' +
+				'  macOS:  brew install pandoc\n' +
+				'  Linux:  apt install pandoc  (or your distro equivalent)\n' +
+				'  Other:  https://pandoc.org/installing.html\n\n' +
+				'Note: this script only needs to run when template content changes.\n' +
+				'The generated files in static/downloads/ are committed to the repo,\n' +
+				'so deploys (e.g. Vercel) do not need pandoc installed.\n'
+		);
+		process.exit(1);
+	}
+}
+
 async function main() {
+	await ensurePandoc();
 	if (!existsSync(LOGO_PNG)) {
 		throw new Error(`Logo missing at ${LOGO_PNG}. Run sips conversion first.`);
 	}

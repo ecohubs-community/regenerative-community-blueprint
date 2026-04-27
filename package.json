@@ -8,7 +8,6 @@
 		"build:templates": "node scripts/build-templates.mjs",
 		"build:core": "node scripts/build-core.mjs",
 		"build:downloads": "pnpm run build:templates && pnpm run build:core",
-		"prebuild": "pnpm run build:downloads",
 		"build": "vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",

@@ -1,0 +1,213 @@
+{
+  "generated": "2026-04-27",
+  "formats": [
+    "md",
+    "docx",
+    "odt"
+  ],
+  "bundles": {
+    "md": "/downloads/rcos-templates-md.zip",
+    "docx": "/downloads/rcos-templates-docx.zip",
+    "odt": "/downloads/rcos-templates-odt.zip"
+  },
+  "templates": [
+    {
+      "relPath": "layer-0/identity-constraints-register.md",
+      "title": "Identity Constraints Register",
+      "files": {
+        "md": "/downloads/md/layer-0/identity-constraints-register.md",
+        "docx": "/downloads/docx/layer-0/identity-constraints-register.docx",
+        "odt": "/downloads/odt/layer-0/identity-constraints-register.odt"
+      }
+    },
+    {
+      "relPath": "layer-0/invariants-register.md",
+      "title": "Invariants Register",
+      "files": {
+        "md": "/downloads/md/layer-0/invariants-register.md",
+        "docx": "/downloads/docx/layer-0/invariants-register.docx",
+        "odt": "/downloads/odt/layer-0/invariants-register.odt"
+      }
+    },
+    {
+      "relPath": "layer-0/purpose-charter.md",
+      "title": "Purpose Charter",
+      "files": {
+        "md": "/downloads/md/layer-0/purpose-charter.md",
+        "docx": "/downloads/docx/layer-0/purpose-charter.docx",
+        "odt": "/downloads/odt/layer-0/purpose-charter.odt"
+      }
+    },
+    {
+      "relPath": "layer-0/scope-declaration.md",
+      "title": "Scope Declaration",
+      "files": {
+        "md": "/downloads/md/layer-0/scope-declaration.md",
+        "docx": "/downloads/docx/layer-0/scope-declaration.docx",
+        "odt": "/downloads/odt/layer-0/scope-declaration.odt"
+      }
+    },
+    {
+      "relPath": "layer-1/exit-protocol.md",
+      "title": "Exit & Separation Protocol",
+      "files": {
+        "md": "/downloads/md/layer-1/exit-protocol.md",
+        "docx": "/downloads/docx/layer-1/exit-protocol.docx",
+        "odt": "/downloads/odt/layer-1/exit-protocol.odt"
+      }
+    },
+    {
+      "relPath": "layer-1/membership-agreement.md",
+      "title": "Membership Agreement",
+      "files": {
+        "md": "/downloads/md/layer-1/membership-agreement.md",
+        "docx": "/downloads/docx/layer-1/membership-agreement.docx",
+        "odt": "/downloads/odt/layer-1/membership-agreement.odt"
+      }
+    },
+    {
+      "relPath": "layer-1/membership-state-registry.md",
+      "title": "Membership State Registry",
+      "files": {
+        "md": "/downloads/md/layer-1/membership-state-registry.md",
+        "docx": "/downloads/docx/layer-1/membership-state-registry.docx",
+        "odt": "/downloads/odt/layer-1/membership-state-registry.odt"
+      }
+    },
+    {
+      "relPath": "layer-1/onboarding-protocol.md",
+      "title": "Onboarding Protocol",
+      "files": {
+        "md": "/downloads/md/layer-1/onboarding-protocol.md",
+        "docx": "/downloads/docx/layer-1/onboarding-protocol.docx",
+        "odt": "/downloads/odt/layer-1/onboarding-protocol.odt"
+      }
+    },
+    {
+      "relPath": "layer-2/authority-registry.md",
+      "title": "Authority Registry",
+      "files": {
+        "md": "/downloads/md/layer-2/authority-registry.md",
+        "docx": "/downloads/docx/layer-2/authority-registry.docx",
+        "odt": "/downloads/odt/layer-2/authority-registry.odt"
+      }
+    },
+    {
+      "relPath": "layer-2/decision-matrix.md",
+      "title": "Decision Matrix",
+      "files": {
+        "md": "/downloads/md/layer-2/decision-matrix.md",
+        "docx": "/downloads/docx/layer-2/decision-matrix.docx",
+        "odt": "/downloads/odt/layer-2/decision-matrix.odt"
+      }
+    },
+    {
+      "relPath": "layer-2/governance-protocol.md",
+      "title": "Governance Protocol",
+      "files": {
+        "md": "/downloads/md/layer-2/governance-protocol.md",
+        "docx": "/downloads/docx/layer-2/governance-protocol.docx",
+        "odt": "/downloads/odt/layer-2/governance-protocol.odt"
+      }
+    },
+    {
+      "relPath": "layer-3/internal-economy-protocol.md",
+      "title": "Internal Economy Protocol",
+      "files": {
+        "md": "/downloads/md/layer-3/internal-economy-protocol.md",
+        "docx": "/downloads/docx/layer-3/internal-economy-protocol.docx",
+        "odt": "/downloads/odt/layer-3/internal-economy-protocol.odt"
+      }
+    },
+    {
+      "relPath": "layer-3/treasury-ruleset.md",
+      "title": "Treasury Ruleset",
+      "files": {
+        "md": "/downloads/md/layer-3/treasury-ruleset.md",
+        "docx": "/downloads/docx/layer-3/treasury-ruleset.docx",
+        "odt": "/downloads/odt/layer-3/treasury-ruleset.odt"
+      }
+    },
+    {
+      "relPath": "layer-4/accountability-protocol.md",
+      "title": "Accountability Protocol",
+      "files": {
+        "md": "/downloads/md/layer-4/accountability-protocol.md",
+        "docx": "/downloads/docx/layer-4/accountability-protocol.docx",
+        "odt": "/downloads/odt/layer-4/accountability-protocol.odt"
+      }
+    },
+    {
+      "relPath": "layer-4/conflict-resolution-ladder.md",
+      "title": "Conflict Resolution Ladder",
+      "files": {
+        "md": "/downloads/md/layer-4/conflict-resolution-ladder.md",
+        "docx": "/downloads/docx/layer-4/conflict-resolution-ladder.docx",
+        "odt": "/downloads/odt/layer-4/conflict-resolution-ladder.odt"
+      }
+    },
+    {
+      "relPath": "layer-5/meeting-templates.md",
+      "title": "Meeting Templates",
+      "files": {
+        "md": "/downloads/md/layer-5/meeting-templates.md",
+        "docx": "/downloads/docx/layer-5/meeting-templates.docx",
+        "odt": "/downloads/odt/layer-5/meeting-templates.odt"
+      }
+    },
+    {
+      "relPath": "layer-5/operations-manual.md",
+      "title": "Operations Manual",
+      "files": {
+        "md": "/downloads/md/layer-5/operations-manual.md",
+        "docx": "/downloads/docx/layer-5/operations-manual.docx",
+        "odt": "/downloads/odt/layer-5/operations-manual.odt"
+      }
+    },
+    {
+      "relPath": "layer-5/role-registry.md",
+      "title": "Role Registry",
+      "files": {
+        "md": "/downloads/md/layer-5/role-registry.md",
+        "docx": "/downloads/docx/layer-5/role-registry.docx",
+        "odt": "/downloads/odt/layer-5/role-registry.odt"
+      }
+    },
+    {
+      "relPath": "layer-6/change-protocol.md",
+      "title": "Change Protocol",
+      "files": {
+        "md": "/downloads/md/layer-6/change-protocol.md",
+        "docx": "/downloads/docx/layer-6/change-protocol.docx",
+        "odt": "/downloads/odt/layer-6/change-protocol.odt"
+      }
+    },
+    {
+      "relPath": "layer-6/experiment-template.md",
+      "title": "Experiment Template",
+      "files": {
+        "md": "/downloads/md/layer-6/experiment-template.md",
+        "docx": "/downloads/docx/layer-6/experiment-template.docx",
+        "odt": "/downloads/odt/layer-6/experiment-template.odt"
+      }
+    },
+    {
+      "relPath": "layer-6/learning-log.md",
+      "title": "Learning Log",
+      "files": {
+        "md": "/downloads/md/layer-6/learning-log.md",
+        "docx": "/downloads/docx/layer-6/learning-log.docx",
+        "odt": "/downloads/odt/layer-6/learning-log.odt"
+      }
+    },
+    {
+      "relPath": "layer-6/version-history.md",
+      "title": "Version History",
+      "files": {
+        "md": "/downloads/md/layer-6/version-history.md",
+        "docx": "/downloads/docx/layer-6/version-history.docx",
+        "odt": "/downloads/odt/layer-6/version-history.odt"
+      }
+    }
+  ]
+}
