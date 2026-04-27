@@ -17,7 +17,15 @@ const config = {
 			rehypePlugins: [rehypeSlug]
 		})
 	],
-	kit: { adapter: adapter() }
+	kit: {
+		adapter: adapter(),
+		prerender: {
+			// Don't fail the build if a deep link's #anchor isn't found —
+			// e.g. /articles/rcos-templates#downloads when the templates manifest
+			// hasn't been generated/committed yet.
+			handleMissingId: 'warn'
+		}
+	}
 };
 
 export default config;
