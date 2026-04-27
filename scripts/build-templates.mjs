@@ -120,9 +120,23 @@ function preambleForFormat({ title, sourceUrl, format }) {
 		: preambleForPandoc({ title, sourceUrl });
 }
 
-async function ensureCleanDir(dir) {
-	if (existsSync(dir)) await rm(dir, { recursive: true, force: true });
-	await mkdir(dir, { recursive: true });
+
+// Only wipe paths owned by this script — leave sibling outputs (e.g. core spec) alone.
+async function cleanTemplateOutputs() {
+	await mkdir(OUT_DIR, { recursive: true });
+	const ownedDirs = ['md', 'docx', 'odt'];
+	for (const d of ownedDirs) {
+		const p = path.join(OUT_DIR, d);
+		if (existsSync(p)) await rm(p, { recursive: true, force: true });
+	}
+	const ownedFiles = [
+		...FORMATS.map((f) => `rcos-templates-${f}.zip`),
+		'manifest-templates.json'
+	];
+	for (const f of ownedFiles) {
+		const p = path.join(OUT_DIR, f);
+		if (existsSync(p)) await rm(p, { force: true });
+	}
 }
 
 async function generateOne({ filePath, relPath, format }) {
@@ -202,8 +216,8 @@ async function main() {
 	if (!existsSync(LOGO_PNG)) {
 		throw new Error(`Logo missing at ${LOGO_PNG}. Run sips conversion first.`);
 	}
-	console.log(`Cleaning ${OUT_DIR}`);
-	await ensureCleanDir(OUT_DIR);
+	console.log(`Cleaning template outputs in ${OUT_DIR}`);
+	await cleanTemplateOutputs();
 
 	// Copy logo to public location for md downloads to reference
 	await copyFile(LOGO_PNG, path.join(ROOT, 'static/rcos-logo.png'));
@@ -262,7 +276,7 @@ async function main() {
 			)
 		}))
 	};
-	await writeFile(path.join(OUT_DIR, 'manifest.json'), JSON.stringify(manifest, null, 2));
+	await writeFile(path.join(OUT_DIR, 'manifest-templates.json'), JSON.stringify(manifest, null, 2));
 	console.log(`\nDone. ${templateFiles.length} templates × ${FORMATS.length} formats.`);
 }
 

@@ -22,6 +22,25 @@ export type SingleTemplateDownloads = {
   bundles: Record<string, string>;
 };
 
+export type SpecDownload = {
+  type: 'spec';
+  generated: string;
+  title: string;
+  formats: string[];
+  files: Record<string, string>;
+};
+
+export type CoreManifest = {
+  generated: string;
+  entries: Array<{
+    slug: string;
+    title: string;
+    generated: string;
+    formats: string[];
+    files: Record<string, string>;
+  }>;
+};
+
 export type IndexTemplateDownloads = {
   type: 'index';
   generated: string;
@@ -36,18 +55,50 @@ export type IndexTemplateDownloads = {
 };
 
 export type TemplateDownloads = SingleTemplateDownloads | IndexTemplateDownloads;
+export type ArticleDownloads = TemplateDownloads | SpecDownload;
 
-let cached: Manifest | null | undefined;
+let cachedTemplates: Manifest | null | undefined;
+let cachedCore: CoreManifest | null | undefined;
+
+function loadJson<T>(relPath: string): T | null {
+  try {
+    const p = path.resolve(relPath);
+    return JSON.parse(readFileSync(p, 'utf8')) as T;
+  } catch {
+    return null;
+  }
+}
 
 export function loadManifest(): Manifest | null {
-  if (cached !== undefined) return cached;
-  try {
-    const p = path.resolve('static/downloads/manifest.json');
-    cached = JSON.parse(readFileSync(p, 'utf8')) as Manifest;
-  } catch {
-    cached = null;
+  if (cachedTemplates !== undefined) return cachedTemplates;
+  cachedTemplates = loadJson<Manifest>('static/downloads/manifest-templates.json');
+  return cachedTemplates;
+}
+
+export function loadCoreManifest(): CoreManifest | null {
+  if (cachedCore !== undefined) return cachedCore;
+  cachedCore = loadJson<CoreManifest>('static/downloads/manifest-core.json');
+  return cachedCore;
+}
+
+export function getArticleDownloads(slug: string): ArticleDownloads | null {
+  const tpl = getTemplateDownloads(slug);
+  if (tpl) return tpl;
+
+  const core = loadCoreManifest();
+  if (core) {
+    const entry = core.entries.find((e) => e.slug === slug);
+    if (entry) {
+      return {
+        type: 'spec',
+        generated: entry.generated,
+        title: entry.title,
+        formats: entry.formats,
+        files: entry.files
+      };
+    }
   }
-  return cached;
+  return null;
 }
 
 export function getTemplateDownloads(slug: string): TemplateDownloads | null {

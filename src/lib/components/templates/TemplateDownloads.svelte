@@ -1,8 +1,8 @@
 <script lang="ts">
   import Icon from '@iconify/svelte';
-  import type { TemplateDownloads } from '$lib/server/downloads';
+  import type { ArticleDownloads } from '$lib/server/downloads';
 
-  let { downloads }: { downloads: TemplateDownloads } = $props();
+  let { downloads }: { downloads: ArticleDownloads } = $props();
 
   const FORMAT_LABELS: Record<string, { label: string; icon: string; hint: string }> = {
     md: {
@@ -22,7 +22,6 @@
     }
   };
 
-  const isIndex = $derived(downloads.type === 'index');
 </script>
 
 {#if downloads.type === 'index'}
@@ -98,7 +97,7 @@
       </div>
     </details>
   </section>
-{:else}
+{:else if downloads.type === 'single'}
   <section
     class="not-prose rounded-xl border border-border bg-surface/50 p-5 my-6 flex flex-col sm:flex-row sm:items-center gap-4 justify-between"
   >
@@ -112,6 +111,34 @@
         <a href="/articles/rcos-templates#downloads" class="text-primary hover:underline">
           Download all templates
         </a>
+      </p>
+    </div>
+    <div class="flex flex-wrap gap-2">
+      {#each downloads.formats as fmt}
+        {@const info = FORMAT_LABELS[fmt]}
+        <a
+          href={downloads.files[fmt]}
+          download
+          title={info.hint}
+          class="inline-flex items-center gap-1.5 rounded-md border border-border bg-background hover:border-primary hover:bg-surface transition-colors px-3 py-1.5 text-sm font-medium text-text-primary"
+        >
+          <Icon icon={info.icon} class="w-4 h-4 text-primary" />
+          {info.label}
+        </a>
+      {/each}
+    </div>
+  </section>
+{:else if downloads.type === 'spec'}
+  <section
+    class="not-prose rounded-xl border border-border bg-surface/50 p-5 my-6 flex flex-col sm:flex-row sm:items-center gap-4 justify-between"
+  >
+    <div class="space-y-1">
+      <h2 class="text-base font-semibold text-text-primary flex items-center gap-2">
+        <Icon icon="tabler:file-download" class="w-5 h-5 text-primary" />
+        Download full specification
+      </h2>
+      <p class="text-xs text-text-tertiary">
+        Single Markdown file with all sections · Generated {downloads.generated}
       </p>
     </div>
     <div class="flex flex-wrap gap-2">

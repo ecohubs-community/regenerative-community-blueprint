@@ -63,7 +63,7 @@
       {/if}
     </header>
 
-    {#if data.downloads && data.downloads.type === 'single'}
+    {#if data.downloads && (data.downloads.type === 'single' || data.downloads.type === 'spec')}
       <TemplateDownloads downloads={data.downloads} />
     {/if}
 
