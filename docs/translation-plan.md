@@ -757,16 +757,18 @@ The previous plan proposed articles → UI → tooling. **Inverted recommendatio
 
 **Exit criteria:** ✓ every visible UI string switches between English and German based on URL prefix; verified in prerendered output (`<html lang>`, hreflang, og:locale, button labels, footer, search, downloads UI).
 
-### Phase 3 — Articles infrastructure (2–3 days)
+### Phase 3 — Articles infrastructure (2–3 days)  ✓
 
-1. Add `lang` field to `ArticleMeta` and parse `.{lang}.md` suffix.
-2. Per-locale graph build with English fallback.
-3. Per-locale search index.
-4. "Available in English only" banner component.
-5. Translate one article end-to-end as smoke test (`rcos-core/v0-1/00-introduction`).
-6. Migrate templates to `<details data-kind="…">`.
+1. ✓ `lang` and `sourceHash` added to `ArticleMeta`; `readArticleMeta` parses `<base>.<lang>.md` filenames.
+2. ✓ `buildGraph(locale)` groups entries by `id`, picks the requested locale, falls back to default; structural fields (slug, parentId, order) come from the source so the tree shape is locale-stable.
+3. ✓ Per-article `availableLocales` populated from the set of files actually present.
+4. ✓ Per-locale search index in `search/+page.server.ts`.
+5. ✓ `LocaleFallbackBanner` component on article pages — only renders when `bodyIsFallback` is true.
+6. ✓ Smoke-test article translated: `content/articles/rcos-core/v0-1/00-introduction.de.md`.
+7. ✓ `scripts/migrate-template-details.mjs` stamped `data-kind="rationale|instructions"` on all 191 `<details>` blocks across 22 templates; `flattenDetails()` in `build-templates.mjs` now keys on `data-kind` (locale-independent).
+8. ✓ **Bonus**: SSR-safe article rendering — page server load now returns `article`, `breadcrumbs`, and `parent` directly; no longer depends on the client-side `articleBySlug` store. Fixes a pre-existing issue where prerendered HTML showed "Article not found" for every article body.
 
-**Exit criteria:** the smoke-test article serves at `/de/articles/...` with German content; everything else falls back to English without UI errors.
+**Exit criteria:** ✓ the smoke-test article serves at `/de/articles/rcos-core/v0-1/introduction` with full German content; untranslated articles serve under the `/de/` URL with the canonical English body and a German-language fallback banner; sitemap emits bidirectional hreflang only for translated articles. Verified in prerendered output for both prefixes.
 
 ### Phase 4 — Downloads pipeline (1–2 days)
 

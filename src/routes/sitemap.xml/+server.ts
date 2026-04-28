@@ -15,8 +15,9 @@ export const prerender = true;
  * EVERY available locale (bidirectional reciprocity is required), plus an x-default
  * pointing at the canonical (default-locale) URL.
  *
- * Phase 1: only the default locale has real content, so the output collapses to one
- * entry per page with no alternates — but the structure is in place for Phase 3.
+ * Per-article availability is computed by buildGraph() from the set of files
+ * actually present (e.g. presence of `00-introduction.de.md` registers `de` for
+ * that article); untranslated articles emit only the default-locale URL.
  */
 
 type Entry = {
@@ -27,7 +28,10 @@ type Entry = {
 };
 
 export const GET: RequestHandler = async () => {
-	const graph = await buildGraph();
+	// Default-locale graph: per-article availability is the same regardless of which
+	// locale we resolve into, since availableLocales is computed from the files
+	// present, not the requested locale.
+	const graph = await buildGraph(DEFAULT_LOCALE);
 
 	const staticEntries: Entry[] = [
 		{
@@ -45,11 +49,9 @@ export const GET: RequestHandler = async () => {
 		}
 	];
 
-	// Phase 1: articles only have real content in the default locale. When per-article
-	// availability lands (Phase 3), populate `availableLocales` from `article.availableLocales`.
 	const articleEntries: Entry[] = graph.articles.map((article) => ({
 		path: `/articles/${article.slug}`,
-		availableLocales: [DEFAULT_LOCALE],
+		availableLocales: article.availableLocales.length ? article.availableLocales : [DEFAULT_LOCALE],
 		changefreq: 'weekly',
 		priority: '0.6'
 	}));

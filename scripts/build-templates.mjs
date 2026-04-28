@@ -93,12 +93,25 @@ function absolutizeLinks(body) {
 	return body.replace(/\]\((\/[^)]+)\)/g, (_m, p) => `](${SITE_URL}${p})`);
 }
 
-function flattenDetails(body) {
-	const re = /<details>\s*<summary>([\s\S]*?)<\/summary>([\s\S]*?)<\/details>/g;
-	return body.replace(re, (_m, summaryRaw, contentRaw) => {
-		const summary = summaryRaw.trim().replace(/\?$/, '?');
-		const isRationale = /^why\b/i.test(summary);
-		const label = isRationale ? 'Rationale' : 'Instructions';
+// Locale-aware labels for the rationale / instructions blockquotes injected when
+// flattening <details> for non-HTML output (docx/odt). Templates carry intent via
+// `data-kind="rationale|instructions"`, set by scripts/migrate-template-details.mjs,
+// so this works regardless of which language the <summary> text is in.
+const DETAILS_LABELS = {
+	en: { rationale: 'Rationale', instructions: 'Instructions' }
+	// Add per-locale labels as templates get translated. Phase 4 will introduce
+	// a per-locale build (--locale de) that reads these.
+};
+
+function flattenDetails(body, locale = 'en') {
+	const labels = DETAILS_LABELS[locale] ?? DETAILS_LABELS.en;
+	const re = /<details(?:\s+data-kind="(rationale|instructions)")?[^>]*>\s*<summary>([\s\S]*?)<\/summary>([\s\S]*?)<\/details>/g;
+	return body.replace(re, (_m, dataKind, summaryRaw, contentRaw) => {
+		const summary = summaryRaw.trim();
+		// Fallback: if a template still lacks data-kind, classify by leading word.
+		// "How…" → instructions, anything else → rationale (matches the legacy heuristic).
+		const kind = dataKind ?? (/^\s*how\b/i.test(summary) ? 'instructions' : 'rationale');
+		const label = labels[kind] ?? labels.rationale;
 		const cleanedContent = contentRaw
 			.trim()
 			.split('\n')

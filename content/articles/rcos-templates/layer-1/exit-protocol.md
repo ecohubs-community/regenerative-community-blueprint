@@ -15,14 +15,14 @@ order: 2
 
 *RCOS clauses: [3.6.1](/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation), [3.6.2](/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation), [3.6.4](/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why make leaving frictionless?</summary>
 
 A community that is hard to leave is not a community — it is a trap. Voluntary exit must be available at all times, without interrogation, notice periods, or punishment, because the right to withdraw consent is what makes every other act of consent real. Retaining contribution history separately ensures that leaving does not erase the work the person did.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Describe the channel for submitting exit, time-to-revocation of access, what records are retained, and the resulting state transition.
@@ -40,14 +40,14 @@ Describe the channel for submitting exit, time-to-revocation of access, what rec
 
 *RCOS clauses: [3.6.3](/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation), [3.6.4](/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why gate removal behind Layer 4?</summary>
 
 Removal is the sharpest power the community holds over a person. If it can be exercised by anyone with enough social pull, membership is worthless. Requiring a concluded Layer 4 accountability decision — with written reasons, a notification, and a minimum re-application window — turns removal from an act of power into an act of governance that can be reviewed and contested.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 State that forced exit can only follow a concluded Layer 4 accountability process. Define notification, access revocation, retained records, re-application block, and decision-record privacy.
@@ -65,14 +65,14 @@ State that forced exit can only follow a concluded Layer 4 accountability proces
 
 *RCOS clauses: [3.7.1](/articles/rcos-core/v0-1/layer-1-membership-system#37-suspension-and-temporary-status), [3.7.2](/articles/rcos-core/v0-1/layer-1-membership-system#37-suspension-and-temporary-status), [3.7.3](/articles/rcos-core/v0-1/layer-1-membership-system#37-suspension-and-temporary-status)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why design suspension carefully or not at all?</summary>
 
 A poorly-designed suspension state is worse than none — it becomes a soft exit with no due process, or an indefinite limbo used to punish without the accountability of a full removal. If the community cannot commit to explicit conditions, time bounds, and review mechanisms, it is safer to have no formal suspension than a loose one.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Either define suspension explicitly (entry conditions, time limits, rights during suspension, review mechanism, exit) or state that no formal suspension exists. Do not leave this section ambiguous.
@@ -85,14 +85,14 @@ _<Either: define suspension state with entry conditions, maximum duration, right
 
 *RCOS clauses: [3.6.5](/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why enumerate separation steps?</summary>
 
 When someone leaves, every unclosed thread — a role nobody vacated, a wallet key still active, a task still assigned — becomes a live attack surface or an operational gap. A checklist forces these threads to be closed deliberately, not discovered months later when something breaks or someone abuses access they no longer should have.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Provide a checklist applied to both voluntary and forced exits. Include role vacation, task release, financial-instrument access removal, platform admin revocation, and resolution of outstanding obligations.

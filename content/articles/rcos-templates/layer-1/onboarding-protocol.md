@@ -15,14 +15,14 @@ order: 1
 
 *RCOS clauses: [3.2.3](/articles/rcos-core/v0-1/layer-1-membership-system#32-entry-and-onboarding), [3.2.4](/articles/rcos-core/v0-1/layer-1-membership-system#32-entry-and-onboarding)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why write down who gets in?</summary>
 
 Admission is the moment a stranger becomes bound by — and protected by — the community's rules. If the criteria are informal, the decision collapses into whoever happens to like the applicant. Written criteria make admission a governance act, not a social favor, and make rejection defensible on grounds the community can point to.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 State the explicit conditions under which an applicant may be admitted. Each criterion should be testable from the application itself or from an external check.
@@ -38,14 +38,14 @@ State the explicit conditions under which an applicant may be admitted. Each cri
 
 *RCOS clauses: [3.2.1](/articles/rcos-core/v0-1/layer-1-membership-system#32-entry-and-onboarding), [3.2.2](/articles/rcos-core/v0-1/layer-1-membership-system#32-entry-and-onboarding)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why make the process a fixed sequence?</summary>
 
 Consent to governance only means something if the member has actually seen the governance. A fixed sequence — review, consent, technical setup — ensures every Full Member crossed the same threshold in the same order, so nobody slips into full rights without having encountered the constraints that come with them.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 List the ordered steps every new member must complete to move from applicant to Full Member. Include explicit consent steps and any tooling/access provisioning required.
@@ -63,14 +63,14 @@ List the ordered steps every new member must complete to move from applicant to 
 
 *RCOS clauses: [3.1.2](/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states), [3.1.4](/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why assign a state at the end of onboarding?</summary>
 
 Between "applicant approved" and "fully integrated" there is a real gap — permissions, access, and expectations all change. Declaring the exact state a new member holds at each step removes ambiguity about what they can do right now, and prevents unintentional grants of rights before onboarding is complete.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 State the membership states a member transitions through during onboarding, and what triggers each transition. Reference the Membership State Registry.
@@ -84,14 +84,14 @@ State the membership states a member transitions through during onboarding, and 
 
 *RCOS clauses: [3.3.1](/articles/rcos-core/v0-1/layer-1-membership-system#33-trial-and-evaluation), [3.3.2](/articles/rcos-core/v0-1/layer-1-membership-system#33-trial-and-evaluation), [3.3.3](/articles/rcos-core/v0-1/layer-1-membership-system#33-trial-and-evaluation), [3.3.4](/articles/rcos-core/v0-1/layer-1-membership-system#33-trial-and-evaluation)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why bound the trial period?</summary>
 
 An unbounded trial is a second-class membership that never ends — all obligations, fewer rights. Fixing the duration, the criteria, and the failure path forces a decision point: either the new member transitions into full standing or a defined exit runs. It prevents the trial state from becoming a permanent holding pen.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Define the duration, evaluation criteria, transition decision, grace period, failure path, and any extension rules. Trial rights are defined in the Membership State Registry.
@@ -111,14 +111,14 @@ Define the duration, evaluation criteria, transition decision, grace period, fai
 
 *RCOS clauses: [3.8.2](/articles/rcos-core/v0-1/layer-1-membership-system#38-artifacts)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why keep the record permanent?</summary>
 
 The completion record is the evidence that a member consented to a specific version of the rules on a specific date. Losing or editing it would make it impossible to answer, months or years later, "what exactly did they agree to?" — which is the only question that matters when a dispute arrives.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 State where the completion record is kept, what it captures (timestamp, artifact versions consented to), and the retention rule.

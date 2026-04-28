@@ -17,14 +17,14 @@ order: 1
 
 *RCOS clauses: [8.2.1](/articles/rcos-core/v0-1/layer-6-evolution-adaptation#82-versioning-and-authority), [8.2.2](/articles/rcos-core/v0-1/layer-6-evolution-adaptation#82-versioning-and-authority), [8.2.3](/articles/rcos-core/v0-1/layer-6-evolution-adaptation#82-versioning-and-authority), [8.2.4](/articles/rcos-core/v0-1/layer-6-evolution-adaptation#82-versioning-and-authority), [8.2.5](/articles/rcos-core/v0-1/layer-6-evolution-adaptation#82-versioning-and-authority), [8.6.4](/articles/rcos-core/v0-1/layer-6-evolution-adaptation#86-artifacts), [8.7.2](/articles/rcos-core/v0-1/layer-6-evolution-adaptation#87-layer-invariants)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why record every adopted change?</summary>
 
 Governance that cannot point to "what changed, when, and why" is indistinguishable from governance by whoever speaks loudest. A single append-only ledger of adopted changes — with the superseded versions preserved in version control — makes the current state of the rules unambiguous and gives members, auditors, and future stewards a way to reconstruct the path that got us here.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Use the entry template below for every adopted change. New entries are prepended above the most recent. Do not edit historical entries — corrections are recorded as new entries.

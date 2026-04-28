@@ -17,14 +17,14 @@ order: 3
 
 *RCOS clauses: [8.3.1](/articles/rcos-core/v0-1/layer-6-evolution-adaptation#83-experiments), [8.3.2](/articles/rcos-core/v0-1/layer-6-evolution-adaptation#83-experiments), [8.3.3](/articles/rcos-core/v0-1/layer-6-evolution-adaptation#83-experiments), [8.3.4](/articles/rcos-core/v0-1/layer-6-evolution-adaptation#83-experiments), [8.3.5](/articles/rcos-core/v0-1/layer-6-evolution-adaptation#83-experiments), [8.7.3](/articles/rcos-core/v0-1/layer-6-evolution-adaptation#87-layer-invariants)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why require these fields?</summary>
 
 Without scope, duration, success criteria, and rollback, an "experiment" is just a permanent change with friendlier branding. Forcing every proposal to specify what it changes, when it ends, how it will be reviewed, and how it will be rolled back keeps experimentation reversible — and prevents the experiment label from being used to bypass deliberation.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Fill each field. Maximum duration is set by your Change Protocol. The decision authority must come from the Decision Matrix.
@@ -46,14 +46,14 @@ Fill each field. Maximum duration is set by your Change Protocol. The decision a
 
 ## Expiry and Renewal
 
-<details>
+<details data-kind="rationale">
 <summary>Why must experiments expire?</summary>
 
 The community needs the option to revert. Auto-expiry forces a deliberate decision to make the change permanent — not a slow drift in which nobody remembers it was ever conditional.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 State the auto-expiry rule, the renewal mechanism, and the obligation to record results in the Learning Log.

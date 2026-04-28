@@ -52,6 +52,8 @@
 	"articles.not_found.body": "Den gesuchten Artikel gibt es nicht.",
 	"articles.not_found.cta": "Alle Artikel durchstöbern",
 
+	"article.fallback.body": "Dieser Artikel ist noch nicht in {requested} verfügbar – angezeigt wird die {served}-Version. Die umgebende Oberfläche bleibt in deiner gewählten Sprache.",
+
 	"search.title": "Suche",
 	"search.results_for": "Ergebnisse für:",
 	"search.empty_query": "(leer)",

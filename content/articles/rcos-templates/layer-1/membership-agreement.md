@@ -17,14 +17,14 @@ order: 0
 
 *RCOS clauses: [3.1.2](/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states), [3.1.4](/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why declare state at signing?</summary>
 
 Membership is not a single binary. A person joining must know exactly which state they are entering — Trial or Full — because the state determines what they can do and what is expected of them. Naming it at the moment of consent prevents ambiguity later about what they actually signed up for.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 State which membership state(s) a new member enters at signing (e.g. Trial Member, Full Member, or any custom state defined in your Membership State Registry).
@@ -37,14 +37,14 @@ _<Membership state assigned at signing — e.g. Trial Member on application appr
 
 *RCOS clauses: [3.4.1](/articles/rcos-core/v0-1/layer-1-membership-system#34-rights-and-obligations), [3.4.3](/articles/rcos-core/v0-1/layer-1-membership-system#34-rights-and-obligations), [3.4.4](/articles/rcos-core/v0-1/layer-1-membership-system#34-rights-and-obligations)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why enumerate rights explicitly?</summary>
 
 Rights that are not written down are rights that can be quietly withdrawn. Enumerating them makes the community's commitments legible, enforceable, and symmetrical with the obligations members are asked to carry. Without this list, obligations become open-ended demands with no reciprocal protection.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 List concrete rights granted to each membership state. Reference the Decision Matrix (Layer 2) for voting rights, the Role Registry (Layer 5) for role eligibility, and Layer 4 for due-process guarantees.
@@ -64,14 +64,14 @@ List concrete rights granted to each membership state. Reference the Decision Ma
 
 *RCOS clauses: [3.4.2](/articles/rcos-core/v0-1/layer-1-membership-system#34-rights-and-obligations), [3.4.4](/articles/rcos-core/v0-1/layer-1-membership-system#34-rights-and-obligations), [3.4.5](/articles/rcos-core/v0-1/layer-1-membership-system#34-rights-and-obligations)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why bound obligations tightly?</summary>
 
 Open-ended obligations are how communities slide into exploitation — "contribute more," "be available," "show up" with no defined limit. Listing obligations discretely, and tying each one to a corresponding right, keeps the ask bounded and contestable. A member must always be able to tell whether they are meeting the agreement or being asked for something beyond it.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 List concrete, bounded obligations. Each obligation must be testable: a member must be able to know whether they are meeting it. Avoid vague duties.
@@ -90,14 +90,14 @@ List concrete, bounded obligations. Each obligation must be testable: a member m
 
 *RCOS clauses: [3.5.1](/articles/rcos-core/v0-1/layer-1-membership-system#35-participation-and-contribution), [3.5.2](/articles/rcos-core/v0-1/layer-1-membership-system#35-participation-and-contribution), [3.5.3](/articles/rcos-core/v0-1/layer-1-membership-system#35-participation-and-contribution), [3.5.4](/articles/rcos-core/v0-1/layer-1-membership-system#35-participation-and-contribution)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why define participation in numbers?</summary>
 
 "Active member" means nothing without a threshold. A defined minimum — in time, category, and cadence — turns participation from a feeling into a fact, so nobody has to guess whether they are in good standing, and nobody can be accused of drifting without evidence. It also makes the line between a genuine absence and quiet abandonment visible early enough to act on.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 State a measurable minimum (frequency × category), substitution and absence rules, and the trigger that moves a non-participating member into a Layer 4 process.
@@ -112,14 +112,14 @@ State a measurable minimum (frequency × category), substitution and absence rul
 
 ## Due Process Reference
 
-<details>
+<details data-kind="rationale">
 <summary>Why re-state due process here?</summary>
 
 The Membership Agreement is the one document every member actually reads and consents to. Naming due process here — not only in Layer 4 — guarantees that no member can be removed or restricted under a rule they were not shown when they joined. It closes the gap between what the community promises and what it can do.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Reference the Conflict Resolution Ladder (Layer 4) and the Exit & Separation Protocol so that any member reading the Membership Agreement knows where the procedural protections live.
@@ -130,14 +130,14 @@ Any forced exit, suspension, or access restriction follows Layer 4 due process a
 
 ## Consent Acknowledgment
 
-<details>
+<details data-kind="rationale">
 <summary>Why require explicit consent?</summary>
 
 Consent that is assumed is consent that can be denied later. Requiring an explicit act — signing, clicking, acknowledging — at a known moment binds the member to the specific artifact versions in force that day, and gives the community a defensible record that the agreement was entered freely and knowingly.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Describe the act of consent (signature, in-app acknowledgment, etc.), and what artifact versions the member is consenting to at that moment.

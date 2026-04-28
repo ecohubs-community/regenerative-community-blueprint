@@ -52,6 +52,8 @@
 	"articles.not_found.body": "The article you're looking for doesn't exist.",
 	"articles.not_found.cta": "Browse All Articles",
 
+	"article.fallback.body": "This article is not yet available in {requested} — showing the {served} version. The chrome around it remains in your chosen language.",
+
 	"search.title": "Search",
 	"search.results_for": "Results for:",
 	"search.empty_query": "(empty)",

@@ -17,14 +17,14 @@ order: 2
 
 *RCOS clauses: [2.3.1](/articles/rcos-core/v0-1/layer-0-identity-scope#23-invariants), [2.3.2](/articles/rcos-core/v0-1/layer-0-identity-scope#23-invariants), [2.3.3](/articles/rcos-core/v0-1/layer-0-identity-scope#23-invariants), [2.3.4](/articles/rcos-core/v0-1/layer-0-identity-scope#23-invariants), [2.3.5](/articles/rcos-core/v0-1/layer-0-identity-scope#23-invariants), [2.3.6](/articles/rcos-core/v0-1/layer-0-identity-scope#23-invariants)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why are invariants unoverridable?</summary>
 
 Invariants are the hard floor of the system — the things that must hold true even under pressure, emergency, or a popular vote. If any decision, role, or crisis measure could override them, they would stop being constraints and become preferences. Listing them explicitly and binding them across every layer is what makes the governance system trustworthy under stress, not just on calm days.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Each invariant is a hard constraint. Keep them few, specific, and absolute — phrased so that any violation is unambiguously identifiable. Common categories: purpose protection, authority traceability, exit rights, ideological neutrality, non-extraction, safety primacy.

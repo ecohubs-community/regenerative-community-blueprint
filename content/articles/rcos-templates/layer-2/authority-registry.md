@@ -17,14 +17,14 @@ order: 2
 
 *RCOS clauses: [4.3.1](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#43-authority-boundaries), [4.3.2](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#43-authority-boundaries), [4.3.3](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#43-authority-boundaries), [4.3.4](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#43-authority-boundaries), [4.3.5](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#43-authority-boundaries)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why write every authority down?</summary>
 
 Authority that is not explicitly registered gets filled in by default — by whoever has been around longest, speaks loudest, or controls the keys. A single registry that names every role, bounds its scope, caps its limits, and ties its basis to a delegation act makes unauthorized action detectable and prevents authority from being derived from charisma, seniority, or ownership.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 For each role, body, or circle that holds authority, list the scope of authority, hard limits, term/duration, and the basis (membership state, delegation act, etc.). The collective body of Full Members is itself an authority and belongs in this table.

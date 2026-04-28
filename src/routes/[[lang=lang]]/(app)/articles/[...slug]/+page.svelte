@@ -1,23 +1,25 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { articleBySlug, getArticleBreadcrumbs, getParentArticle } from '$lib/stores/graph';
   import Card from '$lib/components/common/Card.svelte';
   import Button from '$lib/components/common/Button.svelte';
   import Icon from '@iconify/svelte';
-  import type { Article } from '$lib/server/graph';
   import SEO from '$lib/components/seo/SEO.svelte';
   import { buildArticleSchema, buildBreadcrumbSchema } from '$lib/utils/jsonld';
   import TemplateDownloads from '$lib/components/templates/TemplateDownloads.svelte';
+  import LocaleFallbackBanner from '$lib/components/i18n/LocaleFallbackBanner.svelte';
   import { m } from '$lib/i18n';
   import { localized } from '$lib/i18n/path';
   import { DEFAULT_LOCALE } from '$lib/i18n/languages';
 
   let { data } = $props();
 
+  // Article meta and breadcrumbs come straight from the server load (locale-aware,
+  // SSR-safe — no dependency on the client `articleBySlug` store, which is only
+  // populated after hydration via $effect).
   const slug = $derived($page.params.slug ?? '');
-  const article = $derived($articleBySlug.get(slug));
-  const breadcrumbs = $derived(article ? getArticleBreadcrumbs(article) : []);
-  const parent = $derived(article ? getParentArticle(article) : undefined);
+  const article = $derived(data.article);
+  const breadcrumbs = $derived(data.breadcrumbs ?? []);
+  const parent = $derived(data.parent);
   const locale = $derived(data.locale ?? DEFAULT_LOCALE);
 </script>
 
@@ -52,13 +54,17 @@
       </nav>
     {/if}
 
+    {#if data.bodyIsFallback}
+      <LocaleFallbackBanner servedLang={data.bodyLang} requestedLang={locale} />
+    {/if}
+
     <!-- Article Header -->
     <header class="space-y-4">
       <h1 class="text-4xl font-bold text-text-primary">{article.title}</h1>
       {#if article.summary}
         <p class="text-xl text-text-secondary">{article.summary}</p>
       {/if}
-      
+
       <!-- Tags -->
       {#if article.tags?.length}
         <div class="flex flex-wrap gap-2">
@@ -74,7 +80,7 @@
     {/if}
 
     <!-- Article Content -->
-    <article class="prose prose-article prose-lg max-w-none ">
+    <article class="prose prose-article prose-lg max-w-none " lang={data.bodyLang}>
       {#if data.body}
         {@html data.body}
       {:else}

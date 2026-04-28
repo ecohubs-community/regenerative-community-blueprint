@@ -1,16 +1,23 @@
 import { buildGraph } from '$lib/server/graph';
 import { readArticleBody } from '$lib/server/content';
+import { DEFAULT_LOCALE } from '$lib/i18n/languages';
 import MiniSearch from 'minisearch';
 import type { PageServerLoad } from './$types';
 
 export const prerender = true;
 
-export const load: PageServerLoad = async () => {
-  const graph = await buildGraph();
+/**
+ * Build a per-locale search index. Article titles and bodies are pulled in the
+ * requested locale (with default-locale fallback for untranslated articles, so
+ * the full article set stays searchable on every locale).
+ */
+export const load: PageServerLoad = async ({ params }) => {
+  const locale = params.lang ?? DEFAULT_LOCALE;
+  const graph = await buildGraph(locale);
 
   const documents = await Promise.all(
     graph.articles.map(async (a) => {
-      const article = await readArticleBody(a.slug);
+      const article = await readArticleBody(a.slug, locale);
       const snippet = article?.body ? article.body.slice(0, 300).replace(/\n/g, ' ') : '';
       return {
         id: a.id,

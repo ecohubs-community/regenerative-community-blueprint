@@ -17,14 +17,14 @@ order: 0
 
 *RCOS clauses: [4.2.1](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.3](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.4](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why pin down mechanism, threshold, and timing?</summary>
 
 A vote without a predefined mechanism, threshold, and deliberation window is an invitation to manufacture outcomes after the fact — whoever counts the votes or sets the clock wins. Declaring these parameters in advance makes every collective decision reproducible and contestable on the same terms, regardless of who is in the room.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 State the voting platform, the threshold for each decision type, the deliberation period, the tie rule, the re-vote rule, and any delegated-authority spending or scope limit.
@@ -47,14 +47,14 @@ State the voting platform, the threshold for each decision type, the deliberatio
 
 *RCOS clauses: [4.4.1](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#44-decision-matrix), [4.4.2](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#44-decision-matrix), [4.4.3](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#44-decision-matrix), [4.4.4](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#44-decision-matrix)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why a single authoritative matrix?</summary>
 
 If the rules for who decides what live in people's heads, authority becomes whatever the loudest or most senior person says it is. A public matrix that binds every decision to a domain, body, mechanism, and threshold makes out-of-scope action visible the moment it happens — and makes any decision made outside it invalid by construction.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 For each decision domain (membership, treasury, platform, partnerships, governance, etc.), set the decision type, the authorized body, who is eligible to participate, the mechanism, threshold, blocking conditions, and escalation path.
@@ -75,14 +75,14 @@ For each decision domain (membership, treasury, platform, partnerships, governan
 
 *RCOS clauses: [4.1.1](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#41-decision-types), [4.1.2](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#41-decision-types), [4.1.3](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#41-decision-types), [4.1.4](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#41-decision-types), [4.1.5](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#41-decision-types)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why classify every decision?</summary>
 
 Without a type, every decision gets handled at whatever speed and scrutiny happens to suit the moment — routine changes stall in debate, and constitutional shifts slip through unnoticed. Fixed types tie the weight of a decision to the process it must pass through, and the default-higher rule closes the gap where ambiguity would otherwise be exploited.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Define each decision type by what it covers, who executes it, what process it requires, and how disputes about classification are resolved.
