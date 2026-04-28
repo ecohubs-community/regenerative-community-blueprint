@@ -15,14 +15,14 @@ order: 0
 
 *RCOS clauses: [2.1.1](/articles/rcos-core/v0-1/layer-0-identity-scope#21-purpose-definition), [2.1.2](/articles/rcos-core/v0-1/layer-0-identity-scope#21-purpose-definition), [2.1.5](/articles/rcos-core/v0-1/layer-0-identity-scope#21-purpose-definition)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why a single enduring purpose?</summary>
 
 Every decision, role, and allocation of resources downstream has to stay consistent with one thing — the community's primary purpose. If it drifts, shifts with trends, or gets rewritten to justify the latest project, there is nothing left to anchor governance to. A single, stable primary purpose is the constitutional north star: strategies change, the purpose does not.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 State exactly one primary purpose. It must describe the enduring reason your community exists — not a project, strategy, or short-term goal. One or two sentences.
@@ -35,14 +35,14 @@ _<Your community's primary purpose, in one or two sentences.>_
 
 *RCOS clauses: [2.1.4](/articles/rcos-core/v0-1/layer-0-identity-scope#21-purpose-definition)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why allow secondary purposes?</summary>
 
 A community rarely does only one thing. Secondary purposes make space for the other concrete outcomes the community pursues — but they are subordinate. If a secondary purpose ever conflicts with the primary, the primary wins. Declaring them explicitly prevents scope creep from masquerading as core work.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 List concrete secondary outcomes the community pursues. They must not conflict with or override the primary purpose. Remove the section entirely if you have none.
@@ -55,14 +55,14 @@ List concrete secondary outcomes the community pursues. They must not conflict w
 
 ## Non-Goals and Exclusions
 
-<details>
+<details data-kind="rationale">
 <summary>Why state what the community is not?</summary>
 
 Communities drift by accretion — one uncontested assumption at a time. Naming what the community is explicitly *not* makes boundary violations visible early, and gives anyone a clear basis to object before an activity becomes normalized. Silence here gets read as consent.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Name the things your community is explicitly NOT, especially identities or roles others might assume by default (political party, investment vehicle, religious group, etc.).
@@ -77,14 +77,14 @@ Name the things your community is explicitly NOT, especially identities or roles
 
 *RCOS clauses: [2.1.3](/articles/rcos-core/v0-1/layer-0-identity-scope#21-purpose-definition)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why make changing the purpose hard?</summary>
 
 Purpose is the one thing everything else depends on. If it were easy to change, nothing above it in the stack — membership, governance, invariants — could be trusted to mean the same thing from one year to the next. Constitutional-level thresholds and a ratification delay force a deliberate, visible act, not a quiet drift.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Describe the change procedure. At minimum: the decision type required for the primary purpose (Constitutional, per Layer 2), the threshold, the ratification delay, and where the change is recorded (Layer 6 version history). Secondary purposes typically need a lower bar.

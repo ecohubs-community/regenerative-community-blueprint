@@ -1,0 +1,112 @@
+# Translation drift status — non-blocking PR comment.
+#
+# Posts (or updates) a sticky comment summarizing translation coverage every
+# time a PR touches `content/` or the i18n message files. Fails the workflow
+# only when the script itself errors — missing/outdated translations are
+# *informational*, never a merge gate.
+#
+# What you'll see on a PR:
+#
+#   ## 🌍 Translation status
+#   | Locale | Coverage | ✓ Up to date | ⚠ Outdated | ✗ Missing |
+#   | de     | 30%      | 23           | 0          | 53        |
+#   <details>de — 53 missing</details>
+#   <details>de — 0 outdated</details>
+#
+# To regenerate locally: `pnpm run check:translations -- --format markdown`.
+
+name: Translation status
+
+on:
+  pull_request:
+    paths:
+      - 'content/articles/**'
+      - 'src/lib/i18n/messages/**'
+      - 'src/lib/i18n/languages.ts'
+      - 'scripts/check-translations.mjs'
+      - 'scripts/i18n.mjs'
+      - '.github/workflows/check-translations.yml'
+
+# Need write on pull-requests so github-script can post/update the comment.
+permissions:
+  contents: read
+  pull-requests: write
+
+# If a PR is updated quickly, cancel an in-flight run for the same PR rather
+# than queueing two comments racing each other.
+concurrency:
+  group: translation-status-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  check-translations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+          run_install: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      # The drift script only depends on `gray-matter` + Node stdlib, but the
+      # safer default is a normal install so the script's import graph resolves
+      # cleanly. Frozen lockfile keeps CI deterministic.
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - name: Generate translation status report
+        id: report
+        run: |
+          # The drift script exits non-zero when missing/outdated translations
+          # exist. That's correct CLI behavior but here we're rendering an
+          # informational comment, so swallow the exit code.
+          pnpm run -s check:translations -- --format markdown > comment.md || true
+          echo "size=$(wc -c < comment.md)" >> "$GITHUB_OUTPUT"
+
+      # Post or update a sticky comment so the same PR doesn't accumulate one
+      # comment per push. Comment lookup uses an HTML marker as the
+      # identifier — keep `STICKY_MARKER` in sync if you fork this workflow.
+      - name: Post or update sticky PR comment
+        uses: actions/github-script@v7
+        env:
+          STICKY_MARKER: '<!-- sticky:translation-status -->'
+        with:
+          script: |
+            const fs = require('node:fs');
+            const marker = process.env.STICKY_MARKER;
+            const body = `${marker}\n${fs.readFileSync('comment.md', 'utf8').trim()}`;
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              per_page: 100,
+            });
+            const existing = comments.find(
+              (c) => c.user?.type === 'Bot' && c.body?.startsWith(marker),
+            );
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+              core.info(`Updated sticky comment ${existing.html_url}`);
+            } else {
+              const { data: created } = await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+              core.info(`Created sticky comment ${created.html_url}`);
+            }

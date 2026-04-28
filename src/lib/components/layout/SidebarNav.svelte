@@ -4,6 +4,14 @@
   import Icon from '@iconify/svelte';
   import type { Article } from '$lib/server/graph';
   import { untrack } from 'svelte';
+  import { m } from '$lib/i18n';
+  import { localized, stripLocale } from '$lib/i18n/path';
+  import { DEFAULT_LOCALE } from '$lib/i18n/languages';
+
+  const locale = $derived((page.data?.locale as string | undefined) ?? DEFAULT_LOCALE);
+  // For active-state matching we compare the canonical (unprefixed) path of the
+  // current URL against the canonical link target — both sides are locale-stripped.
+  const canonicalPath = $derived(stripLocale(page.url.pathname));
 
   // Optional props
   interface Props {
@@ -18,9 +26,9 @@
 
   // Auto-expand parents when the active article changes
   $effect(() => {
-    const currentPath = page.url.pathname;
+    const currentPath = canonicalPath;
     const tree = $articleTree;
-    
+
     if (currentPath.startsWith('/articles/')) {
       const slug = currentPath.replace('/articles/', '');
       untrack(() => {
@@ -82,18 +90,18 @@
   }
 
   function isActive(slug: string): boolean {
-    return page.url.pathname === `/articles/${slug}`;
+    return canonicalPath === `/articles/${slug}`;
   }
 </script>
 
 <nav class="space-y-1">
   <div class="mb-4 space-y-2">
-    <a 
-      href="/articles" 
-      class="flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-lg transition-colors {page.url.pathname === '/articles' ? 'bg-primary/10 text-primary' : 'text-text-secondary hover:bg-surface-hover hover:text-text-primary'}"
+    <a
+      href={localized('/articles', locale)}
+      class="flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-lg transition-colors {canonicalPath === '/articles' ? 'bg-primary/10 text-primary' : 'text-text-secondary hover:bg-surface-hover hover:text-text-primary'}"
     >
       <Icon icon="tabler:home" class="w-4 h-4" />
-      All Articles
+      {m('nav.all_articles')}
     </a>
 
     {#if $articleTree.length > 0}
@@ -103,7 +111,7 @@
           onclick={expandAll}
           class="text-text-tertiary hover:text-text-secondary transition-colors"
         >
-          Expand all
+          {m('nav.expand_all')}
         </button>
         <span class="text-border">|</span>
         <button
@@ -111,7 +119,7 @@
           onclick={collapseAll}
           class="text-text-tertiary hover:text-text-secondary transition-colors"
         >
-          Collapse all
+          {m('nav.collapse_all')}
         </button>
       </div>
     {/if}
@@ -125,7 +133,7 @@
     </div>
   {:else}
     <div class="px-3 py-4 text-sm text-text-tertiary text-center">
-      No articles yet
+      {m('nav.no_articles')}
     </div>
   {/if}
 </nav>
@@ -140,7 +148,7 @@
         <button
           onclick={() => toggleExpanded(node.id)}
           class="p-1 rounded hover:bg-surface-hover text-text-tertiary"
-          aria-label={isExpanded ? 'Collapse' : 'Expand'}
+          aria-label={isExpanded ? m('nav.collapse') : m('nav.expand')}
         >
           <Icon 
             icon={isExpanded ? 'tabler:chevron-down' : 'tabler:chevron-right'} 
@@ -152,7 +160,7 @@
       {/if}
       
       <a
-        href="/articles/{node.slug}"
+        href={localized(`/articles/${node.slug}`, locale)}
         class={`flex-1 min-w-0 flex items-center gap-2 px-2 ${level === 0 ? 'py-1.5' : 'py-1'} text-sm rounded-lg transition-colors ${isActive(node.slug) ? 'bg-primary/10 text-primary font-medium' : 'text-text-secondary hover:bg-surface-hover hover:text-text-primary'}`}
       >
         <Icon icon={node.icon || 'tabler:file-text'} class="w-4 h-4 min-w-4 max-w-4" />

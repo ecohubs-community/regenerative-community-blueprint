@@ -15,14 +15,14 @@ order: 1
 
 *RCOS clauses: [2.2.1](/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration), [2.2.2](/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration), [2.2.4](/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why enumerate every governed asset?</summary>
 
 If the community has not explicitly named an asset as in-scope, it isn't — full stop. Listing assets by name closes the gap where informal claims of authority grow over undeclared resources, and gives members a concrete checklist to verify what the community actually controls.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 List every asset the community collectively governs: shared funds, treasuries, land, real estate, software, websites, social accounts, brand, intellectual property, physical infrastructure, etc. Be specific — name accounts, wallets, domains.
@@ -38,14 +38,14 @@ List every asset the community collectively governs: shared funds, treasuries, l
 
 *RCOS clauses: [2.2.1](/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration), [2.2.2](/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why name decision domains, not just assets?</summary>
 
 Scope isn't only about stuff — it's about which kinds of questions the community gets to answer collectively. Naming decision domains makes it unambiguous where collective authority applies and where an individual or external party still decides, preventing quiet capture of decision territory.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 List the categories of decisions the community has authority over. These map to later layers (governance, membership, treasury, etc.) — name them at a level that makes it clear what kinds of questions the community decides together.
@@ -61,14 +61,14 @@ List the categories of decisions the community has authority over. These map to 
 
 *RCOS clauses: [2.2.1](/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration), [2.2.2](/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why declare the work the community owns?</summary>
 
 Authority without owned responsibility produces paralysis; responsibility without declared authority produces burnout and blame. Listing the activities the community collectively governs makes the work visible, assignable, and accountable — and makes it obvious when something important has no owner.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 List the ongoing activities the community is responsible for: maintaining shared infrastructure, admitting members, reporting on resources, stewarding the brand, etc. These are the things that need an owner via Layer 5.
@@ -84,14 +84,14 @@ List the ongoing activities the community is responsible for: maintaining shared
 
 *RCOS clauses: [2.2.3](/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration), [2.2.4](/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration), [2.2.5](/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why name what the community must not touch?</summary>
 
 An unstated boundary is no boundary at all. Explicit out-of-scope items protect members from the community reaching into their private lives and finances, and protect external parties from the community presuming authority over their affairs. If it isn't named here, the default rule of "not in-scope means out of scope" still applies — but naming the big ones removes any room for argument.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 List the most important boundaries: things people might assume are in scope but aren't. Personal finances, private relationships, third-party infrastructure, external projects, etc.

@@ -1,10 +1,33 @@
 #!/usr/bin/env node
+/**
+ * Generate per-locale download artifacts for every RCOS template.
+ *
+ *   static/downloads/<locale>/<format>/<layer>/<template>.<ext>
+ *   static/downloads/<locale>/rcos-templates-<format>.zip      ← per-locale bundle
+ *   static/downloads/manifest-templates.json                   ← root manifest
+ *
+ * For each registered locale:
+ *   - Walk content/articles/rcos-templates and detect translations via
+ *     `<base>.<lang>.md` siblings.
+ *   - Emit one file per (template, format), using the localized body when a
+ *     translation exists and the source body otherwise. The preamble is always
+ *     in the locale's language; if the body is fallback, the preamble notes it.
+ *   - Bundle the locale's outputs into ZIPs.
+ *
+ * Per-template `availableLocales` in the manifest reflects the locales for
+ * which a real translation exists — the UI uses this to dim "EN-only" entries.
+ *
+ * Pandoc is required for docx/odt output. The script aborts with install
+ * instructions if it's missing — Vercel doesn't have pandoc, so deploys serve
+ * the committed artifacts as static assets.
+ */
 import { spawn } from 'node:child_process';
 import { readdir, readFile, writeFile, mkdir, rm, stat, copyFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import matter from 'gray-matter';
+import { getStrings, SUPPORTED_LOCALES } from './i18n.mjs';
 
 function run(cmd, args, { input, cwd } = {}) {
 	return new Promise((resolve, reject) => {
@@ -29,76 +52,163 @@ const OUT_DIR = path.join(ROOT, 'static/downloads');
 const LOGO_PNG = path.join(__dirname, 'logo.png');
 
 const SITE_URL = process.env.PUBLIC_APP_URL || 'https://blueprint.ecohubs.community';
-const SITE_NAME = 'RCOS — Regenerative Community Operating System';
-const TEMPLATES_INDEX_URL = `${SITE_URL}/articles/rcos-templates`;
+const DEFAULT_LOCALE = 'en';
 
 const FORMATS = ['md', 'docx', 'odt'];
 
 const today = new Date().toISOString().slice(0, 10);
 
-async function walk(dir) {
+/** ---- file scanning ---- */
+
+async function walkMd(dir) {
 	const out = [];
 	for (const name of await readdir(dir)) {
 		const full = path.join(dir, name);
 		const s = await stat(full);
-		if (s.isDirectory()) out.push(...(await walk(full)));
+		if (s.isDirectory()) out.push(...(await walkMd(full)));
 		else if (name.endsWith('.md')) out.push(full);
 	}
 	return out;
 }
 
-function stripFrontmatter(raw) {
-	const parsed = matter(raw);
-	return { data: parsed.data, body: parsed.content.trimStart() };
+/**
+ * Parse `<base>.md` or `<base>.<lang>.md` filenames.
+ * Returns null for non-markdown files. Unknown lang suffixes are treated as
+ * default-locale files, matching the runtime scanner's behavior.
+ */
+function parseFilename(name) {
+	if (!name.endsWith('.md')) return null;
+	const noExt = name.slice(0, -3);
+	const dot = noExt.lastIndexOf('.');
+	if (dot > 0) {
+		const candidate = noExt.slice(dot + 1);
+		if (SUPPORTED_LOCALES.includes(candidate)) {
+			return { base: noExt.slice(0, dot), lang: candidate };
+		}
+	}
+	return { base: noExt, lang: DEFAULT_LOCALE };
 }
 
-function articleUrl(relPath) {
+/**
+ * Group all template files by their relPath ignoring locale suffix, so each
+ * template appears once with its source + translations attached.
+ *
+ * Example output (one entry):
+ *   {
+ *     relPath: 'layer-0/identity-constraints-register.md',
+ *     id: 't2e1fdh8',
+ *     layer: 'layer-0',
+ *     translations: {
+ *       en: { filePath, data, body, lang: 'en' },
+ *       de: { filePath, data, body, lang: 'de' }   // present iff translation exists
+ *     }
+ *   }
+ */
+async function readTemplateGroups() {
+	const all = await walkMd(TEMPLATES_DIR);
+	const groups = new Map();
+
+	for (const filePath of all) {
+		const fileName = path.basename(filePath);
+		const parsed = parseFilename(fileName);
+		if (!parsed) continue;
+
+		const dir = path.dirname(filePath);
+		const baseRel = path.relative(TEMPLATES_DIR, path.join(dir, `${parsed.base}.md`));
+		const raw = await readFile(filePath, 'utf8');
+		const fm = matter(raw);
+		if (!fm.content.trim()) continue;
+
+		if (!groups.has(baseRel)) {
+			groups.set(baseRel, {
+				relPath: baseRel,
+				layer: baseRel.split('/')[0] || '',
+				translations: {}
+			});
+		}
+		groups.get(baseRel).translations[parsed.lang] = {
+			filePath,
+			data: fm.data,
+			body: fm.content.trimStart(),
+			lang: parsed.lang
+		};
+	}
+
+	// Resolve `id` from the source's frontmatter for stable cross-references.
+	for (const group of groups.values()) {
+		group.id = group.translations[DEFAULT_LOCALE]?.data?.id ?? null;
+	}
+
+	return [...groups.values()].sort((a, b) => a.relPath.localeCompare(b.relPath));
+}
+
+/** ---- preambles & body transforms ---- */
+
+function articleUrl(relPath, locale) {
 	const noExt = relPath.replace(/\.md$/, '');
-	return `${SITE_URL}/articles/rcos-templates/${noExt}`;
+	const localePrefix = locale === DEFAULT_LOCALE ? '' : `/${locale}`;
+	return `${SITE_URL}${localePrefix}/articles/rcos-templates/${noExt}`;
 }
 
-function preambleForMd({ title, sourceUrl }) {
-	return [
-		`**${SITE_NAME}**`,
+function templatesIndexUrl(locale) {
+	const localePrefix = locale === DEFAULT_LOCALE ? '' : `/${locale}`;
+	return `${SITE_URL}${localePrefix}/articles/rcos-templates`;
+}
+
+function preambleForMd({ title, sourceUrl, locale, isFallback }) {
+	const s = getStrings(locale);
+	const lines = [
+		`**${s.siteName}**`,
 		``,
 		`# ${title}`,
 		``,
-		`- **Generated:** ${today}`,
-		`- **Source (latest version):** [${sourceUrl}](${sourceUrl})`,
-		`- **All RCOS templates:** [${TEMPLATES_INDEX_URL}](${TEMPLATES_INDEX_URL})`,
-		``,
-		`---`,
-		``
-	].join('\n');
+		`- **${s.generated}:** ${today}`,
+		`- **${s.source}:** [${sourceUrl}](${sourceUrl})`,
+		`- **${s.allTemplates}:** [${templatesIndexUrl(locale)}](${templatesIndexUrl(locale)})`
+	];
+	if (isFallback) lines.push(``, `> _${s.translatedFromEnglish}_`);
+	lines.push(``, `---`, ``);
+	return lines.join('\n');
 }
 
-// For pandoc (docx/odt). Uses commonmark+attributes image syntax for sizing.
-function preambleForPandoc({ title, sourceUrl }) {
-	return [
-		`![RCOS](${LOGO_PNG}){width=64px}  **${SITE_NAME}**`,
+// pandoc input: commonmark+attributes+raw_html
+function preambleForPandoc({ title, sourceUrl, locale, isFallback }) {
+	const s = getStrings(locale);
+	const lines = [
+		`![RCOS](${LOGO_PNG}){width=64px}  **${s.siteName}**`,
 		``,
 		`# ${title}`,
 		``,
-		`- **Generated:** ${today}`,
-		`- **Source (latest version):** <${sourceUrl}>`,
-		`- **All RCOS templates:** <${TEMPLATES_INDEX_URL}>`,
-		``,
-		`---`,
-		``
-	].join('\n');
+		`- **${s.generated}:** ${today}`,
+		`- **${s.source}:** <${sourceUrl}>`,
+		`- **${s.allTemplates}:** <${templatesIndexUrl(locale)}>`
+	];
+	if (isFallback) lines.push(``, `> _${s.translatedFromEnglish}_`);
+	lines.push(``, `---`, ``);
+	return lines.join('\n');
 }
 
-function absolutizeLinks(body) {
-	// Rewrite root-relative markdown links to absolute SITE_URL
-	return body.replace(/\]\((\/[^)]+)\)/g, (_m, p) => `](${SITE_URL}${p})`);
+function preambleForFormat({ title, sourceUrl, format, locale, isFallback }) {
+	return format === 'md'
+		? preambleForMd({ title, sourceUrl, locale, isFallback })
+		: preambleForPandoc({ title, sourceUrl, locale, isFallback });
 }
 
-function flattenDetails(body) {
-	const re = /<details>\s*<summary>([\s\S]*?)<\/summary>([\s\S]*?)<\/details>/g;
-	return body.replace(re, (_m, summaryRaw, contentRaw) => {
-		const summary = summaryRaw.trim().replace(/\?$/, '?');
-		const isRationale = /^why\b/i.test(summary);
-		const label = isRationale ? 'Rationale' : 'Instructions';
+function absolutizeLinks(body, locale) {
+	// Rewrite root-relative markdown links to absolute, locale-prefixed URLs.
+	const localePrefix = locale === DEFAULT_LOCALE ? '' : `/${locale}`;
+	return body.replace(/\]\((\/[^)]+)\)/g, (_m, p) => `](${SITE_URL}${localePrefix}${p})`);
+}
+
+// Locale-aware <details> flattener — keys on data-kind so the heuristic doesn't
+// depend on English summary text. See scripts/migrate-template-details.mjs.
+function flattenDetails(body, locale) {
+	const s = getStrings(locale);
+	const re = /<details(?:\s+data-kind="(rationale|instructions)")?[^>]*>\s*<summary>([\s\S]*?)<\/summary>([\s\S]*?)<\/details>/g;
+	return body.replace(re, (_m, dataKind, summaryRaw, contentRaw) => {
+		const summary = summaryRaw.trim();
+		const kind = dataKind ?? (/^\s*how\b/i.test(summary) ? 'instructions' : 'rationale');
+		const label = s[kind] ?? s.rationale;
 		const cleanedContent = contentRaw
 			.trim()
 			.split('\n')
@@ -108,108 +218,33 @@ function flattenDetails(body) {
 	});
 }
 
-function bodyForFormat(body, format) {
-	const absolute = absolutizeLinks(body);
+function bodyForFormat(body, format, locale) {
+	const absolute = absolutizeLinks(body, locale);
 	if (format === 'md') return absolute;
-	return flattenDetails(absolute);
+	return flattenDetails(absolute, locale);
 }
 
-function preambleForFormat({ title, sourceUrl, format }) {
-	return format === 'md'
-		? preambleForMd({ title, sourceUrl })
-		: preambleForPandoc({ title, sourceUrl });
-}
+/** ---- output management ---- */
 
-
-// Only wipe paths owned by this script — leave sibling outputs (e.g. core spec) alone.
 async function cleanTemplateOutputs() {
 	await mkdir(OUT_DIR, { recursive: true });
-	const ownedDirs = ['md', 'docx', 'odt'];
-	for (const d of ownedDirs) {
-		const p = path.join(OUT_DIR, d);
-		if (existsSync(p)) await rm(p, { recursive: true, force: true });
-	}
-	const ownedFiles = [
-		...FORMATS.map((f) => `rcos-templates-${f}.zip`),
-		'manifest-templates.json'
-	];
-	for (const f of ownedFiles) {
-		const p = path.join(OUT_DIR, f);
-		if (existsSync(p)) await rm(p, { force: true });
-	}
-}
 
-async function generateOne({ filePath, relPath, format }) {
-	const raw = await readFile(filePath, 'utf8');
-	const { data, body } = stripFrontmatter(raw);
-	if (!body.trim()) return null;
-	const title = data.title || path.basename(filePath, '.md');
-	const sourceUrl = articleUrl(relPath);
-
-	const preamble = preambleForFormat({ title, sourceUrl, format });
-	const transformedBody = bodyForFormat(body, format);
-	const fullMd = `${preamble}${transformedBody}`;
-
-	const outRel = relPath.replace(/\.md$/, `.${format}`);
-	const outPath = path.join(OUT_DIR, format, outRel);
-	await mkdir(path.dirname(outPath), { recursive: true });
-
-	if (format === 'md') {
-		await writeFile(outPath, fullMd, 'utf8');
-		return outPath;
+	// Per-locale subdirs we own.
+	for (const locale of SUPPORTED_LOCALES) {
+		const localeDir = path.join(OUT_DIR, locale);
+		if (existsSync(localeDir)) await rm(localeDir, { recursive: true, force: true });
 	}
 
-	// pandoc for docx / odt — commonmark with attributes (for image sizing) + raw_html
-	const args = [
-		'-f',
-		'commonmark_x+attributes+raw_html-yaml_metadata_block',
-		'-t',
-		format,
-		'-o',
-		outPath,
-		'--metadata',
-		`title-meta=${title}` // sets doc properties only, no visual title
-	];
-	await run('pandoc', args, { input: fullMd, cwd: __dirname });
-	return outPath;
-}
-
-async function buildIndexMd(files) {
-	const lines = [
-		`# RCOS Templates`,
-		``,
-		`- **Generated:** ${today}`,
-		`- **Source:** [${TEMPLATES_INDEX_URL}](${TEMPLATES_INDEX_URL})`,
-		``,
-		`This bundle contains every RCOS template, ready to copy and adapt for your community.`,
-		``,
-		`Each template includes a rationale block (why the section exists) and instructions (how to fill it in).`,
-		``,
-		`## Templates`,
-		``
-	];
-	const byLayer = new Map();
-	for (const f of files) {
-		const layer = f.relPath.split('/')[0];
-		if (!byLayer.has(layer)) byLayer.set(layer, []);
-		byLayer.get(layer).push(f);
+	// Legacy flat layout left over from before per-locale outputs — clean if present.
+	for (const fmt of FORMATS) {
+		const legacyDir = path.join(OUT_DIR, fmt);
+		if (existsSync(legacyDir)) await rm(legacyDir, { recursive: true, force: true });
+		const legacyZip = path.join(OUT_DIR, `rcos-templates-${fmt}.zip`);
+		if (existsSync(legacyZip)) await rm(legacyZip, { force: true });
 	}
-	for (const layer of [...byLayer.keys()].sort()) {
-		lines.push(`### ${layer}`, ``);
-		for (const f of byLayer.get(layer)) {
-			lines.push(`- [${f.title}](${f.relPath})`);
-		}
-		lines.push(``);
-	}
-	return lines.join('\n');
-}
 
-async function zipFormat(format) {
-	const dir = path.join(OUT_DIR, format);
-	const zipPath = path.join(OUT_DIR, `rcos-templates-${format}.zip`);
-	if (existsSync(zipPath)) await rm(zipPath);
-	await run('zip', ['-r', '-q', zipPath, '.'], { cwd: dir });
-	return zipPath;
+	const manifestPath = path.join(OUT_DIR, 'manifest-templates.json');
+	if (existsSync(manifestPath)) await rm(manifestPath, { force: true });
 }
 
 async function ensurePandoc() {
@@ -229,73 +264,186 @@ async function ensurePandoc() {
 	}
 }
 
+/** Pick the best body for (group, locale): translation if present, source otherwise. */
+function chooseBody(group, locale) {
+	const requested = group.translations[locale];
+	const source = group.translations[DEFAULT_LOCALE];
+	if (requested) return { ...requested, isFallback: false };
+	if (source) return { ...source, isFallback: locale !== DEFAULT_LOCALE };
+	return null;
+}
+
+async function generateOne({ group, locale, format }) {
+	const chosen = chooseBody(group, locale);
+	if (!chosen) return null;
+
+	const data = group.translations[locale]?.data ?? group.translations[DEFAULT_LOCALE]?.data ?? {};
+	const title = data.title || path.basename(group.relPath, '.md');
+	const sourceUrl = articleUrl(group.relPath, locale);
+
+	const preamble = preambleForFormat({
+		title,
+		sourceUrl,
+		format,
+		locale,
+		isFallback: chosen.isFallback
+	});
+	const transformedBody = bodyForFormat(chosen.body, format, locale);
+	const fullMd = `${preamble}${transformedBody}`;
+
+	const outRel = group.relPath.replace(/\.md$/, `.${format}`);
+	const outPath = path.join(OUT_DIR, locale, format, outRel);
+	await mkdir(path.dirname(outPath), { recursive: true });
+
+	if (format === 'md') {
+		await writeFile(outPath, fullMd, 'utf8');
+		return outPath;
+	}
+
+	const args = [
+		'-f',
+		'commonmark_x+attributes+raw_html-yaml_metadata_block',
+		'-t',
+		format,
+		'-o',
+		outPath,
+		'--metadata',
+		`title-meta=${title}`
+	];
+	await run('pandoc', args, { input: fullMd, cwd: __dirname });
+	return outPath;
+}
+
+async function buildIndexMd(groups, locale) {
+	const s = getStrings(locale);
+	const lines = [
+		`# ${s.bundleHeading}`,
+		``,
+		`- **${s.generated}:** ${today}`,
+		`- **${s.source}:** [${templatesIndexUrl(locale)}](${templatesIndexUrl(locale)})`,
+		``,
+		s.bundleIntro,
+		``,
+		s.bundleNote,
+		``,
+		`## ${s.bundleSectionHeading}`,
+		``
+	];
+	const byLayer = new Map();
+	for (const g of groups) {
+		const layer = g.layer;
+		if (!byLayer.has(layer)) byLayer.set(layer, []);
+		byLayer.get(layer).push(g);
+	}
+	for (const layer of [...byLayer.keys()].sort()) {
+		lines.push(`### ${layer}`, ``);
+		for (const g of byLayer.get(layer)) {
+			const data = g.translations[locale]?.data ?? g.translations[DEFAULT_LOCALE]?.data ?? {};
+			const title = data.title || g.relPath;
+			lines.push(`- [${title}](${g.relPath})`);
+		}
+		lines.push(``);
+	}
+	return lines.join('\n');
+}
+
+async function zipFormat(locale, format) {
+	const dir = path.join(OUT_DIR, locale, format);
+	const zipPath = path.join(OUT_DIR, locale, `rcos-templates-${format}.zip`);
+	if (existsSync(zipPath)) await rm(zipPath);
+	await run('zip', ['-r', '-q', zipPath, '.'], { cwd: dir });
+	return zipPath;
+}
+
+/** ---- main ---- */
+
 async function main() {
 	await ensurePandoc();
 	if (!existsSync(LOGO_PNG)) {
 		throw new Error(`Logo missing at ${LOGO_PNG}. Run sips conversion first.`);
 	}
+
 	console.log(`Cleaning template outputs in ${OUT_DIR}`);
 	await cleanTemplateOutputs();
 
-	// Copy logo to public location for md downloads to reference
+	// Logo for md downloads to reference (locale-agnostic asset).
 	await copyFile(LOGO_PNG, path.join(ROOT, 'static/rcos-logo.png'));
 
-	const allFiles = await walk(TEMPLATES_DIR);
-	const templateFiles = [];
-	for (const filePath of allFiles) {
-		const relPath = path.relative(TEMPLATES_DIR, filePath);
-		const raw = await readFile(filePath, 'utf8');
-		const { data, body } = stripFrontmatter(raw);
-		if (!body.trim()) continue; // skip empty layer index files
-		templateFiles.push({ filePath, relPath, title: data.title || relPath });
-	}
+	const groups = await readTemplateGroups();
+	console.log(`Found ${groups.length} templates.`);
 
-	console.log(`Found ${templateFiles.length} templates.`);
-
-	for (const format of FORMATS) {
-		console.log(`\n→ Generating ${format} ...`);
-		for (const f of templateFiles) {
-			process.stdout.write(`  ${f.relPath} → ${format}\n`);
-			await generateOne({ filePath: f.filePath, relPath: f.relPath, format });
+	for (const locale of SUPPORTED_LOCALES) {
+		console.log(`\n=== Locale: ${locale} ===`);
+		for (const format of FORMATS) {
+			console.log(`  Generating ${format} ...`);
+			for (const g of groups) {
+				process.stdout.write(`    ${g.relPath} → ${format}\n`);
+				await generateOne({ group: g, locale, format });
+			}
+			// Per-locale INDEX file
+			const idx = await buildIndexMd(groups, locale);
+			const idxRel = `INDEX.${format === 'md' ? 'md' : format}`;
+			const idxPath = path.join(OUT_DIR, locale, format, idxRel);
+			if (format === 'md') {
+				await writeFile(idxPath, idx, 'utf8');
+			} else {
+				const s = getStrings(locale);
+				await run(
+					'pandoc',
+					['-f', 'gfm', '-t', format, '-o', idxPath, '--metadata', `title-meta=${s.bundleHeading}`],
+					{ input: idx, cwd: __dirname }
+				);
+			}
 		}
-		// add an INDEX file listing all templates with relative links
-		const idx = await buildIndexMd(templateFiles);
-		const idxPath = path.join(OUT_DIR, format, `INDEX.${format === 'md' ? 'md' : format}`);
-		if (format === 'md') {
-			await writeFile(idxPath, idx, 'utf8');
-		} else {
-			await run(
-				'pandoc',
-				['-f', 'gfm', '-t', format, '-o', idxPath, '--metadata', 'title-meta=RCOS Templates'],
-				{ input: idx, cwd: __dirname }
-			);
+
+		console.log(`  Zipping bundles ...`);
+		for (const format of FORMATS) {
+			const zip = await zipFormat(locale, format);
+			console.log(`    ${path.relative(ROOT, zip)}`);
 		}
 	}
 
-	console.log(`\n→ Zipping bundles ...`);
-	for (const format of FORMATS) {
-		const zip = await zipFormat(format);
-		console.log(`  ${path.relative(ROOT, zip)}`);
-	}
-
-	// Manifest for the UI
+	// Manifest with new schema (per-locale bundles + per-template files).
 	const manifest = {
 		generated: today,
+		defaultLocale: DEFAULT_LOCALE,
+		locales: SUPPORTED_LOCALES,
 		formats: FORMATS,
-		bundles: Object.fromEntries(FORMATS.map((f) => [f, `/downloads/rcos-templates-${f}.zip`])),
-		templates: templateFiles.map((f) => ({
-			relPath: f.relPath.replace(/\\/g, '/'),
-			title: f.title,
-			files: Object.fromEntries(
-				FORMATS.map((fmt) => [
-					fmt,
-					`/downloads/${fmt}/${f.relPath.replace(/\\/g, '/').replace(/\.md$/, `.${fmt}`)}`
-				])
-			)
-		}))
+		bundles: Object.fromEntries(
+			SUPPORTED_LOCALES.map((loc) => [
+				loc,
+				Object.fromEntries(
+					FORMATS.map((fmt) => [fmt, `/downloads/${loc}/rcos-templates-${fmt}.zip`])
+				)
+			])
+		),
+		templates: groups.map((g) => {
+			const titles = {};
+			const files = {};
+			for (const loc of SUPPORTED_LOCALES) {
+				const data = g.translations[loc]?.data ?? g.translations[DEFAULT_LOCALE]?.data ?? {};
+				titles[loc] = data.title || g.relPath;
+				files[loc] = Object.fromEntries(
+					FORMATS.map((fmt) => [
+						fmt,
+						`/downloads/${loc}/${fmt}/${g.relPath.replace(/\.md$/, `.${fmt}`)}`
+					])
+				);
+			}
+			return {
+				id: g.id,
+				relPath: g.relPath.replace(/\\/g, '/'),
+				layer: g.layer,
+				titles,
+				files,
+				availableLocales: Object.keys(g.translations).sort()
+			};
+		})
 	};
 	await writeFile(path.join(OUT_DIR, 'manifest-templates.json'), JSON.stringify(manifest, null, 2));
-	console.log(`\nDone. ${templateFiles.length} templates × ${FORMATS.length} formats.`);
+	console.log(
+		`\nDone. ${groups.length} templates × ${FORMATS.length} formats × ${SUPPORTED_LOCALES.length} locales.`
+	);
 }
 
 main().catch((err) => {

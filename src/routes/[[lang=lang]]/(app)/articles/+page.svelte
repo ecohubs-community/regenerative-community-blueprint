@@ -1,0 +1,82 @@
+<script lang="ts">
+  import { articles, rootArticles, articleTree } from '$lib/stores/graph';
+  import Card from '$lib/components/common/Card.svelte';
+  import Icon from '@iconify/svelte';
+  import type { Article } from '$lib/server/graph';
+  import SEO from '$lib/components/seo/SEO.svelte';
+  import { buildBreadcrumbSchema } from '$lib/utils/jsonld';
+  import { m } from '$lib/i18n';
+  import { localized } from '$lib/i18n/path';
+  import { DEFAULT_LOCALE } from '$lib/i18n/languages';
+
+  let { data } = $props();
+
+  const locale = $derived(data.locale ?? DEFAULT_LOCALE);
+
+  // Recursive component to render article tree
+  function getChildCount(article: Article): number {
+    let count = article.children.length;
+    for (const child of article.children) {
+      count += getChildCount(child);
+    }
+    return count;
+  }
+</script>
+
+<SEO
+  title={m('articles.title')}
+  description={m('articles.seo_description')}
+  url="/articles"
+  jsonLd={buildBreadcrumbSchema([])}
+  locale={data.locale}
+/>
+
+<div class="space-y-8 pb-12">
+  <div class="flex items-center justify-between">
+    <div>
+      <h1 class="text-3xl font-bold text-text-primary">{m('articles.title')}</h1>
+      <p class="text-text-secondary mt-2">{m('articles.subtitle')}</p>
+    </div>
+    <div class="text-sm text-text-tertiary">
+      {m('articles.count_total', { count: $articles.length })}
+    </div>
+  </div>
+
+  <!-- Root Level Articles -->
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {#each $rootArticles as article}
+      {@const totalChildren = getChildCount(article)}
+
+      <Card href={localized(`/articles/${article.slug}`, locale)} class="h-full flex flex-col">
+        <div class="mb-4">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-light/20 text-primary-dark">
+            <span class="font-bold font-serif">{article.title.charAt(0)}</span>
+          </span>
+        </div>
+        <h3 class="text-xl font-bold text-text-primary mb-2 group-hover:text-primary transition-colors">
+          {article.title}
+        </h3>
+        <p class="text-text-secondary mb-4 flex-1 line-clamp-3">
+          {article.summary || ''}
+        </p>
+
+        {#if totalChildren > 0}
+          <div class="pt-4 mt-auto border-t border-border flex items-center gap-2 text-xs font-medium text-text-tertiary">
+            <Icon icon="tabler:hierarchy" class="w-4 h-4" />
+            <span>{m(totalChildren === 1 ? 'articles.sub_article_count_one' : 'articles.sub_article_count_other', { count: totalChildren })}</span>
+          </div>
+        {/if}
+      </Card>
+    {/each}
+  </div>
+
+  {#if $rootArticles.length === 0}
+    <div class="text-center py-16">
+      <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center">
+        <Icon icon="tabler:file-text" class="w-8 h-8 text-gray-400" />
+      </div>
+      <h2 class="text-xl font-semibold text-gray-900 mb-2">{m('articles.empty.title')}</h2>
+      <p class="text-gray-500">{m('articles.empty.body')}</p>
+    </div>
+  {/if}
+</div>

@@ -17,14 +17,14 @@ order: 2
 
 *RCOS clauses: [7.2.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.4](/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.6.4](/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why a regular Operations meeting?</summary>
 
 Day-to-day coordination needs a regular beat, not ad-hoc improvisation. The Operations meeting is the community's heartbeat — a predictable space to review active work, surface blockers, and make small operational decisions. Crucially, only Operational decisions happen here; Strategic and Constitutional ones go through the governance process, so the meeting can't quietly accumulate authority it doesn't have.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Set purpose, decision scope, required and optional participants, cadence, duration, and facilitation rules. Keep decision scope to Operational only.
@@ -71,14 +71,14 @@ Set purpose, decision scope, required and optional participants, cadence, durati
 
 *RCOS clauses: [7.2.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.6.4](/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why separate deliberation from the binding vote?</summary>
 
 If a meeting can both discuss and decide, whoever is in the room that day gets to decide — regardless of quorum or authority rules. Keeping deliberation separate from the binding vote preserves the integrity of the Decision Matrix and ensures absent members still get a vote.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 This meeting deliberates on active proposals during their deliberation period. The binding decision is made via the governance process per the Decision Matrix.
@@ -124,14 +124,14 @@ This meeting deliberates on active proposals during their deliberation period. T
 
 *RCOS clauses: [7.2.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.6.4](/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why a dedicated coordination meeting?</summary>
 
 Some blockers span more than one role and can't be resolved in the regular Operations rhythm. Coordination & Alignment gives cross-role work its own space — for dependencies, handoffs, and competing priorities — so the weekly meeting doesn't balloon trying to absorb everything.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Use this template when cross-role coordination is needed. Keep decision scope Operational only and limit required participants to those with active initiatives.
@@ -166,14 +166,14 @@ Use this template when cross-role coordination is needed. Keep decision scope Op
 
 *RCOS clauses: [7.2.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.6.4](/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why give reflection its own meeting type?</summary>
 
 Reflection that happens only when time allows never happens. A named meeting type with a defined cadence makes space for looking back — and keeps retrospection from getting squeezed out by operational urgency. Without it, the Learning Log (Layer 6) stays empty and the framework stops evolving.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 This meeting reviews the most recent period and feeds insights to the Learning Log (Layer 6) and the Future Proposals queue.
@@ -212,14 +212,14 @@ This meeting reviews the most recent period and feeds insights to the Learning L
 
 *RCOS clauses: [7.2.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.6.4](/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts); see also Layer 4 — [Conflict Resolution Ladder](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why a distinct meeting type for conflict?</summary>
 
 Conflict work has rules that other meetings don't: confidentiality, Facilitator selection that bypasses party preference, anti-retaliation protections, and restricted records. Using the Operations template for a conflict session would quietly violate all of these. A dedicated template makes the different container visible from the first minute.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Use this template only for facilitated sessions under Conflict Resolution Ladder Steps 2–4. Privacy and Facilitator-selection rules are governed by Layer 4, not by the meeting itself.

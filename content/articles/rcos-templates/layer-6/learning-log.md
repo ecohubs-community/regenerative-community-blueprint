@@ -17,14 +17,14 @@ order: 2
 
 *RCOS clauses: [8.4.1](/articles/rcos-core/v0-1/layer-6-evolution-adaptation#84-learning-and-feedback-capture), [8.4.4](/articles/rcos-core/v0-1/layer-6-evolution-adaptation#84-learning-and-feedback-capture), [8.6.5](/articles/rcos-core/v0-1/layer-6-evolution-adaptation#86-artifacts), [8.7.4](/articles/rcos-core/v0-1/layer-6-evolution-adaptation#87-layer-invariants)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why define the trigger explicitly?</summary>
 
 If "we should learn from this" is left to individual judgement, the hardest lessons — the ones involving conflict, failure, or embarrassment — are the ones most likely to go unrecorded. Naming the specific events that MUST produce an entry takes the question out of the moment, and makes sure uncomfortable learnings are captured rather than quietly dropped.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 List the specific events that obligate a Learning Log entry. State who owns the log and the synthesis cadence.
@@ -57,14 +57,14 @@ _No entries yet. First entry will be added when the first learnable event occurs
 
 *RCOS clauses: [8.4.2](/articles/rcos-core/v0-1/layer-6-evolution-adaptation#84-learning-and-feedback-capture), [8.4.3](/articles/rcos-core/v0-1/layer-6-evolution-adaptation#84-learning-and-feedback-capture), [8.6.5](/articles/rcos-core/v0-1/layer-6-evolution-adaptation#86-artifacts)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why a fixed entry template?</summary>
 
 Free-form reflection is valuable, but it does not aggregate. A consistent schema — trigger, signals, what changed, outcome, follow-up owner — makes it possible to scan years of entries for recurring patterns and to turn isolated incidents into structural evidence. It also forces each entry to name an owner, so learning does not stop at "we noticed."
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Use the template below for every entry. Each field forces a different lens on the event; do not skip the follow-up owner.

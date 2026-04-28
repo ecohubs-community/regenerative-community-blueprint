@@ -1,213 +1,577 @@
 {
-  "generated": "2026-04-27",
+  "generated": "2026-04-28",
+  "defaultLocale": "en",
+  "locales": [
+    "en",
+    "de"
+  ],
   "formats": [
     "md",
     "docx",
     "odt"
   ],
   "bundles": {
-    "md": "/downloads/rcos-templates-md.zip",
-    "docx": "/downloads/rcos-templates-docx.zip",
-    "odt": "/downloads/rcos-templates-odt.zip"
+    "en": {
+      "md": "/downloads/en/rcos-templates-md.zip",
+      "docx": "/downloads/en/rcos-templates-docx.zip",
+      "odt": "/downloads/en/rcos-templates-odt.zip"
+    },
+    "de": {
+      "md": "/downloads/de/rcos-templates-md.zip",
+      "docx": "/downloads/de/rcos-templates-docx.zip",
+      "odt": "/downloads/de/rcos-templates-odt.zip"
+    }
   },
   "templates": [
     {
+      "id": "t2e1fdh8",
       "relPath": "layer-0/identity-constraints-register.md",
-      "title": "Identity Constraints Register",
+      "layer": "layer-0",
+      "titles": {
+        "en": "Identity Constraints Register",
+        "de": "Register der Identitätsbeschränkungen"
+      },
       "files": {
-        "md": "/downloads/md/layer-0/identity-constraints-register.md",
-        "docx": "/downloads/docx/layer-0/identity-constraints-register.docx",
-        "odt": "/downloads/odt/layer-0/identity-constraints-register.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-0/identity-constraints-register.md",
+          "docx": "/downloads/en/docx/layer-0/identity-constraints-register.docx",
+          "odt": "/downloads/en/odt/layer-0/identity-constraints-register.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-0/identity-constraints-register.md",
+          "docx": "/downloads/de/docx/layer-0/identity-constraints-register.docx",
+          "odt": "/downloads/de/odt/layer-0/identity-constraints-register.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "0672a85f",
       "relPath": "layer-0/invariants-register.md",
-      "title": "Invariants Register",
+      "layer": "layer-0",
+      "titles": {
+        "en": "Invariants Register",
+        "de": "Invariantenregister"
+      },
       "files": {
-        "md": "/downloads/md/layer-0/invariants-register.md",
-        "docx": "/downloads/docx/layer-0/invariants-register.docx",
-        "odt": "/downloads/odt/layer-0/invariants-register.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-0/invariants-register.md",
+          "docx": "/downloads/en/docx/layer-0/invariants-register.docx",
+          "odt": "/downloads/en/odt/layer-0/invariants-register.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-0/invariants-register.md",
+          "docx": "/downloads/de/docx/layer-0/invariants-register.docx",
+          "odt": "/downloads/de/odt/layer-0/invariants-register.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "543520dc",
       "relPath": "layer-0/purpose-charter.md",
-      "title": "Purpose Charter",
+      "layer": "layer-0",
+      "titles": {
+        "en": "Purpose Charter",
+        "de": "Zweckcharta"
+      },
       "files": {
-        "md": "/downloads/md/layer-0/purpose-charter.md",
-        "docx": "/downloads/docx/layer-0/purpose-charter.docx",
-        "odt": "/downloads/odt/layer-0/purpose-charter.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-0/purpose-charter.md",
+          "docx": "/downloads/en/docx/layer-0/purpose-charter.docx",
+          "odt": "/downloads/en/odt/layer-0/purpose-charter.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-0/purpose-charter.md",
+          "docx": "/downloads/de/docx/layer-0/purpose-charter.docx",
+          "odt": "/downloads/de/odt/layer-0/purpose-charter.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "5bfa1b3e",
       "relPath": "layer-0/scope-declaration.md",
-      "title": "Scope Declaration",
+      "layer": "layer-0",
+      "titles": {
+        "en": "Scope Declaration",
+        "de": "Geltungsbereichserklärung"
+      },
       "files": {
-        "md": "/downloads/md/layer-0/scope-declaration.md",
-        "docx": "/downloads/docx/layer-0/scope-declaration.docx",
-        "odt": "/downloads/odt/layer-0/scope-declaration.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-0/scope-declaration.md",
+          "docx": "/downloads/en/docx/layer-0/scope-declaration.docx",
+          "odt": "/downloads/en/odt/layer-0/scope-declaration.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-0/scope-declaration.md",
+          "docx": "/downloads/de/docx/layer-0/scope-declaration.docx",
+          "odt": "/downloads/de/odt/layer-0/scope-declaration.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "0e61a813",
       "relPath": "layer-1/exit-protocol.md",
-      "title": "Exit & Separation Protocol",
+      "layer": "layer-1",
+      "titles": {
+        "en": "Exit & Separation Protocol",
+        "de": "Austritts- & Trennungsprotokoll"
+      },
       "files": {
-        "md": "/downloads/md/layer-1/exit-protocol.md",
-        "docx": "/downloads/docx/layer-1/exit-protocol.docx",
-        "odt": "/downloads/odt/layer-1/exit-protocol.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-1/exit-protocol.md",
+          "docx": "/downloads/en/docx/layer-1/exit-protocol.docx",
+          "odt": "/downloads/en/odt/layer-1/exit-protocol.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-1/exit-protocol.md",
+          "docx": "/downloads/de/docx/layer-1/exit-protocol.docx",
+          "odt": "/downloads/de/odt/layer-1/exit-protocol.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "15fe28a6",
       "relPath": "layer-1/membership-agreement.md",
-      "title": "Membership Agreement",
+      "layer": "layer-1",
+      "titles": {
+        "en": "Membership Agreement",
+        "de": "Mitgliedschaftsvereinbarung"
+      },
       "files": {
-        "md": "/downloads/md/layer-1/membership-agreement.md",
-        "docx": "/downloads/docx/layer-1/membership-agreement.docx",
-        "odt": "/downloads/odt/layer-1/membership-agreement.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-1/membership-agreement.md",
+          "docx": "/downloads/en/docx/layer-1/membership-agreement.docx",
+          "odt": "/downloads/en/odt/layer-1/membership-agreement.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-1/membership-agreement.md",
+          "docx": "/downloads/de/docx/layer-1/membership-agreement.docx",
+          "odt": "/downloads/de/odt/layer-1/membership-agreement.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "b6d4e7f9",
       "relPath": "layer-1/membership-state-registry.md",
-      "title": "Membership State Registry",
+      "layer": "layer-1",
+      "titles": {
+        "en": "Membership State Registry",
+        "de": "Mitgliedschaftsstatus-Register"
+      },
       "files": {
-        "md": "/downloads/md/layer-1/membership-state-registry.md",
-        "docx": "/downloads/docx/layer-1/membership-state-registry.docx",
-        "odt": "/downloads/odt/layer-1/membership-state-registry.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-1/membership-state-registry.md",
+          "docx": "/downloads/en/docx/layer-1/membership-state-registry.docx",
+          "odt": "/downloads/en/odt/layer-1/membership-state-registry.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-1/membership-state-registry.md",
+          "docx": "/downloads/de/docx/layer-1/membership-state-registry.docx",
+          "odt": "/downloads/de/odt/layer-1/membership-state-registry.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "8f3a5c21",
       "relPath": "layer-1/onboarding-protocol.md",
-      "title": "Onboarding Protocol",
+      "layer": "layer-1",
+      "titles": {
+        "en": "Onboarding Protocol",
+        "de": "Onboarding-Protokoll"
+      },
       "files": {
-        "md": "/downloads/md/layer-1/onboarding-protocol.md",
-        "docx": "/downloads/docx/layer-1/onboarding-protocol.docx",
-        "odt": "/downloads/odt/layer-1/onboarding-protocol.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-1/onboarding-protocol.md",
+          "docx": "/downloads/en/docx/layer-1/onboarding-protocol.docx",
+          "odt": "/downloads/en/odt/layer-1/onboarding-protocol.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-1/onboarding-protocol.md",
+          "docx": "/downloads/de/docx/layer-1/onboarding-protocol.docx",
+          "odt": "/downloads/de/odt/layer-1/onboarding-protocol.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "2e9c4a18",
       "relPath": "layer-2/authority-registry.md",
-      "title": "Authority Registry",
+      "layer": "layer-2",
+      "titles": {
+        "en": "Authority Registry",
+        "de": "Autoritätenregister"
+      },
       "files": {
-        "md": "/downloads/md/layer-2/authority-registry.md",
-        "docx": "/downloads/docx/layer-2/authority-registry.docx",
-        "odt": "/downloads/odt/layer-2/authority-registry.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-2/authority-registry.md",
+          "docx": "/downloads/en/docx/layer-2/authority-registry.docx",
+          "odt": "/downloads/en/odt/layer-2/authority-registry.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-2/authority-registry.md",
+          "docx": "/downloads/de/docx/layer-2/authority-registry.docx",
+          "odt": "/downloads/de/odt/layer-2/authority-registry.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "4885248e",
       "relPath": "layer-2/decision-matrix.md",
-      "title": "Decision Matrix",
+      "layer": "layer-2",
+      "titles": {
+        "en": "Decision Matrix",
+        "de": "Entscheidungsmatrix"
+      },
       "files": {
-        "md": "/downloads/md/layer-2/decision-matrix.md",
-        "docx": "/downloads/docx/layer-2/decision-matrix.docx",
-        "odt": "/downloads/odt/layer-2/decision-matrix.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-2/decision-matrix.md",
+          "docx": "/downloads/en/docx/layer-2/decision-matrix.docx",
+          "odt": "/downloads/en/odt/layer-2/decision-matrix.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-2/decision-matrix.md",
+          "docx": "/downloads/de/docx/layer-2/decision-matrix.docx",
+          "odt": "/downloads/de/odt/layer-2/decision-matrix.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "1403643f",
       "relPath": "layer-2/governance-protocol.md",
-      "title": "Governance Protocol",
+      "layer": "layer-2",
+      "titles": {
+        "en": "Governance Protocol",
+        "de": "Governance-Protokoll"
+      },
       "files": {
-        "md": "/downloads/md/layer-2/governance-protocol.md",
-        "docx": "/downloads/docx/layer-2/governance-protocol.docx",
-        "odt": "/downloads/odt/layer-2/governance-protocol.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-2/governance-protocol.md",
+          "docx": "/downloads/en/docx/layer-2/governance-protocol.docx",
+          "odt": "/downloads/en/odt/layer-2/governance-protocol.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-2/governance-protocol.md",
+          "docx": "/downloads/de/docx/layer-2/governance-protocol.docx",
+          "odt": "/downloads/de/odt/layer-2/governance-protocol.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "1496e7ff",
       "relPath": "layer-3/internal-economy-protocol.md",
-      "title": "Internal Economy Protocol",
+      "layer": "layer-3",
+      "titles": {
+        "en": "Internal Economy Protocol",
+        "de": "Protokoll für die interne Wirtschaft"
+      },
       "files": {
-        "md": "/downloads/md/layer-3/internal-economy-protocol.md",
-        "docx": "/downloads/docx/layer-3/internal-economy-protocol.docx",
-        "odt": "/downloads/odt/layer-3/internal-economy-protocol.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-3/internal-economy-protocol.md",
+          "docx": "/downloads/en/docx/layer-3/internal-economy-protocol.docx",
+          "odt": "/downloads/en/odt/layer-3/internal-economy-protocol.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-3/internal-economy-protocol.md",
+          "docx": "/downloads/de/docx/layer-3/internal-economy-protocol.docx",
+          "odt": "/downloads/de/odt/layer-3/internal-economy-protocol.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "9ead12cf",
       "relPath": "layer-3/treasury-ruleset.md",
-      "title": "Treasury Ruleset",
+      "layer": "layer-3",
+      "titles": {
+        "en": "Treasury Ruleset",
+        "de": "Kassensatzung"
+      },
       "files": {
-        "md": "/downloads/md/layer-3/treasury-ruleset.md",
-        "docx": "/downloads/docx/layer-3/treasury-ruleset.docx",
-        "odt": "/downloads/odt/layer-3/treasury-ruleset.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-3/treasury-ruleset.md",
+          "docx": "/downloads/en/docx/layer-3/treasury-ruleset.docx",
+          "odt": "/downloads/en/odt/layer-3/treasury-ruleset.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-3/treasury-ruleset.md",
+          "docx": "/downloads/de/docx/layer-3/treasury-ruleset.docx",
+          "odt": "/downloads/de/odt/layer-3/treasury-ruleset.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "d0c21119",
       "relPath": "layer-4/accountability-protocol.md",
-      "title": "Accountability Protocol",
+      "layer": "layer-4",
+      "titles": {
+        "en": "Accountability Protocol",
+        "de": "Rechenschaftsprotokoll"
+      },
       "files": {
-        "md": "/downloads/md/layer-4/accountability-protocol.md",
-        "docx": "/downloads/docx/layer-4/accountability-protocol.docx",
-        "odt": "/downloads/odt/layer-4/accountability-protocol.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-4/accountability-protocol.md",
+          "docx": "/downloads/en/docx/layer-4/accountability-protocol.docx",
+          "odt": "/downloads/en/odt/layer-4/accountability-protocol.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-4/accountability-protocol.md",
+          "docx": "/downloads/de/docx/layer-4/accountability-protocol.docx",
+          "odt": "/downloads/de/odt/layer-4/accountability-protocol.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "a1de3ac3",
       "relPath": "layer-4/conflict-resolution-ladder.md",
-      "title": "Conflict Resolution Ladder",
+      "layer": "layer-4",
+      "titles": {
+        "en": "Conflict Resolution Ladder",
+        "de": "Konfliktlösungsleiter"
+      },
       "files": {
-        "md": "/downloads/md/layer-4/conflict-resolution-ladder.md",
-        "docx": "/downloads/docx/layer-4/conflict-resolution-ladder.docx",
-        "odt": "/downloads/odt/layer-4/conflict-resolution-ladder.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-4/conflict-resolution-ladder.md",
+          "docx": "/downloads/en/docx/layer-4/conflict-resolution-ladder.docx",
+          "odt": "/downloads/en/odt/layer-4/conflict-resolution-ladder.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-4/conflict-resolution-ladder.md",
+          "docx": "/downloads/de/docx/layer-4/conflict-resolution-ladder.docx",
+          "odt": "/downloads/de/odt/layer-4/conflict-resolution-ladder.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "c416f3ec",
       "relPath": "layer-5/meeting-templates.md",
-      "title": "Meeting Templates",
+      "layer": "layer-5",
+      "titles": {
+        "en": "Meeting Templates",
+        "de": "Sitzungsvorlagen"
+      },
       "files": {
-        "md": "/downloads/md/layer-5/meeting-templates.md",
-        "docx": "/downloads/docx/layer-5/meeting-templates.docx",
-        "odt": "/downloads/odt/layer-5/meeting-templates.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-5/meeting-templates.md",
+          "docx": "/downloads/en/docx/layer-5/meeting-templates.docx",
+          "odt": "/downloads/en/odt/layer-5/meeting-templates.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-5/meeting-templates.md",
+          "docx": "/downloads/de/docx/layer-5/meeting-templates.docx",
+          "odt": "/downloads/de/odt/layer-5/meeting-templates.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "7d1b3f2a",
       "relPath": "layer-5/operations-manual.md",
-      "title": "Operations Manual",
+      "layer": "layer-5",
+      "titles": {
+        "en": "Operations Manual",
+        "de": "Betriebshandbuch"
+      },
       "files": {
-        "md": "/downloads/md/layer-5/operations-manual.md",
-        "docx": "/downloads/docx/layer-5/operations-manual.docx",
-        "odt": "/downloads/odt/layer-5/operations-manual.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-5/operations-manual.md",
+          "docx": "/downloads/en/docx/layer-5/operations-manual.docx",
+          "odt": "/downloads/en/odt/layer-5/operations-manual.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-5/operations-manual.md",
+          "docx": "/downloads/de/docx/layer-5/operations-manual.docx",
+          "odt": "/downloads/de/odt/layer-5/operations-manual.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "6de5caef",
       "relPath": "layer-5/role-registry.md",
-      "title": "Role Registry",
+      "layer": "layer-5",
+      "titles": {
+        "en": "Role Registry",
+        "de": "Rollenverzeichnis"
+      },
       "files": {
-        "md": "/downloads/md/layer-5/role-registry.md",
-        "docx": "/downloads/docx/layer-5/role-registry.docx",
-        "odt": "/downloads/odt/layer-5/role-registry.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-5/role-registry.md",
+          "docx": "/downloads/en/docx/layer-5/role-registry.docx",
+          "odt": "/downloads/en/odt/layer-5/role-registry.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-5/role-registry.md",
+          "docx": "/downloads/de/docx/layer-5/role-registry.docx",
+          "odt": "/downloads/de/odt/layer-5/role-registry.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "0d3486d6",
       "relPath": "layer-6/change-protocol.md",
-      "title": "Change Protocol",
+      "layer": "layer-6",
+      "titles": {
+        "en": "Change Protocol",
+        "de": "Änderungsprotokoll"
+      },
       "files": {
-        "md": "/downloads/md/layer-6/change-protocol.md",
-        "docx": "/downloads/docx/layer-6/change-protocol.docx",
-        "odt": "/downloads/odt/layer-6/change-protocol.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-6/change-protocol.md",
+          "docx": "/downloads/en/docx/layer-6/change-protocol.docx",
+          "odt": "/downloads/en/odt/layer-6/change-protocol.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-6/change-protocol.md",
+          "docx": "/downloads/de/docx/layer-6/change-protocol.docx",
+          "odt": "/downloads/de/odt/layer-6/change-protocol.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "896b1777",
       "relPath": "layer-6/experiment-template.md",
-      "title": "Experiment Template",
+      "layer": "layer-6",
+      "titles": {
+        "en": "Experiment Template",
+        "de": "Experiment-Vorlage"
+      },
       "files": {
-        "md": "/downloads/md/layer-6/experiment-template.md",
-        "docx": "/downloads/docx/layer-6/experiment-template.docx",
-        "odt": "/downloads/odt/layer-6/experiment-template.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-6/experiment-template.md",
+          "docx": "/downloads/en/docx/layer-6/experiment-template.docx",
+          "odt": "/downloads/en/odt/layer-6/experiment-template.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-6/experiment-template.md",
+          "docx": "/downloads/de/docx/layer-6/experiment-template.docx",
+          "odt": "/downloads/de/odt/layer-6/experiment-template.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "9a3f7c1e",
       "relPath": "layer-6/learning-log.md",
-      "title": "Learning Log",
+      "layer": "layer-6",
+      "titles": {
+        "en": "Learning Log",
+        "de": "Lernprotokoll"
+      },
       "files": {
-        "md": "/downloads/md/layer-6/learning-log.md",
-        "docx": "/downloads/docx/layer-6/learning-log.docx",
-        "odt": "/downloads/odt/layer-6/learning-log.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-6/learning-log.md",
+          "docx": "/downloads/en/docx/layer-6/learning-log.docx",
+          "odt": "/downloads/en/odt/layer-6/learning-log.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-6/learning-log.md",
+          "docx": "/downloads/de/docx/layer-6/learning-log.docx",
+          "odt": "/downloads/de/odt/layer-6/learning-log.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     },
     {
+      "id": "4c8e6d5b",
       "relPath": "layer-6/version-history.md",
-      "title": "Version History",
+      "layer": "layer-6",
+      "titles": {
+        "en": "Version History",
+        "de": "Versionshistorie"
+      },
       "files": {
-        "md": "/downloads/md/layer-6/version-history.md",
-        "docx": "/downloads/docx/layer-6/version-history.docx",
-        "odt": "/downloads/odt/layer-6/version-history.odt"
-      }
+        "en": {
+          "md": "/downloads/en/md/layer-6/version-history.md",
+          "docx": "/downloads/en/docx/layer-6/version-history.docx",
+          "odt": "/downloads/en/odt/layer-6/version-history.odt"
+        },
+        "de": {
+          "md": "/downloads/de/md/layer-6/version-history.md",
+          "docx": "/downloads/de/docx/layer-6/version-history.docx",
+          "odt": "/downloads/de/odt/layer-6/version-history.odt"
+        }
+      },
+      "availableLocales": [
+        "de",
+        "en"
+      ]
     }
   ]
 }

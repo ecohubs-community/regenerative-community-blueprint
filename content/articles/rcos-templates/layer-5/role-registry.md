@@ -15,14 +15,14 @@ order: 1
 
 *RCOS clauses: [7.1.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.1.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.1.4](/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.7.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why require every responsibility to have a named role?</summary>
 
 Ongoing responsibilities without explicit roles become invisible labor — done by whoever notices, resented silently, and impossible to hand over. Making every ongoing responsibility a named, accountable role is what prevents the community from running on the unpaid goodwill of a few members.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Distinguish operational roles (carrying delegated authority per the Decision Matrix) from functional roles (contribution-scoped, no special governance authority). State the "in good standing" definition you will use for eligibility.
@@ -48,14 +48,14 @@ This registry defines all recognized roles within the community. Roles are eithe
 
 *RCOS clauses: [7.1.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.1.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why define accountability for delegated authority?</summary>
 
 Operational roles carry real power — they can act without a community vote within their scope. That power only stays safe if each role has a clear accountability mechanism: who can raise concerns, how review happens, and how a role can be reassigned when trust breaks.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 For each operational role, fill in the template below with concrete scope, decision authority, interfaces, eligibility, term, appointment, review/removal, and handover requirements.
@@ -102,14 +102,14 @@ Operational roles carry delegated authority to act within explicitly defined lim
 
 *RCOS clauses: [7.1.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.1.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why separate functional from operational roles?</summary>
 
 Not every contribution needs delegated authority — most work is about doing, not deciding. Functional roles name contribution scopes without bundling in governance power, so members can opt into work without an authority transfer, and so the governance system stays clear about who can act on behalf of the community.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 For each functional role, define purpose, scope, interfaces, eligibility, and handover. Functional roles do not require a vote to assume — declaration is sufficient.

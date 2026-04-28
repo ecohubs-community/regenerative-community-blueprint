@@ -17,14 +17,14 @@ order: 3
 
 *RCOS clauses: [2.4.1](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.3](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.4](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why declare identity constraints explicitly?</summary>
 
 Every community has implicit rules — "we don't do that here." Implicit rules become tools of arbitrary enforcement: whoever has social power decides what they mean. Writing identity constraints down, and requiring them to be testable through defined processes, is what turns an informal norm into something a member can actually rely on or contest.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Each constraint must be testable and enforceable through a defined process — not vague aspirations. Common categories from RCOS §2.4.2: ethical/behavioural boundaries, participation prerequisites, non-negotiable cultural or ecological constraints. Reference Layer 4 for enforcement, Layer 1 for participation consequences.
@@ -44,14 +44,14 @@ Each constraint must be testable and enforceable through a defined process — n
 
 *RCOS clauses: [2.4.3](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.4](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why must constraints be testable, not informal?</summary>
 
 A constraint that cannot be tested is a constraint that gets enforced by whoever has the most social capital in the room. Defining how each constraint is detected, who raises it, and through which process it is resolved is what prevents identity rules from becoming tools of arbitrary exclusion.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 For each constraint above (or as a general policy), describe how a violation is identified and addressed. Reference the Conflict Resolution Ladder (Layer 4) and any role responsible for monitoring (Layer 5).
@@ -66,7 +66,7 @@ For each constraint above (or as a general policy), describe how a violation is 
 
 *RCOS clauses: [2.4.1](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.5.2](/articles/rcos-core/v0-1/layer-0-identity-scope#25-artifacts)*
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Identity constraints are constitutional — describe the decision type, threshold, and ratification process required to add, remove, or amend a constraint.

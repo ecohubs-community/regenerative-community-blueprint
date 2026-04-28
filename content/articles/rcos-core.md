@@ -2,7 +2,7 @@
 id: fdd280ae
 title: RCOS Core
 parentId: null
-order: 0
+order: 1
 ---
 
 ## What RCOS Is

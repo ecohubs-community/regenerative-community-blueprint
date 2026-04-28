@@ -1,8 +1,17 @@
-import { readArticleMeta } from './content';
+import { readArticleMeta, type ArticleMeta } from './content';
+import { DEFAULT_LOCALE } from '$lib/i18n/languages';
 
 /**
- * Unified Article - the single content type in the new system
- * Articles can have parent-child relationships forming a tree hierarchy
+ * Unified Article — the single content type in the system.
+ * Articles can have parent-child relationships forming a tree hierarchy.
+ *
+ * `lang`              — locale of the served metadata (may be DEFAULT_LOCALE on fallback).
+ * `availableLocales`  — every locale this article exists in (for hreflang / switcher dimming).
+ * `isFallback`        — true if the requested locale was not the served one.
+ * `sortKey`           — the canonical (default-locale) title, used as the alphabetical
+ *                       tiebreaker so the sidebar order stays stable across locales.
+ *                       Without this, "Themen" and "Topics" would sort to different
+ *                       positions and the German sidebar would shuffle visibly.
  */
 export type Article = {
   id: string;
@@ -15,6 +24,10 @@ export type Article = {
   children: Article[];
   tags?: string[];
   attachments?: { file: string; caption?: string }[];
+  lang: string;
+  availableLocales: string[];
+  isFallback: boolean;
+  sortKey: string;
 };
 
 export type ArticleTree = Article[];
@@ -22,50 +35,100 @@ export type ArticleTree = Article[];
 export type Graph = {
   articles: Article[];
   articleTree: ArticleTree;
+  locale: string;
 };
 
 /**
- * Build the unified article graph with tree structure
+ * Build the article graph for a given locale.
+ *
+ * Strategy: read every article × every locale, group by `id`, and for each
+ * article pick the entry in `locale` if it exists, otherwise the default-locale
+ * entry. Structural fields (slug, parentId, order) come from the *source*
+ * article — translations never override structure, so the tree shape stays
+ * stable across locales.
+ *
+ * `availableLocales` is computed per article from the set of files actually
+ * present, so the language switcher can dim locales without translations.
  */
-export async function buildGraph(): Promise<Graph> {
-  const articleTree = await buildArticleTree();
+export async function buildGraph(locale: string = DEFAULT_LOCALE): Promise<Graph> {
+  const rawArticles = await readArticleMeta();
+
+  // Group entries by id. Each group has up to one entry per locale.
+  const groups = new Map<string, Map<string, ArticleMeta>>();
+  for (const entry of rawArticles) {
+    const id = (entry.id as string) || entry.slug;
+    if (!groups.has(id)) groups.set(id, new Map());
+    groups.get(id)!.set(entry.lang ?? DEFAULT_LOCALE, entry);
+  }
+
+  // Resolve each group to an Article in the requested locale (with fallback).
+  const articleMap = new Map<string, Article>();
+  for (const [id, byLang] of groups) {
+    const source = byLang.get(DEFAULT_LOCALE);
+    if (!source) {
+      // No default-locale source — use whichever exists. This shouldn't normally
+      // happen (translations require a source) but we degrade gracefully.
+      const first = byLang.values().next().value;
+      if (!first) continue;
+      const fallbackSortKey = coerceTitle(first.title, first.slug);
+      articleMap.set(id, toArticle(first, [...byLang.keys()], false, fallbackSortKey));
+      continue;
+    }
+
+    const requested = byLang.get(locale);
+    const chosen = requested ?? source;
+    const isFallback = !requested && locale !== DEFAULT_LOCALE;
+
+    // Translations carry localized title/summary but inherit structural fields
+    // (slug, parentId, order) from the source — that way moving an article in
+    // English moves all translations too.
+    const merged: ArticleMeta = {
+      ...source,
+      title: chosen.title ?? source.title,
+      summary: chosen.summary ?? source.summary,
+      lang: chosen.lang ?? DEFAULT_LOCALE,
+      filePath: chosen.filePath
+    };
+
+    // Sort key always comes from the default-locale source — never from `chosen`.
+    // That keeps the sidebar/menu order identical between /foo and /de/foo even
+    // when localized titles would shuffle alphabetically (e.g. "Topics" vs "Themen").
+    const sortKey = coerceTitle(source.title, source.slug);
+    articleMap.set(id, toArticle(merged, [...byLang.keys()].sort(), isFallback, sortKey));
+  }
+
+  const articleTree = buildTree(articleMap);
   const articles = flattenArticleTree(articleTree);
-  
+
+  return { articles, articleTree, locale };
+}
+
+function toArticle(
+  entry: ArticleMeta,
+  availableLocales: string[],
+  isFallback: boolean,
+  sortKey: string
+): Article {
   return {
-    articles,
-    articleTree
+    id: (entry.id as string) || entry.slug,
+    slug: entry.slug,
+    title: coerceTitle(entry.title, entry.slug),
+    summary: coerceOptionalString(entry.summary),
+    icon: coerceOptionalString(entry.icon),
+    parentId: entry.parentId as string | null | undefined,
+    order: coerceOptionalNumber(entry.order),
+    children: [],
+    tags: normalizeList(entry.tags),
+    attachments: Array.isArray(entry.attachments) ? entry.attachments : undefined,
+    lang: entry.lang ?? DEFAULT_LOCALE,
+    availableLocales,
+    isFallback,
+    sortKey
   };
 }
 
-/**
- * Build a unified article tree from articles with parentId relationships
- */
-export async function buildArticleTree(): Promise<ArticleTree> {
-  const rawArticles = await readArticleMeta();
-  
-  const articleMap = new Map<string, Article>();
-  
-  // First pass: create all article nodes
-  for (const entry of rawArticles) {
-    const id = entry.id || entry.slug;
-    const article: Article = {
-      id,
-      slug: entry.slug,
-      title: coerceTitle(entry.title, entry.slug),
-      summary: coerceOptionalString(entry.summary),
-      icon: coerceOptionalString(entry.icon),
-      parentId: entry.parentId as string | null | undefined,
-      order: coerceOptionalNumber(entry.order),
-      children: [],
-      tags: normalizeList(entry.tags),
-      attachments: Array.isArray(entry.attachments) ? entry.attachments : undefined
-    };
-    articleMap.set(id, article);
-  }
-  
-  // Second pass: build tree structure
+function buildTree(articleMap: Map<string, Article>): ArticleTree {
   const rootArticles: Article[] = [];
-  
   articleMap.forEach((article) => {
     if (article.parentId && articleMap.has(article.parentId)) {
       const parent = articleMap.get(article.parentId)!;
@@ -74,10 +137,16 @@ export async function buildArticleTree(): Promise<ArticleTree> {
       rootArticles.push(article);
     }
   });
-  
-  // Sort by order, then by title
   sortArticles(rootArticles);
   return rootArticles;
+}
+
+/**
+ * Build the unified article tree directly (kept for compatibility with callers
+ * that don't need the flat list).
+ */
+export async function buildArticleTree(locale: string = DEFAULT_LOCALE): Promise<ArticleTree> {
+  return (await buildGraph(locale)).articleTree;
 }
 
 /**
@@ -85,7 +154,7 @@ export async function buildArticleTree(): Promise<ArticleTree> {
  */
 function flattenArticleTree(tree: ArticleTree): Article[] {
   const result: Article[] = [];
-  
+
   function traverse(articles: Article[]) {
     for (const article of articles) {
       result.push(article);
@@ -94,21 +163,25 @@ function flattenArticleTree(tree: ArticleTree): Article[] {
       }
     }
   }
-  
+
   traverse(tree);
   return result;
 }
 
 /**
- * Sort articles recursively by order, then by title
+ * Sort articles recursively by `order` (numeric, ascending), with the source-
+ * locale `sortKey` as the alphabetical tiebreaker. Using the localized `title`
+ * here would shuffle the menu when the locale changes — German "Themen" and
+ * English "Topics" sort to different positions even when they refer to the
+ * same article.
  */
 function sortArticles(articles: Article[]) {
   articles.sort((a, b) => {
     const orderDiff = (a.order ?? 0) - (b.order ?? 0);
     if (orderDiff !== 0) return orderDiff;
-    return a.title.localeCompare(b.title);
+    return a.sortKey.localeCompare(b.sortKey);
   });
-  articles.forEach(article => {
+  articles.forEach((article) => {
     if (article.children.length > 0) {
       sortArticles(article.children);
     }

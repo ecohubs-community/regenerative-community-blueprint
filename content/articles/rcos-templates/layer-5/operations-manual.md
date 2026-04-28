@@ -15,14 +15,14 @@ order: 0
 
 *RCOS clauses: [7.3.4](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.7.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants), [7.6.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why document critical processes?</summary>
 
 If a process only lives in one person's head, the community depends on that person showing up — forever. Writing the critical processes down, with named owners, is what converts private knowledge into a community asset that survives handovers, absences, and exits.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 For every recurring critical process (onboarding, exit, proposal publication, contribution recording, meeting cadence, treasury management, platform access review), name an owner and a brief description.
@@ -43,14 +43,14 @@ For every recurring critical process (onboarding, exit, proposal publication, co
 
 *RCOS clauses: [7.1.5](/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.1.4](/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.7.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why cap temporary responsibilities?</summary>
 
 Ad-hoc tasks quietly calcify into permanent unpaid jobs — usually on whoever said yes once. A hard time-box and a forced review make the difference between "I covered for a week" and "apparently this is my role now."
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 State that any temporary responsibility must be time-bounded at assignment, documented, reviewed before expiry, and either formalised or terminated.
@@ -71,14 +71,14 @@ _<Maximum duration of any temporary responsibility before it must be formally as
 
 *RCOS clauses: [7.6.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts), [7.3.4](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why map handoffs explicitly?</summary>
 
 Most operational failures happen not inside a role but between roles — at the boundaries where work moves from one owner to the next. Naming the handoffs turns invisible dependencies into reviewable ones, and prevents "I thought you had it" failures.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 For each pair of roles that pass work to each other, name the handoff and the type of work transferred.
@@ -94,14 +94,14 @@ For each pair of roles that pass work to each other, name the handoff and the ty
 
 *RCOS clauses: [7.4.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.7.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why make workload limits explicit?</summary>
 
 Unbounded coordination load is the default failure mode of volunteer communities — it quietly burns out the most committed members until they leave. Explicit, reviewable limits make capacity a shared concern rather than a private burden.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Set bounds on meeting load, role load, response-time expectations, and the path for renegotiating responsibilities.
@@ -117,14 +117,14 @@ Set bounds on meeting load, role load, response-time expectations, and the path 
 
 *RCOS clauses: [7.5.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#75-operational-continuity), [7.5.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#75-operational-continuity), [7.5.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#75-operational-continuity)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why plan for continuity now?</summary>
 
 A community that depends on one irreplaceable person is one illness, one conflict, or one exit away from collapse. Naming the single points of failure — honestly — and building handover into every role is what keeps the community surviving its founders.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 Name current single points of failure honestly. State the handover requirement for each role and the cadence of continuity review.
@@ -139,14 +139,14 @@ Name current single points of failure honestly. State the handover requirement f
 
 *RCOS clauses: [7.3.5](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.7.4](/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants), [7.3.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why treat information access as a governance issue?</summary>
 
 Whoever controls access to information controls the community, whether they mean to or not. Making access rules explicit — and disallowing sole points of access — is what prevents informal gatekeepers from accumulating the kind of power the governance system is supposed to check.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 State which records are open to all Full Members, the response window for information requests, and the rule against sole points of access for governance-relevant information.
@@ -167,14 +167,14 @@ State which records are open to all Full Members, the response window for inform
 
 *RCOS clauses: [7.3.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why name where every document lives?</summary>
 
 If no one can say where the canonical version of something lives, there is no canonical version. Naming the location, owner, and review cadence for each document type is what makes the community's memory auditable rather than folkloric.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 For each document type, name the canonical location, the owner, and the review cadence.

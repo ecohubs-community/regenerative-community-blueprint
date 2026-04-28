@@ -3,7 +3,10 @@
 declare global {
 	namespace App {
 		// interface Error {}
-		// interface Locals {}
+		interface Locals {
+			/** Resolved locale for this request (URL prefix > cookie > Accept-Language > default). */
+			locale: string;
+		}
 		// interface PageData {}
 		// interface PageState {}
 		// interface Platform {}

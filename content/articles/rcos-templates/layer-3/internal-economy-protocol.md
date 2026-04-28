@@ -15,14 +15,14 @@ order: 0
 
 *RCOS clauses: [5.1.1](/articles/rcos-core/v0-1/layer-3-economic-resource-system#51-commons-vs-private-resources), [5.1.2](/articles/rcos-core/v0-1/layer-3-economic-resource-system#51-commons-vs-private-resources), [5.1.3](/articles/rcos-core/v0-1/layer-3-economic-resource-system#51-commons-vs-private-resources), [5.1.4](/articles/rcos-core/v0-1/layer-3-economic-resource-system#51-commons-vs-private-resources), [5.1.5](/articles/rcos-core/v0-1/layer-3-economic-resource-system#51-commons-vs-private-resources), [5.6.2](/articles/rcos-core/v0-1/layer-3-economic-resource-system#56-layer-invariants)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why classify every resource?</summary>
 
 Unclassified resources are where quiet privatization happens — someone starts treating a shared asset as personal, or a private asset gets quietly absorbed into community obligations, and by the time anyone notices the norm has shifted. Explicit classification, with stewards and transfer rules named up front, makes any change to that status a visible governance act rather than a creeping fact.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 For each resource the community holds, declare classification (Commons / Private), name a steward, define access rules, and state transfer constraints. Unclassified resources must not be allocated, encumbered, monetized, or transferred until classified.
@@ -43,14 +43,14 @@ For each resource the community holds, declare classification (Commons / Private
 
 *RCOS clauses: [5.2.1](/articles/rcos-core/v0-1/layer-3-economic-resource-system#52-contribution-recognition), [5.2.3](/articles/rcos-core/v0-1/layer-3-economic-resource-system#52-contribution-recognition), [5.6.3](/articles/rcos-core/v0-1/layer-3-economic-resource-system#56-layer-invariants)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why name the kinds of work that count?</summary>
 
 If the community never says out loud which kinds of work it depends on, the invisible work — care, facilitation, moderation, stewardship — stays invisible, and the people doing it burn out or leave. Enumerating categories converts "someone just does this" into recognized labour the system has to account for.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 List the categories of contribution your community recognizes. Care, facilitation, stewardship, and informal participation are commonly under-recognized — name them explicitly if they apply.
@@ -71,14 +71,14 @@ List the categories of contribution your community recognizes. Care, facilitatio
 
 *RCOS clauses: [5.2.2](/articles/rcos-core/v0-1/layer-3-economic-resource-system#52-contribution-recognition), [5.2.5](/articles/rcos-core/v0-1/layer-3-economic-resource-system#52-contribution-recognition)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why pin down how recognition actually works?</summary>
 
 Without a defined mechanism, "who gets credit" becomes a matter of who is loudest or closest to whoever decides. Specifying what qualifies, how it's recorded, who validates, and how to dispute it turns recognition into something a member can actually rely on — and blocks recognition from silently mutating into governance influence.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 State what qualifies, how recognitions are recorded, who validates, what they unlock (or do not unlock), and how members dispute a record.
@@ -95,14 +95,14 @@ State what qualifies, how recognitions are recorded, who validates, what they un
 
 *RCOS clauses: [5.2.4](/articles/rcos-core/v0-1/layer-3-economic-resource-system#52-contribution-recognition), [5.2.5](/articles/rcos-core/v0-1/layer-3-economic-resource-system#52-contribution-recognition)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why define internal units this precisely?</summary>
 
 Internal units tend to grow powers no one voted for — decay, caps, transferability, governance weight — unless each property is nailed down in writing. Listing issuance, transfer rules, privacy, and explicit non-governance status makes the units tools of recognition rather than quiet shadow currencies.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 If your community uses internal units (XP, ECO, credits, etc.), define each unit's purpose, issuance, transferability, decay, cap, fraud prevention, and privacy. Explicitly state that units do not grant governance rights beyond the membership state.
@@ -125,14 +125,14 @@ If your community uses internal units (XP, ECO, credits, etc.), define each unit
 
 *RCOS clauses: [5.4.1](/articles/rcos-core/v0-1/layer-3-economic-resource-system#54-accumulation-constraints), [5.4.2](/articles/rcos-core/v0-1/layer-3-economic-resource-system#54-accumulation-constraints), [5.4.3](/articles/rcos-core/v0-1/layer-3-economic-resource-system#54-accumulation-constraints), [5.4.4](/articles/rcos-core/v0-1/layer-3-economic-resource-system#54-accumulation-constraints), [5.6.4](/articles/rcos-core/v0-1/layer-3-economic-resource-system#56-layer-invariants)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why constrain accumulation at all?</summary>
 
 Any internal unit that can pile up without limit eventually becomes leverage — a few members with large balances gain informal sway the governance system never granted them. Stating accumulation rules explicitly, even when the current rule is "none yet," keeps the question open and forces a visible decision before concentration becomes a structural problem.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 State the current accumulation rule (cap, decay, none) and the rule that no internal unit may be converted into governance authority.
@@ -147,14 +147,14 @@ State the current accumulation rule (cap, decay, none) and the rule that no inte
 
 *RCOS clauses: [5.3.2](/articles/rcos-core/v0-1/layer-3-economic-resource-system#53-treasury-management)*
 
-<details>
+<details data-kind="rationale">
 <summary>Why require approval before money arrives?</summary>
 
 Once funds are in hand, the conversation shifts from "should we accept this?" to "what do we do with it?" — and the conditions attached to the income (grant terms, partnership obligations, service commitments) are often already locked in. Requiring a Strategic decision before any new income channel opens keeps the community in control of what it takes on.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 List current declared income channels, name potential future channels, and require Strategic approval before any new channel is opened.
@@ -167,14 +167,14 @@ List current declared income channels, name potential future channels, and requi
 
 ## Dispute Resolution for Economic Records
 
-<details>
+<details data-kind="rationale">
 <summary>Why time-box economic disputes?</summary>
 
 Contribution and balance records accumulate fast; if disputes could be raised indefinitely, the ledger would never settle and every historical credit would stay contestable. A defined window with a named resolver and an appeal path gives members a real chance to correct errors without leaving the whole economic history perpetually unstable.
 
 </details>
 
-<details>
+<details data-kind="instructions">
 <summary>How to fill this in</summary>
 
 State the dispute window, named resolver, and appeal path. Reference the Contribution Recognition Mechanism for the full process.
