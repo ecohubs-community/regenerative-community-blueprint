@@ -26,6 +26,7 @@
 import { page } from '$app/state';
 import enMessages from './messages/en.json' with { type: 'json' };
 import deMessages from './messages/de.json' with { type: 'json' };
+import esMessages from './messages/es.json' with { type: 'json' };
 import { DEFAULT_LOCALE } from './languages';
 
 export type Messages = Record<string, string>;
@@ -33,7 +34,8 @@ export type Messages = Record<string, string>;
 /** Registry of loaded message bundles. Add a new locale by importing its JSON above. */
 export const MESSAGES: Record<string, Messages> = {
 	en: enMessages as Messages,
-	de: deMessages as Messages
+	de: deMessages as Messages,
+	es: esMessages as Messages
 };
 
 /** Replace {name} placeholders with values from `vars`. */

@@ -52,6 +52,19 @@ const REPLACEMENTS = {
 		[/\bRECOMMENDED\b/g, 'EMPFOHLEN'],
 		[/\bREQUIRED\b/g, 'ERFORDERLICH']
 		// OPTIONAL stays the same in German — same word.
+	],
+	es: [
+		// Spanish convention for RFC 2119 normative keywords. Most published
+		// Spanish translations of internet RFCs use these forms. Order matters:
+		// negated forms first so "MUST" doesn't snag inside "MUST NOT".
+		[/\bMUST NOT\b/g, 'NO DEBE'],
+		[/\bSHOULD NOT\b/g, 'NO DEBERÍA'],
+		[/\bMUST\b/g, 'DEBE'],
+		[/\bSHOULD\b/g, 'DEBERÍA'],
+		[/\bMAY\b/g, 'PUEDE'],
+		[/\bRECOMMENDED\b/g, 'RECOMENDADO'],
+		[/\bREQUIRED\b/g, 'REQUERIDO'],
+		[/\bOPTIONAL\b/g, 'OPCIONAL']
 	]
 };
 

@@ -1,26 +1,24 @@
 #!/usr/bin/env node
 /**
- * Normalize German technical terms across `.de.md` translations so the
- * vocabulary stays consistent regardless of which translator (or session)
- * produced each file.
+ * Normalize project-specific technical terms across `.<lang>.md` translations
+ * so the vocabulary stays consistent regardless of which translator (or
+ * session) produced each file. Locale-pluggable: drop a new entry into
+ * REPLACEMENTS to add a target language.
  *
- * Today this fixes one specific inconsistency: the RCOS "Layer N" concept
- * was rendered three different ways in the corpus — "Layer 4", "Schicht 1",
- * "Ebene 0" — depending on which file got translated when. The parent
- * article (rcos-layers.de.md → "RCOS-Schichten") and the established
- * German technical convention both point to "Schicht", so we normalize on
- * that.
+ *   pnpm run normalize:terms -- --locale de        # German
+ *   pnpm run normalize:terms -- --locale es        # Spanish
+ *   pnpm run normalize:terms -- --locale de --dry-run
  *
- *   pnpm run normalize:de-terms                    # apply
- *   pnpm run normalize:de-terms -- --dry-run       # preview
+ * Today this owns the RCOS "Layer N" concept across locales — the German
+ * corpus had drifted into using three different words ("Layer", "Schicht",
+ * "Ebene") for the same idea, and we want the same kind of stability for
+ * Spanish from day one. The parent article uses the locale-specific
+ * convention ("Schichten" / "Capas") so the children should match.
  *
- * Idempotent: running it twice is a no-op. Locale-pluggable via the
- * REPLACEMENTS table; mirror this for other locales as they get added.
- *
- * Why a script and not a re-translation pass: the bodies are otherwise
- * fine — only the noun for one concept needs swapping. Re-translating ~30
- * articles to fix one term wastes Claude Code usage and translator review
- * time.
+ * Idempotent: running it twice is a no-op. Why a script rather than a
+ * re-translation pass: the bodies are otherwise fine — only the noun for
+ * one concept needs swapping. Re-translating ~30 articles to fix one term
+ * wastes API budget / Claude Code usage and translator review time.
  */
 import { readdir, readFile, writeFile, stat } from 'node:fs/promises';
 import path from 'node:path';
@@ -32,13 +30,22 @@ const ARTICLES_DIR = path.join(ROOT, 'content/articles');
 
 // Per-locale rules. Each rule is [regex, replacement] applied in order;
 // list longer / more-specific patterns first if you add ones that overlap.
+//
+// Word boundaries (\b) protect against false matches in slugs like `layer-0`
+// (kebab-case anyway). Number range 0–9 covers RCOS layers; widen if needed.
 const REPLACEMENTS = {
 	de: [
-		// "Ebene N" and "Layer N" → "Schicht N" (the parent article's term).
-		// Word boundaries protect against false matches in slugs like `layer-0`,
-		// which use kebab-case anyway. Number range 0–9 covers RCOS layers.
+		// "Layer N" and "Ebene N" → "Schicht N" (the parent article's term).
 		[/\bLayer (\d)\b/g, 'Schicht $1'],
 		[/\bEbene (\d)\b/g, 'Schicht $1']
+	],
+	es: [
+		// "Layer N" → "Capa N" — the standard Spanish term in protocol-stack
+		// contexts (cf. "capas OSI"). "Nivel" is also seen in some literature
+		// but "Capa" is more specific to layered architectures and matches the
+		// parent article's "Capas RCOS" convention.
+		[/\bLayer (\d)\b/g, 'Capa $1'],
+		[/\bNivel (\d)\b/g, 'Capa $1']
 	]
 };
 
@@ -51,13 +58,13 @@ function parseArgs(argv) {
 		if (a === '--locale') out.locale = argv[++i];
 		else if (a === '--dry-run') out.dryRun = true;
 		else if (a === '-h' || a === '--help') {
-			console.log('Usage: normalize-de-terms.mjs [--locale <code>] [--dry-run]');
+			console.log('Usage: normalize-terms.mjs [--locale <code>] [--dry-run]');
 			process.exit(0);
 		}
 	}
 	if (!REPLACEMENTS[out.locale]) {
 		console.error(
-			`error: no replacement table for locale "${out.locale}". Add one to scripts/normalize-de-terms.mjs.`
+			`error: no replacement table for locale "${out.locale}". Add one to scripts/normalize-terms.mjs.`
 		);
 		process.exit(1);
 	}
@@ -76,20 +83,6 @@ async function walkLangMd(dir, suffix) {
 }
 
 function normalize(content, table) {
-	let out = content;
-	let replacements = 0;
-	for (const [pattern, replacement] of table) {
-		out = out.replace(pattern, (match, ...rest) => {
-			replacements++;
-			return typeof replacement === 'function' ? replacement(match, ...rest) : match.replace(pattern, replacement);
-		});
-	}
-	return { out, replacements };
-}
-
-// The above is overly clever; keep it simple — string-style replacement with
-// regex captures works fine and is what we actually need here.
-function normalizeSimple(content, table) {
 	let out = content;
 	let replacements = 0;
 	for (const [pattern, replacement] of table) {
@@ -113,7 +106,7 @@ async function main() {
 	for (const filePath of files) {
 		const rel = path.relative(ROOT, filePath);
 		const raw = await readFile(filePath, 'utf8');
-		const { out, replacements } = normalizeSimple(raw, table);
+		const { out, replacements } = normalize(raw, table);
 		if (replacements === 0 || out === raw) continue;
 
 		changedFiles++;

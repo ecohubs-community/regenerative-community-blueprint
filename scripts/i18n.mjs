@@ -54,6 +54,25 @@ export const DOWNLOADS_I18N = {
 		bundleNote:
 			'Jede Vorlage enthält einen Begründungsblock (warum der Abschnitt existiert) und eine Anleitung (wie er ausgefüllt wird).',
 		bundleSectionHeading: 'Vorlagen'
+	},
+	es: {
+		siteName: 'RCOS — Sistema Operativo de Comunidad Regenerativa',
+		generated: 'Generado',
+		source: 'Fuente (versión más reciente)',
+		allTemplates: 'Todas las plantillas RCOS',
+		translatedFromEnglish:
+			'Este contenido aún no está traducido al español; se muestra la fuente en inglés.',
+		toc: 'Índice',
+		aboutCore: 'Acerca de RCOS Core',
+		coreSpecTitle: 'Especificación RCOS Core — v0.1',
+		rationale: 'Justificación',
+		instructions: 'Instrucciones',
+		bundleHeading: 'Plantillas RCOS',
+		bundleIntro:
+			'Este paquete contiene todas las plantillas RCOS, listas para copiar y adaptar a tu comunidad.',
+		bundleNote:
+			'Cada plantilla incluye un bloque de justificación (por qué existe la sección) e instrucciones (cómo rellenarla).',
+		bundleSectionHeading: 'Plantillas'
 	}
 };
 

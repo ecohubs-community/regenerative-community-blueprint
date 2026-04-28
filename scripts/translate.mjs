@@ -242,7 +242,10 @@ Rules:
 
 4. **Identifiers and references**
    - Keep clause references like "§2.4.1", section numbers, and ISO/RFC document IDs (e.g. "RFC 2119") unchanged.
-   - **Translate RFC-2119-style normative keywords** (MUST, MUST NOT, SHOULD, SHOULD NOT, MAY, REQUIRED, RECOMMENDED, OPTIONAL) to their conventional UPPERCASE equivalents in the target language so the normative emphasis is preserved. For German specifically: MUST → MUSS, MUST NOT → DARF NICHT, SHOULD → SOLLTE, SHOULD NOT → SOLLTE NICHT, MAY → KANN, REQUIRED → ERFORDERLICH, RECOMMENDED → EMPFOHLEN, OPTIONAL → OPTIONAL. Apply this both inside backticks (\`MUSS\`) and inline in prose. For other languages, use the established translation of RFC 2119 keywords; if none is established, keep the English original.
+   - **Translate RFC-2119-style normative keywords** (MUST, MUST NOT, SHOULD, SHOULD NOT, MAY, REQUIRED, RECOMMENDED, OPTIONAL) to their conventional UPPERCASE equivalents in the target language so the normative emphasis is preserved.
+     - **German**: MUST → MUSS, MUST NOT → DARF NICHT, SHOULD → SOLLTE, SHOULD NOT → SOLLTE NICHT, MAY → KANN, REQUIRED → ERFORDERLICH, RECOMMENDED → EMPFOHLEN, OPTIONAL → OPTIONAL.
+     - **Spanish**: MUST → DEBE, MUST NOT → NO DEBE, SHOULD → DEBERÍA, SHOULD NOT → NO DEBERÍA, MAY → PUEDE, REQUIRED → REQUERIDO, RECOMMENDED → RECOMENDADO, OPTIONAL → OPCIONAL.
+     Apply this both inside backticks (\`DEBE\`) and inline in prose. For other languages, use the established translation of RFC 2119 keywords; if none is established, keep the English original.
    - Keep technical terms that are conventionally kept in English in the target language (e.g., "API", "Git", "Markdown", "MD5") — translate the surrounding prose only.
 
 5. **Tone and register**
@@ -251,8 +254,10 @@ Rules:
    - For other languages: prefer the natural informal register a community organizer would use, unless the source is clearly formal.
 
 6. **Glossary — keep this consistent across articles**
-   - **Layer N** (the RCOS protocol-stack concept) → **Schicht N** in German. Always "Schicht", never "Ebene" or "Layer". Applies in titles, prose, and inside backticks. Examples: "Layer 0" → "Schicht 0", "Layer 2 governance" → "Governance auf Schicht 2".
-   - For other languages, pick the natural translation of "layer" used in protocol-stack contexts and apply it consistently.`;
+   - **Layer N** (the RCOS protocol-stack concept):
+     - **German**: → **Schicht N**. Always "Schicht", never "Ebene" or "Layer". Examples: "Layer 0" → "Schicht 0", "Layer 2 governance" → "Governance auf Schicht 2".
+     - **Spanish**: → **Capa N**. Always "Capa", never "Nivel" or "Layer". Examples: "Layer 0" → "Capa 0", "Layer 2 governance" → "gobernanza en la Capa 2".
+   - Applies in titles, prose, and inside backticks. For other languages, pick the natural translation of "layer" used in protocol-stack contexts and apply it consistently.`;
 
 function buildUserPrompt(job) {
 	const language = LANGUAGE_NAMES[args.locale] ?? args.locale;
