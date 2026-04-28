@@ -770,16 +770,16 @@ The previous plan proposed articles → UI → tooling. **Inverted recommendatio
 
 **Exit criteria:** ✓ the smoke-test article serves at `/de/articles/rcos-core/v0-1/introduction` with full German content; untranslated articles serve under the `/de/` URL with the canonical English body and a German-language fallback banner; sitemap emits bidirectional hreflang only for translated articles. Verified in prerendered output for both prefixes.
 
-### Phase 4 — Downloads pipeline (1–2 days)
+### Phase 4 — Downloads pipeline (1–2 days)  ✓
 
-1. Refactor `build-templates.mjs` and `build-core.mjs` to accept `--locale` and emit to `static/downloads/<locale>/`.
-2. Move preamble strings to `scripts/i18n.mjs`.
-3. Locale-aware `flattenDetails()`.
-4. New manifest schema (§3.2).
-5. Update `getTemplateDownloads(slug, locale)` and the `TemplateDownloads` component for locale fallback.
-6. Generate `de` artifacts, commit them, verify on Vercel.
+1. ✓ `build-templates.mjs` and `build-core.mjs` now iterate over every registered locale and emit to `static/downloads/<locale>/...`.
+2. ✓ Preamble strings (`Generated`/`Generiert`, `Source`/`Quelle`, `Rationale`/`Begründung`, etc.) live in `scripts/i18n.mjs`, shared with `flattenDetails()` so blockquote markers also localize.
+3. ✓ Locale-aware `flattenDetails()` keys on `data-kind` and looks up labels from the per-locale strings table.
+4. ✓ New manifest schema with `defaultLocale`, `locales`, per-locale `bundles`, and per-template `titles`/`files`/`availableLocales` exactly as in §3.2.
+5. ✓ `getTemplateDownloads(slug, locale)` and `getArticleDownloads(slug, locale)` resolve the served locale (requested → default → first available) and report `servedLocale` + `isFallback`. `TemplateDownloads.svelte` shows a banner when the bundle is a fallback and an "EN-Fallback" badge per template that isn't translated to the active locale.
+6. ✓ `pnpm run build:downloads` regenerates everything per locale; artifacts committed under `static/downloads/<locale>/...`.
 
-**Exit criteria:** `/de/articles/rcos-templates` shows German zip bundles; a German template's article page offers German `.md` / `.docx` / `.odt`.
+**Exit criteria:** ✓ `/de/articles/rcos-templates` shows the bundle download UI in German with a fallback banner ("Für diese Sprache sind noch keine Übersetzungen verfügbar"), all 22 templates display the EN-Fallback badge with German tooltips, and bundle URLs gracefully resolve to `/downloads/en/*` until German template translations land. The smoke-test core spec at `/de/articles/rcos-core/v0-1` correctly serves `/downloads/de/rcos-core-v0-1.md` (with German preamble + German "0. Einführung" section + English fallback for the rest, with inline notices on each fallback section).
 
 ### Phase 5 — Bulk translation + drift detection (ongoing)
 

@@ -78,6 +78,9 @@
 	"downloads.format.odt.hint": "Open standard · LibreOffice, Word, Google Docs",
 	"downloads.format.download_as": "Download {title} as {format}",
 	"downloads.all_link": "Download all templates",
+	"downloads.bundle_fallback": "No translations are available for this language yet — the bundle is served in {served}.",
+	"downloads.template_fallback_inline": "Not yet translated — the file is served in {served}.",
+	"downloads.template_fallback_tooltip": "Not yet translated to your selected language — falls back to English.",
 
 	"footer.brand_prefix": "RCOS Blueprint by",
 	"footer.tagline": "A modular operating system that defines how intentional communities organize — from governance and roles to resource sharing and conflict resolution — in support of resilience, fairness, and regeneration.",

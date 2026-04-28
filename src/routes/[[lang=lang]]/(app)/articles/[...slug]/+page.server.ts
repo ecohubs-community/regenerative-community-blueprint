@@ -15,7 +15,7 @@ export const entries: EntryGenerator = async () => {
 export const load: PageServerLoad = async ({ params }) => {
   const locale = params.lang ?? DEFAULT_LOCALE;
   const article = await readArticleBody(params.slug, locale);
-  const downloads = getArticleDownloads(params.slug);
+  const downloads = getArticleDownloads(params.slug, locale);
 
   // Look up the article in the locale-specific graph so the page can render at
   // SSR without depending on the client-side store. Also yields availableLocales

@@ -78,6 +78,9 @@
 	"downloads.format.odt.hint": "Offener Standard · LibreOffice, Word, Google Docs",
 	"downloads.format.download_as": "{title} als {format} herunterladen",
 	"downloads.all_link": "Alle Vorlagen herunterladen",
+	"downloads.bundle_fallback": "Für diese Sprache sind noch keine Übersetzungen verfügbar – das Bündel wird auf {served} ausgeliefert.",
+	"downloads.template_fallback_inline": "Noch nicht übersetzt – die Datei wird auf {served} ausgeliefert.",
+	"downloads.template_fallback_tooltip": "Noch nicht in deine gewählte Sprache übersetzt – Rückfall auf Englisch.",
 
 	"footer.brand_prefix": "RCOS Blueprint von",
 	"footer.tagline": "Ein modulares Betriebssystem, das festlegt, wie intentionale Gemeinschaften sich organisieren – von Governance und Rollen über Ressourcenteilung bis zur Konfliktlösung – im Dienst von Resilienz, Fairness und Regeneration.",

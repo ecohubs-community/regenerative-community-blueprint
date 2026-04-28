@@ -4,13 +4,13 @@
 	import type { ArticleDownloads } from '$lib/server/downloads';
 	import { m } from '$lib/i18n';
 	import { localized } from '$lib/i18n/path';
-	import { DEFAULT_LOCALE } from '$lib/i18n/languages';
+	import { DEFAULT_LOCALE, getLocale } from '$lib/i18n/languages';
 
 	let { downloads }: { downloads: ArticleDownloads } = $props();
 
 	const locale = $derived((page.data?.locale as string | undefined) ?? DEFAULT_LOCALE);
 
-	// Format metadata is stable; the labels and hints are translated.
+	// Format metadata is stable; the labels and hints come from the messages.
 	const FORMAT_INFO: Record<string, { icon: string; labelKey: string; hintKey: string }> = {
 		md: {
 			icon: 'tabler:markdown',
@@ -28,6 +28,8 @@
 			hintKey: 'downloads.format.odt.hint'
 		}
 	};
+
+	const servedLocaleName = $derived(getLocale(downloads.servedLocale).englishName);
 </script>
 
 {#if downloads.type === 'index'}
@@ -46,6 +48,14 @@
 			<p class="text-text-tertiary text-xs">
 				{m('downloads.generated', { date: downloads.generated })}
 			</p>
+			{#if downloads.isFallback}
+				<p
+					class="flex items-start gap-2 text-xs text-text-secondary border border-border bg-background rounded-md px-3 py-2"
+				>
+					<Icon icon="tabler:language" class="w-4 h-4 mt-0.5 text-primary shrink-0" />
+					<span>{m('downloads.bundle_fallback', { served: servedLocaleName })}</span>
+				</p>
+			{/if}
 		</header>
 
 		<div class="grid gap-3 sm:grid-cols-3">
@@ -97,6 +107,14 @@
 									>
 										{t.title}
 									</a>
+									{#if !t.isTranslated && locale !== DEFAULT_LOCALE}
+										<span
+											class="text-[10px] uppercase tracking-wide text-text-tertiary"
+											title={m('downloads.template_fallback_tooltip')}
+										>
+											{m('language_switcher.fallback_badge')}
+										</span>
+									{/if}
 									<span class="flex items-center gap-2 text-xs text-text-tertiary">
 										{#each downloads.formats as fmt}
 											<a
@@ -136,6 +154,11 @@
 					{m('downloads.all_link')}
 				</a>
 			</p>
+			{#if downloads.isFallback}
+				<p class="text-xs text-text-secondary">
+					{m('downloads.template_fallback_inline', { served: servedLocaleName })}
+				</p>
+			{/if}
 		</div>
 		<div class="flex flex-wrap gap-2">
 			{#each downloads.formats as fmt}
@@ -164,6 +187,11 @@
 			<p class="text-xs text-text-tertiary">
 				{m('downloads.spec.intro', { date: downloads.generated })}
 			</p>
+			{#if downloads.isFallback}
+				<p class="text-xs text-text-secondary">
+					{m('downloads.template_fallback_inline', { served: servedLocaleName })}
+				</p>
+			{/if}
 		</div>
 		<div class="flex flex-wrap gap-2">
 			{#each downloads.formats as fmt}
