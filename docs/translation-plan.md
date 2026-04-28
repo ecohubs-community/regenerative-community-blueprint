@@ -82,7 +82,7 @@ content/articles/
 - Sibling files make `git diff` between source and translation trivial.
 - A missing translation is _visibly missing_ — no orphan file in a parallel tree.
 - The existing `readArticleMeta()` recursive scanner handles it with one extra parse step.
-- Sveltia CMS (already a dependency) supports the `{filename}.{lang}.md` convention natively via its i18n config.
+- Plays well with file-based CMSes that support the `{filename}.{lang}.md` convention if one is wired up later.
 
 ### 1.2 Frontmatter additions
 
@@ -753,7 +753,7 @@ The previous plan proposed articles → UI → tooling. **Inverted recommendatio
 5. ✓ `scripts/check-i18n-keys.mjs` available via `pnpm run check:i18n`.
 6. ✓ `localized()` helper added; all internal `<a href>`s now preserve the locale prefix on navigation.
 
-**Decision recorded:** chose plain JSON over Paraglide for v1. Reasons: (a) we already own URL-prefix routing and Paraglide's adapter would compete with it; (b) string count is small (~80); (c) plain JSON is friendlier for the future Sveltia CMS workflow. Migration path stays open — message keys are namespaced and use `{name}` interpolation, both Paraglide-compatible.
+**Decision recorded:** chose plain JSON over Paraglide for v1. Reasons: (a) we already own URL-prefix routing and Paraglide's adapter would compete with it; (b) string count is small (~80); (c) plain JSON is friendly for any future file-based editorial workflow. Migration path stays open — message keys are namespaced and use `{name}` interpolation, both Paraglide-compatible.
 
 **Exit criteria:** ✓ every visible UI string switches between English and German based on URL prefix; verified in prerendered output (`<html lang>`, hreflang, og:locale, button labels, footer, search, downloads UI).
 
@@ -823,7 +823,7 @@ The two scripts the rest of the phase depends on are shipped. The remaining item
 | `scripts/check-translations.mjs`                        | New                                                              |
 | `scripts/translate.mjs`                                 | New                                                              |
 | `messages/{en,de}.json` (or Paraglide equiv)            | New — UI strings                                                 |
-| Sveltia CMS config                                      | Enable i18n with `multiple_files` per the file-suffix convention |
+| `.github/workflows/check-translations.yml`              | New — non-blocking PR comment with translation drift status     |
 | `.gitignore`                                            | Already un-ignores `static/downloads/`; nothing to change        |
 
 ---

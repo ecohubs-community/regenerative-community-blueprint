@@ -68,9 +68,6 @@ importers:
       '@octokit/rest':
         specifier: ^22.0.1
         version: 22.0.1
-      '@sveltia/cms':
-        specifier: ^0.122.0
-        version: 0.122.0
       '@types/dompurify':
         specifier: ^3.2.0
         version: 3.2.0
@@ -1001,9 +998,6 @@ packages:
     peerDependencies:
       svelte: ^5.0.0
       vite: ^6.3.0 || ^7.0.0
-
-  '@sveltia/cms@0.122.0':
-    resolution: {integrity: sha512-us92VXFdCcO7wQJWB7gbm20nDoz0VobvcAwKE2PzqaD9Tq06HKDA3Grqn5BNNW1o/Y2cLc+zvF19+eGRcpG97Q==}
 
   '@tailwindcss/forms@0.5.10':
     resolution: {integrity: sha512-utI1ONF6uf/pPNO68kmN1b8rEwNXv3czukalo8VtJH8ksIkZXr3Q3VYudZLkCsDd4Wku120uF02hYK25XGPorw==}
@@ -3747,8 +3741,6 @@ snapshots:
       vitefu: 1.1.1(vite@7.2.6(@types/node@22.19.1)(jiti@2.6.1)(lightningcss@1.30.2))
     transitivePeerDependencies:
       - supports-color
-
-  '@sveltia/cms@0.122.0': {}
 
   '@tailwindcss/forms@0.5.10(tailwindcss@4.1.17)':
     dependencies:

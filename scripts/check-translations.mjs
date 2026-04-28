@@ -44,19 +44,25 @@ const DEFAULT_LOCALE = 'en';
 const args = parseArgs(process.argv.slice(2));
 
 function parseArgs(argv) {
-	const out = { locale: null, only: null, json: false, includeEmpty: false };
+	const out = { locale: null, only: null, format: 'text', includeEmpty: false };
 	for (let i = 0; i < argv.length; i++) {
 		const a = argv[i];
 		if (a === '--locale') out.locale = argv[++i];
 		else if (a === '--only') out.only = argv[++i];
-		else if (a === '--json') out.json = true;
+		else if (a === '--format') out.format = argv[++i];
+		else if (a === '--json') out.format = 'json'; // legacy alias
 		else if (a === '--include-empty') out.includeEmpty = true;
 		else if (a === '-h' || a === '--help') {
 			console.log(
-				'Usage: check-translations.mjs [--locale <code>] [--only <substring>] [--json] [--include-empty]'
+				'Usage: check-translations.mjs [--locale <code>] [--only <substring>]\n' +
+					'                              [--format text|json|markdown] [--include-empty]'
 			);
 			process.exit(0);
 		}
+	}
+	if (!['text', 'json', 'markdown'].includes(out.format)) {
+		console.error(`error: invalid --format "${out.format}" (use text|json|markdown)`);
+		process.exit(1);
 	}
 	return out;
 }
@@ -170,18 +176,23 @@ async function main() {
 		}
 	}
 
-	if (args.json) {
-		console.log(JSON.stringify({ rows, generatedAt: new Date().toISOString() }, null, 2));
-		process.exit(rowsExitCode(rows));
-	}
-
-	// Plain-text report grouped by locale.
 	const byLocale = new Map();
 	for (const r of rows) {
 		if (!byLocale.has(r.locale)) byLocale.set(r.locale, []);
 		byLocale.get(r.locale).push(r);
 	}
 
+	if (args.format === 'json') {
+		console.log(JSON.stringify({ rows, generatedAt: new Date().toISOString() }, null, 2));
+		process.exit(rowsExitCode(rows));
+	}
+
+	if (args.format === 'markdown') {
+		console.log(renderMarkdown(byLocale));
+		process.exit(rowsExitCode(rows));
+	}
+
+	// Plain text — grouped by locale, every row listed
 	console.log(`\nTranslation status — ${rows.length} (article × locale) pairs\n${'='.repeat(48)}\n`);
 	for (const [locale, list] of byLocale) {
 		const counts = countByStatus(list);
@@ -201,6 +212,65 @@ async function main() {
 	}
 
 	process.exit(rowsExitCode(rows));
+}
+
+/**
+ * Render the per-locale results as a tidy GitHub-flavored markdown summary —
+ * a coverage table on top, then collapsed `<details>` lists for missing /
+ * outdated items per locale. The compact shape is designed to read well as a
+ * sticky PR comment on PRs that touch `content/`.
+ */
+function renderMarkdown(byLocale) {
+	const out = [];
+	out.push(`## 🌍 Translation status`);
+	out.push('');
+
+	if (byLocale.size === 0) {
+		out.push('_No locales configured for drift detection._');
+		return out.join('\n');
+	}
+
+	out.push('| Locale | Coverage | ✓ Up to date | ⚠ Outdated | ✗ Missing |');
+	out.push('|---|---:|---:|---:|---:|');
+	for (const [locale, list] of byLocale) {
+		const counts = countByStatus(list);
+		const total = list.length;
+		const coverage = total === 0 ? '—' : `${(((total - counts.missing) / total) * 100).toFixed(0)}%`;
+		out.push(
+			`| \`${locale}\` | ${coverage} | ${counts['up-to-date']} | ${counts.outdated} | ${counts.missing} |`
+		);
+	}
+	out.push('');
+
+	for (const [locale, list] of byLocale) {
+		const missing = list.filter((r) => r.status === 'missing');
+		const outdated = list.filter((r) => r.status === 'outdated');
+		if (missing.length === 0 && outdated.length === 0) continue;
+
+		if (outdated.length > 0) {
+			out.push(`<details>`);
+			out.push(`<summary><strong>${locale}</strong> — ${outdated.length} outdated</summary>`);
+			out.push('');
+			for (const r of outdated) {
+				out.push(`- \`${r.source}\` _(sourceHash: \`${r.stored ?? '∅'}\` → \`${r.current}\`)_`);
+			}
+			out.push('');
+			out.push(`</details>`);
+			out.push('');
+		}
+		if (missing.length > 0) {
+			out.push(`<details>`);
+			out.push(`<summary><strong>${locale}</strong> — ${missing.length} missing</summary>`);
+			out.push('');
+			for (const r of missing) out.push(`- \`${r.source}\``);
+			out.push('');
+			out.push(`</details>`);
+			out.push('');
+		}
+	}
+
+	out.push(`_Run \`pnpm run translate -- --locale <code>\` to fill gaps. Generated ${new Date().toISOString()}._`);
+	return out.join('\n');
 }
 
 function countByStatus(rows) {
