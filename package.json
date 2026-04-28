@@ -11,6 +11,7 @@
 		"check:i18n": "node scripts/check-i18n-keys.mjs",
 		"check:translations": "node scripts/check-translations.mjs",
 		"translate": "node scripts/translate.mjs",
+		"normalize:rfc-keywords": "node scripts/normalize-rfc-keywords.mjs",
 		"build": "vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",

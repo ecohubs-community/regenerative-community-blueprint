@@ -4,12 +4,22 @@ import type { LayoutServerLoad } from './$types';
 
 export const prerender = true;
 
-export const load: LayoutServerLoad = async ({ params, locals }) => {
-	// `params.lang` is set when the URL has a non-default locale prefix (e.g. /de/...).
-	// Otherwise the canonical (unprefixed) URL serves the default locale.
-	// For URL/routing decisions we trust the URL; `locals.locale` from the negotiator
-	// covers the unprefixed root case (cookie / Accept-Language).
-	const locale = params.lang ?? locals.locale ?? DEFAULT_LOCALE;
+export const load: LayoutServerLoad = async ({ params }) => {
+	// URL is authoritative — `params.lang` is set only when the URL has a non-default
+	// locale prefix (e.g. /de/...), otherwise we serve the default locale.
+	//
+	// We deliberately do NOT consult `locals.locale` (which falls back to cookie /
+	// Accept-Language in hooks.server.ts). If we did, an unprefixed URL like /foo
+	// could resolve to `de` whenever the user's cookie says `lang=de` — even though
+	// the URL itself says English. That mismatch was the source of "switch back to
+	// English flips the page content but leaves the chrome in German": the page's
+	// own server load uses `params.lang ?? DEFAULT_LOCALE` (URL only), so it would
+	// see `en` while the layout still saw `de` from the cookie fallback.
+	//
+	// The cookie set by LanguageSwitcher.svelte still has a job — it remembers the
+	// last switcher choice for any future "redirect on bare root URL" feature —
+	// but it must never override the URL's implied locale on a per-page basis.
+	const locale = params.lang ?? DEFAULT_LOCALE;
 
 	const graph = await buildGraph(locale);
 	// Layout-level availableLocales is the *union* across the whole graph; pages

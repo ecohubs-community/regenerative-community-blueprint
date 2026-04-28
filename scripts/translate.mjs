@@ -241,7 +241,8 @@ Rules:
    - Preserve all HTML tags verbatim, including \`<details>\`, \`<summary>\`, and \`data-kind\` attributes. Translate the *text inside* \`<summary>\` and inside \`<details>\` blocks.
 
 4. **Identifiers and references**
-   - Keep clause references like "§2.4.1", section numbers, "RFC-style" keywords (\`MUST\`, \`MUST NOT\`, \`SHOULD\`, \`MAY\`), and ISO/RFC document IDs unchanged.
+   - Keep clause references like "§2.4.1", section numbers, and ISO/RFC document IDs (e.g. "RFC 2119") unchanged.
+   - **Translate RFC-2119-style normative keywords** (MUST, MUST NOT, SHOULD, SHOULD NOT, MAY, REQUIRED, RECOMMENDED, OPTIONAL) to their conventional UPPERCASE equivalents in the target language so the normative emphasis is preserved. For German specifically: MUST → MUSS, MUST NOT → DARF NICHT, SHOULD → SOLLTE, SHOULD NOT → SOLLTE NICHT, MAY → KANN, REQUIRED → ERFORDERLICH, RECOMMENDED → EMPFOHLEN, OPTIONAL → OPTIONAL. Apply this both inside backticks (\`MUSS\`) and inline in prose. For other languages, use the established translation of RFC 2119 keywords; if none is established, keep the English original.
    - Keep technical terms that are conventionally kept in English in the target language (e.g., "API", "Git", "Markdown", "MD5") — translate the surrounding prose only.
 
 5. **Tone and register**

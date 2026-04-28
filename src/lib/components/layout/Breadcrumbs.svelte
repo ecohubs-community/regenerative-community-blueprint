@@ -4,6 +4,7 @@
   import { m } from '$lib/i18n';
   import { localized, stripLocale } from '$lib/i18n/path';
   import { DEFAULT_LOCALE } from '$lib/i18n/languages';
+  import { resolve } from '$app/paths';
 
   interface BreadcrumbItem {
     label: string;
@@ -56,14 +57,14 @@
 
 {#if breadcrumbs().length > 1}
   <nav aria-label="Breadcrumb" class="flex items-center gap-1 text-sm text-text-tertiary">
-    {#each breadcrumbs() as crumb, i}
+    {#each breadcrumbs() as crumb, i (i)}
       {#if i > 0}
         <Icon icon="tabler:chevron-right" class="w-4 h-4 text-text-tertiary/50" />
       {/if}
       
       {#if crumb.href}
         <a 
-          href={crumb.href} 
+          href={resolve(crumb.href)} 
           class="hover:text-text-primary transition-colors"
         >
           {crumb.label}
