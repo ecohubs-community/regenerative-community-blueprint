@@ -23,6 +23,7 @@
 		"@anthropic-ai/sdk": "^0.91.1",
 		"@eslint/compat": "^1.4.0",
 		"@eslint/js": "^9.39.1",
+		"@google/genai": "^1.50.1",
 		"@sveltejs/adapter-auto": "^7.0.0",
 		"@sveltejs/adapter-node": "^5.4.0",
 		"@sveltejs/adapter-vercel": "^6.2.0",
