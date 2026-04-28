@@ -23,6 +23,8 @@
   url={`/articles/${slug}`}
   type="article"
   jsonLd={article ? [buildArticleSchema(article, breadcrumbs), buildBreadcrumbSchema(breadcrumbs)] : undefined}
+  locale={data.locale}
+  availableLocales={data.availableLocales}
 />
 
 {#if article}

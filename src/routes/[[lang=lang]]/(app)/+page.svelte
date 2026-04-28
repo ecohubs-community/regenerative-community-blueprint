@@ -7,6 +7,8 @@
   import { SITE_NAME, SITE_DESCRIPTION } from '$lib/config/site';
   import { buildWebSiteSchema } from '$lib/utils/jsonld';
 
+  let { data } = $props();
+
   // Calculate stats
   let stats = $derived([
     { label: 'Articles', value: $articles.length },
@@ -14,7 +16,14 @@
   ]);
 </script>
 
-<SEO title={SITE_NAME} description={SITE_DESCRIPTION} url="/" type="website" jsonLd={buildWebSiteSchema()} />
+<SEO
+  title={SITE_NAME}
+  description={SITE_DESCRIPTION}
+  url="/"
+  type="website"
+  jsonLd={buildWebSiteSchema()}
+  locale={data.locale}
+/>
 
 <div class="space-y-16 pb-12">
   <!-- Hero Section -->

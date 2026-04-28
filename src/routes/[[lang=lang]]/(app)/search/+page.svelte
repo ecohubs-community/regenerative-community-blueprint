@@ -30,7 +30,7 @@
   });
 </script>
 
-<SEO title="Search" url="/search" noindex={true} />
+<SEO title="Search" url="/search" noindex={true} locale={data.locale} />
 
 <section class="space-y-6">
   <header>

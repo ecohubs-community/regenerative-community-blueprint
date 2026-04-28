@@ -6,6 +6,8 @@
   import SEO from '$lib/components/seo/SEO.svelte';
   import { buildBreadcrumbSchema } from '$lib/utils/jsonld';
 
+  let { data } = $props();
+
   // Recursive component to render article tree
   function getChildCount(article: Article): number {
     let count = article.children.length;
@@ -21,6 +23,7 @@
   description="Browse all RCOS knowledge articles organized hierarchically. Explore topics on governance, membership, economics, conflict resolution, and more."
   url="/articles"
   jsonLd={buildBreadcrumbSchema([])}
+  locale={data.locale}
 />
 
 <div class="space-y-8 pb-12">

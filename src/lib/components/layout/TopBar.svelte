@@ -5,6 +5,11 @@
   import Icon from '@iconify/svelte';
   import { resolve } from '$app/paths';
   import logo from '$lib/assets/logo.webp';
+  import LanguageSwitcher from '$lib/components/i18n/LanguageSwitcher.svelte';
+  import { page } from '$app/state';
+
+  // Forward per-page coverage to the switcher so untranslated locales render dimmed.
+  const availableLocales = $derived(page.data.availableLocales as string[] | undefined);
 </script>
 
 <header class="sticky top-0 z-30 border-b border-border bg-background/80 backdrop-blur-md">
@@ -40,15 +45,17 @@
 
     <!-- Right: Actions -->
     <div class="flex items-center gap-2">
-      <Button 
-        variant="ghost" 
+      <Button
+        variant="ghost"
         size="icon"
         onclick={toggleTheme}
         aria-label="Toggle theme"
       >
         <Icon icon="tabler:sun-moon" class="w-5 h-5" />
       </Button>
-      
+
+      <LanguageSwitcher {availableLocales} />
+
       <div class="hidden md:flex gap-2">
          <Button variant="ghost" href="https://ecohubs.community" target="_blank">About <Icon icon="tabler:arrow-up-right" class="w-4 h-4" /></Button>
       </div>
