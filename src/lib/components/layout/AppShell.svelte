@@ -7,10 +7,16 @@
   import Icon from '@iconify/svelte';
   import { page } from '$app/state';
   import ResizableSidebar from '$lib/components/admin/ResizableSidebar.svelte';
+  import { m } from '$lib/i18n';
+  import { stripLocale } from '$lib/i18n/path';
 
   let { children } = $props();
 
-  const isArticlesPage = $derived(page.url.pathname.startsWith('/articles'));
+  // The pathname includes the locale prefix on non-default locales (e.g. `/de/articles/...`),
+  // so a naive `startsWith('/articles')` would miss localized article URLs and render the
+  // URL-derived global breadcrumbs *above* the article-page's own (locale-aware) breadcrumbs.
+  // Strip the prefix first.
+  const isArticlesPage = $derived(stripLocale(page.url.pathname).startsWith('/articles'));
 </script>
 
 <div class="h-screen flex flex-col bg-background text-text-primary transition-colors duration-300 overflow-hidden">
@@ -37,11 +43,11 @@
           onkeydown={(e) => e.key === 'Escape' && sidebarOpen.set(false)} 
           role="button" 
           tabindex="0" 
-          aria-label="Close sidebar"
+          aria-label={m('nav.close_sidebar')}
         ></div>
         <aside class="fixed left-0 top-0 h-full w-72 bg-surface border-r border-border z-50 shadow-2xl p-4 overflow-y-auto">
           <div class="flex justify-end mb-4">
-             <button onclick={() => sidebarOpen.set(false)} aria-label="Close sidebar" class="p-2 rounded-md hover:bg-border">
+             <button onclick={() => sidebarOpen.set(false)} aria-label={m('nav.close_sidebar')} class="p-2 rounded-md hover:bg-border">
                 <Icon icon="tabler:x" class="w-5 h-5" />
              </button>
           </div>

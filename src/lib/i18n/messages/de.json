@@ -17,6 +17,9 @@
 	"nav.expand": "Ausklappen",
 	"nav.collapse": "Einklappen",
 	"nav.home": "Startseite",
+	"nav.close_sidebar": "Seitenleiste schließen",
+	"breadcrumb.segment.articles": "Artikel",
+	"breadcrumb.segment.search": "Suche",
 
 	"language_switcher.aria_label": "Sprache ändern. Aktuell: {language}",
 	"language_switcher.fallback_badge": "EN-Fallback",

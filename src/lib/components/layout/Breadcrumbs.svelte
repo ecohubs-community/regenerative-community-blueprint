@@ -13,6 +13,21 @@
   const locale = $derived((page.data?.locale as string | undefined) ?? DEFAULT_LOCALE);
 
   // Build breadcrumbs from the canonical path so locale prefix doesn't appear as a crumb.
+  // Well-known top-level segments resolve to localized labels via the messages bundle;
+  // anything else falls back to a slug-capitalized label (e.g. "rcos-core" → "Rcos Core").
+  // Article-detail pages bypass this component entirely (see AppShell.svelte) and render
+  // their own breadcrumbs from the locale-aware article graph, so this fallback only
+  // matters for non-article routes (currently just /, /articles, /search).
+  function labelForSegment(segment: string): string {
+    const key = `breadcrumb.segment.${segment}`;
+    const localized = m(key);
+    if (localized !== key) return localized;
+    return segment
+      .split('-')
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  }
+
   const breadcrumbs = $derived(() => {
     const path = stripLocale(page.url.pathname);
     const items: BreadcrumbItem[] = [];
@@ -27,12 +42,7 @@
     for (let i = 0; i < segments.length; i++) {
       const segment = segments[i];
       currentPath += `/${segment}`;
-
-      const label = segment
-        .split('-')
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ');
-
+      const label = labelForSegment(segment);
       if (i === segments.length - 1) {
         items.push({ label });
       } else {

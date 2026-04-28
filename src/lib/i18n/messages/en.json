@@ -17,6 +17,9 @@
 	"nav.expand": "Expand",
 	"nav.collapse": "Collapse",
 	"nav.home": "Home",
+	"nav.close_sidebar": "Close sidebar",
+	"breadcrumb.segment.articles": "Articles",
+	"breadcrumb.segment.search": "Search",
 
 	"language_switcher.aria_label": "Change language. Current: {language}",
 	"language_switcher.fallback_badge": "en fallback",
