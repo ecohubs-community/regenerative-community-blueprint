@@ -29,7 +29,7 @@
       "layer": "layer-0",
       "titles": {
         "en": "Identity Constraints Register",
-        "de": "Identity Constraints Register"
+        "de": "Register der Identitätsbeschränkungen"
       },
       "files": {
         "en": {
@@ -44,6 +44,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -53,7 +54,7 @@
       "layer": "layer-0",
       "titles": {
         "en": "Invariants Register",
-        "de": "Invariants Register"
+        "de": "Invariantenregister"
       },
       "files": {
         "en": {
@@ -68,6 +69,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -77,7 +79,7 @@
       "layer": "layer-0",
       "titles": {
         "en": "Purpose Charter",
-        "de": "Purpose Charter"
+        "de": "Zweckcharta"
       },
       "files": {
         "en": {
@@ -92,6 +94,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -101,7 +104,7 @@
       "layer": "layer-0",
       "titles": {
         "en": "Scope Declaration",
-        "de": "Scope Declaration"
+        "de": "Geltungsbereichserklärung"
       },
       "files": {
         "en": {
@@ -116,6 +119,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -125,7 +129,7 @@
       "layer": "layer-1",
       "titles": {
         "en": "Exit & Separation Protocol",
-        "de": "Exit & Separation Protocol"
+        "de": "Austritts- & Trennungsprotokoll"
       },
       "files": {
         "en": {
@@ -140,6 +144,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -149,7 +154,7 @@
       "layer": "layer-1",
       "titles": {
         "en": "Membership Agreement",
-        "de": "Membership Agreement"
+        "de": "Mitgliedschaftsvereinbarung"
       },
       "files": {
         "en": {
@@ -164,6 +169,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -173,7 +179,7 @@
       "layer": "layer-1",
       "titles": {
         "en": "Membership State Registry",
-        "de": "Membership State Registry"
+        "de": "Mitgliedschaftsstatus-Register"
       },
       "files": {
         "en": {
@@ -188,6 +194,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -197,7 +204,7 @@
       "layer": "layer-1",
       "titles": {
         "en": "Onboarding Protocol",
-        "de": "Onboarding Protocol"
+        "de": "Onboarding-Protokoll"
       },
       "files": {
         "en": {
@@ -212,6 +219,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -221,7 +229,7 @@
       "layer": "layer-2",
       "titles": {
         "en": "Authority Registry",
-        "de": "Authority Registry"
+        "de": "Autoritätenregister"
       },
       "files": {
         "en": {
@@ -236,6 +244,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -245,7 +254,7 @@
       "layer": "layer-2",
       "titles": {
         "en": "Decision Matrix",
-        "de": "Decision Matrix"
+        "de": "Entscheidungsmatrix"
       },
       "files": {
         "en": {
@@ -260,6 +269,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -269,7 +279,7 @@
       "layer": "layer-2",
       "titles": {
         "en": "Governance Protocol",
-        "de": "Governance Protocol"
+        "de": "Governance-Protokoll"
       },
       "files": {
         "en": {
@@ -284,6 +294,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -293,7 +304,7 @@
       "layer": "layer-3",
       "titles": {
         "en": "Internal Economy Protocol",
-        "de": "Internal Economy Protocol"
+        "de": "Protokoll für die interne Wirtschaft"
       },
       "files": {
         "en": {
@@ -308,6 +319,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -317,7 +329,7 @@
       "layer": "layer-3",
       "titles": {
         "en": "Treasury Ruleset",
-        "de": "Treasury Ruleset"
+        "de": "Kassensatzung"
       },
       "files": {
         "en": {
@@ -332,6 +344,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -341,7 +354,7 @@
       "layer": "layer-4",
       "titles": {
         "en": "Accountability Protocol",
-        "de": "Accountability Protocol"
+        "de": "Rechenschaftsprotokoll"
       },
       "files": {
         "en": {
@@ -356,6 +369,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -365,7 +379,7 @@
       "layer": "layer-4",
       "titles": {
         "en": "Conflict Resolution Ladder",
-        "de": "Conflict Resolution Ladder"
+        "de": "Konfliktlösungsleiter"
       },
       "files": {
         "en": {
@@ -380,6 +394,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -389,7 +404,7 @@
       "layer": "layer-5",
       "titles": {
         "en": "Meeting Templates",
-        "de": "Meeting Templates"
+        "de": "Sitzungsvorlagen"
       },
       "files": {
         "en": {
@@ -404,6 +419,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -413,7 +429,7 @@
       "layer": "layer-5",
       "titles": {
         "en": "Operations Manual",
-        "de": "Operations Manual"
+        "de": "Betriebshandbuch"
       },
       "files": {
         "en": {
@@ -428,6 +444,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -437,7 +454,7 @@
       "layer": "layer-5",
       "titles": {
         "en": "Role Registry",
-        "de": "Role Registry"
+        "de": "Rollenverzeichnis"
       },
       "files": {
         "en": {
@@ -452,6 +469,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -461,7 +479,7 @@
       "layer": "layer-6",
       "titles": {
         "en": "Change Protocol",
-        "de": "Change Protocol"
+        "de": "Änderungsprotokoll"
       },
       "files": {
         "en": {
@@ -476,6 +494,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -485,7 +504,7 @@
       "layer": "layer-6",
       "titles": {
         "en": "Experiment Template",
-        "de": "Experiment Template"
+        "de": "Experiment-Vorlage"
       },
       "files": {
         "en": {
@@ -500,6 +519,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -509,7 +529,7 @@
       "layer": "layer-6",
       "titles": {
         "en": "Learning Log",
-        "de": "Learning Log"
+        "de": "Lernprotokoll"
       },
       "files": {
         "en": {
@@ -524,6 +544,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     },
@@ -533,7 +554,7 @@
       "layer": "layer-6",
       "titles": {
         "en": "Version History",
-        "de": "Version History"
+        "de": "Versionshistorie"
       },
       "files": {
         "en": {
@@ -548,6 +569,7 @@
         }
       },
       "availableLocales": [
+        "de",
         "en"
       ]
     }

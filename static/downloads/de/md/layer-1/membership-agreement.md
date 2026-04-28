@@ -1,160 +1,158 @@
 **RCOS – Regenerative Community Operating System**
 
-# Membership Agreement
+# Mitgliedschaftsvereinbarung
 
 - **Generiert:** 2026-04-28
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-1/membership-agreement](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-1/membership-agreement)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
-
 ---
-- **Layer:** 1 — Membership System
-- **Status:** Template — adapt for your community
-- **RCOS reference:** [§3.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#34-rights-and-obligations), [§3.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#35-participation-and-contribution), [§3.8](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#38-artifacts)
+- **Ebene:** 1 — Mitgliedschaftssystem
+- **Status:** Vorlage — an deine Gemeinschaft anpassen
+- **RCOS-Referenz:** [§3.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#34-rights-and-obligations), [§3.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#35-participation-and-contribution), [§3.8](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#38-artifacts)
 
-> Signed (or explicitly acknowledged) by every member at the time of admission. Defines the rights and obligations of each membership state.
+> Wird von jedem Mitglied zum Zeitpunkt der Aufnahme unterschrieben (oder ausdrücklich bestätigt). Definiert die Rechte und Pflichten jedes Mitgliedschaftsstatus.
 
 ---
 
-## Membership State on Signing
+## Mitgliedschaftsstatus bei Unterzeichnung
 
-*RCOS clauses: [3.1.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states), [3.1.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states)*
+*RCOS-Klauseln: [3.1.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states), [3.1.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states)*
 
 <details data-kind="rationale">
-<summary>Why declare state at signing?</summary>
+<summary>Warum den Status bei Unterzeichnung festhalten?</summary>
 
-Membership is not a single binary. A person joining must know exactly which state they are entering — Trial or Full — because the state determines what they can do and what is expected of them. Naming it at the moment of consent prevents ambiguity later about what they actually signed up for.
+Mitgliedschaft ist kein einfaches Ja oder Nein. Eine beitretende Person muss genau wissen, in welchen Status sie eintritt — Probe oder Voll — denn der Status bestimmt, was sie tun kann und was von ihr erwartet wird. Den Status im Moment der Zustimmung zu benennen, verhindert spätere Unklarheiten darüber, wofür sie sich eigentlich angemeldet hat.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du diesen Abschnitt ausfüllst</summary>
 
-State which membership state(s) a new member enters at signing (e.g. Trial Member, Full Member, or any custom state defined in your Membership State Registry).
+Gib an, in welchen Mitgliedschaftsstatus ein neues Mitglied bei Unterzeichnung eintritt (z. B. Probemitglied, Vollmitglied oder ein anderer im Mitgliedschaftsstatus-Register definierter Status).
 
 </details>
 
-_<Membership state assigned at signing — e.g. Trial Member on application approval; Full Member on onboarding completion.>_
+_<Mitgliedschaftsstatus bei Unterzeichnung — z. B. Probemitglied nach Genehmigung der Bewerbung; Vollmitglied nach Abschluss des Onboardings.>_
 
-## Member Rights
+## Rechte der Mitglieder
 
-*RCOS clauses: [3.4.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#34-rights-and-obligations), [3.4.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#34-rights-and-obligations), [3.4.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#34-rights-and-obligations)*
+*RCOS-Klauseln: [3.4.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#34-rights-and-obligations), [3.4.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#34-rights-and-obligations), [3.4.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#34-rights-and-obligations)*
 
 <details data-kind="rationale">
-<summary>Why enumerate rights explicitly?</summary>
+<summary>Warum Rechte ausdrücklich aufzählen?</summary>
 
-Rights that are not written down are rights that can be quietly withdrawn. Enumerating them makes the community's commitments legible, enforceable, and symmetrical with the obligations members are asked to carry. Without this list, obligations become open-ended demands with no reciprocal protection.
+Rechte, die nicht schriftlich festgehalten sind, können stillschweigend entzogen werden. Sie aufzuzählen macht die Verpflichtungen der Gemeinschaft lesbar, durchsetzbar und symmetrisch zu den Pflichten, die den Mitgliedern auferlegt werden. Ohne diese Liste werden Pflichten zu unbegrenzten Forderungen ohne gegenseitigen Schutz.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du diesen Abschnitt ausfüllst</summary>
 
-List concrete rights granted to each membership state. Reference the Decision Matrix (Layer 2) for voting rights, the Role Registry (Layer 5) for role eligibility, and Layer 4 for due-process guarantees.
+Liste konkrete Rechte auf, die jedem Mitgliedschaftsstatus gewährt werden. Verweise auf die Entscheidungsmatrix (Ebene 2) für Stimmrechte, das Rollenregister (Ebene 5) für Rollenberechtigung und Ebene 4 für Verfahrensgarantien.
 
 </details>
 
-1. _<Right 1, e.g. the right to vote on all decisions as defined in the Decision Matrix.>_
-2. _<Right 2, e.g. the right to access all member-only channels, calls, and community records.>_
-3. _<Right 3, e.g. the right to hold roles as defined in the Role Registry.>_
-4. _<Right 4, e.g. the right to earn recognition through recognized contributions.>_
-5. _<Right 5, e.g. the right to propose changes through the governance process.>_
-6. _<Right 6, e.g. the right to raise a conflict through the Conflict Resolution Ladder without retaliation.>_
-7. _<Right 7, e.g. the right to exit the community voluntarily at any time.>_
-8. _<Right 8, e.g. the right to due process before any forced exit, suspension, or access restriction.>_
+1. _<Recht 1, z. B. das Recht, bei allen Entscheidungen gemäß der Entscheidungsmatrix abzustimmen.>_
+2. _<Recht 2, z. B. das Recht auf Zugang zu allen mitgliederexklusiven Kanälen, Calls und Gemeinschaftsunterlagen.>_
+3. _<Recht 3, z. B. das Recht, Rollen gemäß dem Rollenregister zu übernehmen.>_
+4. _<Recht 4, z. B. das Recht, Anerkennung durch anerkannte Beiträge zu erhalten.>_
+5. _<Recht 5, z. B. das Recht, Änderungen über den Governance-Prozess vorzuschlagen.>_
+6. _<Recht 6, z. B. das Recht, einen Konflikt über die Konfliktlösungsstufen ohne Vergeltung anzusprechen.>_
+7. _<Recht 7, z. B. das Recht, die Gemeinschaft jederzeit freiwillig zu verlassen.>_
+8. _<Recht 8, z. B. das Recht auf ein ordentliches Verfahren vor jedem erzwungenen Austritt, jeder Suspendierung oder Zugangsbeschränkung.>_
 
-## Member Obligations
+## Pflichten der Mitglieder
 
-*RCOS clauses: [3.4.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#34-rights-and-obligations), [3.4.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#34-rights-and-obligations), [3.4.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#34-rights-and-obligations)*
+*RCOS-Klauseln: [3.4.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#34-rights-and-obligations), [3.4.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#34-rights-and-obligations), [3.4.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#34-rights-and-obligations)*
 
 <details data-kind="rationale">
-<summary>Why bound obligations tightly?</summary>
+<summary>Warum Pflichten eng begrenzen?</summary>
 
-Open-ended obligations are how communities slide into exploitation — "contribute more," "be available," "show up" with no defined limit. Listing obligations discretely, and tying each one to a corresponding right, keeps the ask bounded and contestable. A member must always be able to tell whether they are meeting the agreement or being asked for something beyond it.
+Unbegrenzte Pflichten sind der Weg, auf dem Gemeinschaften in Ausbeutung abgleiten — „trag mehr bei", „sei verfügbar", „sei da" ohne definierte Grenze. Pflichten einzeln aufzulisten und jede mit einem entsprechenden Recht zu verknüpfen, hält die Anforderungen begrenzt und anfechtbar. Ein Mitglied muss immer erkennen können, ob es die Vereinbarung erfüllt oder ob etwas verlangt wird, das darüber hinausgeht.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du diesen Abschnitt ausfüllst</summary>
 
-List concrete, bounded obligations. Each obligation must be testable: a member must be able to know whether they are meeting it. Avoid vague duties.
+Liste konkrete, begrenzte Pflichten auf. Jede Pflicht muss überprüfbar sein: Ein Mitglied muss erkennen können, ob es sie erfüllt. Vermeide vage Anforderungen.
 
 </details>
 
-1. _<Obligation 1, e.g. adhere to all Layer 0 identity constraints and invariants at all times.>_
-2. _<Obligation 2, e.g. contribute to the community in at least one recognized category per defined period.>_
-3. _<Obligation 3, e.g. participate in conflict resolution processes when named as a party or requested as a witness.>_
-4. _<Obligation 4, e.g. complete onboarding before exercising Full Member rights.>_
-5. _<Obligation 5, e.g. notify the community before extended absence.>_
-6. _<Obligation 6, e.g. not misrepresent the community, its members, or its governance externally.>_
-7. _<Obligation 7, e.g. not exercise authority beyond what is explicitly assigned through the governance system.>_
+1. _<Pflicht 1, z. B. alle Identitätsvorgaben und Invarianten der Ebene 0 jederzeit einhalten.>_
+2. _<Pflicht 2, z. B. in mindestens einer anerkannten Kategorie pro definiertem Zeitraum zur Gemeinschaft beitragen.>_
+3. _<Pflicht 3, z. B. an Konfliktlösungsverfahren teilnehmen, wenn als Partei benannt oder als Zeuge angefragt.>_
+4. _<Pflicht 4, z. B. das Onboarding abschließen, bevor Vollmitgliedsrechte ausgeübt werden.>_
+5. _<Pflicht 5, z. B. die Gemeinschaft vor längerer Abwesenheit benachrichtigen.>_
+6. _<Pflicht 6, z. B. die Gemeinschaft, ihre Mitglieder oder ihre Governance nach außen nicht falsch darstellen.>_
+7. _<Pflicht 7, z. B. keine Befugnisse ausüben, die nicht ausdrücklich durch das Governance-System zugewiesen wurden.>_
 
-## Participation and Contribution Expectations
+## Erwartungen an Teilnahme und Beitrag
 
-*RCOS clauses: [3.5.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#35-participation-and-contribution), [3.5.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#35-participation-and-contribution), [3.5.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#35-participation-and-contribution), [3.5.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#35-participation-and-contribution)*
+*RCOS-Klauseln: [3.5.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#35-participation-and-contribution), [3.5.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#35-participation-and-contribution), [3.5.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#35-participation-and-contribution), [3.5.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#35-participation-and-contribution)*
 
 <details data-kind="rationale">
-<summary>Why define participation in numbers?</summary>
+<summary>Warum Teilnahme in Zahlen definieren?</summary>
 
-"Active member" means nothing without a threshold. A defined minimum — in time, category, and cadence — turns participation from a feeling into a fact, so nobody has to guess whether they are in good standing, and nobody can be accused of drifting without evidence. It also makes the line between a genuine absence and quiet abandonment visible early enough to act on.
+„Aktives Mitglied" bedeutet nichts ohne einen Schwellenwert. Ein definiertes Minimum — in Zeit, Kategorie und Häufigkeit — macht Teilnahme von einem Gefühl zu einer Tatsache, sodass niemand raten muss, ob er in gutem Ansehen steht, und niemand ohne Beweise beschuldigt werden kann, sich zurückgezogen zu haben. Es macht außerdem die Grenze zwischen einer echten Abwesenheit und stillem Rückzug früh genug sichtbar, um darauf reagieren zu können.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du diesen Abschnitt ausfüllst</summary>
 
-State a measurable minimum (frequency × category), substitution and absence rules, and the trigger that moves a non-participating member into a Layer 4 process.
+Gib ein messbares Minimum an (Häufigkeit × Kategorie), Vertretungs- und Abwesenheitsregeln sowie den Auslöser, der ein nicht teilnehmendes Mitglied in einen Ebene-4-Prozess überführt.
 
 </details>
 
-- **Minimum contribution:** _<e.g. at least one recognized contribution per 6 months, in any recognized category.>_
-- **Recognized categories:** _<reference the Internal Economy Protocol (Layer 3).>_
-- **Substitution:** _<e.g. a member may delegate a specific task but remains responsible for meeting overall contribution expectations.>_
-- **Extended absence:** _<e.g. notification required before absences longer than X months; expectations paused for the notified period up to a maximum.>_
-- **Non-participation trigger:** _<e.g. absence of recognized contribution for X consecutive months without prior notice triggers an accountability check (Layer 4).>_
+- **Mindestbeitrag:** _<z. B. mindestens ein anerkannter Beitrag pro 6 Monate, in einer beliebigen anerkannten Kategorie.>_
+- **Anerkannte Kategorien:** _<Verweis auf das Binnenwirtschaftsprotokoll (Ebene 3).>_
+- **Vertretung:** _<z. B. ein Mitglied kann eine bestimmte Aufgabe delegieren, bleibt aber für die Erfüllung der Gesamtbeitragserwartungen verantwortlich.>_
+- **Längere Abwesenheit:** _<z. B. Benachrichtigung erforderlich bei Abwesenheiten länger als X Monate; Erwartungen werden für den gemeldeten Zeitraum bis zu einem Maximum pausiert.>_
+- **Auslöser bei Nichtteilnahme:** _<z. B. Fehlen anerkannter Beiträge über X aufeinanderfolgende Monate ohne vorherige Mitteilung löst eine Rechenschaftsprüfung (Ebene 4) aus.>_
 
-## Due Process Reference
+## Verweis auf ordentliches Verfahren
 
 <details data-kind="rationale">
-<summary>Why re-state due process here?</summary>
+<summary>Warum das ordentliche Verfahren hier nochmals erwähnen?</summary>
 
-The Membership Agreement is the one document every member actually reads and consents to. Naming due process here — not only in Layer 4 — guarantees that no member can be removed or restricted under a rule they were not shown when they joined. It closes the gap between what the community promises and what it can do.
+Die Mitgliedschaftsvereinbarung ist das eine Dokument, das jedes Mitglied tatsächlich liest und dem es zustimmt. Das ordentliche Verfahren hier zu benennen — nicht nur in Ebene 4 — stellt sicher, dass kein Mitglied nach einer Regel entfernt oder eingeschränkt werden kann, die ihm beim Beitritt nicht gezeigt wurde. Es schließt die Lücke zwischen dem, was die Gemeinschaft verspricht, und dem, was sie tun kann.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du diesen Abschnitt ausfüllst</summary>
 
-Reference the Conflict Resolution Ladder (Layer 4) and the Exit & Separation Protocol so that any member reading the Membership Agreement knows where the procedural protections live.
+Verweise auf die Konfliktlösungsstufen (Ebene 4) und das Austritts- und Trennungsprotokoll, damit jedes Mitglied, das die Mitgliedschaftsvereinbarung liest, weiß, wo die Verfahrensgarantien zu finden sind.
 
 </details>
 
-Any forced exit, suspension, or access restriction follows Layer 4 due process and the Exit & Separation Protocol.
+Jeder erzwungene Austritt, jede Suspendierung oder Zugangsbeschränkung folgt dem ordentlichen Verfahren der Ebene 4 und dem Austritts- und Trennungsprotokoll.
 
-## Consent Acknowledgment
+## Zustimmungserklärung
 
 <details data-kind="rationale">
-<summary>Why require explicit consent?</summary>
+<summary>Warum ausdrückliche Zustimmung verlangen?</summary>
 
-Consent that is assumed is consent that can be denied later. Requiring an explicit act — signing, clicking, acknowledging — at a known moment binds the member to the specific artifact versions in force that day, and gives the community a defensible record that the agreement was entered freely and knowingly.
+Zustimmung, die angenommen wird, ist Zustimmung, die später bestritten werden kann. Einen ausdrücklichen Akt zu verlangen — Unterschrift, Klick, Bestätigung — zu einem bekannten Zeitpunkt bindet das Mitglied an die an diesem Tag geltenden Artefaktversionen und gibt der Gemeinschaft einen belastbaren Nachweis, dass die Vereinbarung freiwillig und wissentlich eingegangen wurde.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du diesen Abschnitt ausfüllst</summary>
 
-Describe the act of consent (signature, in-app acknowledgment, etc.), and what artifact versions the member is consenting to at that moment.
+Beschreibe den Akt der Zustimmung (Unterschrift, In-App-Bestätigung usw.) und welche Artefaktversionen das Mitglied zu diesem Zeitpunkt anerkennt.
 
 </details>
 
-By entering the community through the defined onboarding process, the member explicitly consents to the terms of this agreement and the Layer 0 artifacts in force at the time of admission.
+Durch den Beitritt zur Gemeinschaft über den definierten Onboarding-Prozess stimmt das Mitglied ausdrücklich den Bedingungen dieser Vereinbarung und den zum Zeitpunkt der Aufnahme geltenden Ebene-0-Artefakten zu.
 
 ---
 
-## Ratification Record
+## Ratifizierungsprotokoll
 
-- **Adopted:** <YYYY-MM-DD>
-- **Decision type:** Strategic
-- **Version:** <version>
-- **Decision record:** <link to decision record>
+- **Angenommen:** <JJJJ-MM-TT>
+- **Entscheidungstyp:** Strategisch
+- **Version:** <Version>
+- **Entscheidungsprotokoll:** <Link zum Entscheidungsprotokoll>

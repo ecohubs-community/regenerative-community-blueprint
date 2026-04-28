@@ -1,95 +1,93 @@
 **RCOS – Regenerative Community Operating System**
 
-# Membership State Registry
+# Mitgliedschaftsstatus-Register
 
 - **Generiert:** 2026-04-28
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-1/membership-state-registry](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-1/membership-state-registry)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
-
 ---
-- **Layer:** 1 — Membership System
-- **Status:** Template — adapt for your community
-- **RCOS reference:** [§3.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states), [§3.8](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#38-artifacts)
+- **Ebene:** 1 — Mitgliedschaftssystem
+- **Status:** Vorlage — an eure Gemeinschaft anpassen
+- **RCOS-Referenz:** [§3.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states), [§3.8](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#38-artifacts)
 
 ---
 
-## Defined Membership States
+## Definierte Mitgliedschaftsstatus
 
-*RCOS clauses: [3.1.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states), [3.1.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states), [3.1.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states), [3.1.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states), [3.1.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states)*
+*RCOS-Klauseln: [3.1.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states), [3.1.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states), [3.1.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states), [3.1.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states), [3.1.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states)*
 
 <details data-kind="rationale">
-<summary>Why a single table of states?</summary>
+<summary>Warum eine einzige Statustabelle?</summary>
 
-Rights and obligations scattered across documents drift apart. Collecting every state, its rights, its obligations, and its transitions into one table makes the membership system auditable at a glance — you can see every door into and out of the community, and what each one grants. If two documents ever disagree, this registry is the tiebreaker.
+Rechte und Pflichten, die über verschiedene Dokumente verstreut sind, driften auseinander. Alle Status, ihre Rechte, Pflichten und Übergänge in einer Tabelle zu sammeln, macht das Mitgliedschaftssystem auf einen Blick überprüfbar — ihr seht jede Tür in die und aus der Gemeinschaft und was jede davon gewährt. Falls zwei Dokumente jemals widersprüchlich sind, ist dieses Register der Schiedsrichter.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-Define every membership state your community recognizes (e.g. Applicant, Trial Member, Full Member, Exited Member). For each, list rights, obligations, entry condition, and exit condition. Keep states mutually exclusive — no individual may hold two states simultaneously.
+Definiert jeden Mitgliedschaftsstatus, den eure Gemeinschaft anerkennt (z. B. Bewerber·in, Probemitglied, Vollmitglied, Ausgetretenes Mitglied). Listet für jeden Status Rechte, Pflichten, Eintrittsbedingung und Austrittsbedingung auf. Haltet die Status gegenseitig ausschließend — keine Person darf zwei Status gleichzeitig innehaben.
 
 </details>
 
-| State | Rights | Obligations | Entry condition | Exit condition |
+| Status | Rechte | Pflichten | Eintrittsbedingung | Austrittsbedingung |
 |---|---|---|---|---|
-| _<State 1, e.g. Applicant>_ | _<rights>_ | _<obligations>_ | _<entry>_ | _<exit>_ |
-| _<State 2, e.g. Trial Member>_ | _<rights>_ | _<obligations>_ | _<entry>_ | _<exit>_ |
-| _<State 3, e.g. Full Member>_ | _<rights>_ | _<obligations>_ | _<entry>_ | _<exit>_ |
-| _<State 4, e.g. Exited Member>_ | _<rights>_ | _<obligations>_ | _<entry>_ | _<exit>_ |
+| _<Status 1, z. B. Bewerber·in>_ | _<Rechte>_ | _<Pflichten>_ | _<Eintritt>_ | _<Austritt>_ |
+| _<Status 2, z. B. Probemitglied>_ | _<Rechte>_ | _<Pflichten>_ | _<Eintritt>_ | _<Austritt>_ |
+| _<Status 3, z. B. Vollmitglied>_ | _<Rechte>_ | _<Pflichten>_ | _<Eintritt>_ | _<Austritt>_ |
+| _<Status 4, z. B. Ausgetretenes Mitglied>_ | _<Rechte>_ | _<Pflichten>_ | _<Eintritt>_ | _<Austritt>_ |
 
-> No individual may hold multiple membership states simultaneously.
-> No rights or obligations may be assumed outside of the individual's current membership state.
+> Keine Person darf mehrere Mitgliedschaftsstatus gleichzeitig innehaben.
+> Keine Rechte oder Pflichten dürfen außerhalb des aktuellen Mitgliedschaftsstatus der Person angenommen werden.
 
-## Technical Notes
+## Technische Hinweise
 
 <details data-kind="rationale">
-<summary>Why preserve data after exit?</summary>
+<summary>Warum Daten nach dem Austritt aufbewahren?</summary>
 
-The community's history belongs to the community, not to any individual account. Retaining contribution records after exit protects the integrity of audit trails, governance history, and recognition accounting — while revoking access and removing the person from active listings respects the finality of their departure.
+Die Geschichte der Gemeinschaft gehört der Gemeinschaft, nicht einem einzelnen Konto. Beitragsaufzeichnungen nach dem Austritt beizubehalten schützt die Integrität von Prüfpfaden, Governance-Historien und Anerkennungsbuchhaltung — während das Entziehen des Zugangs und das Entfernen der Person aus aktiven Auflistungen die Endgültigkeit ihres Ausscheidens respektiert.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-Describe which records persist after exit, where state assignments are tracked operationally, and how access revocation interacts with platform capabilities.
+Beschreibt, welche Aufzeichnungen nach dem Austritt erhalten bleiben, wo Statuszuweisungen operativ nachverfolgt werden und wie der Zugangsentzug mit den Plattform-Funktionen zusammenwirkt.
 
 </details>
 
-- _<Contribution and governance history retained after exit; describe the retention policy.>_
-- _<Exited members are removed from active member listings; describe access revocation per platform.>_
-- _<Operational location of state assignments — see "Current Member List" below.>_
+- _<Beitrags- und Governance-Historie wird nach dem Austritt aufbewahrt; beschreibt die Aufbewahrungsrichtlinie.>_
+- _<Ausgetretene Mitglieder werden aus den aktiven Mitgliederlisten entfernt; beschreibt den Zugangsentzug pro Plattform.>_
+- _<Operativer Speicherort der Statuszuweisungen — siehe „Aktuelle Mitgliederliste" unten.>_
 
-## Current Member List
+## Aktuelle Mitgliederliste
 
-*RCOS clauses: [3.8.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#38-artifacts)*
+*RCOS-Klauseln: [3.8.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#38-artifacts)*
 
 <details data-kind="rationale">
-<summary>Why separate the definition from the list?</summary>
+<summary>Warum Definition und Liste trennen?</summary>
 
-This document defines what the states mean; the live registry tracks who is in which state today. Keeping them separate means the definitions are stable and governable while the assignments stay current — and nobody has to change a ratified artifact every time a member joins or leaves.
+Dieses Dokument definiert, was die Status bedeuten; das aktive Register verfolgt, wer sich heute in welchem Status befindet. Beides getrennt zu halten bedeutet, dass die Definitionen stabil und steuerbar bleiben, während die Zuweisungen aktuell sind — und niemand ein ratifiziertes Artefakt ändern muss, wenn ein Mitglied beitritt oder austritt.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-Link to the operational system or document where current member-to-state assignments are tracked. This artifact should not need to be changed every time a member joins or leaves.
+Verlinkt auf das operative System oder Dokument, in dem die aktuellen Mitglied-zu-Status-Zuweisungen nachverfolgt werden. Dieses Artefakt sollte nicht jedes Mal geändert werden müssen, wenn ein Mitglied beitritt oder austritt.
 
 </details>
 
-> The live member list is maintained in _<system / location>_. This document defines the states; the registry tool holds the current assignments.
+> Die aktive Mitgliederliste wird in _<System / Speicherort>_ gepflegt. Dieses Dokument definiert die Status; das Register-Tool enthält die aktuellen Zuweisungen.
 
-_<Link or location of the live member directory.>_
+_<Link oder Speicherort des aktiven Mitgliederverzeichnisses.>_
 
 ---
 
-## Ratification Record
+## Ratifizierungsprotokoll
 
-- **Adopted:** <YYYY-MM-DD>
-- **Decision type:** Strategic
-- **Version:** <version>
-- **Decision record:** <link to decision record>
+- **Angenommen:** <JJJJ-MM-TT>
+- **Entscheidungstyp:** Strategisch
+- **Version:** <Version>
+- **Entscheidungsprotokoll:** <Link zum Entscheidungsprotokoll>

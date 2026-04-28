@@ -1,109 +1,107 @@
 **RCOS – Regenerative Community Operating System**
 
-# Decision Matrix
+# Entscheidungsmatrix
 
 - **Generiert:** 2026-04-28
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-2/decision-matrix](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-2/decision-matrix)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
-
 ---
-- **Layer:** 2 — Governance & Decision Logic
-- **Status:** Template — adapt for your community
-- **RCOS reference:** [§4.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [§4.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#44-decision-matrix), [§4.7](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#47-artifacts)
+- **Layer:** 2 — Governance & Entscheidungslogik
+- **Status:** Vorlage — an deine Gemeinschaft anpassen
+- **RCOS-Referenz:** [§4.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [§4.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#44-decision-matrix), [§4.7](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#47-artifacts)
 
-> Maps every decision type and domain to an authorized role or body, mechanism, threshold, and escalation path. Decisions made outside this matrix are considered invalid.
+> Ordnet jeden Entscheidungstyp und -bereich einer autorisierten Rolle oder einem Gremium, einem Mechanismus, einer Schwelle und einem Eskalationspfad zu. Entscheidungen, die außerhalb dieser Matrix getroffen werden, gelten als ungültig.
 
 ---
 
-## Voting Principles
+## Abstimmungsgrundsätze
 
-*RCOS clauses: [4.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms)*
+*RCOS-Klauseln: [4.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms)*
 
 <details data-kind="rationale">
-<summary>Why pin down mechanism, threshold, and timing?</summary>
+<summary>Warum Mechanismus, Schwelle und Zeitrahmen vorab festlegen?</summary>
 
-A vote without a predefined mechanism, threshold, and deliberation window is an invitation to manufacture outcomes after the fact — whoever counts the votes or sets the clock wins. Declaring these parameters in advance makes every collective decision reproducible and contestable on the same terms, regardless of who is in the room.
+Eine Abstimmung ohne vordefinierten Mechanismus, Schwelle und Beratungszeitraum ist eine Einladung, Ergebnisse im Nachhinein zu manipulieren — wer die Stimmen zählt oder die Uhr stellt, gewinnt. Diese Parameter im Voraus festzulegen macht jede kollektive Entscheidung reproduzierbar und unter denselben Bedingungen anfechtbar, unabhängig davon, wer gerade im Raum ist.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du diesen Abschnitt ausfüllst</summary>
 
-State the voting platform, the threshold for each decision type, the deliberation period, the tie rule, the re-vote rule, and any delegated-authority spending or scope limit.
+Lege die Abstimmungsplattform, die Schwelle für jeden Entscheidungstyp, den Beratungszeitraum, die Patt-Regel, die Regel für erneute Abstimmungen sowie etwaige delegierte Ausgabenlimits oder Zuständigkeitsgrenzen fest.
 
 </details>
 
-- **Voting platform:** _<e.g. Snapshot, Loomio, in-person consensus.>_
-- **Operational threshold:** _<e.g. no vote required — delegated to the relevant operational role holder per the Role Registry.>_
-- **Strategic threshold:** _<e.g. simple majority (>50%); minimum X-day deliberation.>_
-- **Constitutional threshold:** _<e.g. supermajority (≥⅔); minimum Y-day deliberation; Z-day ratification period.>_
-- **Tied vote:** _<e.g. proposal fails; status quo maintained.>_
-- **Re-vote:** _<e.g. any Full Member may trigger a re-vote with a written reasoned objection citing a consideration not addressed during deliberation.>_
-- **Reasoned objection:** _<define what qualifies as a reasoned objection — cite a specific consideration not raised during deliberation; general disagreement does not qualify.>_
-- **Delegated authority spending limit:** _<e.g. €0; or define a threshold under which delegated spending is allowed.>_
-- _<Other voting principles your community wants to declare.>_
+- **Abstimmungsplattform:** _<z. B. Snapshot, Loomio, Konsens in Präsenz.>_
+- **Operative Schwelle:** _<z. B. keine Abstimmung erforderlich — delegiert an die zuständige operative Rolleninhaberin laut Rollenregister.>_
+- **Strategische Schwelle:** _<z. B. einfache Mehrheit (>50 %); mindestens X Tage Beratungszeit.>_
+- **Konstitutionelle Schwelle:** _<z. B. Supermehrheit (≥⅔); mindestens Y Tage Beratungszeit; Z Tage Ratifizierungszeitraum.>_
+- **Stimmengleichheit:** _<z. B. Vorschlag scheitert; Status quo bleibt bestehen.>_
+- **Erneute Abstimmung:** _<z. B. jedes Vollmitglied kann mit einem schriftlich begründeten Einwand, der eine während der Beratung nicht behandelte Erwägung benennt, eine erneute Abstimmung auslösen.>_
+- **Begründeter Einwand:** _<Definiere, was als begründeter Einwand gilt — nenne eine konkrete Erwägung, die während der Beratung nicht vorgebracht wurde; allgemeine Ablehnung genügt nicht.>_
+- **Delegiertes Ausgabenlimit:** _<z. B. 0 €; oder definiere eine Schwelle, unterhalb derer delegierte Ausgaben zulässig sind.>_
+- _<Weitere Abstimmungsgrundsätze, die deine Gemeinschaft festlegen möchte.>_
 
 ---
 
 ## Matrix
 
-*RCOS clauses: [4.4.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#44-decision-matrix), [4.4.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#44-decision-matrix), [4.4.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#44-decision-matrix), [4.4.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#44-decision-matrix)*
+*RCOS-Klauseln: [4.4.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#44-decision-matrix), [4.4.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#44-decision-matrix), [4.4.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#44-decision-matrix), [4.4.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#44-decision-matrix)*
 
 <details data-kind="rationale">
-<summary>Why a single authoritative matrix?</summary>
+<summary>Warum eine einzige verbindliche Matrix?</summary>
 
-If the rules for who decides what live in people's heads, authority becomes whatever the loudest or most senior person says it is. A public matrix that binds every decision to a domain, body, mechanism, and threshold makes out-of-scope action visible the moment it happens — and makes any decision made outside it invalid by construction.
+Wenn die Regeln darüber, wer was entscheidet, nur in den Köpfen der Leute existieren, wird Autorität zu dem, was die lauteste oder ranghöchste Person sagt. Eine öffentliche Matrix, die jede Entscheidung an einen Bereich, ein Gremium, einen Mechanismus und eine Schwelle bindet, macht jede Kompetenzüberschreitung sofort sichtbar — und macht jede außerhalb der Matrix getroffene Entscheidung per Definition ungültig.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du diesen Abschnitt ausfüllst</summary>
 
-For each decision domain (membership, treasury, platform, partnerships, governance, etc.), set the decision type, the authorized body, who is eligible to participate, the mechanism, threshold, blocking conditions, and escalation path.
+Lege für jeden Entscheidungsbereich (Mitgliedschaft, Finanzen, Plattform, Partnerschaften, Governance usw.) den Entscheidungstyp, das autorisierte Gremium, die teilnahmeberechtigten Personen, den Mechanismus, die Schwelle, Blockadebedingungen und den Eskalationspfad fest.
 
 </details>
 
-| Decision Domain | Decision Type | Authorized Body | Eligible Participants | Mechanism | Threshold | Blocking / Veto conditions | Escalation |
+| Entscheidungsbereich | Entscheidungstyp | Autorisiertes Gremium | Teilnahmeberechtigte | Mechanismus | Schwelle | Blockade- / Vetobedingungen | Eskalation |
 |---|---|---|---|---|---|---|---|
-| _<e.g. Membership admission>_ | _<Operational / Strategic / Constitutional>_ | _<role or body>_ | _<who participates>_ | _<vote / delegated>_ | _<threshold>_ | _<blocking conditions>_ | _<escalation path>_ |
-| _<e.g. Treasury spending — small>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
-| _<e.g. Treasury spending — large>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
-| _<e.g. Governance rule changes>_ | _<Constitutional>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
-| _<e.g. Primary purpose / invariant changes>_ | _<Constitutional>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
+| _<z. B. Mitgliedsaufnahme>_ | _<Operativ / Strategisch / Konstitutionell>_ | _<Rolle oder Gremium>_ | _<wer teilnimmt>_ | _<Abstimmung / delegiert>_ | _<Schwelle>_ | _<Blockadebedingungen>_ | _<Eskalationspfad>_ |
+| _<z. B. Finanzausgaben — klein>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
+| _<z. B. Finanzausgaben — groß>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
+| _<z. B. Änderungen an Governance-Regeln>_ | _<Konstitutionell>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
+| _<z. B. Änderungen am Hauptzweck / an Invarianten>_ | _<Konstitutionell>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
 
-> **Operational role holders:** Each operational decision is executed by the named role holder responsible for that domain, acting within their defined scope per the Role Registry (Layer 5). Where a decision spans multiple domains, each role holder acts within their own scope.
+> **Operative Rolleninhaber:** Jede operative Entscheidung wird von der benannten Rolleninhaberin ausgeführt, die für den jeweiligen Bereich zuständig ist, und zwar innerhalb ihres definierten Zuständigkeitsbereichs gemäß dem Rollenregister (Layer 5). Wenn eine Entscheidung mehrere Bereiche betrifft, handelt jede Rolleninhaberin innerhalb ihres eigenen Zuständigkeitsbereichs.
 
-## Decision Type Definitions
+## Definitionen der Entscheidungstypen
 
-*RCOS clauses: [4.1.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#41-decision-types), [4.1.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#41-decision-types), [4.1.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#41-decision-types), [4.1.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#41-decision-types), [4.1.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#41-decision-types)*
+*RCOS-Klauseln: [4.1.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#41-decision-types), [4.1.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#41-decision-types), [4.1.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#41-decision-types), [4.1.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#41-decision-types), [4.1.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#41-decision-types)*
 
 <details data-kind="rationale">
-<summary>Why classify every decision?</summary>
+<summary>Warum jede Entscheidung klassifizieren?</summary>
 
-Without a type, every decision gets handled at whatever speed and scrutiny happens to suit the moment — routine changes stall in debate, and constitutional shifts slip through unnoticed. Fixed types tie the weight of a decision to the process it must pass through, and the default-higher rule closes the gap where ambiguity would otherwise be exploited.
+Ohne einen Typ wird jede Entscheidung mit der Geschwindigkeit und Sorgfalt behandelt, die gerade passt — Routineänderungen versanden in Debatten, und konstitutionelle Änderungen rutschen unbemerkt durch. Feste Typen binden das Gewicht einer Entscheidung an den Prozess, den sie durchlaufen muss, und die Regel „im Zweifel höher einstufen" schließt die Lücke, die sonst ausgenutzt werden könnte.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du diesen Abschnitt ausfüllst</summary>
 
-Define each decision type by what it covers, who executes it, what process it requires, and how disputes about classification are resolved.
+Definiere jeden Entscheidungstyp anhand seines Geltungsbereichs, wer ihn ausführt, welchen Prozess er erfordert und wie Streitigkeiten über die Klassifizierung gelöst werden.
 
 </details>
 
-- **Operational** — _<day-to-day functioning within existing rules; executed by the relevant role holder without a vote.>_
-- **Strategic** — _<long-term direction, significant resource allocation, creation/removal of major structures; requires a Full Member vote with a defined deliberation period.>_
-- **Constitutional** — _<changes to Layer 0 (purpose, scope, invariants) or to the governance system itself; requires a Full Member vote, supermajority, and a ratification period.>_
+- **Operativ** — _<Tagesgeschäft innerhalb bestehender Regeln; wird von der zuständigen Rolleninhaberin ohne Abstimmung ausgeführt.>_
+- **Strategisch** — _<langfristige Ausrichtung, bedeutende Ressourcenzuweisung, Schaffung/Abschaffung wesentlicher Strukturen; erfordert eine Abstimmung der Vollmitglieder mit definiertem Beratungszeitraum.>_
+- **Konstitutionell** — _<Änderungen an Layer 0 (Zweck, Geltungsbereich, Invarianten) oder am Governance-System selbst; erfordert eine Abstimmung der Vollmitglieder, Supermehrheit und einen Ratifizierungszeitraum.>_
 
-> If a decision cannot be clearly classified, it defaults to the higher-impact type.
+> Wenn eine Entscheidung nicht eindeutig klassifiziert werden kann, wird standardmäßig der Typ mit höherer Auswirkung angewandt.
 
 ---
 
-## Ratification Record
+## Ratifizierungsprotokoll
 
-- **Adopted:** <YYYY-MM-DD>
-- **Decision type:** Constitutional
-- **Version:** <version>
-- **Decision record:** <link to decision record>
+- **Angenommen am:** <JJJJ-MM-TT>
+- **Entscheidungstyp:** Konstitutionell
+- **Version:** <Version>
+- **Entscheidungsprotokoll:** <Link zum Entscheidungsprotokoll>

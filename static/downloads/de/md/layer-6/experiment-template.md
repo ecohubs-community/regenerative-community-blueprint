@@ -1,78 +1,76 @@
 **RCOS – Regenerative Community Operating System**
 
-# Experiment Template
+# Experiment-Vorlage
 
 - **Generiert:** 2026-04-28
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-6/experiment-template](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-6/experiment-template)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
-
 ---
-- **Layer:** 6 — Evolution & Adaptation
-- **Status:** Template — use to propose a time-bounded experiment
-- **RCOS reference:** [§8.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-6-evolution-adaptation#83-experiments), [§8.7](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-6-evolution-adaptation#87-layer-invariants)
+- **Schicht:** 6 — Evolution & Anpassung
+- **Status:** Vorlage — verwende sie, um ein zeitlich begrenztes Experiment vorzuschlagen
+- **RCOS-Referenz:** [§8.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-6-evolution-adaptation#83-experiments), [§8.7](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-6-evolution-adaptation#87-layer-invariants)
 
-> Experiments let the community try a change without permanently adopting it. To stay safe, every experiment must be time-bounded, labeled, and auto-expiring — and must record its results in the Learning Log.
+> Experimente erlauben es der Gemeinschaft, eine Änderung auszuprobieren, ohne sie dauerhaft zu übernehmen. Damit das sicher bleibt, muss jedes Experiment zeitlich begrenzt, gekennzeichnet und automatisch ablaufend sein — und seine Ergebnisse im Lernprotokoll festhalten.
 
 ---
 
-## Required Fields
+## Pflichtfelder
 
-*RCOS clauses: [8.3.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-6-evolution-adaptation#83-experiments), [8.3.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-6-evolution-adaptation#83-experiments), [8.3.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-6-evolution-adaptation#83-experiments), [8.3.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-6-evolution-adaptation#83-experiments), [8.3.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-6-evolution-adaptation#83-experiments), [8.7.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-6-evolution-adaptation#87-layer-invariants)*
+*RCOS-Klauseln: [8.3.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-6-evolution-adaptation#83-experiments), [8.3.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-6-evolution-adaptation#83-experiments), [8.3.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-6-evolution-adaptation#83-experiments), [8.3.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-6-evolution-adaptation#83-experiments), [8.3.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-6-evolution-adaptation#83-experiments), [8.7.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-6-evolution-adaptation#87-layer-invariants)*
 
 <details data-kind="rationale">
-<summary>Why require these fields?</summary>
+<summary>Warum sind diese Felder erforderlich?</summary>
 
-Without scope, duration, success criteria, and rollback, an "experiment" is just a permanent change with friendlier branding. Forcing every proposal to specify what it changes, when it ends, how it will be reviewed, and how it will be rolled back keeps experimentation reversible — and prevents the experiment label from being used to bypass deliberation.
+Ohne Umfang, Dauer, Erfolgskriterien und Rollback ist ein „Experiment" nur eine dauerhafte Änderung mit freundlicherem Etikett. Indem jeder Vorschlag angeben muss, was er ändert, wann er endet, wie er überprüft wird und wie er rückgängig gemacht wird, bleibt Experimentieren umkehrbar — und das Experiment-Label kann nicht dazu verwendet werden, die Beratung zu umgehen.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-Fill each field. Maximum duration is set by your Change Protocol. The decision authority must come from the Decision Matrix.
+Fülle jedes Feld aus. Die maximale Dauer wird durch dein Änderungsprotokoll festgelegt. Die Entscheidungsbefugnis muss aus der Entscheidungsmatrix stammen.
 
 </details>
 
-- **Title:** _<short experiment name.>_
-- **Proposer:** _<member name.>_
-- **Decision type:** Strategic
-- **Scope:** _<exactly what is being tried; which artifacts and behaviors are affected.>_
-- **Duration:** _<start date — end date; maximum duration as set by the Change Protocol.>_
-- **Review checkpoints:** _<at minimum one midpoint check-in; specify dates and what is reviewed.>_
-- **Success criteria:** _<observable conditions that would justify making the change permanent.>_
-- **Failure criteria:** _<observable conditions that would terminate the experiment early.>_
-- **Rollback conditions and process:** _<what triggers rollback and how it is executed.>_
-- **Authorized decision path:** _<who may start, extend, modify, or terminate the experiment, per the Decision Matrix.>_
-- **Labelling:** _<all artifacts affected by the experiment must be explicitly labelled as experimental for the duration.>_
-- **Safety suspension:** _<acknowledge that an emergency suspension may be invoked under the Change Protocol if a credible safety risk emerges.>_
+- **Titel:** _<kurzer Experimentname.>_
+- **Vorschlagende Person:** _<Name des Mitglieds.>_
+- **Entscheidungstyp:** Strategisch
+- **Umfang:** _<was genau ausprobiert wird; welche Artefakte und Verhaltensweisen betroffen sind.>_
+- **Dauer:** _<Startdatum — Enddatum; maximale Dauer gemäß Änderungsprotokoll.>_
+- **Überprüfungszeitpunkte:** _<mindestens ein Zwischencheck; gib Termine und Prüfgegenstände an.>_
+- **Erfolgskriterien:** _<beobachtbare Bedingungen, die eine dauerhafte Übernahme der Änderung rechtfertigen würden.>_
+- **Abbruchkriterien:** _<beobachtbare Bedingungen, die das Experiment vorzeitig beenden würden.>_
+- **Rollback-Bedingungen und -Prozess:** _<was ein Rollback auslöst und wie es durchgeführt wird.>_
+- **Autorisierter Entscheidungspfad:** _<wer das Experiment gemäß der Entscheidungsmatrix starten, verlängern, ändern oder beenden darf.>_
+- **Kennzeichnung:** _<alle vom Experiment betroffenen Artefakte müssen für die Dauer des Experiments ausdrücklich als experimentell gekennzeichnet werden.>_
+- **Sicherheitsaussetzung:** _<bestätige, dass eine Notaussetzung gemäß Änderungsprotokoll eingeleitet werden kann, wenn ein glaubhaftes Sicherheitsrisiko entsteht.>_
 
-## Expiry and Renewal
+## Ablauf und Verlängerung
 
 <details data-kind="rationale">
-<summary>Why must experiments expire?</summary>
+<summary>Warum müssen Experimente ablaufen?</summary>
 
-The community needs the option to revert. Auto-expiry forces a deliberate decision to make the change permanent — not a slow drift in which nobody remembers it was ever conditional.
+Die Gemeinschaft braucht die Möglichkeit, Änderungen rückgängig zu machen. Automatisches Ablaufen erzwingt eine bewusste Entscheidung, die Änderung dauerhaft zu übernehmen — statt eines schleichenden Drifts, bei dem sich niemand mehr erinnert, dass sie jemals vorläufig war.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-State the auto-expiry rule, the renewal mechanism, and the obligation to record results in the Learning Log.
+Halte die Regel zum automatischen Ablauf, den Verlängerungsmechanismus und die Pflicht zur Ergebniserfassung im Lernprotokoll fest.
 
 </details>
 
-- _<Experiments expire automatically at the end of their defined duration unless explicitly renewed via a new proposal. Renewal requires a new Strategic vote.>_
-- _<Results and learnings are recorded in the Learning Log.>_
+- _<Experimente laufen automatisch am Ende ihrer festgelegten Dauer ab, sofern sie nicht ausdrücklich durch einen neuen Vorschlag verlängert werden. Eine Verlängerung erfordert eine neue strategische Abstimmung.>_
+- _<Ergebnisse und Erkenntnisse werden im Lernprotokoll festgehalten.>_
 
 ---
 
-## Outcome Record (filled in at experiment end)
+## Ergebnisprotokoll (wird am Ende des Experiments ausgefüllt)
 
-- **End date:**
-- **Outcome:** _<Adopted permanently / Rolled back / Modified and re-run / Terminated early>_
-- **Decision record:** _<link to vote or decision>_
-- **Learning Log entry:** _<link>_
-- **Summary:** _<two to four sentences on what was tried, what was observed, and what was decided.>_
+- **Enddatum:**
+- **Ergebnis:** _<Dauerhaft übernommen / Rückgängig gemacht / Angepasst und erneut durchgeführt / Vorzeitig beendet>_
+- **Entscheidungsnachweis:** _<Link zur Abstimmung oder Entscheidung>_
+- **Lernprotokoll-Eintrag:** _<Link>_
+- **Zusammenfassung:** _<zwei bis vier Sätze darüber, was ausprobiert wurde, was beobachtet wurde und was entschieden wurde.>_

@@ -1,117 +1,115 @@
 **RCOS – Regenerative Community Operating System**
 
-# Scope Declaration
+# Geltungsbereichserklärung
 
 - **Generiert:** 2026-04-28
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-0/scope-declaration](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-0/scope-declaration)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
-
 ---
-- **Layer:** 0 — Identity & Scope
-- **Status:** Template — adapt for your community
-- **RCOS reference:** [§2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration), [§2.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#25-artifacts)
+- **Layer:** 0 — Identität & Geltungsbereich
+- **Status:** Vorlage — an eure Gemeinschaft anpassen
+- **RCOS-Referenz:** [§2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration), [§2.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#25-artifacts)
 
 ---
 
-## In-Scope Assets
+## Erfasste Vermögenswerte
 
-*RCOS clauses: [2.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration), [2.2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration), [2.2.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration)*
+*RCOS-Klauseln: [2.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration), [2.2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration), [2.2.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration)*
 
 <details data-kind="rationale">
-<summary>Why enumerate every governed asset?</summary>
+<summary>Warum jeden verwalteten Vermögenswert aufzählen?</summary>
 
-If the community has not explicitly named an asset as in-scope, it isn't — full stop. Listing assets by name closes the gap where informal claims of authority grow over undeclared resources, and gives members a concrete checklist to verify what the community actually controls.
+Wenn die Gemeinschaft einen Vermögenswert nicht ausdrücklich als erfasst benannt hat, ist er es nicht — Punkt. Vermögenswerte namentlich aufzulisten schließt die Lücke, in der informelle Autoritätsansprüche über nicht deklarierte Ressourcen wachsen, und gibt Mitgliedern eine konkrete Checkliste, um zu überprüfen, was die Gemeinschaft tatsächlich kontrolliert.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-List every asset the community collectively governs: shared funds, treasuries, land, real estate, software, websites, social accounts, brand, intellectual property, physical infrastructure, etc. Be specific — name accounts, wallets, domains.
+Liste jeden Vermögenswert auf, den die Gemeinschaft gemeinsam verwaltet: gemeinsame Kassen, Treasuries, Land, Immobilien, Software, Websites, Social-Media-Konten, Marke, geistiges Eigentum, physische Infrastruktur usw. Sei konkret — benenne Konten, Wallets, Domains.
 
 </details>
 
-1. _<Asset 1, e.g. the shared treasury held in a specific multi-sig wallet.>_
-2. _<Asset 2, e.g. the community website and its domain.>_
-3. _<Asset 3, e.g. shared physical infrastructure or land.>_
-4. _<Asset 4.>_
+1. _<Vermögenswert 1, z. B. die gemeinsame Kasse in einer bestimmten Multi-Sig-Wallet.>_
+2. _<Vermögenswert 2, z. B. die Gemeinschaftswebsite und ihre Domain.>_
+3. _<Vermögenswert 3, z. B. gemeinsame physische Infrastruktur oder Land.>_
+4. _<Vermögenswert 4.>_
 
-## In-Scope Decision Domains
+## Erfasste Entscheidungsbereiche
 
-*RCOS clauses: [2.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration), [2.2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration)*
+*RCOS-Klauseln: [2.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration), [2.2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration)*
 
 <details data-kind="rationale">
-<summary>Why name decision domains, not just assets?</summary>
+<summary>Warum Entscheidungsbereiche benennen, nicht nur Vermögenswerte?</summary>
 
-Scope isn't only about stuff — it's about which kinds of questions the community gets to answer collectively. Naming decision domains makes it unambiguous where collective authority applies and where an individual or external party still decides, preventing quiet capture of decision territory.
+Beim Geltungsbereich geht es nicht nur um Dinge — es geht darum, welche Arten von Fragen die Gemeinschaft gemeinsam beantworten darf. Entscheidungsbereiche zu benennen macht unmissverständlich, wo kollektive Autorität gilt und wo eine Einzelperson oder eine externe Partei weiterhin entscheidet, und verhindert die stille Übernahme von Entscheidungsgebieten.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-List the categories of decisions the community has authority over. These map to later layers (governance, membership, treasury, etc.) — name them at a level that makes it clear what kinds of questions the community decides together.
+Liste die Kategorien von Entscheidungen auf, über die die Gemeinschaft Autorität hat. Diese entsprechen späteren Layern (Governance, Mitgliedschaft, Kasse usw.) — benenne sie auf einem Niveau, das klarmacht, welche Arten von Fragen die Gemeinschaft gemeinsam entscheidet.
 
 </details>
 
-1. _<Decision domain 1, e.g. governance rules and decision processes (Layer 2).>_
-2. _<Decision domain 2, e.g. membership rules and admission (Layer 1).>_
-3. _<Decision domain 3, e.g. treasury and shared resource allocation (Layer 3).>_
-4. _<Decision domain 4.>_
+1. _<Entscheidungsbereich 1, z. B. Governance-Regeln und Entscheidungsprozesse (Layer 2).>_
+2. _<Entscheidungsbereich 2, z. B. Mitgliedschaftsregeln und Aufnahme (Layer 1).>_
+3. _<Entscheidungsbereich 3, z. B. Kasse und Verteilung gemeinsamer Ressourcen (Layer 3).>_
+4. _<Entscheidungsbereich 4.>_
 
-## In-Scope Activities and Responsibilities
+## Erfasste Aktivitäten und Verantwortlichkeiten
 
-*RCOS clauses: [2.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration), [2.2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration)*
+*RCOS-Klauseln: [2.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration), [2.2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration)*
 
 <details data-kind="rationale">
-<summary>Why declare the work the community owns?</summary>
+<summary>Warum die Arbeit deklarieren, die der Gemeinschaft gehört?</summary>
 
-Authority without owned responsibility produces paralysis; responsibility without declared authority produces burnout and blame. Listing the activities the community collectively governs makes the work visible, assignable, and accountable — and makes it obvious when something important has no owner.
+Autorität ohne übernommene Verantwortung erzeugt Stillstand; Verantwortung ohne erklärte Autorität erzeugt Burnout und Schuldzuweisungen. Die Aktivitäten aufzulisten, die die Gemeinschaft gemeinsam steuert, macht die Arbeit sichtbar, zuweisbar und rechenschaftspflichtig — und macht offensichtlich, wenn etwas Wichtiges keinen Verantwortlichen hat.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-List the ongoing activities the community is responsible for: maintaining shared infrastructure, admitting members, reporting on resources, stewarding the brand, etc. These are the things that need an owner via Layer 5.
+Liste die laufenden Aktivitäten auf, für die die Gemeinschaft verantwortlich ist: Pflege gemeinsamer Infrastruktur, Aufnahme von Mitgliedern, Berichterstattung über Ressourcen, Pflege der Marke usw. Das sind die Dinge, die über Layer 5 einen Verantwortlichen brauchen.
 
 </details>
 
-1. _<Activity 1.>_
-2. _<Activity 2.>_
-3. _<Activity 3.>_
-4. _<Activity 4.>_
+1. _<Aktivität 1.>_
+2. _<Aktivität 2.>_
+3. _<Aktivität 3.>_
+4. _<Aktivität 4.>_
 
-## Explicitly Out of Scope
+## Ausdrücklich nicht erfasst
 
-*RCOS clauses: [2.2.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration), [2.2.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration), [2.2.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration)*
+*RCOS-Klauseln: [2.2.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration), [2.2.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration), [2.2.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#22-scope-declaration)*
 
 <details data-kind="rationale">
-<summary>Why name what the community must not touch?</summary>
+<summary>Warum benennen, was die Gemeinschaft nicht anfassen darf?</summary>
 
-An unstated boundary is no boundary at all. Explicit out-of-scope items protect members from the community reaching into their private lives and finances, and protect external parties from the community presuming authority over their affairs. If it isn't named here, the default rule of "not in-scope means out of scope" still applies — but naming the big ones removes any room for argument.
+Eine unausgesprochene Grenze ist überhaupt keine Grenze. Explizit nicht erfasste Punkte schützen Mitglieder davor, dass die Gemeinschaft in ihr Privatleben und ihre Finanzen eingreift, und schützen externe Parteien davor, dass die Gemeinschaft Autorität über ihre Angelegenheiten beansprucht. Wenn etwas hier nicht benannt ist, gilt die Standardregel „nicht erfasst bedeutet außerhalb des Geltungsbereichs" weiterhin — aber die großen Punkte zu benennen, beseitigt jeden Raum für Diskussionen.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-List the most important boundaries: things people might assume are in scope but aren't. Personal finances, private relationships, third-party infrastructure, external projects, etc.
+Liste die wichtigsten Grenzen auf: Dinge, von denen Leute annehmen könnten, dass sie erfasst sind, es aber nicht sind. Persönliche Finanzen, private Beziehungen, Infrastruktur Dritter, externe Projekte usw.
 
 </details>
 
-1. _<Out-of-scope item 1, e.g. personal income and private finances of members.>_
-2. _<Out-of-scope item 2, e.g. private relationships and personal living arrangements (except where Layer 4 safety-critical conditions apply).>_
-3. _<Out-of-scope item 3, e.g. underlying server infrastructure and third-party service contracts.>_
-4. _<Out-of-scope item 4.>_
+1. _<Nicht erfasster Punkt 1, z. B. persönliches Einkommen und private Finanzen der Mitglieder.>_
+2. _<Nicht erfasster Punkt 2, z. B. private Beziehungen und persönliche Wohnsituationen (außer wenn sicherheitskritische Bedingungen aus Layer 4 gelten).>_
+3. _<Nicht erfasster Punkt 3, z. B. zugrundeliegende Serverinfrastruktur und Verträge mit Drittanbietern.>_
+4. _<Nicht erfasster Punkt 4.>_
 
 ---
 
-## Ratification Record
+## Ratifizierungsprotokoll
 
-- **Adopted:** <YYYY-MM-DD>
-- **Decision type:** Constitutional
-- **Version:** <version>
-- **Decision record:** <link to decision record>
+- **Angenommen:** <JJJJ-MM-TT>
+- **Entscheidungstyp:** Verfassungsgebend
+- **Version:** <Version>
+- **Entscheidungsprotokoll:** <Link zum Entscheidungsprotokoll>

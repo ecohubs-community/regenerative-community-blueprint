@@ -1,57 +1,55 @@
 **RCOS – Regenerative Community Operating System**
 
-# Authority Registry
+# Autoritätenregister
 
 - **Generiert:** 2026-04-28
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-2/authority-registry](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-2/authority-registry)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
-
 ---
-- **Layer:** 2 — Governance & Decision Logic
-- **Status:** Template — adapt for your community
-- **RCOS reference:** [§4.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#43-authority-boundaries), [§4.7](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#47-artifacts)
+- **Schicht:** 2 — Governance & Entscheidungslogik
+- **Status:** Vorlage — an deine Gemeinschaft anpassen
+- **RCOS-Referenz:** [§4.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#43-authority-boundaries), [§4.7](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#47-artifacts)
 
-> Lists all roles, circles, or bodies that hold decision-making authority, along with their explicit scope, limits, and term.
+> Listet alle Rollen, Kreise oder Gremien auf, die Entscheidungsbefugnis besitzen, zusammen mit ihrem expliziten Geltungsbereich, ihren Grenzen und ihrer Amtszeit.
 
 ---
 
-## Registered Authorities
+## Registrierte Autoritäten
 
-*RCOS clauses: [4.3.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#43-authority-boundaries), [4.3.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#43-authority-boundaries), [4.3.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#43-authority-boundaries), [4.3.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#43-authority-boundaries), [4.3.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#43-authority-boundaries)*
+*RCOS-Klauseln: [4.3.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#43-authority-boundaries), [4.3.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#43-authority-boundaries), [4.3.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#43-authority-boundaries), [4.3.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#43-authority-boundaries), [4.3.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#43-authority-boundaries)*
 
 <details data-kind="rationale">
-<summary>Why write every authority down?</summary>
+<summary>Warum jede Autorität schriftlich festhalten?</summary>
 
-Authority that is not explicitly registered gets filled in by default — by whoever has been around longest, speaks loudest, or controls the keys. A single registry that names every role, bounds its scope, caps its limits, and ties its basis to a delegation act makes unauthorized action detectable and prevents authority from being derived from charisma, seniority, or ownership.
+Autorität, die nicht explizit registriert ist, wird stillschweigend gefüllt — von wem auch immer am längsten dabei ist, am lautesten spricht oder die Schlüssel kontrolliert. Ein einziges Register, das jede Rolle benennt, ihren Geltungsbereich eingrenzt, ihre Grenzen festlegt und ihre Grundlage an einen Delegationsakt knüpft, macht unautorisiertes Handeln erkennbar und verhindert, dass Autorität aus Charisma, Seniorität oder Eigentum abgeleitet wird.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-For each role, body, or circle that holds authority, list the scope of authority, hard limits, term/duration, and the basis (membership state, delegation act, etc.). The collective body of Full Members is itself an authority and belongs in this table.
+Liste für jede Rolle, jedes Gremium oder jeden Kreis, der Autorität besitzt, den Geltungsbereich der Autorität, harte Grenzen, Amtszeit/Dauer und die Grundlage (Mitgliedschaftsstatus, Delegationsakt usw.) auf. Das Kollektivgremium der Vollmitglieder ist selbst eine Autorität und gehört in diese Tabelle.
 
 </details>
 
-| Role / Body | Scope of authority | Limits | Term / Duration | Basis |
+| Rolle / Gremium | Geltungsbereich der Autorität | Grenzen | Amtszeit / Dauer | Grundlage |
 |---|---|---|---|---|
-| _<e.g. Full Members (collective)>_ | _<scope>_ | _<limits — cannot override invariants; cannot act outside Decision Matrix>_ | _<duration>_ | _<basis — membership state>_ |
-| _<e.g. Membership Admin>_ | _<scope>_ | _<limits>_ | _<duration>_ | _<basis — delegated by Full Members>_ |
-| _<e.g. Finance Steward>_ | _<scope>_ | _<limits — spending cap>_ | _<duration>_ | _<basis>_ |
+| _<z. B. Vollmitglieder (kollektiv)>_ | _<Geltungsbereich>_ | _<Grenzen — darf Invarianten nicht außer Kraft setzen; darf nicht außerhalb der Entscheidungsmatrix handeln>_ | _<Dauer>_ | _<Grundlage — Mitgliedschaftsstatus>_ |
+| _<z. B. Mitgliedschaftsverwaltung>_ | _<Geltungsbereich>_ | _<Grenzen>_ | _<Dauer>_ | _<Grundlage — delegiert durch Vollmitglieder>_ |
+| _<z. B. Finanz-Steward>_ | _<Geltungsbereich>_ | _<Grenzen — Ausgabenobergrenze>_ | _<Dauer>_ | _<Grundlage>_ |
 | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
 
-> **Conflict-of-interest recusal:** A role holder may not exercise their delegated authority in any decision where they have a direct personal interest. In such cases, the decision is escalated through the governance process.
+> **Befangenheitsausschluss:** Eine Rolleninhaberin oder ein Rolleninhaber darf die delegierte Autorität nicht in Entscheidungen ausüben, bei denen ein direktes persönliches Interesse besteht. In solchen Fällen wird die Entscheidung über den Governance-Prozess eskaliert.
 
-> Authority must not be derived from charisma, seniority, ownership, or informal influence.
-> Temporary or emergency authority must be explicitly defined, time-bounded, and subject to review.
+> Autorität darf nicht aus Charisma, Seniorität, Eigentum oder informellem Einfluss abgeleitet werden.
+> Temporäre oder Notfall-Autorität muss explizit definiert, zeitlich begrenzt und einer Überprüfung unterzogen werden.
 
 ---
 
-## Ratification Record
+## Ratifizierungsprotokoll
 
-- **Adopted:** <YYYY-MM-DD>
-- **Decision type:** Constitutional
-- **Version:** <version>
-- **Decision record:** <link to decision record>
+- **Angenommen:** <JJJJ-MM-TT>
+- **Entscheidungstyp:** Konstitutionell
+- **Version:** <Version>
+- **Entscheidungsprotokoll:** <Link zum Entscheidungsprotokoll>

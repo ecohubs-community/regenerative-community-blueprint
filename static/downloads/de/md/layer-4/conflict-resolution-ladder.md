@@ -1,182 +1,180 @@
 **RCOS – Regenerative Community Operating System**
 
-# Conflict Resolution Ladder
+# Konfliktlösungsleiter
 
 - **Generiert:** 2026-04-28
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-4/conflict-resolution-ladder](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-4/conflict-resolution-ladder)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
-
 ---
-- **Layer:** 4 — Conflict, Repair & Accountability
-- **Status:** Template — adapt for your community
-- **RCOS reference:** [§6.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [§6.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [§6.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [§6.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)
+- **Schicht:** 4 — Konflikt, Wiedergutmachung & Rechenschaftspflicht
+- **Status:** Vorlage — an deine Gemeinschaft anpassen
+- **RCOS-Referenz:** [§6.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [§6.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [§6.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [§6.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)
 
 ---
 
-## Conflict Classification
+## Konfliktklassifizierung
 
-*RCOS clauses: [6.1.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [6.1.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [6.1.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [6.1.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [6.1.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [6.5.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)*
+*RCOS-Klauseln: [6.1.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [6.1.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [6.1.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [6.1.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [6.1.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [6.5.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)*
 
 <details data-kind="rationale">
-<summary>Why classify conflicts at all?</summary>
+<summary>Warum Konflikte überhaupt klassifizieren?</summary>
 
-Without named classes, every dispute gets treated the same — or worse, treated differently based on who is involved. Explicit classes set the entry point, the response window, and the documentation burden up front, so safety-critical matters cannot be quietly routed through a friendly chat and minor friction cannot be weaponized into a formal review.
+Ohne benannte Klassen wird jeder Streit gleich behandelt — oder schlimmer noch, je nach beteiligter Person unterschiedlich. Explizite Klassen legen den Einstiegspunkt, das Reaktionsfenster und den Dokumentationsaufwand von vornherein fest, sodass sicherheitskritische Angelegenheiten nicht stillschweigend über ein freundliches Gespräch abgehandelt und geringfügige Reibungen nicht zu einer formellen Überprüfung aufgebauscht werden können.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-For each class, set entry criteria, the entry step in the ladder, the initial response window, and the documentation burden.
+Lege für jede Klasse die Eintrittskriterien, die Einstiegsstufe in der Leiter, das anfängliche Reaktionsfenster und den Dokumentationsaufwand fest.
 
 </details>
 
-| Class | Entry criteria | Entry point | Initial response window | Documentation |
+| Klasse | Eintrittskriterien | Einstiegspunkt | Anfängliches Reaktionsfenster | Dokumentation |
 |---|---|---|---|---|
-| _<Interpersonal>_ | _<member-to-member friction>_ | _<Step 1>_ | _<window>_ | _<from which step>_ |
-| _<Role-based>_ | _<role-performance dispute>_ | _<...>_ | _<...>_ | _<...>_ |
-| _<Structural>_ | _<governance-process dispute>_ | _<...>_ | _<...>_ | _<...>_ |
-| _<Ethical / obligation breach>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
-| _<Safety-critical>_ | _<credible safety risk, coercion, abuse, or threats>_ | _<bypasses earlier steps>_ | _<short window>_ | _<from intake; immediate action permitted>_ |
+| _<Zwischenmenschlich>_ | _<Reibung zwischen Mitgliedern>_ | _<Stufe 1>_ | _<Fenster>_ | _<ab welcher Stufe>_ |
+| _<Rollenbasiert>_ | _<Streit über Rollenausübung>_ | _<...>_ | _<...>_ | _<...>_ |
+| _<Strukturell>_ | _<Streit über Governance-Prozesse>_ | _<...>_ | _<...>_ | _<...>_ |
+| _<Ethischer / Pflichtverstoss>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
+| _<Sicherheitskritisch>_ | _<glaubhaftes Sicherheitsrisiko, Nötigung, Missbrauch oder Drohungen>_ | _<überspringt frühere Stufen>_ | _<kurzes Fenster>_ | _<ab Eingang; sofortiges Handeln erlaubt>_ |
 
-> Safety-critical conflicts override participation rights, role continuity, and operational convenience.
+> Sicherheitskritische Konflikte setzen Teilnahmerechte, Rollenkontinuität und betriebliche Zweckmässigkeit ausser Kraft.
 
-## Resolution Ladder Steps
+## Stufen der Lösungsleiter
 
-*RCOS clauses: [6.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.2.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.2.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.2.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.5.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)*
+*RCOS-Klauseln: [6.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.2.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.2.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.2.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.5.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)*
 
 <details data-kind="rationale">
-<summary>Why a stepped ladder instead of a single process?</summary>
+<summary>Warum eine abgestufte Leiter statt eines einzigen Prozesses?</summary>
 
-Most conflict is low-stakes and best resolved between the people involved; forcing everything into formal review would kill trust and flood the governance system. A ladder matches process weight to dispute weight — private conversation first, facilitated dialogue next, written record only when needed, governance vote only when all else fails. It also makes escalation a structural right, not a favour granted by whoever holds social power.
+Die meisten Konflikte sind niedrigschwellig und lassen sich am besten zwischen den Beteiligten lösen; alles in eine formelle Überprüfung zu zwingen würde Vertrauen zerstören und das Governance-System überfluten. Eine Leiter passt den Prozessaufwand an das Streitgewicht an — zuerst ein privates Gespräch, dann ein moderierter Dialog, eine schriftliche Dokumentation nur bei Bedarf, eine Governance-Abstimmung nur wenn alles andere scheitert. Ausserdem wird die Eskalation zu einem strukturellen Recht, statt einem Gefallen, der von der Person mit der meisten sozialen Macht gewährt wird.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-Define each ladder step: who is involved, what happens, the time window, and the escalation rule. Keep the early steps light and confidential; reserve formal review for later steps.
+Definiere jede Leiterstufe: wer beteiligt ist, was passiert, das Zeitfenster und die Eskalationsregel. Halte die frühen Stufen leicht und vertraulich; reserviere die formelle Überprüfung für spätere Stufen.
 
 </details>
 
-1. **Direct conversation** — _<parties attempt to resolve privately; window; outcome rules.>_
-2. **Facilitated dialogue** — _<facilitator hosts conversation; confidentiality; window; outcome rules.>_
-3. **Accountability intake** — _<formal written record opened; submissions; window; outcome rules.>_
-4. **Accountability review** — _<structured review; both parties present; written recommendation; window; outcome rules.>_
-5. **Governance decision** — _<minimum-necessary disclosure to Full Members; deliberation period; vote mechanism and threshold.>_
-6. **Separation process** — _<coordinated with the Exit & Separation Protocol; minimum re-application block.>_
+1. **Direktes Gespräch** — _<Parteien versuchen, die Sache privat zu klären; Zeitfenster; Ergebnisregeln.>_
+2. **Moderierter Dialog** — _<Moderator*in leitet das Gespräch; Vertraulichkeit; Zeitfenster; Ergebnisregeln.>_
+3. **Rechenschafts-Eingang** — _<formelle schriftliche Dokumentation wird eröffnet; Eingaben; Zeitfenster; Ergebnisregeln.>_
+4. **Rechenschafts-Überprüfung** — _<strukturierte Überprüfung; beide Parteien anwesend; schriftliche Empfehlung; Zeitfenster; Ergebnisregeln.>_
+5. **Governance-Entscheidung** — _<minimalnotwendige Offenlegung gegenüber Vollmitgliedern; Beratungsfrist; Abstimmungsverfahren und Schwellenwert.>_
+6. **Trennungsprozess** — _<koordiniert mit dem Austritts- & Trennungsprotokoll; Mindest-Sperrfrist für erneute Bewerbung.>_
 
-## Non-Response, Withdrawal, and Deadlock
+## Nichtreaktion, Rückzug und Pattsituation
 
-*RCOS clauses: [6.2.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.1.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification)*
+*RCOS-Klauseln: [6.2.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.1.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification)*
 
 <details data-kind="rationale">
-<summary>What stops a process from being killed by silence?</summary>
+<summary>Was verhindert, dass ein Prozess durch Schweigen sabotiert wird?</summary>
 
-The easiest way to defeat any accountability process is to ignore it. If non-response, withdrawal, or deadlock leaves the matter frozen, the party on the receiving end of harm carries the cost of the inaction. Explicit rules for each failure mode convert silence into a documented escalation trigger rather than a veto.
+Der einfachste Weg, jeden Rechenschaftsprozess auszuhebeln, ist ihn zu ignorieren. Wenn Nichtreaktion, Rückzug oder Pattsituation die Angelegenheit einfriert, trägt die geschädigte Partei die Kosten der Untätigkeit. Explizite Regeln für jeden Ausfallmodus verwandeln Schweigen in einen dokumentierten Eskalationsauslöser statt in ein Veto.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-Define how non-response, mid-process withdrawal, deadlock, and procedural failure are handled. Each should have a documented escalation path.
+Definiere, wie Nichtreaktion, Rückzug während des Prozesses, Pattsituationen und Verfahrensfehler behandelt werden. Jeder Fall sollte einen dokumentierten Eskalationspfad haben.
 
 </details>
 
-**If a party does not respond within the defined window:**
-- _<Follow-up notice; additional grace period; treatment of continued silence as non-resolution; escalation rule.>_
+**Wenn eine Partei nicht innerhalb des definierten Zeitfensters reagiert:**
+- _<Folgebenachrichtigung; zusätzliche Nachfrist; Behandlung anhaltenden Schweigens als Nichtlösung; Eskalationsregel.>_
 
-**If a party withdraws mid-process:**
-- _<Notification of withdrawal; option for the other party to close or request a written summary; escalation rule for outstanding accountability matters.>_
+**Wenn eine Partei sich während des Prozesses zurückzieht:**
+- _<Mitteilung über den Rückzug; Option für die andere Partei, den Fall abzuschliessen oder eine schriftliche Zusammenfassung anzufordern; Eskalationsregel für offene Rechenschaftsfragen.>_
 
-**Deadlock (all resolution attempts exhausted):**
-- _<Documentation of the deadlock; escalation to governance decision.>_
+**Pattsituation (alle Lösungsversuche ausgeschöpft):**
+- _<Dokumentation der Pattsituation; Eskalation zur Governance-Entscheidung.>_
 
-**Procedural failure review:**
-- _<How procedural objections are raised; where they are logged; trigger for review of this artifact under the Change Protocol.>_
+**Überprüfung bei Verfahrensfehlern:**
+- _<Wie Verfahrenseinwände erhoben werden; wo sie protokolliert werden; Auslöser für eine Überprüfung dieses Artefakts gemäss dem Änderungsprotokoll.>_
 
 ---
 
-## Facilitator Selection and Replacement
+## Auswahl und Ersetzung der Moderation
 
-*RCOS clauses: [6.3.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [6.3.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards)*
+*RCOS-Klauseln: [6.3.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [6.3.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards)*
 
 <details data-kind="rationale">
-<summary>Why name how the Facilitator is chosen or replaced?</summary>
+<summary>Warum festlegen, wie die Moderation ausgewählt oder ersetzt wird?</summary>
 
-A facilitator who is implicated in the conflict — or socially aligned with one party — cannot hold the process fairly, no matter how good their intentions. Naming selection and replacement rules up front means the affected party does not have to fight for a neutral hearing while already under stress.
+Eine moderierende Person, die selbst in den Konflikt verwickelt ist — oder sozial einer Partei nahesteht — kann den Prozess nicht fair führen, egal wie gut ihre Absichten sind. Auswahl- und Ersetzungsregeln vorab festzulegen bedeutet, dass die betroffene Partei nicht um ein neutrales Verfahren kämpfen muss, während sie ohnehin unter Stress steht.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-State the default facilitator role, the rule when the facilitator is a party, the right to decline, and any provision for external facilitation.
+Lege die standardmässige Moderationsrolle fest, die Regel für den Fall, dass die moderierende Person selbst Partei ist, das Ablehnungsrecht und eine optionale externe Moderation.
 
 </details>
 
-- _<Default facilitator role per the Role Registry.>_
-- _<Rule when the facilitator is a party — selection of a neutral substitute.>_
-- _<Right of either party to decline a facilitator with stated conflict of interest.>_
-- _<Optional external facilitation by mutual agreement.>_
+- _<Standard-Moderationsrolle gemäss dem Rollenverzeichnis.>_
+- _<Regel für den Fall, dass die moderierende Person selbst Partei ist — Auswahl einer neutralen Vertretung.>_
+- _<Recht jeder Partei, eine moderierende Person bei festgestelltem Interessenkonflikt abzulehnen.>_
+- _<Optionale externe Moderation in gegenseitigem Einvernehmen.>_
 
-## Privacy and Information Access Boundaries
+## Datenschutz und Informationszugangsgrenzen
 
-*RCOS clauses: [6.5.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)*
+*RCOS-Klauseln: [6.5.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)*
 
 <details data-kind="rationale">
-<summary>Why bound information flow so tightly?</summary>
+<summary>Warum den Informationsfluss so streng begrenzen?</summary>
 
-Conflict records contain the most sensitive material the community holds. Leaks, gossip, or casual disclosure cause second-order harm and deter future reporting. Explicit boundaries — what stays with the parties, what reaches Full Members, and when records are destroyed — make confidentiality enforceable rather than aspirational.
+Konfliktakten enthalten das sensibelste Material, über das die Gemeinschaft verfügt. Durchsickern, Klatsch oder beiläufige Weitergabe verursachen Folgeschäden und schrecken vor zukünftigen Meldungen ab. Explizite Grenzen — was bei den Parteien bleibt, was die Vollmitglieder erfahren und wann Akten vernichtet werden — machen Vertraulichkeit durchsetzbar statt nur wünschenswert.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-State which steps are fully confidential, what minimum information may be disclosed at the governance step, the retention period, and the non-disclosure obligation.
+Lege fest, welche Stufen vollständig vertraulich sind, welche Mindestinformationen in der Governance-Stufe offengelegt werden dürfen, die Aufbewahrungsfrist und die Verschwiegenheitspflicht.
 
 </details>
 
-- _<Steps 1–4: fully confidential; only parties and Facilitator may access records.>_
-- _<Steps 5–6: minimum necessary information disclosed to Full Members; parties notified before disclosure. Define what "minimum necessary" means.>_
-- _<Record retention: who holds records, for how long, then destroyed.>_
-- _<Non-disclosure: no participant may share information about the process outside the defined participants without written consent of all parties.>_
+- _<Stufen 1–4: vollständig vertraulich; nur Parteien und Moderation haben Zugang zu den Akten.>_
+- _<Stufen 5–6: minimalnotwendige Informationen werden den Vollmitgliedern offengelegt; Parteien werden vor der Offenlegung benachrichtigt. Definiere, was „minimalnotwendig" bedeutet.>_
+- _<Aufbewahrung: wer die Akten verwahrt, für wie lange, danach Vernichtung.>_
+- _<Verschwiegenheit: kein*e Teilnehmer*in darf Informationen über den Prozess ausserhalb der definierten Beteiligten ohne schriftliche Zustimmung aller Parteien weitergeben.>_
 
-## Safeguards
+## Schutzmassnahmen
 
-*RCOS clauses: [6.3.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [6.3.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [6.3.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [6.3.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [6.3.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards)*
+*RCOS-Klauseln: [6.3.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [6.3.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [6.3.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [6.3.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [6.3.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards)*
 
 <details data-kind="rationale">
-<summary>Why do safeguards exist on top of the ladder?</summary>
+<summary>Warum gibt es Schutzmassnahmen zusätzlich zur Leiter?</summary>
 
-Process alone does not protect the party with less power. Retaliation, bad-faith complaints, conflicted facilitators, and unreviewed safety risks can all neutralize an otherwise good procedure. Safeguards are the backstops that keep the ladder functional when incentives push against honest reporting.
+Ein Prozess allein schützt nicht die Partei mit weniger Macht. Vergeltung, böswillige Beschwerden, befangene Moderation und ungeprüfte Sicherheitsrisiken können ein ansonsten gutes Verfahren aushebeln. Schutzmassnahmen sind die Sicherheitsnetze, die die Leiter funktionsfähig halten, wenn Anreize gegen ehrliche Meldungen wirken.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-For each safeguard, state the rule and the consequence when it is violated. Power-differential cases need their own intake channel.
+Lege für jede Schutzmassnahme die Regel und die Konsequenz bei Verstoss fest. Fälle mit Machtgefälle benötigen einen eigenen Eingangskanal.
 
 </details>
 
-- **Anti-retaliation:** _<retaliation against a member raising a conflict in good faith is itself grounds for an accountability process.>_
-- **Bad-faith complaints:** _<deliberately false complaints may trigger an accountability process against the complainant.>_
-- **Facilitator conflict of interest:** _<see Facilitator Selection and Replacement.>_
-- **Process pause:** _<either party may pause once for up to X days by written notice.>_
-- **Safety-critical immediate action:** _<facilitator may recommend a temporary access restriction pending review; review window.>_
-- **Power differential — separate intake channel:** _<where a power differential exists, the affected member may submit intake directly to a body other than the standard Facilitator.>_
-- **Role suspension during review:** _<Full Members may temporarily suspend a role holder's delegated authority during review without constituting forced exit.>_
+- **Vergeltungsschutz:** _<Vergeltung gegen ein Mitglied, das in gutem Glauben einen Konflikt meldet, ist selbst Grund für ein Rechenschaftsverfahren.>_
+- **Böswillige Beschwerden:** _<Vorsätzlich falsche Beschwerden können ein Rechenschaftsverfahren gegen die beschwerdeführende Person auslösen.>_
+- **Interessenkonflikt der Moderation:** _<siehe Auswahl und Ersetzung der Moderation.>_
+- **Prozesspause:** _<Jede Partei darf den Prozess einmal für bis zu X Tage per schriftlicher Mitteilung pausieren.>_
+- **Sicherheitskritische Sofortmassnahme:** _<Die Moderation darf eine vorübergehende Zugangsbeschränkung bis zur Überprüfung empfehlen; Überprüfungsfenster.>_
+- **Machtgefälle — separater Eingangskanal:** _<Wenn ein Machtgefälle besteht, darf das betroffene Mitglied die Eingabe direkt an ein anderes Gremium als die standardmässige Moderation richten.>_
+- **Rollensuspendierung während der Überprüfung:** _<Vollmitglieder dürfen die delegierte Autorität einer Rolleninhaberin oder eines Rolleninhabers während der Überprüfung vorübergehend aussetzen, ohne dass dies einen erzwungenen Austritt darstellt.>_
 
 ---
 
-## Ratification Record
+## Ratifizierungsprotokoll
 
-- **Adopted:** <YYYY-MM-DD>
-- **Decision type:** Strategic
-- **Version:** <version>
-- **Decision record:** <link to decision record>
+- **Angenommen:** <JJJJ-MM-TT>
+- **Entscheidungstyp:** Strategisch
+- **Version:** <Version>
+- **Entscheidungsprotokoll:** <Link zum Entscheidungsprotokoll>

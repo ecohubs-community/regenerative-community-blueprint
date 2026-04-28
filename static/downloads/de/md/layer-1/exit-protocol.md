@@ -1,121 +1,119 @@
 **RCOS – Regenerative Community Operating System**
 
-# Exit & Separation Protocol
+# Austritts- & Trennungsprotokoll
 
 - **Generiert:** 2026-04-28
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-1/exit-protocol](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-1/exit-protocol)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
-
 ---
-- **Layer:** 1 — Membership System
-- **Status:** Template — adapt for your community
-- **RCOS reference:** [§3.6](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation), [§3.7](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#37-suspension-and-temporary-status), [§3.8](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#38-artifacts)
+- **Schicht:** 1 — Mitgliedschaftssystem
+- **Status:** Vorlage — an deine Gemeinschaft anpassen
+- **RCOS-Referenz:** [§3.6](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation), [§3.7](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#37-suspension-and-temporary-status), [§3.8](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#38-artifacts)
 
 ---
 
-## Voluntary Exit
+## Freiwilliger Austritt
 
-*RCOS clauses: [3.6.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation), [3.6.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation), [3.6.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation)*
+*RCOS-Klauseln: [3.6.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation), [3.6.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation), [3.6.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation)*
 
 <details data-kind="rationale">
-<summary>Why make leaving frictionless?</summary>
+<summary>Warum sollte das Verlassen reibungslos sein?</summary>
 
-A community that is hard to leave is not a community — it is a trap. Voluntary exit must be available at all times, without interrogation, notice periods, or punishment, because the right to withdraw consent is what makes every other act of consent real. Retaining contribution history separately ensures that leaving does not erase the work the person did.
+Eine Gemeinschaft, die schwer zu verlassen ist, ist keine Gemeinschaft — sie ist eine Falle. Freiwilliger Austritt muss jederzeit möglich sein, ohne Verhör, Kündigungsfristen oder Bestrafung, denn das Recht, Zustimmung zurückzuziehen, ist das, was jede andere Zustimmung erst real macht. Die separate Aufbewahrung der Beitragshistorie stellt sicher, dass ein Austritt die geleistete Arbeit nicht auslöscht.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du diesen Abschnitt ausfüllst</summary>
 
-Describe the channel for submitting exit, time-to-revocation of access, what records are retained, and the resulting state transition.
+Beschreibe den Kanal für die Einreichung des Austritts, die Frist bis zum Entzug des Zugangs, welche Aufzeichnungen aufbewahrt werden und den resultierenden Statusübergang.
 
 </details>
 
-- _<How a member submits a voluntary exit; reasons optional.>_
-- _<Notice period or handover expectation, if any.>_
-- _<Time-to-revocation of access (e.g. within 24 hours of confirmation).>_
-- _<What is retained — contribution history, recognition records — and what is removed.>_
-- _<Resulting state transition (e.g. to Exited Member).>_
-- _<Where and how the exit is recorded with timestamp.>_
+- _<Wie ein Mitglied einen freiwilligen Austritt einreicht; Gründe optional.>_
+- _<Kündigungsfrist oder Übergabeerwartung, falls vorhanden.>_
+- _<Frist bis zum Entzug des Zugangs (z. B. innerhalb von 24 Stunden nach Bestätigung).>_
+- _<Was aufbewahrt wird — Beitragshistorie, Anerkennungsnachweise — und was entfernt wird.>_
+- _<Resultierender Statusübergang (z. B. zu „Ausgetretenes Mitglied").>_
+- _<Wo und wie der Austritt mit Zeitstempel erfasst wird.>_
 
-## Forced Exit
+## Erzwungener Austritt
 
-*RCOS clauses: [3.6.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation), [3.6.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation)*
+*RCOS-Klauseln: [3.6.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation), [3.6.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation)*
 
 <details data-kind="rationale">
-<summary>Why gate removal behind Layer 4?</summary>
+<summary>Warum den Ausschluss an Schicht 4 knüpfen?</summary>
 
-Removal is the sharpest power the community holds over a person. If it can be exercised by anyone with enough social pull, membership is worthless. Requiring a concluded Layer 4 accountability decision — with written reasons, a notification, and a minimum re-application window — turns removal from an act of power into an act of governance that can be reviewed and contested.
+Der Ausschluss ist die schärfste Macht, die eine Gemeinschaft über eine Person hat. Wenn sie von jedem ausgeübt werden kann, der genug sozialen Einfluss hat, ist die Mitgliedschaft wertlos. Die Voraussetzung eines abgeschlossenen Rechenschaftsverfahrens der Schicht 4 — mit schriftlicher Begründung, einer Benachrichtigung und einer Mindest-Wartefrist für erneute Bewerbung — verwandelt den Ausschluss von einem Machtakt in einen Akt der Governance, der überprüft und angefochten werden kann.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du diesen Abschnitt ausfüllst</summary>
 
-State that forced exit can only follow a concluded Layer 4 accountability process. Define notification, access revocation, retained records, re-application block, and decision-record privacy.
+Lege fest, dass ein erzwungener Austritt nur nach einem abgeschlossenen Rechenschaftsverfahren der Schicht 4 erfolgen kann. Definiere Benachrichtigung, Zugangsentzug, aufbewahrte Aufzeichnungen, Sperrfrist für erneute Bewerbung und Datenschutz des Entscheidungsprotokolls.
 
 </details>
 
-- _<Forced exit may only result from a concluded Layer 4 accountability process with a documented decision.>_
-- _<Affected member must be notified in writing with reason and decision-record reference before access is revoked.>_
-- _<Time-to-revocation of access (e.g. within 24 hours of decision).>_
-- _<What is retained, what is removed.>_
-- _<Re-application block (minimum duration, set by accountability decision; reference Layer 4).>_
-- _<Privacy of the decision record (reference Conflict Resolution Ladder privacy rules).>_
+- _<Ein erzwungener Austritt darf nur aus einem abgeschlossenen Rechenschaftsverfahren der Schicht 4 mit dokumentierter Entscheidung resultieren.>_
+- _<Das betroffene Mitglied muss schriftlich mit Begründung und Verweis auf das Entscheidungsprotokoll benachrichtigt werden, bevor der Zugang entzogen wird.>_
+- _<Frist bis zum Entzug des Zugangs (z. B. innerhalb von 24 Stunden nach Entscheidung).>_
+- _<Was aufbewahrt wird, was entfernt wird.>_
+- _<Sperrfrist für erneute Bewerbung (Mindestdauer, festgelegt durch Rechenschaftsentscheidung; Verweis auf Schicht 4).>_
+- _<Datenschutz des Entscheidungsprotokolls (Verweis auf die Datenschutzregeln der Konfliktlösungsleiter).>_
 
-## Suspension
+## Suspendierung
 
-*RCOS clauses: [3.7.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#37-suspension-and-temporary-status), [3.7.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#37-suspension-and-temporary-status), [3.7.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#37-suspension-and-temporary-status)*
+*RCOS-Klauseln: [3.7.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#37-suspension-and-temporary-status), [3.7.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#37-suspension-and-temporary-status), [3.7.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#37-suspension-and-temporary-status)*
 
 <details data-kind="rationale">
-<summary>Why design suspension carefully or not at all?</summary>
+<summary>Warum Suspendierung sorgfältig gestalten — oder gar nicht?</summary>
 
-A poorly-designed suspension state is worse than none — it becomes a soft exit with no due process, or an indefinite limbo used to punish without the accountability of a full removal. If the community cannot commit to explicit conditions, time bounds, and review mechanisms, it is safer to have no formal suspension than a loose one.
+Ein schlecht gestalteter Suspendierungsstatus ist schlimmer als keiner — er wird zu einem weichen Austritt ohne ordentliches Verfahren oder zu einem unbefristeten Schwebezustand, der als Strafe dient, ohne die Rechenschaftspflicht eines vollständigen Ausschlusses. Wenn die Gemeinschaft sich nicht zu expliziten Bedingungen, Zeitgrenzen und Überprüfungsmechanismen verpflichten kann, ist es sicherer, keine formale Suspendierung zu haben als eine unklare.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du diesen Abschnitt ausfüllst</summary>
 
-Either define suspension explicitly (entry conditions, time limits, rights during suspension, review mechanism, exit) or state that no formal suspension exists. Do not leave this section ambiguous.
+Definiere die Suspendierung entweder explizit (Eintrittsbedingungen, Zeitlimits, Rechte während der Suspendierung, Überprüfungsmechanismus, Ende) oder stelle fest, dass keine formale Suspendierung existiert. Lass diesen Abschnitt nicht mehrdeutig.
 
 </details>
 
-_<Either: define suspension state with entry conditions, maximum duration, rights during suspension, mandatory review mechanism, and exit; or: state that formal suspension is not currently defined.>_
+_<Entweder: Definiere den Suspendierungsstatus mit Eintrittsbedingungen, Höchstdauer, Rechten während der Suspendierung, verpflichtendem Überprüfungsmechanismus und Ende; oder: stelle fest, dass eine formale Suspendierung derzeit nicht definiert ist.>_
 
-## Asset, Role, and Responsibility Separation
+## Trennung von Vermögenswerten, Rollen und Verantwortlichkeiten
 
-*RCOS clauses: [3.6.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation)*
+*RCOS-Klauseln: [3.6.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation)*
 
 <details data-kind="rationale">
-<summary>Why enumerate separation steps?</summary>
+<summary>Warum Trennungsschritte auflisten?</summary>
 
-When someone leaves, every unclosed thread — a role nobody vacated, a wallet key still active, a task still assigned — becomes a live attack surface or an operational gap. A checklist forces these threads to be closed deliberately, not discovered months later when something breaks or someone abuses access they no longer should have.
+Wenn jemand geht, wird jeder offene Faden — eine Rolle, die niemand abgegeben hat, ein Wallet-Schlüssel, der noch aktiv ist, eine Aufgabe, die noch zugewiesen ist — zu einer aktiven Angriffsfläche oder einer operativen Lücke. Eine Checkliste erzwingt, dass diese Fäden bewusst geschlossen werden, anstatt Monate später entdeckt zu werden, wenn etwas kaputtgeht oder jemand Zugang missbraucht, den er nicht mehr haben sollte.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du diesen Abschnitt ausfüllst</summary>
 
-Provide a checklist applied to both voluntary and forced exits. Include role vacation, task release, financial-instrument access removal, platform admin revocation, and resolution of outstanding obligations.
+Erstelle eine Checkliste, die sowohl bei freiwilligem als auch bei erzwungenem Austritt angewendet wird. Berücksichtige Rollenabgabe, Aufgabenfreigabe, Entzug des Zugangs zu Finanzinstrumenten, Entzug von Plattform-Administrationsrechten und Klärung offener Verpflichtungen.
 
 </details>
 
-The following separation steps apply to both voluntary and forced exits:
+Die folgenden Trennungsschritte gelten sowohl für freiwillige als auch für erzwungene Austritte:
 
-- _<Roles held must be vacated and documented in the Role Registry.>_
-- _<Ongoing tasks must be released or handed over.>_
-- _<Treasury / wallet / signing access must be removed.>_
-- _<All administrative access to platforms must be revoked.>_
-- _<Outstanding obligations resolved or transferred before exit is finalised where possible.>_
+- _<Gehaltene Rollen müssen abgegeben und im Rollenregister dokumentiert werden.>_
+- _<Laufende Aufgaben müssen freigegeben oder übergeben werden.>_
+- _<Zugang zu Kasse / Wallet / Signaturrechten muss entzogen werden.>_
+- _<Alle Administrationsrechte auf Plattformen müssen widerrufen werden.>_
+- _<Offene Verpflichtungen werden nach Möglichkeit geklärt oder übertragen, bevor der Austritt abgeschlossen wird.>_
 
 ---
 
-## Ratification Record
+## Ratifizierungsprotokoll
 
-- **Adopted:** <YYYY-MM-DD>
-- **Decision type:** Strategic
-- **Version:** <version>
-- **Decision record:** <link to decision record>
+- **Angenommen:** <JJJJ-MM-TT>
+- **Entscheidungstyp:** Strategisch
+- **Version:** <Version>
+- **Entscheidungsprotokoll:** <Link zum Entscheidungsprotokoll>

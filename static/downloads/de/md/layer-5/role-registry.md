@@ -1,150 +1,148 @@
 **RCOS – Regenerative Community Operating System**
 
-# Role Registry
+# Rollenverzeichnis
 
 - **Generiert:** 2026-04-28
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-5/role-registry](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-5/role-registry)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
-
 ---
-- **Layer:** 5 — Operations & Coordination
-- **Status:** Template — adapt for your community
-- **RCOS reference:** [§7.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [§7.6](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)
+- **Ebene:** 5 — Betrieb & Koordination
+- **Status:** Vorlage — an eure Gemeinschaft anpassen
+- **RCOS-Referenz:** [§7.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [§7.6](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)
 
 ---
 
-## Overview
+## Überblick
 
-*RCOS clauses: [7.1.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.1.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.1.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.7.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants)*
+*RCOS-Klauseln: [7.1.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.1.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.1.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.7.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants)*
 
 <details data-kind="rationale">
-<summary>Why require every responsibility to have a named role?</summary>
+<summary>Warum muss jede Verantwortung einer benannten Rolle zugeordnet sein?</summary>
 
-Ongoing responsibilities without explicit roles become invisible labor — done by whoever notices, resented silently, and impossible to hand over. Making every ongoing responsibility a named, accountable role is what prevents the community from running on the unpaid goodwill of a few members.
+Laufende Verantwortlichkeiten ohne explizite Rollen werden zu unsichtbarer Arbeit — erledigt von wem auch immer es auffällt, still hingenommen und unmöglich zu übergeben. Jede laufende Verantwortung zu einer benannten, rechenschaftspflichtigen Rolle zu machen, verhindert, dass die Gemeinschaft auf dem unbezahlten Wohlwollen einiger weniger Mitglieder läuft.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-Distinguish operational roles (carrying delegated authority per the Decision Matrix) from functional roles (contribution-scoped, no special governance authority). State the "in good standing" definition you will use for eligibility.
+Unterscheidet operative Rollen (mit delegierter Autorität gemäß der Entscheidungsmatrix) von funktionalen Rollen (beitragsbezogen, ohne besondere Governance-Autorität). Legt die Definition von „in gutem Status" fest, die ihr für die Berechtigung verwenden werdet.
 
 </details>
 
-This registry defines all recognized roles within the community. Roles are either **operational** (carrying delegated authority per the Decision Matrix) or **functional** (contribution-scoped, no special governance authority beyond Full Member rights).
+Dieses Verzeichnis definiert alle anerkannten Rollen innerhalb der Gemeinschaft. Rollen sind entweder **operativ** (mit delegierter Autorität gemäß der Entscheidungsmatrix) oder **funktional** (beitragsbezogen, ohne besondere Governance-Autorität über die Rechte als Vollmitglied hinaus).
 
-> **"In good standing"** means a Full Member who has met their participation expectations in the last _<period>_ and is not currently subject to an active accountability process or conflict review under Layer 4.
+> **„In gutem Status"** bedeutet ein Vollmitglied, das seine Mitwirkungserwartungen in den letzten _<Zeitraum>_ erfüllt hat und derzeit keinem aktiven Rechenschaftsprozess oder Konfliktprüfung nach Ebene 4 unterliegt.
 
 ---
 
-## Summary Table
+## Übersichtstabelle
 
-| Role | Type | Current Holder |
+| Rolle | Typ | Aktuelle\*r Inhaber\*in |
 |---|---|---|
-| _<Role name>_ | _<Operational / Functional>_ | _<holder or "Vacant">_ |
+| _<Rollenname>_ | _<Operativ / Funktional>_ | _<Inhaber\*in oder „Vakant">_ |
 | _<...>_ | _<...>_ | _<...>_ |
 
 ---
 
-## Operational Roles
+## Operative Rollen
 
-*RCOS clauses: [7.1.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.1.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities)*
+*RCOS-Klauseln: [7.1.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.1.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities)*
 
 <details data-kind="rationale">
-<summary>Why define accountability for delegated authority?</summary>
+<summary>Warum Rechenschaftspflicht für delegierte Autorität definieren?</summary>
 
-Operational roles carry real power — they can act without a community vote within their scope. That power only stays safe if each role has a clear accountability mechanism: who can raise concerns, how review happens, and how a role can be reassigned when trust breaks.
+Operative Rollen tragen echte Macht — sie können innerhalb ihres Zuständigkeitsbereichs ohne Gemeinschaftsabstimmung handeln. Diese Macht bleibt nur sicher, wenn jede Rolle einen klaren Rechenschaftsmechanismus hat: Wer kann Bedenken äußern, wie läuft die Überprüfung ab, und wie kann eine Rolle neu besetzt werden, wenn das Vertrauen bricht.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-For each operational role, fill in the template below with concrete scope, decision authority, interfaces, eligibility, term, appointment, review/removal, and handover requirements.
+Füllt für jede operative Rolle die untenstehende Vorlage mit konkretem Zuständigkeitsbereich, Entscheidungsbefugnis, Schnittstellen, Berechtigungskriterien, Amtszeit, Ernennung, Überprüfung/Abberufung und Übergabeanforderungen aus.
 
 </details>
 
-Operational roles carry delegated authority to act within explicitly defined limits without a Full Member vote, as defined in the Decision Matrix (Layer 2). All operational role holders are accountable to Full Members collectively. Any Full Member may raise a concern about how a role is being performed; reassignment requires a Strategic vote.
+Operative Rollen tragen delegierte Autorität, innerhalb explizit definierter Grenzen ohne Vollmitglieder-Abstimmung zu handeln, wie in der Entscheidungsmatrix (Ebene 2) festgelegt. Alle Inhaber\*innen operativer Rollen sind der Gesamtheit der Vollmitglieder rechenschaftspflichtig. Jedes Vollmitglied darf Bedenken darüber äußern, wie eine Rolle ausgeübt wird; eine Neubesetzung erfordert eine Strategische Abstimmung.
 
 ---
 
-### _<Operational Role Name, e.g. Membership Admin>_
+### _<Name der operativen Rolle, z. B. Mitgliederverwaltung>_
 
-- **Purpose:** _<one-sentence purpose.>_
-- **Scope of responsibility:** _<concrete responsibilities.>_
-- **Decision authority:** _<which decisions in the Decision Matrix this role executes; explicit limits.>_
-- **Interfaces:** _<other roles this role hands off to or receives from.>_
-- **Eligibility criteria:** _<Full Member in good standing; any additional criteria.>_
-- **Term / rotation:** _<ongoing / rotating / fixed term.>_
-- **Appointment process:** _<how the role is assigned.>_
-- **Review and removal:** _<how concerns are raised; reassignment via Strategic vote.>_
-- **Handover:** _<what must be transferred before vacating.>_
-
----
-
-### _<Operational Role Name, e.g. Finance Steward>_
-
-- **Purpose:** _<purpose.>_
-- **Scope of responsibility:** _<responsibilities.>_
-- **Decision authority:** _<Decision Matrix scope; spending limit.>_
-- **Interfaces:** _<other roles.>_
-- **Eligibility criteria:** _<Full Member in good standing.>_
-- **Term / rotation:** _<...>_
-- **Appointment process:** _<...>_
-- **Review and removal:** _<...>_
-- **Handover:** _<...>_
+- **Zweck:** _<Zweck in einem Satz.>_
+- **Zuständigkeitsbereich:** _<konkrete Verantwortlichkeiten.>_
+- **Entscheidungsbefugnis:** _<welche Entscheidungen in der Entscheidungsmatrix diese Rolle ausführt; explizite Grenzen.>_
+- **Schnittstellen:** _<andere Rollen, an die diese Rolle übergibt oder von denen sie empfängt.>_
+- **Berechtigungskriterien:** _<Vollmitglied in gutem Status; ggf. weitere Kriterien.>_
+- **Amtszeit / Rotation:** _<fortlaufend / rotierend / befristet.>_
+- **Ernennungsverfahren:** _<wie die Rolle besetzt wird.>_
+- **Überprüfung und Abberufung:** _<wie Bedenken vorgebracht werden; Neubesetzung per Strategischer Abstimmung.>_
+- **Übergabe:** _<was vor dem Verlassen der Rolle übergeben werden muss.>_
 
 ---
 
-### _<Add additional operational roles as needed (e.g. Infrastructure Steward, Communications Steward).>_
+### _<Name der operativen Rolle, z. B. Finanzverantwortliche\*r>_
+
+- **Zweck:** _<Zweck.>_
+- **Zuständigkeitsbereich:** _<Verantwortlichkeiten.>_
+- **Entscheidungsbefugnis:** _<Entscheidungsmatrix-Bereich; Ausgabenlimit.>_
+- **Schnittstellen:** _<andere Rollen.>_
+- **Berechtigungskriterien:** _<Vollmitglied in gutem Status.>_
+- **Amtszeit / Rotation:** _<...>_
+- **Ernennungsverfahren:** _<...>_
+- **Überprüfung und Abberufung:** _<...>_
+- **Übergabe:** _<...>_
 
 ---
 
-## Functional Roles
+### _<Weitere operative Rollen nach Bedarf hinzufügen (z. B. Infrastrukturverantwortliche\*r, Kommunikationsverantwortliche\*r).>_
 
-*RCOS clauses: [7.1.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.1.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities)*
+---
+
+## Funktionale Rollen
+
+*RCOS-Klauseln: [7.1.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.1.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities)*
 
 <details data-kind="rationale">
-<summary>Why separate functional from operational roles?</summary>
+<summary>Warum funktionale von operativen Rollen trennen?</summary>
 
-Not every contribution needs delegated authority — most work is about doing, not deciding. Functional roles name contribution scopes without bundling in governance power, so members can opt into work without an authority transfer, and so the governance system stays clear about who can act on behalf of the community.
+Nicht jeder Beitrag braucht delegierte Autorität — die meiste Arbeit dreht sich ums Tun, nicht ums Entscheiden. Funktionale Rollen benennen Beitragsbereiche, ohne Governance-Macht zu bündeln, sodass Mitglieder sich in Arbeit einbringen können, ohne eine Autoritätsübertragung, und damit das Governance-System klar bleibt, wer im Namen der Gemeinschaft handeln darf.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-For each functional role, define purpose, scope, interfaces, eligibility, and handover. Functional roles do not require a vote to assume — declaration is sufficient.
+Definiert für jede funktionale Rolle Zweck, Zuständigkeitsbereich, Schnittstellen, Berechtigung und Übergabe. Funktionale Rollen erfordern keine Abstimmung zur Übernahme — eine Erklärung genügt.
 
 </details>
 
-Functional roles define a member's contribution scope. They carry no delegated governance authority beyond Full Member rights. Any Full Member may take on a functional role by declaring it; no vote is required. Roles may be vacated at any time by notification.
+Funktionale Rollen definieren den Beitragsbereich eines Mitglieds. Sie tragen keine delegierte Governance-Autorität über die Rechte als Vollmitglied hinaus. Jedes Vollmitglied kann eine funktionale Rolle durch Erklärung übernehmen; eine Abstimmung ist nicht erforderlich. Rollen können jederzeit durch Benachrichtigung niedergelegt werden.
 
 ---
 
-### _<Functional Role Name, e.g. Facilitator>_
+### _<Name der funktionalen Rolle, z. B. Moderation>_
 
-- **Purpose:** _<purpose.>_
-- **Scope of responsibility:** _<responsibilities.>_
-- **Decision authority:** _<Full Member rights only.>_
-- **Interfaces:** _<other roles.>_
-- **Eligibility criteria:** _<Full Member; any additional preferences.>_
-- **Term / rotation:** _<ongoing until vacated.>_
-- **Appointment process:** _<self-declaration.>_
-- **Review and removal:** _<may be vacated at any time; conflict-of-interest substitution per Layer 4 if relevant.>_
-- **Handover:** _<active commitments to brief in.>_
-
----
-
-### _<Add additional functional roles as needed.>_
+- **Zweck:** _<Zweck.>_
+- **Zuständigkeitsbereich:** _<Verantwortlichkeiten.>_
+- **Entscheidungsbefugnis:** _<nur Vollmitglieder-Rechte.>_
+- **Schnittstellen:** _<andere Rollen.>_
+- **Berechtigungskriterien:** _<Vollmitglied; ggf. weitere Präferenzen.>_
+- **Amtszeit / Rotation:** _<fortlaufend bis zur Niederlegung.>_
+- **Ernennungsverfahren:** _<Selbsterklärung.>_
+- **Überprüfung und Abberufung:** _<kann jederzeit niedergelegt werden; Befangenheitsvertretung gemäß Ebene 4 falls relevant.>_
+- **Übergabe:** _<laufende Verpflichtungen einweisen.>_
 
 ---
 
-## Ratification Record
+### _<Weitere funktionale Rollen nach Bedarf hinzufügen.>_
 
-- **Adopted:** <YYYY-MM-DD>
-- **Decision type:** Strategic
-- **Version:** <version>
-- **Decision record:** <link to decision record>
+---
+
+## Ratifizierungsnachweis
+
+- **Angenommen:** <JJJJ-MM-TT>
+- **Entscheidungstyp:** Strategisch
+- **Version:** <Version>
+- **Entscheidungsprotokoll:** <Link zum Entscheidungsprotokoll>

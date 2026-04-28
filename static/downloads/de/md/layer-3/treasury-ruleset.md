@@ -1,156 +1,154 @@
 **RCOS – Regenerative Community Operating System**
 
-# Treasury Ruleset
+# Kassensatzung
 
 - **Generiert:** 2026-04-28
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-3/treasury-ruleset](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-3/treasury-ruleset)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
-
 ---
-- **Layer:** 3 — Economic & Resource System
-- **Status:** Template — adapt for your community
-- **RCOS reference:** [§5.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#53-treasury-management), [§5.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#55-artifacts)
+- **Ebene:** 3 — Wirtschafts- & Ressourcensystem
+- **Status:** Vorlage — an eure Gemeinschaft anpassen
+- **RCOS-Referenz:** [§5.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#53-treasury-management), [§5.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#55-artifacts)
 
 ---
 
-## Treasury Scope
+## Geltungsbereich der Kasse
 
-*RCOS clauses: [5.3.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#53-treasury-management), [5.5.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#55-artifacts)*
+*RCOS-Klauseln: [5.3.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#53-treasury-management), [5.5.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#55-artifacts)*
 
 <details data-kind="rationale">
-<summary>Why draw a hard line around treasury funds?</summary>
+<summary>Warum eine klare Grenze um die Gemeinschaftskasse ziehen?</summary>
 
-Without an explicit boundary, any money flowing near the community — a founder's personal card, a side account, an informal reimbursement pool — can drift into being treated as community money, with all the obligations that entails. Naming exactly which accounts are treasury and which are not protects both the community and the individuals paying out of pocket.
+Ohne eine ausdrückliche Abgrenzung kann jedes Geld, das in der Nähe der Gemeinschaft fließt — die persönliche Karte einer Gründerin, ein Nebenkonto, ein informeller Erstattungspool — schleichend als Gemeinschaftsgeld behandelt werden, mit allen Pflichten, die das mit sich bringt. Genau festzulegen, welche Konten zur Kasse gehören und welche nicht, schützt sowohl die Gemeinschaft als auch die Einzelpersonen, die aus eigener Tasche zahlen.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-Name every account that is treasury (wallet, bank account, etc.) and state explicitly that personal funds operating informally are not treasury and create no community obligation.
+Benennt jedes Konto, das zur Kasse gehört (Wallet, Bankkonto usw.), und stellt ausdrücklich fest, dass persönliche Mittel, die informell eingesetzt werden, nicht zur Kasse gehören und keine Verpflichtung der Gemeinschaft begründen.
 
 </details>
 
-_<Define which accounts are community treasury — explicit wallet addresses, bank accounts, etc. State that any new treasury account must be declared and approved via a Strategic decision before funds are received into it. State that personal funds covering operational costs are not treasury and carry no community repayment claim.>_
+_<Legt fest, welche Konten die Gemeinschaftskasse bilden — explizite Wallet-Adressen, Bankkonten usw. Stellt fest, dass jedes neue Kassenkonto vor dem Eingang von Geldern durch eine Strategische Entscheidung deklariert und genehmigt werden muss. Stellt fest, dass persönliche Mittel, die Betriebskosten decken, nicht zur Kasse gehören und keinen Rückzahlungsanspruch gegenüber der Gemeinschaft begründen.>_
 
-## Income Sources
+## Einnahmequellen
 
-*RCOS clauses: [5.3.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#53-treasury-management)*
+*RCOS-Klauseln: [5.3.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#53-treasury-management)*
 
 <details data-kind="rationale">
-<summary>Why route all income through one declared list?</summary>
+<summary>Warum alle Einnahmen über eine einzige deklarierte Liste laufen lassen?</summary>
 
-Every income source carries strings — reporting requirements, expectations, dependency risks. If income channels can open informally, those strings get attached before the community has had a chance to weigh them. One declared list, changed only through Strategic decisions, keeps the community's obligations under its own control.
+Jede Einnahmequelle bringt Bedingungen mit sich — Berichtspflichten, Erwartungen, Abhängigkeitsrisiken. Wenn Einnahmekanäle informell entstehen können, werden diese Bedingungen angehängt, bevor die Gemeinschaft Gelegenheit hatte, sie abzuwägen. Eine deklarierte Liste, die nur durch Strategische Entscheidungen geändert wird, hält die Verpflichtungen der Gemeinschaft unter ihrer eigenen Kontrolle.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-Name every income source the community currently has, and reference the Internal Economy Protocol for the rule that any new income channel requires a Strategic decision.
+Benennt jede Einnahmequelle, die die Gemeinschaft derzeit hat, und verweist auf das Binnenwirtschaftsprotokoll für die Regel, dass jeder neue Einnahmekanal eine Strategische Entscheidung erfordert.
 
 </details>
 
-_<List current income sources, or state that there are none. Reference the External Income Interfaces section in the Internal Economy Protocol.>_
+_<Listet die aktuellen Einnahmequellen auf oder stellt fest, dass es keine gibt. Verweist auf den Abschnitt „Externe Einnahmeschnittstellen" im Binnenwirtschaftsprotokoll.>_
 
-## Spending Authority
+## Ausgabenbefugnis
 
-*RCOS clauses: [5.3.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#53-treasury-management), [5.7.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#57-explicitness-rules)*
+*RCOS-Klauseln: [5.3.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#53-treasury-management), [5.7.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#57-explicitness-rules)*
 
 <details data-kind="rationale">
-<summary>Why spell out thresholds in a table?</summary>
+<summary>Warum Schwellenwerte in einer Tabelle festhalten?</summary>
 
-When spending authority is vague, two failure modes appear: either every small decision escalates and nothing gets done, or a single steward quietly accumulates discretion no one ever voted to grant them. A table of amounts, decision types, and authorized bodies removes the ambiguity and makes unauthorized spending immediately visible.
+Wenn die Ausgabenbefugnis vage ist, treten zwei Fehlermodi auf: Entweder eskaliert jede kleine Entscheidung und nichts wird erledigt, oder eine einzelne Stewardship-Person häuft still Ermessensspielraum an, den ihr niemand je per Abstimmung eingeräumt hat. Eine Tabelle mit Beträgen, Entscheidungstypen und befugten Gremien beseitigt die Mehrdeutigkeit und macht unautorisierte Ausgaben sofort sichtbar.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-Define spending tiers by amount and the decision type, authorized body, and mechanism for each. Multi-year contracts and debt should sit in their own (Constitutional) tier.
+Definiert Ausgabenstufen nach Betrag sowie den Entscheidungstyp, das befugte Gremium und den Mechanismus für jede Stufe. Mehrjährige Verträge und Schulden sollten in einer eigenen (konstitutionellen) Stufe stehen.
 
 </details>
 
-| Amount | Decision Type | Authorized Body | Mechanism |
+| Betrag | Entscheidungstyp | Befugtes Gremium | Mechanismus |
 |---:|---|---|---|
-| _<Up to delegated limit (e.g. €X)>_ | _<Operational>_ | _<Finance Steward>_ | _<Delegated>_ |
-| _<Any amount above delegated limit>_ | _<Strategic>_ | _<Full Members>_ | _<Vote>_ |
-| _<Multi-year contracts, debt, or structural financial obligations>_ | _<Constitutional>_ | _<Full Members>_ | _<Supermajority + ratification>_ |
+| _<Bis zur delegierten Grenze (z. B. €X)>_ | _<Operativ>_ | _<Finanz-Steward>_ | _<Delegiert>_ |
+| _<Jeder Betrag über der delegierten Grenze>_ | _<Strategisch>_ | _<Vollmitglieder>_ | _<Abstimmung>_ |
+| _<Mehrjährige Verträge, Schulden oder strukturelle finanzielle Verpflichtungen>_ | _<Konstitutionell>_ | _<Vollmitglieder>_ | _<Supermehrheit + Ratifizierung>_ |
 
-## Transparency and Reporting
+## Transparenz und Berichtswesen
 
-*RCOS clauses: [5.3.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#53-treasury-management), [5.3.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#53-treasury-management), [5.6.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#56-layer-invariants)*
+*RCOS-Klauseln: [5.3.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#53-treasury-management), [5.3.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#53-treasury-management), [5.6.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#56-layer-invariants)*
 
 <details data-kind="rationale">
-<summary>Why make transparency the default, not a feature?</summary>
+<summary>Warum Transparenz zum Standard machen statt zum Feature?</summary>
 
-Opacity in a treasury compounds: one missing disclosure invites another, and before long members can no longer verify whether the community's money is being handled as they agreed. Making real-time visibility the baseline — and requiring any exception to be named, justified, and time-bounded — keeps audit within reach of every member, not just stewards.
+Intransparenz in der Kasse potenziert sich: Eine fehlende Offenlegung lädt zur nächsten ein, und bald können die Mitglieder nicht mehr überprüfen, ob das Geld der Gemeinschaft so verwaltet wird, wie sie es vereinbart haben. Echtzeit-Sichtbarkeit als Ausgangslage zu setzen — und jede Ausnahme namentlich, begründet und zeitlich begrenzt zu verlangen — hält die Prüfbarkeit für jedes Mitglied erreichbar, nicht nur für Stewards.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-State the visibility default for each treasury account. Where direct visibility is not possible (e.g. some bank accounts), define a periodic reporting cadence with a named owner.
+Legt den Sichtbarkeitsstandard für jedes Kassenkonto fest. Wo direkte Einsicht nicht möglich ist (z. B. bei manchen Bankkonten), definiert einen periodischen Berichtszyklus mit einer namentlich benannten verantwortlichen Person.
 
 </details>
 
-- _<Primary treasury (e.g. Safe multi-sig): all Full Members hold at minimum read access; real-time visibility.>_
-- _<Other declared accounts: direct multi-user read access if supported; otherwise periodic balance and transaction summary.>_
-- _<All spending decisions reference the linked governance record (vote ID or delegated decision log).>_
+- _<Primäre Kasse (z. B. Safe Multi-Sig): Alle Vollmitglieder haben mindestens Lesezugriff; Echtzeit-Sichtbarkeit.>_
+- _<Andere deklarierte Konten: direkter Mehrbenutzerzugriff zum Lesen, falls unterstützt; andernfalls periodische Saldo- und Transaktionsübersicht.>_
+- _<Alle Ausgabenentscheidungen verweisen auf den verknüpften Governance-Eintrag (Abstimmungs-ID oder delegiertes Entscheidungsprotokoll).>_
 
-## Reserve, Risk, and Debt Constraints
+## Rücklagen-, Risiko- und Schuldenbeschränkungen
 
-*RCOS clauses: [5.3.6](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#53-treasury-management)*
+*RCOS-Klauseln: [5.3.6](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#53-treasury-management)*
 
 <details data-kind="rationale">
-<summary>Why block debt and long-term obligations by default?</summary>
+<summary>Warum Schulden und langfristige Verpflichtungen standardmäßig sperren?</summary>
 
-Debt and recurring commitments bind the community beyond the people currently in it — future members inherit the obligations. Forbidding them unless a Strategic vote explicitly authorizes keeps long-term constraints from being entered into casually, and preserves the option to stay lightweight.
+Schulden und wiederkehrende Verpflichtungen binden die Gemeinschaft über die aktuellen Mitglieder hinaus — zukünftige Mitglieder erben die Verpflichtungen. Sie nur zuzulassen, wenn eine Strategische Abstimmung sie ausdrücklich genehmigt, verhindert, dass langfristige Bindungen beiläufig eingegangen werden, und bewahrt die Möglichkeit, schlank zu bleiben.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-State the rules on debt, recurring obligations, contingency reserves, and off-treasury financial instruments. Default to "not allowed without Strategic vote" for anything that binds the future.
+Legt die Regeln zu Schulden, wiederkehrenden Verpflichtungen, Rücklagen und außerhalb der Kasse geführten Finanzinstrumenten fest. Standard ist „nicht erlaubt ohne Strategische Abstimmung" für alles, was die Zukunft bindet.
 
 </details>
 
-- **Debt:** _<allowed only via Strategic vote.>_
-- **Long-term obligations:** _<recurring costs / contracts allowed only via Strategic vote.>_
-- **Contingency reserve:** _<reserve target, or state that one is not yet defined.>_
-- **Off-treasury instruments:** _<loans, investments, guarantees only via Strategic vote.>_
+- **Schulden:** _<nur per Strategischer Abstimmung zulässig.>_
+- **Langfristige Verpflichtungen:** _<wiederkehrende Kosten / Verträge nur per Strategischer Abstimmung zulässig.>_
+- **Rücklage:** _<Rücklagenziel, oder feststellen, dass noch keines definiert ist.>_
+- **Außerhalb der Kasse geführte Instrumente:** _<Darlehen, Investitionen, Bürgschaften nur per Strategischer Abstimmung.>_
 
-## Conflict-of-Interest Rules
+## Interessenkonfliktregeln
 
-*RCOS clauses: [5.4.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#54-accumulation-constraints)*
+*RCOS-Klauseln: [5.4.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#54-accumulation-constraints)*
 
 <details data-kind="rationale">
-<summary>Why ban self-approval outright?</summary>
+<summary>Warum Selbstgenehmigung komplett verbieten?</summary>
 
-Even well-intentioned people unconsciously tilt decisions toward their own interests; a rule that requires disclosure and abstention removes the judgment call and the social pressure to "trust someone." Self-approval of spending is the single most common way small governance systems quietly lose integrity, so the rule is stated bluntly.
+Selbst gut meinende Menschen neigen unbewusst dazu, Entscheidungen zu ihren eigenen Gunsten zu kippen; eine Regel, die Offenlegung und Enthaltung verlangt, beseitigt die subjektive Einschätzung und den sozialen Druck, jemandem „einfach zu vertrauen". Die Selbstgenehmigung von Ausgaben ist der häufigste Weg, auf dem kleine Governance-Systeme still ihre Integrität verlieren — daher wird die Regel unmissverständlich formuliert.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-State the no-self-approval rule and the disclose-and-abstain rule for any member with a direct financial interest in a spending decision.
+Formuliert die Regel gegen Selbstgenehmigung und die Regel zur Offenlegung und Enthaltung für jedes Mitglied mit einem direkten finanziellen Interesse an einer Ausgabenentscheidung.
 
 </details>
 
-- _<Requesters may not approve their own spending requests.>_
-- _<Members with a direct financial interest in a spending decision must declare it and abstain.>_
-- _<Treasury role holders may not authorize unilateral spending beyond the delegated limit.>_
+- _<Antragstellende dürfen ihre eigenen Ausgabenanträge nicht genehmigen.>_
+- _<Mitglieder mit einem direkten finanziellen Interesse an einer Ausgabenentscheidung müssen dieses offenlegen und sich enthalten.>_
+- _<Kassenverantwortliche dürfen keine einseitigen Ausgaben über die delegierte Grenze hinaus autorisieren.>_
 
 ---
 
-## Ratification Record
+## Ratifizierungsnachweis
 
-- **Adopted:** <YYYY-MM-DD>
-- **Decision type:** Strategic
-- **Version:** <version>
-- **Decision record:** <link to decision record>
+- **Angenommen am:** <JJJJ-MM-TT>
+- **Entscheidungstyp:** Strategisch
+- **Version:** <Version>
+- **Entscheidungsnachweis:** <Link zum Entscheidungsnachweis>

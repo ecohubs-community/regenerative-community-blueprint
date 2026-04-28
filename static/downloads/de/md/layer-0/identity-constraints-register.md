@@ -1,89 +1,87 @@
 **RCOS – Regenerative Community Operating System**
 
-# Identity Constraints Register
+# Register der Identitätsbeschränkungen
 
 - **Generiert:** 2026-04-28
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-0/identity-constraints-register](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-0/identity-constraints-register)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
-
 ---
-- **Layer:** 0 — Identity & Scope
-- **Status:** Template — adapt for your community
-- **RCOS reference:** [§2.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [§2.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#25-artifacts)
+- **Ebene:** 0 — Identität & Geltungsbereich
+- **Status:** Vorlage — an deine Gemeinschaft anpassen
+- **RCOS-Referenz:** [§2.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [§2.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#25-artifacts)
 
-> Identity constraints are the non-negotiable behavioural, ethical, and structural boundaries that shape who the community is. Unlike invariants (which protect the system itself), identity constraints define how members and the community relate to people, ecosystems, and ideologies.
+> Identitätsbeschränkungen sind die nicht verhandelbaren verhaltensbezogenen, ethischen und strukturellen Grenzen, die bestimmen, wer die Gemeinschaft ist. Anders als Invarianten (die das System selbst schützen) definieren Identitätsbeschränkungen, wie Mitglieder und die Gemeinschaft sich zu Menschen, Ökosystemen und Ideologien verhalten.
 
 ---
 
-## Active Identity Constraints
+## Aktive Identitätsbeschränkungen
 
-*RCOS clauses: [2.4.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints)*
+*RCOS-Klauseln: [2.4.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints)*
 
 <details data-kind="rationale">
-<summary>Why declare identity constraints explicitly?</summary>
+<summary>Warum Identitätsbeschränkungen explizit festhalten?</summary>
 
-Every community has implicit rules — "we don't do that here." Implicit rules become tools of arbitrary enforcement: whoever has social power decides what they mean. Writing identity constraints down, and requiring them to be testable through defined processes, is what turns an informal norm into something a member can actually rely on or contest.
+Jede Gemeinschaft hat implizite Regeln — „das machen wir hier nicht." Implizite Regeln werden zu Werkzeugen willkürlicher Durchsetzung: Wer soziale Macht hat, bestimmt, was sie bedeuten. Identitätsbeschränkungen aufzuschreiben und zu verlangen, dass sie durch definierte Prozesse überprüfbar sind, macht aus einer informellen Norm etwas, auf das sich ein Mitglied tatsächlich verlassen oder das es anfechten kann.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du diesen Abschnitt ausfüllst</summary>
 
-Each constraint must be testable and enforceable through a defined process — not vague aspirations. Common categories from RCOS §2.4.2: ethical/behavioural boundaries, participation prerequisites, non-negotiable cultural or ecological constraints. Reference Layer 4 for enforcement, Layer 1 for participation consequences.
+Jede Beschränkung muss durch einen definierten Prozess überprüfbar und durchsetzbar sein — keine vagen Bestrebungen. Gängige Kategorien aus RCOS §2.4.2: ethische/verhaltensbezogene Grenzen, Teilnahmevoraussetzungen, nicht verhandelbare kulturelle oder ökologische Beschränkungen. Verweise auf Ebene 4 für die Durchsetzung, Ebene 1 für Teilnahmekonsequenzen.
 
 </details>
 
-1. _<Constraint 1, e.g. Members must not act in ways that concentrate power, extract value, or cause harm to people, land, or governance integrity.>_
-2. _<Constraint 2, e.g. The community may not be used as a vehicle for speculative financial gain — internal economic mechanisms exist to recognize contribution, not generate profit.>_
-3. _<Constraint 3, e.g. No member or role may claim authority that is not explicitly granted through the governance system.>_
-4. _<Constraint 4, e.g. The community must not cause sustained net harm to local ecosystems, land, or biodiversity.>_
-5. _<Constraint 5, e.g. Ecological impact must be considered in all significant resource, land, and infrastructure decisions.>_
-6. _<Constraint 6, e.g. The structural layer of the community must remain non-ideological and non-normative — it provides scaffolding, not a prescribed way of living.>_
-7. _<Constraint 7, e.g. No specific belief system, spirituality, culture, or political ideology may be required as a condition of membership or participation.>_
-8. _<Constraint 8, e.g. Diversity of approaches to regenerative living is a feature, not a problem.>_
+1. _<Beschränkung 1, z. B. Mitglieder dürfen nicht in einer Weise handeln, die Macht konzentriert, Wert abschöpft oder Menschen, Land oder die Integrität der Governance schädigt.>_
+2. _<Beschränkung 2, z. B. Die Gemeinschaft darf nicht als Vehikel für spekulativen finanziellen Gewinn genutzt werden — interne Wirtschaftsmechanismen dienen der Anerkennung von Beiträgen, nicht der Profiterzielung.>_
+3. _<Beschränkung 3, z. B. Kein Mitglied und keine Rolle darf Autorität beanspruchen, die nicht ausdrücklich durch das Governance-System erteilt wurde.>_
+4. _<Beschränkung 4, z. B. Die Gemeinschaft darf lokalen Ökosystemen, dem Land oder der Biodiversität keinen anhaltenden Nettoschaden zufügen.>_
+5. _<Beschränkung 5, z. B. Ökologische Auswirkungen müssen bei allen wesentlichen Entscheidungen zu Ressourcen, Land und Infrastruktur berücksichtigt werden.>_
+6. _<Beschränkung 6, z. B. Die strukturelle Ebene der Gemeinschaft muss nicht-ideologisch und nicht-normativ bleiben — sie bietet ein Gerüst, keine vorgeschriebene Lebensweise.>_
+7. _<Beschränkung 7, z. B. Kein bestimmtes Glaubenssystem, keine Spiritualität, Kultur oder politische Ideologie darf als Voraussetzung für Mitgliedschaft oder Teilnahme verlangt werden.>_
+8. _<Beschränkung 8, z. B. Die Vielfalt der Ansätze für regeneratives Leben ist ein Merkmal, kein Problem.>_
 
-## Enforcement and Testability
+## Durchsetzung und Überprüfbarkeit
 
-*RCOS clauses: [2.4.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints)*
+*RCOS-Klauseln: [2.4.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints)*
 
 <details data-kind="rationale">
-<summary>Why must constraints be testable, not informal?</summary>
+<summary>Warum müssen Beschränkungen überprüfbar sein und nicht informell?</summary>
 
-A constraint that cannot be tested is a constraint that gets enforced by whoever has the most social capital in the room. Defining how each constraint is detected, who raises it, and through which process it is resolved is what prevents identity rules from becoming tools of arbitrary exclusion.
+Eine Beschränkung, die nicht überprüft werden kann, ist eine Beschränkung, die von demjenigen durchgesetzt wird, der das meiste soziale Kapital im Raum hat. Zu definieren, wie jede Beschränkung erkannt wird, wer sie anspricht und durch welchen Prozess sie gelöst wird, verhindert, dass Identitätsregeln zu Werkzeugen willkürlichen Ausschlusses werden.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du diesen Abschnitt ausfüllst</summary>
 
-For each constraint above (or as a general policy), describe how a violation is identified and addressed. Reference the Conflict Resolution Ladder (Layer 4) and any role responsible for monitoring (Layer 5).
+Beschreibe für jede oben genannte Beschränkung (oder als allgemeine Richtlinie), wie ein Verstoß erkannt und behandelt wird. Verweise auf die Konfliktlösungsleiter (Ebene 4) und alle für die Überwachung zuständigen Rollen (Ebene 5).
 
 </details>
 
-- _<How violations are detected and reported.>_
-- _<Which Layer 4 process handles violations of which class of constraint.>_
-- _<Which roles or bodies are responsible for monitoring and review.>_
+- _<Wie Verstöße erkannt und gemeldet werden.>_
+- _<Welcher Ebene-4-Prozess Verstöße welcher Beschränkungsklasse behandelt.>_
+- _<Welche Rollen oder Gremien für Überwachung und Überprüfung zuständig sind.>_
 
-## Conditions for Change
+## Bedingungen für Änderungen
 
-*RCOS clauses: [2.4.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.5.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#25-artifacts)*
+*RCOS-Klauseln: [2.4.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.5.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#25-artifacts)*
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du diesen Abschnitt ausfüllst</summary>
 
-Identity constraints are constitutional — describe the decision type, threshold, and ratification process required to add, remove, or amend a constraint.
+Identitätsbeschränkungen sind verfassungsrechtlicher Natur — beschreibe den Entscheidungstyp, die Schwelle und das Ratifizierungsverfahren, die erforderlich sind, um eine Beschränkung hinzuzufügen, zu entfernen oder zu ändern.
 
 </details>
 
-Identity constraints may only be added, removed, or amended through a Constitutional decision as defined in the Decision Matrix (Layer 2), requiring _<threshold>_ and a ratification period of no less than _<duration>_. Any change must be recorded in the Version History (Layer 6).
+Identitätsbeschränkungen dürfen nur durch eine Verfassungsentscheidung gemäß der Entscheidungsmatrix (Ebene 2) hinzugefügt, entfernt oder geändert werden, wobei _<Schwellenwert>_ erforderlich ist und eine Ratifizierungsfrist von mindestens _<Dauer>_ einzuhalten ist. Jede Änderung muss in der Versionshistorie (Ebene 6) dokumentiert werden.
 
 ---
 
-## Ratification Record
+## Ratifizierungsprotokoll
 
-- **Adopted:** <YYYY-MM-DD>
-- **Decision type:** Constitutional
-- **Version:** <version>
-- **Decision record:** <link to decision record>
+- **Angenommen:** <JJJJ-MM-TT>
+- **Entscheidungstyp:** Verfassungsentscheidung
+- **Version:** <Version>
+- **Entscheidungsprotokoll:** <Link zum Entscheidungsprotokoll>

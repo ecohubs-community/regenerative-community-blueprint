@@ -1,274 +1,272 @@
 **RCOS – Regenerative Community Operating System**
 
-# Meeting Templates
+# Sitzungsvorlagen
 
 - **Generiert:** 2026-04-28
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-5/meeting-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-5/meeting-templates)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
-
 ---
-- **Layer:** 5 — Operations & Coordination
-- **Status:** Template — adapt for your community
-- **RCOS reference:** [§7.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [§7.6](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)
+- **Schicht:** 5 — Betrieb & Koordination
+- **Status:** Vorlage — an eure Gemeinschaft anpassen
+- **RCOS-Referenz:** [§7.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [§7.6](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)
 
-> Meeting templates declare the purpose, decision scope, quorum, and structure of each meeting type. A meeting without a declared template will, given enough time, accumulate authority it should not have. Adapt these templates and add or remove meeting types as your community needs.
+> Sitzungsvorlagen legen Zweck, Entscheidungsbereich, Beschlussfähigkeit und Struktur jedes Sitzungstyps fest. Eine Sitzung ohne festgelegte Vorlage wird mit der Zeit Befugnisse ansammeln, die sie nicht haben sollte. Passt diese Vorlagen an und fügt Sitzungstypen hinzu oder entfernt sie, wie es eure Gemeinschaft braucht.
 
 ---
 
-## Meeting Type: Operations
+## Sitzungstyp: Operativ
 
-*RCOS clauses: [7.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.6.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)*
+*RCOS-Klauseln: [7.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.6.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)*
 
 <details data-kind="rationale">
-<summary>Why a regular Operations meeting?</summary>
+<summary>Warum eine regelmäßige operative Sitzung?</summary>
 
-Day-to-day coordination needs a regular beat, not ad-hoc improvisation. The Operations meeting is the community's heartbeat — a predictable space to review active work, surface blockers, and make small operational decisions. Crucially, only Operational decisions happen here; Strategic and Constitutional ones go through the governance process, so the meeting can't quietly accumulate authority it doesn't have.
+Die tägliche Koordination braucht einen regelmäßigen Rhythmus, keine Ad-hoc-Improvisation. Die operative Sitzung ist der Herzschlag der Gemeinschaft — ein vorhersehbarer Raum, um laufende Arbeit zu prüfen, Hindernisse sichtbar zu machen und kleine operative Entscheidungen zu treffen. Entscheidend ist: Hier fallen nur operative Entscheidungen; strategische und konstitutionelle laufen über den Governance-Prozess, sodass die Sitzung nicht stillschweigend Befugnisse ansammeln kann, die sie nicht hat.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-Set purpose, decision scope, required and optional participants, cadence, duration, and facilitation rules. Keep decision scope to Operational only.
+Legt Zweck, Entscheidungsbereich, erforderliche und optionale Teilnehmende, Rhythmus, Dauer und Moderationsregeln fest. Beschränkt den Entscheidungsbereich auf ausschließlich operative Entscheidungen.
 
 </details>
 
-- **Purpose:** _<review active work, coordinate tasks, surface blockers, make operational decisions.>_
-- **Decision scope:** Operational decisions only — cannot make Strategic or Constitutional decisions.
-- **Required participants:** _<who is invited; minimum quorum.>_
-- **Optional participants:** _<who may attend on invitation.>_
-- **Cadence:** _<weekly / bi-weekly / monthly.>_
-- **Duration limit:** _<e.g. 90 minutes maximum.>_
-- **Facilitation:** _<facilitator role; substitute rule.>_
+- **Zweck:** _<laufende Arbeit prüfen, Aufgaben koordinieren, Hindernisse sichtbar machen, operative Entscheidungen treffen.>_
+- **Entscheidungsbereich:** Nur operative Entscheidungen — keine strategischen oder konstitutionellen Entscheidungen.
+- **Erforderliche Teilnehmende:** _<wer eingeladen ist; Mindest-Quorum.>_
+- **Optionale Teilnehmende:** _<wer auf Einladung teilnehmen darf.>_
+- **Rhythmus:** _<wöchentlich / zweiwöchentlich / monatlich.>_
+- **Zeitlimit:** _<z. B. maximal 90 Minuten.>_
+- **Moderation:** _<Moderationsrolle; Vertretungsregel.>_
 
-### Agenda Structure
+### Agenda-Struktur
 
-1. **Check-in** _<duration>_
-2. **Review last actions** _<duration>_
-3. **Role and domain updates** _<duration>_
-4. **Active agenda items** _<duration>_
-5. **Operational decisions** _<duration>_
-6. **Next actions and owners** _<duration>_
-7. **Check-out** _<duration; optional>_
+1. **Check-in** _<Dauer>_
+2. **Offene Aufgaben prüfen** _<Dauer>_
+3. **Rollen- und Bereichs-Updates** _<Dauer>_
+4. **Aktuelle Tagesordnungspunkte** _<Dauer>_
+5. **Operative Entscheidungen** _<Dauer>_
+6. **Nächste Schritte und Verantwortliche** _<Dauer>_
+7. **Check-out** _<Dauer; optional>_
 
-### Notes and Records
+### Notizen und Protokoll
 
-- **Date:**
-- **Facilitator:**
-- **Attendees:**
-- **Notes:**
+- **Datum:**
+- **Moderation:**
+- **Anwesende:**
+- **Notizen:**
 
-### Decision Record (if applicable)
+### Entscheidungsprotokoll (falls zutreffend)
 
-- **Decision type:** Operational
-- **Authority:** _<role holder per Decision Matrix>_
-- **Mechanism / threshold:** Delegated authority
-- **Outcome:** _<what was decided>_
-- **Effective date:**
-- **Filed to:** _<location>_
+- **Entscheidungstyp:** Operativ
+- **Befugnis:** _<Rolleninhaber:in laut Entscheidungsmatrix>_
+- **Mechanismus / Schwelle:** Delegierte Befugnis
+- **Ergebnis:** _<was entschieden wurde>_
+- **Gültig ab:**
+- **Abgelegt unter:** _<Ablageort>_
 
 ---
 
-## Meeting Type: Governance
+## Sitzungstyp: Governance
 
-*RCOS clauses: [7.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.6.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)*
+*RCOS-Klauseln: [7.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.6.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)*
 
 <details data-kind="rationale">
-<summary>Why separate deliberation from the binding vote?</summary>
+<summary>Warum Beratung und verbindliche Abstimmung trennen?</summary>
 
-If a meeting can both discuss and decide, whoever is in the room that day gets to decide — regardless of quorum or authority rules. Keeping deliberation separate from the binding vote preserves the integrity of the Decision Matrix and ensures absent members still get a vote.
+Wenn eine Sitzung gleichzeitig diskutieren und entscheiden kann, bestimmen diejenigen, die gerade im Raum sind — ungeachtet der Quorum- oder Befugnisregeln. Die Trennung von Beratung und verbindlicher Abstimmung wahrt die Integrität der Entscheidungsmatrix und stellt sicher, dass abwesende Mitglieder trotzdem mitabstimmen können.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-This meeting deliberates on active proposals during their deliberation period. The binding decision is made via the governance process per the Decision Matrix.
+Diese Sitzung berät über aktive Vorschläge während ihrer Beratungsphase. Die verbindliche Entscheidung erfolgt über den Governance-Prozess gemäß der Entscheidungsmatrix.
 
 </details>
 
-- **Purpose:** Deliberate on an active proposal during its deliberation period.
-- **Decision scope:** Deliberation only — the binding decision is made via the governance process per the Decision Matrix.
-- **Required participants:** _<all Full Members invited; proposer must be present.>_
-- **Optional participants:** _<who may observe.>_
-- **Cadence:** _<as needed during deliberation periods.>_
-- **Duration limit:** _<e.g. 60 minutes maximum.>_
-- **Facilitation:** _<facilitator role.>_
+- **Zweck:** Beratung über einen aktiven Vorschlag während seiner Beratungsphase.
+- **Entscheidungsbereich:** Nur Beratung — die verbindliche Entscheidung erfolgt über den Governance-Prozess gemäß der Entscheidungsmatrix.
+- **Erforderliche Teilnehmende:** _<alle Vollmitglieder eingeladen; Antragsteller:in muss anwesend sein.>_
+- **Optionale Teilnehmende:** _<wer beobachten darf.>_
+- **Rhythmus:** _<nach Bedarf während der Beratungsphasen.>_
+- **Zeitlimit:** _<z. B. maximal 60 Minuten.>_
+- **Moderation:** _<Moderationsrolle.>_
 
-### Agenda Structure
+### Agenda-Struktur
 
-1. **Check-in** _<duration>_
-2. **Proposal summary** _<duration — proposer presents the proposal: what it changes, why, and alternatives considered.>_
-3. **Clarifying questions** _<duration — factual questions only; no advocacy yet.>_
-4. **Open deliberation** _<duration.>_
-5. **Summary of positions and next steps** _<duration — facilitator summarises; confirms vote timeline.>_
+1. **Check-in** _<Dauer>_
+2. **Zusammenfassung des Vorschlags** _<Dauer — Antragsteller:in stellt den Vorschlag vor: was sich ändert, warum, und welche Alternativen erwogen wurden.>_
+3. **Verständnisfragen** _<Dauer — nur Sachfragen; noch keine Positionierung.>_
+4. **Offene Beratung** _<Dauer.>_
+5. **Zusammenfassung der Positionen und nächste Schritte** _<Dauer — Moderation fasst zusammen; bestätigt den Abstimmungszeitplan.>_
 
-### Notes and Records
+### Notizen und Protokoll
 
-- **Date:**
-- **Facilitator:**
-- **Attendees:**
-- **Notes:**
+- **Datum:**
+- **Moderation:**
+- **Anwesende:**
+- **Notizen:**
 
-### Decision Record
+### Entscheidungsprotokoll
 
-- **Proposal reference:** _<link to proposal>_
-- **Decision type:** _<Strategic / Constitutional>_
-- **Authority:** Full Members (collective)
-- **Mechanism / threshold:** _<vote mechanism + threshold>_
-- **Outcome:** _<Passed / Rejected / Tabled>_
-- **Effective date:**
-- **Vote link:**
+- **Vorschlags-Referenz:** _<Link zum Vorschlag>_
+- **Entscheidungstyp:** _<Strategisch / Konstitutionell>_
+- **Befugnis:** Vollmitglieder (kollektiv)
+- **Mechanismus / Schwelle:** _<Abstimmungsmechanismus + Schwelle>_
+- **Ergebnis:** _<Angenommen / Abgelehnt / Vertagt>_
+- **Gültig ab:**
+- **Abstimmungs-Link:**
 
 ---
 
-## Meeting Type: Coordination & Alignment
+## Sitzungstyp: Koordination & Abstimmung
 
-*RCOS clauses: [7.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.6.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)*
+*RCOS-Klauseln: [7.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.6.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)*
 
 <details data-kind="rationale">
-<summary>Why a dedicated coordination meeting?</summary>
+<summary>Warum eine eigene Koordinationssitzung?</summary>
 
-Some blockers span more than one role and can't be resolved in the regular Operations rhythm. Coordination & Alignment gives cross-role work its own space — for dependencies, handoffs, and competing priorities — so the weekly meeting doesn't balloon trying to absorb everything.
+Manche Hindernisse betreffen mehr als eine Rolle und lassen sich im regulären operativen Rhythmus nicht lösen. Koordination & Abstimmung gibt rollenübergreifender Arbeit einen eigenen Raum — für Abhängigkeiten, Übergaben und konkurrierende Prioritäten — damit die wöchentliche Sitzung nicht ausufert, weil sie alles auffangen muss.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-Use this template when cross-role coordination is needed. Keep decision scope Operational only and limit required participants to those with active initiatives.
+Nutzt diese Vorlage, wenn rollenübergreifende Koordination nötig ist. Beschränkt den Entscheidungsbereich auf operative Entscheidungen und begrenzt die erforderlichen Teilnehmenden auf diejenigen mit aktiven Initiativen.
 
 </details>
 
-- **Purpose:** Synchronize work across roles and initiatives; surface dependencies and blockers; align priorities.
-- **Decision scope:** Operational decisions only.
-- **Required participants:** _<role holders with active initiatives.>_
-- **Optional participants:** _<all Full Members welcome.>_
-- **Cadence:** _<monthly or as needed.>_
-- **Duration limit:** _<e.g. 60 minutes.>_
-- **Facilitation:** _<facilitator; substitute rule.>_
+- **Zweck:** Arbeit über Rollen und Initiativen hinweg synchronisieren; Abhängigkeiten und Hindernisse sichtbar machen; Prioritäten abstimmen.
+- **Entscheidungsbereich:** Nur operative Entscheidungen.
+- **Erforderliche Teilnehmende:** _<Rolleninhaber:innen mit aktiven Initiativen.>_
+- **Optionale Teilnehmende:** _<alle Vollmitglieder willkommen.>_
+- **Rhythmus:** _<monatlich oder nach Bedarf.>_
+- **Zeitlimit:** _<z. B. 60 Minuten.>_
+- **Moderation:** _<Moderator:in; Vertretungsregel.>_
 
-### Agenda Structure
+### Agenda-Struktur
 
-1. **Check-in** _<duration>_
-2. **Initiative status updates** _<duration>_
-3. **Blockers and dependencies** _<duration>_
-4. **Next steps** _<duration>_
+1. **Check-in** _<Dauer>_
+2. **Status-Updates der Initiativen** _<Dauer>_
+3. **Hindernisse und Abhängigkeiten** _<Dauer>_
+4. **Nächste Schritte** _<Dauer>_
 
-### Notes and Records
+### Notizen und Protokoll
 
-- **Date:**
-- **Facilitator:**
-- **Attendees:**
-- **Notes:**
+- **Datum:**
+- **Moderation:**
+- **Anwesende:**
+- **Notizen:**
 
 ---
 
-## Meeting Type: Reflection & Learning
+## Sitzungstyp: Reflexion & Lernen
 
-*RCOS clauses: [7.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.6.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)*
+*RCOS-Klauseln: [7.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.6.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)*
 
 <details data-kind="rationale">
-<summary>Why give reflection its own meeting type?</summary>
+<summary>Warum bekommt Reflexion einen eigenen Sitzungstyp?</summary>
 
-Reflection that happens only when time allows never happens. A named meeting type with a defined cadence makes space for looking back — and keeps retrospection from getting squeezed out by operational urgency. Without it, the Learning Log (Layer 6) stays empty and the framework stops evolving.
+Reflexion, die nur stattfindet, wenn gerade Zeit ist, findet nie statt. Ein benannter Sitzungstyp mit festem Rhythmus schafft Raum für den Rückblick — und verhindert, dass Retrospektiven von der operativen Dringlichkeit verdrängt werden. Ohne das bleibt das Lernprotokoll (Schicht 6) leer und das Framework hört auf, sich weiterzuentwickeln.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-This meeting reviews the most recent period and feeds insights to the Learning Log (Layer 6) and the Future Proposals queue.
+Diese Sitzung bilanziert den letzten Zeitraum und speist Erkenntnisse in das Lernprotokoll (Schicht 6) und die Warteschlange für zukünftige Vorschläge ein.
 
 </details>
 
-- **Purpose:** Review experience, surface patterns, capture learnings, feed insights back into the framework.
-- **Decision scope:** May produce proposals for change; no direct decision authority unless specified in the Decision Matrix.
-- **Required participants:** _<all Full Members invited.>_
-- **Cadence:** _<quarterly.>_
-- **Duration limit:** _<e.g. 90 minutes.>_
-- **Facilitation:** _<facilitator role.>_
+- **Zweck:** Erfahrungen auswerten, Muster erkennen, Erkenntnisse festhalten, Einsichten ins Framework zurückspielen.
+- **Entscheidungsbereich:** Kann Änderungsvorschläge hervorbringen; keine direkte Entscheidungsbefugnis, sofern nicht in der Entscheidungsmatrix festgelegt.
+- **Erforderliche Teilnehmende:** _<alle Vollmitglieder eingeladen.>_
+- **Rhythmus:** _<vierteljährlich.>_
+- **Zeitlimit:** _<z. B. maximal 90 Minuten.>_
+- **Moderation:** _<Moderationsrolle.>_
 
-### Agenda Structure
+### Agenda-Struktur
 
-1. **Check-in** _<duration>_
-2. **Review period highlights** _<duration>_
-3. **What worked well** _<duration>_
-4. **What didn't work / what we'd do differently** _<duration; no blame, focus on patterns.>_
-5. **Learnings to carry forward** _<duration; identify Learning Log entries.>_
-6. **Updates to learning log and future proposals** _<duration.>_
-7. **Check-out** _<duration>_
+1. **Check-in** _<Dauer>_
+2. **Highlights des Zeitraums** _<Dauer>_
+3. **Was gut lief** _<Dauer>_
+4. **Was nicht lief / was wir anders machen würden** _<Dauer; kein Schuldzuweisen, Fokus auf Muster.>_
+5. **Erkenntnisse für die Zukunft** _<Dauer; Einträge für das Lernprotokoll identifizieren.>_
+6. **Aktualisierung von Lernprotokoll und zukünftigen Vorschlägen** _<Dauer.>_
+7. **Check-out** _<Dauer>_
 
-### Notes and Records
+### Notizen und Protokoll
 
-- **Date:**
-- **Facilitator:**
-- **Attendees:**
-- **Notes:**
-- **Learning Log entries triggered:** _<list or "none">_
-- **Future proposals added:** _<list or "none">_
+- **Datum:**
+- **Moderation:**
+- **Anwesende:**
+- **Notizen:**
+- **Ausgelöste Lernprotokoll-Einträge:** _<Liste oder „keine">_
+- **Hinzugefügte zukünftige Vorschläge:** _<Liste oder „keine">_
 
 ---
 
-## Meeting Type: Conflict Handling
+## Sitzungstyp: Konfliktbearbeitung
 
-*RCOS clauses: [7.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.6.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts); see also Layer 4 — [Conflict Resolution Ladder](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways)*
+*RCOS-Klauseln: [7.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.2.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#72-meeting-system), [7.6.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts); siehe auch Schicht 4 — [Konfliktlösungsleiter](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways)*
 
 <details data-kind="rationale">
-<summary>Why a distinct meeting type for conflict?</summary>
+<summary>Warum ein eigener Sitzungstyp für Konflikte?</summary>
 
-Conflict work has rules that other meetings don't: confidentiality, Facilitator selection that bypasses party preference, anti-retaliation protections, and restricted records. Using the Operations template for a conflict session would quietly violate all of these. A dedicated template makes the different container visible from the first minute.
+Konfliktarbeit hat Regeln, die andere Sitzungen nicht haben: Vertraulichkeit, Moderator:innen-Auswahl, die die Parteipräferenzen umgeht, Schutz vor Vergeltung und eingeschränkte Protokollierung. Die operative Vorlage für eine Konfliktsitzung zu verwenden, würde stillschweigend all diese Regeln verletzen. Eine eigene Vorlage macht den unterschiedlichen Rahmen ab der ersten Minute sichtbar.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-Use this template only for facilitated sessions under Conflict Resolution Ladder Steps 2–4. Privacy and Facilitator-selection rules are governed by Layer 4, not by the meeting itself.
+Verwendet diese Vorlage nur für moderierte Sitzungen gemäß den Stufen 2–4 der Konfliktlösungsleiter. Datenschutz- und Moderator:innen-Auswahlregeln werden durch Schicht 4 geregelt, nicht durch die Sitzung selbst.
 
 </details>
 
-- **Purpose:** Facilitate resolution at a defined ladder step (Conflict Resolution Ladder Steps 2–4).
-- **Decision scope:** Produces repair plans, agreements, or escalation decisions; binding outcomes require the authority defined in the Conflict Resolution Ladder and Decision Matrix.
-- **Required participants:** Parties to the conflict; assigned Facilitator (per Conflict Resolution Ladder selection rules).
-- **Optional participants:** A support person, by mutual written consent of all parties.
-- **Cadence:** As needed; triggered by intake.
-- **Duration limit:** _<typically 60–90 minutes; Facilitator may extend.>_
-- **Facilitation:** Selected per Conflict Resolution Ladder (Layer 4) — not chosen by the parties themselves.
+- **Zweck:** Lösung auf einer definierten Stufe der Konfliktlösungsleiter moderieren (Stufen 2–4).
+- **Entscheidungsbereich:** Erarbeitet Reparaturpläne, Vereinbarungen oder Eskalationsentscheidungen; verbindliche Ergebnisse erfordern die in der Konfliktlösungsleiter und der Entscheidungsmatrix festgelegte Befugnis.
+- **Erforderliche Teilnehmende:** Konfliktparteien; zugewiesene:r Moderator:in (gemäß den Auswahlregeln der Konfliktlösungsleiter).
+- **Optionale Teilnehmende:** Eine Vertrauensperson, mit schriftlicher gegenseitiger Zustimmung aller Parteien.
+- **Rhythmus:** Nach Bedarf; ausgelöst durch Eingangsverfahren.
+- **Zeitlimit:** _<typischerweise 60–90 Minuten; Moderator:in kann verlängern.>_
+- **Moderation:** Auswahl gemäß Konfliktlösungsleiter (Schicht 4) — nicht von den Parteien selbst gewählt.
 
-> **Privacy note:** Records from this meeting type are subject to the privacy and information access boundaries defined in the Conflict Resolution Ladder (Layer 4). They are not published to the general member record by default.
+> **Datenschutzhinweis:** Aufzeichnungen aus diesem Sitzungstyp unterliegen den Datenschutz- und Informationszugangsregelungen der Konfliktlösungsleiter (Schicht 4). Sie werden standardmäßig nicht im allgemeinen Mitgliederprotokoll veröffentlicht.
 
-### Agenda Structure
+### Agenda-Struktur
 
-1. **Opening and ground rules** _<duration; consent, confidentiality, anti-retaliation, pause rights.>_
-2. **Each party shares their perspective** _<uninterrupted; equal time.>_
-3. **Shared understanding check** _<duration.>_
-4. **Needs and requests** _<duration.>_
-5. **Repair or agreement options** _<duration.>_
-6. **Decision or next step** _<duration.>_
-7. **Documentation** _<duration; record per Layer 4 privacy rules.>_
+1. **Eröffnung und Grundregeln** _<Dauer; Einverständnis, Vertraulichkeit, Vergeltungsschutz, Pausenrecht.>_
+2. **Jede Partei schildert ihre Perspektive** _<ohne Unterbrechung; gleiche Redezeit.>_
+3. **Prüfung des gemeinsamen Verständnisses** _<Dauer.>_
+4. **Bedürfnisse und Bitten** _<Dauer.>_
+5. **Reparatur- oder Einigungsoptionen** _<Dauer.>_
+6. **Entscheidung oder nächster Schritt** _<Dauer.>_
+7. **Dokumentation** _<Dauer; Protokoll gemäß Datenschutzregeln der Schicht 4.>_
 
-### Record Format
+### Protokollformat
 
-> This record is confidential. Access is restricted per the Conflict Resolution Ladder (Layer 4).
+> Dieses Protokoll ist vertraulich. Der Zugang ist gemäß der Konfliktlösungsleiter (Schicht 4) eingeschränkt.
 
-- **Date:**
-- **Facilitator:**
-- **Parties present:**
-- **Ladder step:**
-- **Conflict class:**
-- **Outcome:** _<Agreement reached / Escalated to next step / Adjourned>_
-- **Agreed actions (if any):**
-- **Escalation destination (if applicable):**
-- **Access:** Parties and Facilitator only; disclosed to Full Members only if escalated to the governance step.
+- **Datum:**
+- **Moderation:**
+- **Anwesende Parteien:**
+- **Leiterstufe:**
+- **Konfliktklasse:**
+- **Ergebnis:** _<Einigung erzielt / Eskalation auf nächste Stufe / Vertagt>_
+- **Vereinbarte Maßnahmen (falls vorhanden):**
+- **Eskalationsziel (falls zutreffend):**
+- **Zugang:** Nur Parteien und Moderator:in; Offenlegung gegenüber Vollmitgliedern nur bei Eskalation auf die Governance-Stufe.
 
 ---
 
-## Ratification Record
+## Ratifizierungsprotokoll
 
-- **Adopted:** <YYYY-MM-DD>
-- **Decision type:** Strategic
-- **Version:** <version>
-- **Decision record:** <link to decision record>
+- **Angenommen:** <JJJJ-MM-TT>
+- **Entscheidungstyp:** Strategisch
+- **Version:** <Version>
+- **Entscheidungsprotokoll:** <Link zum Entscheidungsprotokoll>

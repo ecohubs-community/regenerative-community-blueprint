@@ -1,188 +1,186 @@
 **RCOS – Regenerative Community Operating System**
 
-# Governance Protocol
+# Governance-Protokoll
 
 - **Generiert:** 2026-04-28
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-2/governance-protocol](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-2/governance-protocol)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
-
 ---
-- **Layer:** 2 — Governance & Decision Logic
-- **Status:** Template — adapt for your community
-- **RCOS reference:** [§4.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#45-governance-protocol), [§4.6](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#46-safeguards-and-failure-modes), [§4.7](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#47-artifacts)
+- **Layer:** 2 — Governance & Entscheidungslogik
+- **Status:** Vorlage — an deine Gemeinschaft anpassen
+- **RCOS-Referenz:** [§4.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#45-governance-protocol), [§4.6](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#46-safeguards-and-failure-modes), [§4.7](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#47-artifacts)
 
-> Defines the full lifecycle of a collective decision — from proposal submission to documentation and appeal.
+> Definiert den vollständigen Lebenszyklus einer kollektiven Entscheidung — von der Antragseinreichung bis zur Dokumentation und zum Einspruch.
 
 ---
 
-## Proposal Submission
+## Antragseinreichung
 
-*RCOS clauses: [4.5.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#45-governance-protocol), [4.5.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#45-governance-protocol)*
+*RCOS-Klauseln: [4.5.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#45-governance-protocol), [4.5.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#45-governance-protocol)*
 
 <details data-kind="rationale">
-<summary>Why formalize how proposals enter the system?</summary>
+<summary>Warum formalisieren, wie Anträge ins System gelangen?</summary>
 
-A decision process that accepts proposals informally — a message, a verbal suggestion, a founder's idea — has no reliable way to tell what is actually on the table. Requiring a standard submission format, filing location, and mandatory content fields means every proposal arrives with the same information, visible to everyone, traceable from day one.
+Ein Entscheidungsprozess, der Anträge informell annimmt — eine Nachricht, ein mündlicher Vorschlag, eine Idee der Gründer:innen — hat keine verlässliche Möglichkeit festzustellen, was tatsächlich zur Abstimmung steht. Ein standardisiertes Einreichungsformat, ein festgelegter Ablageort und verbindliche Inhaltsfelder bedeuten, dass jeder Antrag mit denselben Informationen eingeht, für alle sichtbar und von Tag eins an nachvollziehbar.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-State who may propose, where proposals are submitted, the mandatory content fields, and how decision type is determined and challenged.
+Lege fest, wer Anträge stellen darf, wo Anträge eingereicht werden, welche Inhaltsfelder verpflichtend sind und wie der Entscheidungstyp bestimmt und angefochten wird.
 
 </details>
 
-- _<Operational decisions — handled by the relevant role holder per the Role Registry; no proposal required.>_
-- _<Strategic and Constitutional decisions — who may submit, and on what platform.>_
-- _<Mandatory proposal fields: summary, affected layers and artifacts, decision type, rationale, risks and mitigations, rollback plan, proposed effective date.>_
-- _<Decision type is declared by proposer; defaults to higher-impact type if unclear.>_
-- _<Withdrawal rules — when a proposal can be withdrawn and how.>_
+- _<Operative Entscheidungen — werden von der zuständigen Rolleninhaber:in gemäß dem Rollenregister bearbeitet; kein Antrag erforderlich.>_
+- _<Strategische und Verfassungsentscheidungen — wer einreichen darf und auf welcher Plattform.>_
+- _<Pflichtfelder im Antrag: Zusammenfassung, betroffene Layer und Artefakte, Entscheidungstyp, Begründung, Risiken und Gegenmaßnahmen, Rücknahmeplan, vorgeschlagenes Wirksamkeitsdatum.>_
+- _<Der Entscheidungstyp wird von der antragstellenden Person angegeben; im Zweifelsfall gilt der höhere Wirkungstyp.>_
+- _<Rücknahmeregeln — wann ein Antrag zurückgezogen werden kann und wie.>_
 
-## Review and Deliberation
+## Prüfung und Beratung
 
-*RCOS clauses: [4.5.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#45-governance-protocol), [4.5.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#45-governance-protocol)*
+*RCOS-Klauseln: [4.5.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#45-governance-protocol), [4.5.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#45-governance-protocol)*
 
 <details data-kind="rationale">
-<summary>Why enforce a minimum deliberation window?</summary>
+<summary>Warum eine Mindestberatungsfrist vorschreiben?</summary>
 
-Rushed votes favor whoever is already paying attention and disadvantage everyone else. A mandatory deliberation period, tied to the weight of the decision, gives members time to read, respond, and surface concerns before the vote opens — so the vote reflects considered judgment, not speed of reaction.
+Überhastete Abstimmungen bevorzugen diejenigen, die ohnehin schon aufmerksam sind, und benachteiligen alle anderen. Eine verpflichtende Beratungsfrist, abgestimmt auf die Tragweite der Entscheidung, gibt den Mitgliedern Zeit zum Lesen, Reagieren und Einbringen von Bedenken, bevor die Abstimmung beginnt — sodass die Abstimmung eine durchdachte Beurteilung widerspiegelt, keine Reaktionsgeschwindigkeit.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-Name the deliberation venues and the minimum periods for Strategic and Constitutional decisions before a vote may open.
+Benenne die Beratungsorte und die Mindestfristen für strategische und Verfassungsentscheidungen, bevor eine Abstimmung eröffnet werden darf.
 
 </details>
 
-- _<Where deliberation happens (forum, chat, meeting).>_
-- _<Minimum deliberation period before a vote opens — Strategic.>_
-- _<Minimum deliberation period before a vote opens — Constitutional.>_
-- _<Expectation that members raise concerns during deliberation to avoid the need for re-votes.>_
+- _<Wo die Beratung stattfindet (Forum, Chat, Treffen).>_
+- _<Mindestberatungsfrist vor Eröffnung einer Abstimmung — strategisch.>_
+- _<Mindestberatungsfrist vor Eröffnung einer Abstimmung — Verfassung.>_
+- _<Erwartung, dass Mitglieder Bedenken während der Beratung äußern, um erneute Abstimmungen zu vermeiden.>_
 
-## Decision Execution
+## Entscheidungsumsetzung
 
-*RCOS clauses: [4.5.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#45-governance-protocol), [4.5.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#45-governance-protocol)*
+*RCOS-Klauseln: [4.5.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#45-governance-protocol), [4.5.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#45-governance-protocol)*
 
 <details data-kind="rationale">
-<summary>Why tie execution to the record?</summary>
+<summary>Warum die Umsetzung an die Dokumentation binden?</summary>
 
-A passed proposal that never reaches the affected artifact is a decision in name only — the rules on the ground still say what they said before. Binding execution to a concrete artifact update and version-history entry closes the gap between what was decided and what is actually in force.
+Ein angenommener Antrag, der nie im betroffenen Artefakt ankommt, ist eine Entscheidung nur dem Namen nach — die geltenden Regeln sagen immer noch dasselbe wie vorher. Die Umsetzung an eine konkrete Artefakt-Aktualisierung und einen Versionshistorie-Eintrag zu knüpfen, schließt die Lücke zwischen dem, was entschieden wurde, und dem, was tatsächlich gilt.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-State what happens when a proposal passes (artifact updates, version history) and when it is rejected (archive). Define a time bound for both.
+Lege fest, was passiert, wenn ein Antrag angenommen wird (Artefakt-Aktualisierungen, Versionshistorie) und wenn er abgelehnt wird (Archivierung). Definiere eine Frist für beides.
 
 </details>
 
-- _<On passing: how proposal is filed; affected artifacts updated; version history entry made.>_
-- _<On rejection: where proposal is archived.>_
-- _<Time bound for execution after a vote concludes.>_
+- _<Bei Annahme: wie der Antrag abgelegt wird; betroffene Artefakte aktualisiert werden; Eintrag in der Versionshistorie erstellt wird.>_
+- _<Bei Ablehnung: wo der Antrag archiviert wird.>_
+- _<Frist für die Umsetzung nach Abschluss einer Abstimmung.>_
 
-## Documentation and Publication
+## Dokumentation und Veröffentlichung
 
-*RCOS clauses: [4.5.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#45-governance-protocol)*
+*RCOS-Klauseln: [4.5.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#45-governance-protocol)*
 
 <details data-kind="rationale">
-<summary>Why document every outcome, including rejections?</summary>
+<summary>Warum jedes Ergebnis dokumentieren, einschließlich Ablehnungen?</summary>
 
-Keeping a record of only the decisions that passed erases the reasoning history — members lose track of what was already considered and rejected, and the same debates get re-litigated indefinitely. Archiving both passed and rejected proposals, with a time bound and a verifiable decision record, preserves institutional memory and makes the governance system auditable.
+Wenn nur die angenommenen Entscheidungen aufbewahrt werden, geht die Begründungsgeschichte verloren — Mitglieder verlieren den Überblick darüber, was bereits geprüft und abgelehnt wurde, und dieselben Debatten werden endlos wieder aufgerollt. Sowohl angenommene als auch abgelehnte Anträge zu archivieren, mit einer Frist und einem überprüfbaren Entscheidungsprotokoll, bewahrt das institutionelle Gedächtnis und macht das Governance-System prüfbar.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-State retention rules for passed and rejected proposals, what counts as the decision record, and the version-history update obligation.
+Lege Aufbewahrungsregeln für angenommene und abgelehnte Anträge fest, was als Entscheidungsprotokoll gilt und die Pflicht zur Aktualisierung der Versionshistorie.
 
 </details>
 
-- _<All passed and rejected proposals are filed within X days of the vote closing.>_
-- _<The vote artifact (e.g. Snapshot link) serves as the decision record.>_
-- _<Version history (Layer 6) updated with every passed proposal.>_
+- _<Alle angenommenen und abgelehnten Anträge werden innerhalb von X Tagen nach Abstimmungsende abgelegt.>_
+- _<Das Abstimmungsartefakt (z. B. Snapshot-Link) dient als Entscheidungsprotokoll.>_
+- _<Versionshistorie (Layer 6) wird bei jedem angenommenen Antrag aktualisiert.>_
 
-## Appeal and Review
+## Einspruch und Überprüfung
 
-*RCOS clauses: [4.5.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#45-governance-protocol), [4.6.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#46-safeguards-and-failure-modes)*
+*RCOS-Klauseln: [4.5.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#45-governance-protocol), [4.6.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#46-safeguards-and-failure-modes)*
 
 <details data-kind="rationale">
-<summary>Why make re-votes possible but bounded?</summary>
+<summary>Warum erneute Abstimmungen ermöglichen, aber begrenzen?</summary>
 
-A governance system with no appeal route hardens mistakes into permanent rules; one with unlimited informal appeal paths never settles anything. Allowing any Full Member to trigger a re-vote — but only with a written, reasoned objection raising something not already addressed — keeps the system self-correcting without turning every decision into a standing referendum.
+Ein Governance-System ohne Einspruchsmöglichkeit zementiert Fehler zu dauerhaften Regeln; eines mit unbegrenzten informellen Einspruchswegen bringt nichts zum Abschluss. Jedem Vollmitglied die Möglichkeit zu geben, eine erneute Abstimmung auszulösen — aber nur mit einem schriftlichen, begründeten Einwand, der etwas noch nicht Behandeltes aufwirft — hält das System selbstkorrigierend, ohne dass jede Entscheidung zu einem Dauerreferendum wird.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-Define the conditions for triggering a re-vote, the objection format, and the threshold/mechanism for the re-vote itself.
+Definiere die Bedingungen für eine erneute Abstimmung, das Format des Einwands und den Schwellenwert/Mechanismus für die erneute Abstimmung selbst.
 
 </details>
 
-- _<Who may trigger a re-vote and how.>_
-- _<Reasoned objection requirement — a consideration not addressed in original deliberation.>_
-- _<Re-vote uses the same mechanism and threshold as the original.>_
-- _<Treatment of repeated frivolous re-vote requests.>_
+- _<Wer eine erneute Abstimmung auslösen darf und wie.>_
+- _<Anforderung eines begründeten Einwands — ein Aspekt, der in der ursprünglichen Beratung nicht behandelt wurde.>_
+- _<Die erneute Abstimmung verwendet denselben Mechanismus und Schwellenwert wie die ursprüngliche.>_
+- _<Umgang mit wiederholten nichtigen Anträgen auf erneute Abstimmung.>_
 
-## Conflict Between Decisions
+## Konflikte zwischen Entscheidungen
 
-*RCOS clauses: [4.5.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#45-governance-protocol)*
+*RCOS-Klauseln: [4.5.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#45-governance-protocol)*
 
 <details data-kind="rationale">
-<summary>Why predefine conflict resolution?</summary>
+<summary>Warum die Konfliktlösung vorab festlegen?</summary>
 
-When two decisions point in different directions, someone has to choose which one counts — and if that choice is made ad hoc, it reduces to whoever has the authority or energy to enforce their reading. A fixed precedence rule (higher type wins; more recent wins at the same type) resolves conflicts mechanically, without a judgment call.
+Wenn zwei Entscheidungen in unterschiedliche Richtungen weisen, muss jemand bestimmen, welche gilt — und wenn diese Wahl ad hoc getroffen wird, läuft es darauf hinaus, wer die Autorität oder Energie hat, seine Auslegung durchzusetzen. Eine feste Vorrangegel (höherer Typ gewinnt; neuere gewinnt bei gleichem Typ) löst Konflikte mechanisch, ohne eine Ermessensentscheidung.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-State the precedence rule (typically: higher decision type prevails; more recent wins at the same type, unless explicitly locked).
+Lege die Vorrangregel fest (typischerweise: höherer Entscheidungstyp hat Vorrang; neuere gewinnt bei gleichem Typ, sofern nicht ausdrücklich gesperrt).
 
 </details>
 
-- _<Precedence: Constitutional > Strategic > Operational.>_
-- _<Same-type conflicts: more recent prevails unless earlier explicitly locked future changes.>_
-- _<Where conflicts are surfaced and how they are resolved.>_
+- _<Vorrang: Verfassung > Strategisch > Operativ.>_
+- _<Konflikte gleichen Typs: neuere hat Vorrang, es sei denn, die ältere hat zukünftige Änderungen ausdrücklich gesperrt.>_
+- _<Wo Konflikte aufgedeckt werden und wie sie gelöst werden.>_
 
-## Safeguards and Failure Modes
+## Schutzmaßnahmen und Fehlermodi
 
-*RCOS clauses: [4.6.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#46-safeguards-and-failure-modes), [4.6.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#46-safeguards-and-failure-modes), [4.6.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#46-safeguards-and-failure-modes)*
+*RCOS-Klauseln: [4.6.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#46-safeguards-and-failure-modes), [4.6.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#46-safeguards-and-failure-modes), [4.6.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#46-safeguards-and-failure-modes)*
 
 <details data-kind="rationale">
-<summary>Why plan for governance failure up front?</summary>
+<summary>Warum Governance-Versagen von Anfang an einplanen?</summary>
 
-Every governance system fails somewhere — captured by a subgroup, frozen by informal vetoes, drifted by a role holder who quietly expanded their remit. Naming the specific failure modes in advance, wiring in challenge routes that cannot be retaliated against, and requiring a formal review when failures accumulate, is what keeps governance from slowly hollowing out while no one is watching.
+Jedes Governance-System versagt irgendwo — vereinnahmt von einer Untergruppe, blockiert durch informelle Vetos, verwässert von einer Rolleninhaber:in, die ihren Zuständigkeitsbereich still und leise ausgeweitet hat. Die spezifischen Fehlermodi im Voraus zu benennen, Anfechtungswege einzubauen, die nicht mit Vergeltung beantwortet werden können, und eine formale Überprüfung zu verlangen, wenn sich Fehler häufen — das ist es, was verhindert, dass Governance sich langsam aushöhlt, während niemand hinschaut.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-For each named failure mode, state the safeguard. Include a trigger that forces a Constitutional review if failures accumulate.
+Benenne für jeden Fehlermodus die entsprechende Schutzmaßnahme. Füge einen Auslöser hinzu, der eine Verfassungsüberprüfung erzwingt, wenn sich Fehler häufen.
 
 </details>
 
-- **Power concentration:** _<how the protocol prevents unilateral authority above operational scope.>_
-- **Informal vetoes:** _<rule that only written, reasoned objections submitted via the defined process carry weight.>_
-- **Decision capture:** _<rule about quorum and openness of voting.>_
-- **Founder/role entrenchment:** _<rule that no role grants permanent authority; founders hold no special governance authority beyond membership state.>_
-- **Challenge without retaliation:** _<reference Layer 4 anti-retaliation provisions.>_
-- **Persistent failure trigger:** _<e.g. three or more governance failures within X months trigger a Constitutional review.>_
+- **Machtkonzentration:** _<wie das Protokoll einseitige Autorität über den operativen Rahmen hinaus verhindert.>_
+- **Informelle Vetos:** _<Regel, dass nur schriftliche, begründete Einwände, die über den definierten Prozess eingereicht werden, Gewicht haben.>_
+- **Entscheidungsvereinnahmung:** _<Regel zu Beschlussfähigkeit und Offenheit der Abstimmung.>_
+- **Gründer-/Rollenverfestigung:** _<Regel, dass keine Rolle dauerhafte Autorität verleiht; Gründer:innen haben keine besondere Governance-Autorität über ihren Mitgliedschaftsstatus hinaus.>_
+- **Anfechtung ohne Vergeltung:** _<Verweis auf die Anti-Vergeltungsbestimmungen in Layer 4.>_
+- **Auslöser bei anhaltendem Versagen:** _<z. B. drei oder mehr Governance-Fehler innerhalb von X Monaten lösen eine Verfassungsüberprüfung aus.>_
 
 ---
 
-## Ratification Record
+## Ratifizierungsprotokoll
 
-- **Adopted:** <YYYY-MM-DD>
-- **Decision type:** Constitutional
-- **Version:** <version>
-- **Decision record:** <link to decision record>
+- **Angenommen:** <JJJJ-MM-TT>
+- **Entscheidungstyp:** Verfassung
+- **Version:** <Version>
+- **Entscheidungsprotokoll:** <Link zum Entscheidungsprotokoll>

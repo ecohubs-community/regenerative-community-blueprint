@@ -5,293 +5,289 @@
 - **Generiert:** 2026-04-28
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1)
 
-- Status: Draft
+- Status: Entwurf
 - Version: RCOS-Core v0.1
-- Audience: Community founders, practitioners, auditors, implementers
-- Normative keywords: `MUST`, `MUST NOT`, `SHOULD`, `MAY` (RFC-style)
+- Zielgruppe: Gemeinschaftsgründer\*innen, Praktiker\*innen, Prüfer\*innen, Umsetzer\*innen
+- Normative Schlüsselwörter: `MUSS`, `DARF NICHT`, `SOLLTE`, `KANN` (RFC-Stil)
 
 ## Inhaltsverzeichnis
 
 - [Über RCOS Core](#ber-rcos-core)
 - [0. Einführung](#0-einfhrung)
-- [1. RCOS Compliance Model](#1-rcos-compliance-model)
-- [2. Layer 0 — Identity & Scope](#2-layer-0-identity-scope)
-- [3. Layer 1 — Membership System](#3-layer-1-membership-system)
-- [4. Layer 2 — Governance & Decision Logic](#4-layer-2-governance-decision-logic)
-- [5. Layer 3 — Economic & Resource System](#5-layer-3-economic-resource-system)
-- [6. Layer 4 — Conflict, Repair & Accountability](#6-layer-4-conflict-repair-accountability)
-- [7. Layer 5 — Operations & Coordination](#7-layer-5-operations-coordination)
-- [8. Layer 6 — Evolution & Adaptation](#8-layer-6-evolution-adaptation)
-- [9. Non-Normative Sections](#9-non-normative-sections)
+- [1. RCOS-Konformitätsmodell](#1-rcos-konformittsmodell)
+- [2. Layer 0 — Identität & Geltungsbereich](#2-layer-0-identitt-geltungsbereich)
+- [3. Layer 1 — Mitgliedschaftssystem](#3-layer-1-mitgliedschaftssystem)
+- [4. Layer 2 — Governance & Entscheidungslogik](#4-layer-2-governance-entscheidungslogik)
+- [5. Layer 3 — Wirtschafts- & Ressourcensystem](#5-layer-3-wirtschafts--ressourcensystem)
+- [6. Layer 4 — Konflikt, Wiedergutmachung & Verantwortlichkeit](#6-layer-4-konflikt-wiedergutmachung-verantwortlichkeit)
+- [7. Layer 5 — Betrieb & Koordination](#7-layer-5-betrieb-koordination)
+- [8. Layer 6 — Evolution & Anpassung](#8-layer-6-evolution-anpassung)
+- [9. Nicht-normative Abschnitte](#9-nicht-normative-abschnitte)
 - [10. Compliance & Auditing](#10-compliance-auditing)
-- [11. Versioning & Governance of the Standard](#11-versioning-governance-of-the-standard)
+- [11. Versionierung & Governance des Standards](#11-versionierung-governance-des-standards)
 - [Appendix A — Glossary](#appendix-a-glossary)
-- [Appendix B — Example Artifacts (Non-Normative)](#appendix-b-example-artifacts-non-normative)
-- [Appendix C — Reference Implementation Summary](#appendix-c-reference-implementation-summary)
+- [Anhang B — Beispiel-Artefakte (nicht normativ)](#anhang-b-beispiel-artefakte-nicht-normativ)
+- [Anhang C — Zusammenfassung der Referenzimplementierung](#anhang-c-zusammenfassung-der-referenzimplementierung)
 
 ---
 
 # Über RCOS Core
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
+## Was RCOS ist
 
+Das **Regenerative Community Operating System (RCOS)** ist eine formale, schichtenbasierte Spezifikation für das Entwerfen, Betreiben und Weiterentwickeln intentionaler Gemeinschaften – ohne auf Charisma, Ideologie oder informelle Macht angewiesen zu sein.
 
-## What RCOS Is
+RCOS behandelt eine Gemeinschaft als ein **gesteuertes System**, nicht als soziales Experiment. Es definiert die minimalen strukturellen Anforderungen, damit eine Gemeinschaft:
 
-The **Regenerative Community Operating System (RCOS)** is a formal, layered specification for designing, operating, and evolving intentional communities without relying on charisma, ideology, or informal power.
+- unter Belastung kohärent bleibt,
+- bei Machtasymmetrien fair bleibt,
+- sich anpassen kann, ohne zu kollabieren,
+- und sich über die Zeit hinweg regeneriert.
 
-RCOS treats a community as a **governed system**, not a social experiment. It defines the minimum structural requirements needed for a community to remain:
-
-- coherent under stress,
-- fair under power asymmetries,
-- adaptable without collapse,
-- and regenerative over time.
-
-RCOS is not a lifestyle, belief system, or cultural identity. It is an **operating system**: a set of explicit rules, interfaces, invariants, and test cases that make community life legible, auditable, and survivable.
+RCOS ist kein Lebensstil, kein Glaubenssystem und keine kulturelle Identität. Es ist ein **Betriebssystem**: ein Satz expliziter Regeln, Schnittstellen, Invarianten und Testfälle, die das Gemeinschaftsleben lesbar, überprüfbar und überlebensfähig machen.
 
 ---
 
-## What Problem RCOS Solves
+## Welches Problem RCOS löst
 
-Most communities do not fail because of bad intentions. They fail because of **implicit structure**.
+Die meisten Gemeinschaften scheitern nicht an schlechten Absichten. Sie scheitern an **impliziter Struktur**.
 
-Common failure patterns include:
+Häufige Fehlermuster sind:
 
-- informal leaders overriding formal processes,
-- unspoken norms enforced as rules,
-- invisible labor leading to burnout,
-- wealth or charisma turning into power,
-- conflict being avoided until it becomes existential,
-- emergency decisions becoming permanent exceptions.
+- informelle Anführer:innen, die formale Prozesse aushebeln,
+- unausgesprochene Normen, die wie Regeln durchgesetzt werden,
+- unsichtbare Arbeit, die zu Burnout führt,
+- Wohlstand oder Charisma, die sich in Macht verwandeln,
+- Konflikte, die vermieden werden, bis sie existenziell werden,
+- Notfallentscheidungen, die zu dauerhaften Ausnahmen werden.
 
-RCOS exists to make these failure modes **structurally impossible or explicitly addressable**.
-
----
-
-## What RCOS Is Not
-
-RCOS explicitly does **not** prescribe:
-
-- a specific culture, belief, or spirituality,
-- a political or economic ideology,
-- a governance method (e.g. consensus vs sociocracy),
-- or how people _should_ live together.
-
-Instead, RCOS constrains _how choices are made_, _how power is bounded_, and _how change occurs_, regardless of values.
+RCOS existiert, um diese Fehlermodi **strukturell unmöglich oder explizit adressierbar** zu machen.
 
 ---
 
-## Design Principles (Non-negotiable)
+## Was RCOS nicht ist
 
-> **Nothing essential may remain implicit.**
+RCOS schreibt ausdrücklich **nicht** vor:
 
-- **Constraint-based, not value-based** — Defines rules and boundaries instead of prescribing beliefs. Values vary; constraints keep systems functional under stress.
-- **Pre-commitment over improvisation** — Critical decisions (conflict, power, money) are agreed before emotions, scarcity, or power struggles arise.
-- **Modular by default** — The core remains stable while optional domain modules can be added, replaced, or removed without breaking the system.
-- **Human-scale (≈ 5–150 people)** — Optimized for groups small enough to maintain trust, accountability, and shared context without bureaucracy.
-- **Failure-tolerant, not failure-blind** — Assumes conflict, burnout, and mistakes will happen and provides explicit recovery paths.
+- eine bestimmte Kultur, einen Glauben oder eine Spiritualität,
+- eine politische oder wirtschaftliche Ideologie,
+- eine Governance-Methode (z. B. Konsens vs. Soziokratie),
+- oder wie Menschen zusammenleben _sollten_.
 
-Anything that affects the following must be explicitly declared, versioned, and reviewable:
-
-- authority
-- membership
-- resources
-- conflict
-- system evolution
-
-- Silence is never treated as consent.
-- Tradition is never treated as authority.
-- Urgency is never treated as justification.
+Stattdessen beschränkt RCOS, _wie Entscheidungen getroffen werden_, _wie Macht begrenzt wird_ und _wie Veränderung stattfindet_ – unabhängig von Werten.
 
 ---
 
-## On Group Size: Why ~150?
+## Designprinzipien (nicht verhandelbar)
 
-**150** ≈ Dunbar’s Number: cognitive limit for stable social relationships.
+> **Nichts Wesentliches darf implizit bleiben.**
 
-- **Minimum viable community (5–7 people):**
-  Below this, role separation and conflict resolution collapse.
-- **Optimal horizontal range (8–40 people):**
-  High trust, low bureaucracy, direct participation possible.
-- **Maximum unsegmented size (120–150 people):**
-  Beyond this, informal governance fails.
+- **Regelbasiert, nicht wertebasiert** — Definiert Regeln und Grenzen, statt Überzeugungen vorzuschreiben. Werte variieren; Beschränkungen halten Systeme unter Belastung funktionsfähig.
+- **Vorab-Festlegung statt Improvisation** — Kritische Entscheidungen (Konflikt, Macht, Geld) werden vereinbart, bevor Emotionen, Knappheit oder Machtkämpfe entstehen.
+- **Modular von Grund auf** — Der Kern bleibt stabil, während optionale Domänenmodule hinzugefügt, ersetzt oder entfernt werden können, ohne das System zu beschädigen.
+- **Auf menschliche Größenordnung ausgelegt (≈ 5–150 Personen)** — Optimiert für Gruppen, die klein genug sind, um Vertrauen, Verantwortlichkeit und geteilten Kontext ohne Bürokratie aufrechtzuerhalten.
+- **Fehlertolerant, nicht fehlerblind** — Geht davon aus, dass Konflikte, Burnout und Fehler passieren werden, und bietet explizite Wiederherstellungswege.
 
-RCOS Core applies to any size, but above ~150 people, mandatory sub-structures (circles, domains, neighborhoods) are required.
+Alles, was Folgendes betrifft, muss explizit deklariert, versioniert und überprüfbar sein:
 
----
+- Autorität
+- Mitgliedschaft
+- Ressourcen
+- Konflikte
+- Systemevolution
 
-## Why the RCOS Core Structure Matters
-
-- Prevents founder dominance
-- Makes power explicit
-- Reduces hidden norms
-- Survives conflict
-- Enables replication
-- Integrates cleanly with DAO tooling, _without being dependent on it_
+- Schweigen wird niemals als Zustimmung gewertet.
+- Tradition wird niemals als Autorität gewertet.
+- Dringlichkeit wird niemals als Rechtfertigung gewertet.
 
 ---
 
-## What Is Deliberately Not in the RCOS Core
+## Zur Gruppengröße: Warum ~150?
 
-These belong to **optional modules**, not the core:
+**150** ≈ Dunbar's Number: kognitive Obergrenze für stabile soziale Beziehungen.
 
-- Permaculture design
-- Education philosophy
-- Spiritual or cultural practices
-- Political ideology
-- Aesthetic or lifestyle choices
+- **Minimal lebensfähige Gemeinschaft (5–7 Personen):**
+  Darunter brechen Rollentrennung und Konfliktlösung zusammen.
+- **Optimaler horizontaler Bereich (8–40 Personen):**
+  Hohes Vertrauen, wenig Bürokratie, direkte Beteiligung möglich.
+- **Maximale unsegmentierte Größe (120–150 Personen):**
+  Darüber hinaus versagt informelle Governance.
 
-The core governs how decisions are made, not what decisions must be made.
-
----
-
-## Invariants (Applies to All Layers)
-
-### Explicit Beats Implicit
-
-If it is not written, agreed, and versioned, **it does not exist**.
-
-### Why This Matters
-
-The Layer-Invariants ensure that no amount of goodwill, charisma, urgency, or consensus can quietly erode the system.
+Der RCOS-Kern gilt für jede Größe, aber ab ~150 Personen sind obligatorische Unterstrukturen (Kreise, Domänen, Nachbarschaften) erforderlich.
 
 ---
 
-## The RCOS Explicitness Rule (Core Principle)
+## Warum die RCOS-Kernstruktur wichtig ist
 
-**Anything that allocates power, risk, responsibility, or exit conditions must be explicit.**
-
-Anything that expresses preference, style, or local optimization may be optional.
-
-### Explicit vs Optional by Layer
-
-We use three categories:
-
-- **MUST be explicit** → required for RCOS compliance
-- **MAY be explicit** → recommended but context-dependent
-- **MUST remain optional** → never enforced by the core
-
-### Cross-layer Invariant on Explicitness
-
-**If something can:**
-
-- Remove someone’s rights
-- Bind someone’s time or labor
-- Control shared resources
-- Silence dissent
-- Prevent exit
-
-**Then it must be explicit, documented, and reviewable.**
-
-No exceptions.
-
-This approach ensures:
-
-- RCOS does **not** become bureaucratic
-- Communities retain cultural freedom
-- Only _structural risk_ is regulated
-- Optional modules stay powerful, not constrained
+- Verhindert Gründerdominanz
+- Macht Macht explizit
+- Reduziert versteckte Normen
+- Übersteht Konflikte
+- Ermöglicht Replikation
+- Integriert sich nahtlos mit DAO-Tooling, _ohne davon abhängig zu sein_
 
 ---
 
-## Stress-Test Driven Design
+## Was bewusst nicht im RCOS-Kern enthalten ist
 
-RCOS is validated not by intention but by **failure resistance**.
+Diese Themen gehören zu **optionalen Modulen**, nicht zum Kern:
 
-The specification includes a growing suite of **stress tests** derived from real community
-collapses, such as:
+- Permakulturdesign
+- Bildungsphilosophie
+- Spirituelle oder kulturelle Praktiken
+- Politische Ideologie
+- Ästhetische oder Lebensstil-Entscheidungen
 
-- dominance in meetings
-- founder veto power
-- privatization of commons
-- conflict avoidance cultures
-- charismatic spiritual authority
-- emergency rule bypasses
-
-A community is considered RCOS-aligned only if it can **withstand these scenarios without informal fixes**.
-
-Almost every failure happens because:
-
-**Something powerful was allowed to remain implicit.**
-
-RCOS turns:
-
-- Implicit power → explicit roles
-- Implicit values → scoped rules
-- Implicit punishment → due process
-- Implicit ownership → declared rights
-
-### Known Failure Modes RCOS Is Designed to Prevent
-
-See [RCOS Stress Tests](https://blueprint.ecohubs.community/de/articles/rcos-stress-tests?id=6acbe9a7)
-
-## Reference Implementations
-
-RCOS encourages small, real-world **reference communities** that:
-
-- implement the core layers explicitly,
-- document deviations and failures,
-- and publish learnings back into the standard.
-
-The goal is not perfection, but **evolution through transparency**.
+Der Kern regelt, wie Entscheidungen getroffen werden – nicht, welche Entscheidungen getroffen werden müssen.
 
 ---
 
-## Why “Regenerative”
+## Invarianten (gelten für alle Schichten)
 
-RCOS uses the term _regenerative_ deliberately.
+### Explizit schlägt Implizit
 
-A regenerative system:
+Wenn es nicht geschrieben, vereinbart und versioniert ist, **existiert es nicht**.
 
-- does not rely on constant growth,
-- does not burn out its members,
-- repairs damage instead of hiding it,
-- and becomes stronger by integrating failure.
+### Warum das wichtig ist
 
-RCOS is designed so that **stress produces learning**, not collapse.
+Die Schicht-Invarianten stellen sicher, dass kein noch so großer guter Wille, kein Charisma, keine Dringlichkeit und kein Konsens das System stillschweigend aushöhlen kann.
 
 ---
 
-## Who RCOS Is For
+## Die RCOS-Explizitätsregel (Kernprinzip)
 
-RCOS is intended for:
+**Alles, was Macht, Risiko, Verantwortung oder Austrittskonditionen zuweist, muss explizit sein.**
 
-- intentional communities,
-- eco-villages and co-housing projects,
-- cooperatives and commons-based organizations,
-- long-term collective living experiments,
-- and any group that wants to survive its own success.
+Alles, was Präferenzen, Stil oder lokale Optimierung ausdrückt, kann optional sein.
 
-RCOS is especially useful for groups that already share strong values — and want to ensure those values do not become tools of coercion.
+### Explizit vs. Optional nach Schicht
+
+Wir verwenden drei Kategorien:
+
+- **MUSS be explicit** → erforderlich für RCOS-Konformität
+- **KANN be explicit** → empfohlen, aber kontextabhängig
+- **MUSS remain optional** → wird niemals vom Kern erzwungen
+
+### Schichtübergreifende Invariante zur Explizitheit
+
+**Wenn etwas:**
+
+- Jemandem Rechte entziehen kann
+- Jemandes Zeit oder Arbeitskraft binden kann
+- Gemeinsame Ressourcen kontrollieren kann
+- Widerspruch unterdrücken kann
+- Einen Austritt verhindern kann
+
+**Dann muss es explizit, dokumentiert und überprüfbar sein.**
+
+Keine Ausnahmen.
+
+Dieser Ansatz stellt sicher, dass:
+
+- RCOS **nicht** bürokratisch wird
+- Gemeinschaften kulturelle Freiheit behalten
+- Nur _strukturelles Risiko_ reguliert wird
+- Optionale Module leistungsfähig bleiben, nicht eingeschränkt werden
 
 ---
 
-## How to Use RCOS
+## Stresstest-getriebenes Design
 
-RCOS can be used as:
+RCOS wird nicht durch Absichten validiert, sondern durch **Widerstandsfähigkeit gegen Versagen**.
 
-- a **design blueprint** before founding a community,
-- an **audit framework** for existing groups,
-- a **stress-testing tool** during conflict,
-- or a **shared language** for difficult structural conversations.
+Die Spezifikation umfasst eine wachsende Sammlung von **Stresstests**, die aus realen Zusammenbrüchen von Gemeinschaften abgeleitet sind, wie etwa:
 
-Adoption can be incremental. Compliance can be partial. What matters is **explicitness, not purity**.
+- Dominanz in Versammlungen
+- Vetorecht der Gründer:innen
+- Privatisierung von Gemeingütern
+- Kulturen der Konfliktvermeidung
+- Charismatische spirituelle Autorität
+- Umgehung von Regeln im Notfall
+
+Eine Gemeinschaft gilt nur dann als RCOS-konform, wenn sie **diesen Szenarien ohne informelle Behelfslösungen standhalten kann**.
+
+Fast jedes Scheitern passiert, weil:
+
+**Etwas Mächtiges implizit bleiben durfte.**
+
+RCOS verwandelt:
+
+- Implizite Macht → explizite Rollen
+- Implizite Werte → begrenzte Regeln
+- Implizite Bestrafung → ordentliches Verfahren
+- Implizites Eigentum → deklarierte Rechte
+
+### Bekannte Fehlermodi, die RCOS verhindern soll
+
+Siehe [RCOS-Stresstests](https://blueprint.ecohubs.community/de/articles/rcos-stress-tests?id=6acbe9a7)
+
+## Referenzimplementierungen
+
+RCOS ermutigt kleine, reale **Referenzgemeinschaften**, die:
+
+- die Kernschichten explizit umsetzen,
+- Abweichungen und Fehler dokumentieren,
+- und Erkenntnisse in den Standard zurückspeisen.
+
+Das Ziel ist nicht Perfektion, sondern **Evolution durch Transparenz**.
 
 ---
 
-## The Core Claim
+## Warum „Regenerativ"
 
-> Communities do not fail because people are flawed.  
-> They fail because systems are vague.
+RCOS verwendet den Begriff _regenerativ_ bewusst.
 
-RCOS exists to replace vagueness with structure —  
-so that care, autonomy, and regeneration have something solid to stand on.
+Ein regeneratives System:
+
+- ist nicht auf ständiges Wachstum angewiesen,
+- brennt seine Mitglieder nicht aus,
+- repariert Schäden, statt sie zu verstecken,
+- und wird stärker, indem es Fehler integriert.
+
+RCOS ist so gestaltet, dass **Belastung Lernen erzeugt**, nicht Zusammenbruch.
 
 ---
 
-## Change Log
+## Für wen RCOS gedacht ist
 
-- [v0.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1?id=e6de7a5d) — Initial version
+RCOS richtet sich an:
+
+- intentionale Gemeinschaften,
+- Ökodörfer und Wohnprojekte,
+- Genossenschaften und Commons-basierte Organisationen,
+- langfristige kollektive Wohnexperimente,
+- und jede Gruppe, die ihren eigenen Erfolg überleben will.
+
+RCOS ist besonders nützlich für Gruppen, die bereits starke Werte teilen – und sicherstellen wollen, dass diese Werte nicht zu Werkzeugen des Zwangs werden.
+
+---
+
+## Wie du RCOS nutzen kannst
+
+RCOS kann genutzt werden als:
+
+- ein **Entwurfsplan** vor der Gründung einer Gemeinschaft,
+- ein **Audit-Rahmenwerk** für bestehende Gruppen,
+- ein **Stresstest-Werkzeug** während Konflikten,
+- oder eine **gemeinsame Sprache** für schwierige strukturelle Gespräche.
+
+Die Einführung kann schrittweise erfolgen. Die Konformität kann partiell sein. Was zählt, ist **Explizitheit, nicht Reinheit**.
+
+---
+
+## Die Kernthese
+
+> Gemeinschaften scheitern nicht, weil Menschen fehlerhaft sind.
+> Sie scheitern, weil Systeme vage sind.
+
+RCOS existiert, um Vagheit durch Struktur zu ersetzen –
+damit Fürsorge, Autonomie und Regeneration etwas Solides haben, worauf sie stehen können.
+
+---
+
+## Änderungsprotokoll
+
+- [v0.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1?id=e6de7a5d) — Erste Version
 
 
 ---
@@ -328,1507 +324,1474 @@ Diese Spezifikation legt die **verpflichtenden Kern-Ebenen** fest, die für RCOS
 
 ---
 
-# 1. RCOS Compliance Model
+# 1. RCOS-Konformitätsmodell
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
+## 1.1 Konformitätsstufen
 
+- RCOS-Core-konform
+- RCOS-Core + Module (nicht normativ)
 
-## 1.1 Compliance Levels
+## 1.2 Explizitheitspflicht
 
-- RCOS-Core compliant
-- RCOS-Core + modules (non-normative)
+Jeder Mechanismus, der Macht, Ressourcen, Pflichten oder Austritt betrifft, `MUSS` explizit, dokumentiert und überprüfbar sein.
 
-## 1.2 Explicitness Requirement
+## 1.3 Meta-Invariante
 
-Any mechanism affecting power, resources, obligations, or exit `MUST` be explicit, documented, and reviewable.
-
-## 1.3 Meta-Invariant
-
-If it is not written and adopted, it does not exist.
+Was nicht schriftlich festgehalten und angenommen wurde, existiert nicht.
 
 
 ---
 
-# 2. Layer 0 — Identity & Scope
+# 2. Layer 0 — Identität & Geltungsbereich
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
+Layer 0 definiert die konstitutionelle Identität der Gemeinschaft. Er legt fest, was die Gemeinschaft *ist*, was sie *nicht ist*, und die nicht verhandelbaren Einschränkungen, unter denen alle anderen Layer operieren. Keine Regel, Entscheidung oder Praxis in höheren Layern darf Layer 0 widersprechen.
 
+## 2.1 Zweckdefinition
 
-Layer 0 defines the constitutional identity of the community. It establishes what the community *is*, what it *is not*, and the non-negotiable constraints under which all other layers operate. No rule, decision, or practice in higher layers may contradict Layer 0.
+2.1.1 Eine Gemeinschaft MUSS genau einen primären Zweck definieren.
 
-## 2.1 Purpose Definition
+2.1.2 Der primäre Zweck MUSS den dauerhaften Grund für die Existenz der Gemeinschaft beschreiben und DARF NICHT ein kurzfristiges Ziel, Projekt oder eine Strategie sein.
 
-2.1.1 A community MUST define exactly one primary purpose.
+2.1.3 Der primäre Zweck MUSS über die Zeit stabil sein und MUSS nur durch eine konstitutionelle Entscheidung gemäß Layer 2 und über den in Layer 6 definierten Änderungsprozess geändert werden.
 
-2.1.2 The primary purpose MUST describe the enduring reason for the community’s existence and MUST NOT be a short-term goal, project, or strategy.
+2.1.4 Sekundäre Zwecke KANN definiert werden, DARF NICHT jedoch dem primären Zweck widersprechen oder ihn außer Kraft setzen.
 
-2.1.3 The primary purpose MUST be stable across time and MUST only be changed through a constitutional decision as defined in Layer 2 and executed via the change process defined in Layer 6.
+2.1.5 Keine Handlung, Entscheidung oder Ressourcenzuweisung KANN dem erklärten primären Zweck materiell widersprechen.
 
-2.1.4 Secondary purposes MAY be defined, but MUST NOT conflict with or override the primary purpose.
+## 2.2 Geltungsbereichserklärung
 
-2.1.5 No action, decision, or allocation of resources MAY materially contradict the stated primary purpose.
+2.2.1 Die Gemeinschaft MUSS den Geltungsbereich dessen, was sie regiert, explizit erklären.
 
-## 2.2 Scope Declaration
+2.2.2 Die Geltungsbereichserklärung MUSS mindestens Folgendes umfassen:
+- Von der Gemeinschaft verwaltete Vermögenswerte
+- Bereiche der Entscheidungsbefugnis
+- Aktivitäten und Verantwortlichkeiten unter kollektiver Kontrolle
 
-2.2.1 The community MUST explicitly declare the scope of what it governs.
+2.2.3 Die Geltungsbereichserklärung MUSS explizit auflisten, was außerhalb des Geltungsbereichs liegt.
 
-2.2.2 The scope declaration MUST include, at minimum:
-- Assets governed by the community
-- Domains of decision-making authority
-- Activities and responsibilities under collective control
+2.2.4 Alles, was nicht explizit als innerhalb des Geltungsbereichs erklärt ist, MUSS als außerhalb des Geltungsbereichs behandelt werden.
 
-2.2.3 The scope declaration MUST explicitly list what is out of scope.
+2.2.5 Die Gemeinschaft DARF NICHT Autorität über Personen, Vermögenswerte oder Bereiche ausüben, die als außerhalb des Geltungsbereichs erklärt sind.
 
-2.2.4 Anything not explicitly declared as in scope MUST be treated as out of scope.
+## 2.3 Invarianten
 
-2.2.5 The community MUST NOT exercise authority over persons, assets, or domains that are declared out of scope.
+2.3.1 Invarianten sind Einschränkungen, die definieren, was DARF NICHT verletzt werden darf, solange sie in Kraft sind.
 
-## 2.3 Invariants
+2.3.2 Invarianten MUSS explizit aufgelistet und dokumentiert sein.
 
-2.3.1 Invariants are constraints that define what MUST NOT be violated while they are in force.
+2.3.3 Invarianten MUSS über alle Layer von RCOS hinweg gelten.
 
-2.3.2 Invariants MUST be explicitly listed and documented.
+2.3.4 Keine Entscheidung, Rolle, kein Prozess und keine Notfallmaßnahme KANN eine Invariante außer Kraft setzen.
 
-2.3.3 Invariants MUST apply across all layers of RCOS.
+2.3.5 Wenn ein Konflikt zwischen einer Invariante und einer anderen Regel entsteht, MUSS die Invariante Vorrang haben.
 
-2.3.4 No decision, role, process, or emergency measure MAY override an invariant.
+2.3.6 Invarianten KANN nur durch einen konstitutionellen Änderungsprozess gemäß Layer 2 und Layer 6 geändert oder entfernt werden.
 
-2.3.5 If a conflict arises between an invariant and any other rule, the invariant MUST prevail.
+## 2.4 Identitätseinschränkungen
 
-2.3.6 Invariants MAY only be changed or removed through a constitutional change process as defined in Layer 2 and Layer 6.
+2.4.1 Die Gemeinschaft MUSS alle Einschränkungen auf Identitätsebene erklären, die Teilnahme, Verhalten oder Governance wesentlich beeinflussen.
 
-## 2.4 Identity Constraints
+2.4.2 Identitätseinschränkungen KANN unter anderem Folgendes umfassen:
+- Ethische oder verhaltensbezogene Grenzen
+- Teilnahmevoraussetzungen
+- Nicht verhandelbare kulturelle oder ökologische Einschränkungen
 
-2.4.1 The community MUST declare any identity-level constraints that materially affect participation, behavior, or governance.
+2.4.3 Identitätseinschränkungen MUSS überprüfbar und durch definierte Prozesse durchsetzbar sein.
 
-2.4.2 Identity constraints MAY include, but are not limited to:
-- Ethical or behavioral boundaries
-- Participation prerequisites
-- Non-negotiable cultural or ecological constraints
+2.4.4 Identitätseinschränkungen DARF NICHT implizit oder informell durchgesetzt werden.
 
-2.4.3 Identity constraints MUST be testable and enforceable through defined processes.
+## 2.5 Artefakte
 
-2.4.4 Identity constraints MUST NOT be enforced implicitly or informally.
+2.5.1 Die folgenden Artefakte sind für die Konformität mit Layer 0 verpflichtend:
+- Zweck-Charta
+- Geltungsbereichserklärung
+- Invarianten-Register
+- Register der Identitätseinschränkungen
 
-## 2.5 Artifacts
+2.5.2 Artefakte von Layer 0 MUSS:
+- Für alle Mitglieder öffentlich zugänglich sein
+- Versioniert sein
+- Durch einen formalen Ratifizierungsprozess angenommen werden
 
-2.5.1 The following artifacts are mandatory for Layer 0 compliance:
-- Purpose Charter
-- Scope Declaration
-- Invariants Register
-- Identity Constraints Register
-
-2.5.2 Layer 0 artifacts MUST be:
-- Publicly accessible to all members
-- Versioned
-- Adopted through a formal ratification process
-
-2.5.3 If Layer 0 artifacts are missing, ambiguous, or internally contradictory, the community MUST be considered non-compliant with RCOS-Core.
+2.5.3 Wenn Artefakte von Layer 0 fehlen, mehrdeutig oder in sich widersprüchlich sind, MUSS die Gemeinschaft als nicht konform mit RCOS-Core betrachtet werden.
 
 
 ---
 
-# 3. Layer 1 — Membership System
+# 3. Layer 1 — Mitgliedschaftssystem
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
+Layer 1 definiert, wie Einzelpersonen der Gemeinschaft beitreten, an ihr teilnehmen und sie verlassen. Er legt die explizite Beziehung zwischen dem Individuum und dem Kollektiv fest, einschließlich Rechte, Pflichten und ordnungsgemäße Verfahren. Keine Person darf als Mitglied behandelt werden, ohne die in diesem Layer definierten Mechanismen durchlaufen zu haben.
 
+## 3.1 Mitgliedschaftsstatus
 
-Layer 1 defines how individuals enter, participate in, and exit the community. It establishes the explicit relationship between the individual and the collective, including rights, obligations, and due process. No person may be treated as a member without passing through the mechanisms defined in this layer.
+3.1.1 Die Gemeinschaft MUSS explizite Mitgliedschaftsstatus definieren.
 
-## 3.1 Membership States
+3.1.2 Mindestens die folgenden Mitgliedschaftsstatus MUSS existieren:
+- Bewerber:in
+- Probe- / Übergangsmitglied
+- Vollmitglied
+- Ausgetretenes Mitglied
 
-3.1.1 The community MUST define explicit membership states.
+3.1.3 Jeder Mitgliedschaftsstatus MUSS klar definierte Rechte, Pflichten und Einschränkungen haben.
 
-3.1.2 At minimum, the following membership states MUST exist:
-- Applicant
-- Trial / Probationary Member
-- Full Member
-- Exited Member
+3.1.4 Keine Einzelperson KANN gleichzeitig mehrere Mitgliedschaftsstatus innehaben.
 
-3.1.3 Each membership state MUST have clearly defined rights, obligations, and limitations.
+3.1.5 Keine Rechte oder Pflichten KANN außerhalb des aktuellen Mitgliedschaftsstatus der Einzelperson angenommen werden.
 
-3.1.4 No individual MAY hold multiple membership states simultaneously.
+## 3.2 Beitritt und Onboarding
 
-3.1.5 No rights or obligations MAY be assumed outside of the individual’s current membership state.
+3.2.1 Der Beitritt zur Gemeinschaft MUSS einem expliziten Onboarding-Prozess folgen.
 
-## 3.2 Entry and Onboarding
+3.2.2 Der Onboarding-Prozess MUSS beinhalten:
+- Prüfung aller RCOS-Core-Artefakte
+- Explizite Zustimmung zu den Regeln von Layer 0 und Layer 1
+- Festlegung des anfänglichen Mitgliedschaftsstatus
 
-3.2.1 Entry into the community MUST follow an explicit onboarding process.
+3.2.3 Aufnahmekriterien MUSS explizit und dokumentiert sein.
 
-3.2.2 The onboarding process MUST include:
-- Review of all RCOS-Core artifacts
-- Explicit consent to Layer 0 and Layer 1 rules
-- Declaration of initial membership state
+3.2.4 Informelle, implizite oder rückwirkende Mitgliedschaft DARF NICHT gestattet werden.
 
-3.2.3 Admission criteria MUST be explicit and documented.
+## 3.3 Probezeit und Bewertung
 
-3.2.4 Informal, implicit, or retroactive membership MUST NOT be permitted.
+3.3.1 Die Gemeinschaft MUSS eine Probezeit für neue Mitglieder festlegen.
 
-## 3.3 Trial and Evaluation
+3.3.2 Die Probezeit MUSS folgendes beinhalten:
+- Eine festgelegte Dauer
+- Explizite Bewertungskriterien
+- Einen klaren Entscheidungsprozess für den Übergang
 
-3.3.1 The community MUST define a probationary period for new members.
+3.3.3 Während der Probezeit KANN Rechte eingeschränkt werden, aber Pflichten MUSS explizit sein.
 
-3.3.2 The probationary period MUST have:
-- A defined duration
-- Explicit evaluation criteria
-- A clear transition decision process
+3.3.4 Ein Scheitern des Übergangs aus der Probezeit MUSS einen definierten Austritts- oder Verlängerungsprozess auslösen.
 
-3.3.3 During probation, rights MAY be limited but obligations MUST be explicit.
+## 3.4 Rechte und Pflichten
 
-3.3.4 Failure to transition from probation MUST trigger a defined exit or extension process.
+3.4.1 Die Gemeinschaft MUSS Mitgliedsrechte explizit definieren.
 
-## 3.4 Rights and Obligations
+3.4.2 Die Gemeinschaft MUSS Mitgliedspflichten explizit definieren.
 
-3.4.1 The community MUST explicitly define member rights.
+3.4.3 Rechte und Pflichten MUSS symmetrisch und proportional zum Mitgliedschaftsstatus sein.
 
-3.4.2 The community MUST explicitly define member obligations.
+3.4.4 Keine Pflicht KANN ohne ein entsprechendes, dokumentiertes Recht durchgesetzt werden.
 
-3.4.3 Rights and obligations MUST be symmetrical and proportionate to membership state.
+3.4.5 Pflichten DARF NICHT unbefristet oder undefiniert sein.
 
-3.4.4 No obligation MAY be enforced without a corresponding, documented right.
+## 3.5 Teilnahme und Beitrag
 
-3.4.5 Obligations MUST NOT be open-ended or undefined.
+3.5.1 Erwartungen an die Teilnahme MUSS explizit definiert werden.
 
-## 3.5 Participation and Contribution
+3.5.2 Akzeptable Formen des Beitrags MUSS aufgelistet werden.
 
-3.5.1 Participation expectations MUST be explicitly defined.
+3.5.3 Stellvertretende Teilnahme (z. B. Auslagerung von Arbeit) MUSS explizit geregelt sein.
 
-3.5.2 Acceptable forms of contribution MUST be listed.
+3.5.4 Anhaltende Nicht-Teilnahme MUSS einen Rechenschaftsprozess auslösen, wie in Layer 4 definiert.
 
-3.5.3 Substitution of participation (e.g., outsourcing labor) MUST be explicitly governed.
+## 3.6 Austritt und Trennung
 
-3.5.4 Persistent non-participation MUST trigger an accountability process as defined in Layer 4.
+3.6.1 Freiwilliger Austritt MUSS jederzeit möglich sein.
 
-## 3.6 Exit and Separation
+3.6.2 Austrittsverfahren MUSS explizit, dokumentiert und nicht strafend sein.
 
-3.6.1 Voluntary exit MUST be possible at all times.
+3.6.3 Erzwungener Austritt MUSS einem ordnungsgemäßen Verfahren folgen und über die Mechanismen von Layer 4 abgewickelt werden.
 
-3.6.2 Exit procedures MUST be explicit, documented, and non-punitive.
+3.6.4 Ein Austritt DARF NICHT zum Verlust von Rechten führen, die über die explizit an die Mitgliedschaft gebundenen hinausgehen.
 
-3.6.3 Forced exit MUST follow due process and be handled through Layer 4 mechanisms.
+3.6.5 Die Trennung von Vermögenswerten, Rollen und Verantwortlichkeiten MUSS vor dem Austritt definiert werden.
 
-3.6.4 Exit MUST NOT result in loss of rights beyond those explicitly tied to membership.
+## 3.7 Suspendierung und temporärer Status
 
-3.6.5 Asset, role, and responsibility separation MUST be defined prior to exit.
+3.7.1 Die Gemeinschaft KANN temporäre Suspendierungszustände definieren.
 
-## 3.7 Suspension and Temporary Status
+3.7.2 Suspendierungsbedingungen MUSS explizit, zeitlich begrenzt und überprüfbar sein.
 
-3.7.1 The community MAY define temporary suspension states.
+3.7.3 Suspendierung DARF NICHT als unbefristeter oder strafender Ersatz für einen Austritt verwendet werden.
 
-3.7.2 Suspension conditions MUST be explicit, time-bounded, and reviewable.
+## 3.8 Artefakte
 
-3.7.3 Suspension MUST NOT be used as an indefinite or punitive substitute for exit.
+3.8.1 Die folgenden Artefakte sind für die Layer-1-Konformität verpflichtend:
+- Mitgliedschaftsvereinbarung
+- Onboarding-Protokoll
+- Austritts- und Trennungsprotokoll
+- Mitgliedschaftsstatus-Register
 
-## 3.8 Artifacts
+3.8.2 Layer-1-Artefakte MUSS:
+- Explizit und eindeutig sein
+- Versioniert sein
+- Allen Mitgliedern zugänglich sein
 
-3.8.1 The following artifacts are mandatory for Layer 1 compliance:
-- Membership Agreement
-- Onboarding Protocol
-- Exit & Separation Protocol
-- Membership State Registry
-
-3.8.2 Layer 1 artifacts MUST be:
-- Explicit and unambiguous
-- Versioned
-- Accessible to all members
-
-3.8.3 Absence, ambiguity, or systematic violation of Layer 1 artifacts MUST result in loss of RCOS-Core compliance.
+3.8.3 Das Fehlen, die Mehrdeutigkeit oder die systematische Verletzung von Layer-1-Artefakten MUSS zum Verlust der RCOS-Core-Konformität führen.
 
 
 ---
 
-# 4. Layer 2 — Governance & Decision Logic
+# 4. Layer 2 — Governance & Entscheidungslogik
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
+Layer 2 definiert, wie kollektive Entscheidungen getroffen werden, wer befugt ist, sie zu treffen, und wie Autorität begrenzt wird. Governance unter RCOS ist so gestaltet, dass Macht explizit, begrenzt, überprüfbar und reversibel ist.
 
+## 4.1 Entscheidungstypen
 
-Layer 2 defines how collective decisions are made, who is authorized to make them, and how authority is constrained. Governance under RCOS is designed to make power explicit, bounded, reviewable, and reversible.
+4.1.1 Alle kollektiven Entscheidungen MUSS in genau einen der folgenden Entscheidungstypen eingeordnet werden:
+- Operative Entscheidungen
+- Strategische Entscheidungen
+- Konstitutionelle Entscheidungen
 
-## 4.1 Decision Types
+4.1.2 Operative Entscheidungen betreffen den täglichen Betrieb und die Ausführung innerhalb bestehender Regeln.
 
-4.1.1 All collective decisions MUST be classified into exactly one of the following decision types:
-- Operational Decisions
-- Strategic Decisions
-- Constitutional Decisions
+4.1.3 Strategische Entscheidungen betreffen die langfristige Ausrichtung, die Zuweisung bedeutender Ressourcen oder die Schaffung/Abschaffung wesentlicher Strukturen.
 
-4.1.2 Operational Decisions concern day-to-day functioning and execution within existing rules.
+4.1.4 Konstitutionelle Entscheidungen betreffen Änderungen an den Invarianten von Layer 0, dem Zweck, dem Geltungsbereich oder dem Governance-System selbst.
 
-4.1.3 Strategic Decisions concern long-term direction, allocation of significant resources, or creation/removal of major structures.
+4.1.5 Wenn eine Entscheidung nicht eindeutig zugeordnet werden kann, MUSS sie standardmäßig dem Entscheidungstyp mit höherer Auswirkung zugeordnet werden.
 
-4.1.4 Constitutional Decisions concern changes to Layer 0 invariants, purpose, scope, or the governance system itself.
+## 4.2 Entscheidungsmechanismen
 
-4.1.5 If a decision cannot be clearly classified, it MUST default to the higher-impact decision type.
+4.2.1 Für jeden Entscheidungstyp MUSS ein explizit definierter Entscheidungsmechanismus festgelegt sein.
 
-## 4.2 Decision Mechanisms
+4.2.2 Entscheidungsmechanismen KANN unter anderem folgende umfassen:
+- Konsent-basierte Entscheidungsfindung
+- Mehrheitsentscheid
+- Qualifizierte Mehrheit
+- Delegierte Autorität
+- Zufällige oder rotierende Zuweisung
 
-4.2.1 Each decision type MUST have an explicitly defined decision-making mechanism.
+4.2.3 Entscheidungsmechanismen MUSS festlegen:
+- Teilnahmeberechtigte Personen
+- Entscheidungsschwellen
+- Blockade- oder Vetobedingungen, falls vorhanden
+- Zeitliche Beschränkungen
 
-4.2.2 Decision mechanisms MAY include, but are not limited to:
-- Consent-based decision-making
-- Majority vote
-- Supermajority vote
-- Delegated authority
-- Randomized or rotational assignment
+4.2.4 Kein informeller oder ad-hoc-Entscheidungsmechanismus KANN für kollektive Entscheidungen verwendet werden.
 
-4.2.3 Decision mechanisms MUST specify:
-- Eligible participants
-- Decision thresholds
-- Blocking or veto conditions, if any
-- Time constraints
+## 4.3 Autoritätsgrenzen
 
-4.2.4 No informal or ad hoc decision mechanism MAY be used for collective decisions.
+4.3.1 Alle Autorität MUSS explizit definierten Rollen, Kreisen oder Gremien zugewiesen werden.
 
-## 4.3 Authority Boundaries
+4.3.2 Autoritätszuweisungen MUSS beinhalten:
+- Umfang der Autorität
+- Grenzen der Autorität
+- Dauer oder Amtszeit, falls zutreffend
 
-4.3.1 All authority MUST be assigned to explicitly defined roles, circles, or bodies.
+4.3.3 Keine Person oder kein Gremium KANN Autorität außerhalb des explizit zugewiesenen Bereichs ausüben.
 
-4.3.2 Authority assignments MUST include:
-- Scope of authority
-- Limits of authority
-- Duration or term, if applicable
+4.3.4 Autorität DARF NICHT aus Charisma, Dienstalter, Eigentum oder informellem Einfluss abgeleitet werden.
 
-4.3.3 No individual or body MAY exercise authority outside its explicitly assigned scope.
+4.3.5 Temporäre oder Notfall-Autorität MUSS explizit definiert, zeitlich begrenzt und einer Überprüfung unterzogen werden.
 
-4.3.4 Authority MUST NOT be derived from charisma, seniority, ownership, or informal influence.
+## 4.4 Entscheidungsmatrix
 
-4.3.5 Temporary or emergency authority MUST be explicitly defined, time-bounded, and subject to review.
+4.4.1 Die Gemeinschaft MUSS eine Entscheidungsmatrix als zentrales Governance-Artefakt pflegen.
 
-## 4.4 Decision Matrix
+4.4.2 Die Entscheidungsmatrix MUSS mindestens folgendes abbilden:
+- Entscheidungstyp
+- Entscheidungsdomäne
+- Autorisierte Rolle oder Gremium
+- Entscheidungsmechanismus
+- Zustimmungsschwelle
+- Eskalationspfad
 
-4.4.1 The community MUST maintain a Decision Matrix as a core governance artifact.
+4.4.3 Die Entscheidungsmatrix MUSS für alle Mitglieder öffentlich zugänglich sein.
 
-4.4.2 The Decision Matrix MUST map, at minimum:
-- Decision type
-- Decision domain
-- Authorized role or body
-- Decision mechanism
-- Approval threshold
-- Escalation path
+4.4.4 Entscheidungen, die außerhalb der Entscheidungsmatrix getroffen werden, MUSS als ungültig betrachtet werden.
 
-4.4.3 The Decision Matrix MUST be publicly accessible to all members.
+## 4.5 Governance-Protokoll
 
-4.4.4 Decisions made outside the Decision Matrix MUST be considered invalid.
+4.5.1 Die Gemeinschaft MUSS ein Governance-Protokoll definieren, das den vollständigen Lebenszyklus einer Entscheidung beschreibt.
 
-## 4.5 Governance Protocol
+4.5.2 Das Governance-Protokoll MUSS beinhalten:
+- Anforderungen an die Einreichung von Vorschlägen
+- Prüfungs- und Beratungsprozess
+- Umsetzung der Entscheidung
+- Dokumentation und Veröffentlichung
+- Einspruchs- und Überprüfungsmechanismen
 
-4.5.1 The community MUST define a Governance Protocol describing the full lifecycle of a decision.
+4.5.3 Das Governance-Protokoll MUSS festlegen, wie Konflikte zwischen Entscheidungen gelöst werden.
 
-4.5.2 The Governance Protocol MUST include:
-- Proposal submission requirements
-- Review and deliberation process
-- Decision execution
-- Documentation and publication
-- Appeal and review mechanisms
+4.5.4 Alle Governance-Handlungen MUSS gemäß den Dokumentationsregeln von Layer 5 dokumentiert werden.
 
-4.5.3 The Governance Protocol MUST define how conflicts between decisions are resolved.
+## 4.6 Sicherungsmechanismen und Fehlermodi
 
-4.5.4 All governance actions MUST be documented according to Layer 5 documentation rules.
+4.6.1 Das Governance-System MUSS Sicherungsmechanismen gegen folgendes enthalten:
+- Konzentration von Entscheidungsmacht
+- Informelle Vetos
+- Vereinnahmung von Entscheidungen durch Untergruppen
+- Verfestigung von Gründer- oder Rollenpositionen
 
-## 4.6 Safeguards and Failure Modes
+4.6.2 Governance-Mechanismen MUSS Anfechtung und Überprüfung ohne Vergeltungsmaßnahmen ermöglichen.
 
-4.6.1 The governance system MUST include safeguards against:
-- Concentration of decision power
-- Informal vetoes
-- Decision capture by subgroups
-- Founder or role entrenchment
+4.6.3 Anhaltende Governance-Versagen MUSS eine formelle Überprüfung oder einen konstitutionellen Prozess auslösen.
 
-4.6.2 Governance mechanisms MUST allow for challenge and review without retaliation.
+## 4.7 Artefakte
 
-4.6.3 Persistent governance failures MUST trigger a formal review or constitutional process.
+4.7.1 Die folgenden Artefakte sind für die Layer-2-Konformität verpflichtend:
+- Entscheidungsmatrix
+- Governance-Protokoll
+- Autoritätsregister
 
-## 4.7 Artifacts
+4.7.2 Layer-2-Artefakte MUSS:
+- Explizit und eindeutig sein
+- Versioniert sein
+- Für alle Mitglieder zugänglich sein
 
-4.7.1 The following artifacts are mandatory for Layer 2 compliance:
-- Decision Matrix
-- Governance Protocol
-- Authority Registry
-
-4.7.2 Layer 2 artifacts MUST be:
-- Explicit and unambiguous
-- Versioned
-- Accessible to all members
-
-4.7.3 Absence, ambiguity, or systematic violation of Layer 2 artifacts MUST result in loss of RCOS-Core compliance.
+4.7.3 Das Fehlen, die Mehrdeutigkeit oder die systematische Verletzung von Layer-2-Artefakten MUSS zum Verlust der RCOS-Core-Konformität führen.
 
 
 ---
 
-# 5. Layer 3 — Economic & Resource System
+# 5. Layer 3 — Wirtschafts- & Ressourcensystem
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
+Layer 3 definiert, wie Wert, Ressourcen und Verpflichtungen innerhalb der Gemeinschaft fließen.  
+Sein Zweck ist es, wirtschaftliche Macht explizit, begrenzt, überprüfbar und der Governance untergeordnet zu machen — um versteckte Anhäufung, Abhängigkeit oder Zwang zu verhindern.
 
+## 5.1 Gemeingüter vs. Privatressourcen
 
-Layer 3 defines how value, resources, and obligations flow inside the community.  
-Its purpose is to make economic power explicit, bounded, reviewable, and subordinate to governance, preventing hidden accumulation, dependency, or coercion.
+5.1.1 Alle Ressourcen innerhalb des deklarierten Governance-Geltungsbereichs MÜSSEN explizit entweder als **Gemeingüter** oder als **privat** klassifiziert werden.
 
-## 5.1 Commons vs Private Resources
+5.1.2 Die Gemeinschaft MUSS ein einziges, explizites und versioniertes Register der verwalteten Ressourcen führen, das mindestens Folgendes enthält:
+- Ressourcenname oder eindeutiger Bezeichner  
+- Klassifikation (Gemeingut oder privat)  
+- Verwalter:in oder Eigentümer:in (je nach Zutreffendem)  
+- Zugangs- und Nutzungsregeln  
+- Übertragungs-, Verkaufs- oder Privatisierungsbeschränkungen (falls vorhanden)
 
-5.1.1 All resources within the declared governed scope MUST be explicitly classified as either **commons** or **private**.
+5.1.3 Jede nicht explizit klassifizierte Ressource MUSS als **unklassifiziert** behandelt werden, und die Gemeinschaft DARF sie NICHT zuweisen, belasten, monetarisieren oder übertragen, bis die Klassifizierung durch eine autorisierte Entscheidung abgeschlossen ist.
 
-5.1.2 The community MUST maintain a single, explicit, and versioned registry of governed resources, including at minimum:
-- Resource name or unique identifier  
-- Classification (commons or private)  
-- Steward or owner (as applicable)  
-- Access and use rules  
-- Transfer, sale, or privatization constraints (if any)
+5.1.4 Für Gemeingüter MUSS die Gemeinschaft explizit Folgendes definieren:
+- Verwaltungspflichten  
+- Das autorisierte Entscheidungsgremium oder die zuständige Rolle  
+- Instandhaltungspflichten  
+- Finanzierungs- oder Beitragsmechanismen (falls vorhanden)
 
-5.1.3 Any resource not explicitly classified MUST be treated as **unclassified**, and the community MUST NOT allocate, encumber, monetize, or transfer it until classification is completed through an authorized decision.
+5.1.5 Für Privatressourcen DARF die Gemeinschaft KEINE Autorität über das hinaus ausüben, was explizit im Geltungsbereich, in Mitgliedschaftsvereinbarungen oder anderen verwalteten Artefakten deklariert ist.
 
-5.1.4 For commons resources, the community MUST explicitly define:
-- Stewardship responsibilities  
-- The authorized decision-making body or role  
-- Maintenance obligations  
-- Funding or contribution mechanisms (if any)
+## 5.2 Beitragsanerkennung
 
-5.1.5 For private resources, the community MUST NOT exercise authority beyond what is explicitly declared in the scope, membership agreements, or other governed artifacts.
+5.2.1 Die Gemeinschaft MUSS explizit definieren, welche Beitragskategorien anerkannt werden. Diese KÖNNEN unter anderem umfassen:
+- Arbeit  
+- Fürsorge- und emotionale Arbeit  
+- Wissen und Bildung  
+- Verwaltung und Instandhaltung  
+- Administrative oder koordinierende Arbeit  
 
-## 5.2 Contribution Recognition
+5.2.2 Die Gemeinschaft MUSS einen Mechanismus zur Beitragsanerkennung definieren, der festlegt:
+- Was als Beitrag gilt  
+- Wie Beiträge erfasst oder anerkannt werden  
+- Wer Beiträge erfassen, validieren oder anfechten darf  
+- Ob und wie die Beitragsanerkennung den Zugang zu Ressourcen, Privilegien oder Verpflichtungen beeinflusst  
 
-5.2.1 The community MUST explicitly define which contribution categories are recognized. These MAY include, but are not limited to:
-- Labor  
-- Care and emotional work  
-- Knowledge and education  
-- Stewardship and maintenance  
-- Administrative or coordination work  
+5.2.3 Die Gemeinschaft DARF NICHT strukturell auf unbezahlte, unsichtbare oder informelle Arbeit für das Überleben des Systems angewiesen sein, ohne entsprechende Verpflichtungen, Anerkennung oder Kompensationsmechanismen explizit zu definieren.
 
-5.2.2 The community MUST define a contribution recognition mechanism specifying:
-- What qualifies as a contribution  
-- How contributions are recorded or acknowledged  
-- Who may record, validate, or contest contributions  
-- Whether and how contribution recognition affects access to resources, privileges, or obligations  
+5.2.4 Falls interne Wirtschaftseinheiten verwendet werden (z. B. Zeitguthaben, Punkte, Token), MUSS das Interne Wirtschaftsprotokoll Folgendes definieren:
+- Ausgaberegeln  
+- Übertragbarkeitsregeln  
+- Ablauf-, Verfall- oder Obergrenzen-Mechanismen (falls vorhanden)  
+- Mechanismen zur Betrugsprävention, Streitbeilegung und Korrektur  
+- Datenschutz- und Transparenzregeln für Kontostände und Transaktionen  
 
-5.2.3 The community MUST NOT structurally depend on unpaid, invisible, or informal labor for system survival without explicitly defining corresponding obligations, recognition, or compensation mechanisms.
+5.2.5 Beitragsanerkennung DARF KEINE implizite Entscheidungsbefugnis, kein Vetorecht oder keinen Governance-Einfluss schaffen, der über das in Layer 2 Definierte hinausgeht.
 
-5.2.4 If internal economic units are used (e.g. time credits, points, tokens), the Internal Economy Protocol MUST define:
-- Issuance rules  
-- Transferability rules  
-- Expiration, decay, or cap mechanisms (if any)  
-- Fraud prevention, dispute handling, and correction mechanisms  
-- Privacy and transparency rules for balances and transactions  
+## 5.3 Gemeinschaftskasse
 
-5.2.5 Contribution recognition MUST NOT create implicit decision authority, veto power, or governance influence beyond what is defined in Layer 2.
+5.3.1 Die Gemeinschaft MUSS explizit definieren, welche Ressourcen in der gemeinsamen Kasse gehalten werden und wie die Grenzen der Kasse mit Privatressourcen zusammenwirken.
 
-## 5.3 Treasury Management
+5.3.2 Einkommensquellen und alle externen Einkommensschnittstellen MÜSSEN explizit definiert sein.
 
-5.3.1 The community MUST explicitly define which resources are held in the shared treasury and how treasury boundaries interface with private resources.
+5.3.3 Ausgabenbefugnis MUSS explizit begrenzt werden durch:
+- Klare Zuständigkeitszuweisungen  
+- Schwellenwerte nach Betrag und/oder Kategorie  
+- Genehmigungs- und Eskalationswege  
+- Verpflichtende Aufzeichnungspflichten  
 
-5.3.2 Income sources and any external income interfaces MUST be explicitly defined.
+5.3.4 Transparenz MUSS der Standard sein für Kassenstände, Einnahmen, Ausgaben, Verpflichtungen und Zusagen.
 
-5.3.3 Spending authority MUST be explicitly bounded through:
-- Clear authority assignments  
-- Thresholds by amount and/or category  
-- Approval and escalation paths  
-- Mandatory recordkeeping requirements  
+5.3.5 Alle Ausnahmen von der Transparenz MÜSSEN explizit definiert, begründet und zeitlich begrenzt sein und DÜRFEN Mitglieder NICHT daran hindern, die Einhaltung der Regeln zu prüfen.
 
-5.3.4 Transparency MUST be the default for treasury balances, inflows, outflows, obligations, and commitments.
+5.3.6 Die Gemeinschaft MUSS Richtlinien für Rücklagen, Risiken und Haftung definieren, einschließlich:
+- Verschuldungsgrenzen  
+- Langfristige Verpflichtungen  
+- Notfallrücklagen (falls vorhanden)
 
-5.3.5 Any exceptions to transparency MUST be explicitly defined, justified, time-bounded, and MUST NOT prevent members from auditing compliance.
+## 5.4 Akkumulationsbeschränkungen
 
-5.3.6 The community MUST define reserve, risk, and liability policies, including:
-- Limits on debt  
-- Long-term obligations  
-- Contingency reserves (if any)
+5.4.1 Interne Wirtschaftssysteme MÜSSEN eine unbegrenzte Konzentration von internem Einfluss oder Kontrolle durch Ressourcen, Guthaben oder finanzielle Verpflichtungen verhindern.
 
-## 5.4 Accumulation Constraints
+5.4.2 Falls interne Einheiten existieren, MUSS die Gemeinschaft einen oder mehrere akkumulationsbegrenzende Mechanismen definieren, die Folgendes umfassen KÖNNEN:
+- Obergrenzen  
+- Verfall oder Ablauf  
+- Nicht-Übertragbarkeit  
+- Umverteilungs- oder Besteuerungsmechanismen  
+- Zeitlich begrenzte Gültigkeit  
 
-5.4.1 Internal economic systems MUST prevent unbounded concentration of internal influence or control through resources, credits, or financial obligations.
+5.4.3 Wirtschaftsmechanismen DÜRFEN es Mitgliedern NICHT ermöglichen, die in Layer 2 definierten Governance-Befugnisgrenzen zu umgehen — auch nicht durch den Kauf von Einfluss, das Schaffen von Abhängigkeiten oder die Umwandlung von wirtschaftlicher Macht in informelle Entscheidungsbefugnis.
 
-5.4.2 If internal units exist, the community MUST define one or more accumulation-limiting mechanisms, which MAY include:
-- Caps  
-- Decay or expiration  
-- Non-transferability  
-- Redistribution or taxation mechanisms  
-- Time-bounded validity  
+5.4.4 Die Gemeinschaft MUSS überprüfbare Indikatoren für das Risiko wirtschaftlicher Konzentration definieren sowie einen expliziten Mechanismus, um Beschränkungen anzupassen, wenn solche Risiken erkannt werden.
 
-5.4.3 Economic mechanisms MUST NOT allow members to bypass governance authority boundaries defined in Layer 2, including through purchasing influence, creating dependency, or converting economic power into informal decision authority.
+## 5.5 Artefakte
 
-5.4.4 The community MUST define reviewable indicators of economic concentration risk and an explicit mechanism to adjust constraints when such risks are detected.
+5.5.1 Die folgenden Artefakte sind für die Konformität mit Layer 3 verpflichtend:
+- Internes Wirtschaftsprotokoll  
+- Kassenregelwerk  
 
-## 5.5 Artifacts
+5.5.2 Artefakte von Layer 3 MÜSSEN:
+- Explizit und eindeutig sein  
+- Versioniert sein  
+- Für alle Mitglieder zugänglich sein (mit expliziten, begrenzten Ausnahmen)  
+- Durch einen autorisierten Governance-Prozess verabschiedet werden  
 
-5.5.1 The following artifacts are mandatory for Layer 3 compliance:
-- Internal Economy Protocol  
-- Treasury Ruleset  
+5.5.3 Das Interne Wirtschaftsprotokoll MUSS mindestens Folgendes definieren:
+- Beitragskategorien und Anerkennungsmechanismen  
+- Grenzen zwischen Gemeingütern und Privatbesitz sowie Zuweisungsregeln  
+- Interne Einheiten (falls vorhanden) und Akkumulationsbeschränkungen  
+- Externe Einkommensschnittstellen (falls vorhanden)  
+- Streitbeilegungs- und Korrekturmechanismen für wirtschaftliche Aufzeichnungen  
 
-5.5.2 Layer 3 artifacts MUST be:
-- Explicit and unambiguous  
-- Versioned  
-- Accessible to all members (with explicit, bounded exceptions)  
-- Adopted through an authorized governance process  
+5.5.4 Das Kassenregelwerk MUSS mindestens Folgendes definieren:
+- Einkommensquellen  
+- Schwellenwerte und Genehmigungswege für Ausgabenbefugnis  
+- Transparenz- und Berichtspflichten (einschließlich etwaiger begrenzter Ausnahmen)  
+- Rücklagen-, Risiko- und Verschuldungsbeschränkungen  
+- Interessenkonfliktregeln für Ausgaben und Beschaffung  
 
-5.5.3 The Internal Economy Protocol MUST define, at minimum:
-- Contribution categories and recognition mechanisms  
-- Commons vs private boundaries and allocation rules  
-- Internal units (if any) and accumulation constraints  
-- External income interfaces (if any)  
-- Dispute resolution and correction mechanisms for economic records  
+## 5.6 Layer-Invarianten
 
-5.5.4 The Treasury Ruleset MUST define, at minimum:
-- Income sources  
-- Spending authority thresholds and approval paths  
-- Transparency and reporting requirements (including any bounded exceptions)  
-- Reserve, risk, and debt constraints  
-- Conflict-of-interest rules for spending and procurement  
+5.6.1 Geteilte Ressourcen, Flüsse und Verpflichtungen MÜSSEN standardmäßig für die Gemeinschaft sichtbar sein, mit nur begrenzten und expliziten Ausnahmen.
 
-## 5.6 Layer Invariants
+5.6.2 Als Gemeingüter deklarierte Ressourcen DÜRFEN NICHT durch informelles, implizites oder einseitiges Handeln privatisiert werden.
 
-5.6.1 Shared resources, flows, and obligations MUST be visible to the community by default, with only limited and explicit exceptions.
+5.6.3 Beitragsanerkennung MUSS explizit sein, sodass unbezahlte oder unsichtbare Arbeit nicht strukturell für das Überleben des Systems erforderlich ist.
 
-5.6.2 Resources declared as commons MUST NOT be privatized through informal, implicit, or unilateral action.
+5.6.4 Wirtschaftsmechanismen MÜSSEN eine unbegrenzte Konzentration von internem Einfluss verhindern.
 
-5.6.3 Contribution recognition MUST be explicit such that unpaid or invisible labor is not structurally required for system survival.
+## 5.7 Explizitätsregeln
 
-5.6.4 Economic mechanisms MUST prevent indefinite concentration of internal influence.
+5.7.1 Folgendes MUSS explizit sein:
+- Klassifikation als Gemeingut oder privat  
+- Zuweisungs- und Zugangsregeln für geteilte Ressourcen  
+- Grenzen der Ausgabenbefugnis  
+- Transparenzregeln  
+- Externe Einkommensschnittstellen  
 
-## 5.7 Explicitness Rules
+5.7.2 Folgendes KANN explizit sein:
+- Modelle zur Beitragsbewertung  
+- Interne Einheiten (Token, Stunden, Punkte)  
+- Budgetkategorien und interne Buchhaltungsstrukturen  
 
-5.7.1 The following MUST be explicit:
-- Commons vs private classifications  
-- Allocation and access rules for shared resources  
-- Spending authority limits  
-- Transparency rules  
-- External income interfaces  
-
-5.7.2 The following MAY be explicit:
-- Contribution valuation models  
-- Internal units (tokens, hours, points)  
-- Budget categories and internal accounting structures  
-
-5.7.3 The following MUST remain optional and out of scope:
-- Attitudes toward wealth  
-- Equal vs differentiated outcomes  
-- Personal financial choices
+5.7.3 Folgendes MUSS optional und außerhalb des Geltungsbereichs bleiben:
+- Einstellungen gegenüber Wohlstand  
+- Gleiche vs. differenzierte Ergebnisse  
+- Persönliche finanzielle Entscheidungen
 
 
 ---
 
-# 6. Layer 4 — Conflict, Repair & Accountability
+# 6. Layer 4 — Konflikt, Wiedergutmachung & Verantwortlichkeit
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
+Layer 4 definiert, wie die Gemeinschaft reagiert, wenn Vertrauen, Koordination oder Sicherheit zusammenbrechen.
+Sein Zweck ist es sicherzustellen, dass Konflikte explizit, fair und sicher behandelt werden, und gleichzeitig Machtmissbrauch, Normalisierung von Schaden oder stilles Ausschließen zu verhindern.
 
+## 6.1 Konfliktklassifikation
 
-Layer 4 defines how the community responds when trust, coordination, or safety breaks down.  
-Its purpose is to ensure conflicts are handled explicitly, fairly, and safely, while preventing abuse of power, normalization of harm, or silent exclusion.
+6.1.1 Die Gemeinschaft MUSS ein explizites Konfliktklassifikationssystem definieren, das allen Mitgliedern bekannt, zugänglich und nutzbar ist.
 
-## 6.1 Conflict Classification
+6.1.2 Das Klassifikationssystem MUSS mindestens die folgenden Klassen umfassen:
+- Zwischenmenschliche Konflikte (zwischen Einzelpersonen)
+- Rollenbasierte Konflikte (Streitigkeiten um Autorität, Verantwortung oder Mandat)
+- Strukturelle Konflikte (systemische Anreize, Regeln oder Fragen der Ressourcenverteilung)
+- Ethische oder Grenzverletzungen (Verstöße gegen erklärte Normen, Geltungsbereich oder Sicherheitsgrenzen)
 
-6.1.1 The community MUST define an explicit conflict classification system that is known, accessible, and usable by all members.
+6.1.3 Jede Konfliktklasse MUSS explizit definieren:
+- Eintrittskriterien (wie eine Situation in diese Klasse eingestuft wird)
+- Erwartete Reaktionspriorität und Fristen (falls vorhanden)
+- Zulässige und erforderliche Lösungswege
+- Dokumentationsanforderungen und Datenschutzgrenzen
 
-6.1.2 At minimum, the classification system MUST include the following classes:
-- Interpersonal conflicts (between individuals)
-- Role-based conflicts (authority, responsibility, or mandate disputes)
-- Structural conflicts (systemic incentives, rules, or resource allocation issues)
-- Ethical or boundary violations (violations of declared norms, scope, or safety boundaries)
+6.1.4 Konflikte, die glaubhafte Sicherheitsrisiken, Zwang, Missbrauch oder Drohungen beinhalten, MUSS als **sicherheitskritisch** klassifiziert werden und MUSS erhöhte Schutzmaßnahmen auslösen, wie in Abschnitt 6.3 definiert.
 
-6.1.3 Each conflict class MUST explicitly define:
-- Entry criteria (how a situation is classified into this class)
-- Expected response priority and timelines (if any)
-- Permitted and required resolution pathways
-- Documentation requirements and privacy boundaries
+6.1.5 Fehlklassifikation oder Vermeidung der Klassifikation MUSS als Prozessversagen behandelt werden, das einer Überprüfung unterliegt.
 
-6.1.4 Conflicts involving credible safety risks, coercion, abuse, or threats MUST be classified as **safety-critical** and MUST trigger elevated safeguards as defined in Section 6.3.
+## 6.2 Lösungswege
 
-6.1.5 Misclassification or avoidance of classification MUST be treated as a process failure subject to review.
+6.2.1 Die Gemeinschaft MUSS einen Mindest-Konfliktlösungsprozess definieren, der auf alle Konfliktklassen anwendbar ist.
 
-## 6.2 Resolution Pathways
+6.2.2 Der Lösungsprozess MUSS eine klar definierte **Eskalationsleiter** mit expliziten Eskalationsschritten umfassen.
 
-6.2.1 The community MUST define a minimum conflict resolution process applicable to all conflict classes.
+6.2.3 Die Eskalationsleiter MUSS mindestens definieren:
+- Wie ein Konflikt eingebracht, protokolliert und bestätigt wird
+- Wie beteiligte Parteien benachrichtigt und zur Teilnahme eingeladen werden
+- Wie Verweigerung, Nichtreaktion oder Rückzug behandelt wird
+- Wie Mediator\*innen oder Moderator\*innen ausgewählt, ersetzt oder abgelehnt werden
+- Zeitlich begrenzte Erwartungen für jede Phase (wo zutreffend)
+- Dokumentationsanforderungen und Zugriffsregeln
+- Ein Verfahren zur Überprüfung von Prozessfehlern oder Blockaden
 
-6.2.2 The resolution process MUST include a clearly defined **resolution ladder** with explicit escalation steps.
+6.2.4 Der Lösungsprozess MUSS zugänglich sein, ohne dass sozialer Status, Dienstalter, Charisma oder informelle Nähe zu Entscheidungsträger\*innen erforderlich ist.
 
-6.2.3 The resolution ladder MUST define, at minimum:
-- How a conflict is raised, logged, and acknowledged
-- How involved parties are notified and invited to participate
-- How refusal, non-response, or withdrawal is handled
-- How mediators or facilitators are selected, replaced, or declined
-- Time-bounded expectations for each stage (where applicable)
-- Documentation requirements and access rules
-- A process for reviewing procedural failures or deadlock
+6.2.5 Ungelöste Konflikte MUSS über definierte Governance-Wege eskaliert werden, ohne die in Layer 2 definierte Entscheidungsmatrix zu umgehen.
 
-6.2.4 The resolution process MUST be accessible without requiring social status, seniority, charisma, or informal proximity to decision-makers.
+## 6.3 Schutzmaßnahmen
 
-6.2.5 Unresolved conflicts MUST escalate through defined governance pathways without bypassing the Decision Matrix defined in Layer 2.
+6.3.1 Die Gemeinschaft MUSS explizite Schutzmaßnahmen für Konflikte definieren, die Machtasymmetrien, Abhängigkeitsverhältnisse oder Sicherheitsrisiken beinhalten.
 
-## 6.3 Safeguards
+6.3.2 Schutzmaßnahmen MUSS Schutz vor Vergeltung umfassen für:
+- Das Vorbringen eines Anliegens
+- Das Anfordern von Mediation
+- Das Abgeben von Aussagen oder Beweisen
+- Die Teilnahme an einer Überprüfung oder Berufung
 
-6.3.1 The community MUST define explicit safeguards for conflicts involving power asymmetries, dependency relationships, or safety risks.
+6.3.3 Wenn ein Machtgefälle zwischen den Parteien besteht, MUSS erhöhte Schutzmaßnahmen angewendet werden, die KANN umfassen:
+- Unabhängige oder externe Moderation
+- Getrennte Aufnahme-, Dokumentations- oder Kommunikationskanäle
+- Vorübergehende Aussetzung oder Einschränkung der Rollenbefugnisse
+- Zusätzliche Beweis- und Überprüfungsschwellen vor Sanktionen
 
-6.3.2 Safeguards MUST include protections against retaliation for:
-- Raising a concern
-- Requesting mediation
-- Providing testimony or evidence
-- Participating in a review or appeal
+6.3.4 Bei sicherheitskritischen Konflikten MUSS die Gemeinschaft sofortige Schutzmaßnahmen definieren, die vor Abschluss des vollständigen Verfahrens ergriffen werden können, die KANN umfassen:
+- Vorübergehende Trennungsmaßnahmen
+- Eingeschränkter Zugang zu gemeinsamen Räumen oder Ressourcen
+- Vorübergehende Rollensuspendierung
+- Notfall-Eskalationsfristen
 
-6.3.3 Where a power differential exists between parties, elevated safeguards MUST be applied, which MAY include:
-- Independent or external facilitation
-- Separate intake, documentation, or communication channels
-- Temporary suspension or limitation of role authority
-- Additional evidence and review thresholds prior to sanctions
+6.3.5 Sicherheitsmaßnahmen MUSS Teilnahmerechte, Rollenkontinuität und betriebliche Zweckmäßigkeit übersteuern.
 
-6.3.4 For safety-critical conflicts, the community MUST define immediate protective actions that may be taken prior to full process completion, which MAY include:
-- Temporary separation measures
-- Restricted access to shared spaces or resources
-- Temporary role suspension
-- Emergency escalation timelines
+## 6.4 Sanktionen, Wiedergutmachung und Trennung
 
-6.3.5 Safety safeguards MUST override participation rights, role continuity, and operational convenience.
+6.4.1 Die Gemeinschaft MUSS ein explizites Sanktions- und Wiedergutmachungsrahmenwerk definieren.
 
-## 6.4 Sanctions, Repair, and Separation
+6.4.2 Sanktionen und Wiedergutmachungsmaßnahmen MUSS:
+- Verhältnismäßig zum Verstoß sein
+- Explizit dokumentiert sein
+- Zeitlich begrenzt sein, wo zutreffend
+- Überprüfbar und anfechtbar sein
 
-6.4.1 The community MUST define an explicit sanctions and repair framework.
+6.4.3 Das Rahmenwerk MUSS mindestens definieren:
+- Verfügbare Sanktions- und Wiedergutmachungsarten
+- Voraussetzungen und Beweisstandards
+- Autorisierte Rollen oder Gremien für die Anwendung
+- Überprüfungs- und Berufungsmechanismen
+- Bedingungen für die Wiederherstellung von Rechten, Rollen oder Teilnahme
 
-6.4.2 Sanctions and repair actions MUST be:
-- Proportional to the violation
-- Explicitly documented
-- Time-bounded where applicable
-- Reviewable and appealable
+6.4.4 Trennungs-, Suspendierungs- oder Ausschlussmaßnahmen MUSS einem ordnungsgemäßen Verfahren folgen und MUSS mit den in Layer 1 definierten Austritts- und Trennungsregeln übereinstimmen.
 
-6.4.3 The framework MUST define, at minimum:
-- Available sanction and repair types
-- Preconditions and evidence standards
-- Authorized roles or bodies for application
-- Review and appeal mechanisms
-- Conditions for restoring rights, roles, or participation
+6.4.5 Sanktionen DARF NICHT durch informellen Ausschluss, sozialen Druck, Schweigen oder stillschweigende Entziehung von Rechten verhängt werden.
 
-6.4.4 Separation, suspension, or removal actions MUST follow due process and MUST align with exit and separation rules defined in Layer 1.
+6.4.6 Wiedergutmachungsorientierte Maßnahmen MUSS gegenüber strafenden Maßnahmen priorisiert werden, außer in sicherheitskritischen Fällen.
 
-6.4.5 Sanctions MUST NOT be applied through informal exclusion, social pressure, silence, or implicit withdrawal of rights.
+## 6.5 Artefakte
 
-6.4.6 Repair-oriented actions MUST be prioritized over punitive actions except in safety-critical cases.
+6.5.1 Die folgenden Artefakte sind für die Layer-4-Konformität verpflichtend:
+- Konfliktlösungsleiter
+- Verantwortlichkeitsprotokoll
 
-## 6.5 Artifacts
+6.5.2 Layer-4-Artefakte MUSS:
+- Explizit und eindeutig sein
+- Versioniert sein
+- Allen Mitgliedern zugänglich sein, mit klar begrenztem Datenschutz
+- Durch einen autorisierten Governance-Prozess verabschiedet sein
 
-6.5.1 The following artifacts are mandatory for Layer 4 compliance:
-- Conflict Resolution Ladder
-- Accountability Protocol
+6.5.3 Die Konfliktlösungsleiter MUSS mindestens definieren:
+- Konfliktklassifikations-Eingaben und Eskalationsschwellen
+- Lösungsphasen und Regeln zur Auswahl von Moderator\*innen
+- Dokumentations- und Informationszugangsgrenzen
+- Sicherheitskritische Ausnahmen und sofortige Schutzmaßnahmen
 
-6.5.2 Layer 4 artifacts MUST be:
-- Explicit and unambiguous
-- Versioned
-- Accessible to all members, with clearly bounded privacy protections
-- Adopted through an authorized governance process
+6.5.4 Das Verantwortlichkeitsprotokoll MUSS mindestens definieren:
+- Untersuchungs-, Überprüfungs- und Entscheidungsmechanismen
+- Garantien für ordnungsgemäße Verfahren und Schutz vor Vergeltung
+- Sanktions- und Wiedergutmachungsoptionen mit Verhältnismäßigkeitsregeln
+- Berufungs-, Aufsichts- und Eskalationswege
+- Koordination mit den Austritts- und Trennungsprozessen von Layer 1
 
-6.5.3 The Conflict Resolution Ladder MUST define, at minimum:
-- Conflict classification inputs and escalation thresholds
-- Resolution stages and facilitator selection rules
-- Documentation and information access boundaries
-- Safety-critical exceptions and immediate safeguards
+## 6.6 Layer-Invarianten
 
-6.5.4 The Accountability Protocol MUST define, at minimum:
-- Investigation, review, and decision mechanisms
-- Due process guarantees and anti-retaliation protections
-- Sanction and repair options with proportionality rules
-- Appeals, oversight, and escalation paths
-- Coordination with Layer 1 exit and separation processes
+6.6.1 Konflikte MUSS als behandelte Bedingung mit definierten Wegen betrachtet werden; das Ignorieren, Unterdrücken oder Normalisieren ungelöster Konflikte MUSS als Systemverstoß gelten.
 
-## 6.6 Layer Invariants
+6.6.2 Konflikte mit Machtasymmetrien MUSS erhöhte Schutzmaßnahmen auslösen.
 
-6.6.1 Conflict MUST be treated as a handled condition with defined pathways; ignoring, suppressing, or normalizing unresolved conflict MUST be considered a system violation.
+6.6.3 Wiedergutmachung und Wiederherstellung MUSS vor Bestrafung stehen, außer wenn unmittelbare Sicherheit gefährdet ist.
 
-6.6.2 Conflicts involving power asymmetries MUST trigger elevated safeguards.
+6.6.4 Physische, psychische und Kindersicherheit MUSS Teilnahmerechte, Rollenkontinuität und Reputationsbelange übersteuern.
 
-6.6.3 Repair and restoration MUST precede punishment except where immediate safety is at risk.
+## 6.7 Explizitheitsregeln
 
-6.6.4 Physical, psychological, and child safety MUST override participation rights, role continuity, and reputational concerns.
+6.7.1 Folgendes MUSS explizit sein:
+- Konfliktklassifikationssystem
+- Mindest-Lösungs- und Eskalationsprozess
+- Schutzmaßnahmen und Vergeltungsschutz
+- Sanktions-, Wiedergutmachungs- und Trennungsschwellen
 
-## 6.7 Explicitness Rules
+6.7.2 Folgendes KANN explizit sein:
+- Mediationsstile oder -methoden
+- Präferenzen bei der Auswahl von Moderator\*innen über die Mindestschutzmaßnahmen hinaus
+- Restaurative oder reparative Praktiken
 
-6.7.1 The following MUST be explicit:
-- Conflict classification system
-- Minimum resolution and escalation process
-- Safeguards and anti-retaliation protections
-- Sanction, repair, and separation thresholds
-
-6.7.2 The following MAY be explicit:
-- Mediation styles or methodologies
-- Facilitator selection preferences beyond minimum safeguards
-- Restorative or reparative practices
-
-6.7.3 The following MUST remain optional and out of scope:
-- Emotional expression norms
-- Therapeutic, spiritual, or ideological framing of conflict
+6.7.3 Folgendes MUSS optional und außerhalb des Geltungsbereichs bleiben:
+- Normen für emotionalen Ausdruck
+- Therapeutische, spirituelle oder ideologische Rahmung von Konflikten
 
 
 ---
 
-# 7. Layer 5 — Operations & Coordination
+# 7. Layer 5 — Betrieb & Koordination
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
+Layer 5 definiert, wie tägliche Arbeit, Koordination und Informationsfluss in der Praxis funktionieren.  
+Sein Zweck ist sicherzustellen, dass der Betrieb nachvollziehbar, nachhaltig und übertragbar bleibt und nicht in informelle Hierarchie, Abhängigkeit oder Burnout abgleitet.
 
+## 7.1 Rollen und Verantwortlichkeiten
 
-Layer 5 defines how daily work, coordination, and information flow function in practice.  
-Its purpose is to ensure that operations remain legible, sustainable, and transferable, and do not collapse into informal hierarchy, dependency, or burnout.
+7.1.1 Alle laufenden Verantwortlichkeiten MUSS expliziten, benannten Rollen zugewiesen werden — nicht impliziten Erwartungen oder informellen Absprachen.
 
-## 7.1 Roles and Responsibilities
+7.1.2 Die Gemeinschaft MUSS ein **Rollenregister** führen, das mindestens Folgendes enthält:
+- Rollenname und Zweck  
+- Umfang der Verantwortung und Entscheidungsbefugnis  
+- Explizite Abgrenzungen und Schnittstellen zu anderen Rollen, Kreisen oder Bereichen  
+- Eignungskriterien (falls vorhanden)  
+- Amtszeit, Rotation oder Überprüfungsbedingungen (falls vorhanden)  
+- Ernennungs-, Überprüfungs- und Abberufungsverfahren  
 
-7.1.1 All ongoing responsibilities MUST be assigned to explicit, named roles rather than implicit expectations or informal agreements.
+7.1.3 Jede Rolle MUSS einen expliziten Rechenschaftsmechanismus beinhalten, der Folgendes definiert:
+- Wie die Rollenerfüllung überprüft wird  
+- Wie mit mangelhafter Leistung, Überlastung oder Rollenversagen umgegangen wird  
+- Wie Übergabe und Wissenstransfer erfolgen  
 
-7.1.2 The community MUST maintain a **Role Registry** that includes, at minimum:
-- Role name and purpose  
-- Scope of responsibility and decision authority  
-- Explicit boundaries and interfaces with other roles, circles, or domains  
-- Eligibility criteria (if any)  
-- Term length, rotation, or review conditions (if any)  
-- Appointment, review, and removal process  
+7.1.4 Keine laufende Verantwortlichkeit KANN ohne eine explizite Rolle bestehen, und keine Person KANN für Verantwortlichkeiten zur Rechenschaft gezogen werden, die nicht formal einer Rolle zugewiesen sind.
 
-7.1.3 Each role MUST include an explicit accountability mechanism defining:
-- How role performance is reviewed  
-- How underperformance, overload, or role failure is handled  
-- How handover and knowledge transfer occur  
+7.1.5 Temporäre oder Ad-hoc-Verantwortlichkeiten MUSS explizit zeitlich begrenzt sein und DARF NICHT ohne formale Rollendefinition dauerhaft werden.
 
-7.1.4 No ongoing responsibility MAY exist without an explicit role, and no person MAY be held accountable for responsibilities not formally assigned to a role.
+## 7.2 Sitzungssystem
 
-7.1.5 Temporary or ad-hoc responsibilities MUST be explicitly time-bounded and MUST NOT become ongoing without formal role definition.
-
-## 7.2 Meeting System
-
-7.2.1 The community MUST define explicit meeting types sufficient to support:
-- Operations  
+7.2.1 Die Gemeinschaft MUSS explizite Sitzungstypen definieren, die ausreichen, um Folgendes zu unterstützen:
+- Betrieb  
 - Governance  
-- Coordination and alignment  
-- Reflection and learning  
-- Conflict handling (as required by Layer 4)
+- Koordination und Abstimmung  
+- Reflexion und Lernen  
+- Konfliktbearbeitung (wie von Layer 4 gefordert)
 
-7.2.2 Each meeting type MUST define, at minimum:
-- Purpose and decision scope  
-- Required vs optional participants  
-- Cadence and duration boundaries  
-- Facilitation role and selection or rotation process  
-- Agenda structure  
-- Documentation and publication requirements  
-- Decision capture requirements where decisions are made  
+7.2.2 Jeder Sitzungstyp MUSS mindestens Folgendes definieren:
+- Zweck und Entscheidungsumfang  
+- Erforderliche vs. optionale Teilnehmende  
+- Kadenz und zeitliche Begrenzungen  
+- Moderationsrolle und Auswahl- oder Rotationsverfahren  
+- Tagesordnungsstruktur  
+- Dokumentations- und Veröffentlichungsanforderungen  
+- Anforderungen an die Entscheidungserfassung, wo Entscheidungen getroffen werden  
 
-7.2.3 Meetings MUST NOT exceed their declared decision scope or bypass authority boundaries defined in Layer 2.
+7.2.3 Sitzungen DARF NICHT ihren erklärten Entscheidungsumfang überschreiten oder die in Layer 2 definierten Autoritätsgrenzen umgehen.
 
-7.2.4 Meeting load MUST be bounded, monitored, and reviewable as defined in Section 7.4.
+7.2.4 Die Sitzungsbelastung MUSS begrenzt, überwacht und überprüfbar sein, wie in Abschnitt 7.4 definiert.
 
-## 7.3 Documentation and Information Flow
+## 7.3 Dokumentation und Informationsfluss
 
-7.3.1 The community MUST define explicit documentation rules for decisions, roles, operations, and shared obligations.
+7.3.1 Die Gemeinschaft MUSS explizite Dokumentationsregeln für Entscheidungen, Rollen, Betriebsabläufe und gemeinsame Pflichten definieren.
 
-7.3.2 Documentation rules MUST specify, at minimum:
-- What information MUST be recorded  
-- Where records are stored  
-- Who has access to which records  
-- Publication or notification timelines (if any)  
-- Privacy boundaries and conditions for restricted access  
+7.3.2 Dokumentationsregeln MUSS mindestens Folgendes festlegen:
+- Welche Informationen aufgezeichnet werden MUSS  
+- Wo Aufzeichnungen gespeichert werden  
+- Wer Zugang zu welchen Aufzeichnungen hat  
+- Veröffentlichungs- oder Benachrichtigungsfristen (falls vorhanden)  
+- Datenschutzgrenzen und Bedingungen für eingeschränkten Zugang  
 
-7.3.3 All decisions MUST be traceable to:
-- Decision type and domain  
-- Authorized role or body  
-- Decision mechanism and threshold  
-- Recorded outcome and effective date  
+7.3.3 Alle Entscheidungen MUSS rückverfolgbar sein auf:
+- Entscheidungstyp und Bereich  
+- Autorisierte Rolle oder Gremium  
+- Entscheidungsmechanismus und Schwellenwert  
+- Erfasstes Ergebnis und Inkrafttreten  
 
-7.3.4 Critical operational processes MUST be documented such that continuity does not depend on tacit knowledge held by specific individuals.
+7.3.4 Kritische Betriebsprozesse MUSS so dokumentiert sein, dass die Kontinuität nicht von implizitem Wissen einzelner Personen abhängt.
 
-7.3.5 Information flow MUST be designed to prevent gatekeeping, bottlenecks, or dependency on informal intermediaries.
+7.3.5 Der Informationsfluss MUSS so gestaltet sein, dass Gatekeeping, Engpässe oder Abhängigkeit von informellen Vermittlern verhindert werden.
 
-## 7.4 Workload and Capacity Boundaries
+## 7.4 Arbeitsbelastung und Kapazitätsgrenzen
 
-7.4.1 Time, attention, coordination capacity, and emotional labor MUST be treated as finite and limited resources.
+7.4.1 Zeit, Aufmerksamkeit, Koordinationskapazität und emotionale Arbeit MUSS als endliche und begrenzte Ressourcen behandelt werden.
 
-7.4.2 The community MUST define explicit workload boundaries, including:
-- Limits on meeting load (frequency, duration, or total time)  
-- Limits on role load (number of roles, scope, or expected hours)  
-- Expectations for response times and availability (if any)  
-- Mechanisms for renegotiation, relief, substitution, or redistribution  
+7.4.2 Die Gemeinschaft MUSS explizite Belastungsgrenzen definieren, darunter:
+- Begrenzungen der Sitzungsbelastung (Häufigkeit, Dauer oder Gesamtzeit)  
+- Begrenzungen der Rollenbelastung (Anzahl der Rollen, Umfang oder erwartete Stunden)  
+- Erwartungen an Reaktionszeiten und Verfügbarkeit (falls vorhanden)  
+- Mechanismen für Neuverhandlung, Entlastung, Vertretung oder Umverteilung  
 
-7.4.3 Workload boundaries MUST be reviewable and adjustable through an authorized governance process.
+7.4.3 Belastungsgrenzen MUSS durch einen autorisierten Governance-Prozess überprüfbar und anpassbar sein.
 
-7.4.4 Persistent overload, burnout risk, chronic non-participation, or dependency on over-functioning individuals MUST trigger review or repair processes as defined in Layer 4.
+7.4.4 Anhaltende Überlastung, Burnout-Risiko, chronische Nicht-Teilnahme oder Abhängigkeit von übermäßig engagierten Einzelpersonen MUSS Überprüfungs- oder Reparaturprozesse auslösen, wie in Layer 4 definiert.
 
-## 7.5 Operational Continuity
+## 7.5 Betriebskontinuität
 
-7.5.1 The community MUST ensure that no single individual is a critical single point of failure for core operations.
+7.5.1 Die Gemeinschaft MUSS sicherstellen, dass keine einzelne Person ein kritischer Single Point of Failure für den Kernbetrieb ist.
 
-7.5.2 Core operational roles and processes MUST include:
-- Documented procedures  
-- Clear handover mechanisms  
-- Backup or redundancy arrangements where feasible  
+7.5.2 Zentrale Betriebsrollen und -prozesse MUSS Folgendes beinhalten:
+- Dokumentierte Verfahren  
+- Klare Übergabemechanismen  
+- Backup- oder Redundanzregelungen, wo machbar  
 
-7.5.3 Operational continuity planning MUST be reviewed periodically.
+7.5.3 Die Planung der Betriebskontinuität MUSS regelmäßig überprüft werden.
 
-## 7.6 Artifacts
+## 7.6 Artefakte
 
-7.6.1 The following artifacts are mandatory for Layer 5 compliance:
-- Operations Manual  
-- Role Registry  
-- Meeting Templates  
+7.6.1 Die folgenden Artefakte sind für die Konformität mit Layer 5 verpflichtend:
+- Betriebshandbuch  
+- Rollenregister  
+- Sitzungsvorlagen  
 
-7.6.2 Layer 5 artifacts MUST be:
-- Explicit and unambiguous  
-- Versioned  
-- Accessible to all members, with clearly bounded privacy protections  
-- Maintained as living documents with defined ownership and review cycles  
+7.6.2 Artefakte von Layer 5 MUSS:
+- Explizit und eindeutig sein  
+- Versioniert sein  
+- Für alle Mitglieder zugänglich sein, mit klar begrenztem Datenschutz  
+- Als lebende Dokumente mit definierter Zuständigkeit und Überprüfungszyklen gepflegt werden  
 
-7.6.3 The Operations Manual MUST define, at minimum:
-- Core operational processes relied upon by the community  
-- Interfaces between roles, domains, and meeting types  
-- Documentation locations and update procedures  
+7.6.3 Das Betriebshandbuch MUSS mindestens Folgendes definieren:
+- Zentrale Betriebsprozesse, auf die sich die Gemeinschaft stützt  
+- Schnittstellen zwischen Rollen, Bereichen und Sitzungstypen  
+- Dokumentationsstandorte und Aktualisierungsverfahren  
 
-7.6.4 Meeting Templates MUST define, at minimum:
-- Agenda structure  
-- Notes and record format  
-- Decision capture format where applicable  
+7.6.4 Sitzungsvorlagen MUSS mindestens Folgendes definieren:
+- Tagesordnungsstruktur  
+- Protokoll- und Aufzeichnungsformat  
+- Entscheidungserfassungsformat, wo zutreffend  
 
-## 7.7 Layer Invariants
+## 7.7 Layer-Invarianten
 
-7.7.1 Ongoing responsibilities MUST NOT exist without an explicit role.
+7.7.1 Laufende Verantwortlichkeiten DARF NICHT ohne eine explizite Rolle bestehen.
 
-7.7.2 Critical operational processes MUST NOT rely solely on individual memory, goodwill, or informal transmission.
+7.7.2 Kritische Betriebsprozesse DARF NICHT ausschließlich auf individuellem Gedächtnis, gutem Willen oder informeller Weitergabe beruhen.
 
-7.7.3 Meeting load, coordination burden, and unpaid or invisible labor MUST be bounded and reviewable.
+7.7.3 Sitzungsbelastung, Koordinationsaufwand und unbezahlte oder unsichtbare Arbeit MUSS begrenzt und überprüfbar sein.
 
-7.7.4 Information access rules MUST be explicit and enforceable.
+7.7.4 Regeln für den Informationszugang MUSS explizit und durchsetzbar sein.
 
-## 7.8 Explicitness Rules
+## 7.8 Explizierungsregeln
 
-7.8.1 The following MUST be explicit:
-- Roles and responsibilities  
-- Operational authority boundaries and interfaces  
-- Meeting types and scopes  
-- Decision documentation rules  
-- Information access and privacy boundaries  
+7.8.1 Folgendes MUSS explizit sein:
+- Rollen und Verantwortlichkeiten  
+- Betriebliche Autoritätsgrenzen und Schnittstellen  
+- Sitzungstypen und -umfänge  
+- Regeln zur Entscheidungsdokumentation  
+- Informationszugang und Datenschutzgrenzen  
 
-7.8.2 The following MAY be explicit:
-- Detailed meeting cadence beyond minimum constraints  
-- Tooling choices for documentation and coordination  
-- Role rotation or succession schedules  
+7.8.2 Folgendes KANN explizit sein:
+- Detaillierte Sitzungskadenz über die Mindestanforderungen hinaus  
+- Tooling-Entscheidungen für Dokumentation und Koordination  
+- Rotations- oder Nachfolgepläne für Rollen  
 
-7.8.3 The following MUST remain optional and out of scope:
-- Personal work styles  
-- Aesthetic or cultural preferences  
-- Informal social coordination
+7.8.3 Folgendes MUSS optional und außerhalb des Geltungsbereichs bleiben:
+- Persönliche Arbeitsstile  
+- Ästhetische oder kulturelle Präferenzen  
+- Informelle soziale Koordination
 
 
 ---
 
-# 8. Layer 6 — Evolution & Adaptation
+# 8. Layer 6 — Evolution & Anpassung
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
+Layer 6 definiert, wie sich das System weiterentwickelt, ohne zu kollabieren.  
+Sein Zweck ist sicherzustellen, dass Veränderung bewusst, eingegrenzt, wo angemessen reversibel ist und Erkenntnisse statt versteckter Schäden hervorbringt. Evolution unter RCOS wird als gesteuerter Prozess behandelt, nicht als Improvisation.
 
+## 8.1 Änderungsmechanismen
 
-Layer 6 defines how the system evolves without collapsing.  
-Its purpose is to ensure that change is deliberate, constrained, reversible where appropriate, and produces learnings rather than hidden damage. Evolution under RCOS is treated as a governed process, not as improvisation.
+8.1.1 Die Gemeinschaft MUSS explizite Änderungsmechanismen für das Modifizieren, Hinzufügen, Aussetzen oder Entfernen von Regeln, Rollen, Artefakten oder Entscheidungsstrukturen definieren.
 
-## 8.1 Change Mechanisms
+8.1.2 Änderungsmechanismen MUSS explizit unterscheiden zwischen:
+- Dauerhaften Regeländerungen  
+- Zeitlich begrenzten Experimenten gemäß Abschnitt 8.3  
 
-8.1.1 The community MUST define explicit change mechanisms for modifying, adding, suspending, or removing rules, roles, artifacts, or decision structures.
+8.1.3 Jede vorgeschlagene Änderung MUSS mindestens folgendes angeben:
+- Die betroffenen Artefakte, Layer und Abschnitte  
+- Den Entscheidungstyp und den autorisierten Entscheidungspfad gemäß Layer 2  
+- Die beabsichtigte Wirkung, den Geltungsbereich und bekannte Risiken  
+- Das Inkrafttretungsdatum und etwaige Übergangsfristen  
+- Migrationsanforderungen für bestehende Rollen, Vereinbarungen oder Aufzeichnungen  
 
-8.1.2 Change mechanisms MUST explicitly distinguish between:
-- Permanent rule changes  
-- Time-bounded experiments as defined in Section 8.3  
+8.1.4 Änderungen, die den Zweck, den Geltungsbereich, die Invarianten oder die Identitätsbeschränkungen von Layer 0 betreffen, MUSS als konstitutionelle Änderungen klassifiziert werden und MUSS dem konstitutionellen Entscheidungsmechanismus folgen.
 
-8.1.3 Every proposed change MUST specify, at minimum:
-- The artifact(s), layer(s), and section(s) affected  
-- The decision type and authorized decision path as defined in Layer 2  
-- The intended effect, scope, and known risks  
-- The effective date and any transition period  
-- Migration requirements for existing roles, agreements, or records  
+8.1.5 Die Gemeinschaft MUSS explizite Überprüfungsmechanismen für angenommene Änderungen definieren, einschließlich wie Änderungen bewertet, überarbeitet oder rückgängig gemacht werden, wenn sie Schaden, Instabilität oder unbeabsichtigte Machtkonzentration verursachen.
 
-8.1.4 Changes affecting Layer 0 purpose, scope, invariants, or identity constraints MUST be classified as constitutional changes and MUST follow the constitutional decision mechanism.
+## 8.2 Versionierung und Autorität
 
-8.1.5 The community MUST define explicit review mechanisms for adopted changes, including how changes are evaluated, revised, or reverted when they produce harm, instability, or unintended concentration of power.
+8.2.1 Alle angenommenen Änderungen MUSS versioniert und nachvollziehbar sein.
 
-## 8.2 Versioning and Authority
+8.2.2 Die Gemeinschaft MUSS eine **Versionshistorie** führen, die mindestens folgendes dokumentiert:
+- Versionskennung  
+- Annahmedatum und Inkrafttretungsdatum  
+- Referenz zum Entscheidungsprotokoll (Autorität, Mechanismus, Schwellenwert)  
+- Zusammenfassung der Änderungen  
+- Migrationshinweise und Kompatibilitätsbeschränkungen (falls vorhanden)  
 
-8.2.1 All adopted changes MUST be versioned and traceable.
+8.2.3 Zu jedem Zeitpunkt MUSS die Gemeinschaft eindeutig feststellen können:
+- Welche Version derzeit in Kraft ist  
+- Welche Artefakte für die Konformität maßgeblich sind  
 
-8.2.2 The community MUST maintain a **Version History** that records, at minimum:
-- Version identifier  
-- Adoption date and effective date  
-- Decision record reference (authority, mechanism, threshold)  
-- Summary of changes  
-- Migration notes and compatibility constraints (if any)  
+8.2.4 Abgelöste Regeln MUSS zusammen mit den Zeiträumen, in denen sie galten, für Prüfbarkeit, Lernen und Streitbeilegung zugänglich bleiben.
 
-8.2.3 At any point in time, the community MUST be able to unambiguously determine:
-- Which version is currently in force  
-- Which artifacts are authoritative for compliance  
+8.2.5 Keine informellen, undokumentierten oder „stillschweigend verstandenen" Regeländerungen KANN als gültig betrachtet werden.
 
-8.2.4 Superseded rules MUST remain accessible for auditability, learning, and dispute resolution, together with the dates during which they were in force.
+## 8.3 Experimente
 
-8.2.5 No informal, undocumented, or “understood” rule changes MAY be considered valid.
+8.3.1 Die Gemeinschaft KANN Experimente als ausdrücklich zeitlich begrenzte und reversible Abweichungen, Erweiterungen oder Pilotprojekte zum Zweck des Lernens einführen.
 
-## 8.3 Experiments
+8.3.2 Jedes Experiment MUSS mindestens folgendes definieren:
+- Geltungsbereich (was geändert wird und was ausdrücklich nicht geändert wird)  
+- Dauer und Überprüfungszeitpunkte  
+- Erfolgs- und Misserfolgskriterien  
+- Rollback-Bedingungen und Rollback-Prozess  
+- Autorisierter Entscheidungspfad für das Starten, Verlängern, Ändern oder Beenden des Experiments  
 
-8.3.1 The community MAY adopt experiments as explicitly time-bounded and reversible deviations, extensions, or pilots intended for learning.
+8.3.3 Experimente DARF NICHT die Invarianten von Layer 0 außer Kraft setzen und DARF NICHT die in Layer 2 definierten Governance-Beschränkungen umgehen.
 
-8.3.2 Every experiment MUST define, at minimum:
-- Scope (what is changed and what is explicitly not changed)  
-- Duration and review checkpoints  
-- Success and failure criteria  
-- Rollback conditions and rollback process  
-- Authorized decision path for starting, extending, modifying, or terminating the experiment  
+8.3.4 Experimente MUSS in allen betroffenen Artefakten ausdrücklich als experimentell gekennzeichnet sein und MUSS ein nicht verlängerbares Ablaufdatum enthalten, sofern sie nicht durch eine autorisierte Entscheidung erneuert werden.
 
-8.3.3 Experiments MUST NOT override Layer 0 invariants and MUST NOT bypass governance constraints defined in Layer 2.
+8.3.5 Wenn ein Experiment Sicherheitsrisiken, Zwang oder anhaltenden Schaden verursacht, MUSS die Gemeinschaft das Experiment unverzüglich durch eine Schutzmaßnahme aussetzen oder beenden, gefolgt von einer nachträglichen Überprüfung.
 
-8.3.4 Experiments MUST be explicitly labeled as experimental in all affected artifacts and MUST include a non-extendable expiration date unless renewed through an authorized decision.
+## 8.4 Lernen und Feedback-Erfassung
 
-8.3.5 If an experiment introduces safety risk, coercion, or sustained harm, the community MUST suspend or terminate the experiment immediately through a protective action, followed by post-hoc review.
+8.4.1 Größere Fehlschläge, Anpassungen, Rücknahmen und systemische Erkenntnisse MUSS dokumentiert werden.
 
-## 8.4 Learning and Feedback Capture
+8.4.2 Die Lernerfassung MUSS mindestens folgendes beinhalten:
+- Was geschah und warum es relevant war  
+- Welche Layer, Regeln oder Artefakte betroffen waren  
+- Was geändert, versucht oder gestoppt wurde  
+- Welche Signale, Nachweise oder Schwellenwerte eine Handlung ausgelöst haben  
 
-8.4.1 Major failures, adaptations, reversals, and systemic learnings MUST be documented.
+8.4.3 Lernaufzeichnungen MUSS gemäß den Informationszugangsregeln von Layer 5 zugänglich sein.
 
-8.4.2 Learning capture MUST include, at minimum:
-- What occurred and why it mattered  
-- Which layers, rules, or artifacts were implicated  
-- What was changed, attempted, or stopped  
-- What signals, evidence, or thresholds triggered action  
+8.4.4 Wiederkehrende Fehlermuster MUSS eine strukturelle Überprüfung auslösen, keine individuelle Schuldzuweisung.
 
-8.4.3 Learning records MUST be accessible according to Layer 5 information access rules.
+## 8.5 Änderungssicherheit und Reversibilität
 
-8.4.4 Repeated failure patterns MUST trigger structural review rather than individual blame.
+8.5.1 Das System MUSS wo möglich reversible Änderungen gegenüber irreversiblen bevorzugen.
 
-## 8.5 Change Safety and Reversibility
+8.5.2 Irreversible oder folgenschwere Änderungen MUSS beinhalten:
+- Verlängerte Beratungs- oder Überprüfungszeiträume  
+- Höhere Entscheidungsschwellen, wo angemessen  
+- Ausdrückliche Risikoanerkennung  
 
-8.5.1 The system MUST prefer reversible changes over irreversible ones where possible.
+8.5.3 Notfalländerungen KANN nur dort zulässig sein, wo sie ausdrücklich definiert sind, MUSS zeitlich begrenzt sein, DARF NICHT die Invarianten von Layer 0 außer Kraft setzen und MUSS einer verpflichtenden nachträglichen Überprüfung und Ratifizierung oder Rücknahme unterzogen werden.
 
-8.5.2 Irreversible or high-impact changes MUST include:
-- Extended deliberation or review periods  
-- Higher decision thresholds where appropriate  
-- Explicit risk acknowledgment  
+## 8.6 Artefakte
 
-8.5.3 Emergency changes MAY be permitted only where explicitly defined, MUST be time-bounded, MUST NOT override Layer 0 invariants, and MUST undergo mandatory post-hoc review and ratification or rollback.
+8.6.1 Die folgenden Artefakte sind für die Konformität mit Layer 6 verpflichtend:
+- Änderungsprotokoll  
+- Versionshistorie  
+- Lernprotokoll  
 
-## 8.6 Artifacts
+8.6.2 Artefakte von Layer 6 MUSS:
+- Explizit und eindeutig sein  
+- Versioniert sein  
+- Für alle Mitglieder zugänglich sein, mit klar abgegrenztem Datenschutz  
+- Durch einen autorisierten Governance-Prozess angenommen sein  
 
-8.6.1 The following artifacts are mandatory for Layer 6 compliance:
-- Change Protocol  
-- Version History  
-- Learning Log  
+8.6.3 Das Änderungsprotokoll MUSS mindestens folgendes definieren:
+- Wie Änderungen vorgeschlagen, überprüft, angenommen, veröffentlicht und abgelehnt werden  
+- Wie Vorschläge nach Entscheidungstyp klassifiziert werden  
+- Erforderliche Inhalte von Änderungsvorschlägen  
+- Übergangs-, Migrations- und Abkündigungserwartungen  
+- Überprüfungs-, Überarbeitungs- und Rollback-Mechanismen  
+- Notfalländerungsbestimmungen, einschließlich strikter Zeitbegrenzung und verpflichtender Überprüfung  
 
-8.6.2 Layer 6 artifacts MUST be:
-- Explicit and unambiguous  
-- Versioned  
-- Accessible to all members, with clearly bounded privacy protections  
-- Adopted through an authorized governance process  
+8.6.4 Die Versionshistorie MUSS definieren:
+- Die maßgebliche Struktur für Versionskennungen und Änderungsprotokolle  
+- Wie abgelöste Versionen aufbewahrt und abgerufen werden  
+- Wie die derzeit aktive Version bestimmt wird  
 
-8.6.3 The Change Protocol MUST define, at minimum:
-- How changes are proposed, reviewed, adopted, published, and rejected  
-- How proposals are classified by decision type  
-- Required contents of change proposals  
-- Transition, migration, and deprecation expectations  
-- Review, revision, and rollback mechanisms  
-- Emergency change provisions, including strict time bounds and mandatory review  
+8.6.5 Das Lernprotokoll MUSS definieren:
+- Was ein lernrelevantes Ereignis darstellt  
+- Dokumentationsformat und Zuständigkeit  
+- Überprüfungs- und Synthese-Rhythmus  
 
-8.6.4 The Version History MUST define:
-- The authoritative structure for version identifiers and change logs  
-- How superseded versions are retained and accessed  
-- How the currently active version is determined  
+## 8.7 Layer-Invarianten
 
-8.6.5 The Learning Log MUST define:
-- What constitutes a learnable event  
-- Documentation format and ownership  
-- Review and synthesis cadence  
+8.7.1 Veränderung MUSS möglich, aber eingegrenzt sein; keine Änderung KANN augenblicklich, implizit oder unüberprüfbar sein.
 
-## 8.7 Layer Invariants
+8.7.2 Alle angenommenen Änderungen MUSS versioniert, dokumentiert und nachvollziehbar sein.
 
-8.7.1 Change MUST be possible but constrained; no change MAY be instantaneous, implicit, or unreviewable.
+8.7.3 Experimente MUSS zeitlich begrenzt, ausdrücklich gekennzeichnet und reversibel sein.
 
-8.7.2 All adopted changes MUST be versioned, documented, and traceable.
+8.7.4 Größere Fehlschläge und Anpassungen MUSS als gemeinsames Lernen festgehalten werden, nicht ausradiert oder versteckt.
 
-8.7.3 Experiments MUST be time-bounded, explicitly labeled, and reversible.
+## 8.8 Explizitätsregeln
 
-8.7.4 Major failures and adaptations MUST be captured as shared learning, not erased or hidden.
+8.8.1 Folgendes MUSS explizit sein:
+- Wie sich Regeln ändern und wer entscheidet  
+- Versionierung, Autorität und Überprüfungsprozesse  
+- Geltungsbereich, Dauer und Rollback-Bedingungen von Experimenten  
+- Bedingungen und Grenzen für Notfalländerungen  
 
-## 8.8 Explicitness Rules
+8.8.2 Folgendes KANN explizit sein:
+- Überprüfungshäufigkeit und -rhythmus  
+- Auslaufklauseln  
+- Feedback- und Wahrnehmungsmethoden  
 
-8.8.1 The following MUST be explicit:
-- How rules change and who decides  
-- Versioning, authority, and review processes  
-- Experiment scope, duration, and rollback conditions  
-- Emergency change conditions and limits  
-
-8.8.2 The following MAY be explicit:
-- Review frequency and cadence  
-- Sunset clauses  
-- Feedback and sensing methods  
-
-8.8.3 The following MUST remain optional and out of scope:
-- Pace of innovation  
-- Cultural attitudes toward risk within defined bounds
+8.8.3 Folgendes MUSS optional und außerhalb des Geltungsbereichs bleiben:
+- Innovationsgeschwindigkeit  
+- Kulturelle Haltungen gegenüber Risiko innerhalb definierter Grenzen
 
 
 ---
 
-# 9. Non-Normative Sections
+# 9. Nicht-normative Abschnitte
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
+Die Abschnitte in diesem Kapitel sind **informativ**, nicht normativ.
+Sie definieren keine Compliance-Anforderungen, sondern bieten Orientierung, Kontext, Beispiele und Lernunterstützung für Gemeinschaften, Umsetzer, Prüfer und Standard-Hüter.
 
+Nichts in diesem Abschnitt darf Anforderungen, die in den Schichten 0–6 definiert sind, außer Kraft setzen oder abschwächen.
 
-The sections in this chapter are **informative**, not normative.  
-They do not define compliance requirements but provide guidance, context, examples, and learning support for communities, implementers, auditors, and standard stewards.
+## 9.1 Optionale Module
 
-Nothing in this section may override or weaken requirements defined in Layers 0–6.
+9.1.1 Optionale Module sind domänenspezifische Erweiterungen, die auf RCOS-Core aufbauen, ohne dessen verpflichtende Schichten zu verändern.
 
-## 9.1 Optional Modules
+9.1.2 Optionale Module MUSS:
+- Deklarieren, welche RCOS-Schichten sie erweitern oder von welchen sie abhängen
+- Ausdrücklich angeben, welche zusätzlichen Rollen, Regeln oder Artefakte sie einführen
+- Invarianten der Schicht 0 oder RCOS-Core-Anforderungen NOT überschreiben oder ihnen widersprechen
 
-9.1.1 Optional Modules are domain-specific extensions that build on top of RCOS-Core without modifying its mandatory layers.
+9.1.3 Optionale Module KANN definieren:
+- Domänenspezifische Praktiken
+- Zusätzliche Einschränkungen oder Standards
+- Spezialisierte Governance- oder Betriebsmuster
 
-9.1.2 Optional Modules MUST:
-- Declare which RCOS layers they extend or depend on  
-- Explicitly state any additional roles, rules, or artifacts they introduce  
-- NOT override or contradict Layer 0 invariants or RCOS-Core requirements  
+9.1.4 Typische Domänen optionaler Module KANN umfassen, sind aber nicht beschränkt auf:
+- Permakultur und regenerative Landschaftspflege
+- Alternative oder gemeinschaftsbasierte Bildungssysteme
+- Gesundheits-, Pflege- und Wohlbefindenspraktiken
+- Kulturelle oder spirituelle Praktiken
+- Wirtschaftliche Spezialisierungen (z. B. Genossenschaften, Land Trusts, Gegenseitigkeitskredit)
 
-9.1.3 Optional Modules MAY define:
-- Domain-specific practices  
-- Additional constraints or standards  
-- Specialized governance or operational patterns  
+9.1.5 Die Einführung optionaler Module MUSS den in Schicht 6 definierten Änderungsmechanismen folgen.
 
-9.1.4 Typical Optional Module domains MAY include, but are not limited to:
-- Permaculture and regenerative land stewardship  
-- Alternative or community-based education systems  
-- Health, care, and well-being practices  
-- Cultural or spiritual practices  
-- Economic specializations (e.g. cooperatives, land trusts, mutual credit)  
+9.1.6 Eine Gemeinschaft KANN RCOS-Core-konform sein, ohne optionale Module zu übernehmen.
 
-9.1.5 Adoption of Optional Modules MUST follow the change mechanisms defined in Layer 6.
+## 9.2 Referenzimplementierungen
 
-9.1.6 A community MAY be RCOS-Core compliant without adopting any Optional Modules.
+9.2.1 Eine Referenzimplementierung ist eine reale Gemeinschaft, die öffentlich dokumentiert, wie sie RCOS-Core anwendet.
 
-## 9.2 Reference Implementations
+9.2.2 Referenzimplementierungen sind **deskriptiv**, nicht präskriptiv.
+Sie veranschaulichen, wie RCOS umgesetzt werden kann, nicht wie es umgesetzt werden muss.
 
-9.2.1 A Reference Implementation is a real-world community that publicly documents how it applies RCOS-Core.
+9.2.3 Eine Gemeinschaft KANN sich nur dann als RCOS-Referenzimplementierung bezeichnen, wenn sie:
+- RCOS-Core-konform ist
+- Ihre Artefakte der Schichten 0–6 öffentlich dokumentiert
+- Abweichungen, Experimente oder Erweiterungen klar kennzeichnet
 
-9.2.2 Reference Implementations are **descriptive**, not prescriptive.  
-They illustrate how RCOS can be instantiated, not how it must be instantiated.
+9.2.4 Die Dokumentation von Referenzimplementierungen SOLLTE umfassen:
+- Kontext und Umfang (Größe, Standort, Zweck)
+- Welche optionalen Module übernommen wurden
+- Bekannte Herausforderungen und Fehlschläge
+- Entwicklungsgeschichte und wesentliche Anpassungen
 
-9.2.3 A community MAY claim to be an RCOS Reference Implementation only if it:
-- Is RCOS-Core compliant  
-- Publicly documents its Layer 0–6 artifacts  
-- Clearly indicates deviations, experiments, or extensions  
+9.2.5 Referenzimplementierungen DARF NICHT als autoritative Auslegungen des Standards behandelt werden.
 
-9.2.4 Reference Implementation documentation SHOULD include:
-- Context and scale (size, location, purpose)  
-- Which Optional Modules are adopted  
-- Known challenges and failures  
-- Evolution history and major adaptations  
+## 9.3 Bekannte Fehlermuster
 
-9.2.5 Reference Implementations MUST NOT be treated as authoritative interpretations of the standard.
+9.3.1 Bekannte Fehlermuster dokumentieren wiederkehrende Zusammenbruchsmuster, die in realen Gemeinschaften beobachtet wurden.
 
-## 9.3 Known Failure Modes
+9.3.2 Fehlermuster sind **informative Signale**, keine Compliance-Kriterien.
 
-9.3.1 Known Failure Modes document recurring breakdown patterns observed in real communities.
+9.3.3 Fehlermuster KANN umfassen, sind aber nicht beschränkt auf:
+- Informelle Machtakkumulation
+- Dominanz von Gründern oder Grundeigentümern
+- Unsichtbare oder geschlechtsspezifische Arbeitsabhängigkeit
+- Governance-Lähmung oder Sitzungsüberlastung
+- Austrittsblockade oder sanfter Zwang
+- Wirtschaftliche Vereinnahmung durch Verschuldung oder Vermögenskontrolle
+- Konfliktvermeidung, die zu stiller Fragmentierung führt
 
-9.3.2 Failure Modes are **informative signals**, not compliance criteria.
+9.3.4 Der Zweck der Dokumentation von Fehlermustern ist:
+- Stresstests von RCOS-Strukturen zu unterstützen
+- Designentscheidungen zu verbessern
+- Früherkennung in aktiven Gemeinschaften zu ermöglichen
 
-9.3.3 Failure Modes MAY include, but are not limited to:
-- Informal power accumulation  
-- Founder or land-owner dominance  
-- Invisible or gendered labor dependency  
-- Governance paralysis or meeting overload  
-- Exit blockage or soft coercion  
-- Economic capture through debt or asset control  
-- Conflict avoidance leading to silent fragmentation  
-
-9.3.4 The purpose of documenting Failure Modes is to:
-- Support stress-testing of RCOS structures  
-- Improve design decisions  
-- Enable early detection in live communities  
-
-9.3.5 Failure Mode documentation SHOULD reference which RCOS layers are intended to mitigate the pattern.
+9.3.5 Die Dokumentation von Fehlermustern SOLLTE darauf verweisen, welche RCOS-Schichten dazu gedacht sind, das jeweilige Muster abzumildern.
 
 
 ---
 
 # 10. Compliance & Auditing
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
+Dieses Kapitel definiert, wie RCOS-Core-Compliance bewertet und aufrechterhalten wird.
 
+## 10.1 Compliance-Checkliste
 
-This chapter defines how RCOS-Core compliance is assessed and maintained.
+10.1.1 RCOS-Core-Compliance ist binär: Eine Gemeinschaft ist entweder compliant oder non-compliant.
 
-## 10.1 Compliance Checklist
+10.1.2 Compliance MUSS pro Layer (Layer 0–6) bewertet werden.
 
-10.1.1 RCOS-Core compliance is binary: a community is either compliant or non-compliant.
+10.1.3 Für jeden Layer MUSS die Compliance-Checkliste überprüfen:
+- Vorhandensein verbindlicher Artefakte  
+- Explizitheit und Zugänglichkeit der erforderlichen Regeln  
+- Verabschiedung durch autorisierte Governance-Prozesse  
 
-10.1.2 Compliance MUST be evaluated per layer (Layers 0–6).
+10.1.4 Teilweise Compliance oder „Absicht zur Compliance" DARF NICHT als compliant betrachtet werden.
 
-10.1.3 For each layer, the Compliance Checklist MUST verify:
-- Presence of mandatory artifacts  
-- Explicitness and accessibility of required rules  
-- Adoption through authorized governance processes  
+10.1.5 Optionale Module DARF NICHT in die RCOS-Core-Compliance-Bewertung einbezogen werden.
 
-10.1.4 Partial compliance or “intent to comply” MUST NOT be considered compliant.
+## 10.2 Testfälle
 
-10.1.5 Optional Modules MUST NOT be included in RCOS-Core compliance evaluation.
+10.2.1 Testfälle sind strukturierte Szenarien, mit denen überprüft wird, ob RCOS-Mechanismen wie beabsichtigt funktionieren.
 
-## 10.2 Test Cases
+10.2.2 Testfälle KANN sein:
+- Hypothetische Szenarien  
+- Historische Gemeinschafts-Fehlschläge  
+- Simulierte Stresstests  
 
-10.2.1 Test Cases are structured scenarios used to validate whether RCOS mechanisms behave as intended.
+10.2.3 Testfälle SOLLTE mindestens abdecken:
+- Versuche der Machtkonzentration  
+- Austritts- und Trennungsszenarien  
+- Governance-Deadlock  
+- Versuche wirtschaftlicher Vereinnahmung  
+- Sicherheitskritische Konflikte  
 
-10.2.2 Test Cases MAY be:
-- Hypothetical scenarios  
-- Historical community failures  
-- Simulated stress tests  
-
-10.2.3 Test Cases SHOULD cover, at minimum:
-- Power concentration attempts  
-- Exit and separation scenarios  
-- Governance deadlock  
-- Economic capture attempts  
-- Safety-critical conflicts  
-
-10.2.4 Test Cases are informative but SHOULD be used during audits, onboarding, and periodic reviews.
+10.2.4 Testfälle sind informativ, SOLLTE aber bei Audits, Onboarding und regelmäßigen Überprüfungen eingesetzt werden.
 
 ## 10.3 Non-Compliance
 
-10.3.1 A community MUST be considered non-compliant if:
-- Any mandatory artifact is missing  
-- Layer 0 invariants are violated  
-- Decisions are repeatedly made outside authorized governance structures  
-- Exit is blocked or informally constrained  
+10.3.1 Eine Gemeinschaft MUSS als non-compliant betrachtet werden, wenn:
+- Ein verbindliches Artefakt fehlt  
+- Layer-0-Invarianten verletzt werden  
+- Entscheidungen wiederholt außerhalb autorisierter Governance-Strukturen getroffen werden  
+- Der Austritt blockiert oder informell eingeschränkt wird  
 
-10.3.2 Non-compliance MUST be explicitly acknowledged once detected.
+10.3.2 Non-Compliance MUSS nach Feststellung ausdrücklich anerkannt werden.
 
-10.3.3 A community MAY regain compliance only through:
-- Corrective action  
-- Formal adoption of missing or corrected artifacts  
-- Documentation of remediation  
+10.3.3 Eine Gemeinschaft KANN Compliance nur wiedererlangen durch:
+- Korrekturmaßnahmen  
+- Formale Verabschiedung fehlender oder korrigierter Artefakte  
+- Dokumentation der Behebung  
 
-10.3.4 Claims of RCOS compliance MUST be withdrawn during periods of known non-compliance.
+10.3.4 Ansprüche auf RCOS-Compliance MUSS während Zeiträumen bekannter Non-Compliance zurückgezogen werden.
 
 
 ---
 
-# 11. Versioning & Governance of the Standard
+# 11. Versionierung & Governance des Standards
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
+Dieses Kapitel definiert, wie sich RCOS selbst als Standard weiterentwickelt.
 
+## 11.1 Standardverwaltung
 
-This chapter defines how RCOS itself evolves as a standard.
+11.1.1 RCOS MUSS über eine identifizierbare verwaltende Stelle oder einen verwaltenden Prozess verfügen.
 
-## 11.1 Standard Stewardship
+11.1.2 Die Verantwortlichkeiten der Verwaltung MUSS umfassen:
+- Pflege der kanonischen Spezifikation  
+- Verwaltung von Versionsfreigaben  
+- Kuratierung von Referenzmaterialien und Lernressourcen  
+- Schutz der Layer-0-Invarianten des Standards selbst  
 
-11.1.1 RCOS MUST have an identifiable stewarding body or process.
+11.1.3 Die Verwaltung DARF NICHT als Durchsetzungsinstanz gegenüber Gemeinschaften agieren.
 
-11.1.2 The steward’s responsibilities MUST include:
-- Maintaining the canonical specification  
-- Managing version releases  
-- Curating reference materials and learning  
-- Protecting Layer 0 invariants of the standard itself  
+11.1.4 Die RCOS-Verwaltung MUSS Klarheit, Stabilität und Erkenntnisse aus der Praxis über ideologische Reinheit stellen.
 
-11.1.3 The steward MUST NOT act as an enforcement authority over communities.
+## 11.2 Änderungsprozess
 
-11.1.4 RCOS stewardship MUST prioritize clarity, stability, and real-world learnings over ideological purity.
+11.2.1 Änderungen an RCOS-Core MUSS einem definierten Änderungsprozess folgen.
 
-## 11.2 Change Process
+11.2.2 Der Änderungsprozess MUSS umfassen:
+- Einreichung von Vorschlägen  
+- Öffentliche Prüfungs- und Feedbackphase  
+- Entscheidungsmechanismus und -befugnis  
+- Versionierung und Veröffentlichung  
 
-11.2.1 Changes to RCOS-Core MUST follow a defined change process.
+11.2.3 Abwärtskompatibilität SOLLTE nach Möglichkeit gewahrt werden.
 
-11.2.2 The change process MUST include:
-- Proposal submission  
-- Public review and feedback period  
-- Decision mechanism and authority  
-- Versioning and publication  
+11.2.4 Nicht abwärtskompatible Änderungen MUSS klar gekennzeichnet und begründet werden.
 
-11.2.3 Backward compatibility SHOULD be preserved where possible.
+11.2.5 Abgelöste Versionen von RCOS MUSS öffentlich zugänglich bleiben.
 
-11.2.4 Breaking changes MUST be clearly marked and justified.
-
-11.2.5 Superseded versions of RCOS MUST remain publicly accessible.
-
-11.2.6 RCOS itself MUST model the same principles it requires of communities: explicitness, bounded authority, reversibility, and learning.
+11.2.6 RCOS selbst MUSS dieselben Prinzipien vorleben, die es von Gemeinschaften verlangt: Explizitheit, begrenzte Befugnisse, Umkehrbarkeit und Lernbereitschaft.
 
 
 ---
 
 # Appendix A — Glossary
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
+Now I have good context for terminology consistency. Let me produce the translation.
 
+---
+id: c0516132
+title: Anhang A — Glossar
+parentId: e6de7a5d
+order: 120
+---
 
-This glossary provides **informative definitions** for key terms used throughout the RCOS specification.  
-Glossary entries do not introduce new requirements and do not override normative sections.
+Dieses Glossar bietet **informative Definitionen** für zentrale Begriffe, die in der gesamten RCOS-Spezifikation verwendet werden.  
+Glossareinträge führen keine neuen Anforderungen ein und setzen normative Abschnitte nicht außer Kraft.
 
-**Accountability**  
-The expectation that roles and members can be asked to explain actions, outcomes, and adherence to agreed rules, with defined review and correction mechanisms.
+**Verantwortlichkeit (Accountability)**  
+Die Erwartung, dass Rollen und Mitglieder aufgefordert werden können, Handlungen, Ergebnisse und die Einhaltung vereinbarter Regeln zu erklären, mit definierten Überprüfungs- und Korrekturmechanismen.
 
-**Accountability Protocol**  
-An artifact defining how violations, harms, or repeated failures are reviewed, documented, and addressed, including due process, safeguards, and escalation paths.
+**Rechenschaftsprotokoll (Accountability Protocol)**  
+Ein Artefakt, das definiert, wie Verstöße, Schäden oder wiederholte Versäumnisse überprüft, dokumentiert und behandelt werden, einschließlich ordnungsgemäßem Verfahren, Schutzmaßnahmen und Eskalationswegen.
 
-**Artifact**  
-A documented, versioned object (e.g. protocol, registry, charter) adopted through an authorized process and used to operationalize RCOS layers.
+**Artefakt (Artifact)**  
+Ein dokumentiertes, versioniertes Objekt (z. B. Protokoll, Register, Charta), das durch einen autorisierten Prozess angenommen und zur Operationalisierung von RCOS-Schichten verwendet wird.
 
-**Authority Boundary**  
-The explicit limits within which a role, circle, or body may make decisions or act.
+**Autoritätsgrenze (Authority Boundary)**  
+Die expliziten Grenzen, innerhalb derer eine Rolle, ein Kreis oder ein Gremium Entscheidungen treffen oder handeln darf.
 
-**Change Protocol**  
-An artifact defining how changes are proposed, reviewed, adopted, published, and rolled back, including decision type classification and emergency provisions.
+**Änderungsprotokoll (Change Protocol)**  
+Ein Artefakt, das definiert, wie Änderungen vorgeschlagen, überprüft, angenommen, veröffentlicht und zurückgenommen werden, einschließlich Entscheidungstyp-Klassifikation und Notfallregelungen.
 
-**Commons**  
-Resources governed collectively under explicit stewardship, access, and decision rules.
+**Gemeingüter (Commons)**  
+Ressourcen, die kollektiv unter expliziten Verwaltungs-, Zugangs- und Entscheidungsregeln verwaltet werden.
 
-**Community**  
-A group of people who voluntarily coordinate around a shared purpose within a defined scope and governance system.
+**Gemeinschaft (Community)**  
+Eine Gruppe von Menschen, die sich freiwillig um einen gemeinsamen Zweck innerhalb eines definierten Geltungsbereichs und Governance-Systems koordinieren.
 
-**Compliance**  
-The state of meeting all mandatory requirements of RCOS-Core across Layers 0–6.
+**Konformität (Compliance)**  
+Der Zustand der Erfüllung aller verpflichtenden Anforderungen von RCOS-Core über die Schichten 0–6 hinweg.
 
-**Conflict Resolution Ladder**  
-A staged conflict process defining minimum resolution steps and escalation thresholds, from low-intensity repair to governance review and, if necessary, separation.
+**Konfliktlösungsleiter (Conflict Resolution Ladder)**  
+Ein gestufter Konfliktprozess, der Mindest-Lösungsschritte und Eskalationsschwellen definiert, von niedrigschwelliger Wiedergutmachung über Governance-Überprüfung bis hin zur — falls notwendig — Trennung.
 
-**Constitutional Decision**  
-A decision that modifies Layer 0 purpose, scope, invariants, or identity constraints, or the governance system itself.
+**Konstitutionelle Entscheidung (Constitutional Decision)**  
+Eine Entscheidung, die den Zweck, den Geltungsbereich, die Invarianten oder die Identitätseinschränkungen von Layer 0 oder das Governance-System selbst verändert.
 
-**Decision Matrix**  
-A governance artifact mapping decision types and domains to authorized roles, mechanisms, thresholds, and escalation paths.
+**Entscheidungsmatrix (Decision Matrix)**  
+Ein Governance-Artefakt, das Entscheidungstypen und -domänen autorisierten Rollen, Mechanismen, Schwellenwerten und Eskalationswegen zuordnet.
 
-**Decision Type**  
-A classification of decisions (Operational, Strategic, Constitutional) used to determine authority and process.
+**Entscheidungstyp (Decision Type)**  
+Eine Klassifikation von Entscheidungen (operativ, strategisch, konstitutionell), die zur Bestimmung von Autorität und Verfahren herangezogen wird.
 
-**Due Process**  
-The minimum fairness guarantees required before restricting rights, applying sanctions, or triggering separation, including notice, review, and appeal pathways as defined.
+**Ordnungsgemäßes Verfahren (Due Process)**  
+Die Mindestgarantien für Fairness, die erforderlich sind, bevor Rechte eingeschränkt, Sanktionen verhängt oder eine Trennung eingeleitet wird, einschließlich Benachrichtigung, Überprüfung und Einspruchswegen gemäß Definition.
 
-**Emergency Change**  
-A time-bounded change enacted under explicitly defined emergency conditions, requiring post-hoc review and ratification or rollback.
+**Notfalländerung (Emergency Change)**  
+Eine zeitlich begrenzte Änderung, die unter explizit definierten Notfallbedingungen durchgeführt wird und eine nachträgliche Überprüfung sowie Ratifizierung oder Rücknahme erfordert.
 
-**Explicit**  
-Written, adopted, accessible, and reviewable.  
-Anything not explicit is treated as non-existent under RCOS.
+**Explizit (Explicit)**  
+Schriftlich festgehalten, angenommen, zugänglich und überprüfbar.  
+Alles, was nicht explizit ist, wird unter RCOS als nicht existent behandelt.
 
-**Explicitness Rule**  
-The principle that mechanisms allocating power, risk, responsibility, or exit conditions must be written, adopted, and reviewable.
+**Explizitätsregel (Explicitness Rule)**  
+Das Prinzip, dass Mechanismen, die Macht, Risiko, Verantwortung oder Austrittsbedingungen zuweisen, schriftlich festgehalten, angenommen und überprüfbar sein müssen.
 
-**Experiment**  
-A time-bounded, reversible change adopted for learning and evaluation.
+**Experiment (Experiment)**  
+Eine zeitlich begrenzte, reversible Änderung, die zum Zweck des Lernens und der Evaluation eingeführt wird.
 
-**Exit & Separation Protocol**  
-An artifact defining voluntary exit, forced exit due process, and separation of assets, roles, access, and obligations.
+**Austritts- und Trennungsprotokoll (Exit & Separation Protocol)**  
+Ein Artefakt, das den freiwilligen Austritt, das ordnungsgemäße Verfahren bei erzwungenem Austritt sowie die Aufteilung von Vermögenswerten, Rollen, Zugängen und Pflichten definiert.
 
-**Governance Protocol**  
-An artifact defining the decision lifecycle (proposal, deliberation, adoption, documentation, review) and how governance conflicts are resolved.
+**Governance-Protokoll (Governance Protocol)**  
+Ein Artefakt, das den Entscheidungslebenszyklus (Vorschlag, Beratung, Annahme, Dokumentation, Überprüfung) definiert und festlegt, wie Governance-Konflikte gelöst werden.
 
-**In-Scope / Out-of-Scope**  
-In-scope refers to people, assets, domains, and activities explicitly governed by the community. Out-of-scope refers to everything explicitly excluded or not declared in scope.
+**Im Geltungsbereich / Außerhalb des Geltungsbereichs (In-Scope / Out-of-Scope)**  
+Im Geltungsbereich bezieht sich auf Personen, Vermögenswerte, Domänen und Aktivitäten, die explizit von der Gemeinschaft verwaltet werden. Außerhalb des Geltungsbereichs bezieht sich auf alles, was explizit ausgeschlossen oder nicht im Geltungsbereich deklariert ist.
 
-**Internal Economy Protocol**  
-An artifact defining contribution recognition and any internal exchange mechanisms, including accumulation constraints and dispute correction.
+**Protokoll für die interne Ökonomie (Internal Economy Protocol)**  
+Ein Artefakt, das die Anerkennung von Beiträgen und etwaige interne Tauschmechanismen definiert, einschließlich Akkumulationsbeschränkungen und Streitkorrektur.
 
-**Invariant**  
-A non-negotiable constraint that cannot be overridden while it is in force.
+**Invariante (Invariant)**  
+Eine nicht verhandelbare Einschränkung, die nicht außer Kraft gesetzt werden kann, solange sie gilt.
 
-**Layer**  
-A functional domain of RCOS that defines a specific aspect of community operation.
+**Schicht (Layer)**  
+Eine funktionale Domäne von RCOS, die einen bestimmten Aspekt des Gemeinschaftsbetriebs definiert.
 
-**Learning Log**  
-An artifact capturing major failures, adaptations, reversals, and lessons learned, including triggers, affected artifacts, and outcomes.
+**Lernprotokoll (Learning Log)**  
+Ein Artefakt, das wesentliche Fehlschläge, Anpassungen, Rücknahmen und gewonnene Erkenntnisse festhält, einschließlich Auslöser, betroffener Artefakte und Ergebnisse.
 
-**Member**  
-A person who has explicitly entered the community through the defined membership process.
+**Mitglied (Member)**  
+Eine Person, die durch den definierten Mitgliedschaftsprozess explizit in die Gemeinschaft eingetreten ist.
 
-**Optional Module**  
-A domain-specific extension that builds on RCOS-Core without altering its mandatory layers.
+**Optionales Modul (Optional Module)**  
+Eine domänenspezifische Erweiterung, die auf RCOS-Core aufbaut, ohne dessen verpflichtende Schichten zu verändern.
 
-**Registry**  
-An artifact that records a set of authoritative entries (e.g., roles, resources, membership states) with clear ownership, update rules, and version history.
+**Register (Registry)**  
+Ein Artefakt, das eine Menge autoritativer Einträge (z. B. Rollen, Ressourcen, Mitgliedschaftszustände) mit klarer Zuständigkeit, Aktualisierungsregeln und Versionsgeschichte erfasst.
 
-**Reference Implementation**  
-A real-world community that publicly documents its application of RCOS-Core.
+**Referenzimplementierung (Reference Implementation)**  
+Eine reale Gemeinschaft, die ihre Anwendung von RCOS-Core öffentlich dokumentiert.
 
-**Role**  
-An explicitly defined bundle of responsibilities, authority, and accountability, independent of the person holding it.
+**Rolle (Role)**  
+Ein explizit definiertes Bündel aus Verantwortlichkeiten, Autorität und Rechenschaftspflicht, unabhängig von der Person, die die Rolle innehat.
 
-**Safety-Critical**  
-A condition where physical, psychological, or child safety is at risk, requiring elevated safeguards and potentially immediate protective action.
+**Sicherheitskritisch (Safety-Critical)**  
+Ein Zustand, in dem physische, psychische oder Kindersicherheit gefährdet ist und erhöhte Schutzmaßnahmen sowie potenziell sofortige Schutzmaßnahmen erforderlich sind.
 
-**Sanction**  
-A defined, documented restriction or corrective action applied through authorized process, proportionate to a violation and subject to review.
+**Sanktion (Sanction)**  
+Eine definierte, dokumentierte Einschränkung oder Korrekturmaßnahme, die durch ein autorisiertes Verfahren verhängt wird, verhältnismäßig zu einem Verstoß und der Überprüfung unterliegend.
 
-**Scope**  
-The explicitly declared domains, assets, and activities over which the community exercises authority.
+**Geltungsbereich (Scope)**  
+Die explizit erklärten Domänen, Vermögenswerte und Aktivitäten, über die die Gemeinschaft Autorität ausübt.
 
-**Stewardship**  
-Responsibility for care, maintenance, and governance of a resource within defined boundaries.
+**Verwaltung (Stewardship)**  
+Verantwortung für Pflege, Instandhaltung und Governance einer Ressource innerhalb definierter Grenzen.
 
-**Treasury**  
-The set of shared resources, balances, obligations, and commitments held under collective rules.
+**Gemeinschaftskasse (Treasury)**  
+Die Gesamtheit der gemeinsamen Ressourcen, Guthaben, Verpflichtungen und Zusagen, die unter kollektiven Regeln gehalten werden.
 
-**Treasury Ruleset**  
-An artifact defining how treasury resources are held, spent, reported, audited, and constrained, including thresholds and conflict-of-interest rules.
+**Regelwerk der Gemeinschaftskasse (Treasury Ruleset)**  
+Ein Artefakt, das definiert, wie Ressourcen der Gemeinschaftskasse gehalten, ausgegeben, berichtet, geprüft und begrenzt werden, einschließlich Schwellenwerten und Regeln für Interessenkonflikte.
 
-**Transparency Exception**  
-An explicitly defined, justified, time-bounded limitation on information access that still permits compliance auditing.
+**Transparenzausnahme (Transparency Exception)**  
+Eine explizit definierte, begründete, zeitlich begrenzte Einschränkung des Informationszugangs, die dennoch eine Konformitätsprüfung ermöglicht.
 
-**Version History**  
-An artifact recording which version is in force and documenting adopted changes, effective dates, and decision references.
+**Versionsgeschichte (Version History)**  
+Ein Artefakt, das festhält, welche Version in Kraft ist, und angenommene Änderungen, Geltungsdaten und Entscheidungsreferenzen dokumentiert.
 
 
 ---
 
-# Appendix B — Example Artifacts (Non-Normative)
+# Anhang B — Beispiel-Artefakte (nicht normativ)
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
+Dieser Anhang bietet **illustrative Beispiele** für Artefakte, auf die in der Spezifikation verwiesen wird.  
+Die Beispiele dienen nur zur Information und sollten nicht als vorgeschriebene Formate oder Implementierungen behandelt werden.
 
+## B.1 Beispiel Zweck-Charta (Auszug)
 
-This appendix provides **illustrative examples** of artifacts referenced in the specification.  
-Examples are informative only and should not be treated as required formats or implementations.
-
-## B.1 Example Purpose Charter (Excerpt)
-
-- Primary purpose (singular): “Maintain and steward a shared, regenerative living place that provides stable housing and ecological restoration.”
-- Secondary purposes (bounded):
-  - “Operate a small educational program on regenerative practices.”
-  - “Run a member-owned cooperative for local food production.”
-- Non-goals / exclusions:
-  - “Not a political party.”
-  - “Not a short-term project collective.”
-  - “Not a for-profit real estate vehicle.”
-- Conditions for purpose change:
-  - “Purpose changes require a constitutional decision and full re-ratification.”
-- Ratification record:
-  - Adopted: 2026-01-01
-  - Decision type: Constitutional
+- Primärer Zweck (einzeln): „Ein geteiltes, regeneratives Wohnprojekt pflegen und verwalten, das stabiles Wohnen und ökologische Wiederherstellung bietet."
+- Sekundäre Zwecke (begrenzt):
+  - „Ein kleines Bildungsprogramm zu regenerativen Praktiken betreiben."
+  - „Eine mitgliedereigene Genossenschaft für lokale Lebensmittelproduktion führen."
+- Nicht-Ziele / Ausschlüsse:
+  - „Keine politische Partei."
+  - „Kein kurzfristiges Projektkollektiv."
+  - „Kein gewinnorientiertes Immobilienvehikel."
+- Bedingungen für eine Zweckänderung:
+  - „Zweckänderungen erfordern eine konstitutionelle Entscheidung und vollständige Neu-Ratifizierung."
+- Ratifizierungsprotokoll:
+  - Angenommen: 2026-01-01
+  - Entscheidungstyp: Konstitutionell
   - Version: 0.3
-  - Decision record link: [placeholder]
+  - Link zum Entscheidungsprotokoll: [Platzhalter]
 
-## B.2 Example Scope Declaration (Excerpt)
+## B.2 Beispiel Geltungsbereichserklärung (Auszug)
 
-- In-scope assets:
-  - Land parcel “North Field”
-  - Buildings: “Common House”, “Workshop”
-  - Shared funds: operating treasury, reserve fund
-  - Shared infrastructure: water system, solar array, shared vehicles
-- In-scope authority domains:
-  - Governance rules and decision process (Layer 2)
-  - Membership rules and states (Layer 1)
-  - Treasury and shared resource allocation (Layer 3)
-  - Operational coordination for shared work (Layer 5)
-- Out-of-scope domains:
-  - Personal income, private debt, and private bank accounts
-  - Private relationships and private living spaces (except safety-critical conditions)
-  - Off-site businesses not using community assets
+- Im Geltungsbereich liegende Vermögenswerte:
+  - Grundstück „Nordfeld"
+  - Gebäude: „Gemeinschaftshaus", „Werkstatt"
+  - Gemeinsame Mittel: Betriebskasse, Rücklagenfonds
+  - Gemeinsame Infrastruktur: Wassersystem, Solaranlage, geteilte Fahrzeuge
+- Im Geltungsbereich liegende Autoritätsbereiche:
+  - Governance-Regeln und Entscheidungsprozess (Layer 2)
+  - Mitgliedschaftsregeln und -zustände (Layer 1)
+  - Kasse und gemeinsame Ressourcenverteilung (Layer 3)
+  - Operative Koordination für gemeinsame Arbeit (Layer 5)
+- Außerhalb des Geltungsbereichs:
+  - Persönliches Einkommen, private Schulden und private Bankkonten
+  - Private Beziehungen und private Wohnräume (außer bei sicherheitskritischen Bedingungen)
+  - Externe Unternehmen, die keine Gemeinschaftsressourcen nutzen
 
-## B.3 Example Decision Matrix (Excerpt)
+## B.3 Beispiel Entscheidungsmatrix (Auszug)
 
-| Decision Domain | Decision Type | Authorized Body | Mechanism | Threshold | Escalation |
+| Entscheidungsbereich | Entscheidungstyp | Autorisiertes Gremium | Mechanismus | Schwelle | Eskalation |
 |----------------|--------------|-----------------|-----------|-----------|------------|
-| Budget approval (annual) | Strategic | Finance Circle | Consent | No objections | General Circle |
-| Emergency spend ≤ 500 | Operational | Treasurer | Delegated authority | N/A | Finance Circle |
-| Spend 501–5,000 | Strategic | Finance Circle | Vote | Majority | General Circle |
-| Add/remove a core invariant | Constitutional | General Circle | Vote | Supermajority (80%) | Constitutional review |
-| Role appointment | Operational | Circle Lead | Consent | No objections | Governance Circle |
+| Budgetfreigabe (jährlich) | Strategisch | Finanzkreis | Konsent | Keine Einwände | Allgemeiner Kreis |
+| Notausgabe ≤ 500 | Operativ | Kassenwart:in | Delegierte Autorität | N/A | Finanzkreis |
+| Ausgabe 501–5.000 | Strategisch | Finanzkreis | Abstimmung | Mehrheit | Allgemeiner Kreis |
+| Kern-Invariante hinzufügen/entfernen | Konstitutionell | Allgemeiner Kreis | Abstimmung | Supermehrheit (80 %) | Konstitutionelle Prüfung |
+| Rollenernennung | Operativ | Kreisleitung | Konsent | Keine Einwände | Governance-Kreis |
 
-## B.4 Example Internal Economy Protocol (Excerpt)
+## B.4 Beispiel Internes Wirtschaftsprotokoll (Auszug)
 
-- Recognized contribution categories:
-  - Labor (maintenance, construction, food production)
-  - Care (childcare, elder care, conflict support)
-  - Knowledge (training, documentation, facilitation)
-  - Stewardship (resource maintenance, procurement oversight)
-- Recording mechanism:
-  - Weekly contribution log submitted by members
-  - Monthly review by the Operations Circle for consistency and corrections
-- Internal units (optional):
-  - “Time credits” tracked in hours for certain shared allocations
-- Accumulation constraints (if internal units exist):
-  - Caps on balance
-  - Expiration after 12 months unless renewed by review
-- Dispute and correction:
-  - Any member may request review of a record within 30 days
-  - Corrections require documented rationale and are logged in a change history
+- Anerkannte Beitragskategorien:
+  - Arbeit (Instandhaltung, Bau, Lebensmittelproduktion)
+  - Fürsorge (Kinderbetreuung, Altenpflege, Konfliktunterstützung)
+  - Wissen (Schulung, Dokumentation, Moderation)
+  - Verwaltung (Ressourcenpflege, Beschaffungsaufsicht)
+- Erfassungsmechanismus:
+  - Wöchentliches Beitragsprotokoll, eingereicht von den Mitgliedern
+  - Monatliche Prüfung durch den Betriebskreis auf Konsistenz und Korrekturen
+- Interne Einheiten (optional):
+  - „Zeitguthaben", erfasst in Stunden für bestimmte gemeinsame Zuteilungen
+- Akkumulationsbeschränkungen (falls interne Einheiten existieren):
+  - Obergrenzen für Guthaben
+  - Verfall nach 12 Monaten, sofern nicht durch Prüfung verlängert
+- Einspruch und Korrektur:
+  - Jedes Mitglied kann innerhalb von 30 Tagen eine Überprüfung eines Eintrags beantragen
+  - Korrekturen erfordern eine dokumentierte Begründung und werden in einer Änderungshistorie protokolliert
 
-## B.5 Example Conflict Resolution Ladder (Excerpt)
+## B.5 Beispiel Konfliktlösungsleiter (Auszug)
 
-1. Direct conversation (informal repair)  
-2. Facilitated mediation (neutral facilitator selected from an approved list)  
-3. Accountability intake (documented intake; anti-retaliation safeguards activated)  
-4. Accountability review (findings, repair plan, and proportional responses)  
-5. Governance decision (if authority, access, or roles must change)  
-6. Separation process (if required; coordinated with Layer 1 exit and separation protocol)
+1. Direktes Gespräch (informelle Klärung)  
+2. Begleitete Mediation (neutrale Moderation, ausgewählt aus einer genehmigten Liste)  
+3. Verantwortlichkeits-Aufnahme (dokumentierte Aufnahme; Schutzmaßnahmen gegen Vergeltung aktiviert)  
+4. Verantwortlichkeits-Prüfung (Ergebnisse, Reparaturplan und verhältnismäßige Maßnahmen)  
+5. Governance-Entscheidung (falls Autorität, Zugang oder Rollen geändert werden müssen)  
+6. Trennungsprozess (falls erforderlich; koordiniert mit Layer 1 Austritts- und Trennungsprotokoll)
 
-## B.6 Example Change Proposal Template (Excerpt)
+## B.6 Beispiel Änderungsvorschlag-Vorlage (Auszug)
 
-- Change title:
-- Summary (1–3 sentences):
-- Affected layers and artifacts (links):
-- Change type:
-  - Permanent change / Experiment
-- Decision type and authorized decision path (Decision Matrix reference):
-- Rationale:
-- Risks and mitigations:
-- Transition and migration plan:
-- Rollback plan and rollback triggers:
-- Effective date and review date:
+- Änderungstitel:
+- Zusammenfassung (1–3 Sätze):
+- Betroffene Layer und Artefakte (Links):
+- Änderungstyp:
+  - Dauerhafte Änderung / Experiment
+- Entscheidungstyp und autorisierter Entscheidungsweg (Verweis auf Entscheidungsmatrix):
+- Begründung:
+- Risiken und Gegenmaßnahmen:
+- Übergangs- und Migrationsplan:
+- Rollback-Plan und Rollback-Auslöser:
+- Datum des Inkrafttretens und Überprüfungsdatum:
 
-## B.7 Example Membership Agreement (Excerpt)
+## B.7 Beispiel Mitgliedschaftsvereinbarung (Auszug)
 
-- Membership state on signing: Trial / Full
-- Member rights (examples):
-  - Access to the decision records defined as transparent
-  - Participation rights according to decision type
-  - A defined exit pathway at all times
-- Member obligations (examples):
-  - Contribution expectations as defined by role and membership state
-  - Adherence to declared invariants and safety rules
-  - Participation in minimum onboarding and review processes
-- Due process reference:
-  - “Any forced exit or access restriction follows Layer 4 due process and the exit protocol.”
+- Mitgliedschaftsstatus bei Unterzeichnung: Probe / Voll
+- Mitgliedsrechte (Beispiele):
+  - Zugang zu den als transparent definierten Entscheidungsprotokollen
+  - Teilnahmerechte gemäß Entscheidungstyp
+  - Ein definierter Austrittspfad zu jeder Zeit
+- Mitgliedspflichten (Beispiele):
+  - Beitragserwartungen gemäß Rolle und Mitgliedschaftsstatus
+  - Einhaltung der erklärten Invarianten und Sicherheitsregeln
+  - Teilnahme an Mindest-Onboarding- und Überprüfungsprozessen
+- Verweis auf ordnungsgemäßes Verfahren:
+  - „Jeder erzwungene Austritt oder Zugangsbeschränkung folgt dem Layer 4 ordnungsgemäßen Verfahren und dem Austrittsprotokoll."
 
-## B.8 Example Onboarding Protocol (Excerpt)
+## B.8 Beispiel Onboarding-Protokoll (Auszug)
 
-1. Provide access to RCOS artifacts (Layers 0–6) and local modules
-2. Confirm explicit consent to Layer 0 and Layer 1 artifacts
-3. Assign initial membership state and onboarding buddy
-4. Complete safety and conflict process orientation
-5. Review scope boundaries and what is out of scope
-6. Record onboarding completion in the membership registry
+1. Zugang zu RCOS-Artefakten (Layer 0–6) und lokalen Modulen bereitstellen
+2. Ausdrückliche Zustimmung zu Layer 0 und Layer 1 Artefakten bestätigen
+3. Initialen Mitgliedschaftsstatus und Onboarding-Buddy zuweisen
+4. Orientierung zu Sicherheits- und Konfliktprozessen abschließen
+5. Geltungsbereichsgrenzen und was außerhalb des Geltungsbereichs liegt besprechen
+6. Onboarding-Abschluss im Mitgliedschaftsregister dokumentieren
 
-## B.9 Example Role Registry Entry (Excerpt)
+## B.9 Beispiel Rollenregister-Eintrag (Auszug)
 
-- Role name: Treasurer
-- Purpose: Maintain treasury records and execute authorized payments
-- Authority scope:
-  - Execute payments ≤ 500 within approved categories
-- Limits:
-  - No authority to approve budgets or alter transparency rules
-- Term:
-  - 6 months, renewable once without review
-- Accountability:
-  - Monthly published treasury report; quarterly audit check
-- Appointment/removal:
-  - Appointed by Finance Circle; removable by Governance Circle review
+- Rollenname: Kassenwart:in
+- Zweck: Kassenunterlagen pflegen und autorisierte Zahlungen ausführen
+- Autoritätsumfang:
+  - Zahlungen ≤ 500 innerhalb genehmigter Kategorien ausführen
+- Beschränkungen:
+  - Keine Befugnis, Budgets zu genehmigen oder Transparenzregeln zu ändern
+- Amtszeit:
+  - 6 Monate, einmal ohne Prüfung verlängerbar
+- Rechenschaftspflicht:
+  - Monatlich veröffentlichter Kassenbericht; vierteljährliche Prüfung
+- Ernennung/Abberufung:
+  - Ernannt durch den Finanzkreis; abberufbar durch Prüfung des Governance-Kreises
 
-## B.10 Example Treasury Ruleset (Excerpt)
+## B.10 Beispiel Kassenregelwerk (Auszug)
 
-- Transparency:
-  - Monthly balance sheet and cash-flow summary published to all members
-- Spending thresholds:
+- Transparenz:
+  - Monatliche Bilanz und Cashflow-Zusammenfassung, veröffentlicht für alle Mitglieder
+- Ausgabenschwellen:
 
-| Amount | Decision Type | Authorized Body | Mechanism |
+| Betrag | Entscheidungstyp | Autorisiertes Gremium | Mechanismus |
 |---:|---|---|---|
-| ≤ 500 | Operational | Treasurer | Delegated |
-| 501–5,000 | Strategic | Finance Circle | Majority vote |
-| > 5,000 | Strategic | General Circle | Majority vote |
-| Debt / long-term obligation | Constitutional | General Circle | Supermajority |
+| ≤ 500 | Operativ | Kassenwart:in | Delegiert |
+| 501–5.000 | Strategisch | Finanzkreis | Mehrheitsabstimmung |
+| > 5.000 | Strategisch | Allgemeiner Kreis | Mehrheitsabstimmung |
+| Schulden / langfristige Verpflichtung | Konstitutionell | Allgemeiner Kreis | Supermehrheit |
 
-- Conflict-of-interest:
-  - A requester may not approve their own spending request
+- Interessenkonflikt:
+  - Ein:e Antragsteller:in darf den eigenen Ausgabenantrag nicht genehmigen
 
-## B.11 Example Meeting Template (Excerpt)
+## B.11 Beispiel Besprechungsvorlage (Auszug)
 
-- Meeting type: Operations
-- Date/time:
-- Facilitator:
-- Attendees:
-- Agenda:
-  1. Check-ins (time-boxed)
-  2. Review last actions
-  3. Operational updates
-  4. Decisions (if any)
-  5. Next actions and owners
-- Decision record (if used):
-  - Decision type:
-  - Authority:
-  - Mechanism/threshold:
-  - Outcome:
-  - Effective date:
+- Besprechungstyp: Operativ
+- Datum/Uhrzeit:
+- Moderation:
+- Teilnehmende:
+- Tagesordnung:
+  1. Check-in (zeitlich begrenzt)
+  2. Letzte Aktionen überprüfen
+  3. Operative Updates
+  4. Entscheidungen (falls vorhanden)
+  5. Nächste Aktionen und Verantwortliche
+- Entscheidungsprotokoll (falls verwendet):
+  - Entscheidungstyp:
+  - Autorität:
+  - Mechanismus/Schwelle:
+  - Ergebnis:
+  - Datum des Inkrafttretens:
 
-## B.12 Example Learning Log Entry (Excerpt)
+## B.12 Beispiel Lernprotokoll-Eintrag (Auszug)
 
-- Date:
-- Trigger event:
-- What happened (short narrative):
-- Layers/artifacts implicated:
-- Signals that triggered action:
-- What changed (or what was tried):
-- Outcome after review:
-- Follow-up action owner and due date:
+- Datum:
+- Auslösendes Ereignis:
+- Was ist passiert (kurze Beschreibung):
+- Betroffene Layer/Artefakte:
+- Signale, die zur Handlung geführt haben:
+- Was wurde geändert (oder versucht):
+- Ergebnis nach Überprüfung:
+- Verantwortliche:r für Folgeaktion und Fälligkeitsdatum:
 
 
 ---
 
-# Appendix C — Reference Implementation Summary
+# Anhang C — Zusammenfassung der Referenzimplementierung
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
+Dieser Anhang definiert eine **empfohlene Dokumentationsstruktur** für Gemeinschaften, die sich als RCOS-Referenzimplementierungen präsentieren möchten. Ziel ist es, die Übernahme überprüfbar, vergleichbar und lernbar zu machen, ohne eine Befürwortung zu implizieren.
 
+## C.1 Gemeinschaftskontext
 
-This appendix defines a **recommended documentation structure** for communities that wish to present themselves as RCOS Reference Implementations. The goal is to make adoption auditable, comparable, and learnable without implying endorsement.
+- Name und Standort
+- Größe und Umfang (z. B. 12 Mitglieder; 3 Haushalte; 25 Hektar)
+- Hauptzweck (Layer 0)
+- Gründungsdatum und Datum der RCOS-Übernahme (falls abweichend)
+- Relevante Rechtsform(en) (falls vorhanden)
+- Öffentliche Kontaktstelle
 
-## C.1 Community Context
+## C.2 Überblick zur RCOS-Übernahme
 
-- Name and location
-- Size and scale (e.g., 12 members; 3 households; 25 hectares)
-- Primary purpose (Layer 0)
-- Date of founding and date of RCOS adoption (if different)
-- Relevant legal form(s) (if any)
-- Public contact point
+- Verwendete RCOS-Core-Version
+- Referenz zum Übernahme-Entscheidungsprotokoll (Autorität, Mechanismus, Datum)
+- Zusammenfassung der übernommenen optionalen Module (falls vorhanden), einschließlich:
+  - Modulname und Geltungsbereich
+  - Übernahmedatum
+  - Link zur Modulspezifikation
+  - Deklarierte Layer-Abhängigkeiten
 
-## C.2 RCOS Adoption Overview
+## C.3 Layer-für-Layer-Zusammenfassung
 
-- RCOS-Core version in use
-- Adoption decision record reference (authority, mechanism, date)
-- Summary of adopted Optional Modules (if any), including:
-  - Module name and scope
-  - Date adopted
-  - Link to module specification
-  - Declared layer dependencies
+Für jeden Layer (0–6):
+- Implementierte Artefakte (mit Links)
+- Abweichungen oder Anpassungen (mit Links)
+- Bekannte Herausforderungen und aufgetretene Fehlermodi
 
-## C.3 Layer-by-Layer Summary
+Empfohlenes Format:
 
-For each layer (0–6):
-- Implemented artifacts (with links)
-- Deviations or adaptations (with links)
-- Known challenges and failure modes encountered
-
-Recommended format:
-
-| Layer | Required artifacts implemented | Public link(s) | Version/date | Notes |
+| Layer | Implementierte Pflichtartefakte | Öffentliche(r) Link(s) | Version/Datum | Anmerkungen |
 |---:|---|---|---|---|
-| 0 | Purpose Charter; Scope Declaration; Invariants Register | [placeholder] | v0.3 / 2026-01-01 | Purpose stable; invariants reviewed quarterly |
-| 1 | Membership Agreement; Onboarding Protocol; Exit & Separation Protocol; Membership State Registry | [placeholder] | v1.1 / 2026-02-15 | Trial period is 3 months |
-| 2 | Decision Matrix; Governance Protocol; Authority Registry | [placeholder] | v0.8 / 2026-03-10 | Consent for ops, vote for strategic |
-| 3 | Internal Economy Protocol; Treasury Ruleset | [placeholder] | v0.5 / 2026-03-20 | Monthly treasury reports published |
-| 4 | Conflict Resolution Ladder; Accountability Protocol | [placeholder] | v0.6 / 2026-04-01 | Anti-retaliation policy included |
-| 5 | Operations Manual; Role Registry; Meeting Templates | [placeholder] | v0.4 / 2026-04-15 | Meeting load capped at 4h/week |
-| 6 | Change Protocol; Version History; Learning Log | [placeholder] | v0.2 / 2026-05-01 | Experiments expire unless renewed |
+| 0 | Purpose Charter; Scope Declaration; Invariants Register | [Platzhalter] | v0.3 / 2026-01-01 | Zweck stabil; Invarianten werden vierteljährlich überprüft |
+| 1 | Membership Agreement; Onboarding Protocol; Exit & Separation Protocol; Membership State Registry | [Platzhalter] | v1.1 / 2026-02-15 | Probezeit beträgt 3 Monate |
+| 2 | Decision Matrix; Governance Protocol; Authority Registry | [Platzhalter] | v0.8 / 2026-03-10 | Konsent für operative, Abstimmung für strategische Entscheidungen |
+| 3 | Internal Economy Protocol; Treasury Ruleset | [Platzhalter] | v0.5 / 2026-03-20 | Monatliche Kassenberichte werden veröffentlicht |
+| 4 | Conflict Resolution Ladder; Accountability Protocol | [Platzhalter] | v0.6 / 2026-04-01 | Anti-Vergeltungsrichtlinie enthalten |
+| 5 | Operations Manual; Role Registry; Meeting Templates | [Platzhalter] | v0.4 / 2026-04-15 | Sitzungsbelastung auf 4 Std./Woche begrenzt |
+| 6 | Change Protocol; Version History; Learning Log | [Platzhalter] | v0.2 / 2026-05-01 | Experimente verfallen, wenn nicht erneuert |
 
-## C.4 Governance and Evolution
+## C.4 Governance und Weiterentwicklung
 
-- Decision mechanisms in use (with Decision Matrix excerpt or link)
-- Change and experiment history (with links to change records)
-- Major learnings and failures (with links to Learning Log entries)
-- Deviations register (recommended):
+- Verwendete Entscheidungsmechanismen (mit Auszug aus der Decision Matrix oder Link)
+- Änderungs- und Experimentverlauf (mit Links zu Änderungsprotokollen)
+- Wichtige Erkenntnisse und Fehlschläge (mit Links zu Learning-Log-Einträgen)
+- Abweichungsregister (empfohlen):
 
-| Item | Layer(s) | Type | Status | Start | Review/End | Link |
+| Gegenstand | Layer | Typ | Status | Beginn | Überprüfung/Ende | Link |
 |---|---|---|---|---|---|---|
-| Rotating facilitation trial | 5 | Experiment | Active | 2026-06-01 | 2026-08-01 | [placeholder] |
-| Treasury transparency exception (safety) | 3/4 | Permanent | Active | 2026-04-10 | Annual review | [placeholder] |
+| Versuch mit rotierender Moderation | 5 | Experiment | Aktiv | 2026-06-01 | 2026-08-01 | [Platzhalter] |
+| Ausnahme bei Kassentransparenz (Sicherheit) | 3/4 | Permanent | Aktiv | 2026-04-10 | Jährliche Überprüfung | [Platzhalter] |
 
 
-## C.5 Compliance Statement
-- Current compliance status: Compliant / Non-compliant / Unknown
-- Date of last self-audit or external audit
-- Audit method (self-audit vs external)
-- Known non-compliance periods (if any) and remediation summary
-- Evidence links (recommended):
+## C.5 Compliance-Erklärung
+- Aktueller Compliance-Status: Konform / Nicht konform / Unbekannt
+- Datum des letzten Selbst-Audits oder externen Audits
+- Audit-Methode (Selbst-Audit vs. extern)
+- Bekannte Zeiträume der Nicht-Konformität (falls vorhanden) und Zusammenfassung der Abhilfemaßnahmen
+- Nachweislinks (empfohlen):
 
-| Evidence | Date | Link |
+| Nachweis | Datum | Link |
 |---|---:|---|
-| Layer-by-layer checklist result | 2026-07-01 | [placeholder] |
-| Audit notes / findings | 2026-07-01 | [placeholder] |
-| Remediation log | 2026-07-15 | [placeholder] |
-- Known non-compliance periods (if any)  
+| Layer-für-Layer-Checklisten-Ergebnis | 2026-07-01 | [Platzhalter] |
+| Audit-Notizen / Feststellungen | 2026-07-01 | [Platzhalter] |
+| Abhilfemaßnahmen-Protokoll | 2026-07-15 | [Platzhalter] |
+- Bekannte Zeiträume der Nicht-Konformität (falls vorhanden)  
 
-## C.6 Public Transparency
-- Public artifact index (recommended):
+## C.6 Öffentliche Transparenz
+- Öffentlicher Artefakt-Index (empfohlen):
 
-| Artifact | Layer | Public link | Version/date | Notes |
+| Artefakt | Layer | Öffentlicher Link | Version/Datum | Anmerkungen |
 |---|---:|---|---:|---|
-| Purpose Charter | 0 | [placeholder] | 2026-01-01 | |
-| Decision Matrix | 2 | [placeholder] | 2026-03-10 | |
-| Treasury reports | 3 | [placeholder] | 2026-06-30 | monthly |
-| Learning Log | 6 | [placeholder] | 2026-06-15 | redactions noted |
+| Purpose Charter | 0 | [Platzhalter] | 2026-01-01 | |
+| Decision Matrix | 2 | [Platzhalter] | 2026-03-10 | |
+| Kassenberichte | 3 | [Platzhalter] | 2026-06-30 | monatlich |
+| Learning Log | 6 | [Platzhalter] | 2026-06-15 | Schwärzungen vermerkt |
 
-- Contact or inquiry channel
-- Explicit statement of what is private vs public, and why
-- Link to current RCOS-Core version used and change log
-- Contact or inquiry channel  
+- Kontakt- oder Anfragekanal
+- Ausdrückliche Erklärung, was privat vs. öffentlich ist und warum
+- Link zur aktuell verwendeten RCOS-Core-Version und zum Änderungsprotokoll
+- Kontakt- oder Anfragekanal  
 
 ---
 
-## Informative Note
+## Informationshinweis
 
-Reference Implementations are learning instruments, not endorsements.
+Referenzimplementierungen sind Lerninstrumente, keine Befürwortungen.
 

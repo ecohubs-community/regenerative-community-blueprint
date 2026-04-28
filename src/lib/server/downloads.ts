@@ -102,8 +102,18 @@ export type ArticleDownloads = TemplateDownloads | SpecDownload;
 
 /* ---------- manifest loading ---------- */
 
-let cachedTemplates: Manifest | null | undefined;
-let cachedCore: CoreManifest | null | undefined;
+// We deliberately do NOT cache the parsed manifests in module-level state. The
+// previous implementation cached on first read for the lifetime of the process,
+// which meant: in dev, if you re-ran `pnpm run build:downloads` while the dev
+// server was running, the SvelteKit process kept serving the old manifest until
+// it was restarted. That's a footgun.
+//
+// The manifests are ~7 KB of JSON. Parsing them per article request is
+// negligible (sub-millisecond) and not on a hot path that warrants caching —
+// a typical request hits the manifest at most twice (templates + core) and
+// pages are heavily prerendered anyway. If profiling ever shows this as a
+// bottleneck, a mtime-based invalidation cache is the right next step, not
+// the all-or-nothing module cache that was here before.
 
 function resolveAssetPath(relPath: string): string | null {
   const here = path.dirname(fileURLToPath(import.meta.url));
@@ -127,15 +137,11 @@ function loadJson<T>(relPath: string): T | null {
 }
 
 export function loadManifest(): Manifest | null {
-  if (cachedTemplates !== undefined) return cachedTemplates;
-  cachedTemplates = loadJson<Manifest>('static/downloads/manifest-templates.json');
-  return cachedTemplates;
+  return loadJson<Manifest>('static/downloads/manifest-templates.json');
 }
 
 export function loadCoreManifest(): CoreManifest | null {
-  if (cachedCore !== undefined) return cachedCore;
-  cachedCore = loadJson<CoreManifest>('static/downloads/manifest-core.json');
-  return cachedCore;
+  return loadJson<CoreManifest>('static/downloads/manifest-core.json');
 }
 
 /* ---------- locale-aware lookup helpers ---------- */

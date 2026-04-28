@@ -1,203 +1,201 @@
 **RCOS – Regenerative Community Operating System**
 
-# Operations Manual
+# Betriebshandbuch
 
 - **Generiert:** 2026-04-28
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-5/operations-manual](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-5/operations-manual)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
-
 ---
-- **Layer:** 5 — Operations & Coordination
-- **Status:** Template — adapt for your community
-- **RCOS reference:** [§7.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [§7.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [§7.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [§7.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#75-operational-continuity), [§7.6](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)
+- **Ebene:** 5 — Betrieb & Koordination
+- **Status:** Vorlage — für eure Gemeinschaft anpassen
+- **RCOS-Referenz:** [§7.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [§7.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [§7.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [§7.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#75-operational-continuity), [§7.6](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)
 
 ---
 
-## Core Operational Processes
+## Zentrale Betriebsprozesse
 
-*RCOS clauses: [7.3.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.7.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants), [7.6.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)*
+*RCOS-Klauseln: [7.3.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.7.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants), [7.6.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts)*
 
 <details data-kind="rationale">
-<summary>Why document critical processes?</summary>
+<summary>Warum kritische Prozesse dokumentieren?</summary>
 
-If a process only lives in one person's head, the community depends on that person showing up — forever. Writing the critical processes down, with named owners, is what converts private knowledge into a community asset that survives handovers, absences, and exits.
+Wenn ein Prozess nur im Kopf einer einzigen Person existiert, hängt die Gemeinschaft davon ab, dass diese Person immer verfügbar ist — für immer. Kritische Prozesse schriftlich festzuhalten, mit benannten Verantwortlichen, verwandelt privates Wissen in ein Gemeinschaftsgut, das Übergaben, Abwesenheiten und Austritte übersteht.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-For every recurring critical process (onboarding, exit, proposal publication, contribution recording, meeting cadence, treasury management, platform access review), name an owner and a brief description.
+Benennt für jeden wiederkehrenden kritischen Prozess (Onboarding, Austritt, Antragsveröffentlichung, Beitragserfassung, Sitzungsrhythmus, Kassenverwaltung, Überprüfung von Plattformzugängen) eine verantwortliche Person und eine kurze Beschreibung.
 
 </details>
 
-| Process | Who | Detail |
+| Prozess | Wer | Detail |
 |---|---|---|
-| _<Member onboarding>_ | _<role>_ | _<see Onboarding Protocol (Layer 1)>_ |
-| _<Member exit>_ | _<role>_ | _<see Exit & Separation Protocol (Layer 1)>_ |
-| _<Proposal publication>_ | _<role>_ | _<see Governance Protocol (Layer 2)>_ |
-| _<Contribution recording>_ | _<role>_ | _<see Internal Economy Protocol (Layer 3)>_ |
-| _<Recurring meeting>_ | _<facilitator>_ | _<agenda publication; notes; action tracking>_ |
-| _<Treasury management>_ | _<finance steward>_ | _<see Treasury Ruleset (Layer 3)>_ |
-| _<Platform access review>_ | _<infrastructure steward>_ | _<review cadence; access revocation for exited members>_ |
+| _<Mitglieder-Onboarding>_ | _<Rolle>_ | _<siehe Onboarding-Protokoll (Ebene 1)>_ |
+| _<Mitgliederaustritt>_ | _<Rolle>_ | _<siehe Austritts- & Trennungsprotokoll (Ebene 1)>_ |
+| _<Antragsveröffentlichung>_ | _<Rolle>_ | _<siehe Governance-Protokoll (Ebene 2)>_ |
+| _<Beitragserfassung>_ | _<Rolle>_ | _<siehe Binnenwirtschaftsprotokoll (Ebene 3)>_ |
+| _<Regelmäßige Sitzung>_ | _<Moderation>_ | _<Agenda-Veröffentlichung; Protokoll; Aufgabennachverfolgung>_ |
+| _<Kassenverwaltung>_ | _<Finanzverantwortliche:r>_ | _<siehe Kassenordnung (Ebene 3)>_ |
+| _<Überprüfung der Plattformzugänge>_ | _<Infrastrukturverantwortliche:r>_ | _<Prüfrhythmus; Zugangsentzug für ausgetretene Mitglieder>_ |
 
-## Temporary and Ad-Hoc Responsibilities
+## Temporäre und Ad-hoc-Verantwortlichkeiten
 
-*RCOS clauses: [7.1.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.1.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.7.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants)*
+*RCOS-Klauseln: [7.1.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.1.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#71-roles-and-responsibilities), [7.7.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants)*
 
 <details data-kind="rationale">
-<summary>Why cap temporary responsibilities?</summary>
+<summary>Warum temporäre Verantwortlichkeiten begrenzen?</summary>
 
-Ad-hoc tasks quietly calcify into permanent unpaid jobs — usually on whoever said yes once. A hard time-box and a forced review make the difference between "I covered for a week" and "apparently this is my role now."
+Ad-hoc-Aufgaben verfestigen sich still und leise zu dauerhaften, unbezahlten Jobs — meist bei der Person, die einmal Ja gesagt hat. Eine feste Zeitbegrenzung und eine erzwungene Überprüfung machen den Unterschied zwischen „Ich bin eine Woche eingesprungen" und „Anscheinend ist das jetzt meine Aufgabe."
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-State that any temporary responsibility must be time-bounded at assignment, documented, reviewed before expiry, and either formalised or terminated.
+Haltet fest, dass jede temporäre Verantwortlichkeit bei der Zuweisung zeitlich begrenzt, dokumentiert und vor Ablauf überprüft werden muss — und dann entweder formalisiert oder beendet wird.
 
 </details>
 
-When a task or responsibility is assigned temporarily, it must be:
+Wenn eine Aufgabe oder Verantwortlichkeit temporär zugewiesen wird, muss sie:
 
-- _<Explicitly time-bounded from the outset (specific end date or completion condition).>_
-- _<Documented as temporary at the time of assignment.>_
-- _<Reviewed before the end date; converted to a formal role or terminated.>_
+- _<Von Anfang an ausdrücklich zeitlich begrenzt sein (konkretes Enddatum oder Abschlussbedingung).>_
+- _<Zum Zeitpunkt der Zuweisung als temporär dokumentiert werden.>_
+- _<Vor dem Enddatum überprüft und entweder in eine formale Rolle überführt oder beendet werden.>_
 
-_<Maximum duration of any temporary responsibility before it must be formally assigned or terminated — e.g. 90 days.>_ If a temporary responsibility has no owner after its end date, it lapses; it does not transfer implicitly.
+_<Maximale Dauer einer temporären Verantwortlichkeit, bevor sie formal zugewiesen oder beendet werden muss — z. B. 90 Tage.>_ Wenn eine temporäre Verantwortlichkeit nach ihrem Enddatum keine verantwortliche Person hat, erlischt sie; sie geht nicht stillschweigend auf jemand anderen über.
 
 ---
 
-## Role and Domain Interfaces
+## Rollen- und Zuständigkeitsschnittstellen
 
-*RCOS clauses: [7.6.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts), [7.3.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow)*
+*RCOS-Klauseln: [7.6.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#76-artifacts), [7.3.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow)*
 
 <details data-kind="rationale">
-<summary>Why map handoffs explicitly?</summary>
+<summary>Warum Übergaben explizit abbilden?</summary>
 
-Most operational failures happen not inside a role but between roles — at the boundaries where work moves from one owner to the next. Naming the handoffs turns invisible dependencies into reviewable ones, and prevents "I thought you had it" failures.
+Die meisten Betriebsfehler passieren nicht innerhalb einer Rolle, sondern zwischen Rollen — an den Schnittstellen, wo Arbeit von einer verantwortlichen Person zur nächsten wandert. Die Übergaben zu benennen macht unsichtbare Abhängigkeiten überprüfbar und verhindert „Ich dachte, du hättest dich drum gekümmert"-Situationen.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-For each pair of roles that pass work to each other, name the handoff and the type of work transferred.
+Benennt für jedes Rollenpaar, das Arbeit weitergibt, die Übergabe und die Art der übertragenen Arbeit.
 
 </details>
 
-| From | To | Handoff |
+| Von | An | Übergabe |
 |---|---|---|
-| _<role>_ | _<role>_ | _<what is handed off>_ |
-| _<role>_ | _<role>_ | _<...>_ |
+| _<Rolle>_ | _<Rolle>_ | _<was übergeben wird>_ |
+| _<Rolle>_ | _<Rolle>_ | _<...>_ |
 
-## Workload Boundaries
+## Belastungsgrenzen
 
-*RCOS clauses: [7.4.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.7.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants)*
+*RCOS-Klauseln: [7.4.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.7.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants)*
 
 <details data-kind="rationale">
-<summary>Why make workload limits explicit?</summary>
+<summary>Warum Belastungsgrenzen explizit machen?</summary>
 
-Unbounded coordination load is the default failure mode of volunteer communities — it quietly burns out the most committed members until they leave. Explicit, reviewable limits make capacity a shared concern rather than a private burden.
+Unbegrenzte Koordinationslast ist der Standard-Fehlermodus von Freiwilligengemeinschaften — sie brennt still die engagiertesten Mitglieder aus, bis sie gehen. Explizite, überprüfbare Grenzen machen Kapazität zu einer gemeinsamen Angelegenheit statt zu einer privaten Last.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-Set bounds on meeting load, role load, response-time expectations, and the path for renegotiating responsibilities.
+Legt Grenzen für Sitzungsbelastung, Rollenbelastung, Reaktionszeit-Erwartungen und den Weg zur Neuverhandlung von Verantwortlichkeiten fest.
 
 </details>
 
-- **Meeting load:** _<recurring meeting cadence and maximum duration; rules for extraordinary meetings.>_
-- **Role load:** _<cap if any; rule for flagging overload; resolution window.>_
-- **Response time expectations:** _<non-urgent async; urgent operational; safety-critical.>_
-- **Renegotiation and relief:** _<process for redistributing responsibilities; resolution window.>_
+- **Sitzungsbelastung:** _<Wiederkehrender Sitzungsrhythmus und maximale Dauer; Regeln für außerordentliche Sitzungen.>_
+- **Rollenbelastung:** _<Obergrenze falls vorhanden; Regel zur Überlastungsmeldung; Lösungsfrist.>_
+- **Reaktionszeit-Erwartungen:** _<Nicht-dringend asynchron; dringend betrieblich; sicherheitskritisch.>_
+- **Neuverhandlung und Entlastung:** _<Verfahren zur Umverteilung von Verantwortlichkeiten; Lösungsfrist.>_
 
-## Operational Continuity
+## Betriebliche Kontinuität
 
-*RCOS clauses: [7.5.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#75-operational-continuity), [7.5.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#75-operational-continuity), [7.5.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#75-operational-continuity)*
+*RCOS-Klauseln: [7.5.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#75-operational-continuity), [7.5.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#75-operational-continuity), [7.5.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#75-operational-continuity)*
 
 <details data-kind="rationale">
-<summary>Why plan for continuity now?</summary>
+<summary>Warum jetzt schon Kontinuität planen?</summary>
 
-A community that depends on one irreplaceable person is one illness, one conflict, or one exit away from collapse. Naming the single points of failure — honestly — and building handover into every role is what keeps the community surviving its founders.
+Eine Gemeinschaft, die von einer einzigen unersetzlichen Person abhängt, ist nur eine Krankheit, einen Konflikt oder einen Austritt vom Zusammenbruch entfernt. Die Single Points of Failure ehrlich zu benennen — und Übergaben in jede Rolle einzubauen — ist das, was die Gemeinschaft ihre Gründer:innen überleben lässt.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-Name current single points of failure honestly. State the handover requirement for each role and the cadence of continuity review.
+Benennt die aktuellen Single Points of Failure ehrlich. Haltet die Übergabe-Anforderungen pro Rolle und den Rhythmus der Kontinuitätsüberprüfung fest.
 
 </details>
 
-- **Current state:** _<honest list of single points of failure; recruitment plan to reduce concentration.>_
-- **Handover mechanisms:** _<reference handover requirements per role in the Role Registry; handover must be completed before a role is vacated.>_
-- **Continuity review cadence:** _<quarterly; ad hoc on role change.>_
+- **Aktueller Stand:** _<Ehrliche Auflistung der Single Points of Failure; Rekrutierungsplan zur Verringerung der Konzentration.>_
+- **Übergabe-Mechanismen:** _<Verweis auf die Übergabe-Anforderungen pro Rolle im Rollenregister; Übergabe muss abgeschlossen sein, bevor eine Rolle aufgegeben wird.>_
+- **Rhythmus der Kontinuitätsüberprüfung:** _<Vierteljährlich; ad hoc bei Rollenwechsel.>_
 
-## Information Flow and Anti-Gatekeeping
+## Informationsfluss und Anti-Gatekeeping
 
-*RCOS clauses: [7.3.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.7.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants), [7.3.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow)*
+*RCOS-Klauseln: [7.3.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.7.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants), [7.3.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow)*
 
 <details data-kind="rationale">
-<summary>Why treat information access as a governance issue?</summary>
+<summary>Warum Informationszugang als Governance-Thema behandeln?</summary>
 
-Whoever controls access to information controls the community, whether they mean to or not. Making access rules explicit — and disallowing sole points of access — is what prevents informal gatekeepers from accumulating the kind of power the governance system is supposed to check.
+Wer den Zugang zu Informationen kontrolliert, kontrolliert die Gemeinschaft — ob beabsichtigt oder nicht. Zugriffsregeln explizit zu machen — und alleinige Zugangspunkte zu untersagen — verhindert, dass informelle Gatekeeper die Art von Macht ansammeln, die das Governance-System eigentlich kontrollieren soll.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-State which records are open to all Full Members, the response window for information requests, and the rule against sole points of access for governance-relevant information.
+Haltet fest, welche Unterlagen allen Vollmitgliedern zugänglich sind, wie lang die Antwortfrist für Informationsanfragen ist und welche Regel gegen alleinige Zugangspunkte für governance-relevante Informationen gilt.
 
 </details>
 
-- _<Governance decisions accessible to all Full Members.>_
-- _<Meeting notes published within X hours.>_
-- _<Membership state and role assignments accessible.>_
-- _<Contribution records accessible.>_
-- _<Information request response window.>_
-- _<Withholding access to information members are entitled to is an accountability trigger under Layer 4.>_
-- _<No role or individual may be the sole point of access for information required by other role holders.>_
+- _<Governance-Entscheidungen sind für alle Vollmitglieder zugänglich.>_
+- _<Sitzungsprotokolle werden innerhalb von X Stunden veröffentlicht.>_
+- _<Mitgliedschaftsstatus und Rollenzuweisungen sind einsehbar.>_
+- _<Beitragsnachweise sind einsehbar.>_
+- _<Antwortfrist für Informationsanfragen.>_
+- _<Das Zurückhalten von Informationen, auf die Mitglieder Anspruch haben, ist ein Rechenschaftsauslöser gemäß Ebene 4.>_
+- _<Keine Rolle und keine Einzelperson darf der alleinige Zugangspunkt für Informationen sein, die andere Rolleninhaber:innen benötigen.>_
 
 ---
 
-## Documentation Locations and Update Procedures
+## Dokumentationsstandorte und Aktualisierungsverfahren
 
-*RCOS clauses: [7.3.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow)*
+*RCOS-Klauseln: [7.3.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow)*
 
 <details data-kind="rationale">
-<summary>Why name where every document lives?</summary>
+<summary>Warum festhalten, wo jedes Dokument lebt?</summary>
 
-If no one can say where the canonical version of something lives, there is no canonical version. Naming the location, owner, and review cadence for each document type is what makes the community's memory auditable rather than folkloric.
+Wenn niemand sagen kann, wo die kanonische Version von etwas liegt, gibt es keine kanonische Version. Für jeden Dokumenttyp den Ablageort, die verantwortliche Person und den Überprüfungsrhythmus zu benennen, macht das Gedächtnis der Gemeinschaft auditierbar statt folkloristisch.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie ihr das ausfüllt</summary>
 
-For each document type, name the canonical location, the owner, and the review cadence.
+Benennt für jeden Dokumenttyp den kanonischen Ablageort, die verantwortliche Person und den Überprüfungsrhythmus.
 
 </details>
 
-| Document type | Location | Owner | Review cadence |
+| Dokumenttyp | Ablageort | Verantwortlich | Überprüfungsrhythmus |
 |---|---|---|---|
-| _<RCOS artifacts>_ | _<location>_ | _<owner>_ | _<cadence>_ |
-| _<Member registry>_ | _<location>_ | _<owner>_ | _<cadence>_ |
-| _<Meeting notes>_ | _<location>_ | _<owner>_ | _<cadence>_ |
-| _<Governance proposals>_ | _<location>_ | _<owner>_ | _<cadence>_ |
-| _<Contribution records>_ | _<location>_ | _<owner>_ | _<cadence>_ |
+| _<RCOS-Artefakte>_ | _<Ablageort>_ | _<Verantwortlich>_ | _<Rhythmus>_ |
+| _<Mitgliederregister>_ | _<Ablageort>_ | _<Verantwortlich>_ | _<Rhythmus>_ |
+| _<Sitzungsprotokolle>_ | _<Ablageort>_ | _<Verantwortlich>_ | _<Rhythmus>_ |
+| _<Governance-Anträge>_ | _<Ablageort>_ | _<Verantwortlich>_ | _<Rhythmus>_ |
+| _<Beitragsnachweise>_ | _<Ablageort>_ | _<Verantwortlich>_ | _<Rhythmus>_ |
 
 ---
 
-## Ratification Record
+## Ratifizierungsnachweis
 
-- **Adopted:** <YYYY-MM-DD>
-- **Decision type:** Strategic
-- **Version:** <version>
-- **Decision record:** <link to decision record>
+- **Angenommen:** <JJJJ-MM-TT>
+- **Entscheidungstyp:** Strategisch
+- **Version:** <Version>
+- **Entscheidungsnachweis:** <Link zum Entscheidungsnachweis>

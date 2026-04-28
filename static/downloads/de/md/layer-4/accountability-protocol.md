@@ -1,186 +1,184 @@
 **RCOS – Regenerative Community Operating System**
 
-# Accountability Protocol
+# Rechenschaftsprotokoll
 
 - **Generiert:** 2026-04-28
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-4/accountability-protocol](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-4/accountability-protocol)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
-
 ---
-- **Layer:** 4 — Conflict, Repair & Accountability
-- **Status:** Template — adapt for your community
-- **RCOS reference:** [§6.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [§6.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)
+- **Ebene:** 4 — Konflikt, Wiedergutmachung & Rechenschaft
+- **Status:** Vorlage — an deine Gemeinschaft anpassen
+- **RCOS-Referenz:** [§6.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [§6.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)
 
 ---
 
-## Triggers
+## Auslöser
 
-*RCOS clauses: [6.4.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.5.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)*
+*RCOS-Klauseln: [6.4.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.5.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)*
 
 <details data-kind="rationale">
-<summary>Why enumerate what starts an accountability check?</summary>
+<summary>Warum festlegen, was eine Rechenschaftsprüfung auslöst?</summary>
 
-If accountability checks only happen when someone feels strongly enough to push, they become political. Naming the exact triggers — inactivity, breach, invariant violation, referral — means the process starts from a condition anyone can verify, not from a judgement about a person.
+Wenn Rechenschaftsprüfungen nur stattfinden, wenn jemand sich stark genug fühlt, sie durchzusetzen, werden sie politisch. Die genauen Auslöser zu benennen — Inaktivität, Verstoß, Invarianten-Verletzung, Verweisung — bedeutet, dass der Prozess bei einer Bedingung ansetzt, die jeder überprüfen kann, und nicht bei einem Urteil über eine Person.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-List the specific, verifiable triggers that initiate an accountability check. Each trigger should be observable from records or a direct referral.
+Liste die konkreten, überprüfbaren Auslöser auf, die eine Rechenschaftsprüfung einleiten. Jeder Auslöser sollte anhand von Aufzeichnungen oder einer direkten Verweisung nachvollziehbar sein.
 
 </details>
 
-An accountability check is initiated when:
+Eine Rechenschaftsprüfung wird eingeleitet, wenn:
 
-1. _<A member has not made a recognized contribution in X consecutive months.>_
-2. _<A member has breached a Membership Agreement obligation.>_
-3. _<A member has violated a Layer 0 identity constraint or invariant.>_
-4. _<A referral is made from the Conflict Resolution Ladder (Step 3 or above).>_
+1. _<Ein Mitglied in X aufeinanderfolgenden Monaten keinen anerkannten Beitrag geleistet hat.>_
+2. _<Ein Mitglied gegen eine Pflicht aus der Mitgliedschaftsvereinbarung verstoßen hat.>_
+3. _<Ein Mitglied eine Identitäts-Einschränkung oder Invariante der Ebene 0 verletzt hat.>_
+4. _<Eine Verweisung aus der Konfliktlösungsleiter (Stufe 3 oder höher) erfolgt ist.>_
 
-## Investigation and Review
+## Untersuchung und Überprüfung
 
-*RCOS clauses: [6.4.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.6](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.5.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)*
+*RCOS-Klauseln: [6.4.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.6](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.5.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)*
 
 <details data-kind="rationale">
-<summary>Why graduate the response by severity?</summary>
+<summary>Warum die Reaktion nach Schweregrad abstufen?</summary>
 
-Treating a missed contribution the same as an invariant violation either crushes minor cases with heavy process or lets serious ones slip through a private chat. Graduated pathways — soft check-in, medium written notice, direct escalation for serious breaches — match response weight to breach weight and keep repair the default where repair is still possible.
+Einen versäumten Beitrag genauso zu behandeln wie eine Invarianten-Verletzung erdrückt entweder leichte Fälle mit schwerem Verfahren oder lässt schwere Fälle mit einem privaten Gespräch durchrutschen. Abgestufte Wege — sanftes Nachfragen, mittlere schriftliche Benachrichtigung, direkte Eskalation bei schweren Verstößen — passen das Gewicht der Reaktion an das Gewicht des Verstoßes an und machen Wiedergutmachung dort zum Standard, wo Wiedergutmachung noch möglich ist.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-Define soft (inactivity), medium (obligation breach), and serious (invariant violation, safety) pathways. State who initiates, the response window, and the escalation route for each.
+Definiere sanfte (Inaktivität), mittlere (Pflichtverletzung) und schwere (Invarianten-Verletzung, Sicherheit) Wege. Gib an, wer den Prozess einleitet, welche Reaktionsfrist gilt und wie die Eskalation jeweils verläuft.
 
 </details>
 
-> **Breach severity guidance:** _<medium = non-compliance with a Membership Agreement obligation that does not threaten member safety or community integrity; serious = Layer 0 invariant violation, credible safety concern, persistent bad-faith conduct.>_
+> **Leitlinie zur Verstoßschwere:** _<mittel = Nichteinhaltung einer Pflicht aus der Mitgliedschaftsvereinbarung, die weder die Sicherheit von Mitgliedern noch die Integrität der Gemeinschaft gefährdet; schwer = Verletzung einer Invariante der Ebene 0, glaubwürdige Sicherheitsbedenken, anhaltend bösgläubiges Verhalten.>_
 
-- **Inactivity (soft breach):** _<who contacts the member; response window; outcome paths.>_
-- **Obligation breach (medium):** _<written notice; response window; resolution / escalation paths.>_
-- **Serious breach / invariant violation:** _<direct escalation to the appropriate Conflict Resolution Ladder step.>_
+- **Inaktivität (leichter Verstoß):** _<Wer kontaktiert das Mitglied; Reaktionsfrist; mögliche Ergebnisse.>_
+- **Pflichtverletzung (mittel):** _<Schriftliche Benachrichtigung; Reaktionsfrist; Lösungs- / Eskalationswege.>_
+- **Schwerer Verstoß / Invarianten-Verletzung:** _<Direkte Eskalation an die entsprechende Stufe der Konfliktlösungsleiter.>_
 
-## Due Process Guarantees
+## Verfahrensgarantien
 
-*RCOS clauses: [6.4.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.5.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)*
+*RCOS-Klauseln: [6.4.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.5.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)*
 
 <details data-kind="rationale">
-<summary>Why spell out notice, response, and appeal rights?</summary>
+<summary>Warum Benachrichtigungs-, Antwort- und Widerspruchsrechte ausformulieren?</summary>
 
-Accountability without due process is just punishment with paperwork. A member facing a sanction needs to know the concern, have real time to respond, and have somewhere to appeal to — otherwise the deciding body's word is final by default, which concentrates power exactly where it should not concentrate.
+Rechenschaft ohne faires Verfahren ist nur Bestrafung mit Papierkram. Ein Mitglied, das mit einer Sanktion konfrontiert ist, muss das Anliegen kennen, echte Zeit zum Antworten haben und eine Stelle zum Einlegen eines Widerspruchs haben — andernfalls ist das Wort des Entscheidungsgremiums standardmäßig endgültig, was Macht genau dort konzentriert, wo sie sich nicht konzentrieren sollte.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-State the right to written notice, a minimum response window, and an explicit appeal path to Full Members.
+Lege das Recht auf schriftliche Benachrichtigung, eine Mindest-Reaktionsfrist und einen expliziten Widerspruchsweg an die Vollmitglieder fest.
 
 </details>
 
-- **Right to notice:** _<member is notified in writing of the concern before any review or sanction begins.>_
-- **Right to respond:** _<minimum response window — e.g. 30 days.>_
-- **Right to appeal:** _<any decision may be appealed via the governance process (Strategic vote).>_
+- **Recht auf Benachrichtigung:** _<Das Mitglied wird schriftlich über das Anliegen informiert, bevor eine Überprüfung oder Sanktion beginnt.>_
+- **Recht auf Antwort:** _<Mindest-Reaktionsfrist — z. B. 30 Tage.>_
+- **Recht auf Widerspruch:** _<Jede Entscheidung kann über den Governance-Prozess angefochten werden (strategische Abstimmung).>_
 
-## Anti-Retaliation Protections
+## Schutz vor Vergeltung
 
-*RCOS clauses: [6.3.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards)*
+*RCOS-Klauseln: [6.3.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards)*
 
 <details data-kind="rationale">
-<summary>Why protect participants explicitly?</summary>
+<summary>Warum Beteiligte explizit schützen?</summary>
 
-If raising a concern or giving information can cost a member standing, relationships, or access, people will stay silent and the accountability system collapses in practice. Naming retaliation as itself a trigger makes the cost of suppression higher than the cost of reporting.
+Wenn das Äußern eines Anliegens oder das Bereitstellen von Informationen ein Mitglied Ansehen, Beziehungen oder Zugang kosten kann, werden die Menschen schweigen und das Rechenschaftssystem bricht in der Praxis zusammen. Vergeltung selbst als Auslöser zu benennen, macht die Kosten der Unterdrückung höher als die Kosten der Meldung.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-State that retaliation against any member who raises, participates in, or gives information to an accountability process is itself an accountability trigger.
+Halte fest, dass Vergeltung gegen jedes Mitglied, das ein Anliegen erhebt, an einem Rechenschaftsprozess teilnimmt oder Informationen dazu beisteuert, selbst ein Auslöser für eine Rechenschaftsprüfung ist.
 
 </details>
 
-_<Retaliation against a member for participating in any part of this process is itself an accountability trigger.>_
+_<Vergeltung gegen ein Mitglied für die Teilnahme an irgendeinem Teil dieses Prozesses ist selbst ein Auslöser für eine Rechenschaftsprüfung.>_
 
-## Sanction and Repair Options
+## Sanktions- und Wiedergutmachungsoptionen
 
-*RCOS clauses: [6.4.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.6](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.5.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)*
+*RCOS-Klauseln: [6.4.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.6](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.5.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)*
 
 <details data-kind="rationale">
-<summary>Why pre-define the menu of sanctions?</summary>
+<summary>Warum den Katalog der Sanktionen vorab festlegen?</summary>
 
-Ad-hoc sanctions invented mid-process reflect whoever is loudest in the room, not what the breach warrants. A fixed menu — with preconditions, authorized body, and appeal path for each — keeps responses proportional, prevents informal exclusion from becoming the default punishment, and makes it obvious when a sanction is out of scope for the body applying it.
+Ad-hoc-Sanktionen, die mitten im Prozess erfunden werden, spiegeln wider, wer am lautesten im Raum ist, nicht was der Verstoß rechtfertigt. Ein fester Katalog — mit Voraussetzungen, befugtem Gremium und Widerspruchsweg für jede Sanktion — hält die Reaktionen verhältnismäßig, verhindert, dass informeller Ausschluss zur Standardstrafe wird, und macht deutlich, wenn eine Sanktion außerhalb des Zuständigkeitsbereichs des anwendenden Gremiums liegt.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-For each sanction type, define preconditions, authorized body, and appeal path. Repair-oriented responses should be the default; punitive ones reserved for safety-critical or unresolved breaches.
+Definiere für jeden Sanktionstyp die Voraussetzungen, das befugte Gremium und den Widerspruchsweg. Auf Wiedergutmachung ausgerichtete Maßnahmen sollten der Standard sein; strafende Maßnahmen sind sicherheitskritischen oder ungelösten Verstößen vorbehalten.
 
 </details>
 
-> Repair-oriented responses are preferred over punitive ones except in safety-critical cases.
-> Sanctions must be proportional, time-bounded where applicable, documented, and never applied through informal exclusion or social pressure.
+> Auf Wiedergutmachung ausgerichtete Maßnahmen werden gegenüber strafenden bevorzugt, außer in sicherheitskritischen Fällen.
+> Sanktionen müssen verhältnismäßig, wo anwendbar zeitlich begrenzt, dokumentiert und niemals durch informellen Ausschluss oder sozialen Druck verhängt werden.
 
-| Type | Preconditions | Authorized body | Appealable? |
+| Typ | Voraussetzungen | Befugtes Gremium | Anfechtbar? |
 |---|---|---|---|
-| _<Private check-in / reminder>_ | _<inactivity or minor breach>_ | _<role>_ | _<yes>_ |
-| _<Written warning>_ | _<unresolved obligation breach after check-in>_ | _<role>_ | _<yes>_ |
-| _<Temporary access restriction>_ | _<safety-critical situation; review window>_ | _<role>_ | _<yes>_ |
-| _<Forced exit>_ | _<serious or unresolved breach, or Full Member decision>_ | _<Full Members>_ | _<yes — re-vote>_ |
+| _<Persönliches Nachfragen / Erinnerung>_ | _<Inaktivität oder geringfügiger Verstoß>_ | _<Rolle>_ | _<ja>_ |
+| _<Schriftliche Verwarnung>_ | _<Ungelöste Pflichtverletzung nach Nachfragen>_ | _<Rolle>_ | _<ja>_ |
+| _<Vorübergehende Zugangsbeschränkung>_ | _<Sicherheitskritische Situation; Überprüfungsfenster>_ | _<Rolle>_ | _<ja>_ |
+| _<Erzwungener Austritt>_ | _<Schwerer oder ungelöster Verstoß, oder Entscheidung der Vollmitglieder>_ | _<Vollmitglieder>_ | _<ja — erneute Abstimmung>_ |
 
-## Conditions for Restoring Rights
+## Bedingungen für die Wiederherstellung von Rechten
 
-*RCOS clauses: [6.4.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation)*
+*RCOS-Klauseln: [6.4.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation)*
 
 <details data-kind="rationale">
-<summary>Why make restoration conditions explicit?</summary>
+<summary>Warum Bedingungen für die Wiederherstellung explizit festlegen?</summary>
 
-If there is no defined path back, every sanction becomes effectively permanent and every exit becomes a life sentence. Explicit restoration conditions signal that accountability is about repair where repair is possible, and they prevent post-hoc gatekeeping about whether someone is "really" welcome back.
+Wenn es keinen definierten Weg zurück gibt, wird jede Sanktion faktisch dauerhaft und jeder Austritt zu einer lebenslangen Strafe. Explizite Bedingungen für die Wiederherstellung signalisieren, dass Rechenschaft auf Wiedergutmachung abzielt, wo Wiedergutmachung möglich ist, und sie verhindern nachträgliches Gatekeeping darüber, ob jemand „wirklich" willkommen zurück ist.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-For each sanction class, state the path to restoration of rights — re-application after voluntary exit, re-application block after forced exit, restoration after temporary restriction.
+Lege für jede Sanktionsklasse den Weg zur Wiederherstellung der Rechte fest — erneute Bewerbung nach freiwilligem Austritt, Sperrfrist für erneute Bewerbung nach erzwungenem Austritt, Wiederherstellung nach vorübergehender Einschränkung.
 
 </details>
 
-- **After voluntary exit:** _<re-application via Onboarding Protocol; no automatic restoration.>_
-- **After forced exit:** _<minimum re-application block; standard admission process applies.>_
-- **After temporary access restriction:** _<rights restored upon confirmation of resolution within review window.>_
+- **Nach freiwilligem Austritt:** _<Erneute Bewerbung über das Onboarding-Protokoll; keine automatische Wiederherstellung.>_
+- **Nach erzwungenem Austritt:** _<Mindest-Sperrfrist für erneute Bewerbung; das reguläre Aufnahmeverfahren gilt.>_
+- **Nach vorübergehender Zugangsbeschränkung:** _<Rechte werden nach Bestätigung der Lösung innerhalb des Überprüfungsfensters wiederhergestellt.>_
 
-## Coordination with Layer 1
+## Abstimmung mit Ebene 1
 
-*RCOS clauses: [6.4.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation)*
+*RCOS-Klauseln: [6.4.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation)*
 
 <details data-kind="rationale">
-<summary>Why tie this to the Exit & Separation Protocol?</summary>
+<summary>Warum das mit dem Austritts- und Trennungsprotokoll verknüpfen?</summary>
 
-Exit rules live in Layer 1 for a reason — they govern who is and is not a member. If accountability actions created their own parallel exit path, there would be two sets of rules, two sets of records, and a loophole for skipping due process. One canonical exit protocol closes that gap.
+Austrittsregeln sind aus gutem Grund in Ebene 1 angesiedelt — sie regeln, wer Mitglied ist und wer nicht. Wenn Rechenschaftsmaßnahmen ihren eigenen parallelen Austrittsweg schaffen würden, gäbe es zwei Regelwerke, zwei Sätze von Aufzeichnungen und ein Schlupfloch, um das faire Verfahren zu umgehen. Ein einziges kanonisches Austrittsprotokoll schließt diese Lücke.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-State that all forced exits and temporary access restrictions follow the Exit & Separation Protocol (Layer 1), and clarify that a temporary restriction does not constitute exit.
+Halte fest, dass alle erzwungenen Austritte und vorübergehenden Zugangsbeschränkungen dem Austritts- und Trennungsprotokoll (Ebene 1) folgen, und stelle klar, dass eine vorübergehende Einschränkung keinen Austritt darstellt.
 
 </details>
 
-_<All forced exits and temporary access restrictions follow the Exit & Separation Protocol (Layer 1). A temporary access restriction does not constitute exit and does not trigger the re-application block unless a forced exit is subsequently voted by Full Members.>_
+_<Alle erzwungenen Austritte und vorübergehenden Zugangsbeschränkungen folgen dem Austritts- und Trennungsprotokoll (Ebene 1). Eine vorübergehende Zugangsbeschränkung stellt keinen Austritt dar und löst keine Sperrfrist für eine erneute Bewerbung aus, es sei denn, ein erzwungener Austritt wird anschließend von den Vollmitgliedern beschlossen.>_
 
 ---
 
-## Ratification Record
+## Ratifizierungsprotokoll
 
-- **Adopted:** <YYYY-MM-DD>
-- **Decision type:** Strategic
-- **Version:** <version>
-- **Decision record:** <link to decision record>
+- **Angenommen:** <JJJJ-MM-TT>
+- **Entscheidungstyp:** Strategisch
+- **Version:** <Version>
+- **Entscheidungsprotokoll:** <Link zum Entscheidungsprotokoll>

@@ -1,197 +1,195 @@
 **RCOS – Regenerative Community Operating System**
 
-# Internal Economy Protocol
+# Protokoll für die interne Wirtschaft
 
 - **Generiert:** 2026-04-28
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-3/internal-economy-protocol](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-3/internal-economy-protocol)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
-> _Dieser Inhalt ist noch nicht ins Deutsche übersetzt – die englische Quelle wird angezeigt._
-
 ---
-- **Layer:** 3 — Economic & Resource System
-- **Status:** Template — adapt for your community
-- **RCOS reference:** [§5.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#51-commons-vs-private-resources), [§5.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#52-contribution-recognition), [§5.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#54-accumulation-constraints), [§5.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#55-artifacts)
+- **Ebene:** 3 — Wirtschafts- & Ressourcensystem
+- **Status:** Vorlage — an deine Gemeinschaft anpassen
+- **RCOS-Referenz:** [§5.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#51-commons-vs-private-resources), [§5.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#52-contribution-recognition), [§5.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#54-accumulation-constraints), [§5.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#55-artifacts)
 
 ---
 
-## Commons vs. Private Classification
+## Klassifikation: Gemeingut vs. Privateigentum
 
-*RCOS clauses: [5.1.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#51-commons-vs-private-resources), [5.1.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#51-commons-vs-private-resources), [5.1.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#51-commons-vs-private-resources), [5.1.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#51-commons-vs-private-resources), [5.1.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#51-commons-vs-private-resources), [5.6.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#56-layer-invariants)*
+*RCOS-Klauseln: [5.1.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#51-commons-vs-private-resources), [5.1.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#51-commons-vs-private-resources), [5.1.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#51-commons-vs-private-resources), [5.1.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#51-commons-vs-private-resources), [5.1.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#51-commons-vs-private-resources), [5.6.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#56-layer-invariants)*
 
 <details data-kind="rationale">
-<summary>Why classify every resource?</summary>
+<summary>Warum jede Ressource klassifizieren?</summary>
 
-Unclassified resources are where quiet privatization happens — someone starts treating a shared asset as personal, or a private asset gets quietly absorbed into community obligations, and by the time anyone notices the norm has shifted. Explicit classification, with stewards and transfer rules named up front, makes any change to that status a visible governance act rather than a creeping fact.
+Nicht klassifizierte Ressourcen sind der Ort, an dem stille Privatisierung geschieht — jemand beginnt, ein gemeinschaftliches Gut als persönliches zu behandeln, oder ein privates Gut wird stillschweigend in Gemeinschaftsverpflichtungen übernommen, und wenn es jemand bemerkt, hat sich die Norm bereits verschoben. Eine explizite Klassifikation — mit vorab benannten Verwalter\*innen und Übertragungsregeln — macht jede Statusänderung zu einem sichtbaren Governance-Akt statt zu einer schleichenden Tatsache.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-For each resource the community holds, declare classification (Commons / Private), name a steward, define access rules, and state transfer constraints. Unclassified resources must not be allocated, encumbered, monetized, or transferred until classified.
+Lege für jede Ressource der Gemeinschaft die Klassifikation fest (Gemeingut / Privateigentum), benenne eine\*n Verwalter\*in, definiere Zugangsregeln und formuliere Übertragungsbeschränkungen. Nicht klassifizierte Ressourcen dürfen weder zugewiesen, belastet, monetarisiert noch übertragen werden, bis sie klassifiziert sind.
 
 </details>
 
-| Resource | Classification | Steward | Access rules | Transfer constraints |
+| Ressource | Klassifikation | Verwalter\*in | Zugangsregeln | Übertragungsbeschränkungen |
 |---|---|---|---|---|
-| _<e.g. RCOS specification and artifacts>_ | _<Commons / Private>_ | _<steward role>_ | _<who reads / writes>_ | _<transfer constraints>_ |
-| _<e.g. Shared treasury>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
-| _<e.g. Community website / domains>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
-| _<e.g. Brand and social accounts>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
-| _<e.g. Land or physical infrastructure>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
+| _<z. B. RCOS-Spezifikation und Artefakte>_ | _<Gemeingut / Privateigentum>_ | _<Verwalterrolle>_ | _<wer liest / schreibt>_ | _<Übertragungsbeschränkungen>_ |
+| _<z. B. Gemeinschaftskasse>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
+| _<z. B. Gemeinschaftswebsite / Domains>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
+| _<z. B. Marke und Social-Media-Konten>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
+| _<z. B. Grundstück oder physische Infrastruktur>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
 
-> Any unclassified resource must not be allocated, encumbered, monetized, or transferred until classification is completed.
+> Nicht klassifizierte Ressourcen dürfen weder zugewiesen, belastet, monetarisiert noch übertragen werden, bis die Klassifikation abgeschlossen ist.
 
-## Recognized Contribution Categories
+## Anerkannte Beitragskategorien
 
-*RCOS clauses: [5.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#52-contribution-recognition), [5.2.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#52-contribution-recognition), [5.6.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#56-layer-invariants)*
+*RCOS-Klauseln: [5.2.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#52-contribution-recognition), [5.2.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#52-contribution-recognition), [5.6.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#56-layer-invariants)*
 
 <details data-kind="rationale">
-<summary>Why name the kinds of work that count?</summary>
+<summary>Warum benennen, welche Arten von Arbeit zählen?</summary>
 
-If the community never says out loud which kinds of work it depends on, the invisible work — care, facilitation, moderation, stewardship — stays invisible, and the people doing it burn out or leave. Enumerating categories converts "someone just does this" into recognized labour the system has to account for.
+Wenn die Gemeinschaft nie ausspricht, auf welche Arten von Arbeit sie angewiesen ist, bleibt die unsichtbare Arbeit — Fürsorge, Moderation, Facilitation, Verwaltung — unsichtbar, und die Menschen, die sie leisten, brennen aus oder gehen. Das Aufzählen von Kategorien verwandelt „das macht halt irgendjemand" in anerkannte Arbeit, die das System berücksichtigen muss.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-List the categories of contribution your community recognizes. Care, facilitation, stewardship, and informal participation are commonly under-recognized — name them explicitly if they apply.
+Liste die Beitragskategorien auf, die deine Gemeinschaft anerkennt. Fürsorge, Facilitation, Verwaltung und informelle Teilnahme werden häufig zu wenig anerkannt — benenne sie explizit, wenn sie zutreffen.
 
 </details>
 
-| Category | Examples |
+| Kategorie | Beispiele |
 |---|---|
-| _<e.g. Knowledge & Research>_ | _<examples>_ |
-| _<e.g. Technical Development>_ | _<examples>_ |
-| _<e.g. Governance & Coordination>_ | _<examples>_ |
-| _<e.g. Community Building>_ | _<examples>_ |
-| _<e.g. Care & Support>_ | _<examples>_ |
-| _<e.g. Stewardship>_ | _<examples>_ |
-| _<e.g. Informal Participation>_ | _<examples>_ |
+| _<z. B. Wissen & Forschung>_ | _<Beispiele>_ |
+| _<z. B. Technische Entwicklung>_ | _<Beispiele>_ |
+| _<z. B. Governance & Koordination>_ | _<Beispiele>_ |
+| _<z. B. Gemeinschaftsaufbau>_ | _<Beispiele>_ |
+| _<z. B. Fürsorge & Unterstützung>_ | _<Beispiele>_ |
+| _<z. B. Verwaltung>_ | _<Beispiele>_ |
+| _<z. B. Informelle Teilnahme>_ | _<Beispiele>_ |
 
-## Contribution Recognition Mechanism
+## Mechanismus zur Beitragsanerkennung
 
-*RCOS clauses: [5.2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#52-contribution-recognition), [5.2.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#52-contribution-recognition)*
+*RCOS-Klauseln: [5.2.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#52-contribution-recognition), [5.2.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#52-contribution-recognition)*
 
 <details data-kind="rationale">
-<summary>Why pin down how recognition actually works?</summary>
+<summary>Warum genau festlegen, wie Anerkennung funktioniert?</summary>
 
-Without a defined mechanism, "who gets credit" becomes a matter of who is loudest or closest to whoever decides. Specifying what qualifies, how it's recorded, who validates, and how to dispute it turns recognition into something a member can actually rely on — and blocks recognition from silently mutating into governance influence.
+Ohne einen definierten Mechanismus wird „wer Anerkennung bekommt" zu einer Frage davon, wer am lautesten ist oder der entscheidenden Person am nächsten steht. Wenn festgelegt wird, was zählt, wie es dokumentiert wird, wer es bestätigt und wie man es anfechten kann, wird Anerkennung zu etwas, auf das sich ein Mitglied tatsächlich verlassen kann — und es wird verhindert, dass Anerkennung sich stillschweigend in Governance-Einfluss verwandelt.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-State what qualifies, how recognitions are recorded, who validates, what they unlock (or do not unlock), and how members dispute a record.
+Lege fest, was zählt, wie Anerkennungen dokumentiert werden, wer sie bestätigt, was sie bewirken (oder nicht bewirken), und wie Mitglieder einen Eintrag anfechten können.
 
 </details>
 
-- **What qualifies:** _<which activities count, and at whose declaration.>_
-- **How contributions are recorded:** _<structured channel; informal/self-reported channel.>_
-- **Who validates:** _<automatic / role holder / nomination process.>_
-- **Effect on access/privileges:** _<recognition affects internal-unit balance only; does not grant additional governance rights beyond the membership state.>_
-- **Dispute:** _<window and process for contesting a record.>_
+- **Was zählt:** _<welche Aktivitäten zählen und auf wessen Erklärung hin.>_
+- **Wie Beiträge dokumentiert werden:** _<strukturierter Kanal; informeller/selbst gemeldeter Kanal.>_
+- **Wer bestätigt:** _<automatisch / Rolleninhaber\*in / Nominierungsprozess.>_
+- **Auswirkung auf Zugang/Privilegien:** _<Anerkennung wirkt sich nur auf das Guthaben interner Einheiten aus; sie gewährt keine zusätzlichen Governance-Rechte über den Mitgliedschaftsstatus hinaus.>_
+- **Anfechtung:** _<Frist und Verfahren zur Anfechtung eines Eintrags.>_
 
-## Internal Units
+## Interne Einheiten
 
-*RCOS clauses: [5.2.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#52-contribution-recognition), [5.2.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#52-contribution-recognition)*
+*RCOS-Klauseln: [5.2.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#52-contribution-recognition), [5.2.5](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#52-contribution-recognition)*
 
 <details data-kind="rationale">
-<summary>Why define internal units this precisely?</summary>
+<summary>Warum interne Einheiten so genau definieren?</summary>
 
-Internal units tend to grow powers no one voted for — decay, caps, transferability, governance weight — unless each property is nailed down in writing. Listing issuance, transfer rules, privacy, and explicit non-governance status makes the units tools of recognition rather than quiet shadow currencies.
+Interne Einheiten neigen dazu, Befugnisse zu entwickeln, über die niemand abgestimmt hat — Verfall, Obergrenzen, Übertragbarkeit, Governance-Gewicht — es sei denn, jede Eigenschaft wird schriftlich festgehalten. Die Auflistung von Ausgabe, Übertragungsregeln, Datenschutz und explizitem Nicht-Governance-Status macht die Einheiten zu Werkzeugen der Anerkennung statt zu stillen Schattenwährungen.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-If your community uses internal units (XP, ECO, credits, etc.), define each unit's purpose, issuance, transferability, decay, cap, fraud prevention, and privacy. Explicitly state that units do not grant governance rights beyond the membership state.
+Wenn deine Gemeinschaft interne Einheiten verwendet (XP, ECO, Credits usw.), definiere für jede Einheit Zweck, Ausgabe, Übertragbarkeit, Verfall, Obergrenze, Betrugsprävention und Datenschutz. Stelle explizit fest, dass Einheiten keine Governance-Rechte über den Mitgliedschaftsstatus hinaus gewähren.
 
 </details>
 
-| Property | _<Unit A>_ | _<Unit B>_ |
+| Eigenschaft | _<Einheit A>_ | _<Einheit B>_ |
 |---|---|---|
-| **Purpose** | _<...>_ | _<...>_ |
-| **Issuance** | _<...>_ | _<...>_ |
-| **Transferability** | _<...>_ | _<...>_ |
-| **Expiration / decay** | _<...>_ | _<...>_ |
-| **Hard cap** | _<...>_ | _<...>_ |
-| **Fraud prevention** | _<...>_ | _<...>_ |
-| **Privacy** | _<...>_ | _<...>_ |
+| **Zweck** | _<...>_ | _<...>_ |
+| **Ausgabe** | _<...>_ | _<...>_ |
+| **Übertragbarkeit** | _<...>_ | _<...>_ |
+| **Verfall / Abwertung** | _<...>_ | _<...>_ |
+| **Obergrenze** | _<...>_ | _<...>_ |
+| **Betrugsprävention** | _<...>_ | _<...>_ |
+| **Datenschutz** | _<...>_ | _<...>_ |
 
-> Internal units do not grant governance rights beyond what the membership state defines.
+> Interne Einheiten gewähren keine Governance-Rechte über das hinaus, was der Mitgliedschaftsstatus definiert.
 
-## Accumulation Constraints
+## Akkumulationsbeschränkungen
 
-*RCOS clauses: [5.4.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#54-accumulation-constraints), [5.4.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#54-accumulation-constraints), [5.4.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#54-accumulation-constraints), [5.4.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#54-accumulation-constraints), [5.6.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#56-layer-invariants)*
+*RCOS-Klauseln: [5.4.1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#54-accumulation-constraints), [5.4.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#54-accumulation-constraints), [5.4.3](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#54-accumulation-constraints), [5.4.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#54-accumulation-constraints), [5.6.4](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#56-layer-invariants)*
 
 <details data-kind="rationale">
-<summary>Why constrain accumulation at all?</summary>
+<summary>Warum Akkumulation überhaupt beschränken?</summary>
 
-Any internal unit that can pile up without limit eventually becomes leverage — a few members with large balances gain informal sway the governance system never granted them. Stating accumulation rules explicitly, even when the current rule is "none yet," keeps the question open and forces a visible decision before concentration becomes a structural problem.
+Jede interne Einheit, die sich ohne Limit anhäufen lässt, wird irgendwann zum Hebel — einige wenige Mitglieder mit großen Guthaben gewinnen informellen Einfluss, den das Governance-System ihnen nie verliehen hat. Das explizite Festlegen von Akkumulationsregeln — auch wenn die aktuelle Regel „noch keine" lautet — hält die Frage offen und erzwingt eine sichtbare Entscheidung, bevor Konzentration zum strukturellen Problem wird.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-State the current accumulation rule (cap, decay, none) and the rule that no internal unit may be converted into governance authority.
+Lege die aktuelle Akkumulationsregel fest (Obergrenze, Verfall, keine) und die Regel, dass keine interne Einheit in Governance-Autorität umgewandelt werden darf.
 
 </details>
 
-- _<Hard cap on internal units, if any.>_
-- _<Decay rule, if any.>_
-- _<Internal units cannot be converted into governance authority or used to bypass the Decision Matrix.>_
+- _<Obergrenze für interne Einheiten, falls vorhanden.>_
+- _<Verfallsregel, falls vorhanden.>_
+- _<Interne Einheiten dürfen nicht in Governance-Autorität umgewandelt oder dazu verwendet werden, die Entscheidungsmatrix zu umgehen.>_
 
-## External Income Interfaces
+## Externe Einkommensschnittstellen
 
-*RCOS clauses: [5.3.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#53-treasury-management)*
+*RCOS-Klauseln: [5.3.2](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#53-treasury-management)*
 
 <details data-kind="rationale">
-<summary>Why require approval before money arrives?</summary>
+<summary>Warum vor dem Geldeingang eine Genehmigung verlangen?</summary>
 
-Once funds are in hand, the conversation shifts from "should we accept this?" to "what do we do with it?" — and the conditions attached to the income (grant terms, partnership obligations, service commitments) are often already locked in. Requiring a Strategic decision before any new income channel opens keeps the community in control of what it takes on.
+Sobald Mittel eingegangen sind, verschiebt sich das Gespräch von „Sollen wir das annehmen?" zu „Was machen wir damit?" — und die an das Einkommen geknüpften Bedingungen (Förderbedingungen, Partnerschaftsverpflichtungen, Dienstleistungszusagen) sind oft bereits festgelegt. Eine strategische Entscheidung vor der Eröffnung eines neuen Einkommenskanals zu verlangen, stellt sicher, dass die Gemeinschaft die Kontrolle darüber behält, was sie auf sich nimmt.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-List current declared income channels, name potential future channels, and require Strategic approval before any new channel is opened.
+Liste die aktuell erklärten Einkommenskanäle auf, benenne potenzielle zukünftige Kanäle, und verlange eine strategische Genehmigung, bevor ein neuer Kanal eröffnet wird.
 
 </details>
 
-- _<Current income channels.>_
-- _<Potential future income channels.>_
-- _<Rule: any new external income interface must be declared and approved via a Strategic decision before funds are received or commitments made.>_
+- _<Aktuelle Einkommenskanäle.>_
+- _<Potenzielle zukünftige Einkommenskanäle.>_
+- _<Regel: Jede neue externe Einkommensschnittstelle muss erklärt und durch eine strategische Entscheidung genehmigt werden, bevor Mittel empfangen oder Verpflichtungen eingegangen werden.>_
 
-## Dispute Resolution for Economic Records
+## Streitbeilegung für wirtschaftliche Aufzeichnungen
 
 <details data-kind="rationale">
-<summary>Why time-box economic disputes?</summary>
+<summary>Warum wirtschaftliche Streitigkeiten zeitlich begrenzen?</summary>
 
-Contribution and balance records accumulate fast; if disputes could be raised indefinitely, the ledger would never settle and every historical credit would stay contestable. A defined window with a named resolver and an appeal path gives members a real chance to correct errors without leaving the whole economic history perpetually unstable.
+Beitrags- und Guthabeneinträge häufen sich schnell an; wenn Streitigkeiten unbegrenzt erhoben werden könnten, würde das Hauptbuch nie abgeschlossen und jeder historische Eintrag bliebe anfechtbar. Ein definiertes Zeitfenster mit einer benannten Schlichtungsperson und einem Beschwerdeweg gibt Mitgliedern eine echte Chance, Fehler zu korrigieren, ohne die gesamte wirtschaftliche Historie dauerhaft instabil zu lassen.
 
 </details>
 
 <details data-kind="instructions">
-<summary>How to fill this in</summary>
+<summary>Wie du das ausfüllst</summary>
 
-State the dispute window, named resolver, and appeal path. Reference the Contribution Recognition Mechanism for the full process.
+Lege das Zeitfenster für Streitigkeiten, die benannte Schlichtungsperson und den Beschwerdeweg fest. Verweise auf den Mechanismus zur Beitragsanerkennung für den vollständigen Prozess.
 
 </details>
 
-_<Window for contesting a contribution record or balance; named resolver; appeal path to Full Members via the governance process.>_
+_<Zeitfenster für die Anfechtung eines Beitragseintrags oder Guthabens; benannte Schlichtungsperson; Beschwerdeweg an Vollmitglieder über den Governance-Prozess.>_
 
 ---
 
-## Ratification Record
+## Ratifizierungsprotokoll
 
-- **Adopted:** <YYYY-MM-DD>
-- **Decision type:** Strategic
-- **Version:** <version>
-- **Decision record:** <link to decision record>
+- **Angenommen:** <JJJJ-MM-TT>
+- **Entscheidungstyp:** Strategisch
+- **Version:** <Version>
+- **Entscheidungsprotokoll:** <Link zum Entscheidungsprotokoll>
