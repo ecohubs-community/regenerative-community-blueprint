@@ -26,11 +26,11 @@ The translator auto-selects based on env vars:
 `ANTHROPIC_API_KEY` → `anthropic-api`, else `GEMINI_API_KEY` → `gemini`,
 else `claude-cli`. Override with `--provider <name>` if needed.
 
-| Backend            | Pre-flight check                                     |
-| ------------------ | ---------------------------------------------------- |
-| `claude-cli` (free, default) | `claude --version` returns a version       |
-| `gemini` (free API)          | `echo $GEMINI_API_KEY` shows a key          |
-| `anthropic-api` (paid)       | `echo $ANTHROPIC_API_KEY` shows a key       |
+| Backend                      | Pre-flight check                      |
+| ---------------------------- | ------------------------------------- |
+| `claude-cli` (free, default) | `claude --version` returns a version  |
+| `gemini` (free API)          | `echo $GEMINI_API_KEY` shows a key    |
+| `anthropic-api` (paid)       | `echo $ANTHROPIC_API_KEY` shows a key |
 
 ### 3. Survey what needs translating
 
