@@ -70,6 +70,7 @@ function parseArgs(argv) {
 		only: null,
 		dryRun: false,
 		force: false,
+		includeEmpty: false,
 		provider: null,
 		model: null
 	};
@@ -79,12 +80,16 @@ function parseArgs(argv) {
 		else if (a === '--only') out.only = argv[++i];
 		else if (a === '--dry-run') out.dryRun = true;
 		else if (a === '--force') out.force = true;
+		else if (a === '--include-empty') out.includeEmpty = true;
 		else if (a === '--provider') out.provider = argv[++i];
 		else if (a === '--model') out.model = argv[++i];
 		else if (a === '-h' || a === '--help') {
 			console.log(
 				'Usage: translate.mjs --locale <code> [--provider <claude-cli|anthropic-api|gemini>]\n' +
-					'                     [--only <substring>] [--dry-run] [--force] [--model <id>]'
+					'                     [--only <substring>] [--dry-run] [--force]\n' +
+					'                     [--include-empty] [--model <id>]\n\n' +
+					'  --include-empty   also translate articles whose body is empty (frontmatter only),\n' +
+					'                    so the title gets localized for structural shell pages.'
 			);
 			process.exit(0);
 		}
@@ -167,20 +172,35 @@ async function buildJobs() {
 	}
 
 	const jobs = [];
+	const skipped = { emptyBody: 0, missingId: 0, upToDate: 0, filtered: 0 };
+
 	for (const [, group] of [...groups.entries()].sort()) {
 		const source = group.source;
-		if (!source || !source.body.trim()) continue;
-		if (!source.data.id) continue;
+		if (!source) continue;
+		if (!source.data.id) {
+			skipped.missingId++;
+			continue;
+		}
+		if (!args.includeEmpty && !source.body.trim()) {
+			skipped.emptyBody++;
+			continue;
+		}
 
 		const sourceRel = path.relative(ROOT, source.path);
-		if (args.only && !sourceRel.includes(args.only)) continue;
+		if (args.only && !sourceRel.includes(args.only)) {
+			skipped.filtered++;
+			continue;
+		}
 
 		const t = group.translations[args.locale];
 		const sourceHash = md5short(source.raw);
 		const targetPath = source.path.replace(/\.md$/, `.${args.locale}.md`);
 
 		const status = !t ? 'missing' : t.hashStored === sourceHash ? 'up-to-date' : 'outdated';
-		if (status === 'up-to-date' && !args.force) continue;
+		if (status === 'up-to-date' && !args.force) {
+			skipped.upToDate++;
+			continue;
+		}
 
 		jobs.push({
 			sourcePath: source.path,
@@ -194,7 +214,7 @@ async function buildJobs() {
 		});
 	}
 
-	return jobs;
+	return { jobs, skipped };
 }
 
 /* ---------------- prompts ---------------- */
@@ -446,13 +466,17 @@ async function main() {
 	}
 	const model = args.model ?? provider.defaultModel;
 
-	const jobs = await buildJobs();
+	const { jobs, skipped } = await buildJobs();
 
 	console.log(`\nLocale:   ${args.locale}  (${LANGUAGE_NAMES[args.locale] ?? args.locale})`);
 	console.log(`Provider: ${providerName}${model ? `  (model: ${model})` : ''}`);
 	console.log(`Plan:     ${jobs.length} article${jobs.length === 1 ? '' : 's'} to translate`);
 	if (jobs.length === 0) {
-		console.log('\nNothing to translate. Use --force to re-translate up-to-date files.');
+		console.log('\nNothing to translate. Reasons sources were skipped:');
+		console.log(`  ${skipped.upToDate}   already up-to-date in ${args.locale} (use --force to re-translate)`);
+		console.log(`  ${skipped.emptyBody}   body is empty / frontmatter-only (use --include-empty to translate the title anyway)`);
+		console.log(`  ${skipped.filtered}   excluded by --only "${args.only ?? ''}"`);
+		console.log(`  ${skipped.missingId}   no \`id\` in frontmatter (orphan source)`);
 		process.exit(0);
 	}
 	for (const j of jobs) {
