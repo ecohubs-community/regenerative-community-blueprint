@@ -781,12 +781,16 @@ The previous plan proposed articles → UI → tooling. **Inverted recommendatio
 
 **Exit criteria:** ✓ `/de/articles/rcos-templates` shows the bundle download UI in German with a fallback banner ("Für diese Sprache sind noch keine Übersetzungen verfügbar"), all 22 templates display the EN-Fallback badge with German tooltips, and bundle URLs gracefully resolve to `/downloads/en/*` until German template translations land. The smoke-test core spec at `/de/articles/rcos-core/v0-1` correctly serves `/downloads/de/rcos-core-v0-1.md` (with German preamble + German "0. Einführung" section + English fallback for the rest, with inline notices on each fallback section).
 
-### Phase 5 — Bulk translation + drift detection (ongoing)
+### Phase 5 — Bulk translation + drift detection (ongoing)  ✓ scripts in place
 
-1. Run `translate.mjs --locale de` over the whole content tree.
-2. Human review pass (highest-traffic articles first).
-3. Add `check-translations.mjs` as a CI comment.
-4. Decide on a coverage threshold (e.g. ≥80%) before announcing the locale publicly.
+The two scripts the rest of the phase depends on are shipped. The remaining items are operational decisions and human review work, not engineering.
+
+1. ✓ `scripts/check-translations.mjs` — drift detector. Walks `content/articles`, joins each source `<base>.md` to its translations by frontmatter `id`, compares the stored `sourceHash` against a fresh MD5 of the source. Reports per-locale `MISSING` / `OUTDATED` / `UP-TO-DATE`, plus a coverage percentage. Plain-text output by default; `--json` for machine consumption (e.g. a sticky GitHub comment). Exit codes: `0` clean, `2` outdated only, `1` missing translations exist. Run via `pnpm run check:translations`.
+2. ✓ `scripts/translate.mjs` — AI bulk translator. Walks the tree, finds missing/outdated translations for `--locale <code>`, calls Claude Opus 4.7 with adaptive thinking and prompt-caching on the system block (so subsequent articles in a run cost ~10% of the first). Idempotent — skips up-to-date files unless `--force`. Frontmatter post-processing is owned by the script: `lang` and `sourceHash` are stamped onto the output regardless of what the model returns. Supports `--dry-run`, `--only <substring>`, `--model <id>`. Run via `pnpm run translate -- --locale de`. Requires `ANTHROPIC_API_KEY`.
+3. **Operational, not code**: run the translator over the tree once a target locale's UI is in place. Cost rough order of magnitude is well under $10 for ~80 articles at Opus 4.7 pricing with caching; verify the first few outputs before letting it run unattended.
+4. **Human review pass**: prioritize highest-traffic articles (`rcos-core/v0-1/*`, the templates index, top-level entries). Skim AI translations for tone, technical-term consistency, and frontmatter integrity. Touch up where the model picked an awkward phrasing.
+5. **CI integration**: wire `pnpm run check:translations --json` into a GitHub Action that posts a sticky comment on PRs touching `content/`. Non-blocking — coverage drift is informational, not a merge gate.
+6. **Coverage threshold for public launch**: ≥80% UP-TO-DATE before announcing a locale; ≥95% before removing the "experimental" badge from the language switcher (when one exists).
 
 ---
 

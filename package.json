@@ -9,6 +9,8 @@
 		"build:core": "node scripts/build-core.mjs",
 		"build:downloads": "pnpm run build:templates && pnpm run build:core",
 		"check:i18n": "node scripts/check-i18n-keys.mjs",
+		"check:translations": "node scripts/check-translations.mjs",
+		"translate": "node scripts/translate.mjs",
 		"build": "vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
@@ -18,6 +20,7 @@
 		"lint": "prettier --check . && eslint ."
 	},
 	"devDependencies": {
+		"@anthropic-ai/sdk": "^0.91.1",
 		"@eslint/compat": "^1.4.0",
 		"@eslint/js": "^9.39.1",
 		"@sveltejs/adapter-auto": "^7.0.0",
