@@ -1,13 +1,13 @@
 ---
 id: efe8634e
-title: 5. Layer 3 — Wirtschafts- & Ressourcensystem
+title: 5. Schicht 3 — Wirtschafts- & Ressourcensystem
 parentId: e6de7a5d
 order: 50
 lang: de
 sourceHash: 08cc149a
 ---
 
-Layer 3 definiert, wie Wert, Ressourcen und Verpflichtungen innerhalb der Gemeinschaft fließen.  
+Schicht 3 definiert, wie Wert, Ressourcen und Verpflichtungen innerhalb der Gemeinschaft fließen.  
 Sein Zweck ist es, wirtschaftliche Macht explizit, begrenzt, überprüfbar und der Governance untergeordnet zu machen — um versteckte Anhäufung, Abhängigkeit oder Zwang zu verhindern.
 
 ## 5.1 Gemeingüter vs. Privatressourcen
@@ -55,7 +55,7 @@ Sein Zweck ist es, wirtschaftliche Macht explizit, begrenzt, überprüfbar und d
 - Mechanismen zur Betrugsprävention, Streitbeilegung und Korrektur  
 - Datenschutz- und Transparenzregeln für Kontostände und Transaktionen  
 
-5.2.5 Beitragsanerkennung DARF KEINE implizite Entscheidungsbefugnis, kein Vetorecht oder keinen Governance-Einfluss schaffen, der über das in Layer 2 Definierte hinausgeht.
+5.2.5 Beitragsanerkennung DARF KEINE implizite Entscheidungsbefugnis, kein Vetorecht oder keinen Governance-Einfluss schaffen, der über das in Schicht 2 Definierte hinausgeht.
 
 ## 5.3 Gemeinschaftskasse
 
@@ -89,17 +89,17 @@ Sein Zweck ist es, wirtschaftliche Macht explizit, begrenzt, überprüfbar und d
 - Umverteilungs- oder Besteuerungsmechanismen  
 - Zeitlich begrenzte Gültigkeit  
 
-5.4.3 Wirtschaftsmechanismen DÜRFEN es Mitgliedern NICHT ermöglichen, die in Layer 2 definierten Governance-Befugnisgrenzen zu umgehen — auch nicht durch den Kauf von Einfluss, das Schaffen von Abhängigkeiten oder die Umwandlung von wirtschaftlicher Macht in informelle Entscheidungsbefugnis.
+5.4.3 Wirtschaftsmechanismen DÜRFEN es Mitgliedern NICHT ermöglichen, die in Schicht 2 definierten Governance-Befugnisgrenzen zu umgehen — auch nicht durch den Kauf von Einfluss, das Schaffen von Abhängigkeiten oder die Umwandlung von wirtschaftlicher Macht in informelle Entscheidungsbefugnis.
 
 5.4.4 Die Gemeinschaft MUSS überprüfbare Indikatoren für das Risiko wirtschaftlicher Konzentration definieren sowie einen expliziten Mechanismus, um Beschränkungen anzupassen, wenn solche Risiken erkannt werden.
 
 ## 5.5 Artefakte
 
-5.5.1 Die folgenden Artefakte sind für die Konformität mit Layer 3 verpflichtend:
+5.5.1 Die folgenden Artefakte sind für die Konformität mit Schicht 3 verpflichtend:
 - Internes Wirtschaftsprotokoll  
 - Kassenregelwerk  
 
-5.5.2 Artefakte von Layer 3 MÜSSEN:
+5.5.2 Artefakte von Schicht 3 MÜSSEN:
 - Explizit und eindeutig sein  
 - Versioniert sein  
 - Für alle Mitglieder zugänglich sein (mit expliziten, begrenzten Ausnahmen)  

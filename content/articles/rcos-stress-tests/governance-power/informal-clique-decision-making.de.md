@@ -13,7 +13,7 @@ Entscheidungen verlagern sich in informelle Untergruppen.
 
 **Betroffene Ebenen**
 
-Layer 2 (Governance), Layer 1 (Mitgliedschaft)
+Schicht 2 (Governance), Schicht 1 (Mitgliedschaft)
 
 **Relevante Invarianten**
 

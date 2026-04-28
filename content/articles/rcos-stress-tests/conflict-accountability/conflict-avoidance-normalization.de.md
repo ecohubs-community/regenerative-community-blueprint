@@ -13,7 +13,7 @@ Konflikte werden unterdrückt, um „Harmonie" zu bewahren.
 
 **Betroffene Ebenen**
 
-Layer 4 (Konflikt)
+Schicht 4 (Konflikt)
 
 **Relevante Invarianten**
 

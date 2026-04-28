@@ -13,7 +13,7 @@ Ein Mitglied umgeht seinen Beitrag und beauftragt stattdessen externe Arbeitskr√
 
 **Betroffene Ebenen**
 
-Layer 3 (Wirtschaft), Layer 1 (Mitgliedschaft), Layer 4 (Rechenschaftspflicht)
+Schicht 3 (Wirtschaft), Schicht 1 (Mitgliedschaft), Schicht 4 (Rechenschaftspflicht)
 
 **Relevante Invarianten**
 

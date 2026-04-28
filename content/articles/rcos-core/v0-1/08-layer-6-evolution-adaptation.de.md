@@ -1,13 +1,13 @@
 ---
 id: 4ffa600f
-title: 8. Layer 6 — Evolution & Anpassung
+title: 8. Schicht 6 — Evolution & Anpassung
 parentId: e6de7a5d
 order: 80
 lang: de
 sourceHash: 1329c3d9
 ---
 
-Layer 6 definiert, wie sich das System weiterentwickelt, ohne zu kollabieren.  
+Schicht 6 definiert, wie sich das System weiterentwickelt, ohne zu kollabieren.  
 Sein Zweck ist sicherzustellen, dass Veränderung bewusst, eingegrenzt, wo angemessen reversibel ist und Erkenntnisse statt versteckter Schäden hervorbringt. Evolution unter RCOS wird als gesteuerter Prozess behandelt, nicht als Improvisation.
 
 ## 8.1 Änderungsmechanismen
@@ -20,12 +20,12 @@ Sein Zweck ist sicherzustellen, dass Veränderung bewusst, eingegrenzt, wo angem
 
 8.1.3 Jede vorgeschlagene Änderung MUSS mindestens folgendes angeben:
 - Die betroffenen Artefakte, Layer und Abschnitte  
-- Den Entscheidungstyp und den autorisierten Entscheidungspfad gemäß Layer 2  
+- Den Entscheidungstyp und den autorisierten Entscheidungspfad gemäß Schicht 2  
 - Die beabsichtigte Wirkung, den Geltungsbereich und bekannte Risiken  
 - Das Inkrafttretungsdatum und etwaige Übergangsfristen  
 - Migrationsanforderungen für bestehende Rollen, Vereinbarungen oder Aufzeichnungen  
 
-8.1.4 Änderungen, die den Zweck, den Geltungsbereich, die Invarianten oder die Identitätsbeschränkungen von Layer 0 betreffen, MUSS als konstitutionelle Änderungen klassifiziert werden und MUSS dem konstitutionellen Entscheidungsmechanismus folgen.
+8.1.4 Änderungen, die den Zweck, den Geltungsbereich, die Invarianten oder die Identitätsbeschränkungen von Schicht 0 betreffen, MUSS als konstitutionelle Änderungen klassifiziert werden und MUSS dem konstitutionellen Entscheidungsmechanismus folgen.
 
 8.1.5 Die Gemeinschaft MUSS explizite Überprüfungsmechanismen für angenommene Änderungen definieren, einschließlich wie Änderungen bewertet, überarbeitet oder rückgängig gemacht werden, wenn sie Schaden, Instabilität oder unbeabsichtigte Machtkonzentration verursachen.
 
@@ -59,7 +59,7 @@ Sein Zweck ist sicherzustellen, dass Veränderung bewusst, eingegrenzt, wo angem
 - Rollback-Bedingungen und Rollback-Prozess  
 - Autorisierter Entscheidungspfad für das Starten, Verlängern, Ändern oder Beenden des Experiments  
 
-8.3.3 Experimente DARF NICHT die Invarianten von Layer 0 außer Kraft setzen und DARF NICHT die in Layer 2 definierten Governance-Beschränkungen umgehen.
+8.3.3 Experimente DARF NICHT die Invarianten von Schicht 0 außer Kraft setzen und DARF NICHT die in Schicht 2 definierten Governance-Beschränkungen umgehen.
 
 8.3.4 Experimente MUSS in allen betroffenen Artefakten ausdrücklich als experimentell gekennzeichnet sein und MUSS ein nicht verlängerbares Ablaufdatum enthalten, sofern sie nicht durch eine autorisierte Entscheidung erneuert werden.
 
@@ -75,7 +75,7 @@ Sein Zweck ist sicherzustellen, dass Veränderung bewusst, eingegrenzt, wo angem
 - Was geändert, versucht oder gestoppt wurde  
 - Welche Signale, Nachweise oder Schwellenwerte eine Handlung ausgelöst haben  
 
-8.4.3 Lernaufzeichnungen MUSS gemäß den Informationszugangsregeln von Layer 5 zugänglich sein.
+8.4.3 Lernaufzeichnungen MUSS gemäß den Informationszugangsregeln von Schicht 5 zugänglich sein.
 
 8.4.4 Wiederkehrende Fehlermuster MUSS eine strukturelle Überprüfung auslösen, keine individuelle Schuldzuweisung.
 
@@ -88,16 +88,16 @@ Sein Zweck ist sicherzustellen, dass Veränderung bewusst, eingegrenzt, wo angem
 - Höhere Entscheidungsschwellen, wo angemessen  
 - Ausdrückliche Risikoanerkennung  
 
-8.5.3 Notfalländerungen KANN nur dort zulässig sein, wo sie ausdrücklich definiert sind, MUSS zeitlich begrenzt sein, DARF NICHT die Invarianten von Layer 0 außer Kraft setzen und MUSS einer verpflichtenden nachträglichen Überprüfung und Ratifizierung oder Rücknahme unterzogen werden.
+8.5.3 Notfalländerungen KANN nur dort zulässig sein, wo sie ausdrücklich definiert sind, MUSS zeitlich begrenzt sein, DARF NICHT die Invarianten von Schicht 0 außer Kraft setzen und MUSS einer verpflichtenden nachträglichen Überprüfung und Ratifizierung oder Rücknahme unterzogen werden.
 
 ## 8.6 Artefakte
 
-8.6.1 Die folgenden Artefakte sind für die Konformität mit Layer 6 verpflichtend:
+8.6.1 Die folgenden Artefakte sind für die Konformität mit Schicht 6 verpflichtend:
 - Änderungsprotokoll  
 - Versionshistorie  
 - Lernprotokoll  
 
-8.6.2 Artefakte von Layer 6 MUSS:
+8.6.2 Artefakte von Schicht 6 MUSS:
 - Explizit und eindeutig sein  
 - Versioniert sein  
 - Für alle Mitglieder zugänglich sein, mit klar abgegrenztem Datenschutz  

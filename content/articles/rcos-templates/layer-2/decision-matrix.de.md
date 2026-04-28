@@ -71,7 +71,7 @@ Lege für jeden Entscheidungsbereich (Mitgliedschaft, Finanzen, Plattform, Partn
 | _<z. B. Änderungen an Governance-Regeln>_ | _<Konstitutionell>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
 | _<z. B. Änderungen am Hauptzweck / an Invarianten>_ | _<Konstitutionell>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ | _<...>_ |
 
-> **Operative Rolleninhaber:** Jede operative Entscheidung wird von der benannten Rolleninhaberin ausgeführt, die für den jeweiligen Bereich zuständig ist, und zwar innerhalb ihres definierten Zuständigkeitsbereichs gemäß dem Rollenregister (Layer 5). Wenn eine Entscheidung mehrere Bereiche betrifft, handelt jede Rolleninhaberin innerhalb ihres eigenen Zuständigkeitsbereichs.
+> **Operative Rolleninhaber:** Jede operative Entscheidung wird von der benannten Rolleninhaberin ausgeführt, die für den jeweiligen Bereich zuständig ist, und zwar innerhalb ihres definierten Zuständigkeitsbereichs gemäß dem Rollenregister (Schicht 5). Wenn eine Entscheidung mehrere Bereiche betrifft, handelt jede Rolleninhaberin innerhalb ihres eigenen Zuständigkeitsbereichs.
 
 ## Definitionen der Entscheidungstypen
 
@@ -93,7 +93,7 @@ Definiere jeden Entscheidungstyp anhand seines Geltungsbereichs, wer ihn ausfüh
 
 - **Operativ** — _<Tagesgeschäft innerhalb bestehender Regeln; wird von der zuständigen Rolleninhaberin ohne Abstimmung ausgeführt.>_
 - **Strategisch** — _<langfristige Ausrichtung, bedeutende Ressourcenzuweisung, Schaffung/Abschaffung wesentlicher Strukturen; erfordert eine Abstimmung der Vollmitglieder mit definiertem Beratungszeitraum.>_
-- **Konstitutionell** — _<Änderungen an Layer 0 (Zweck, Geltungsbereich, Invarianten) oder am Governance-System selbst; erfordert eine Abstimmung der Vollmitglieder, Supermehrheit und einen Ratifizierungszeitraum.>_
+- **Konstitutionell** — _<Änderungen an Schicht 0 (Zweck, Geltungsbereich, Invarianten) oder am Governance-System selbst; erfordert eine Abstimmung der Vollmitglieder, Supermehrheit und einen Ratifizierungszeitraum.>_
 
 > Wenn eine Entscheidung nicht eindeutig klassifiziert werden kann, wird standardmäßig der Typ mit höherer Auswirkung angewandt.
 

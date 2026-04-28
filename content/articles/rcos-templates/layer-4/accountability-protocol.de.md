@@ -35,7 +35,7 @@ Eine Rechenschaftsprüfung wird eingeleitet, wenn:
 
 1. _<Ein Mitglied in X aufeinanderfolgenden Monaten keinen anerkannten Beitrag geleistet hat.>_
 2. _<Ein Mitglied gegen eine Pflicht aus der Mitgliedschaftsvereinbarung verstoßen hat.>_
-3. _<Ein Mitglied eine Identitäts-Einschränkung oder Invariante der Ebene 0 verletzt hat.>_
+3. _<Ein Mitglied eine Identitäts-Einschränkung oder Invariante der Schicht 0 verletzt hat.>_
 4. _<Eine Verweisung aus der Konfliktlösungsleiter (Stufe 3 oder höher) erfolgt ist.>_
 
 ## Untersuchung und Überprüfung
@@ -56,7 +56,7 @@ Definiere sanfte (Inaktivität), mittlere (Pflichtverletzung) und schwere (Invar
 
 </details>
 
-> **Leitlinie zur Verstoßschwere:** _<mittel = Nichteinhaltung einer Pflicht aus der Mitgliedschaftsvereinbarung, die weder die Sicherheit von Mitgliedern noch die Integrität der Gemeinschaft gefährdet; schwer = Verletzung einer Invariante der Ebene 0, glaubwürdige Sicherheitsbedenken, anhaltend bösgläubiges Verhalten.>_
+> **Leitlinie zur Verstoßschwere:** _<mittel = Nichteinhaltung einer Pflicht aus der Mitgliedschaftsvereinbarung, die weder die Sicherheit von Mitgliedern noch die Integrität der Gemeinschaft gefährdet; schwer = Verletzung einer Invariante der Schicht 0, glaubwürdige Sicherheitsbedenken, anhaltend bösgläubiges Verhalten.>_
 
 - **Inaktivität (leichter Verstoß):** _<Wer kontaktiert das Mitglied; Reaktionsfrist; mögliche Ergebnisse.>_
 - **Pflichtverletzung (mittel):** _<Schriftliche Benachrichtigung; Reaktionsfrist; Lösungs- / Eskalationswege.>_
@@ -154,25 +154,25 @@ Lege für jede Sanktionsklasse den Weg zur Wiederherstellung der Rechte fest —
 - **Nach erzwungenem Austritt:** _<Mindest-Sperrfrist für erneute Bewerbung; das reguläre Aufnahmeverfahren gilt.>_
 - **Nach vorübergehender Zugangsbeschränkung:** _<Rechte werden nach Bestätigung der Lösung innerhalb des Überprüfungsfensters wiederhergestellt.>_
 
-## Abstimmung mit Ebene 1
+## Abstimmung mit Schicht 1
 
 *RCOS-Klauseln: [6.4.4](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation)*
 
 <details data-kind="rationale">
 <summary>Warum das mit dem Austritts- und Trennungsprotokoll verknüpfen?</summary>
 
-Austrittsregeln sind aus gutem Grund in Ebene 1 angesiedelt — sie regeln, wer Mitglied ist und wer nicht. Wenn Rechenschaftsmaßnahmen ihren eigenen parallelen Austrittsweg schaffen würden, gäbe es zwei Regelwerke, zwei Sätze von Aufzeichnungen und ein Schlupfloch, um das faire Verfahren zu umgehen. Ein einziges kanonisches Austrittsprotokoll schließt diese Lücke.
+Austrittsregeln sind aus gutem Grund in Schicht 1 angesiedelt — sie regeln, wer Mitglied ist und wer nicht. Wenn Rechenschaftsmaßnahmen ihren eigenen parallelen Austrittsweg schaffen würden, gäbe es zwei Regelwerke, zwei Sätze von Aufzeichnungen und ein Schlupfloch, um das faire Verfahren zu umgehen. Ein einziges kanonisches Austrittsprotokoll schließt diese Lücke.
 
 </details>
 
 <details data-kind="instructions">
 <summary>Wie du das ausfüllst</summary>
 
-Halte fest, dass alle erzwungenen Austritte und vorübergehenden Zugangsbeschränkungen dem Austritts- und Trennungsprotokoll (Ebene 1) folgen, und stelle klar, dass eine vorübergehende Einschränkung keinen Austritt darstellt.
+Halte fest, dass alle erzwungenen Austritte und vorübergehenden Zugangsbeschränkungen dem Austritts- und Trennungsprotokoll (Schicht 1) folgen, und stelle klar, dass eine vorübergehende Einschränkung keinen Austritt darstellt.
 
 </details>
 
-_<Alle erzwungenen Austritte und vorübergehenden Zugangsbeschränkungen folgen dem Austritts- und Trennungsprotokoll (Ebene 1). Eine vorübergehende Zugangsbeschränkung stellt keinen Austritt dar und löst keine Sperrfrist für eine erneute Bewerbung aus, es sei denn, ein erzwungener Austritt wird anschließend von den Vollmitgliedern beschlossen.>_
+_<Alle erzwungenen Austritte und vorübergehenden Zugangsbeschränkungen folgen dem Austritts- und Trennungsprotokoll (Schicht 1). Eine vorübergehende Zugangsbeschränkung stellt keinen Austritt dar und löst keine Sperrfrist für eine erneute Bewerbung aus, es sei denn, ein erzwungener Austritt wird anschließend von den Vollmitgliedern beschlossen.>_
 
 ---
 

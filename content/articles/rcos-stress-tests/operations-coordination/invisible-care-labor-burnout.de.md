@@ -13,7 +13,7 @@ Bestimmte Mitglieder tragen unverhältnismäßig viel emotionale oder Fürsorgea
 
 **Beteiligte Ebenen**
 
-Layer 3 (Wirtschaft), Layer 5 (Betrieb)
+Schicht 3 (Wirtschaft), Schicht 5 (Betrieb)
 
 **Relevante Invarianten**
 

@@ -13,7 +13,7 @@ Eine oder zwei Personen reden ständig über andere hinweg und dominieren Treffe
 
 **Betroffene Ebenen**
 
-Layer 2 (Governance), Layer 5 (Operations), Layer 4 (Konflikt)
+Schicht 2 (Governance), Schicht 5 (Operations), Schicht 4 (Konflikt)
 
 **Relevante Invarianten**
 

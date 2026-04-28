@@ -248,7 +248,11 @@ Rules:
 5. **Tone and register**
    - Match the source register (formal for spec-like documents, more conversational for templates).
    - For German: prefer informal "du"/"ihr" addressing the reader, matching the source's friendly-but-precise voice. Use natural German technical vocabulary (e.g., "Gemeinschaft" for "community", "Vorlage" for "template").
-   - For other languages: prefer the natural informal register a community organizer would use, unless the source is clearly formal.`;
+   - For other languages: prefer the natural informal register a community organizer would use, unless the source is clearly formal.
+
+6. **Glossary — keep this consistent across articles**
+   - **Layer N** (the RCOS protocol-stack concept) → **Schicht N** in German. Always "Schicht", never "Ebene" or "Layer". Applies in titles, prose, and inside backticks. Examples: "Layer 0" → "Schicht 0", "Layer 2 governance" → "Governance auf Schicht 2".
+   - For other languages, pick the natural translation of "layer" used in protocol-stack contexts and apply it consistently.`;
 
 function buildUserPrompt(job) {
 	const language = LANGUAGE_NAMES[args.locale] ?? args.locale;

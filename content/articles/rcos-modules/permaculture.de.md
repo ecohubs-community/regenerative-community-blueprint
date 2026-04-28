@@ -75,10 +75,10 @@ Ein vollständiges Permakultur-Modul kann umfassen:
 ### Beziehung zu RCOS
 
 Dieses Modul:
-- Erweitert Layer 3 (Wirtschafts- & Ressourcensystem)
-- Führt Stewardship-Rollen in Layer 5 ein
+- Erweitert Schicht 3 (Wirtschafts- & Ressourcensystem)
+- Führt Stewardship-Rollen in Schicht 5 ein
 - Kann Schutzmaßnahmen erfordern (z. B. Anti-Privatisierung von Land)
-- Muss die Invarianten von Layer 0 und die Governance von Layer 2 respektieren
+- Muss die Invarianten von Schicht 0 und die Governance von Schicht 2 respektieren
 
 Die Einführung dieses Moduls impliziert eine **langfristige Verpflichtung** und SOLLTE mit geeigneten Schutzmaßnahmen und Austrittsregeln kombiniert werden.
 

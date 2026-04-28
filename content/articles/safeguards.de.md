@@ -70,7 +70,7 @@ Schutzmaßnahmen sind **keine Artefakte an sich**.
 Wenn sie jedoch eingeführt werden, KANN eine Schutzmaßnahme:
 - Neue Artefakte erfordern
 - Bestehende Artefakte ändern
-- Einschränkungen zu den Invarianten von Layer 0 hinzufügen
+- Einschränkungen zu den Invarianten von Schicht 0 hinzufügen
 - Zusätzliche Testfälle für die Konformitätsprüfung einführen
 
 Diese abgeleiteten Artefakte sind nur erforderlich, **solange die Schutzmaßnahme aktiv ist**.

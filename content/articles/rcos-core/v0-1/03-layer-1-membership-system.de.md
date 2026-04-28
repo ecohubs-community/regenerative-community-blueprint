@@ -1,13 +1,13 @@
 ---
 id: d34d3f9c
-title: 3. Layer 1 — Mitgliedschaftssystem
+title: 3. Schicht 1 — Mitgliedschaftssystem
 parentId: e6de7a5d
 order: 30
 lang: de
 sourceHash: e36f1375
 ---
 
-Layer 1 definiert, wie Einzelpersonen der Gemeinschaft beitreten, an ihr teilnehmen und sie verlassen. Er legt die explizite Beziehung zwischen dem Individuum und dem Kollektiv fest, einschließlich Rechte, Pflichten und ordnungsgemäße Verfahren. Keine Person darf als Mitglied behandelt werden, ohne die in diesem Layer definierten Mechanismen durchlaufen zu haben.
+Schicht 1 definiert, wie Einzelpersonen der Gemeinschaft beitreten, an ihr teilnehmen und sie verlassen. Er legt die explizite Beziehung zwischen dem Individuum und dem Kollektiv fest, einschließlich Rechte, Pflichten und ordnungsgemäße Verfahren. Keine Person darf als Mitglied behandelt werden, ohne die in diesem Layer definierten Mechanismen durchlaufen zu haben.
 
 ## 3.1 Mitgliedschaftsstatus
 
@@ -31,7 +31,7 @@ Layer 1 definiert, wie Einzelpersonen der Gemeinschaft beitreten, an ihr teilneh
 
 3.2.2 Der Onboarding-Prozess MUSS beinhalten:
 - Prüfung aller RCOS-Core-Artefakte
-- Explizite Zustimmung zu den Regeln von Layer 0 und Layer 1
+- Explizite Zustimmung zu den Regeln von Schicht 0 und Schicht 1
 - Festlegung des anfänglichen Mitgliedschaftsstatus
 
 3.2.3 Aufnahmekriterien MUSS explizit und dokumentiert sein.
@@ -71,7 +71,7 @@ Layer 1 definiert, wie Einzelpersonen der Gemeinschaft beitreten, an ihr teilneh
 
 3.5.3 Stellvertretende Teilnahme (z. B. Auslagerung von Arbeit) MUSS explizit geregelt sein.
 
-3.5.4 Anhaltende Nicht-Teilnahme MUSS einen Rechenschaftsprozess auslösen, wie in Layer 4 definiert.
+3.5.4 Anhaltende Nicht-Teilnahme MUSS einen Rechenschaftsprozess auslösen, wie in Schicht 4 definiert.
 
 ## 3.6 Austritt und Trennung
 
@@ -79,7 +79,7 @@ Layer 1 definiert, wie Einzelpersonen der Gemeinschaft beitreten, an ihr teilneh
 
 3.6.2 Austrittsverfahren MUSS explizit, dokumentiert und nicht strafend sein.
 
-3.6.3 Erzwungener Austritt MUSS einem ordnungsgemäßen Verfahren folgen und über die Mechanismen von Layer 4 abgewickelt werden.
+3.6.3 Erzwungener Austritt MUSS einem ordnungsgemäßen Verfahren folgen und über die Mechanismen von Schicht 4 abgewickelt werden.
 
 3.6.4 Ein Austritt DARF NICHT zum Verlust von Rechten führen, die über die explizit an die Mitgliedschaft gebundenen hinausgehen.
 

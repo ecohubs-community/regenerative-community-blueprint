@@ -13,7 +13,7 @@ Ein Mitglied verletzt eine starke kulturelle Norm (z. B. Fleischkonsum in einer 
 
 **Betroffene Ebenen**
 
-Layer 0 (Zweck & Geltungsbereich), Layer 1 (Mitgliedschaft), Layer 4 (Konflikt)
+Schicht 0 (Zweck & Geltungsbereich), Schicht 1 (Mitgliedschaft), Schicht 4 (Konflikt)
 
 **Relevante Invarianten**
 

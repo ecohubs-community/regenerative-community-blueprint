@@ -14,7 +14,7 @@ Regeln werden während Krisen „vorübergehend" umgangen.
 
 **Betroffene Ebenen**
 
-Layer 2 (Governance), Layer 6 (Evolution)
+Schicht 2 (Governance), Schicht 6 (Evolution)
 
 **Relevante Invarianten**
 

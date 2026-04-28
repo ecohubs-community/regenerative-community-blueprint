@@ -1,6 +1,6 @@
 ---
 id: 4a376956
-title: Ebene 0 – Identität & Geltungsbereich
+title: Schicht 0 – Identität & Geltungsbereich
 parentId: a7759be1
 order: 0
 lang: de

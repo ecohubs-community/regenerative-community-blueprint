@@ -1,6 +1,6 @@
 ---
 id: 6e32b102
-title: Layer 6 – Evolution & Anpassung
+title: Schicht 6 – Evolution & Anpassung
 parentId: a7759be1
 order: 0
 lang: de

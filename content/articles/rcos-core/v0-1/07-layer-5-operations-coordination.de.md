@@ -1,13 +1,13 @@
 ---
 id: 488558d6
-title: 7. Layer 5 — Betrieb & Koordination
+title: 7. Schicht 5 — Betrieb & Koordination
 parentId: e6de7a5d
 order: 70
 lang: de
 sourceHash: abb85f16
 ---
 
-Layer 5 definiert, wie tägliche Arbeit, Koordination und Informationsfluss in der Praxis funktionieren.  
+Schicht 5 definiert, wie tägliche Arbeit, Koordination und Informationsfluss in der Praxis funktionieren.  
 Sein Zweck ist sicherzustellen, dass der Betrieb nachvollziehbar, nachhaltig und übertragbar bleibt und nicht in informelle Hierarchie, Abhängigkeit oder Burnout abgleitet.
 
 ## 7.1 Rollen und Verantwortlichkeiten
@@ -38,7 +38,7 @@ Sein Zweck ist sicherzustellen, dass der Betrieb nachvollziehbar, nachhaltig und
 - Governance  
 - Koordination und Abstimmung  
 - Reflexion und Lernen  
-- Konfliktbearbeitung (wie von Layer 4 gefordert)
+- Konfliktbearbeitung (wie von Schicht 4 gefordert)
 
 7.2.2 Jeder Sitzungstyp MUSS mindestens Folgendes definieren:
 - Zweck und Entscheidungsumfang  
@@ -49,7 +49,7 @@ Sein Zweck ist sicherzustellen, dass der Betrieb nachvollziehbar, nachhaltig und
 - Dokumentations- und Veröffentlichungsanforderungen  
 - Anforderungen an die Entscheidungserfassung, wo Entscheidungen getroffen werden  
 
-7.2.3 Sitzungen DARF NICHT ihren erklärten Entscheidungsumfang überschreiten oder die in Layer 2 definierten Autoritätsgrenzen umgehen.
+7.2.3 Sitzungen DARF NICHT ihren erklärten Entscheidungsumfang überschreiten oder die in Schicht 2 definierten Autoritätsgrenzen umgehen.
 
 7.2.4 Die Sitzungsbelastung MUSS begrenzt, überwacht und überprüfbar sein, wie in Abschnitt 7.4 definiert.
 
@@ -86,7 +86,7 @@ Sein Zweck ist sicherzustellen, dass der Betrieb nachvollziehbar, nachhaltig und
 
 7.4.3 Belastungsgrenzen MUSS durch einen autorisierten Governance-Prozess überprüfbar und anpassbar sein.
 
-7.4.4 Anhaltende Überlastung, Burnout-Risiko, chronische Nicht-Teilnahme oder Abhängigkeit von übermäßig engagierten Einzelpersonen MUSS Überprüfungs- oder Reparaturprozesse auslösen, wie in Layer 4 definiert.
+7.4.4 Anhaltende Überlastung, Burnout-Risiko, chronische Nicht-Teilnahme oder Abhängigkeit von übermäßig engagierten Einzelpersonen MUSS Überprüfungs- oder Reparaturprozesse auslösen, wie in Schicht 4 definiert.
 
 ## 7.5 Betriebskontinuität
 
@@ -101,12 +101,12 @@ Sein Zweck ist sicherzustellen, dass der Betrieb nachvollziehbar, nachhaltig und
 
 ## 7.6 Artefakte
 
-7.6.1 Die folgenden Artefakte sind für die Konformität mit Layer 5 verpflichtend:
+7.6.1 Die folgenden Artefakte sind für die Konformität mit Schicht 5 verpflichtend:
 - Betriebshandbuch  
 - Rollenregister  
 - Sitzungsvorlagen  
 
-7.6.2 Artefakte von Layer 5 MUSS:
+7.6.2 Artefakte von Schicht 5 MUSS:
 - Explizit und eindeutig sein  
 - Versioniert sein  
 - Für alle Mitglieder zugänglich sein, mit klar begrenztem Datenschutz  

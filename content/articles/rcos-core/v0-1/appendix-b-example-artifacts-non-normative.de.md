@@ -36,10 +36,10 @@ Die Beispiele dienen nur zur Information und sollten nicht als vorgeschriebene F
   - Gemeinsame Mittel: Betriebskasse, Rücklagenfonds
   - Gemeinsame Infrastruktur: Wassersystem, Solaranlage, geteilte Fahrzeuge
 - Im Geltungsbereich liegende Autoritätsbereiche:
-  - Governance-Regeln und Entscheidungsprozess (Layer 2)
-  - Mitgliedschaftsregeln und -zustände (Layer 1)
-  - Kasse und gemeinsame Ressourcenverteilung (Layer 3)
-  - Operative Koordination für gemeinsame Arbeit (Layer 5)
+  - Governance-Regeln und Entscheidungsprozess (Schicht 2)
+  - Mitgliedschaftsregeln und -zustände (Schicht 1)
+  - Kasse und gemeinsame Ressourcenverteilung (Schicht 3)
+  - Operative Koordination für gemeinsame Arbeit (Schicht 5)
 - Außerhalb des Geltungsbereichs:
   - Persönliches Einkommen, private Schulden und private Bankkonten
   - Private Beziehungen und private Wohnräume (außer bei sicherheitskritischen Bedingungen)
@@ -81,7 +81,7 @@ Die Beispiele dienen nur zur Information und sollten nicht als vorgeschriebene F
 3. Verantwortlichkeits-Aufnahme (dokumentierte Aufnahme; Schutzmaßnahmen gegen Vergeltung aktiviert)  
 4. Verantwortlichkeits-Prüfung (Ergebnisse, Reparaturplan und verhältnismäßige Maßnahmen)  
 5. Governance-Entscheidung (falls Autorität, Zugang oder Rollen geändert werden müssen)  
-6. Trennungsprozess (falls erforderlich; koordiniert mit Layer 1 Austritts- und Trennungsprotokoll)
+6. Trennungsprozess (falls erforderlich; koordiniert mit Schicht 1 Austritts- und Trennungsprotokoll)
 
 ## B.6 Beispiel Änderungsvorschlag-Vorlage (Auszug)
 
@@ -109,12 +109,12 @@ Die Beispiele dienen nur zur Information und sollten nicht als vorgeschriebene F
   - Einhaltung der erklärten Invarianten und Sicherheitsregeln
   - Teilnahme an Mindest-Onboarding- und Überprüfungsprozessen
 - Verweis auf ordnungsgemäßes Verfahren:
-  - „Jeder erzwungene Austritt oder Zugangsbeschränkung folgt dem Layer 4 ordnungsgemäßen Verfahren und dem Austrittsprotokoll."
+  - „Jeder erzwungene Austritt oder Zugangsbeschränkung folgt dem Schicht 4 ordnungsgemäßen Verfahren und dem Austrittsprotokoll."
 
 ## B.8 Beispiel Onboarding-Protokoll (Auszug)
 
-1. Zugang zu RCOS-Artefakten (Layer 0–6) und lokalen Modulen bereitstellen
-2. Ausdrückliche Zustimmung zu Layer 0 und Layer 1 Artefakten bestätigen
+1. Zugang zu RCOS-Artefakten (Schicht 0–6) und lokalen Modulen bereitstellen
+2. Ausdrückliche Zustimmung zu Schicht 0 und Schicht 1 Artefakten bestätigen
 3. Initialen Mitgliedschaftsstatus und Onboarding-Buddy zuweisen
 4. Orientierung zu Sicherheits- und Konfliktprozessen abschließen
 5. Geltungsbereichsgrenzen und was außerhalb des Geltungsbereichs liegt besprechen

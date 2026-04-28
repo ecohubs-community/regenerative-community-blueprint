@@ -13,7 +13,7 @@ Die Gemeinschaft verkauft Land an Mitglieder und untergräbt damit Austritts- un
 
 **Betroffene Ebenen**
 
-Ebene 0 (Geltungsbereich & Invarianten), Ebene 3 (Wirtschaft), Ebene 1 (Mitgliedschaft)
+Schicht 0 (Geltungsbereich & Invarianten), Schicht 3 (Wirtschaft), Schicht 1 (Mitgliedschaft)
 
 **Relevante Invarianten**
 
