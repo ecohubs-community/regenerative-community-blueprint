@@ -11,7 +11,7 @@ sourceHash: 5a71e91d
 - **Status:** Vorlage — für deine Gemeinschaft anpassen
 - **RCOS-Referenz:** [§2.3](/articles/rcos-core/v0-1/layer-0-identity-scope#23-invariants), [§2.5](/articles/rcos-core/v0-1/layer-0-identity-scope#25-artifacts)
 
-> Invarianten sind Rahmenbedingungen, die MUST NOT verletzt werden, solange sie in Kraft sind. Keine Entscheidung, Rolle, Prozess oder Notfallmaßnahme darf eine Invariante außer Kraft setzen. Entsteht ein Konflikt zwischen einer Invariante und einer anderen Regel, hat die Invariante Vorrang.
+> Invarianten sind Rahmenbedingungen, die DARF NICHT verletzt werden, solange sie in Kraft sind. Keine Entscheidung, Rolle, Prozess oder Notfallmaßnahme darf eine Invariante außer Kraft setzen. Entsteht ein Konflikt zwischen einer Invariante und einer anderen Regel, hat die Invariante Vorrang.
 
 ---
 

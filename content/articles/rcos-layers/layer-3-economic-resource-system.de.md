@@ -56,7 +56,7 @@ sourceHash: 3e04c654
 
 ### **Explizitätsregeln**
 
-#### **MUST explizit sein**
+#### **MUSS explizit sein**
 
 * Was Gemeingut und was privat ist
 * Wie gemeinsame Ressourcen verteilt werden
@@ -66,13 +66,13 @@ sourceHash: 3e04c654
 
 **Warum:** Geld + Unklarheit zerstört Vertrauen schneller als Konflikte.
 
-#### **MAY explizit sein**
+#### **KANN explizit sein**
 
 * Modelle zur Bewertung von Beiträgen
 * Interne Einheiten (Tokens, Stunden, Punkte)
 * Budgetkategorien
 
-#### **MUST optional bleiben**
+#### **MUSS optional bleiben**
 
 * Einstellungen zu Wohlstand
 * Gleiche vs. differenzierte Ergebnisse

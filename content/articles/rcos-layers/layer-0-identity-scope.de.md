@@ -62,7 +62,7 @@ Zweck: harte Grenzen schaffen, die selbst ein Konsens nicht beiläufig außer Kr
 
 ## Explizitätsregeln
 
-### MUST explizit sein
+### MUSS explizit sein
 
 * Primärer Zweck
 * Governance-Geltungsbereich (Vermögenswerte, Bereiche, Autorität)
@@ -71,13 +71,13 @@ Zweck: harte Grenzen schaffen, die selbst ein Konsens nicht beiläufig außer Kr
 
 **Warum:** Mehrdeutigkeit schafft hier schleichende Machtaneignung.
 
-### MAY explizit sein
+### KANN explizit sein
 
 * Sekundäre Zwecke
 * Externe Zugehörigkeiten
 * Langfristige Visionsaussagen
 
-### MUST optional bleiben
+### MUSS optional bleiben
 
 * Ideologie
 * Spirituelle Rahmung

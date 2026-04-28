@@ -64,7 +64,7 @@ Wer entscheiden darf.
 
 ### **Explizierungsregeln**
 
-#### **MUST explizit sein**
+#### **MUSS explizit sein**
 
 * Entscheidungstypen (operativ / strategisch / konstitutionell)
 * Wer was entscheidet (Befugnisgrenzen)
@@ -73,13 +73,13 @@ Wer entscheiden darf.
 
 **Warum:** Unklarheit in der Governance bedeutet informelle Hierarchie.
 
-#### **MAY explizit sein**
+#### **KANN explizit sein**
 
 * Moderationsstil bei Treffen
 * Vorlagen für Vorschläge
 * Notfallverfahren
 
-#### **MUST optional bleiben**
+#### **MUSS optional bleiben**
 
 * Governance-Philosophie (Konsens vs. Soziokratie usw.)
 * Emotionaler Ton bei Treffen

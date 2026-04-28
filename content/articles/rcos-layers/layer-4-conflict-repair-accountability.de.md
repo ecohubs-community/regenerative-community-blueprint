@@ -50,7 +50,7 @@ sourceHash: 65bbc8dc
 
 ### Explizitätsregeln
 
-#### **MUST explizit sein**
+#### **MUSS explizit sein**
 
 * Konfliktklassifikation  
 * Minimaler Reparaturprozess  
@@ -59,13 +59,13 @@ sourceHash: 65bbc8dc
 
 **Warum:** Konfliktvermeidung ist keine Neutralität – sie ist strukturelles Versagen.
 
-#### **MAY explizit sein**
+#### **KANN explizit sein**
 
 * Mediationsstile  
 * Auswahl der Moderation  
 * Restaurative Praktiken
 
-#### **MUST optional bleiben**
+#### **MUSS optional bleiben**
 
 * Normen für emotionalen Ausdruck  
 * Therapeutische oder spirituelle Rahmung

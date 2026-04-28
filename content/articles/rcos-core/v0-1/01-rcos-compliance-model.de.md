@@ -14,7 +14,7 @@ sourceHash: beafa331
 
 ## 1.2 Explizitheitspflicht
 
-Jeder Mechanismus, der Macht, Ressourcen, Pflichten oder Austritt betrifft, `MUST` explizit, dokumentiert und überprüfbar sein.
+Jeder Mechanismus, der Macht, Ressourcen, Pflichten oder Austritt betrifft, `MUSS` explizit, dokumentiert und überprüfbar sein.
 
 ## 1.3 Meta-Invariante
 

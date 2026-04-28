@@ -43,7 +43,7 @@ sourceHash: 9e7d7a30
 
 ### **Explizitheit-Regeln**
 
-#### **MUST – muss explizit sein**
+#### **MUSS – muss explizit sein**
 
 * Wie sich Regeln ändern
 * Versionierung und Überprüfungsprozess
@@ -52,13 +52,13 @@ sourceHash: 9e7d7a30
 
 **Warum:** Systeme, die sich nicht verändern können, verrotten oder explodieren.
 
-#### **MAY – kann explizit sein**
+#### **KANN – kann explizit sein**
 
 * Überprüfungsfrequenz
 * Sunset-Klauseln
 * Methoden zur Feedback-Erhebung
 
-#### **MUST – muss optional bleiben**
+#### **MUSS – muss optional bleiben**
 
 * Innovationstempo
 * Risikobereitschaft (innerhalb der Grenzen)

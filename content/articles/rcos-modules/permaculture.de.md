@@ -80,11 +80,11 @@ Dieses Modul:
 - Kann Schutzmaßnahmen erfordern (z. B. Anti-Privatisierung von Land)
 - Muss die Invarianten von Layer 0 und die Governance von Layer 2 respektieren
 
-Die Einführung dieses Moduls impliziert eine **langfristige Verpflichtung** und SHOULD mit geeigneten Schutzmaßnahmen und Austrittsregeln kombiniert werden.
+Die Einführung dieses Moduls impliziert eine **langfristige Verpflichtung** und SOLLTE mit geeigneten Schutzmaßnahmen und Austrittsregeln kombiniert werden.
 
 ### Migration und Skalierung
 
-Gemeinschaften MAY:
+Gemeinschaften KANN:
 - Mit einem Minimalen Permakultur-Modul beginnen
 - Dieses vollständige Modul schrittweise übernehmen
 - Den Umfang anpassen, wenn sich Landnutzung und Kapazitäten weiterentwickeln

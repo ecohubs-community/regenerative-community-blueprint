@@ -11,7 +11,7 @@ sourceHash: 8a9e28c9
 
 Dieser Zusatz definiert strukturelle Schutzmaßnahmen, um die informelle oder unumkehrbare Privatisierung von Land oder gemeinsam genutzten ökologischen Systemen zu verhindern.
 
-Er MAY zusammen mit jedem RCOS-kompatiblen Land- oder Ökologiemodul übernommen werden.
+Er KANN zusammen mit jedem RCOS-kompatiblen Land- oder Ökologiemodul übernommen werden.
 
 ---
 
@@ -53,48 +53,48 @@ Kein Ausmaß von:
 - Dauer der Verwaltung,
 - emotionaler Bindung
 
-MAY Eigentum, Vetorechte oder dauerhafte Kontrolle begründen, es sei denn, dies wird ausdrücklich durch die Governance genehmigt.
+KANN Eigentum, Vetorechte oder dauerhafte Kontrolle begründen, es sei denn, dies wird ausdrücklich durch die Governance genehmigt.
 
 ---
 
 ### Keine unumkehrbaren Übertragungen
 
 Vor jeder Übertragung, jedem Verkauf, jeder Verpachtung oder Aufteilung:
-- MUST Austrittsszenarien definiert werden,
-- MUST Wiederverkaufsbedingungen explizit sein,
-- MUST Rückfall- oder Rückkaufmechanismen existieren.
+- MUSS Austrittsszenarien definiert werden,
+- MUSS Wiederverkaufsbedingungen explizit sein,
+- MUSS Rückfall- oder Rückkaufmechanismen existieren.
 
-Wenn keine Austrittsregeln definiert werden können, MUST NOT die Übertragung erfolgen.
+Wenn keine Austrittsregeln definiert werden können, DARF NICHT die Übertragung erfolgen.
 
 ---
 
 ### Trennung von Nutzung und Kontrolle
 
-Wo möglich SHOULD:
+Wo möglich SOLLTE:
 - Nutzungsrechte,
 - Verwaltungsrechte,
 - Eigentumsrechte
 
 getrennt und explizit dokumentiert werden.
 
-Die Vereinigung aller drei in derselben Rolle ist eine Hochrisiko-Konfiguration und MUST überprüft werden.
+Die Vereinigung aller drei in derselben Rolle ist eine Hochrisiko-Konfiguration und MUSS überprüft werden.
 
 ---
 
 ## Investitionsschutzmaßnahmen
 
-Private Investitionen in Allmende MUST definieren:
+Private Investitionen in Allmende MUSS definieren:
 - was gewonnen wird (falls überhaupt),
 - was NICHT gewonnen wird (Kontrolle, Veto, Dauerhaftigkeit),
 - wie die Investition zurückgewonnen oder abgeschrieben wird.
 
-Nicht rückgewinnbare Investitionen MUST freiwillig und explizit sein.
+Nicht rückgewinnbare Investitionen MUSS freiwillig und explizit sein.
 
 ---
 
 ## Austrittsschutz
 
-Mitglieder MUST in der Lage sein:
+Mitglieder MUSS in der Lage sein:
 - zu gehen, ohne unzusammenhängende Rechte zu verlieren,
 - sich von der Landpflege zurückzuziehen, ohne bestraft zu werden,
 - definierten Wert zurückzuerhalten, falls zutreffend.
@@ -105,7 +105,7 @@ Landregelungen, die einen Austritt wirtschaftlich oder sozial unmöglich machen,
 
 ## Verhinderung von Governance-Lock-in
 
-Landentscheidungen MUST NOT:
+Landentscheidungen DARF NICHT:
 - zukünftige Governance dauerhaft einschränken,
 - Invarianten der Ebene 0 außer Kraft setzen,
 - die Gemeinschaft rechtlich oder strukturell nicht weiterentwickelbar machen.

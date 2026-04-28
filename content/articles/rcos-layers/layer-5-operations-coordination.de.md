@@ -56,7 +56,7 @@ sourceHash: 691f29c5
 
 ### **Explizitätsregeln**
 
-#### **MUST explizit sein**
+#### **MUSS explizit sein**
 
 * Rollen und Verantwortlichkeiten
 * Regeln zur Entscheidungsdokumentation
@@ -65,13 +65,13 @@ sourceHash: 691f29c5
 
 **Warum:** Undokumentierte Abläufe konzentrieren Macht unsichtbar.
 
-#### **MAY explizit sein**
+#### **KANN explizit sein**
 
 * Besprechungsrhythmus
 * Werkzeuge (Notion, Git, etc.)
 * Rotationspläne für Rollen
 
-#### **MUST optional bleiben**
+#### **MUSS optional bleiben**
 
 * Arbeitsstile
 * Ästhetische Vorlieben

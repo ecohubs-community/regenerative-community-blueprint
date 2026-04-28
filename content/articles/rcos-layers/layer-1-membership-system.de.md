@@ -43,7 +43,7 @@ sourceHash: db0524cf
 
 ### Regeln zur Explizitheit
 
-#### **MUST explizit sein**
+#### **MUSS explizit sein**
 
 * Mitgliedschaftsstatus (Probe, Voll, Ausgetreten)  
 * Ein- und Austrittsprozesse  
@@ -52,13 +52,13 @@ sourceHash: db0524cf
 
 **Warum:** Unklare Mitgliedschaft ist die häufigste Ursache für Missbrauch und Burnout.
 
-#### **MAY explizit sein**
+#### **KANN explizit sein**
 
 * Beitragserwartungen pro Rolle  
 * Zeitliche Verpflichtungen  
 * Verhaltensnormen
 
-#### **MUST optional bleiben**
+#### **MUSS optional bleiben**
 
 * Kriterien zur Persönlichkeitspassung  
 * Lebensstilentscheidungen  

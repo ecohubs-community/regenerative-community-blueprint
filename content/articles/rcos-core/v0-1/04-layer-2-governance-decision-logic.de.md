@@ -11,7 +11,7 @@ Layer 2 definiert, wie kollektive Entscheidungen getroffen werden, wer befugt is
 
 ## 4.1 Entscheidungstypen
 
-4.1.1 Alle kollektiven Entscheidungen MUST in genau einen der folgenden Entscheidungstypen eingeordnet werden:
+4.1.1 Alle kollektiven Entscheidungen MUSS in genau einen der folgenden Entscheidungstypen eingeordnet werden:
 - Operative Entscheidungen
 - Strategische Entscheidungen
 - Konstitutionelle Entscheidungen
@@ -22,47 +22,47 @@ Layer 2 definiert, wie kollektive Entscheidungen getroffen werden, wer befugt is
 
 4.1.4 Konstitutionelle Entscheidungen betreffen Änderungen an den Invarianten von Layer 0, dem Zweck, dem Geltungsbereich oder dem Governance-System selbst.
 
-4.1.5 Wenn eine Entscheidung nicht eindeutig zugeordnet werden kann, MUST sie standardmäßig dem Entscheidungstyp mit höherer Auswirkung zugeordnet werden.
+4.1.5 Wenn eine Entscheidung nicht eindeutig zugeordnet werden kann, MUSS sie standardmäßig dem Entscheidungstyp mit höherer Auswirkung zugeordnet werden.
 
 ## 4.2 Entscheidungsmechanismen
 
-4.2.1 Für jeden Entscheidungstyp MUST ein explizit definierter Entscheidungsmechanismus festgelegt sein.
+4.2.1 Für jeden Entscheidungstyp MUSS ein explizit definierter Entscheidungsmechanismus festgelegt sein.
 
-4.2.2 Entscheidungsmechanismen MAY unter anderem folgende umfassen:
+4.2.2 Entscheidungsmechanismen KANN unter anderem folgende umfassen:
 - Konsent-basierte Entscheidungsfindung
 - Mehrheitsentscheid
 - Qualifizierte Mehrheit
 - Delegierte Autorität
 - Zufällige oder rotierende Zuweisung
 
-4.2.3 Entscheidungsmechanismen MUST festlegen:
+4.2.3 Entscheidungsmechanismen MUSS festlegen:
 - Teilnahmeberechtigte Personen
 - Entscheidungsschwellen
 - Blockade- oder Vetobedingungen, falls vorhanden
 - Zeitliche Beschränkungen
 
-4.2.4 Kein informeller oder ad-hoc-Entscheidungsmechanismus MAY für kollektive Entscheidungen verwendet werden.
+4.2.4 Kein informeller oder ad-hoc-Entscheidungsmechanismus KANN für kollektive Entscheidungen verwendet werden.
 
 ## 4.3 Autoritätsgrenzen
 
-4.3.1 Alle Autorität MUST explizit definierten Rollen, Kreisen oder Gremien zugewiesen werden.
+4.3.1 Alle Autorität MUSS explizit definierten Rollen, Kreisen oder Gremien zugewiesen werden.
 
-4.3.2 Autoritätszuweisungen MUST beinhalten:
+4.3.2 Autoritätszuweisungen MUSS beinhalten:
 - Umfang der Autorität
 - Grenzen der Autorität
 - Dauer oder Amtszeit, falls zutreffend
 
-4.3.3 Keine Person oder kein Gremium MAY Autorität außerhalb des explizit zugewiesenen Bereichs ausüben.
+4.3.3 Keine Person oder kein Gremium KANN Autorität außerhalb des explizit zugewiesenen Bereichs ausüben.
 
-4.3.4 Autorität MUST NOT aus Charisma, Dienstalter, Eigentum oder informellem Einfluss abgeleitet werden.
+4.3.4 Autorität DARF NICHT aus Charisma, Dienstalter, Eigentum oder informellem Einfluss abgeleitet werden.
 
-4.3.5 Temporäre oder Notfall-Autorität MUST explizit definiert, zeitlich begrenzt und einer Überprüfung unterzogen werden.
+4.3.5 Temporäre oder Notfall-Autorität MUSS explizit definiert, zeitlich begrenzt und einer Überprüfung unterzogen werden.
 
 ## 4.4 Entscheidungsmatrix
 
-4.4.1 Die Gemeinschaft MUST eine Entscheidungsmatrix als zentrales Governance-Artefakt pflegen.
+4.4.1 Die Gemeinschaft MUSS eine Entscheidungsmatrix als zentrales Governance-Artefakt pflegen.
 
-4.4.2 Die Entscheidungsmatrix MUST mindestens folgendes abbilden:
+4.4.2 Die Entscheidungsmatrix MUSS mindestens folgendes abbilden:
 - Entscheidungstyp
 - Entscheidungsdomäne
 - Autorisierte Rolle oder Gremium
@@ -70,36 +70,36 @@ Layer 2 definiert, wie kollektive Entscheidungen getroffen werden, wer befugt is
 - Zustimmungsschwelle
 - Eskalationspfad
 
-4.4.3 Die Entscheidungsmatrix MUST für alle Mitglieder öffentlich zugänglich sein.
+4.4.3 Die Entscheidungsmatrix MUSS für alle Mitglieder öffentlich zugänglich sein.
 
-4.4.4 Entscheidungen, die außerhalb der Entscheidungsmatrix getroffen werden, MUST als ungültig betrachtet werden.
+4.4.4 Entscheidungen, die außerhalb der Entscheidungsmatrix getroffen werden, MUSS als ungültig betrachtet werden.
 
 ## 4.5 Governance-Protokoll
 
-4.5.1 Die Gemeinschaft MUST ein Governance-Protokoll definieren, das den vollständigen Lebenszyklus einer Entscheidung beschreibt.
+4.5.1 Die Gemeinschaft MUSS ein Governance-Protokoll definieren, das den vollständigen Lebenszyklus einer Entscheidung beschreibt.
 
-4.5.2 Das Governance-Protokoll MUST beinhalten:
+4.5.2 Das Governance-Protokoll MUSS beinhalten:
 - Anforderungen an die Einreichung von Vorschlägen
 - Prüfungs- und Beratungsprozess
 - Umsetzung der Entscheidung
 - Dokumentation und Veröffentlichung
 - Einspruchs- und Überprüfungsmechanismen
 
-4.5.3 Das Governance-Protokoll MUST festlegen, wie Konflikte zwischen Entscheidungen gelöst werden.
+4.5.3 Das Governance-Protokoll MUSS festlegen, wie Konflikte zwischen Entscheidungen gelöst werden.
 
-4.5.4 Alle Governance-Handlungen MUST gemäß den Dokumentationsregeln von Layer 5 dokumentiert werden.
+4.5.4 Alle Governance-Handlungen MUSS gemäß den Dokumentationsregeln von Layer 5 dokumentiert werden.
 
 ## 4.6 Sicherungsmechanismen und Fehlermodi
 
-4.6.1 Das Governance-System MUST Sicherungsmechanismen gegen folgendes enthalten:
+4.6.1 Das Governance-System MUSS Sicherungsmechanismen gegen folgendes enthalten:
 - Konzentration von Entscheidungsmacht
 - Informelle Vetos
 - Vereinnahmung von Entscheidungen durch Untergruppen
 - Verfestigung von Gründer- oder Rollenpositionen
 
-4.6.2 Governance-Mechanismen MUST Anfechtung und Überprüfung ohne Vergeltungsmaßnahmen ermöglichen.
+4.6.2 Governance-Mechanismen MUSS Anfechtung und Überprüfung ohne Vergeltungsmaßnahmen ermöglichen.
 
-4.6.3 Anhaltende Governance-Versagen MUST eine formelle Überprüfung oder einen konstitutionellen Prozess auslösen.
+4.6.3 Anhaltende Governance-Versagen MUSS eine formelle Überprüfung oder einen konstitutionellen Prozess auslösen.
 
 ## 4.7 Artefakte
 
@@ -108,9 +108,9 @@ Layer 2 definiert, wie kollektive Entscheidungen getroffen werden, wer befugt is
 - Governance-Protokoll
 - Autoritätsregister
 
-4.7.2 Layer-2-Artefakte MUST:
+4.7.2 Layer-2-Artefakte MUSS:
 - Explizit und eindeutig sein
 - Versioniert sein
 - Für alle Mitglieder zugänglich sein
 
-4.7.3 Das Fehlen, die Mehrdeutigkeit oder die systematische Verletzung von Layer-2-Artefakten MUST zum Verlust der RCOS-Core-Konformität führen.
+4.7.3 Das Fehlen, die Mehrdeutigkeit oder die systematische Verletzung von Layer-2-Artefakten MUSS zum Verlust der RCOS-Core-Konformität führen.
