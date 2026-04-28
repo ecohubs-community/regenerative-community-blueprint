@@ -2,7 +2,7 @@
 id: b6d6319b
 title: Reference Implementations
 parentId: null
-order: 0
+order: 5
 ---
 
 This article documents **real-world communities that apply RCOS** in practice.

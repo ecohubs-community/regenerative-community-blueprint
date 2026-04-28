@@ -4,7 +4,7 @@ title: RCOS-Module
 parentId: null
 order: 0
 lang: de
-sourceHash: c0facbac
+sourceHash: a43538c6
 ---
 
 ## Module
@@ -37,15 +37,15 @@ Module sind nicht:
 - Universelle Best Practices
 - Ersatz für die RCOS-Core-Schichten
 
-Wenn ein Modul nicht explizit eingeführt wurde, MUST NOT davon ausgegangen werden, dass es gilt.
+Wenn ein Modul nicht explizit eingeführt wurde, DARF NICHT davon ausgegangen werden, dass es gilt.
 
 ### Beziehung zum RCOS-Kern
 
 Module:
-- MUST NOT dem Zweck, Geltungsbereich oder den Invarianten von Schicht 0 widersprechen
-- MUST die in Schicht 2 definierten Governance-Einschränkungen einhalten
-- MUST sich in bestehende Artefakte und Entscheidungsmechanismen integrieren
-- MAY Regeln in den Schichten 3–6 innerhalb ihres deklarierten Geltungsbereichs erweitern oder spezialisieren
+- DARF NICHT dem Zweck, Geltungsbereich oder den Invarianten von Schicht 0 widersprechen
+- MUSS die in Schicht 2 definierten Governance-Einschränkungen einhalten
+- MUSS sich in bestehende Artefakte und Entscheidungsmechanismen integrieren
+- KANN Regeln in den Schichten 3–6 innerhalb ihres deklarierten Geltungsbereichs erweitern oder spezialisieren
 
 Module können Kern-Invarianten nicht außer Kraft setzen. Wo ein Modul strengere Regeln einführt, gelten diese nur innerhalb der deklarierten Domäne des Moduls.
 
@@ -64,14 +64,14 @@ Module ermöglichen es:
 
 ### Wann Module angewendet werden sollten
 
-Ein Modul SHOULD in Betracht gezogen werden, wenn:
+Ein Modul SOLLTE in Betracht gezogen werden, wenn:
 - Eine Domäne für das Überleben oder die Identität der Gemeinschaft entscheidend wird
 - Informelle Praktiken beginnen, Mehrdeutigkeit oder Machtungleichgewicht zu erzeugen
 - Wiederholt Konflikte in einem bestimmten Bereich auftreten
 - Externe Systeme (rechtliche, ökologische, finanzielle) Risiken einführen
 - Die Gemeinschaft genug Kapazität und Stabilität gewinnt, um mehr Struktur zu tragen
 
-Ein Modul SHOULD NOT angewendet werden:
+Ein Modul SOLLTE NICHT angewendet werden:
 - Um ungelöste Kernprobleme der Governance zu kompensieren
 - Um Werte ohne ausdrückliche Zustimmung durchzusetzen
 - Als Ersatz für Konfliktlösung
@@ -79,14 +79,14 @@ Ein Modul SHOULD NOT angewendet werden:
 
 ### Wie Module angewendet werden
 
-Um ein Modul anzuwenden, MUST eine Gemeinschaft:
+Um ein Modul anzuwenden, MUSS eine Gemeinschaft:
 - Das Modul explizit durch eine autorisierte Entscheidung einführen
 - Den Geltungsbereich und die Schnittstellen des Moduls deklarieren
 - Erforderliche Artefakte erstellen oder übernehmen
 - Verantwortung für Pflege und Wartung zuweisen
 - Dokumentieren, wie das Modul mit bestehenden Regeln zusammenwirkt
 
-Module MAY:
+Module KANN:
 - Zeitlich begrenzt sein
 - Experimentell sein
 - Schrittweise eingeführt werden
@@ -100,7 +100,7 @@ Module folgen denselben Entwicklungsregeln wie der Kern:
 - Regelmäßige Überprüfung
 - Änderung oder Entfernung durch definierte Änderungsprozesse
 
-Ein Modul MAY entfernt werden, wenn:
+Ein Modul KANN entfernt werden, wenn:
 - Seine Domäne nicht mehr relevant ist
 - Es unverhältnismäßigen Aufwand verursacht
 - Es im Widerspruch zu aktualisierten Kernregeln steht

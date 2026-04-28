@@ -4,7 +4,7 @@ title: Referenzimplementierungen
 parentId: null
 order: 0
 lang: de
-sourceHash: abf30708
+sourceHash: ef04ede4
 ---
 
 Dieser Artikel dokumentiert **reale Gemeinschaften, die RCOS** in der Praxis anwenden.
@@ -37,7 +37,7 @@ Dieser Abschnitt ist bewusst transparent und nicht werblich gehalten.
 
 ## Was hier dargestellt wird
 
-Jede Referenzimplementierung SHOULD ein kompaktes, strukturiertes Profil veröffentlichen, das Folgendes umfasst:
+Jede Referenzimplementierung SOLLTE ein kompaktes, strukturiertes Profil veröffentlichen, das Folgendes umfasst:
 
 ### Gemeinschaftsübersicht
 - Name der Gemeinschaft oder des Projekts
@@ -60,7 +60,7 @@ Links oder Verweise auf:
 - Mechanismen zur Konfliktbearbeitung
 - Änderungs- / Versionierungsprotokoll
 
-Sensible Inhalte MAY geschwärzt werden, aber die Struktur SHOULD sichtbar bleiben.
+Sensible Inhalte KANN geschwärzt werden, aber die Struktur SOLLTE sichtbar bleiben.
 
 ### Bekannte Abweichungen
 Explizite Liste von:

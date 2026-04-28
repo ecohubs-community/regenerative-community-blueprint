@@ -4,7 +4,7 @@ title: RCOS-Kern
 parentId: null
 order: 0
 lang: de
-sourceHash: ffe5456a
+sourceHash: 0ab1303a
 ---
 
 ## Was RCOS ist
@@ -138,9 +138,9 @@ Alles, was Präferenzen, Stil oder lokale Optimierung ausdrückt, kann optional 
 
 Wir verwenden drei Kategorien:
 
-- **MUST be explicit** → erforderlich für RCOS-Konformität
-- **MAY be explicit** → empfohlen, aber kontextabhängig
-- **MUST remain optional** → wird niemals vom Kern erzwungen
+- **MUSS be explicit** → erforderlich für RCOS-Konformität
+- **KANN be explicit** → empfohlen, aber kontextabhängig
+- **MUSS remain optional** → wird niemals vom Kern erzwungen
 
 ### Schichtübergreifende Invariante zur Explizitheit
 

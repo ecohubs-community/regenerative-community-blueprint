@@ -8,6 +8,10 @@ import { DEFAULT_LOCALE } from '$lib/i18n/languages';
  * `lang`              — locale of the served metadata (may be DEFAULT_LOCALE on fallback).
  * `availableLocales`  — every locale this article exists in (for hreflang / switcher dimming).
  * `isFallback`        — true if the requested locale was not the served one.
+ * `sortKey`           — the canonical (default-locale) title, used as the alphabetical
+ *                       tiebreaker so the sidebar order stays stable across locales.
+ *                       Without this, "Themen" and "Topics" would sort to different
+ *                       positions and the German sidebar would shuffle visibly.
  */
 export type Article = {
   id: string;
@@ -23,6 +27,7 @@ export type Article = {
   lang: string;
   availableLocales: string[];
   isFallback: boolean;
+  sortKey: string;
 };
 
 export type ArticleTree = Article[];
@@ -65,7 +70,8 @@ export async function buildGraph(locale: string = DEFAULT_LOCALE): Promise<Graph
       // happen (translations require a source) but we degrade gracefully.
       const first = byLang.values().next().value;
       if (!first) continue;
-      articleMap.set(id, toArticle(first, [...byLang.keys()], false));
+      const fallbackSortKey = coerceTitle(first.title, first.slug);
+      articleMap.set(id, toArticle(first, [...byLang.keys()], false, fallbackSortKey));
       continue;
     }
 
@@ -84,7 +90,11 @@ export async function buildGraph(locale: string = DEFAULT_LOCALE): Promise<Graph
       filePath: chosen.filePath
     };
 
-    articleMap.set(id, toArticle(merged, [...byLang.keys()].sort(), isFallback));
+    // Sort key always comes from the default-locale source — never from `chosen`.
+    // That keeps the sidebar/menu order identical between /foo and /de/foo even
+    // when localized titles would shuffle alphabetically (e.g. "Topics" vs "Themen").
+    const sortKey = coerceTitle(source.title, source.slug);
+    articleMap.set(id, toArticle(merged, [...byLang.keys()].sort(), isFallback, sortKey));
   }
 
   const articleTree = buildTree(articleMap);
@@ -93,7 +103,12 @@ export async function buildGraph(locale: string = DEFAULT_LOCALE): Promise<Graph
   return { articles, articleTree, locale };
 }
 
-function toArticle(entry: ArticleMeta, availableLocales: string[], isFallback: boolean): Article {
+function toArticle(
+  entry: ArticleMeta,
+  availableLocales: string[],
+  isFallback: boolean,
+  sortKey: string
+): Article {
   return {
     id: (entry.id as string) || entry.slug,
     slug: entry.slug,
@@ -107,7 +122,8 @@ function toArticle(entry: ArticleMeta, availableLocales: string[], isFallback: b
     attachments: Array.isArray(entry.attachments) ? entry.attachments : undefined,
     lang: entry.lang ?? DEFAULT_LOCALE,
     availableLocales,
-    isFallback
+    isFallback,
+    sortKey
   };
 }
 
@@ -153,13 +169,17 @@ function flattenArticleTree(tree: ArticleTree): Article[] {
 }
 
 /**
- * Sort articles recursively by order, then by title
+ * Sort articles recursively by `order` (numeric, ascending), with the source-
+ * locale `sortKey` as the alphabetical tiebreaker. Using the localized `title`
+ * here would shuffle the menu when the locale changes — German "Themen" and
+ * English "Topics" sort to different positions even when they refer to the
+ * same article.
  */
 function sortArticles(articles: Article[]) {
   articles.sort((a, b) => {
     const orderDiff = (a.order ?? 0) - (b.order ?? 0);
     if (orderDiff !== 0) return orderDiff;
-    return a.title.localeCompare(b.title);
+    return a.sortKey.localeCompare(b.sortKey);
   });
   articles.forEach((article) => {
     if (article.children.length > 0) {

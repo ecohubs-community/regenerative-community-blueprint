@@ -4,7 +4,7 @@ title: Schutzmaßnahmen
 parentId: null
 order: 0
 lang: de
-sourceHash: 5a1ecee6
+sourceHash: '80540912'
 ---
 
 ## Schutzmaßnahmen
@@ -42,7 +42,7 @@ Schutzmaßnahmen sind nicht:
 - Ersatz für Governance- oder Konfliktprozesse
 - Informelle Normen oder „stillschweigend geltende Regeln"
 
-Wenn eine Schutzmaßnahme nicht explizit eingeführt wurde, MUST NOT davon ausgegangen werden, dass sie gilt.
+Wenn eine Schutzmaßnahme nicht explizit eingeführt wurde, DARF NICHT davon ausgegangen werden, dass sie gilt.
 
 ### Wann Schutzmaßnahmen angebracht sind
 
@@ -67,7 +67,7 @@ Typische Domänen für Schutzmaßnahmen sind:
 
 Schutzmaßnahmen sind **keine Artefakte an sich**.
 
-Wenn sie jedoch eingeführt werden, MAY eine Schutzmaßnahme:
+Wenn sie jedoch eingeführt werden, KANN eine Schutzmaßnahme:
 - Neue Artefakte erfordern
 - Bestehende Artefakte ändern
 - Einschränkungen zu den Invarianten von Layer 0 hinzufügen

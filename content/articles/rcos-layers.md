@@ -2,7 +2,7 @@
 id: a7759be1
 title: RCOS Layers
 parentId: null
-order: 0
+order: 2
 ---
 
 **Protocol stack: higher layers cannot override lower ones.**
