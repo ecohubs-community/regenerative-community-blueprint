@@ -76,9 +76,9 @@ Typische Themenbereiche umfassen:
 ### Beziehung zu RCOS
 
 Dieses Modul:
-- Erweitert RCOS Layer 3 (Gemeingüter & Ressourcen)
-- Verbindet sich mit Layer 5 (Betrieb)
+- Erweitert RCOS Schicht 3 (Gemeingüter & Ressourcen)
+- Verbindet sich mit Schicht 5 (Betrieb)
 - Kann optionale Stewardship-Rollen einführen
-- Verändert Layer 0 (Zweck) nicht, es sei denn, es wird ausdrücklich übernommen
+- Verändert Schicht 0 (Zweck) nicht, es sei denn, es wird ausdrücklich übernommen
 
 Gemeinschaften können später von diesem Modul zu einem vollständigen Permakultur-Modul wechseln, ohne strukturelle Konflikte.

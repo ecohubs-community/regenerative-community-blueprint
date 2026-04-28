@@ -13,7 +13,7 @@ Die Gründungsperson behält ein faktisches Vetorecht trotz formaler Prozesse.
 
 **Betroffene Ebenen**
 
-Layer 2 (Governance), Layer 0 (Invarianten)
+Schicht 2 (Governance), Schicht 0 (Invarianten)
 
 **Relevante Invarianten**
 

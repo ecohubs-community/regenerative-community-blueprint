@@ -1,13 +1,13 @@
 ---
 id: c3b0445f
-title: '6. Layer 4 — Konflikt, Wiedergutmachung & Verantwortlichkeit'
+title: '6. Schicht 4 — Konflikt, Wiedergutmachung & Verantwortlichkeit'
 parentId: e6de7a5d
 order: 60
 lang: de
 sourceHash: 592650ba
 ---
 
-Layer 4 definiert, wie die Gemeinschaft reagiert, wenn Vertrauen, Koordination oder Sicherheit zusammenbrechen.
+Schicht 4 definiert, wie die Gemeinschaft reagiert, wenn Vertrauen, Koordination oder Sicherheit zusammenbrechen.
 Sein Zweck ist es sicherzustellen, dass Konflikte explizit, fair und sicher behandelt werden, und gleichzeitig Machtmissbrauch, Normalisierung von Schaden oder stilles Ausschließen zu verhindern.
 
 ## 6.1 Konfliktklassifikation
@@ -47,7 +47,7 @@ Sein Zweck ist es sicherzustellen, dass Konflikte explizit, fair und sicher beha
 
 6.2.4 Der Lösungsprozess MUSS zugänglich sein, ohne dass sozialer Status, Dienstalter, Charisma oder informelle Nähe zu Entscheidungsträger\*innen erforderlich ist.
 
-6.2.5 Ungelöste Konflikte MUSS über definierte Governance-Wege eskaliert werden, ohne die in Layer 2 definierte Entscheidungsmatrix zu umgehen.
+6.2.5 Ungelöste Konflikte MUSS über definierte Governance-Wege eskaliert werden, ohne die in Schicht 2 definierte Entscheidungsmatrix zu umgehen.
 
 ## 6.3 Schutzmaßnahmen
 
@@ -90,7 +90,7 @@ Sein Zweck ist es sicherzustellen, dass Konflikte explizit, fair und sicher beha
 - Überprüfungs- und Berufungsmechanismen
 - Bedingungen für die Wiederherstellung von Rechten, Rollen oder Teilnahme
 
-6.4.4 Trennungs-, Suspendierungs- oder Ausschlussmaßnahmen MUSS einem ordnungsgemäßen Verfahren folgen und MUSS mit den in Layer 1 definierten Austritts- und Trennungsregeln übereinstimmen.
+6.4.4 Trennungs-, Suspendierungs- oder Ausschlussmaßnahmen MUSS einem ordnungsgemäßen Verfahren folgen und MUSS mit den in Schicht 1 definierten Austritts- und Trennungsregeln übereinstimmen.
 
 6.4.5 Sanktionen DARF NICHT durch informellen Ausschluss, sozialen Druck, Schweigen oder stillschweigende Entziehung von Rechten verhängt werden.
 
@@ -119,7 +119,7 @@ Sein Zweck ist es sicherzustellen, dass Konflikte explizit, fair und sicher beha
 - Garantien für ordnungsgemäße Verfahren und Schutz vor Vergeltung
 - Sanktions- und Wiedergutmachungsoptionen mit Verhältnismäßigkeitsregeln
 - Berufungs-, Aufsichts- und Eskalationswege
-- Koordination mit den Austritts- und Trennungsprozessen von Layer 1
+- Koordination mit den Austritts- und Trennungsprozessen von Schicht 1
 
 ## 6.6 Layer-Invarianten
 

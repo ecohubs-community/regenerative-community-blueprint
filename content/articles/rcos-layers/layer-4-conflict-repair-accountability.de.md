@@ -1,6 +1,6 @@
 ---
 id: 8d62d921
-title: 'Layer 4 – Konflikt, Wiederherstellung & Verantwortlichkeit'
+title: 'Schicht 4 – Konflikt, Wiederherstellung & Verantwortlichkeit'
 parentId: a7759be1
 order: 0
 lang: de

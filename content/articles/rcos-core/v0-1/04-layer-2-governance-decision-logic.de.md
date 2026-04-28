@@ -1,13 +1,13 @@
 ---
 id: 4563b1af
-title: 4. Layer 2 — Governance & Entscheidungslogik
+title: 4. Schicht 2 — Governance & Entscheidungslogik
 parentId: e6de7a5d
 order: 40
 lang: de
 sourceHash: 3bd40d24
 ---
 
-Layer 2 definiert, wie kollektive Entscheidungen getroffen werden, wer befugt ist, sie zu treffen, und wie Autorität begrenzt wird. Governance unter RCOS ist so gestaltet, dass Macht explizit, begrenzt, überprüfbar und reversibel ist.
+Schicht 2 definiert, wie kollektive Entscheidungen getroffen werden, wer befugt ist, sie zu treffen, und wie Autorität begrenzt wird. Governance unter RCOS ist so gestaltet, dass Macht explizit, begrenzt, überprüfbar und reversibel ist.
 
 ## 4.1 Entscheidungstypen
 
@@ -20,7 +20,7 @@ Layer 2 definiert, wie kollektive Entscheidungen getroffen werden, wer befugt is
 
 4.1.3 Strategische Entscheidungen betreffen die langfristige Ausrichtung, die Zuweisung bedeutender Ressourcen oder die Schaffung/Abschaffung wesentlicher Strukturen.
 
-4.1.4 Konstitutionelle Entscheidungen betreffen Änderungen an den Invarianten von Layer 0, dem Zweck, dem Geltungsbereich oder dem Governance-System selbst.
+4.1.4 Konstitutionelle Entscheidungen betreffen Änderungen an den Invarianten von Schicht 0, dem Zweck, dem Geltungsbereich oder dem Governance-System selbst.
 
 4.1.5 Wenn eine Entscheidung nicht eindeutig zugeordnet werden kann, MUSS sie standardmäßig dem Entscheidungstyp mit höherer Auswirkung zugeordnet werden.
 
@@ -87,7 +87,7 @@ Layer 2 definiert, wie kollektive Entscheidungen getroffen werden, wer befugt is
 
 4.5.3 Das Governance-Protokoll MUSS festlegen, wie Konflikte zwischen Entscheidungen gelöst werden.
 
-4.5.4 Alle Governance-Handlungen MUSS gemäß den Dokumentationsregeln von Layer 5 dokumentiert werden.
+4.5.4 Alle Governance-Handlungen MUSS gemäß den Dokumentationsregeln von Schicht 5 dokumentiert werden.
 
 ## 4.6 Sicherungsmechanismen und Fehlermodi
 

@@ -13,7 +13,7 @@ Dieses Kapitel definiert, wie RCOS-Core-Compliance bewertet und aufrechterhalten
 
 10.1.1 RCOS-Core-Compliance ist binär: Eine Gemeinschaft ist entweder compliant oder non-compliant.
 
-10.1.2 Compliance MUSS pro Layer (Layer 0–6) bewertet werden.
+10.1.2 Compliance MUSS pro Layer (Schicht 0–6) bewertet werden.
 
 10.1.3 Für jeden Layer MUSS die Compliance-Checkliste überprüfen:
 - Vorhandensein verbindlicher Artefakte  

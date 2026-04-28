@@ -248,7 +248,11 @@ Rules:
 5. **Tone and register**
    - Match the source register (formal for spec-like documents, more conversational for templates).
    - For German: prefer informal "du"/"ihr" addressing the reader, matching the source's friendly-but-precise voice. Use natural German technical vocabulary (e.g., "Gemeinschaft" for "community", "Vorlage" for "template").
-   - For other languages: prefer the natural informal register a community organizer would use, unless the source is clearly formal.`;
+   - For other languages: prefer the natural informal register a community organizer would use, unless the source is clearly formal.
+
+6. **Glossary — keep this consistent across articles**
+   - **Layer N** (the RCOS protocol-stack concept) → **Schicht N** in German. Always "Schicht", never "Ebene" or "Layer". Applies in titles, prose, and inside backticks. Examples: "Layer 0" → "Schicht 0", "Layer 2 governance" → "Governance auf Schicht 2".
+   - For other languages, pick the natural translation of "layer" used in protocol-stack contexts and apply it consistently.`;
 
 function buildUserPrompt(job) {
 	const language = LANGUAGE_NAMES[args.locale] ?? args.locale;
@@ -411,9 +415,40 @@ function stripCodeFence(s) {
 	return m ? m[1] : s;
 }
 
+/**
+ * Models occasionally leak a reasoning preamble ("Now I have good context for
+ * terminology consistency. Let me produce the translation.") before the actual
+ * markdown output, despite the prompt saying "output ONLY the translated
+ * markdown". When that happens, the leading prose ends up in the body and the
+ * intended frontmatter ends up inside the body too.
+ *
+ * If we can find a frontmatter block (`---\n...\n---`) in the response, slice
+ * the response from there and discard anything before it. That recovers a
+ * well-formed file even when the model went chatty.
+ *
+ * Idempotent: a clean response (frontmatter at byte 0) passes through unchanged.
+ */
+function trimPreamble(s) {
+	// Match a YAML frontmatter block anywhere in the string. Multiline-mode `^`
+	// means the opening `---` must be at the start of a line.
+	const fmMatch = s.match(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/m);
+	if (!fmMatch || fmMatch.index === 0) return s; // no preamble to strip
+	return s.slice(fmMatch.index);
+}
+
 function finalizeOutput(translatedRaw, job) {
-	const cleaned = stripCodeFence(translatedRaw.trim());
+	const cleaned = trimPreamble(stripCodeFence(translatedRaw.trim()));
 	const fm = matter(cleaned);
+
+	// Sanity check: every translation must produce a non-empty `title`. If the
+	// model returned an empty body or got tripped up by a malformed frontmatter
+	// block, fail loudly so the file isn't silently corrupted on disk. The job
+	// stays "missing" in the drift report and the caller can re-run.
+	if (!fm.data.title || typeof fm.data.title !== 'string' || !fm.data.title.trim()) {
+		throw new Error(
+			`provider returned no translated \`title\` in frontmatter — refusing to write a broken file`
+		);
+	}
 
 	// Authority for structural fields is the source — overwrite anything the
 	// model "translated" by accident.

@@ -13,7 +13,7 @@ Ein Mitglied häuft nach und nach undokumentierte Verantwortlichkeiten an und wi
 
 **Betroffene Ebenen**
 
-Layer 5 (Betrieb), Layer 2 (Governance), Layer 3 (Wirtschaft)
+Schicht 5 (Betrieb), Schicht 2 (Governance), Schicht 3 (Wirtschaft)
 
 **Relevante Invarianten**
 

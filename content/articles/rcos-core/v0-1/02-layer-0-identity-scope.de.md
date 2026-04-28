@@ -1,13 +1,13 @@
 ---
 id: 9bef9a3f
-title: 2. Layer 0 — Identität & Geltungsbereich
+title: 2. Schicht 0 — Identität & Geltungsbereich
 parentId: e6de7a5d
 order: 20
 lang: de
 sourceHash: 4eb00e5e
 ---
 
-Layer 0 definiert die konstitutionelle Identität der Gemeinschaft. Er legt fest, was die Gemeinschaft *ist*, was sie *nicht ist*, und die nicht verhandelbaren Einschränkungen, unter denen alle anderen Layer operieren. Keine Regel, Entscheidung oder Praxis in höheren Layern darf Layer 0 widersprechen.
+Schicht 0 definiert die konstitutionelle Identität der Gemeinschaft. Er legt fest, was die Gemeinschaft *ist*, was sie *nicht ist*, und die nicht verhandelbaren Einschränkungen, unter denen alle anderen Layer operieren. Keine Regel, Entscheidung oder Praxis in höheren Layern darf Schicht 0 widersprechen.
 
 ## 2.1 Zweckdefinition
 
@@ -15,7 +15,7 @@ Layer 0 definiert die konstitutionelle Identität der Gemeinschaft. Er legt fest
 
 2.1.2 Der primäre Zweck MUSS den dauerhaften Grund für die Existenz der Gemeinschaft beschreiben und DARF NICHT ein kurzfristiges Ziel, Projekt oder eine Strategie sein.
 
-2.1.3 Der primäre Zweck MUSS über die Zeit stabil sein und MUSS nur durch eine konstitutionelle Entscheidung gemäß Layer 2 und über den in Layer 6 definierten Änderungsprozess geändert werden.
+2.1.3 Der primäre Zweck MUSS über die Zeit stabil sein und MUSS nur durch eine konstitutionelle Entscheidung gemäß Schicht 2 und über den in Schicht 6 definierten Änderungsprozess geändert werden.
 
 2.1.4 Sekundäre Zwecke KANN definiert werden, DARF NICHT jedoch dem primären Zweck widersprechen oder ihn außer Kraft setzen.
 
@@ -48,7 +48,7 @@ Layer 0 definiert die konstitutionelle Identität der Gemeinschaft. Er legt fest
 
 2.3.5 Wenn ein Konflikt zwischen einer Invariante und einer anderen Regel entsteht, MUSS die Invariante Vorrang haben.
 
-2.3.6 Invarianten KANN nur durch einen konstitutionellen Änderungsprozess gemäß Layer 2 und Layer 6 geändert oder entfernt werden.
+2.3.6 Invarianten KANN nur durch einen konstitutionellen Änderungsprozess gemäß Schicht 2 und Schicht 6 geändert oder entfernt werden.
 
 ## 2.4 Identitätseinschränkungen
 
@@ -65,15 +65,15 @@ Layer 0 definiert die konstitutionelle Identität der Gemeinschaft. Er legt fest
 
 ## 2.5 Artefakte
 
-2.5.1 Die folgenden Artefakte sind für die Konformität mit Layer 0 verpflichtend:
+2.5.1 Die folgenden Artefakte sind für die Konformität mit Schicht 0 verpflichtend:
 - Zweck-Charta
 - Geltungsbereichserklärung
 - Invarianten-Register
 - Register der Identitätseinschränkungen
 
-2.5.2 Artefakte von Layer 0 MUSS:
+2.5.2 Artefakte von Schicht 0 MUSS:
 - Für alle Mitglieder öffentlich zugänglich sein
 - Versioniert sein
 - Durch einen formalen Ratifizierungsprozess angenommen werden
 
-2.5.3 Wenn Artefakte von Layer 0 fehlen, mehrdeutig oder in sich widersprüchlich sind, MUSS die Gemeinschaft als nicht konform mit RCOS-Core betrachtet werden.
+2.5.3 Wenn Artefakte von Schicht 0 fehlen, mehrdeutig oder in sich widersprüchlich sind, MUSS die Gemeinschaft als nicht konform mit RCOS-Core betrachtet werden.

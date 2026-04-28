@@ -13,7 +13,7 @@ Spirituelle oder moralische Autorität setzt sich über die Governance hinweg.
 
 **Betroffene Ebenen**
 
-Layer 2 (Governance), Layer 4 (Konflikt)
+Schicht 2 (Governance), Schicht 4 (Konflikt)
 
 **Relevante Invarianten**
 

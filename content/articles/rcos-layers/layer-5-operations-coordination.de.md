@@ -1,6 +1,6 @@
 ---
 id: 6933a217
-title: Layer 5 – Betrieb & Koordination
+title: Schicht 5 – Betrieb & Koordination
 parentId: a7759be1
 order: 0
 lang: de

@@ -29,7 +29,7 @@ Jede Gemeinschaft hat implizite Regeln — „das machen wir hier nicht." Impliz
 <details data-kind="instructions">
 <summary>Wie du diesen Abschnitt ausfüllst</summary>
 
-Jede Beschränkung muss durch einen definierten Prozess überprüfbar und durchsetzbar sein — keine vagen Bestrebungen. Gängige Kategorien aus RCOS §2.4.2: ethische/verhaltensbezogene Grenzen, Teilnahmevoraussetzungen, nicht verhandelbare kulturelle oder ökologische Beschränkungen. Verweise auf Ebene 4 für die Durchsetzung, Ebene 1 für Teilnahmekonsequenzen.
+Jede Beschränkung muss durch einen definierten Prozess überprüfbar und durchsetzbar sein — keine vagen Bestrebungen. Gängige Kategorien aus RCOS §2.4.2: ethische/verhaltensbezogene Grenzen, Teilnahmevoraussetzungen, nicht verhandelbare kulturelle oder ökologische Beschränkungen. Verweise auf Schicht 4 für die Durchsetzung, Schicht 1 für Teilnahmekonsequenzen.
 
 </details>
 
@@ -56,7 +56,7 @@ Eine Beschränkung, die nicht überprüft werden kann, ist eine Beschränkung, d
 <details data-kind="instructions">
 <summary>Wie du diesen Abschnitt ausfüllst</summary>
 
-Beschreibe für jede oben genannte Beschränkung (oder als allgemeine Richtlinie), wie ein Verstoß erkannt und behandelt wird. Verweise auf die Konfliktlösungsleiter (Ebene 4) und alle für die Überwachung zuständigen Rollen (Ebene 5).
+Beschreibe für jede oben genannte Beschränkung (oder als allgemeine Richtlinie), wie ein Verstoß erkannt und behandelt wird. Verweise auf die Konfliktlösungsleiter (Schicht 4) und alle für die Überwachung zuständigen Rollen (Schicht 5).
 
 </details>
 
@@ -75,7 +75,7 @@ Identitätsbeschränkungen sind verfassungsrechtlicher Natur — beschreibe den 
 
 </details>
 
-Identitätsbeschränkungen dürfen nur durch eine Verfassungsentscheidung gemäß der Entscheidungsmatrix (Ebene 2) hinzugefügt, entfernt oder geändert werden, wobei _<Schwellenwert>_ erforderlich ist und eine Ratifizierungsfrist von mindestens _<Dauer>_ einzuhalten ist. Jede Änderung muss in der Versionshistorie (Ebene 6) dokumentiert werden.
+Identitätsbeschränkungen dürfen nur durch eine Verfassungsentscheidung gemäß der Entscheidungsmatrix (Schicht 2) hinzugefügt, entfernt oder geändert werden, wobei _<Schwellenwert>_ erforderlich ist und eine Ratifizierungsfrist von mindestens _<Dauer>_ einzuhalten ist. Jede Änderung muss in der Versionshistorie (Schicht 6) dokumentiert werden.
 
 ---
 

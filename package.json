@@ -12,6 +12,7 @@
 		"check:translations": "node scripts/check-translations.mjs",
 		"translate": "node scripts/translate.mjs",
 		"normalize:rfc-keywords": "node scripts/normalize-rfc-keywords.mjs",
+		"normalize:de-terms": "node scripts/normalize-de-terms.mjs",
 		"build": "vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",

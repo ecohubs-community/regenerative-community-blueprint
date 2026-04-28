@@ -107,7 +107,7 @@ Landregelungen, die einen Austritt wirtschaftlich oder sozial unmöglich machen,
 
 Landentscheidungen DARF NICHT:
 - zukünftige Governance dauerhaft einschränken,
-- Invarianten der Ebene 0 außer Kraft setzen,
+- Invarianten der Schicht 0 außer Kraft setzen,
 - die Gemeinschaft rechtlich oder strukturell nicht weiterentwickelbar machen.
 
 Wenn Landbesitz mit der Governance in Konflikt steht, hat die Governance Vorrang.
@@ -128,10 +128,10 @@ Folgendes REQUIRE eine sofortige Überprüfung:
 ## Kompatibilität
 
 Dieser Zusatz verstärkt:
-- Ebene 0 (Geltungsbereich & Invarianten),
-- Ebene 1 (Austritt),
-- Ebene 3 (Allmende-Schutz),
-- Ebene 6 (Umkehrbarkeit).
+- Schicht 0 (Geltungsbereich & Invarianten),
+- Schicht 1 (Austritt),
+- Schicht 3 (Allmende-Schutz),
+- Schicht 6 (Umkehrbarkeit).
 
 Er schreibt keine Rechtsformen vor, nur strukturelle Einschränkungen.
 
