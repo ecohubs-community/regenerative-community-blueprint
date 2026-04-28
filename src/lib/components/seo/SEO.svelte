@@ -1,7 +1,8 @@
 <script lang="ts">
-	import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from '$lib/config/site';
+	import { SITE_URL, DEFAULT_OG_IMAGE } from '$lib/config/site';
 	import { DEFAULT_LOCALE, LOCALES } from '$lib/i18n/languages';
 	import { localeUrl } from '$lib/i18n/path';
+	import { t } from '$lib/i18n';
 
 	type Props = {
 		title: string;
@@ -33,7 +34,12 @@
 		availableLocales
 	}: Props = $props();
 
-	const fullTitle = $derived(title === SITE_NAME ? title : `${title} - RCOS`);
+	// Locale-aware title:
+	// - On the home page, `title` matches the localized site name → no suffix.
+	// - Otherwise, append the localized short name (e.g. " - RCOS").
+	const siteName = $derived(t(locale, 'site.name'));
+	const shortName = $derived(t(locale, 'site.short_name'));
+	const fullTitle = $derived(title === siteName ? title : `${title} - ${shortName}`);
 
 	// Canonical = the URL for THIS page in its CURRENT locale (with prefix if non-default).
 	const canonicalUrl = $derived(url ? localeUrl(SITE_URL, url, locale) : SITE_URL);
@@ -79,7 +85,7 @@
 	<meta property="og:url" content={canonicalUrl} />
 	<meta property="og:type" content={type} />
 	<meta property="og:image" content={ogImage} />
-	<meta property="og:site_name" content={SITE_NAME} />
+	<meta property="og:site_name" content={siteName} />
 	<meta property="og:locale" content={locale} />
 	{#each alternates.filter((l) => l.code !== locale) as alt (alt.code)}
 		<meta property="og:locale:alternate" content={alt.code} />

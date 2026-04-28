@@ -728,7 +728,11 @@ This is the realistic path to translating ~80 articles. Manual translation is fo
 
 The previous plan proposed articles → UI → tooling. **Inverted recommendation: UI first.** UI is a small, fast, reviewable change that proves the routing and locale plumbing end-to-end. Articles are the bulk-content phase, and they depend on the routing already working.
 
-### Phase 1 — Plumbing (1–2 days)
+### Status legend
+
+`✓` shipped · `→` in progress · _(blank)_ not started
+
+### Phase 1 — Plumbing (1–2 days)  ✓
 
 1. Lock the cross-cutting decisions in §0.
 2. Create `src/lib/i18n/languages.ts` registry (§2.4) and `src/lib/i18n/path.ts` helpers.
@@ -740,15 +744,18 @@ The previous plan proposed articles → UI → tooling. **Inverted recommendatio
 
 **Exit criteria:** `/de/articles/rcos-core` renders the English content under `/de/...` URLs with correct `<html lang="de">` and a "this is a fallback" indicator.
 
-### Phase 2 — UI strings (2–3 days)
+### Phase 2 — UI strings (2–3 days)  ✓
 
-1. Set up Paraglide (or commit to plain JSON if rejecting Paraglide).
-2. Extract all hardcoded strings to messages (~50 keys).
-3. Translate to `de` as the proof-of-concept locale.
-4. Replace component strings with message calls, including the **downloads component** end-to-end.
-5. Run `check-i18n-keys.mjs` in CI.
+1. ✓ Plain JSON + `m()` helper (Paraglide deferred — see decision below).
+2. ✓ Extracted ~80 keys to `src/lib/i18n/messages/{en,de}.json`.
+3. ✓ German translation as the proof-of-concept locale.
+4. ✓ Replaced strings across TopBar, SidebarNav, Footer, Breadcrumbs, SearchBar, SearchResults, SearchResultCard, LanguageSwitcher, SEO, TemplateDownloads, and all four route pages (`/`, `/articles`, `/articles/[...slug]`, `/search`).
+5. ✓ `scripts/check-i18n-keys.mjs` available via `pnpm run check:i18n`.
+6. ✓ `localized()` helper added; all internal `<a href>`s now preserve the locale prefix on navigation.
 
-**Exit criteria:** every visible UI string switches when you toggle the language. No untranslated English leaks on `/de/...` chrome.
+**Decision recorded:** chose plain JSON over Paraglide for v1. Reasons: (a) we already own URL-prefix routing and Paraglide's adapter would compete with it; (b) string count is small (~80); (c) plain JSON is friendlier for the future Sveltia CMS workflow. Migration path stays open — message keys are namespaced and use `{name}` interpolation, both Paraglide-compatible.
+
+**Exit criteria:** ✓ every visible UI string switches between English and German based on URL prefix; verified in prerendered output (`<html lang>`, hreflang, og:locale, button labels, footer, search, downloads UI).
 
 ### Phase 3 — Articles infrastructure (2–3 days)
 

@@ -1,5 +1,6 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 export type ManifestTemplate = {
   relPath: string;
@@ -60,10 +61,30 @@ export type ArticleDownloads = TemplateDownloads | SpecDownload;
 let cachedTemplates: Manifest | null | undefined;
 let cachedCore: CoreManifest | null | undefined;
 
+/**
+ * Resolve a static-assets-relative path robustly.
+ *
+ * `process.cwd()` works in dev but during Vite/Vercel prerender the cwd may not
+ * be the project root, so we anchor on this module's file location and walk up.
+ * In bundled output the source path differs from the original; we try a few
+ * candidate roots in order and return the first one that contains the file.
+ */
+function resolveAssetPath(relPath: string): string | null {
+  const here = path.dirname(fileURLToPath(import.meta.url));
+  const candidates = [
+    path.resolve(here, '../../..', relPath), // src/lib/server/foo.ts → project root
+    path.resolve(here, '../../../..', relPath), // bundled at one level deeper
+    path.resolve(here, '../../../../..', relPath), // bundled two deeper
+    path.resolve(process.cwd(), relPath) // last resort
+  ];
+  return candidates.find((p) => existsSync(p)) ?? null;
+}
+
 function loadJson<T>(relPath: string): T | null {
   try {
-    const p = path.resolve(relPath);
-    return JSON.parse(readFileSync(p, 'utf8')) as T;
+    const abs = resolveAssetPath(relPath);
+    if (!abs) return null;
+    return JSON.parse(readFileSync(abs, 'utf8')) as T;
   } catch {
     return null;
   }

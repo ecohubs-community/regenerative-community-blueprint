@@ -64,3 +64,18 @@ export function localizePath(pathname: string, target: string): string {
 export function localeUrl(origin: string, pathname: string, target: string): string {
 	return origin.replace(/\/$/, '') + localizePath(pathname, target);
 }
+
+/**
+ * Component helper: localize an internal href so it preserves the active locale prefix.
+ * No-op for external URLs (`http://`, `mailto:`, etc.), hash-only links, and empty
+ * strings. Used everywhere we emit `<a href="/articles/...">`.
+ *
+ *   localized('/articles/foo', 'de') → '/de/articles/foo'
+ *   localized('/articles/foo', 'en') → '/articles/foo'
+ *   localized('https://x.com', 'de') → 'https://x.com'
+ *   localized('#section', 'de')      → '#section'
+ */
+export function localized(href: string, locale: string): string {
+	if (!href || !href.startsWith('/')) return href;
+	return localizePath(href, locale);
+}

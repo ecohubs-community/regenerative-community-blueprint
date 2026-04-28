@@ -1,41 +1,42 @@
 <script lang="ts">
   import { page } from '$app/state';
   import Icon from '@iconify/svelte';
+  import { m } from '$lib/i18n';
+  import { localized, stripLocale } from '$lib/i18n/path';
+  import { DEFAULT_LOCALE } from '$lib/i18n/languages';
 
   interface BreadcrumbItem {
     label: string;
     href?: string;
   }
 
-  // Build breadcrumbs from current path
+  const locale = $derived((page.data?.locale as string | undefined) ?? DEFAULT_LOCALE);
+
+  // Build breadcrumbs from the canonical path so locale prefix doesn't appear as a crumb.
   const breadcrumbs = $derived(() => {
-    const path = page.url.pathname;
+    const path = stripLocale(page.url.pathname);
     const items: BreadcrumbItem[] = [];
 
-    // Home is always first
     if (path !== '/') {
-      items.push({ label: 'Home', href: '/' });
+      items.push({ label: m('nav.home'), href: localized('/', locale) });
     }
 
-    // Parse path segments
     const segments = path.split('/').filter(Boolean);
     let currentPath = '';
 
     for (let i = 0; i < segments.length; i++) {
       const segment = segments[i];
       currentPath += `/${segment}`;
-      
-      // Format the label nicely
+
       const label = segment
         .split('-')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(' ');
 
-      // Last segment is current page (no link)
       if (i === segments.length - 1) {
         items.push({ label });
       } else {
-        items.push({ label, href: currentPath });
+        items.push({ label, href: localized(currentPath, locale) });
       }
     }
 

@@ -8,17 +8,21 @@
   import SEO from '$lib/components/seo/SEO.svelte';
   import { buildArticleSchema, buildBreadcrumbSchema } from '$lib/utils/jsonld';
   import TemplateDownloads from '$lib/components/templates/TemplateDownloads.svelte';
+  import { m } from '$lib/i18n';
+  import { localized } from '$lib/i18n/path';
+  import { DEFAULT_LOCALE } from '$lib/i18n/languages';
 
   let { data } = $props();
 
-  const slug = $derived($page.params.slug);
+  const slug = $derived($page.params.slug ?? '');
   const article = $derived($articleBySlug.get(slug));
   const breadcrumbs = $derived(article ? getArticleBreadcrumbs(article) : []);
   const parent = $derived(article ? getParentArticle(article) : undefined);
+  const locale = $derived(data.locale ?? DEFAULT_LOCALE);
 </script>
 
 <SEO
-  title={article?.title || 'Article'}
+  title={article?.title || m('articles.fallback_default')}
   description={article?.summary || ''}
   url={`/articles/${slug}`}
   type="article"
@@ -38,7 +42,7 @@
           {/if}
 
           {#if i < breadcrumbs.length - 1}
-            <a href="/articles/{crumb.slug}" class="hover:text-primary transition-colors">
+            <a href={localized(`/articles/${crumb.slug}`, locale)} class="hover:text-primary transition-colors">
               {crumb.title}
             </a>
           {:else}
@@ -74,7 +78,7 @@
       {#if data.body}
         {@html data.body}
       {:else}
-        <p class="text-text-tertiary italic">No content available for this article.</p>
+        <p class="text-text-tertiary italic">{m('articles.no_content')}</p>
       {/if}
     </article>
 
@@ -87,11 +91,11 @@
       <section class="pt-8 border-t border-border">
         <h2 class="text-2xl font-bold text-text-primary mb-6 flex items-center gap-2">
           <Icon icon="tabler:hierarchy" class="w-6 h-6" />
-          Sub-articles
+          {m('articles.sub_articles')}
         </h2>
         <div class="grid gap-4 sm:grid-cols-2">
           {#each article.children as child}
-            <Card href="/articles/{child.slug}" class="flex flex-col">
+            <Card href={localized(`/articles/${child.slug}`, locale)} class="flex flex-col">
               <h3 class="text-lg font-semibold text-text-primary group-hover:text-primary transition-colors">
                 {child.title}
               </h3>
@@ -100,7 +104,7 @@
               {/if}
               {#if child.children.length > 0}
                 <p class="text-xs text-text-tertiary mt-2">
-                  {child.children.length} sub-article{child.children.length !== 1 ? 's' : ''}
+                  {m(child.children.length === 1 ? 'articles.sub_article_count_one' : 'articles.sub_article_count_other', { count: child.children.length })}
                 </p>
               {/if}
             </Card>
@@ -112,14 +116,14 @@
     <!-- Navigation -->
     <nav class="pt-8 border-t border-border flex justify-between">
       {#if parent}
-        <Button variant="outline" href="/articles/{parent.slug}">
+        <Button variant="outline" href={localized(`/articles/${parent.slug}`, locale)}>
           <Icon icon="tabler:arrow-left" class="w-4 h-4 mr-2" />
           {parent.title}
         </Button>
       {:else}
-        <Button variant="outline" href="/articles">
+        <Button variant="outline" href={localized('/articles', locale)}>
           <Icon icon="tabler:arrow-left" class="w-4 h-4 mr-2" />
-          All Articles
+          {m('nav.all_articles')}
         </Button>
       {/if}
     </nav>
@@ -129,8 +133,8 @@
     <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center">
       <Icon icon="tabler:file-off" class="w-8 h-8 text-gray-400" />
     </div>
-    <h2 class="text-xl font-semibold text-text-primary mb-2">Article not found</h2>
-    <p class="text-gray-500 mb-4">The article you're looking for doesn't exist.</p>
-    <Button href="/articles">Browse All Articles</Button>
+    <h2 class="text-xl font-semibold text-text-primary mb-2">{m('articles.not_found.title')}</h2>
+    <p class="text-gray-500 mb-4">{m('articles.not_found.body')}</p>
+    <Button href={localized('/articles', locale)}>{m('articles.not_found.cta')}</Button>
   </div>
 {/if}

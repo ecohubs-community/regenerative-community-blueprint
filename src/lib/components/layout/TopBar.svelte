@@ -7,33 +7,34 @@
   import logo from '$lib/assets/logo.webp';
   import LanguageSwitcher from '$lib/components/i18n/LanguageSwitcher.svelte';
   import { page } from '$app/state';
+  import { m } from '$lib/i18n';
+  import { localized } from '$lib/i18n/path';
+  import { DEFAULT_LOCALE } from '$lib/i18n/languages';
 
   // Forward per-page coverage to the switcher so untranslated locales render dimmed.
   const availableLocales = $derived(page.data.availableLocales as string[] | undefined);
+  const locale = $derived((page.data?.locale as string | undefined) ?? DEFAULT_LOCALE);
 </script>
 
 <header class="sticky top-0 z-30 border-b border-border bg-background/80 backdrop-blur-md">
   <div class="flex items-center justify-between px-lg py-md max-w-full mx-auto">
     <!-- Left: Logo + Hamburger (mobile) -->
     <div class="flex items-center gap-4">
-      <Button 
-        variant="ghost" 
-        size="icon" 
+      <Button
+        variant="ghost"
+        size="icon"
         class="md:hidden"
         onclick={() => sidebarOpen.update((v) => !v)}
-        aria-label="Toggle navigation"
+        aria-label={m('nav.toggle_navigation')}
       >
         <Icon icon="tabler:menu-2" class="w-6 h-6" />
       </Button>
-      
-      <a href={resolve("/")} class="flex items-center gap-2 group">
-        <!-- <div class="w-8 h-8 rounded-lg bg-linear-to-br from-primary to-primary-dark flex items-center justify-center text-white font-serif font-bold text-xl shadow-md group-hover:shadow-lg transition-all">
-          E
-        </div> -->
-        <img src={logo} alt="EcoHubs Logo" class="w-10 h-10" />
+
+      <a href={localized(resolve('/'), locale)} class="flex items-center gap-2 group">
+        <img src={logo} alt={`${m('site.brand')} Logo`} class="w-10 h-10" />
         <div class="flex flex-col">
-          <span class="text-xl font-bold tracking-tight group-hover:text-primary transition-colors leading-5 font-serif">EcoHubs</span>
-          <span class="text-xs font-bold text-gray-500 transition-colors">Blueprint / RCOS</span>
+          <span class="text-xl font-bold tracking-tight group-hover:text-primary transition-colors leading-5 font-serif">{m('site.brand')}</span>
+          <span class="text-xs font-bold text-gray-500 transition-colors">{m('site.tagline')}</span>
         </div>
       </a>
     </div>
@@ -49,7 +50,7 @@
         variant="ghost"
         size="icon"
         onclick={toggleTheme}
-        aria-label="Toggle theme"
+        aria-label={m('nav.toggle_theme')}
       >
         <Icon icon="tabler:sun-moon" class="w-5 h-5" />
       </Button>
@@ -57,7 +58,7 @@
       <LanguageSwitcher {availableLocales} />
 
       <div class="hidden md:flex gap-2">
-         <Button variant="ghost" href="https://ecohubs.community" target="_blank">About <Icon icon="tabler:arrow-up-right" class="w-4 h-4" /></Button>
+         <Button variant="ghost" href="https://ecohubs.community" target="_blank">{m('nav.about')} <Icon icon="tabler:arrow-up-right" class="w-4 h-4" /></Button>
       </div>
     </div>
   </div>
