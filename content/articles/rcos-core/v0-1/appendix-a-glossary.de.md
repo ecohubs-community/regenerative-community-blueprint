@@ -1,130 +1,123 @@
 ---
 id: c0516132
+title: Anhang A — Glossar
 parentId: e6de7a5d
 order: 120
 lang: de
 sourceHash: 55f9f666
 ---
-Now I have good context for terminology consistency. Let me produce the translation.
 
----
-id: c0516132
-title: Anhang A — Glossar
-parentId: e6de7a5d
-order: 120
----
+Dieses Glossar bietet **informative Definitionen** für Schlüsselbegriffe, die in der gesamten RCOS-Spezifikation verwendet werden.  
+Glossareinträge führen keine neuen Anforderungen ein und ersetzen keine normativen Abschnitte.
 
-Dieses Glossar bietet **informative Definitionen** für zentrale Begriffe, die in der gesamten RCOS-Spezifikation verwendet werden.  
-Glossareinträge führen keine neuen Anforderungen ein und setzen normative Abschnitte nicht außer Kraft.
-
-**Verantwortlichkeit (Accountability)**  
+**Rechenschaftspflicht**  
 Die Erwartung, dass Rollen und Mitglieder aufgefordert werden können, Handlungen, Ergebnisse und die Einhaltung vereinbarter Regeln zu erklären, mit definierten Überprüfungs- und Korrekturmechanismen.
 
-**Rechenschaftsprotokoll (Accountability Protocol)**  
-Ein Artefakt, das definiert, wie Verstöße, Schäden oder wiederholte Versäumnisse überprüft, dokumentiert und behandelt werden, einschließlich ordnungsgemäßem Verfahren, Schutzmaßnahmen und Eskalationswegen.
+**Rechenschaftsprotokoll**  
+Ein Artefakt, das festlegt, wie Verstöße, Schäden oder wiederholte Fehler überprüft, dokumentiert und behandelt werden, einschließlich ordentlichem Verfahren, Schutzmaßnahmen und Eskalationspfaden.
 
-**Artefakt (Artifact)**  
-Ein dokumentiertes, versioniertes Objekt (z. B. Protokoll, Register, Charta), das durch einen autorisierten Prozess angenommen und zur Operationalisierung von RCOS-Schichten verwendet wird.
+**Artefakt**  
+Ein dokumentiertes, versioniertes Objekt (z. B. Protokoll, Register, Satzung), das durch einen autorisierten Prozess beschlossen und zur Operationalisierung von RCOS-Schichten verwendet wird.
 
-**Autoritätsgrenze (Authority Boundary)**  
+**Kompetenzgrenze**  
 Die expliziten Grenzen, innerhalb derer eine Rolle, ein Kreis oder ein Gremium Entscheidungen treffen oder handeln darf.
 
-**Änderungsprotokoll (Change Protocol)**  
-Ein Artefakt, das definiert, wie Änderungen vorgeschlagen, überprüft, angenommen, veröffentlicht und zurückgenommen werden, einschließlich Entscheidungstyp-Klassifikation und Notfallregelungen.
+**Änderungsprotokoll**  
+Ein Artefakt, das festlegt, wie Änderungen vorgeschlagen, überprüft, beschlossen, veröffentlicht und zurückgerollt werden, einschließlich der Klassifizierung von Entscheidungstypen und Notfallregelungen.
 
-**Gemeingüter (Commons)**  
-Ressourcen, die kollektiv unter expliziten Verwaltungs-, Zugangs- und Entscheidungsregeln verwaltet werden.
+**Gemeingüter**  
+Ressourcen, die kollektiv unter expliziten Verwaltungs-, Zugangs- und Entscheidungsregeln geführt werden.
 
-**Gemeinschaft (Community)**  
+**Gemeinschaft**  
 Eine Gruppe von Menschen, die sich freiwillig um einen gemeinsamen Zweck innerhalb eines definierten Geltungsbereichs und Governance-Systems koordinieren.
 
-**Konformität (Compliance)**  
-Der Zustand der Erfüllung aller verpflichtenden Anforderungen von RCOS-Core über die Schichten 0–6 hinweg.
+**Konformität**  
+Der Zustand, alle Pflichtanforderungen von RCOS-Core über die Schichten 0–6 zu erfüllen.
 
-**Konfliktlösungsleiter (Conflict Resolution Ladder)**  
-Ein gestufter Konfliktprozess, der Mindest-Lösungsschritte und Eskalationsschwellen definiert, von niedrigschwelliger Wiedergutmachung über Governance-Überprüfung bis hin zur — falls notwendig — Trennung.
+**Konfliktlösungsleiter**  
+Ein abgestufter Konfliktprozess, der Mindestlösungsschritte und Eskalationsschwellen definiert, von schwach ausgeprägter Wiedergutmachung bis zur Governance-Überprüfung und, falls nötig, Trennung.
 
-**Konstitutionelle Entscheidung (Constitutional Decision)**  
-Eine Entscheidung, die den Zweck, den Geltungsbereich, die Invarianten oder die Identitätseinschränkungen von Layer 0 oder das Governance-System selbst verändert.
+**Konstitutionelle Entscheidung**  
+Eine Entscheidung, die den Zweck, den Geltungsbereich, die Invarianten oder Identitätsbeschränkungen von Schicht 0 oder das Governance-System selbst verändert.
 
-**Entscheidungsmatrix (Decision Matrix)**  
-Ein Governance-Artefakt, das Entscheidungstypen und -domänen autorisierten Rollen, Mechanismen, Schwellenwerten und Eskalationswegen zuordnet.
+**Entscheidungsmatrix**  
+Ein Governance-Artefakt, das Entscheidungstypen und -domänen autorisierten Rollen, Mechanismen, Schwellenwerten und Eskalationspfaden zuordnet.
 
-**Entscheidungstyp (Decision Type)**  
-Eine Klassifikation von Entscheidungen (operativ, strategisch, konstitutionell), die zur Bestimmung von Autorität und Verfahren herangezogen wird.
+**Entscheidungstyp**  
+Eine Klassifizierung von Entscheidungen (Operativ, Strategisch, Konstitutionell), die zur Bestimmung von Zuständigkeit und Prozess verwendet wird.
 
-**Ordnungsgemäßes Verfahren (Due Process)**  
-Die Mindestgarantien für Fairness, die erforderlich sind, bevor Rechte eingeschränkt, Sanktionen verhängt oder eine Trennung eingeleitet wird, einschließlich Benachrichtigung, Überprüfung und Einspruchswegen gemäß Definition.
+**Ordentliches Verfahren**  
+Die Mindestgarantien für Fairness, die erforderlich sind, bevor Rechte eingeschränkt, Sanktionen verhängt oder eine Trennung ausgelöst wird, einschließlich Benachrichtigung, Überprüfung und Rechtsmittelpfaden wie definiert.
 
-**Notfalländerung (Emergency Change)**  
-Eine zeitlich begrenzte Änderung, die unter explizit definierten Notfallbedingungen durchgeführt wird und eine nachträgliche Überprüfung sowie Ratifizierung oder Rücknahme erfordert.
+**Notfalländerung**  
+Eine zeitlich begrenzte Änderung, die unter explizit definierten Notfallbedingungen umgesetzt wird und eine nachträgliche Überprüfung und Ratifizierung oder Rücknahme erfordert.
 
-**Explizit (Explicit)**  
-Schriftlich festgehalten, angenommen, zugänglich und überprüfbar.  
-Alles, was nicht explizit ist, wird unter RCOS als nicht existent behandelt.
+**Explizit**  
+Schriftlich festgelegt, beschlossen, zugänglich und überprüfbar.  
+Alles, was nicht explizit ist, gilt unter RCOS als nicht existent.
 
-**Explizitätsregel (Explicitness Rule)**  
-Das Prinzip, dass Mechanismen, die Macht, Risiko, Verantwortung oder Austrittsbedingungen zuweisen, schriftlich festgehalten, angenommen und überprüfbar sein müssen.
+**Explizitheitsprinzip**  
+Das Prinzip, dass Mechanismen zur Zuweisung von Macht, Risiko, Verantwortung oder Austrittsbedingungen schriftlich festgelegt, beschlossen und überprüfbar sein müssen.
 
-**Experiment (Experiment)**  
-Eine zeitlich begrenzte, reversible Änderung, die zum Zweck des Lernens und der Evaluation eingeführt wird.
+**Experiment**  
+Eine zeitlich begrenzte, reversible Änderung, die zu Lern- und Auswertungszwecken beschlossen wird.
 
-**Austritts- und Trennungsprotokoll (Exit & Separation Protocol)**  
-Ein Artefakt, das den freiwilligen Austritt, das ordnungsgemäße Verfahren bei erzwungenem Austritt sowie die Aufteilung von Vermögenswerten, Rollen, Zugängen und Pflichten definiert.
+**Austritts- und Trennungsprotokoll**  
+Ein Artefakt, das freiwilligen Austritt, ordentliches Verfahren bei erzwungenem Austritt sowie die Trennung von Ressourcen, Rollen, Zugängen und Verpflichtungen definiert.
 
-**Governance-Protokoll (Governance Protocol)**  
-Ein Artefakt, das den Entscheidungslebenszyklus (Vorschlag, Beratung, Annahme, Dokumentation, Überprüfung) definiert und festlegt, wie Governance-Konflikte gelöst werden.
+**Governance-Protokoll**  
+Ein Artefakt, das den Entscheidungslebenszyklus (Vorschlag, Beratung, Beschluss, Dokumentation, Überprüfung) und die Lösung von Governance-Konflikten definiert.
 
-**Im Geltungsbereich / Außerhalb des Geltungsbereichs (In-Scope / Out-of-Scope)**  
-Im Geltungsbereich bezieht sich auf Personen, Vermögenswerte, Domänen und Aktivitäten, die explizit von der Gemeinschaft verwaltet werden. Außerhalb des Geltungsbereichs bezieht sich auf alles, was explizit ausgeschlossen oder nicht im Geltungsbereich deklariert ist.
+**Im Geltungsbereich / Außerhalb des Geltungsbereichs**  
+Im Geltungsbereich bezeichnet Personen, Ressourcen, Domänen und Aktivitäten, die explizit von der Gemeinschaft geregelt werden. Außerhalb des Geltungsbereichs bezeichnet alles, was explizit ausgeschlossen oder nicht im Geltungsbereich deklariert wurde.
 
-**Protokoll für die interne Ökonomie (Internal Economy Protocol)**  
-Ein Artefakt, das die Anerkennung von Beiträgen und etwaige interne Tauschmechanismen definiert, einschließlich Akkumulationsbeschränkungen und Streitkorrektur.
+**Protokoll zur internen Wirtschaft**  
+Ein Artefakt, das die Anerkennung von Beiträgen und etwaige interne Austauschmechanismen definiert, einschließlich Akkumulationsbeschränkungen und Streitkorrektur.
 
-**Invariante (Invariant)**  
-Eine nicht verhandelbare Einschränkung, die nicht außer Kraft gesetzt werden kann, solange sie gilt.
+**Invariante**  
+Eine nicht verhandelbare Bedingung, die nicht außer Kraft gesetzt werden kann, solange sie gilt.
 
-**Schicht (Layer)**  
-Eine funktionale Domäne von RCOS, die einen bestimmten Aspekt des Gemeinschaftsbetriebs definiert.
+**Schicht**  
+Ein funktionaler Bereich von RCOS, der einen bestimmten Aspekt des Gemeinschaftsbetriebs definiert.
 
-**Lernprotokoll (Learning Log)**  
-Ein Artefakt, das wesentliche Fehlschläge, Anpassungen, Rücknahmen und gewonnene Erkenntnisse festhält, einschließlich Auslöser, betroffener Artefakte und Ergebnisse.
+**Lernprotokoll**  
+Ein Artefakt, das wesentliche Fehler, Anpassungen, Rücknahmen und gewonnene Erkenntnisse festhält, einschließlich Auslöser, betroffener Artefakte und Ergebnisse.
 
-**Mitglied (Member)**  
-Eine Person, die durch den definierten Mitgliedschaftsprozess explizit in die Gemeinschaft eingetreten ist.
+**Mitglied**  
+Eine Person, die explizit durch den definierten Mitgliedschaftsprozess in die Gemeinschaft eingetreten ist.
 
-**Optionales Modul (Optional Module)**  
-Eine domänenspezifische Erweiterung, die auf RCOS-Core aufbaut, ohne dessen verpflichtende Schichten zu verändern.
+**Optionales Modul**  
+Eine domänenspezifische Erweiterung, die auf RCOS-Core aufbaut, ohne dessen Pflichtschichten zu verändern.
 
-**Register (Registry)**  
-Ein Artefakt, das eine Menge autoritativer Einträge (z. B. Rollen, Ressourcen, Mitgliedschaftszustände) mit klarer Zuständigkeit, Aktualisierungsregeln und Versionsgeschichte erfasst.
+**Register**  
+Ein Artefakt, das eine Menge autoritativer Einträge (z. B. Rollen, Ressourcen, Mitgliedschaftszustände) mit klarer Zuständigkeit, Aktualisierungsregeln und Versionshistorie erfasst.
 
-**Referenzimplementierung (Reference Implementation)**  
+**Referenzimplementierung**  
 Eine reale Gemeinschaft, die ihre Anwendung von RCOS-Core öffentlich dokumentiert.
 
-**Rolle (Role)**  
-Ein explizit definiertes Bündel aus Verantwortlichkeiten, Autorität und Rechenschaftspflicht, unabhängig von der Person, die die Rolle innehat.
+**Rolle**  
+Ein explizit definiertes Bündel aus Verantwortlichkeiten, Befugnissen und Rechenschaftspflicht, unabhängig von der Person, die sie innehat.
 
-**Sicherheitskritisch (Safety-Critical)**  
-Ein Zustand, in dem physische, psychische oder Kindersicherheit gefährdet ist und erhöhte Schutzmaßnahmen sowie potenziell sofortige Schutzmaßnahmen erforderlich sind.
+**Sicherheitskritisch**  
+Ein Zustand, in dem physische, psychische oder Kindersicherheit gefährdet ist, der erhöhte Schutzmaßnahmen und möglicherweise sofortige Schutzmaßnahmen erfordert.
 
-**Sanktion (Sanction)**  
-Eine definierte, dokumentierte Einschränkung oder Korrekturmaßnahme, die durch ein autorisiertes Verfahren verhängt wird, verhältnismäßig zu einem Verstoß und der Überprüfung unterliegend.
+**Sanktion**  
+Eine definierte, dokumentierte Einschränkung oder Korrekturmaßnahme, die durch einen autorisierten Prozess verhängt wird, proportional zu einem Verstoß und einer Überprüfung unterliegt.
 
-**Geltungsbereich (Scope)**  
-Die explizit erklärten Domänen, Vermögenswerte und Aktivitäten, über die die Gemeinschaft Autorität ausübt.
+**Geltungsbereich**  
+Die explizit deklarierten Domänen, Ressourcen und Aktivitäten, über die die Gemeinschaft Autorität ausübt.
 
-**Verwaltung (Stewardship)**  
+**Verwaltungsverantwortung**  
 Verantwortung für Pflege, Instandhaltung und Governance einer Ressource innerhalb definierter Grenzen.
 
-**Gemeinschaftskasse (Treasury)**  
-Die Gesamtheit der gemeinsamen Ressourcen, Guthaben, Verpflichtungen und Zusagen, die unter kollektiven Regeln gehalten werden.
+**Gemeinschaftskasse**  
+Die Gesamtheit der gemeinsamen Ressourcen, Salden, Verpflichtungen und Zusagen, die unter kollektiven Regeln gehalten werden.
 
-**Regelwerk der Gemeinschaftskasse (Treasury Ruleset)**  
-Ein Artefakt, das definiert, wie Ressourcen der Gemeinschaftskasse gehalten, ausgegeben, berichtet, geprüft und begrenzt werden, einschließlich Schwellenwerten und Regeln für Interessenkonflikte.
+**Kassenregelwerk**  
+Ein Artefakt, das festlegt, wie Ressourcen der Gemeinschaftskasse gehalten, ausgegeben, berichtet, geprüft und eingeschränkt werden, einschließlich Schwellenwerte und Interessenkonfliktregeln.
 
-**Transparenzausnahme (Transparency Exception)**  
-Eine explizit definierte, begründete, zeitlich begrenzte Einschränkung des Informationszugangs, die dennoch eine Konformitätsprüfung ermöglicht.
+**Transparenzausnahme**  
+Eine explizit definierte, gerechtfertigte, zeitlich begrenzte Einschränkung des Informationszugangs, die dennoch eine Konformitätsprüfung ermöglicht.
 
-**Versionsgeschichte (Version History)**  
-Ein Artefakt, das festhält, welche Version in Kraft ist, und angenommene Änderungen, Geltungsdaten und Entscheidungsreferenzen dokumentiert.
+**Versionshistorie**  
+Ein Artefakt, das festhält, welche Version in Kraft ist, und beschlossene Änderungen, Inkrafttretensdaten und Entscheidungsreferenzen dokumentiert.
