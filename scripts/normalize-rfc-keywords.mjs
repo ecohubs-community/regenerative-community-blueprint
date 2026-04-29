@@ -65,6 +65,18 @@ const REPLACEMENTS = {
 		[/\bRECOMMENDED\b/g, 'RECOMENDADO'],
 		[/\bREQUIRED\b/g, 'REQUERIDO'],
 		[/\bOPTIONAL\b/g, 'OPCIONAL']
+	],
+	fr: [
+		// French convention for RFC 2119 normative keywords. Order matters:
+		// negated forms first so "MUST" doesn't snag inside "MUST NOT".
+		[/\bMUST NOT\b/g, 'NE DOIT PAS'],
+		[/\bSHOULD NOT\b/g, 'NE DEVRAIT PAS'],
+		[/\bMUST\b/g, 'DOIT'],
+		[/\bSHOULD\b/g, 'DEVRAIT'],
+		[/\bMAY\b/g, 'PEUT'],
+		[/\bRECOMMENDED\b/g, 'RECOMMANDÉ'],
+		[/\bREQUIRED\b/g, 'REQUIS'],
+		[/\bOPTIONAL\b/g, 'OPTIONNEL']
 	]
 };
 

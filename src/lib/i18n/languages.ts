@@ -23,7 +23,8 @@ export type Locale = {
 export const LOCALES: readonly Locale[] = [
 	{ code: 'en', englishName: 'English', nativeName: 'English', default: true },
 	{ code: 'de', englishName: 'German', nativeName: 'Deutsch' },
-	{ code: 'es', englishName: 'Spanish', nativeName: 'Español' }
+	{ code: 'es', englishName: 'Spanish', nativeName: 'Español' },
+	{ code: 'fr', englishName: 'French', nativeName: 'Français' }
 	// Add more as translations land:
 	// { code: 'pt', englishName: 'Portuguese', nativeName: 'Português' },
 	// { code: 'fr', englishName: 'French',     nativeName: 'Français' },

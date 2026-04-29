@@ -46,6 +46,14 @@ const REPLACEMENTS = {
 		// parent article's "Capas RCOS" convention.
 		[/\bLayer (\d)\b/g, 'Capa $1'],
 		[/\bNivel (\d)\b/g, 'Capa $1']
+	],
+	fr: [
+		// "Layer N" → "Couche N" — the standard French term in protocol-stack
+		// contexts (cf. "couches OSI"). "Niveau" is also seen but "Couche" is
+		// more specific to layered architectures and matches the parent
+		// article's "Couches RCOS" convention.
+		[/\bLayer (\d)\b/g, 'Couche $1'],
+		[/\bNiveau (\d)\b/g, 'Couche $1']
 	]
 };
 
