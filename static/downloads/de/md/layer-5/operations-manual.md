@@ -2,7 +2,7 @@
 
 # Betriebshandbuch
 
-- **Generiert:** 2026-04-28
+- **Generiert:** 2026-04-29
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-5/operations-manual](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-5/operations-manual)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
@@ -33,12 +33,12 @@ Benennt für jeden wiederkehrenden kritischen Prozess (Onboarding, Austritt, Ant
 
 | Prozess | Wer | Detail |
 |---|---|---|
-| _<Mitglieder-Onboarding>_ | _<Rolle>_ | _<siehe Onboarding-Protokoll (Ebene 1)>_ |
-| _<Mitgliederaustritt>_ | _<Rolle>_ | _<siehe Austritts- & Trennungsprotokoll (Ebene 1)>_ |
-| _<Antragsveröffentlichung>_ | _<Rolle>_ | _<siehe Governance-Protokoll (Ebene 2)>_ |
-| _<Beitragserfassung>_ | _<Rolle>_ | _<siehe Binnenwirtschaftsprotokoll (Ebene 3)>_ |
+| _<Mitglieder-Onboarding>_ | _<Rolle>_ | _<siehe Onboarding-Protokoll (Schicht 1)>_ |
+| _<Mitgliederaustritt>_ | _<Rolle>_ | _<siehe Austritts- & Trennungsprotokoll (Schicht 1)>_ |
+| _<Antragsveröffentlichung>_ | _<Rolle>_ | _<siehe Governance-Protokoll (Schicht 2)>_ |
+| _<Beitragserfassung>_ | _<Rolle>_ | _<siehe Binnenwirtschaftsprotokoll (Schicht 3)>_ |
 | _<Regelmäßige Sitzung>_ | _<Moderation>_ | _<Agenda-Veröffentlichung; Protokoll; Aufgabennachverfolgung>_ |
-| _<Kassenverwaltung>_ | _<Finanzverantwortliche:r>_ | _<siehe Kassenordnung (Ebene 3)>_ |
+| _<Kassenverwaltung>_ | _<Finanzverantwortliche:r>_ | _<siehe Kassenordnung (Schicht 3)>_ |
 | _<Überprüfung der Plattformzugänge>_ | _<Infrastrukturverantwortliche:r>_ | _<Prüfrhythmus; Zugangsentzug für ausgetretene Mitglieder>_ |
 
 ## Temporäre und Ad-hoc-Verantwortlichkeiten
@@ -160,7 +160,7 @@ Haltet fest, welche Unterlagen allen Vollmitgliedern zugänglich sind, wie lang 
 - _<Mitgliedschaftsstatus und Rollenzuweisungen sind einsehbar.>_
 - _<Beitragsnachweise sind einsehbar.>_
 - _<Antwortfrist für Informationsanfragen.>_
-- _<Das Zurückhalten von Informationen, auf die Mitglieder Anspruch haben, ist ein Rechenschaftsauslöser gemäß Ebene 4.>_
+- _<Das Zurückhalten von Informationen, auf die Mitglieder Anspruch haben, ist ein Rechenschaftsauslöser gemäß Schicht 4.>_
 - _<Keine Rolle und keine Einzelperson darf der alleinige Zugangspunkt für Informationen sein, die andere Rolleninhaber:innen benötigen.>_
 
 ---

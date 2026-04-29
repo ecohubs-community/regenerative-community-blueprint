@@ -2,7 +2,7 @@
 
 # Governance-Protokoll
 
-- **Generiert:** 2026-04-28
+- **Generiert:** 2026-04-29
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-2/governance-protocol](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-2/governance-protocol)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
@@ -104,7 +104,7 @@ Lege Aufbewahrungsregeln für angenommene und abgelehnte Anträge fest, was als 
 
 - _<Alle angenommenen und abgelehnten Anträge werden innerhalb von X Tagen nach Abstimmungsende abgelegt.>_
 - _<Das Abstimmungsartefakt (z. B. Snapshot-Link) dient als Entscheidungsprotokoll.>_
-- _<Versionshistorie (Layer 6) wird bei jedem angenommenen Antrag aktualisiert.>_
+- _<Versionshistorie (Schicht 6) wird bei jedem angenommenen Antrag aktualisiert.>_
 
 ## Einspruch und Überprüfung
 
@@ -173,7 +173,7 @@ Benenne für jeden Fehlermodus die entsprechende Schutzmaßnahme. Füge einen Au
 - **Informelle Vetos:** _<Regel, dass nur schriftliche, begründete Einwände, die über den definierten Prozess eingereicht werden, Gewicht haben.>_
 - **Entscheidungsvereinnahmung:** _<Regel zu Beschlussfähigkeit und Offenheit der Abstimmung.>_
 - **Gründer-/Rollenverfestigung:** _<Regel, dass keine Rolle dauerhafte Autorität verleiht; Gründer:innen haben keine besondere Governance-Autorität über ihren Mitgliedschaftsstatus hinaus.>_
-- **Anfechtung ohne Vergeltung:** _<Verweis auf die Anti-Vergeltungsbestimmungen in Layer 4.>_
+- **Anfechtung ohne Vergeltung:** _<Verweis auf die Anti-Vergeltungsbestimmungen in Schicht 4.>_
 - **Auslöser bei anhaltendem Versagen:** _<z. B. drei oder mehr Governance-Fehler innerhalb von X Monaten lösen eine Verfassungsüberprüfung aus.>_
 
 ---

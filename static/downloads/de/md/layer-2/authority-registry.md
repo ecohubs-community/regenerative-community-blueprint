@@ -2,7 +2,7 @@
 
 # Autoritätenregister
 
-- **Generiert:** 2026-04-28
+- **Generiert:** 2026-04-29
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-2/authority-registry](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-2/authority-registry)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 

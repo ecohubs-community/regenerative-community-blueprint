@@ -2,7 +2,7 @@
 
 # Invariantenregister
 
-- **Generiert:** 2026-04-28
+- **Generiert:** 2026-04-29
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-0/invariants-register](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-0/invariants-register)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 

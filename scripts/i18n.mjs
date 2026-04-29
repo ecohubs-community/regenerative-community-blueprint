@@ -54,6 +54,44 @@ export const DOWNLOADS_I18N = {
 		bundleNote:
 			'Jede Vorlage enthält einen Begründungsblock (warum der Abschnitt existiert) und eine Anleitung (wie er ausgefüllt wird).',
 		bundleSectionHeading: 'Vorlagen'
+	},
+	es: {
+		siteName: 'RCOS — Sistema Operativo de Comunidad Regenerativa',
+		generated: 'Generado',
+		source: 'Fuente (versión más reciente)',
+		allTemplates: 'Todas las plantillas RCOS',
+		translatedFromEnglish:
+			'Este contenido aún no está traducido al español; se muestra la fuente en inglés.',
+		toc: 'Índice',
+		aboutCore: 'Acerca de RCOS Core',
+		coreSpecTitle: 'Especificación RCOS Core — v0.1',
+		rationale: 'Justificación',
+		instructions: 'Instrucciones',
+		bundleHeading: 'Plantillas RCOS',
+		bundleIntro:
+			'Este paquete contiene todas las plantillas RCOS, listas para copiar y adaptar a tu comunidad.',
+		bundleNote:
+			'Cada plantilla incluye un bloque de justificación (por qué existe la sección) e instrucciones (cómo rellenarla).',
+		bundleSectionHeading: 'Plantillas'
+	},
+	fr: {
+		siteName: 'RCOS — Système d\'Exploitation de Communauté Régénérative',
+		generated: 'Généré',
+		source: 'Source (version la plus récente)',
+		allTemplates: 'Tous les modèles RCOS',
+		translatedFromEnglish:
+			'Ce contenu n\'est pas encore traduit en français ; la source en anglais est affichée.',
+		toc: 'Table des matières',
+		aboutCore: 'À propos de RCOS Core',
+		coreSpecTitle: 'Spécification RCOS Core — v0.1',
+		rationale: 'Justification',
+		instructions: 'Instructions',
+		bundleHeading: 'Modèles RCOS',
+		bundleIntro:
+			'Ce paquet contient tous les modèles RCOS, prêts à être copiés et adaptés à votre communauté.',
+		bundleNote:
+			'Chaque modèle inclut un bloc de justification (pourquoi la section existe) et des instructions (comment la remplir).',
+		bundleSectionHeading: 'Modèles'
 	}
 };
 

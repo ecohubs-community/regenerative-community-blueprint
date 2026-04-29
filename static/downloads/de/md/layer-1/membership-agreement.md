@@ -2,7 +2,7 @@
 
 # Mitgliedschaftsvereinbarung
 
-- **Generiert:** 2026-04-28
+- **Generiert:** 2026-04-29
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-1/membership-agreement](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-1/membership-agreement)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
@@ -49,7 +49,7 @@ Rechte, die nicht schriftlich festgehalten sind, können stillschweigend entzoge
 <details data-kind="instructions">
 <summary>Wie du diesen Abschnitt ausfüllst</summary>
 
-Liste konkrete Rechte auf, die jedem Mitgliedschaftsstatus gewährt werden. Verweise auf die Entscheidungsmatrix (Ebene 2) für Stimmrechte, das Rollenregister (Ebene 5) für Rollenberechtigung und Ebene 4 für Verfahrensgarantien.
+Liste konkrete Rechte auf, die jedem Mitgliedschaftsstatus gewährt werden. Verweise auf die Entscheidungsmatrix (Schicht 2) für Stimmrechte, das Rollenregister (Schicht 5) für Rollenberechtigung und Schicht 4 für Verfahrensgarantien.
 
 </details>
 
@@ -80,7 +80,7 @@ Liste konkrete, begrenzte Pflichten auf. Jede Pflicht muss überprüfbar sein: E
 
 </details>
 
-1. _<Pflicht 1, z. B. alle Identitätsvorgaben und Invarianten der Ebene 0 jederzeit einhalten.>_
+1. _<Pflicht 1, z. B. alle Identitätsvorgaben und Invarianten der Schicht 0 jederzeit einhalten.>_
 2. _<Pflicht 2, z. B. in mindestens einer anerkannten Kategorie pro definiertem Zeitraum zur Gemeinschaft beitragen.>_
 3. _<Pflicht 3, z. B. an Konfliktlösungsverfahren teilnehmen, wenn als Partei benannt oder als Zeuge angefragt.>_
 4. _<Pflicht 4, z. B. das Onboarding abschließen, bevor Vollmitgliedsrechte ausgeübt werden.>_
@@ -107,28 +107,28 @@ Gib ein messbares Minimum an (Häufigkeit × Kategorie), Vertretungs- und Abwese
 </details>
 
 - **Mindestbeitrag:** _<z. B. mindestens ein anerkannter Beitrag pro 6 Monate, in einer beliebigen anerkannten Kategorie.>_
-- **Anerkannte Kategorien:** _<Verweis auf das Binnenwirtschaftsprotokoll (Ebene 3).>_
+- **Anerkannte Kategorien:** _<Verweis auf das Binnenwirtschaftsprotokoll (Schicht 3).>_
 - **Vertretung:** _<z. B. ein Mitglied kann eine bestimmte Aufgabe delegieren, bleibt aber für die Erfüllung der Gesamtbeitragserwartungen verantwortlich.>_
 - **Längere Abwesenheit:** _<z. B. Benachrichtigung erforderlich bei Abwesenheiten länger als X Monate; Erwartungen werden für den gemeldeten Zeitraum bis zu einem Maximum pausiert.>_
-- **Auslöser bei Nichtteilnahme:** _<z. B. Fehlen anerkannter Beiträge über X aufeinanderfolgende Monate ohne vorherige Mitteilung löst eine Rechenschaftsprüfung (Ebene 4) aus.>_
+- **Auslöser bei Nichtteilnahme:** _<z. B. Fehlen anerkannter Beiträge über X aufeinanderfolgende Monate ohne vorherige Mitteilung löst eine Rechenschaftsprüfung (Schicht 4) aus.>_
 
 ## Verweis auf ordentliches Verfahren
 
 <details data-kind="rationale">
 <summary>Warum das ordentliche Verfahren hier nochmals erwähnen?</summary>
 
-Die Mitgliedschaftsvereinbarung ist das eine Dokument, das jedes Mitglied tatsächlich liest und dem es zustimmt. Das ordentliche Verfahren hier zu benennen — nicht nur in Ebene 4 — stellt sicher, dass kein Mitglied nach einer Regel entfernt oder eingeschränkt werden kann, die ihm beim Beitritt nicht gezeigt wurde. Es schließt die Lücke zwischen dem, was die Gemeinschaft verspricht, und dem, was sie tun kann.
+Die Mitgliedschaftsvereinbarung ist das eine Dokument, das jedes Mitglied tatsächlich liest und dem es zustimmt. Das ordentliche Verfahren hier zu benennen — nicht nur in Schicht 4 — stellt sicher, dass kein Mitglied nach einer Regel entfernt oder eingeschränkt werden kann, die ihm beim Beitritt nicht gezeigt wurde. Es schließt die Lücke zwischen dem, was die Gemeinschaft verspricht, und dem, was sie tun kann.
 
 </details>
 
 <details data-kind="instructions">
 <summary>Wie du diesen Abschnitt ausfüllst</summary>
 
-Verweise auf die Konfliktlösungsstufen (Ebene 4) und das Austritts- und Trennungsprotokoll, damit jedes Mitglied, das die Mitgliedschaftsvereinbarung liest, weiß, wo die Verfahrensgarantien zu finden sind.
+Verweise auf die Konfliktlösungsstufen (Schicht 4) und das Austritts- und Trennungsprotokoll, damit jedes Mitglied, das die Mitgliedschaftsvereinbarung liest, weiß, wo die Verfahrensgarantien zu finden sind.
 
 </details>
 
-Jeder erzwungene Austritt, jede Suspendierung oder Zugangsbeschränkung folgt dem ordentlichen Verfahren der Ebene 4 und dem Austritts- und Trennungsprotokoll.
+Jeder erzwungene Austritt, jede Suspendierung oder Zugangsbeschränkung folgt dem ordentlichen Verfahren der Schicht 4 und dem Austritts- und Trennungsprotokoll.
 
 ## Zustimmungserklärung
 
