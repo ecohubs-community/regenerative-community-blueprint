@@ -2,7 +2,7 @@
 
 # Konfliktlösungsleiter
 
-- **Generiert:** 2026-04-28
+- **Generiert:** 2026-04-29
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-4/conflict-resolution-ladder](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-4/conflict-resolution-ladder)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 

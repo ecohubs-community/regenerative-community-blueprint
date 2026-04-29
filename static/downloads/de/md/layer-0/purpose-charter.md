@@ -2,7 +2,7 @@
 
 # Zweckcharta
 
-- **Generiert:** 2026-04-28
+- **Generiert:** 2026-04-29
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-0/purpose-charter](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-0/purpose-charter)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 

@@ -2,7 +2,7 @@
 
 # Lernprotokoll
 
-- **Generiert:** 2026-04-28
+- **Generiert:** 2026-04-29
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-6/learning-log](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-6/learning-log)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 

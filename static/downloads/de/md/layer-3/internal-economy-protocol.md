@@ -2,7 +2,7 @@
 
 # Protokoll für die interne Wirtschaft
 
-- **Generiert:** 2026-04-28
+- **Generiert:** 2026-04-29
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-3/internal-economy-protocol](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-3/internal-economy-protocol)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 

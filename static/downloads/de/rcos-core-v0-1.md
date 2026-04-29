@@ -2,7 +2,7 @@
 
 # RCOS-Kernspezifikation — v0.1
 
-- **Generiert:** 2026-04-28
+- **Generiert:** 2026-04-29
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1](https://blueprint.ecohubs.community/de/articles/rcos-core/v0-1)
 
 - Status: Entwurf
@@ -15,17 +15,17 @@
 - [Über RCOS Core](#ber-rcos-core)
 - [0. Einführung](#0-einfhrung)
 - [1. RCOS-Konformitätsmodell](#1-rcos-konformittsmodell)
-- [2. Layer 0 — Identität & Geltungsbereich](#2-layer-0-identitt-geltungsbereich)
-- [3. Layer 1 — Mitgliedschaftssystem](#3-layer-1-mitgliedschaftssystem)
-- [4. Layer 2 — Governance & Entscheidungslogik](#4-layer-2-governance-entscheidungslogik)
-- [5. Layer 3 — Wirtschafts- & Ressourcensystem](#5-layer-3-wirtschafts--ressourcensystem)
-- [6. Layer 4 — Konflikt, Wiedergutmachung & Verantwortlichkeit](#6-layer-4-konflikt-wiedergutmachung-verantwortlichkeit)
-- [7. Layer 5 — Betrieb & Koordination](#7-layer-5-betrieb-koordination)
-- [8. Layer 6 — Evolution & Anpassung](#8-layer-6-evolution-anpassung)
+- [2. Schicht 0 — Identität & Geltungsbereich](#2-schicht-0-identitt-geltungsbereich)
+- [3. Schicht 1 — Mitgliedschaftssystem](#3-schicht-1-mitgliedschaftssystem)
+- [4. Schicht 2 — Governance & Entscheidungslogik](#4-schicht-2-governance-entscheidungslogik)
+- [5. Schicht 3 — Wirtschafts- & Ressourcensystem](#5-schicht-3-wirtschafts--ressourcensystem)
+- [6. Schicht 4 — Konflikt, Wiedergutmachung & Verantwortlichkeit](#6-schicht-4-konflikt-wiedergutmachung-verantwortlichkeit)
+- [7. Schicht 5 — Betrieb & Koordination](#7-schicht-5-betrieb-koordination)
+- [8. Schicht 6 — Evolution & Anpassung](#8-schicht-6-evolution-anpassung)
 - [9. Nicht-normative Abschnitte](#9-nicht-normative-abschnitte)
 - [10. Compliance & Auditing](#10-compliance-auditing)
 - [11. Versionierung & Governance des Standards](#11-versionierung-governance-des-standards)
-- [Appendix A — Glossary](#appendix-a-glossary)
+- [Anhang A — Glossar](#anhang-a-glossar)
 - [Anhang B — Beispiel-Artefakte (nicht normativ)](#anhang-b-beispiel-artefakte-nicht-normativ)
 - [Anhang C — Zusammenfassung der Referenzimplementierung](#anhang-c-zusammenfassung-der-referenzimplementierung)
 
@@ -342,9 +342,9 @@ Was nicht schriftlich festgehalten und angenommen wurde, existiert nicht.
 
 ---
 
-# 2. Layer 0 — Identität & Geltungsbereich
+# 2. Schicht 0 — Identität & Geltungsbereich
 
-Layer 0 definiert die konstitutionelle Identität der Gemeinschaft. Er legt fest, was die Gemeinschaft *ist*, was sie *nicht ist*, und die nicht verhandelbaren Einschränkungen, unter denen alle anderen Layer operieren. Keine Regel, Entscheidung oder Praxis in höheren Layern darf Layer 0 widersprechen.
+Schicht 0 definiert die konstitutionelle Identität der Gemeinschaft. Er legt fest, was die Gemeinschaft *ist*, was sie *nicht ist*, und die nicht verhandelbaren Einschränkungen, unter denen alle anderen Layer operieren. Keine Regel, Entscheidung oder Praxis in höheren Layern darf Schicht 0 widersprechen.
 
 ## 2.1 Zweckdefinition
 
@@ -352,7 +352,7 @@ Layer 0 definiert die konstitutionelle Identität der Gemeinschaft. Er legt fest
 
 2.1.2 Der primäre Zweck MUSS den dauerhaften Grund für die Existenz der Gemeinschaft beschreiben und DARF NICHT ein kurzfristiges Ziel, Projekt oder eine Strategie sein.
 
-2.1.3 Der primäre Zweck MUSS über die Zeit stabil sein und MUSS nur durch eine konstitutionelle Entscheidung gemäß Layer 2 und über den in Layer 6 definierten Änderungsprozess geändert werden.
+2.1.3 Der primäre Zweck MUSS über die Zeit stabil sein und MUSS nur durch eine konstitutionelle Entscheidung gemäß Schicht 2 und über den in Schicht 6 definierten Änderungsprozess geändert werden.
 
 2.1.4 Sekundäre Zwecke KANN definiert werden, DARF NICHT jedoch dem primären Zweck widersprechen oder ihn außer Kraft setzen.
 
@@ -385,7 +385,7 @@ Layer 0 definiert die konstitutionelle Identität der Gemeinschaft. Er legt fest
 
 2.3.5 Wenn ein Konflikt zwischen einer Invariante und einer anderen Regel entsteht, MUSS die Invariante Vorrang haben.
 
-2.3.6 Invarianten KANN nur durch einen konstitutionellen Änderungsprozess gemäß Layer 2 und Layer 6 geändert oder entfernt werden.
+2.3.6 Invarianten KANN nur durch einen konstitutionellen Änderungsprozess gemäß Schicht 2 und Schicht 6 geändert oder entfernt werden.
 
 ## 2.4 Identitätseinschränkungen
 
@@ -402,25 +402,25 @@ Layer 0 definiert die konstitutionelle Identität der Gemeinschaft. Er legt fest
 
 ## 2.5 Artefakte
 
-2.5.1 Die folgenden Artefakte sind für die Konformität mit Layer 0 verpflichtend:
+2.5.1 Die folgenden Artefakte sind für die Konformität mit Schicht 0 verpflichtend:
 - Zweck-Charta
 - Geltungsbereichserklärung
 - Invarianten-Register
 - Register der Identitätseinschränkungen
 
-2.5.2 Artefakte von Layer 0 MUSS:
+2.5.2 Artefakte von Schicht 0 MUSS:
 - Für alle Mitglieder öffentlich zugänglich sein
 - Versioniert sein
 - Durch einen formalen Ratifizierungsprozess angenommen werden
 
-2.5.3 Wenn Artefakte von Layer 0 fehlen, mehrdeutig oder in sich widersprüchlich sind, MUSS die Gemeinschaft als nicht konform mit RCOS-Core betrachtet werden.
+2.5.3 Wenn Artefakte von Schicht 0 fehlen, mehrdeutig oder in sich widersprüchlich sind, MUSS die Gemeinschaft als nicht konform mit RCOS-Core betrachtet werden.
 
 
 ---
 
-# 3. Layer 1 — Mitgliedschaftssystem
+# 3. Schicht 1 — Mitgliedschaftssystem
 
-Layer 1 definiert, wie Einzelpersonen der Gemeinschaft beitreten, an ihr teilnehmen und sie verlassen. Er legt die explizite Beziehung zwischen dem Individuum und dem Kollektiv fest, einschließlich Rechte, Pflichten und ordnungsgemäße Verfahren. Keine Person darf als Mitglied behandelt werden, ohne die in diesem Layer definierten Mechanismen durchlaufen zu haben.
+Schicht 1 definiert, wie Einzelpersonen der Gemeinschaft beitreten, an ihr teilnehmen und sie verlassen. Er legt die explizite Beziehung zwischen dem Individuum und dem Kollektiv fest, einschließlich Rechte, Pflichten und ordnungsgemäße Verfahren. Keine Person darf als Mitglied behandelt werden, ohne die in diesem Layer definierten Mechanismen durchlaufen zu haben.
 
 ## 3.1 Mitgliedschaftsstatus
 
@@ -444,7 +444,7 @@ Layer 1 definiert, wie Einzelpersonen der Gemeinschaft beitreten, an ihr teilneh
 
 3.2.2 Der Onboarding-Prozess MUSS beinhalten:
 - Prüfung aller RCOS-Core-Artefakte
-- Explizite Zustimmung zu den Regeln von Layer 0 und Layer 1
+- Explizite Zustimmung zu den Regeln von Schicht 0 und Schicht 1
 - Festlegung des anfänglichen Mitgliedschaftsstatus
 
 3.2.3 Aufnahmekriterien MUSS explizit und dokumentiert sein.
@@ -484,7 +484,7 @@ Layer 1 definiert, wie Einzelpersonen der Gemeinschaft beitreten, an ihr teilneh
 
 3.5.3 Stellvertretende Teilnahme (z. B. Auslagerung von Arbeit) MUSS explizit geregelt sein.
 
-3.5.4 Anhaltende Nicht-Teilnahme MUSS einen Rechenschaftsprozess auslösen, wie in Layer 4 definiert.
+3.5.4 Anhaltende Nicht-Teilnahme MUSS einen Rechenschaftsprozess auslösen, wie in Schicht 4 definiert.
 
 ## 3.6 Austritt und Trennung
 
@@ -492,7 +492,7 @@ Layer 1 definiert, wie Einzelpersonen der Gemeinschaft beitreten, an ihr teilneh
 
 3.6.2 Austrittsverfahren MUSS explizit, dokumentiert und nicht strafend sein.
 
-3.6.3 Erzwungener Austritt MUSS einem ordnungsgemäßen Verfahren folgen und über die Mechanismen von Layer 4 abgewickelt werden.
+3.6.3 Erzwungener Austritt MUSS einem ordnungsgemäßen Verfahren folgen und über die Mechanismen von Schicht 4 abgewickelt werden.
 
 3.6.4 Ein Austritt DARF NICHT zum Verlust von Rechten führen, die über die explizit an die Mitgliedschaft gebundenen hinausgehen.
 
@@ -524,9 +524,9 @@ Layer 1 definiert, wie Einzelpersonen der Gemeinschaft beitreten, an ihr teilneh
 
 ---
 
-# 4. Layer 2 — Governance & Entscheidungslogik
+# 4. Schicht 2 — Governance & Entscheidungslogik
 
-Layer 2 definiert, wie kollektive Entscheidungen getroffen werden, wer befugt ist, sie zu treffen, und wie Autorität begrenzt wird. Governance unter RCOS ist so gestaltet, dass Macht explizit, begrenzt, überprüfbar und reversibel ist.
+Schicht 2 definiert, wie kollektive Entscheidungen getroffen werden, wer befugt ist, sie zu treffen, und wie Autorität begrenzt wird. Governance unter RCOS ist so gestaltet, dass Macht explizit, begrenzt, überprüfbar und reversibel ist.
 
 ## 4.1 Entscheidungstypen
 
@@ -539,7 +539,7 @@ Layer 2 definiert, wie kollektive Entscheidungen getroffen werden, wer befugt is
 
 4.1.3 Strategische Entscheidungen betreffen die langfristige Ausrichtung, die Zuweisung bedeutender Ressourcen oder die Schaffung/Abschaffung wesentlicher Strukturen.
 
-4.1.4 Konstitutionelle Entscheidungen betreffen Änderungen an den Invarianten von Layer 0, dem Zweck, dem Geltungsbereich oder dem Governance-System selbst.
+4.1.4 Konstitutionelle Entscheidungen betreffen Änderungen an den Invarianten von Schicht 0, dem Zweck, dem Geltungsbereich oder dem Governance-System selbst.
 
 4.1.5 Wenn eine Entscheidung nicht eindeutig zugeordnet werden kann, MUSS sie standardmäßig dem Entscheidungstyp mit höherer Auswirkung zugeordnet werden.
 
@@ -606,7 +606,7 @@ Layer 2 definiert, wie kollektive Entscheidungen getroffen werden, wer befugt is
 
 4.5.3 Das Governance-Protokoll MUSS festlegen, wie Konflikte zwischen Entscheidungen gelöst werden.
 
-4.5.4 Alle Governance-Handlungen MUSS gemäß den Dokumentationsregeln von Layer 5 dokumentiert werden.
+4.5.4 Alle Governance-Handlungen MUSS gemäß den Dokumentationsregeln von Schicht 5 dokumentiert werden.
 
 ## 4.6 Sicherungsmechanismen und Fehlermodi
 
@@ -637,9 +637,9 @@ Layer 2 definiert, wie kollektive Entscheidungen getroffen werden, wer befugt is
 
 ---
 
-# 5. Layer 3 — Wirtschafts- & Ressourcensystem
+# 5. Schicht 3 — Wirtschafts- & Ressourcensystem
 
-Layer 3 definiert, wie Wert, Ressourcen und Verpflichtungen innerhalb der Gemeinschaft fließen.  
+Schicht 3 definiert, wie Wert, Ressourcen und Verpflichtungen innerhalb der Gemeinschaft fließen.  
 Sein Zweck ist es, wirtschaftliche Macht explizit, begrenzt, überprüfbar und der Governance untergeordnet zu machen — um versteckte Anhäufung, Abhängigkeit oder Zwang zu verhindern.
 
 ## 5.1 Gemeingüter vs. Privatressourcen
@@ -687,7 +687,7 @@ Sein Zweck ist es, wirtschaftliche Macht explizit, begrenzt, überprüfbar und d
 - Mechanismen zur Betrugsprävention, Streitbeilegung und Korrektur  
 - Datenschutz- und Transparenzregeln für Kontostände und Transaktionen  
 
-5.2.5 Beitragsanerkennung DARF KEINE implizite Entscheidungsbefugnis, kein Vetorecht oder keinen Governance-Einfluss schaffen, der über das in Layer 2 Definierte hinausgeht.
+5.2.5 Beitragsanerkennung DARF KEINE implizite Entscheidungsbefugnis, kein Vetorecht oder keinen Governance-Einfluss schaffen, der über das in Schicht 2 Definierte hinausgeht.
 
 ## 5.3 Gemeinschaftskasse
 
@@ -721,17 +721,17 @@ Sein Zweck ist es, wirtschaftliche Macht explizit, begrenzt, überprüfbar und d
 - Umverteilungs- oder Besteuerungsmechanismen  
 - Zeitlich begrenzte Gültigkeit  
 
-5.4.3 Wirtschaftsmechanismen DÜRFEN es Mitgliedern NICHT ermöglichen, die in Layer 2 definierten Governance-Befugnisgrenzen zu umgehen — auch nicht durch den Kauf von Einfluss, das Schaffen von Abhängigkeiten oder die Umwandlung von wirtschaftlicher Macht in informelle Entscheidungsbefugnis.
+5.4.3 Wirtschaftsmechanismen DÜRFEN es Mitgliedern NICHT ermöglichen, die in Schicht 2 definierten Governance-Befugnisgrenzen zu umgehen — auch nicht durch den Kauf von Einfluss, das Schaffen von Abhängigkeiten oder die Umwandlung von wirtschaftlicher Macht in informelle Entscheidungsbefugnis.
 
 5.4.4 Die Gemeinschaft MUSS überprüfbare Indikatoren für das Risiko wirtschaftlicher Konzentration definieren sowie einen expliziten Mechanismus, um Beschränkungen anzupassen, wenn solche Risiken erkannt werden.
 
 ## 5.5 Artefakte
 
-5.5.1 Die folgenden Artefakte sind für die Konformität mit Layer 3 verpflichtend:
+5.5.1 Die folgenden Artefakte sind für die Konformität mit Schicht 3 verpflichtend:
 - Internes Wirtschaftsprotokoll  
 - Kassenregelwerk  
 
-5.5.2 Artefakte von Layer 3 MÜSSEN:
+5.5.2 Artefakte von Schicht 3 MÜSSEN:
 - Explizit und eindeutig sein  
 - Versioniert sein  
 - Für alle Mitglieder zugänglich sein (mit expliziten, begrenzten Ausnahmen)  
@@ -783,9 +783,9 @@ Sein Zweck ist es, wirtschaftliche Macht explizit, begrenzt, überprüfbar und d
 
 ---
 
-# 6. Layer 4 — Konflikt, Wiedergutmachung & Verantwortlichkeit
+# 6. Schicht 4 — Konflikt, Wiedergutmachung & Verantwortlichkeit
 
-Layer 4 definiert, wie die Gemeinschaft reagiert, wenn Vertrauen, Koordination oder Sicherheit zusammenbrechen.
+Schicht 4 definiert, wie die Gemeinschaft reagiert, wenn Vertrauen, Koordination oder Sicherheit zusammenbrechen.
 Sein Zweck ist es sicherzustellen, dass Konflikte explizit, fair und sicher behandelt werden, und gleichzeitig Machtmissbrauch, Normalisierung von Schaden oder stilles Ausschließen zu verhindern.
 
 ## 6.1 Konfliktklassifikation
@@ -825,7 +825,7 @@ Sein Zweck ist es sicherzustellen, dass Konflikte explizit, fair und sicher beha
 
 6.2.4 Der Lösungsprozess MUSS zugänglich sein, ohne dass sozialer Status, Dienstalter, Charisma oder informelle Nähe zu Entscheidungsträger\*innen erforderlich ist.
 
-6.2.5 Ungelöste Konflikte MUSS über definierte Governance-Wege eskaliert werden, ohne die in Layer 2 definierte Entscheidungsmatrix zu umgehen.
+6.2.5 Ungelöste Konflikte MUSS über definierte Governance-Wege eskaliert werden, ohne die in Schicht 2 definierte Entscheidungsmatrix zu umgehen.
 
 ## 6.3 Schutzmaßnahmen
 
@@ -868,7 +868,7 @@ Sein Zweck ist es sicherzustellen, dass Konflikte explizit, fair und sicher beha
 - Überprüfungs- und Berufungsmechanismen
 - Bedingungen für die Wiederherstellung von Rechten, Rollen oder Teilnahme
 
-6.4.4 Trennungs-, Suspendierungs- oder Ausschlussmaßnahmen MUSS einem ordnungsgemäßen Verfahren folgen und MUSS mit den in Layer 1 definierten Austritts- und Trennungsregeln übereinstimmen.
+6.4.4 Trennungs-, Suspendierungs- oder Ausschlussmaßnahmen MUSS einem ordnungsgemäßen Verfahren folgen und MUSS mit den in Schicht 1 definierten Austritts- und Trennungsregeln übereinstimmen.
 
 6.4.5 Sanktionen DARF NICHT durch informellen Ausschluss, sozialen Druck, Schweigen oder stillschweigende Entziehung von Rechten verhängt werden.
 
@@ -897,7 +897,7 @@ Sein Zweck ist es sicherzustellen, dass Konflikte explizit, fair und sicher beha
 - Garantien für ordnungsgemäße Verfahren und Schutz vor Vergeltung
 - Sanktions- und Wiedergutmachungsoptionen mit Verhältnismäßigkeitsregeln
 - Berufungs-, Aufsichts- und Eskalationswege
-- Koordination mit den Austritts- und Trennungsprozessen von Layer 1
+- Koordination mit den Austritts- und Trennungsprozessen von Schicht 1
 
 ## 6.6 Layer-Invarianten
 
@@ -929,9 +929,9 @@ Sein Zweck ist es sicherzustellen, dass Konflikte explizit, fair und sicher beha
 
 ---
 
-# 7. Layer 5 — Betrieb & Koordination
+# 7. Schicht 5 — Betrieb & Koordination
 
-Layer 5 definiert, wie tägliche Arbeit, Koordination und Informationsfluss in der Praxis funktionieren.  
+Schicht 5 definiert, wie tägliche Arbeit, Koordination und Informationsfluss in der Praxis funktionieren.  
 Sein Zweck ist sicherzustellen, dass der Betrieb nachvollziehbar, nachhaltig und übertragbar bleibt und nicht in informelle Hierarchie, Abhängigkeit oder Burnout abgleitet.
 
 ## 7.1 Rollen und Verantwortlichkeiten
@@ -962,7 +962,7 @@ Sein Zweck ist sicherzustellen, dass der Betrieb nachvollziehbar, nachhaltig und
 - Governance  
 - Koordination und Abstimmung  
 - Reflexion und Lernen  
-- Konfliktbearbeitung (wie von Layer 4 gefordert)
+- Konfliktbearbeitung (wie von Schicht 4 gefordert)
 
 7.2.2 Jeder Sitzungstyp MUSS mindestens Folgendes definieren:
 - Zweck und Entscheidungsumfang  
@@ -973,7 +973,7 @@ Sein Zweck ist sicherzustellen, dass der Betrieb nachvollziehbar, nachhaltig und
 - Dokumentations- und Veröffentlichungsanforderungen  
 - Anforderungen an die Entscheidungserfassung, wo Entscheidungen getroffen werden  
 
-7.2.3 Sitzungen DARF NICHT ihren erklärten Entscheidungsumfang überschreiten oder die in Layer 2 definierten Autoritätsgrenzen umgehen.
+7.2.3 Sitzungen DARF NICHT ihren erklärten Entscheidungsumfang überschreiten oder die in Schicht 2 definierten Autoritätsgrenzen umgehen.
 
 7.2.4 Die Sitzungsbelastung MUSS begrenzt, überwacht und überprüfbar sein, wie in Abschnitt 7.4 definiert.
 
@@ -1010,7 +1010,7 @@ Sein Zweck ist sicherzustellen, dass der Betrieb nachvollziehbar, nachhaltig und
 
 7.4.3 Belastungsgrenzen MUSS durch einen autorisierten Governance-Prozess überprüfbar und anpassbar sein.
 
-7.4.4 Anhaltende Überlastung, Burnout-Risiko, chronische Nicht-Teilnahme oder Abhängigkeit von übermäßig engagierten Einzelpersonen MUSS Überprüfungs- oder Reparaturprozesse auslösen, wie in Layer 4 definiert.
+7.4.4 Anhaltende Überlastung, Burnout-Risiko, chronische Nicht-Teilnahme oder Abhängigkeit von übermäßig engagierten Einzelpersonen MUSS Überprüfungs- oder Reparaturprozesse auslösen, wie in Schicht 4 definiert.
 
 ## 7.5 Betriebskontinuität
 
@@ -1025,12 +1025,12 @@ Sein Zweck ist sicherzustellen, dass der Betrieb nachvollziehbar, nachhaltig und
 
 ## 7.6 Artefakte
 
-7.6.1 Die folgenden Artefakte sind für die Konformität mit Layer 5 verpflichtend:
+7.6.1 Die folgenden Artefakte sind für die Konformität mit Schicht 5 verpflichtend:
 - Betriebshandbuch  
 - Rollenregister  
 - Sitzungsvorlagen  
 
-7.6.2 Artefakte von Layer 5 MUSS:
+7.6.2 Artefakte von Schicht 5 MUSS:
 - Explizit und eindeutig sein  
 - Versioniert sein  
 - Für alle Mitglieder zugänglich sein, mit klar begrenztem Datenschutz  
@@ -1078,9 +1078,9 @@ Sein Zweck ist sicherzustellen, dass der Betrieb nachvollziehbar, nachhaltig und
 
 ---
 
-# 8. Layer 6 — Evolution & Anpassung
+# 8. Schicht 6 — Evolution & Anpassung
 
-Layer 6 definiert, wie sich das System weiterentwickelt, ohne zu kollabieren.  
+Schicht 6 definiert, wie sich das System weiterentwickelt, ohne zu kollabieren.  
 Sein Zweck ist sicherzustellen, dass Veränderung bewusst, eingegrenzt, wo angemessen reversibel ist und Erkenntnisse statt versteckter Schäden hervorbringt. Evolution unter RCOS wird als gesteuerter Prozess behandelt, nicht als Improvisation.
 
 ## 8.1 Änderungsmechanismen
@@ -1093,12 +1093,12 @@ Sein Zweck ist sicherzustellen, dass Veränderung bewusst, eingegrenzt, wo angem
 
 8.1.3 Jede vorgeschlagene Änderung MUSS mindestens folgendes angeben:
 - Die betroffenen Artefakte, Layer und Abschnitte  
-- Den Entscheidungstyp und den autorisierten Entscheidungspfad gemäß Layer 2  
+- Den Entscheidungstyp und den autorisierten Entscheidungspfad gemäß Schicht 2  
 - Die beabsichtigte Wirkung, den Geltungsbereich und bekannte Risiken  
 - Das Inkrafttretungsdatum und etwaige Übergangsfristen  
 - Migrationsanforderungen für bestehende Rollen, Vereinbarungen oder Aufzeichnungen  
 
-8.1.4 Änderungen, die den Zweck, den Geltungsbereich, die Invarianten oder die Identitätsbeschränkungen von Layer 0 betreffen, MUSS als konstitutionelle Änderungen klassifiziert werden und MUSS dem konstitutionellen Entscheidungsmechanismus folgen.
+8.1.4 Änderungen, die den Zweck, den Geltungsbereich, die Invarianten oder die Identitätsbeschränkungen von Schicht 0 betreffen, MUSS als konstitutionelle Änderungen klassifiziert werden und MUSS dem konstitutionellen Entscheidungsmechanismus folgen.
 
 8.1.5 Die Gemeinschaft MUSS explizite Überprüfungsmechanismen für angenommene Änderungen definieren, einschließlich wie Änderungen bewertet, überarbeitet oder rückgängig gemacht werden, wenn sie Schaden, Instabilität oder unbeabsichtigte Machtkonzentration verursachen.
 
@@ -1132,7 +1132,7 @@ Sein Zweck ist sicherzustellen, dass Veränderung bewusst, eingegrenzt, wo angem
 - Rollback-Bedingungen und Rollback-Prozess  
 - Autorisierter Entscheidungspfad für das Starten, Verlängern, Ändern oder Beenden des Experiments  
 
-8.3.3 Experimente DARF NICHT die Invarianten von Layer 0 außer Kraft setzen und DARF NICHT die in Layer 2 definierten Governance-Beschränkungen umgehen.
+8.3.3 Experimente DARF NICHT die Invarianten von Schicht 0 außer Kraft setzen und DARF NICHT die in Schicht 2 definierten Governance-Beschränkungen umgehen.
 
 8.3.4 Experimente MUSS in allen betroffenen Artefakten ausdrücklich als experimentell gekennzeichnet sein und MUSS ein nicht verlängerbares Ablaufdatum enthalten, sofern sie nicht durch eine autorisierte Entscheidung erneuert werden.
 
@@ -1148,7 +1148,7 @@ Sein Zweck ist sicherzustellen, dass Veränderung bewusst, eingegrenzt, wo angem
 - Was geändert, versucht oder gestoppt wurde  
 - Welche Signale, Nachweise oder Schwellenwerte eine Handlung ausgelöst haben  
 
-8.4.3 Lernaufzeichnungen MUSS gemäß den Informationszugangsregeln von Layer 5 zugänglich sein.
+8.4.3 Lernaufzeichnungen MUSS gemäß den Informationszugangsregeln von Schicht 5 zugänglich sein.
 
 8.4.4 Wiederkehrende Fehlermuster MUSS eine strukturelle Überprüfung auslösen, keine individuelle Schuldzuweisung.
 
@@ -1161,16 +1161,16 @@ Sein Zweck ist sicherzustellen, dass Veränderung bewusst, eingegrenzt, wo angem
 - Höhere Entscheidungsschwellen, wo angemessen  
 - Ausdrückliche Risikoanerkennung  
 
-8.5.3 Notfalländerungen KANN nur dort zulässig sein, wo sie ausdrücklich definiert sind, MUSS zeitlich begrenzt sein, DARF NICHT die Invarianten von Layer 0 außer Kraft setzen und MUSS einer verpflichtenden nachträglichen Überprüfung und Ratifizierung oder Rücknahme unterzogen werden.
+8.5.3 Notfalländerungen KANN nur dort zulässig sein, wo sie ausdrücklich definiert sind, MUSS zeitlich begrenzt sein, DARF NICHT die Invarianten von Schicht 0 außer Kraft setzen und MUSS einer verpflichtenden nachträglichen Überprüfung und Ratifizierung oder Rücknahme unterzogen werden.
 
 ## 8.6 Artefakte
 
-8.6.1 Die folgenden Artefakte sind für die Konformität mit Layer 6 verpflichtend:
+8.6.1 Die folgenden Artefakte sind für die Konformität mit Schicht 6 verpflichtend:
 - Änderungsprotokoll  
 - Versionshistorie  
 - Lernprotokoll  
 
-8.6.2 Artefakte von Layer 6 MUSS:
+8.6.2 Artefakte von Schicht 6 MUSS:
 - Explizit und eindeutig sein  
 - Versioniert sein  
 - Für alle Mitglieder zugänglich sein, mit klar abgegrenztem Datenschutz  
@@ -1309,7 +1309,7 @@ Dieses Kapitel definiert, wie RCOS-Core-Compliance bewertet und aufrechterhalten
 
 10.1.1 RCOS-Core-Compliance ist binär: Eine Gemeinschaft ist entweder compliant oder non-compliant.
 
-10.1.2 Compliance MUSS pro Layer (Layer 0–6) bewertet werden.
+10.1.2 Compliance MUSS pro Layer (Schicht 0–6) bewertet werden.
 
 10.1.3 Für jeden Layer MUSS die Compliance-Checkliste überprüfen:
 - Vorhandensein verbindlicher Artefakte  
@@ -1397,131 +1397,122 @@ Dieses Kapitel definiert, wie sich RCOS selbst als Standard weiterentwickelt.
 
 ---
 
-# Appendix A — Glossary
+# Anhang A — Glossar
 
-Now I have good context for terminology consistency. Let me produce the translation.
+Dieses Glossar bietet **informative Definitionen** für Schlüsselbegriffe, die in der gesamten RCOS-Spezifikation verwendet werden.  
+Glossareinträge führen keine neuen Anforderungen ein und ersetzen keine normativen Abschnitte.
 
----
-id: c0516132
-title: Anhang A — Glossar
-parentId: e6de7a5d
-order: 120
----
-
-Dieses Glossar bietet **informative Definitionen** für zentrale Begriffe, die in der gesamten RCOS-Spezifikation verwendet werden.  
-Glossareinträge führen keine neuen Anforderungen ein und setzen normative Abschnitte nicht außer Kraft.
-
-**Verantwortlichkeit (Accountability)**  
+**Rechenschaftspflicht**  
 Die Erwartung, dass Rollen und Mitglieder aufgefordert werden können, Handlungen, Ergebnisse und die Einhaltung vereinbarter Regeln zu erklären, mit definierten Überprüfungs- und Korrekturmechanismen.
 
-**Rechenschaftsprotokoll (Accountability Protocol)**  
-Ein Artefakt, das definiert, wie Verstöße, Schäden oder wiederholte Versäumnisse überprüft, dokumentiert und behandelt werden, einschließlich ordnungsgemäßem Verfahren, Schutzmaßnahmen und Eskalationswegen.
+**Rechenschaftsprotokoll**  
+Ein Artefakt, das festlegt, wie Verstöße, Schäden oder wiederholte Fehler überprüft, dokumentiert und behandelt werden, einschließlich ordentlichem Verfahren, Schutzmaßnahmen und Eskalationspfaden.
 
-**Artefakt (Artifact)**  
-Ein dokumentiertes, versioniertes Objekt (z. B. Protokoll, Register, Charta), das durch einen autorisierten Prozess angenommen und zur Operationalisierung von RCOS-Schichten verwendet wird.
+**Artefakt**  
+Ein dokumentiertes, versioniertes Objekt (z. B. Protokoll, Register, Satzung), das durch einen autorisierten Prozess beschlossen und zur Operationalisierung von RCOS-Schichten verwendet wird.
 
-**Autoritätsgrenze (Authority Boundary)**  
+**Kompetenzgrenze**  
 Die expliziten Grenzen, innerhalb derer eine Rolle, ein Kreis oder ein Gremium Entscheidungen treffen oder handeln darf.
 
-**Änderungsprotokoll (Change Protocol)**  
-Ein Artefakt, das definiert, wie Änderungen vorgeschlagen, überprüft, angenommen, veröffentlicht und zurückgenommen werden, einschließlich Entscheidungstyp-Klassifikation und Notfallregelungen.
+**Änderungsprotokoll**  
+Ein Artefakt, das festlegt, wie Änderungen vorgeschlagen, überprüft, beschlossen, veröffentlicht und zurückgerollt werden, einschließlich der Klassifizierung von Entscheidungstypen und Notfallregelungen.
 
-**Gemeingüter (Commons)**  
-Ressourcen, die kollektiv unter expliziten Verwaltungs-, Zugangs- und Entscheidungsregeln verwaltet werden.
+**Gemeingüter**  
+Ressourcen, die kollektiv unter expliziten Verwaltungs-, Zugangs- und Entscheidungsregeln geführt werden.
 
-**Gemeinschaft (Community)**  
+**Gemeinschaft**  
 Eine Gruppe von Menschen, die sich freiwillig um einen gemeinsamen Zweck innerhalb eines definierten Geltungsbereichs und Governance-Systems koordinieren.
 
-**Konformität (Compliance)**  
-Der Zustand der Erfüllung aller verpflichtenden Anforderungen von RCOS-Core über die Schichten 0–6 hinweg.
+**Konformität**  
+Der Zustand, alle Pflichtanforderungen von RCOS-Core über die Schichten 0–6 zu erfüllen.
 
-**Konfliktlösungsleiter (Conflict Resolution Ladder)**  
-Ein gestufter Konfliktprozess, der Mindest-Lösungsschritte und Eskalationsschwellen definiert, von niedrigschwelliger Wiedergutmachung über Governance-Überprüfung bis hin zur — falls notwendig — Trennung.
+**Konfliktlösungsleiter**  
+Ein abgestufter Konfliktprozess, der Mindestlösungsschritte und Eskalationsschwellen definiert, von schwach ausgeprägter Wiedergutmachung bis zur Governance-Überprüfung und, falls nötig, Trennung.
 
-**Konstitutionelle Entscheidung (Constitutional Decision)**  
-Eine Entscheidung, die den Zweck, den Geltungsbereich, die Invarianten oder die Identitätseinschränkungen von Layer 0 oder das Governance-System selbst verändert.
+**Konstitutionelle Entscheidung**  
+Eine Entscheidung, die den Zweck, den Geltungsbereich, die Invarianten oder Identitätsbeschränkungen von Schicht 0 oder das Governance-System selbst verändert.
 
-**Entscheidungsmatrix (Decision Matrix)**  
-Ein Governance-Artefakt, das Entscheidungstypen und -domänen autorisierten Rollen, Mechanismen, Schwellenwerten und Eskalationswegen zuordnet.
+**Entscheidungsmatrix**  
+Ein Governance-Artefakt, das Entscheidungstypen und -domänen autorisierten Rollen, Mechanismen, Schwellenwerten und Eskalationspfaden zuordnet.
 
-**Entscheidungstyp (Decision Type)**  
-Eine Klassifikation von Entscheidungen (operativ, strategisch, konstitutionell), die zur Bestimmung von Autorität und Verfahren herangezogen wird.
+**Entscheidungstyp**  
+Eine Klassifizierung von Entscheidungen (Operativ, Strategisch, Konstitutionell), die zur Bestimmung von Zuständigkeit und Prozess verwendet wird.
 
-**Ordnungsgemäßes Verfahren (Due Process)**  
-Die Mindestgarantien für Fairness, die erforderlich sind, bevor Rechte eingeschränkt, Sanktionen verhängt oder eine Trennung eingeleitet wird, einschließlich Benachrichtigung, Überprüfung und Einspruchswegen gemäß Definition.
+**Ordentliches Verfahren**  
+Die Mindestgarantien für Fairness, die erforderlich sind, bevor Rechte eingeschränkt, Sanktionen verhängt oder eine Trennung ausgelöst wird, einschließlich Benachrichtigung, Überprüfung und Rechtsmittelpfaden wie definiert.
 
-**Notfalländerung (Emergency Change)**  
-Eine zeitlich begrenzte Änderung, die unter explizit definierten Notfallbedingungen durchgeführt wird und eine nachträgliche Überprüfung sowie Ratifizierung oder Rücknahme erfordert.
+**Notfalländerung**  
+Eine zeitlich begrenzte Änderung, die unter explizit definierten Notfallbedingungen umgesetzt wird und eine nachträgliche Überprüfung und Ratifizierung oder Rücknahme erfordert.
 
-**Explizit (Explicit)**  
-Schriftlich festgehalten, angenommen, zugänglich und überprüfbar.  
-Alles, was nicht explizit ist, wird unter RCOS als nicht existent behandelt.
+**Explizit**  
+Schriftlich festgelegt, beschlossen, zugänglich und überprüfbar.  
+Alles, was nicht explizit ist, gilt unter RCOS als nicht existent.
 
-**Explizitätsregel (Explicitness Rule)**  
-Das Prinzip, dass Mechanismen, die Macht, Risiko, Verantwortung oder Austrittsbedingungen zuweisen, schriftlich festgehalten, angenommen und überprüfbar sein müssen.
+**Explizitheitsprinzip**  
+Das Prinzip, dass Mechanismen zur Zuweisung von Macht, Risiko, Verantwortung oder Austrittsbedingungen schriftlich festgelegt, beschlossen und überprüfbar sein müssen.
 
-**Experiment (Experiment)**  
-Eine zeitlich begrenzte, reversible Änderung, die zum Zweck des Lernens und der Evaluation eingeführt wird.
+**Experiment**  
+Eine zeitlich begrenzte, reversible Änderung, die zu Lern- und Auswertungszwecken beschlossen wird.
 
-**Austritts- und Trennungsprotokoll (Exit & Separation Protocol)**  
-Ein Artefakt, das den freiwilligen Austritt, das ordnungsgemäße Verfahren bei erzwungenem Austritt sowie die Aufteilung von Vermögenswerten, Rollen, Zugängen und Pflichten definiert.
+**Austritts- und Trennungsprotokoll**  
+Ein Artefakt, das freiwilligen Austritt, ordentliches Verfahren bei erzwungenem Austritt sowie die Trennung von Ressourcen, Rollen, Zugängen und Verpflichtungen definiert.
 
-**Governance-Protokoll (Governance Protocol)**  
-Ein Artefakt, das den Entscheidungslebenszyklus (Vorschlag, Beratung, Annahme, Dokumentation, Überprüfung) definiert und festlegt, wie Governance-Konflikte gelöst werden.
+**Governance-Protokoll**  
+Ein Artefakt, das den Entscheidungslebenszyklus (Vorschlag, Beratung, Beschluss, Dokumentation, Überprüfung) und die Lösung von Governance-Konflikten definiert.
 
-**Im Geltungsbereich / Außerhalb des Geltungsbereichs (In-Scope / Out-of-Scope)**  
-Im Geltungsbereich bezieht sich auf Personen, Vermögenswerte, Domänen und Aktivitäten, die explizit von der Gemeinschaft verwaltet werden. Außerhalb des Geltungsbereichs bezieht sich auf alles, was explizit ausgeschlossen oder nicht im Geltungsbereich deklariert ist.
+**Im Geltungsbereich / Außerhalb des Geltungsbereichs**  
+Im Geltungsbereich bezeichnet Personen, Ressourcen, Domänen und Aktivitäten, die explizit von der Gemeinschaft geregelt werden. Außerhalb des Geltungsbereichs bezeichnet alles, was explizit ausgeschlossen oder nicht im Geltungsbereich deklariert wurde.
 
-**Protokoll für die interne Ökonomie (Internal Economy Protocol)**  
-Ein Artefakt, das die Anerkennung von Beiträgen und etwaige interne Tauschmechanismen definiert, einschließlich Akkumulationsbeschränkungen und Streitkorrektur.
+**Protokoll zur internen Wirtschaft**  
+Ein Artefakt, das die Anerkennung von Beiträgen und etwaige interne Austauschmechanismen definiert, einschließlich Akkumulationsbeschränkungen und Streitkorrektur.
 
-**Invariante (Invariant)**  
-Eine nicht verhandelbare Einschränkung, die nicht außer Kraft gesetzt werden kann, solange sie gilt.
+**Invariante**  
+Eine nicht verhandelbare Bedingung, die nicht außer Kraft gesetzt werden kann, solange sie gilt.
 
-**Schicht (Layer)**  
-Eine funktionale Domäne von RCOS, die einen bestimmten Aspekt des Gemeinschaftsbetriebs definiert.
+**Schicht**  
+Ein funktionaler Bereich von RCOS, der einen bestimmten Aspekt des Gemeinschaftsbetriebs definiert.
 
-**Lernprotokoll (Learning Log)**  
-Ein Artefakt, das wesentliche Fehlschläge, Anpassungen, Rücknahmen und gewonnene Erkenntnisse festhält, einschließlich Auslöser, betroffener Artefakte und Ergebnisse.
+**Lernprotokoll**  
+Ein Artefakt, das wesentliche Fehler, Anpassungen, Rücknahmen und gewonnene Erkenntnisse festhält, einschließlich Auslöser, betroffener Artefakte und Ergebnisse.
 
-**Mitglied (Member)**  
-Eine Person, die durch den definierten Mitgliedschaftsprozess explizit in die Gemeinschaft eingetreten ist.
+**Mitglied**  
+Eine Person, die explizit durch den definierten Mitgliedschaftsprozess in die Gemeinschaft eingetreten ist.
 
-**Optionales Modul (Optional Module)**  
-Eine domänenspezifische Erweiterung, die auf RCOS-Core aufbaut, ohne dessen verpflichtende Schichten zu verändern.
+**Optionales Modul**  
+Eine domänenspezifische Erweiterung, die auf RCOS-Core aufbaut, ohne dessen Pflichtschichten zu verändern.
 
-**Register (Registry)**  
-Ein Artefakt, das eine Menge autoritativer Einträge (z. B. Rollen, Ressourcen, Mitgliedschaftszustände) mit klarer Zuständigkeit, Aktualisierungsregeln und Versionsgeschichte erfasst.
+**Register**  
+Ein Artefakt, das eine Menge autoritativer Einträge (z. B. Rollen, Ressourcen, Mitgliedschaftszustände) mit klarer Zuständigkeit, Aktualisierungsregeln und Versionshistorie erfasst.
 
-**Referenzimplementierung (Reference Implementation)**  
+**Referenzimplementierung**  
 Eine reale Gemeinschaft, die ihre Anwendung von RCOS-Core öffentlich dokumentiert.
 
-**Rolle (Role)**  
-Ein explizit definiertes Bündel aus Verantwortlichkeiten, Autorität und Rechenschaftspflicht, unabhängig von der Person, die die Rolle innehat.
+**Rolle**  
+Ein explizit definiertes Bündel aus Verantwortlichkeiten, Befugnissen und Rechenschaftspflicht, unabhängig von der Person, die sie innehat.
 
-**Sicherheitskritisch (Safety-Critical)**  
-Ein Zustand, in dem physische, psychische oder Kindersicherheit gefährdet ist und erhöhte Schutzmaßnahmen sowie potenziell sofortige Schutzmaßnahmen erforderlich sind.
+**Sicherheitskritisch**  
+Ein Zustand, in dem physische, psychische oder Kindersicherheit gefährdet ist, der erhöhte Schutzmaßnahmen und möglicherweise sofortige Schutzmaßnahmen erfordert.
 
-**Sanktion (Sanction)**  
-Eine definierte, dokumentierte Einschränkung oder Korrekturmaßnahme, die durch ein autorisiertes Verfahren verhängt wird, verhältnismäßig zu einem Verstoß und der Überprüfung unterliegend.
+**Sanktion**  
+Eine definierte, dokumentierte Einschränkung oder Korrekturmaßnahme, die durch einen autorisierten Prozess verhängt wird, proportional zu einem Verstoß und einer Überprüfung unterliegt.
 
-**Geltungsbereich (Scope)**  
-Die explizit erklärten Domänen, Vermögenswerte und Aktivitäten, über die die Gemeinschaft Autorität ausübt.
+**Geltungsbereich**  
+Die explizit deklarierten Domänen, Ressourcen und Aktivitäten, über die die Gemeinschaft Autorität ausübt.
 
-**Verwaltung (Stewardship)**  
+**Verwaltungsverantwortung**  
 Verantwortung für Pflege, Instandhaltung und Governance einer Ressource innerhalb definierter Grenzen.
 
-**Gemeinschaftskasse (Treasury)**  
-Die Gesamtheit der gemeinsamen Ressourcen, Guthaben, Verpflichtungen und Zusagen, die unter kollektiven Regeln gehalten werden.
+**Gemeinschaftskasse**  
+Die Gesamtheit der gemeinsamen Ressourcen, Salden, Verpflichtungen und Zusagen, die unter kollektiven Regeln gehalten werden.
 
-**Regelwerk der Gemeinschaftskasse (Treasury Ruleset)**  
-Ein Artefakt, das definiert, wie Ressourcen der Gemeinschaftskasse gehalten, ausgegeben, berichtet, geprüft und begrenzt werden, einschließlich Schwellenwerten und Regeln für Interessenkonflikte.
+**Kassenregelwerk**  
+Ein Artefakt, das festlegt, wie Ressourcen der Gemeinschaftskasse gehalten, ausgegeben, berichtet, geprüft und eingeschränkt werden, einschließlich Schwellenwerte und Interessenkonfliktregeln.
 
-**Transparenzausnahme (Transparency Exception)**  
-Eine explizit definierte, begründete, zeitlich begrenzte Einschränkung des Informationszugangs, die dennoch eine Konformitätsprüfung ermöglicht.
+**Transparenzausnahme**  
+Eine explizit definierte, gerechtfertigte, zeitlich begrenzte Einschränkung des Informationszugangs, die dennoch eine Konformitätsprüfung ermöglicht.
 
-**Versionsgeschichte (Version History)**  
-Ein Artefakt, das festhält, welche Version in Kraft ist, und angenommene Änderungen, Geltungsdaten und Entscheidungsreferenzen dokumentiert.
+**Versionshistorie**  
+Ein Artefakt, das festhält, welche Version in Kraft ist, und beschlossene Änderungen, Inkrafttretensdaten und Entscheidungsreferenzen dokumentiert.
 
 
 ---
@@ -1557,10 +1548,10 @@ Die Beispiele dienen nur zur Information und sollten nicht als vorgeschriebene F
   - Gemeinsame Mittel: Betriebskasse, Rücklagenfonds
   - Gemeinsame Infrastruktur: Wassersystem, Solaranlage, geteilte Fahrzeuge
 - Im Geltungsbereich liegende Autoritätsbereiche:
-  - Governance-Regeln und Entscheidungsprozess (Layer 2)
-  - Mitgliedschaftsregeln und -zustände (Layer 1)
-  - Kasse und gemeinsame Ressourcenverteilung (Layer 3)
-  - Operative Koordination für gemeinsame Arbeit (Layer 5)
+  - Governance-Regeln und Entscheidungsprozess (Schicht 2)
+  - Mitgliedschaftsregeln und -zustände (Schicht 1)
+  - Kasse und gemeinsame Ressourcenverteilung (Schicht 3)
+  - Operative Koordination für gemeinsame Arbeit (Schicht 5)
 - Außerhalb des Geltungsbereichs:
   - Persönliches Einkommen, private Schulden und private Bankkonten
   - Private Beziehungen und private Wohnräume (außer bei sicherheitskritischen Bedingungen)
@@ -1602,7 +1593,7 @@ Die Beispiele dienen nur zur Information und sollten nicht als vorgeschriebene F
 3. Verantwortlichkeits-Aufnahme (dokumentierte Aufnahme; Schutzmaßnahmen gegen Vergeltung aktiviert)  
 4. Verantwortlichkeits-Prüfung (Ergebnisse, Reparaturplan und verhältnismäßige Maßnahmen)  
 5. Governance-Entscheidung (falls Autorität, Zugang oder Rollen geändert werden müssen)  
-6. Trennungsprozess (falls erforderlich; koordiniert mit Layer 1 Austritts- und Trennungsprotokoll)
+6. Trennungsprozess (falls erforderlich; koordiniert mit Schicht 1 Austritts- und Trennungsprotokoll)
 
 ## B.6 Beispiel Änderungsvorschlag-Vorlage (Auszug)
 
@@ -1630,12 +1621,12 @@ Die Beispiele dienen nur zur Information und sollten nicht als vorgeschriebene F
   - Einhaltung der erklärten Invarianten und Sicherheitsregeln
   - Teilnahme an Mindest-Onboarding- und Überprüfungsprozessen
 - Verweis auf ordnungsgemäßes Verfahren:
-  - „Jeder erzwungene Austritt oder Zugangsbeschränkung folgt dem Layer 4 ordnungsgemäßen Verfahren und dem Austrittsprotokoll."
+  - „Jeder erzwungene Austritt oder Zugangsbeschränkung folgt dem Schicht 4 ordnungsgemäßen Verfahren und dem Austrittsprotokoll."
 
 ## B.8 Beispiel Onboarding-Protokoll (Auszug)
 
-1. Zugang zu RCOS-Artefakten (Layer 0–6) und lokalen Modulen bereitstellen
-2. Ausdrückliche Zustimmung zu Layer 0 und Layer 1 Artefakten bestätigen
+1. Zugang zu RCOS-Artefakten (Schicht 0–6) und lokalen Modulen bereitstellen
+2. Ausdrückliche Zustimmung zu Schicht 0 und Schicht 1 Artefakten bestätigen
 3. Initialen Mitgliedschaftsstatus und Onboarding-Buddy zuweisen
 4. Orientierung zu Sicherheits- und Konfliktprozessen abschließen
 5. Geltungsbereichsgrenzen und was außerhalb des Geltungsbereichs liegt besprechen
@@ -1713,7 +1704,7 @@ Dieser Anhang definiert eine **empfohlene Dokumentationsstruktur** für Gemeinsc
 
 - Name und Standort
 - Größe und Umfang (z. B. 12 Mitglieder; 3 Haushalte; 25 Hektar)
-- Hauptzweck (Layer 0)
+- Hauptzweck (Schicht 0)
 - Gründungsdatum und Datum der RCOS-Übernahme (falls abweichend)
 - Relevante Rechtsform(en) (falls vorhanden)
 - Öffentliche Kontaktstelle
@@ -1739,17 +1730,17 @@ Empfohlenes Format:
 
 | Layer | Implementierte Pflichtartefakte | Öffentliche(r) Link(s) | Version/Datum | Anmerkungen |
 |---:|---|---|---|---|
-| 0 | Purpose Charter; Scope Declaration; Invariants Register | [Platzhalter] | v0.3 / 2026-01-01 | Zweck stabil; Invarianten werden vierteljährlich überprüft |
-| 1 | Membership Agreement; Onboarding Protocol; Exit & Separation Protocol; Membership State Registry | [Platzhalter] | v1.1 / 2026-02-15 | Probezeit beträgt 3 Monate |
-| 2 | Decision Matrix; Governance Protocol; Authority Registry | [Platzhalter] | v0.8 / 2026-03-10 | Konsent für operative, Abstimmung für strategische Entscheidungen |
-| 3 | Internal Economy Protocol; Treasury Ruleset | [Platzhalter] | v0.5 / 2026-03-20 | Monatliche Kassenberichte werden veröffentlicht |
-| 4 | Conflict Resolution Ladder; Accountability Protocol | [Platzhalter] | v0.6 / 2026-04-01 | Anti-Vergeltungsrichtlinie enthalten |
-| 5 | Operations Manual; Role Registry; Meeting Templates | [Platzhalter] | v0.4 / 2026-04-15 | Sitzungsbelastung auf 4 Std./Woche begrenzt |
-| 6 | Change Protocol; Version History; Learning Log | [Platzhalter] | v0.2 / 2026-05-01 | Experimente verfallen, wenn nicht erneuert |
+| 0 | Zweckcharta; Geltungsbereichserklärung; Invariantenregister | [Platzhalter] | v0.3 / 2026-01-01 | Zweck stabil; Invarianten werden vierteljährlich überprüft |
+| 1 | Mitgliedschaftsvereinbarung; Onboarding-Protokoll; Austritts- & Trennungsprotokoll; Mitgliedschaftsstatus-Register | [Platzhalter] | v1.1 / 2026-02-15 | Probezeit beträgt 3 Monate |
+| 2 | Entscheidungsmatrix; Governance-Protokoll; Autoritätenregister | [Platzhalter] | v0.8 / 2026-03-10 | Konsent für operative, Abstimmung für strategische Entscheidungen |
+| 3 | Protokoll für die interne Wirtschaft; Kassensatzung | [Platzhalter] | v0.5 / 2026-03-20 | Monatliche Kassenberichte werden veröffentlicht |
+| 4 | Konfliktlösungsleiter; Rechenschaftsprotokoll | [Platzhalter] | v0.6 / 2026-04-01 | Anti-Vergeltungsrichtlinie enthalten |
+| 5 | Betriebshandbuch; Rollenverzeichnis; Sitzungsvorlagen | [Platzhalter] | v0.4 / 2026-04-15 | Sitzungsbelastung auf 4 Std./Woche begrenzt |
+| 6 | Änderungsprotokoll; Versionshistorie; Lernprotokoll | [Platzhalter] | v0.2 / 2026-05-01 | Experimente verfallen, wenn nicht erneuert |
 
 ## C.4 Governance und Weiterentwicklung
 
-- Verwendete Entscheidungsmechanismen (mit Auszug aus der Decision Matrix oder Link)
+- Verwendete Entscheidungsmechanismen (mit Auszug aus der Entscheidungsmatrix oder Link)
 - Änderungs- und Experimentverlauf (mit Links zu Änderungsprotokollen)
 - Wichtige Erkenntnisse und Fehlschläge (mit Links zu Learning-Log-Einträgen)
 - Abweichungsregister (empfohlen):
@@ -1779,10 +1770,10 @@ Empfohlenes Format:
 
 | Artefakt | Layer | Öffentlicher Link | Version/Datum | Anmerkungen |
 |---|---:|---|---:|---|
-| Purpose Charter | 0 | [Platzhalter] | 2026-01-01 | |
-| Decision Matrix | 2 | [Platzhalter] | 2026-03-10 | |
+| Zweckcharta | 0 | [Platzhalter] | 2026-01-01 | |
+| Entscheidungsmatrix | 2 | [Platzhalter] | 2026-03-10 | |
 | Kassenberichte | 3 | [Platzhalter] | 2026-06-30 | monatlich |
-| Learning Log | 6 | [Platzhalter] | 2026-06-15 | Schwärzungen vermerkt |
+| Lernprotokoll | 6 | [Platzhalter] | 2026-06-15 | Schwärzungen vermerkt |
 
 - Kontakt- oder Anfragekanal
 - Ausdrückliche Erklärung, was privat vs. öffentlich ist und warum

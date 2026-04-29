@@ -2,7 +2,7 @@
 
 # Kassensatzung
 
-- **Generiert:** 2026-04-28
+- **Generiert:** 2026-04-29
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-3/treasury-ruleset](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-3/treasury-ruleset)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 

@@ -2,7 +2,7 @@
 
 # Rollenverzeichnis
 
-- **Generiert:** 2026-04-28
+- **Generiert:** 2026-04-29
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-5/role-registry](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-5/role-registry)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
@@ -33,7 +33,7 @@ Unterscheidet operative Rollen (mit delegierter Autorität gemäß der Entscheid
 
 Dieses Verzeichnis definiert alle anerkannten Rollen innerhalb der Gemeinschaft. Rollen sind entweder **operativ** (mit delegierter Autorität gemäß der Entscheidungsmatrix) oder **funktional** (beitragsbezogen, ohne besondere Governance-Autorität über die Rechte als Vollmitglied hinaus).
 
-> **„In gutem Status"** bedeutet ein Vollmitglied, das seine Mitwirkungserwartungen in den letzten _<Zeitraum>_ erfüllt hat und derzeit keinem aktiven Rechenschaftsprozess oder Konfliktprüfung nach Ebene 4 unterliegt.
+> **„In gutem Status"** bedeutet ein Vollmitglied, das seine Mitwirkungserwartungen in den letzten _<Zeitraum>_ erfüllt hat und derzeit keinem aktiven Rechenschaftsprozess oder Konfliktprüfung nach Schicht 4 unterliegt.
 
 ---
 
@@ -64,7 +64,7 @@ Füllt für jede operative Rolle die untenstehende Vorlage mit konkretem Zustän
 
 </details>
 
-Operative Rollen tragen delegierte Autorität, innerhalb explizit definierter Grenzen ohne Vollmitglieder-Abstimmung zu handeln, wie in der Entscheidungsmatrix (Ebene 2) festgelegt. Alle Inhaber\*innen operativer Rollen sind der Gesamtheit der Vollmitglieder rechenschaftspflichtig. Jedes Vollmitglied darf Bedenken darüber äußern, wie eine Rolle ausgeübt wird; eine Neubesetzung erfordert eine Strategische Abstimmung.
+Operative Rollen tragen delegierte Autorität, innerhalb explizit definierter Grenzen ohne Vollmitglieder-Abstimmung zu handeln, wie in der Entscheidungsmatrix (Schicht 2) festgelegt. Alle Inhaber\*innen operativer Rollen sind der Gesamtheit der Vollmitglieder rechenschaftspflichtig. Jedes Vollmitglied darf Bedenken darüber äußern, wie eine Rolle ausgeübt wird; eine Neubesetzung erfordert eine Strategische Abstimmung.
 
 ---
 
@@ -131,7 +131,7 @@ Funktionale Rollen definieren den Beitragsbereich eines Mitglieds. Sie tragen ke
 - **Berechtigungskriterien:** _<Vollmitglied; ggf. weitere Präferenzen.>_
 - **Amtszeit / Rotation:** _<fortlaufend bis zur Niederlegung.>_
 - **Ernennungsverfahren:** _<Selbsterklärung.>_
-- **Überprüfung und Abberufung:** _<kann jederzeit niedergelegt werden; Befangenheitsvertretung gemäß Ebene 4 falls relevant.>_
+- **Überprüfung und Abberufung:** _<kann jederzeit niedergelegt werden; Befangenheitsvertretung gemäß Schicht 4 falls relevant.>_
 - **Übergabe:** _<laufende Verpflichtungen einweisen.>_
 
 ---

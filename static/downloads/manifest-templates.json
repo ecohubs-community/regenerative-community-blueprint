@@ -1,9 +1,10 @@
 {
-  "generated": "2026-04-28",
+  "generated": "2026-04-29",
   "defaultLocale": "en",
   "locales": [
     "en",
-    "de"
+    "de",
+    "es"
   ],
   "formats": [
     "md",
@@ -20,6 +21,11 @@
       "md": "/downloads/de/rcos-templates-md.zip",
       "docx": "/downloads/de/rcos-templates-docx.zip",
       "odt": "/downloads/de/rcos-templates-odt.zip"
+    },
+    "es": {
+      "md": "/downloads/es/rcos-templates-md.zip",
+      "docx": "/downloads/es/rcos-templates-docx.zip",
+      "odt": "/downloads/es/rcos-templates-odt.zip"
     }
   },
   "templates": [
@@ -29,7 +35,8 @@
       "layer": "layer-0",
       "titles": {
         "en": "Identity Constraints Register",
-        "de": "Register der Identitätsbeschränkungen"
+        "de": "Register der Identitätsbeschränkungen",
+        "es": "Registro de Restricciones de Identidad"
       },
       "files": {
         "en": {
@@ -41,11 +48,17 @@
           "md": "/downloads/de/md/layer-0/identity-constraints-register.md",
           "docx": "/downloads/de/docx/layer-0/identity-constraints-register.docx",
           "odt": "/downloads/de/odt/layer-0/identity-constraints-register.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-0/identity-constraints-register.md",
+          "docx": "/downloads/es/docx/layer-0/identity-constraints-register.docx",
+          "odt": "/downloads/es/odt/layer-0/identity-constraints-register.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -54,7 +67,8 @@
       "layer": "layer-0",
       "titles": {
         "en": "Invariants Register",
-        "de": "Invariantenregister"
+        "de": "Invariantenregister",
+        "es": "Registro de Invariantes"
       },
       "files": {
         "en": {
@@ -66,11 +80,17 @@
           "md": "/downloads/de/md/layer-0/invariants-register.md",
           "docx": "/downloads/de/docx/layer-0/invariants-register.docx",
           "odt": "/downloads/de/odt/layer-0/invariants-register.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-0/invariants-register.md",
+          "docx": "/downloads/es/docx/layer-0/invariants-register.docx",
+          "odt": "/downloads/es/odt/layer-0/invariants-register.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -79,7 +99,8 @@
       "layer": "layer-0",
       "titles": {
         "en": "Purpose Charter",
-        "de": "Zweckcharta"
+        "de": "Zweckcharta",
+        "es": "Carta de Propósito"
       },
       "files": {
         "en": {
@@ -91,11 +112,17 @@
           "md": "/downloads/de/md/layer-0/purpose-charter.md",
           "docx": "/downloads/de/docx/layer-0/purpose-charter.docx",
           "odt": "/downloads/de/odt/layer-0/purpose-charter.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-0/purpose-charter.md",
+          "docx": "/downloads/es/docx/layer-0/purpose-charter.docx",
+          "odt": "/downloads/es/odt/layer-0/purpose-charter.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -104,7 +131,8 @@
       "layer": "layer-0",
       "titles": {
         "en": "Scope Declaration",
-        "de": "Geltungsbereichserklärung"
+        "de": "Geltungsbereichserklärung",
+        "es": "Declaración de Alcance"
       },
       "files": {
         "en": {
@@ -116,11 +144,17 @@
           "md": "/downloads/de/md/layer-0/scope-declaration.md",
           "docx": "/downloads/de/docx/layer-0/scope-declaration.docx",
           "odt": "/downloads/de/odt/layer-0/scope-declaration.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-0/scope-declaration.md",
+          "docx": "/downloads/es/docx/layer-0/scope-declaration.docx",
+          "odt": "/downloads/es/odt/layer-0/scope-declaration.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -129,7 +163,8 @@
       "layer": "layer-1",
       "titles": {
         "en": "Exit & Separation Protocol",
-        "de": "Austritts- & Trennungsprotokoll"
+        "de": "Austritts- & Trennungsprotokoll",
+        "es": "Protocolo de Salida y Separación"
       },
       "files": {
         "en": {
@@ -141,11 +176,17 @@
           "md": "/downloads/de/md/layer-1/exit-protocol.md",
           "docx": "/downloads/de/docx/layer-1/exit-protocol.docx",
           "odt": "/downloads/de/odt/layer-1/exit-protocol.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-1/exit-protocol.md",
+          "docx": "/downloads/es/docx/layer-1/exit-protocol.docx",
+          "odt": "/downloads/es/odt/layer-1/exit-protocol.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -154,7 +195,8 @@
       "layer": "layer-1",
       "titles": {
         "en": "Membership Agreement",
-        "de": "Mitgliedschaftsvereinbarung"
+        "de": "Mitgliedschaftsvereinbarung",
+        "es": "Acuerdo de Membresía"
       },
       "files": {
         "en": {
@@ -166,11 +208,17 @@
           "md": "/downloads/de/md/layer-1/membership-agreement.md",
           "docx": "/downloads/de/docx/layer-1/membership-agreement.docx",
           "odt": "/downloads/de/odt/layer-1/membership-agreement.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-1/membership-agreement.md",
+          "docx": "/downloads/es/docx/layer-1/membership-agreement.docx",
+          "odt": "/downloads/es/odt/layer-1/membership-agreement.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -179,7 +227,8 @@
       "layer": "layer-1",
       "titles": {
         "en": "Membership State Registry",
-        "de": "Mitgliedschaftsstatus-Register"
+        "de": "Mitgliedschaftsstatus-Register",
+        "es": "Registro de Estados de Membresía"
       },
       "files": {
         "en": {
@@ -191,11 +240,17 @@
           "md": "/downloads/de/md/layer-1/membership-state-registry.md",
           "docx": "/downloads/de/docx/layer-1/membership-state-registry.docx",
           "odt": "/downloads/de/odt/layer-1/membership-state-registry.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-1/membership-state-registry.md",
+          "docx": "/downloads/es/docx/layer-1/membership-state-registry.docx",
+          "odt": "/downloads/es/odt/layer-1/membership-state-registry.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -204,7 +259,8 @@
       "layer": "layer-1",
       "titles": {
         "en": "Onboarding Protocol",
-        "de": "Onboarding-Protokoll"
+        "de": "Onboarding-Protokoll",
+        "es": "Protocolo de Incorporación"
       },
       "files": {
         "en": {
@@ -216,11 +272,17 @@
           "md": "/downloads/de/md/layer-1/onboarding-protocol.md",
           "docx": "/downloads/de/docx/layer-1/onboarding-protocol.docx",
           "odt": "/downloads/de/odt/layer-1/onboarding-protocol.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-1/onboarding-protocol.md",
+          "docx": "/downloads/es/docx/layer-1/onboarding-protocol.docx",
+          "odt": "/downloads/es/odt/layer-1/onboarding-protocol.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -229,7 +291,8 @@
       "layer": "layer-2",
       "titles": {
         "en": "Authority Registry",
-        "de": "Autoritätenregister"
+        "de": "Autoritätenregister",
+        "es": "Registro de Autoridades"
       },
       "files": {
         "en": {
@@ -241,11 +304,17 @@
           "md": "/downloads/de/md/layer-2/authority-registry.md",
           "docx": "/downloads/de/docx/layer-2/authority-registry.docx",
           "odt": "/downloads/de/odt/layer-2/authority-registry.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-2/authority-registry.md",
+          "docx": "/downloads/es/docx/layer-2/authority-registry.docx",
+          "odt": "/downloads/es/odt/layer-2/authority-registry.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -254,7 +323,8 @@
       "layer": "layer-2",
       "titles": {
         "en": "Decision Matrix",
-        "de": "Entscheidungsmatrix"
+        "de": "Entscheidungsmatrix",
+        "es": "Matriz de Decisiones"
       },
       "files": {
         "en": {
@@ -266,11 +336,17 @@
           "md": "/downloads/de/md/layer-2/decision-matrix.md",
           "docx": "/downloads/de/docx/layer-2/decision-matrix.docx",
           "odt": "/downloads/de/odt/layer-2/decision-matrix.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-2/decision-matrix.md",
+          "docx": "/downloads/es/docx/layer-2/decision-matrix.docx",
+          "odt": "/downloads/es/odt/layer-2/decision-matrix.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -279,7 +355,8 @@
       "layer": "layer-2",
       "titles": {
         "en": "Governance Protocol",
-        "de": "Governance-Protokoll"
+        "de": "Governance-Protokoll",
+        "es": "Protocolo de Gobernanza"
       },
       "files": {
         "en": {
@@ -291,11 +368,17 @@
           "md": "/downloads/de/md/layer-2/governance-protocol.md",
           "docx": "/downloads/de/docx/layer-2/governance-protocol.docx",
           "odt": "/downloads/de/odt/layer-2/governance-protocol.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-2/governance-protocol.md",
+          "docx": "/downloads/es/docx/layer-2/governance-protocol.docx",
+          "odt": "/downloads/es/odt/layer-2/governance-protocol.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -304,7 +387,8 @@
       "layer": "layer-3",
       "titles": {
         "en": "Internal Economy Protocol",
-        "de": "Protokoll für die interne Wirtschaft"
+        "de": "Protokoll für die interne Wirtschaft",
+        "es": "Protocolo de Economía Interna"
       },
       "files": {
         "en": {
@@ -316,11 +400,17 @@
           "md": "/downloads/de/md/layer-3/internal-economy-protocol.md",
           "docx": "/downloads/de/docx/layer-3/internal-economy-protocol.docx",
           "odt": "/downloads/de/odt/layer-3/internal-economy-protocol.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-3/internal-economy-protocol.md",
+          "docx": "/downloads/es/docx/layer-3/internal-economy-protocol.docx",
+          "odt": "/downloads/es/odt/layer-3/internal-economy-protocol.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -329,7 +419,8 @@
       "layer": "layer-3",
       "titles": {
         "en": "Treasury Ruleset",
-        "de": "Kassensatzung"
+        "de": "Kassensatzung",
+        "es": "Reglamento de Tesorería"
       },
       "files": {
         "en": {
@@ -341,11 +432,17 @@
           "md": "/downloads/de/md/layer-3/treasury-ruleset.md",
           "docx": "/downloads/de/docx/layer-3/treasury-ruleset.docx",
           "odt": "/downloads/de/odt/layer-3/treasury-ruleset.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-3/treasury-ruleset.md",
+          "docx": "/downloads/es/docx/layer-3/treasury-ruleset.docx",
+          "odt": "/downloads/es/odt/layer-3/treasury-ruleset.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -354,7 +451,8 @@
       "layer": "layer-4",
       "titles": {
         "en": "Accountability Protocol",
-        "de": "Rechenschaftsprotokoll"
+        "de": "Rechenschaftsprotokoll",
+        "es": "Protocolo de Rendición de Cuentas"
       },
       "files": {
         "en": {
@@ -366,11 +464,17 @@
           "md": "/downloads/de/md/layer-4/accountability-protocol.md",
           "docx": "/downloads/de/docx/layer-4/accountability-protocol.docx",
           "odt": "/downloads/de/odt/layer-4/accountability-protocol.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-4/accountability-protocol.md",
+          "docx": "/downloads/es/docx/layer-4/accountability-protocol.docx",
+          "odt": "/downloads/es/odt/layer-4/accountability-protocol.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -379,7 +483,8 @@
       "layer": "layer-4",
       "titles": {
         "en": "Conflict Resolution Ladder",
-        "de": "Konfliktlösungsleiter"
+        "de": "Konfliktlösungsleiter",
+        "es": "Escalera de Resolución de Conflictos"
       },
       "files": {
         "en": {
@@ -391,11 +496,17 @@
           "md": "/downloads/de/md/layer-4/conflict-resolution-ladder.md",
           "docx": "/downloads/de/docx/layer-4/conflict-resolution-ladder.docx",
           "odt": "/downloads/de/odt/layer-4/conflict-resolution-ladder.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-4/conflict-resolution-ladder.md",
+          "docx": "/downloads/es/docx/layer-4/conflict-resolution-ladder.docx",
+          "odt": "/downloads/es/odt/layer-4/conflict-resolution-ladder.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -404,7 +515,8 @@
       "layer": "layer-5",
       "titles": {
         "en": "Meeting Templates",
-        "de": "Sitzungsvorlagen"
+        "de": "Sitzungsvorlagen",
+        "es": "Plantillas de Reuniones"
       },
       "files": {
         "en": {
@@ -416,11 +528,17 @@
           "md": "/downloads/de/md/layer-5/meeting-templates.md",
           "docx": "/downloads/de/docx/layer-5/meeting-templates.docx",
           "odt": "/downloads/de/odt/layer-5/meeting-templates.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-5/meeting-templates.md",
+          "docx": "/downloads/es/docx/layer-5/meeting-templates.docx",
+          "odt": "/downloads/es/odt/layer-5/meeting-templates.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -429,7 +547,8 @@
       "layer": "layer-5",
       "titles": {
         "en": "Operations Manual",
-        "de": "Betriebshandbuch"
+        "de": "Betriebshandbuch",
+        "es": "Manual de Operaciones"
       },
       "files": {
         "en": {
@@ -441,11 +560,17 @@
           "md": "/downloads/de/md/layer-5/operations-manual.md",
           "docx": "/downloads/de/docx/layer-5/operations-manual.docx",
           "odt": "/downloads/de/odt/layer-5/operations-manual.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-5/operations-manual.md",
+          "docx": "/downloads/es/docx/layer-5/operations-manual.docx",
+          "odt": "/downloads/es/odt/layer-5/operations-manual.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -454,7 +579,8 @@
       "layer": "layer-5",
       "titles": {
         "en": "Role Registry",
-        "de": "Rollenverzeichnis"
+        "de": "Rollenverzeichnis",
+        "es": "Registro de Roles"
       },
       "files": {
         "en": {
@@ -466,11 +592,17 @@
           "md": "/downloads/de/md/layer-5/role-registry.md",
           "docx": "/downloads/de/docx/layer-5/role-registry.docx",
           "odt": "/downloads/de/odt/layer-5/role-registry.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-5/role-registry.md",
+          "docx": "/downloads/es/docx/layer-5/role-registry.docx",
+          "odt": "/downloads/es/odt/layer-5/role-registry.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -479,7 +611,8 @@
       "layer": "layer-6",
       "titles": {
         "en": "Change Protocol",
-        "de": "Änderungsprotokoll"
+        "de": "Änderungsprotokoll",
+        "es": "Protocolo de Cambios"
       },
       "files": {
         "en": {
@@ -491,11 +624,17 @@
           "md": "/downloads/de/md/layer-6/change-protocol.md",
           "docx": "/downloads/de/docx/layer-6/change-protocol.docx",
           "odt": "/downloads/de/odt/layer-6/change-protocol.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-6/change-protocol.md",
+          "docx": "/downloads/es/docx/layer-6/change-protocol.docx",
+          "odt": "/downloads/es/odt/layer-6/change-protocol.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -504,7 +643,8 @@
       "layer": "layer-6",
       "titles": {
         "en": "Experiment Template",
-        "de": "Experiment-Vorlage"
+        "de": "Experiment-Vorlage",
+        "es": "Plantilla de Experimento"
       },
       "files": {
         "en": {
@@ -516,11 +656,17 @@
           "md": "/downloads/de/md/layer-6/experiment-template.md",
           "docx": "/downloads/de/docx/layer-6/experiment-template.docx",
           "odt": "/downloads/de/odt/layer-6/experiment-template.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-6/experiment-template.md",
+          "docx": "/downloads/es/docx/layer-6/experiment-template.docx",
+          "odt": "/downloads/es/odt/layer-6/experiment-template.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -529,7 +675,8 @@
       "layer": "layer-6",
       "titles": {
         "en": "Learning Log",
-        "de": "Lernprotokoll"
+        "de": "Lernprotokoll",
+        "es": "Registro de Aprendizajes"
       },
       "files": {
         "en": {
@@ -541,11 +688,17 @@
           "md": "/downloads/de/md/layer-6/learning-log.md",
           "docx": "/downloads/de/docx/layer-6/learning-log.docx",
           "odt": "/downloads/de/odt/layer-6/learning-log.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-6/learning-log.md",
+          "docx": "/downloads/es/docx/layer-6/learning-log.docx",
+          "odt": "/downloads/es/odt/layer-6/learning-log.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     },
     {
@@ -554,7 +707,8 @@
       "layer": "layer-6",
       "titles": {
         "en": "Version History",
-        "de": "Versionshistorie"
+        "de": "Versionshistorie",
+        "es": "Historial de Versiones"
       },
       "files": {
         "en": {
@@ -566,11 +720,17 @@
           "md": "/downloads/de/md/layer-6/version-history.md",
           "docx": "/downloads/de/docx/layer-6/version-history.docx",
           "odt": "/downloads/de/odt/layer-6/version-history.odt"
+        },
+        "es": {
+          "md": "/downloads/es/md/layer-6/version-history.md",
+          "docx": "/downloads/es/docx/layer-6/version-history.docx",
+          "odt": "/downloads/es/odt/layer-6/version-history.odt"
         }
       },
       "availableLocales": [
         "de",
-        "en"
+        "en",
+        "es"
       ]
     }
   ]

@@ -1,6 +1,6 @@
 # RCOS-Vorlagen
 
-- **Generiert:** 2026-04-28
+- **Generiert:** 2026-04-29
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
 Dieses Bündel enthält alle RCOS-Vorlagen, bereit zum Kopieren und Anpassen für eure Gemeinschaft.

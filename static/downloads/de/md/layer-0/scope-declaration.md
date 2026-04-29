@@ -2,7 +2,7 @@
 
 # Geltungsbereichserklärung
 
-- **Generiert:** 2026-04-28
+- **Generiert:** 2026-04-29
 - **Quelle (aktuelle Version):** [https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-0/scope-declaration](https://blueprint.ecohubs.community/de/articles/rcos-templates/layer-0/scope-declaration)
 - **Alle RCOS-Vorlagen:** [https://blueprint.ecohubs.community/de/articles/rcos-templates](https://blueprint.ecohubs.community/de/articles/rcos-templates)
 
@@ -54,9 +54,9 @@ Liste die Kategorien von Entscheidungen auf, über die die Gemeinschaft Autorit�
 
 </details>
 
-1. _<Entscheidungsbereich 1, z. B. Governance-Regeln und Entscheidungsprozesse (Layer 2).>_
-2. _<Entscheidungsbereich 2, z. B. Mitgliedschaftsregeln und Aufnahme (Layer 1).>_
-3. _<Entscheidungsbereich 3, z. B. Kasse und Verteilung gemeinsamer Ressourcen (Layer 3).>_
+1. _<Entscheidungsbereich 1, z. B. Governance-Regeln und Entscheidungsprozesse (Schicht 2).>_
+2. _<Entscheidungsbereich 2, z. B. Mitgliedschaftsregeln und Aufnahme (Schicht 1).>_
+3. _<Entscheidungsbereich 3, z. B. Kasse und Verteilung gemeinsamer Ressourcen (Schicht 3).>_
 4. _<Entscheidungsbereich 4.>_
 
 ## Erfasste Aktivitäten und Verantwortlichkeiten
@@ -73,7 +73,7 @@ Autorität ohne übernommene Verantwortung erzeugt Stillstand; Verantwortung ohn
 <details data-kind="instructions">
 <summary>Wie du das ausfüllst</summary>
 
-Liste die laufenden Aktivitäten auf, für die die Gemeinschaft verantwortlich ist: Pflege gemeinsamer Infrastruktur, Aufnahme von Mitgliedern, Berichterstattung über Ressourcen, Pflege der Marke usw. Das sind die Dinge, die über Layer 5 einen Verantwortlichen brauchen.
+Liste die laufenden Aktivitäten auf, für die die Gemeinschaft verantwortlich ist: Pflege gemeinsamer Infrastruktur, Aufnahme von Mitgliedern, Berichterstattung über Ressourcen, Pflege der Marke usw. Das sind die Dinge, die über Schicht 5 einen Verantwortlichen brauchen.
 
 </details>
 
@@ -101,7 +101,7 @@ Liste die wichtigsten Grenzen auf: Dinge, von denen Leute annehmen könnten, das
 </details>
 
 1. _<Nicht erfasster Punkt 1, z. B. persönliches Einkommen und private Finanzen der Mitglieder.>_
-2. _<Nicht erfasster Punkt 2, z. B. private Beziehungen und persönliche Wohnsituationen (außer wenn sicherheitskritische Bedingungen aus Layer 4 gelten).>_
+2. _<Nicht erfasster Punkt 2, z. B. private Beziehungen und persönliche Wohnsituationen (außer wenn sicherheitskritische Bedingungen aus Schicht 4 gelten).>_
 3. _<Nicht erfasster Punkt 3, z. B. zugrundeliegende Serverinfrastruktur und Verträge mit Drittanbietern.>_
 4. _<Nicht erfasster Punkt 4.>_
 

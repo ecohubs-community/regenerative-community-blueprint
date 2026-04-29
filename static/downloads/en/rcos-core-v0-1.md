@@ -2,7 +2,7 @@
 
 # RCOS Core Specification — v0.1
 
-- **Generated:** 2026-04-28
+- **Generated:** 2026-04-29
 - **Source (latest version):** [https://blueprint.ecohubs.community/articles/rcos-core/v0-1](https://blueprint.ecohubs.community/articles/rcos-core/v0-1)
 
 - Status: Draft
