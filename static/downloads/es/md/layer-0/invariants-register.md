@@ -2,7 +2,7 @@
 
 # Registro de Invariantes
 
-- **Generado:** 2026-06-26
+- **Generado:** 2026-07-07
 - **Fuente (versión más reciente):** [https://rcos.ecohubs.community/es/articles/rcos-templates/layer-0/invariants-register](https://rcos.ecohubs.community/es/articles/rcos-templates/layer-0/invariants-register)
 - **Todas las plantillas RCOS:** [https://rcos.ecohubs.community/es/articles/rcos-templates](https://rcos.ecohubs.community/es/articles/rcos-templates)
 

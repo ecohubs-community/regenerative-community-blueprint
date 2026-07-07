@@ -2,7 +2,7 @@
 
 # Histórico de Versões
 
-- **Gerado em:** 2026-06-26
+- **Gerado em:** 2026-07-07
 - **Fonte (versão mais recente):** [https://rcos.ecohubs.community/pt-br/articles/rcos-templates/layer-6/version-history](https://rcos.ecohubs.community/pt-br/articles/rcos-templates/layer-6/version-history)
 - **Todos os modelos RCOS:** [https://rcos.ecohubs.community/pt-br/articles/rcos-templates](https://rcos.ecohubs.community/pt-br/articles/rcos-templates)
 

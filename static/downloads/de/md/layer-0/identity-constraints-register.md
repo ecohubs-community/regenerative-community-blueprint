@@ -2,7 +2,7 @@
 
 # Register der Identitätsbeschränkungen
 
-- **Generiert:** 2026-06-26
+- **Generiert:** 2026-07-07
 - **Quelle (aktuelle Version):** [https://rcos.ecohubs.community/de/articles/rcos-templates/layer-0/identity-constraints-register](https://rcos.ecohubs.community/de/articles/rcos-templates/layer-0/identity-constraints-register)
 - **Alle RCOS-Vorlagen:** [https://rcos.ecohubs.community/de/articles/rcos-templates](https://rcos.ecohubs.community/de/articles/rcos-templates)
 

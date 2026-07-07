@@ -2,7 +2,7 @@
 
 # Journal d'apprentissage
 
-- **Généré:** 2026-06-26
+- **Généré:** 2026-07-07
 - **Source (version la plus récente):** [https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-6/learning-log](https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-6/learning-log)
 - **Tous les modèles RCOS:** [https://rcos.ecohubs.community/fr/articles/rcos-templates](https://rcos.ecohubs.community/fr/articles/rcos-templates)
 

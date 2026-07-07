@@ -2,7 +2,7 @@
 
 # Protocolo de Economia Interna
 
-- **Gerado em:** 2026-06-26
+- **Gerado em:** 2026-07-07
 - **Fonte (versão mais recente):** [https://rcos.ecohubs.community/pt-br/articles/rcos-templates/layer-3/internal-economy-protocol](https://rcos.ecohubs.community/pt-br/articles/rcos-templates/layer-3/internal-economy-protocol)
 - **Todos os modelos RCOS:** [https://rcos.ecohubs.community/pt-br/articles/rcos-templates](https://rcos.ecohubs.community/pt-br/articles/rcos-templates)
 

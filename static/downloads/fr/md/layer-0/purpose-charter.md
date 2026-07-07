@@ -2,7 +2,7 @@
 
 # Charte de raison d'être
 
-- **Généré:** 2026-06-26
+- **Généré:** 2026-07-07
 - **Source (version la plus récente):** [https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-0/purpose-charter](https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-0/purpose-charter)
 - **Tous les modèles RCOS:** [https://rcos.ecohubs.community/fr/articles/rcos-templates](https://rcos.ecohubs.community/fr/articles/rcos-templates)
 

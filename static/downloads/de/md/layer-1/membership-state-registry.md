@@ -2,7 +2,7 @@
 
 # Mitgliedschaftsstatus-Register
 
-- **Generiert:** 2026-06-26
+- **Generiert:** 2026-07-07
 - **Quelle (aktuelle Version):** [https://rcos.ecohubs.community/de/articles/rcos-templates/layer-1/membership-state-registry](https://rcos.ecohubs.community/de/articles/rcos-templates/layer-1/membership-state-registry)
 - **Alle RCOS-Vorlagen:** [https://rcos.ecohubs.community/de/articles/rcos-templates](https://rcos.ecohubs.community/de/articles/rcos-templates)
 

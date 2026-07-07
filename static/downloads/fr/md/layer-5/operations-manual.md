@@ -2,7 +2,7 @@
 
 # Manuel opérationnel
 
-- **Généré:** 2026-06-26
+- **Généré:** 2026-07-07
 - **Source (version la plus récente):** [https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-5/operations-manual](https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-5/operations-manual)
 - **Tous les modèles RCOS:** [https://rcos.ecohubs.community/fr/articles/rcos-templates](https://rcos.ecohubs.community/fr/articles/rcos-templates)
 

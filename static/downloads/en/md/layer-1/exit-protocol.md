@@ -2,7 +2,7 @@
 
 # Exit & Separation Protocol
 
-- **Generated:** 2026-06-26
+- **Generated:** 2026-07-07
 - **Source (latest version):** [https://rcos.ecohubs.community/articles/rcos-templates/layer-1/exit-protocol](https://rcos.ecohubs.community/articles/rcos-templates/layer-1/exit-protocol)
 - **All RCOS templates:** [https://rcos.ecohubs.community/articles/rcos-templates](https://rcos.ecohubs.community/articles/rcos-templates)
 

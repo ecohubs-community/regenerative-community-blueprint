@@ -2,7 +2,7 @@
 
 # Spécification RCOS Core — v0.1
 
-- **Généré:** 2026-06-26
+- **Généré:** 2026-07-07
 - **Source (version la plus récente):** [https://rcos.ecohubs.community/fr/articles/rcos-core/v0-1](https://rcos.ecohubs.community/fr/articles/rcos-core/v0-1)
 
 - Statut : Brouillon

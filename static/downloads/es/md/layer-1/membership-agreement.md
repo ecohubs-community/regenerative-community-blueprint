@@ -2,7 +2,7 @@
 
 # Acuerdo de Membresía
 
-- **Generado:** 2026-06-26
+- **Generado:** 2026-07-07
 - **Fuente (versión más reciente):** [https://rcos.ecohubs.community/es/articles/rcos-templates/layer-1/membership-agreement](https://rcos.ecohubs.community/es/articles/rcos-templates/layer-1/membership-agreement)
 - **Todas las plantillas RCOS:** [https://rcos.ecohubs.community/es/articles/rcos-templates](https://rcos.ecohubs.community/es/articles/rcos-templates)
 

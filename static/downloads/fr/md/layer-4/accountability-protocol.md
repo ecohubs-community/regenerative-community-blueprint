@@ -2,7 +2,7 @@
 
 # Protocole de responsabilisation
 
-- **Généré:** 2026-06-26
+- **Généré:** 2026-07-07
 - **Source (version la plus récente):** [https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-4/accountability-protocol](https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-4/accountability-protocol)
 - **Tous les modèles RCOS:** [https://rcos.ecohubs.community/fr/articles/rcos-templates](https://rcos.ecohubs.community/fr/articles/rcos-templates)
 

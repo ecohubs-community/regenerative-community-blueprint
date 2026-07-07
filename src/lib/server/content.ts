@@ -4,10 +4,20 @@ import matter from 'gray-matter';
 import { compile, type MdsvexCompileOptions } from 'mdsvex';
 import rehypeSlug from 'rehype-slug';
 import { DEFAULT_LOCALE, LOCALE_CODES } from '$lib/i18n/languages';
+import { escapeTemplatePlaceholders, codeHighlighter } from './template-markdown.js';
 
 const mdsvexOptions = {
-  rehypePlugins: [rehypeSlug]
+  rehypePlugins: [rehypeSlug],
+  highlight: { highlighter: codeHighlighter }
 } as unknown as MdsvexCompileOptions;
+
+/**
+ * Compile article markdown to HTML. Escapes angle-bracket template placeholders
+ * first so they render as literal text instead of being parsed as raw HTML tags.
+ */
+async function renderMarkdown(markdown: string) {
+  return compile(escapeTemplatePlaceholders(markdown), mdsvexOptions);
+}
 
 const CONTENT_ROOT = 'content';
 
@@ -271,7 +281,7 @@ export async function readArticleBody(
     try {
       const raw = await fs.readFile(chosen.filePath as string, 'utf8');
       const parsed = matter(raw);
-      const compiled = await compile(parsed.content, mdsvexOptions);
+      const compiled = await renderMarkdown(parsed.content);
 
       return {
         slug,
@@ -297,7 +307,7 @@ export async function readArticleBody(
     try {
       const raw = await fs.readFile(filePath, 'utf8');
       const parsed = matter(raw);
-      const compiled = await compile(parsed.content, mdsvexOptions);
+      const compiled = await renderMarkdown(parsed.content);
 
       return {
         slug,
@@ -318,7 +328,7 @@ export async function readArticleBody(
 
 export async function compileMarkdown(markdown: string): Promise<string> {
   try {
-    const compiled = await compile(markdown, mdsvexOptions);
+    const compiled = await renderMarkdown(markdown);
     return compiled?.code || markdown;
   } catch (error) {
     console.warn('[content] Failed to compile markdown:', error);

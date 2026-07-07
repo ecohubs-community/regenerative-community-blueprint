@@ -2,7 +2,7 @@
 
 # RCOS-Kernspezifikation — v0.1
 
-- **Generiert:** 2026-06-26
+- **Generiert:** 2026-07-07
 - **Quelle (aktuelle Version):** [https://rcos.ecohubs.community/de/articles/rcos-core/v0-1](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1)
 
 - Status: Entwurf

@@ -2,7 +2,7 @@
 
 # Especificação do RCOS Core — v0.1
 
-- **Gerado em:** 2026-06-26
+- **Gerado em:** 2026-07-07
 - **Fonte (versão mais recente):** [https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1)
 
 - Status: Rascunho

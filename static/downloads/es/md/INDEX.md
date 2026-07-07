@@ -1,6 +1,6 @@
 # Plantillas RCOS
 
-- **Generado:** 2026-06-26
+- **Generado:** 2026-07-07
 - **Fuente (versión más reciente):** [https://rcos.ecohubs.community/es/articles/rcos-templates](https://rcos.ecohubs.community/es/articles/rcos-templates)
 
 Este paquete contiene todas las plantillas RCOS, listas para copiar y adaptar a tu comunidad.

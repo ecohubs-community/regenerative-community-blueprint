@@ -2,7 +2,7 @@
 
 # Échelle de résolution des conflits
 
-- **Généré:** 2026-06-26
+- **Généré:** 2026-07-07
 - **Source (version la plus récente):** [https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-4/conflict-resolution-ladder](https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-4/conflict-resolution-ladder)
 - **Tous les modèles RCOS:** [https://rcos.ecohubs.community/fr/articles/rcos-templates](https://rcos.ecohubs.community/fr/articles/rcos-templates)
 

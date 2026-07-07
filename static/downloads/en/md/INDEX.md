@@ -1,6 +1,6 @@
 # RCOS Templates
 
-- **Generated:** 2026-06-26
+- **Generated:** 2026-07-07
 - **Source (latest version):** [https://rcos.ecohubs.community/articles/rcos-templates](https://rcos.ecohubs.community/articles/rcos-templates)
 
 This bundle contains every RCOS template, ready to copy and adapt for your community.

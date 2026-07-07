@@ -2,7 +2,7 @@
 
 # Rollenverzeichnis
 
-- **Generiert:** 2026-06-26
+- **Generiert:** 2026-07-07
 - **Quelle (aktuelle Version):** [https://rcos.ecohubs.community/de/articles/rcos-templates/layer-5/role-registry](https://rcos.ecohubs.community/de/articles/rcos-templates/layer-5/role-registry)
 - **Alle RCOS-Vorlagen:** [https://rcos.ecohubs.community/de/articles/rcos-templates](https://rcos.ecohubs.community/de/articles/rcos-templates)
 

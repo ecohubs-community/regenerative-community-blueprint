@@ -2,7 +2,7 @@
 
 # Protocolo de Rendición de Cuentas
 
-- **Generado:** 2026-06-26
+- **Generado:** 2026-07-07
 - **Fuente (versión más reciente):** [https://rcos.ecohubs.community/es/articles/rcos-templates/layer-4/accountability-protocol](https://rcos.ecohubs.community/es/articles/rcos-templates/layer-4/accountability-protocol)
 - **Todas las plantillas RCOS:** [https://rcos.ecohubs.community/es/articles/rcos-templates](https://rcos.ecohubs.community/es/articles/rcos-templates)
 

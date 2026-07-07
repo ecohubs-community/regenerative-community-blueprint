@@ -2,7 +2,7 @@
 
 # Role Registry
 
-- **Generated:** 2026-06-26
+- **Generated:** 2026-07-07
 - **Source (latest version):** [https://rcos.ecohubs.community/articles/rcos-templates/layer-5/role-registry](https://rcos.ecohubs.community/articles/rcos-templates/layer-5/role-registry)
 - **All RCOS templates:** [https://rcos.ecohubs.community/articles/rcos-templates](https://rcos.ecohubs.community/articles/rcos-templates)
 

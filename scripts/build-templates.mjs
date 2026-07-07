@@ -28,6 +28,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import matter from 'gray-matter';
 import { getStrings, SUPPORTED_LOCALES } from './i18n.mjs';
+import { escapeTemplatePlaceholders } from '../src/lib/server/template-markdown.js';
 
 function run(cmd, args, { input, cwd } = {}) {
 	return new Promise((resolve, reject) => {
@@ -220,8 +221,12 @@ function flattenDetails(body, locale) {
 
 function bodyForFormat(body, format, locale) {
 	const absolute = absolutizeLinks(body, locale);
+	// Markdown downloads keep the raw `<placeholder>` text as-is (plain text, no
+	// HTML parser to confuse). docx/odt go through pandoc, which reads `<Word …>`
+	// placeholders as raw HTML and silently drops them — so escape the angle
+	// brackets after flattening `<details>` (which must still match as real tags).
 	if (format === 'md') return absolute;
-	return flattenDetails(absolute, locale);
+	return escapeTemplatePlaceholders(flattenDetails(absolute, locale));
 }
 
 /** ---- output management ---- */

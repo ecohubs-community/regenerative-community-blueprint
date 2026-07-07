@@ -2,7 +2,7 @@
 
 # Accord d'adhésion
 
-- **Généré:** 2026-06-26
+- **Généré:** 2026-07-07
 - **Source (version la plus récente):** [https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-1/membership-agreement](https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-1/membership-agreement)
 - **Tous les modèles RCOS:** [https://rcos.ecohubs.community/fr/articles/rcos-templates](https://rcos.ecohubs.community/fr/articles/rcos-templates)
 
