@@ -2,7 +2,7 @@
 
 # Protocolo de Economía Interna
 
-- **Generado:** 2026-07-07
+- **Generado:** 2026-08-31
 - **Fuente (versión más reciente):** [https://rcos.ecohubs.community/es/articles/rcos-templates/layer-3/internal-economy-protocol](https://rcos.ecohubs.community/es/articles/rcos-templates/layer-3/internal-economy-protocol)
 - **Todas las plantillas RCOS:** [https://rcos.ecohubs.community/es/articles/rcos-templates](https://rcos.ecohubs.community/es/articles/rcos-templates)
 
@@ -168,6 +168,8 @@ Enumera los canales de ingresos actuales declarados, nombra posibles canales fut
 - _<Regla: cualquier nueva interfaz de ingresos externos DEBE ser declarada y aprobada mediante una decisión Estratégica antes de que se reciban fondos o se asuman compromisos.>_
 
 ## Resolución de Disputas para Registros Económicos
+
+*Cláusulas RCOS: [5.5.3](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-3-economic-resource-system#55-artifacts)*
 
 <details data-kind="rationale">
 <summary>¿Por qué acotar las disputas económicas en el tiempo?</summary>

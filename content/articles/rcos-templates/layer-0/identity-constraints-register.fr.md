@@ -4,7 +4,7 @@ title: Registre des contraintes d'identité
 parentId: 622cbd20
 order: 3
 lang: fr
-sourceHash: ce02eee9
+sourceHash: b26fb6bd
 ---
 
 - **Couche :** 0 — Identité et portée
@@ -17,7 +17,7 @@ sourceHash: ce02eee9
 
 ## Contraintes d'identité actives
 
-*Clauses RCOS : [2.4.1](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.3](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.4](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints)*
+*Clauses RCOS : [2.4.1](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.2](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.3](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.4](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints)*
 
 <details data-kind="rationale">
 <summary>Pourquoi déclarer explicitement les contraintes d'identité ?</summary>

@@ -92,7 +92,7 @@ For each pair of roles that pass work to each other, name the handoff and the ty
 
 ## Workload Boundaries
 
-*RCOS clauses: [7.4.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.7.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants)*
+*RCOS clauses: [7.4.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.4](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.7.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants)*
 
 <details data-kind="rationale">
 <summary>Why make workload limits explicit?</summary>
@@ -112,6 +112,7 @@ Set bounds on meeting load, role load, response-time expectations, and the path 
 - **Role load:** _<cap if any; rule for flagging overload; resolution window.>_
 - **Response time expectations:** _<non-urgent async; urgent operational; safety-critical.>_
 - **Renegotiation and relief:** _<process for redistributing responsibilities; resolution window.>_
+- **Persistent overload:** _<how persistent overload, burnout risk, chronic non-participation, or dependency on over-functioning individuals is detected, and how it is routed into the Layer 4 review or repair process.>_
 
 ## Operational Continuity
 
@@ -165,7 +166,7 @@ State which records are open to all Full Members, the response window for inform
 
 ## Documentation Locations and Update Procedures
 
-*RCOS clauses: [7.3.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow)*
+*RCOS clauses: [7.3.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.8.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#78-explicitness-rules)*
 
 <details data-kind="rationale">
 <summary>Why name where every document lives?</summary>

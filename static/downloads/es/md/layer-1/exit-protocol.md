@@ -2,7 +2,7 @@
 
 # Protocolo de Salida y Separación
 
-- **Generado:** 2026-07-07
+- **Generado:** 2026-08-31
 - **Fuente (versión más reciente):** [https://rcos.ecohubs.community/es/articles/rcos-templates/layer-1/exit-protocol](https://rcos.ecohubs.community/es/articles/rcos-templates/layer-1/exit-protocol)
 - **Todas las plantillas RCOS:** [https://rcos.ecohubs.community/es/articles/rcos-templates](https://rcos.ecohubs.community/es/articles/rcos-templates)
 

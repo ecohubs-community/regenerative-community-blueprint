@@ -4,7 +4,7 @@ title: Matriz de Decisão
 parentId: b7e62f01
 order: 0
 lang: pt-br
-sourceHash: c8735d68
+sourceHash: 626ae17f
 ---
 
 - **Camada:** 2 — Governança e Lógica de Decisão
@@ -17,7 +17,7 @@ sourceHash: c8735d68
 
 ## Princípios de Votação
 
-*Cláusulas RCOS: [4.2.1](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.3](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.4](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms)*
+*Cláusulas RCOS: [4.2.1](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.2](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.3](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.4](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms)*
 
 <details data-kind="rationale">
 <summary>Por que fixar mecanismo, limiar e prazos?</summary>

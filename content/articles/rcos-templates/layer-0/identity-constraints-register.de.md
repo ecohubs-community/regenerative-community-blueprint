@@ -4,7 +4,7 @@ title: Register der Identitätsbeschränkungen
 parentId: 622cbd20
 order: 3
 lang: de
-sourceHash: ce02eee9
+sourceHash: b26fb6bd
 ---
 
 - **Ebene:** 0 — Identität & Geltungsbereich
@@ -17,7 +17,7 @@ sourceHash: ce02eee9
 
 ## Aktive Identitätsbeschränkungen
 
-*RCOS-Klauseln: [2.4.1](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.3](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.4](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints)*
+*RCOS-Klauseln: [2.4.1](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.2](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.3](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.4](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints)*
 
 <details data-kind="rationale">
 <summary>Warum Identitätsbeschränkungen explizit festhalten?</summary>

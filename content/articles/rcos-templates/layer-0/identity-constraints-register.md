@@ -15,7 +15,7 @@ order: 3
 
 ## Active Identity Constraints
 
-*RCOS clauses: [2.4.1](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.3](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.4](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints)*
+*RCOS clauses: [2.4.1](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.2](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.3](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.4](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints)*
 
 <details data-kind="rationale">
 <summary>Why declare identity constraints explicitly?</summary>

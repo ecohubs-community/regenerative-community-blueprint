@@ -2,7 +2,7 @@
 
 # Internal Economy Protocol
 
-- **Generated:** 2026-07-07
+- **Generated:** 2026-08-31
 - **Source (latest version):** [https://rcos.ecohubs.community/articles/rcos-templates/layer-3/internal-economy-protocol](https://rcos.ecohubs.community/articles/rcos-templates/layer-3/internal-economy-protocol)
 - **All RCOS templates:** [https://rcos.ecohubs.community/articles/rcos-templates](https://rcos.ecohubs.community/articles/rcos-templates)
 
@@ -168,6 +168,8 @@ List current declared income channels, name potential future channels, and requi
 - _<Rule: any new external income interface must be declared and approved via a Strategic decision before funds are received or commitments made.>_
 
 ## Dispute Resolution for Economic Records
+
+*RCOS clauses: [5.5.3](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-3-economic-resource-system#55-artifacts)*
 
 <details data-kind="rationale">
 <summary>Why time-box economic disputes?</summary>

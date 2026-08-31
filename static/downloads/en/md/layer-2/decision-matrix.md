@@ -2,7 +2,7 @@
 
 # Decision Matrix
 
-- **Generated:** 2026-07-07
+- **Generated:** 2026-08-31
 - **Source (latest version):** [https://rcos.ecohubs.community/articles/rcos-templates/layer-2/decision-matrix](https://rcos.ecohubs.community/articles/rcos-templates/layer-2/decision-matrix)
 - **All RCOS templates:** [https://rcos.ecohubs.community/articles/rcos-templates](https://rcos.ecohubs.community/articles/rcos-templates)
 
@@ -17,7 +17,7 @@
 
 ## Voting Principles
 
-*RCOS clauses: [4.2.1](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.3](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.4](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms)*
+*RCOS clauses: [4.2.1](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.2](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.3](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.4](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms)*
 
 <details data-kind="rationale">
 <summary>Why pin down mechanism, threshold, and timing?</summary>

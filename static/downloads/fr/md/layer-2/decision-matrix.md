@@ -2,7 +2,7 @@
 
 # Matrice de décision
 
-- **Généré:** 2026-07-07
+- **Généré:** 2026-08-31
 - **Source (version la plus récente):** [https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-2/decision-matrix](https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-2/decision-matrix)
 - **Tous les modèles RCOS:** [https://rcos.ecohubs.community/fr/articles/rcos-templates](https://rcos.ecohubs.community/fr/articles/rcos-templates)
 
@@ -17,7 +17,7 @@
 
 ## Principes de vote
 
-*Clauses RCOS : [4.2.1](https://rcos.ecohubs.community/fr/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.3](https://rcos.ecohubs.community/fr/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.4](https://rcos.ecohubs.community/fr/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms)*
+*Clauses RCOS : [4.2.1](https://rcos.ecohubs.community/fr/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.2](https://rcos.ecohubs.community/fr/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.3](https://rcos.ecohubs.community/fr/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.4](https://rcos.ecohubs.community/fr/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms)*
 
 <details data-kind="rationale">
 <summary>Pourquoi fixer le mécanisme, le seuil et le calendrier ?</summary>

@@ -4,7 +4,7 @@ title: Entscheidungsmatrix
 parentId: b7e62f01
 order: 0
 lang: de
-sourceHash: c8735d68
+sourceHash: 626ae17f
 ---
 
 - **Layer:** 2 — Governance & Entscheidungslogik
@@ -17,7 +17,7 @@ sourceHash: c8735d68
 
 ## Abstimmungsgrundsätze
 
-*RCOS-Klauseln: [4.2.1](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.3](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.4](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms)*
+*RCOS-Klauseln: [4.2.1](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.2](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.3](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.4](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms)*
 
 <details data-kind="rationale">
 <summary>Warum Mechanismus, Schwelle und Zeitrahmen vorab festlegen?</summary>

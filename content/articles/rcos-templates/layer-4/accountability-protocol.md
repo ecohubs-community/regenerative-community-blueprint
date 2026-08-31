@@ -104,7 +104,7 @@ _<Retaliation against a member for participating in any part of this process is 
 
 ## Sanction and Repair Options
 
-*RCOS clauses: [6.4.1](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.2](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.3](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.5](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.6](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.5.4](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)*
+*RCOS clauses: [6.4.1](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.2](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.3](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.5](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.6](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.5.4](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts), [6.6.3](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#66-layer-invariants)*
 
 <details data-kind="rationale">
 <summary>Why pre-define the menu of sanctions?</summary>

@@ -4,7 +4,7 @@ title: Manuel opérationnel
 parentId: 2bd4d877
 order: 0
 lang: fr
-sourceHash: cc62727f
+sourceHash: 569eb5aa
 ---
 
 - **Couche :** 5 — Opérations et coordination
@@ -94,7 +94,7 @@ Pour chaque paire de rôles qui se transmettent du travail, nomme la passation e
 
 ## Limites de charge de travail
 
-*Clauses RCOS : [7.4.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.7.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants)*
+*Clauses RCOS : [7.4.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.4](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.7.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants)*
 
 <details data-kind="rationale">
 <summary>Pourquoi rendre les limites de charge explicites ?</summary>
@@ -114,6 +114,7 @@ Définis des limites pour la charge de réunions, la charge par rôle, les atten
 - **Charge par rôle :** _<plafond le cas échéant ; règle pour signaler une surcharge ; délai de résolution.>_
 - **Attentes en termes de temps de réponse :** _<asynchrone non urgent ; opérationnel urgent ; critique pour la sécurité.>_
 - **Renégociation et allègement :** _<processus de redistribution des responsabilités ; délai de résolution.>_
+- **Surcharge persistante :** _<comment la surcharge persistante, le risque d'épuisement, la non-participation chronique ou la dépendance envers des personnes en sur-fonctionnement sont détectés, et comment ils sont orientés vers le processus de révision ou de réparation de la Couche 4.>_
 
 ## Continuité opérationnelle
 
@@ -167,7 +168,7 @@ Indique quels registres sont accessibles à tou·tes les Membres actifs, le dél
 
 ## Emplacements de la documentation et procédures de mise à jour
 
-*Clauses RCOS : [7.3.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow)*
+*Clauses RCOS : [7.3.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.8.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#78-explicitness-rules)*
 
 <details data-kind="rationale">
 <summary>Pourquoi nommer l'emplacement de chaque document ?</summary>

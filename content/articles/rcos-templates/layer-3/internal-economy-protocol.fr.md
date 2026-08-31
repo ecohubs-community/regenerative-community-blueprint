@@ -4,7 +4,7 @@ title: Protocole d'économie interne
 parentId: 7fcb6634
 order: 0
 lang: fr
-sourceHash: 2eadd45e
+sourceHash: 6c608255
 ---
 
 - **Couche :** 3 — Système économique et des ressources
@@ -168,6 +168,8 @@ Liste les canaux de revenus actuellement déclarés, nomme les canaux futurs pot
 - _<Règle : toute nouvelle interface de revenus externes DOIT être déclarée et approuvée par une décision Stratégique avant que des fonds ne soient reçus ou des engagements pris.>_
 
 ## Résolution des litiges concernant les registres économiques
+
+*Clauses RCOS : [5.5.3](/articles/rcos-core/v0-1/layer-3-economic-resource-system#55-artifacts)*
 
 <details data-kind="rationale">
 <summary>Pourquoi encadrer les litiges économiques dans le temps ?</summary>

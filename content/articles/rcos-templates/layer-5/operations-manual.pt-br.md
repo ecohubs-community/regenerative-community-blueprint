@@ -4,7 +4,7 @@ title: Manual de Operações
 parentId: 2bd4d877
 order: 0
 lang: pt-br
-sourceHash: cc62727f
+sourceHash: 569eb5aa
 ---
 
 - **Camada:** 5 — Operações e Coordenação
@@ -94,7 +94,7 @@ Para cada par de papéis que passa trabalho entre si, nomeie a transição e o t
 
 ## Limites de Carga de Trabalho
 
-*Cláusulas RCOS: [7.4.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.7.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants)*
+*Cláusulas RCOS: [7.4.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.4](/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.7.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants)*
 
 <details data-kind="rationale">
 <summary>Por que tornar os limites de carga explícitos?</summary>
@@ -114,6 +114,7 @@ Defina limites para carga de reuniões, carga de papéis, expectativas de tempo 
 - **Carga de papéis:** _<limite, se houver; regra para sinalizar sobrecarga; janela de resolução.>_
 - **Expectativas de tempo de resposta:** _<assíncrono não urgente; operacional urgente; crítico para a segurança.>_
 - **Renegociação e alívio:** _<processo para redistribuir responsabilidades; janela de resolução.>_
+- **Sobrecarga persistente:** _<como a sobrecarga persistente, o risco de esgotamento, a não participação crônica ou a dependência de pessoas que assumem funções em excesso são detectados, e como são encaminhados ao processo de revisão ou reparação da Camada 4.>_
 
 ## Continuidade Operacional
 
@@ -167,7 +168,7 @@ Estabeleça quais registros são abertos a todos os Membros Plenos, a janela de 
 
 ## Localização da Documentação e Procedimentos de Atualização
 
-*Cláusulas RCOS: [7.3.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow)*
+*Cláusulas RCOS: [7.3.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.2](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.3](/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.8.1](/articles/rcos-core/v0-1/layer-5-operations-coordination#78-explicitness-rules)*
 
 <details data-kind="rationale">
 <summary>Por que nomear onde cada documento vive?</summary>

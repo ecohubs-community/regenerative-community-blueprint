@@ -2,7 +2,7 @@
 
 # Protocole d'économie interne
 
-- **Généré:** 2026-07-07
+- **Généré:** 2026-08-31
 - **Source (version la plus récente):** [https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-3/internal-economy-protocol](https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-3/internal-economy-protocol)
 - **Tous les modèles RCOS:** [https://rcos.ecohubs.community/fr/articles/rcos-templates](https://rcos.ecohubs.community/fr/articles/rcos-templates)
 
@@ -168,6 +168,8 @@ Liste les canaux de revenus actuellement déclarés, nomme les canaux futurs pot
 - _<Règle : toute nouvelle interface de revenus externes DOIT être déclarée et approuvée par une décision Stratégique avant que des fonds ne soient reçus ou des engagements pris.>_
 
 ## Résolution des litiges concernant les registres économiques
+
+*Clauses RCOS : [5.5.3](https://rcos.ecohubs.community/fr/articles/rcos-core/v0-1/layer-3-economic-resource-system#55-artifacts)*
 
 <details data-kind="rationale">
 <summary>Pourquoi encadrer les litiges économiques dans le temps ?</summary>

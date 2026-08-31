@@ -2,7 +2,7 @@
 
 # Charte de raison d'être
 
-- **Généré:** 2026-07-07
+- **Généré:** 2026-08-31
 - **Source (version la plus récente):** [https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-0/purpose-charter](https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-0/purpose-charter)
 - **Tous les modèles RCOS:** [https://rcos.ecohubs.community/fr/articles/rcos-templates](https://rcos.ecohubs.community/fr/articles/rcos-templates)
 
@@ -56,6 +56,8 @@ Liste les résultats secondaires concrets que la communauté poursuit. Ils NE DO
 3. _<Raison d'être secondaire 3.>_
 
 ## Non-objectifs et exclusions
+
+*Clauses RCOS : [2.1.5](https://rcos.ecohubs.community/fr/articles/rcos-core/v0-1/layer-0-identity-scope#21-purpose-definition)*
 
 <details data-kind="rationale">
 <summary>Pourquoi énoncer ce que la communauté n'est pas ?</summary>

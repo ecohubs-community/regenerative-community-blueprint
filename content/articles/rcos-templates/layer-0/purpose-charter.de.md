@@ -4,7 +4,7 @@ title: Zweckcharta
 parentId: 622cbd20
 order: 0
 lang: de
-sourceHash: 0804bed1
+sourceHash: '5e137680'
 ---
 
 - **Schicht:** 0 — Identität & Geltungsbereich
@@ -56,6 +56,8 @@ Listet konkrete sekundäre Ergebnisse auf, die die Gemeinschaft verfolgt. Sie d�
 3. _<Sekundärer Zweck 3.>_
 
 ## Nicht-Ziele und Ausschlüsse
+
+*RCOS-Klauseln: [2.1.5](/articles/rcos-core/v0-1/layer-0-identity-scope#21-purpose-definition)*
 
 <details data-kind="rationale">
 <summary>Warum festhalten, was die Gemeinschaft nicht ist?</summary>

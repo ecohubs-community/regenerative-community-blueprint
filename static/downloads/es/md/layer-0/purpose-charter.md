@@ -2,7 +2,7 @@
 
 # Carta de Propósito
 
-- **Generado:** 2026-07-07
+- **Generado:** 2026-08-31
 - **Fuente (versión más reciente):** [https://rcos.ecohubs.community/es/articles/rcos-templates/layer-0/purpose-charter](https://rcos.ecohubs.community/es/articles/rcos-templates/layer-0/purpose-charter)
 - **Todas las plantillas RCOS:** [https://rcos.ecohubs.community/es/articles/rcos-templates](https://rcos.ecohubs.community/es/articles/rcos-templates)
 
@@ -56,6 +56,8 @@ Enumera los resultados secundarios concretos que la comunidad persigue. NO DEBEN
 3. _<Propósito secundario 3.>_
 
 ## No-Objetivos y Exclusiones
+
+*Cláusulas RCOS: [2.1.5](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-0-identity-scope#21-purpose-definition)*
 
 <details data-kind="rationale">
 <summary>¿Por qué declarar lo que la comunidad no es?</summary>

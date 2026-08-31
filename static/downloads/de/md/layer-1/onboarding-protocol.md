@@ -2,7 +2,7 @@
 
 # Onboarding-Protokoll
 
-- **Generiert:** 2026-07-07
+- **Generiert:** 2026-08-31
 - **Quelle (aktuelle Version):** [https://rcos.ecohubs.community/de/articles/rcos-templates/layer-1/onboarding-protocol](https://rcos.ecohubs.community/de/articles/rcos-templates/layer-1/onboarding-protocol)
 - **Alle RCOS-Vorlagen:** [https://rcos.ecohubs.community/de/articles/rcos-templates](https://rcos.ecohubs.community/de/articles/rcos-templates)
 

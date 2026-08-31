@@ -4,7 +4,7 @@ title: Registro de Restricciones de Identidad
 parentId: 622cbd20
 order: 3
 lang: es
-sourceHash: ce02eee9
+sourceHash: b26fb6bd
 ---
 
 - **Capa:** 0 — Identidad y Alcance
@@ -17,7 +17,7 @@ sourceHash: ce02eee9
 
 ## Restricciones de Identidad Activas
 
-*Cláusulas RCOS: [2.4.1](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.3](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.4](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints)*
+*Cláusulas RCOS: [2.4.1](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.2](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.3](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.4](/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints)*
 
 <details data-kind="rationale">
 <summary>¿Por qué declarar las restricciones de identidad explícitamente?</summary>

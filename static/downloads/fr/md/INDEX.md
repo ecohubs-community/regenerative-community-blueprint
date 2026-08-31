@@ -1,6 +1,6 @@
 # Modèles RCOS
 
-- **Généré:** 2026-07-07
+- **Généré:** 2026-08-31
 - **Source (version la plus récente):** [https://rcos.ecohubs.community/fr/articles/rcos-templates](https://rcos.ecohubs.community/fr/articles/rcos-templates)
 
 Ce paquet contient tous les modèles RCOS, prêts à être copiés et adaptés à votre communauté.

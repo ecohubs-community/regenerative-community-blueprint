@@ -4,7 +4,7 @@ title: Protocolo de Rendición de Cuentas
 parentId: 608a89f6
 order: 1
 lang: es
-sourceHash: 464312ca
+sourceHash: 114311d5
 ---
 
 - **Capa:** 4 — Conflicto, Reparación y Rendición de Cuentas
@@ -106,7 +106,7 @@ _<Las represalias contra un miembro por participar en cualquier parte de este pr
 
 ## Opciones de Sanción y Reparación
 
-*Cláusulas RCOS: [6.4.1](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.2](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.3](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.5](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.6](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.5.4](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)*
+*Cláusulas RCOS: [6.4.1](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.2](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.3](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.5](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.6](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.5.4](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts), [6.6.3](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#66-layer-invariants)*
 
 <details data-kind="rationale">
 <summary>¿Por qué predefinir el menú de sanciones?</summary>

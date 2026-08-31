@@ -2,7 +2,7 @@
 
 # Accord d'adhésion
 
-- **Généré:** 2026-07-07
+- **Généré:** 2026-08-31
 - **Source (version la plus récente):** [https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-1/membership-agreement](https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-1/membership-agreement)
 - **Tous les modèles RCOS:** [https://rcos.ecohubs.community/fr/articles/rcos-templates](https://rcos.ecohubs.community/fr/articles/rcos-templates)
 
@@ -114,6 +114,8 @@ Indique un minimum mesurable (fréquence × catégorie), les règles de substitu
 
 ## Référence à la procédure régulière
 
+*Clauses RCOS : [3.6.3](https://rcos.ecohubs.community/fr/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation)*
+
 <details data-kind="rationale">
 <summary>Pourquoi rappeler la procédure régulière ici ?</summary>
 
@@ -131,6 +133,8 @@ Fais référence à l'Échelle de résolution des conflits (Couche 4) et au Prot
 Toute exclusion forcée, suspension ou restriction d'accès suit la procédure régulière de la Couche 4 et le Protocole de sortie et de séparation.
 
 ## Reconnaissance du consentement
+
+*Clauses RCOS : [3.2.2](https://rcos.ecohubs.community/fr/articles/rcos-core/v0-1/layer-1-membership-system#32-entry-and-onboarding)*
 
 <details data-kind="rationale">
 <summary>Pourquoi exiger un consentement explicite ?</summary>

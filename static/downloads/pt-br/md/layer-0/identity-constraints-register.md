@@ -2,7 +2,7 @@
 
 # Registro de Restrições de Identidade
 
-- **Gerado em:** 2026-07-07
+- **Gerado em:** 2026-08-31
 - **Fonte (versão mais recente):** [https://rcos.ecohubs.community/pt-br/articles/rcos-templates/layer-0/identity-constraints-register](https://rcos.ecohubs.community/pt-br/articles/rcos-templates/layer-0/identity-constraints-register)
 - **Todos os modelos RCOS:** [https://rcos.ecohubs.community/pt-br/articles/rcos-templates](https://rcos.ecohubs.community/pt-br/articles/rcos-templates)
 
@@ -17,7 +17,7 @@
 
 ## Restrições de Identidade Ativas
 
-*Cláusulas RCOS: [2.4.1](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.3](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.4](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints)*
+*Cláusulas RCOS: [2.4.1](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.2](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.3](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.4](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints)*
 
 <details data-kind="rationale">
 <summary>Por que declarar as restrições de identidade explicitamente?</summary>

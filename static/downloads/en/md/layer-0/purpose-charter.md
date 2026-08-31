@@ -2,7 +2,7 @@
 
 # Purpose Charter
 
-- **Generated:** 2026-07-07
+- **Generated:** 2026-08-31
 - **Source (latest version):** [https://rcos.ecohubs.community/articles/rcos-templates/layer-0/purpose-charter](https://rcos.ecohubs.community/articles/rcos-templates/layer-0/purpose-charter)
 - **All RCOS templates:** [https://rcos.ecohubs.community/articles/rcos-templates](https://rcos.ecohubs.community/articles/rcos-templates)
 
@@ -56,6 +56,8 @@ List concrete secondary outcomes the community pursues. They must not conflict w
 3. _<Secondary purpose 3.>_
 
 ## Non-Goals and Exclusions
+
+*RCOS clauses: [2.1.5](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-0-identity-scope#21-purpose-definition)*
 
 <details data-kind="rationale">
 <summary>Why state what the community is not?</summary>

@@ -55,6 +55,8 @@ List concrete secondary outcomes the community pursues. They must not conflict w
 
 ## Non-Goals and Exclusions
 
+*RCOS clauses: [2.1.5](/articles/rcos-core/v0-1/layer-0-identity-scope#21-purpose-definition)*
+
 <details data-kind="rationale">
 <summary>Why state what the community is not?</summary>
 

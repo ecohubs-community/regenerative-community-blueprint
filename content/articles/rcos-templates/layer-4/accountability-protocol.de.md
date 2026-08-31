@@ -4,7 +4,7 @@ title: Rechenschaftsprotokoll
 parentId: 608a89f6
 order: 1
 lang: de
-sourceHash: 464312ca
+sourceHash: 114311d5
 ---
 
 - **Ebene:** 4 — Konflikt, Wiedergutmachung & Rechenschaft
@@ -106,7 +106,7 @@ _<Vergeltung gegen ein Mitglied für die Teilnahme an irgendeinem Teil dieses Pr
 
 ## Sanktions- und Wiedergutmachungsoptionen
 
-*RCOS-Klauseln: [6.4.1](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.2](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.3](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.5](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.6](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.5.4](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)*
+*RCOS-Klauseln: [6.4.1](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.2](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.3](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.5](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.6](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.5.4](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts), [6.6.3](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#66-layer-invariants)*
 
 <details data-kind="rationale">
 <summary>Warum den Katalog der Sanktionen vorab festlegen?</summary>

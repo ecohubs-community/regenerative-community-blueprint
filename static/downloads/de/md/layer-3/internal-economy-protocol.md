@@ -2,7 +2,7 @@
 
 # Protokoll für die interne Wirtschaft
 
-- **Generiert:** 2026-07-07
+- **Generiert:** 2026-08-31
 - **Quelle (aktuelle Version):** [https://rcos.ecohubs.community/de/articles/rcos-templates/layer-3/internal-economy-protocol](https://rcos.ecohubs.community/de/articles/rcos-templates/layer-3/internal-economy-protocol)
 - **Alle RCOS-Vorlagen:** [https://rcos.ecohubs.community/de/articles/rcos-templates](https://rcos.ecohubs.community/de/articles/rcos-templates)
 
@@ -168,6 +168,8 @@ Liste die aktuell erklärten Einkommenskanäle auf, benenne potenzielle zukünft
 - _<Regel: Jede neue externe Einkommensschnittstelle muss erklärt und durch eine strategische Entscheidung genehmigt werden, bevor Mittel empfangen oder Verpflichtungen eingegangen werden.>_
 
 ## Streitbeilegung für wirtschaftliche Aufzeichnungen
+
+*RCOS-Klauseln: [5.5.3](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-3-economic-resource-system#55-artifacts)*
 
 <details data-kind="rationale">
 <summary>Warum wirtschaftliche Streitigkeiten zeitlich begrenzen?</summary>

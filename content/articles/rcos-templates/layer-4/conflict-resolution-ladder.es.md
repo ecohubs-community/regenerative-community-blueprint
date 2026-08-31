@@ -4,7 +4,7 @@ title: Escalera de Resolución de Conflictos
 parentId: 608a89f6
 order: 0
 lang: es
-sourceHash: '739e1573'
+sourceHash: c9922bf2
 ---
 
 - **Capa:** 4 — Conflicto, Reparación y Rendición de Cuentas
@@ -15,7 +15,7 @@ sourceHash: '739e1573'
 
 ## Clasificación de Conflictos
 
-*Cláusulas RCOS: [6.1.1](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [6.1.2](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [6.1.3](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [6.1.4](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [6.1.5](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [6.5.3](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)*
+*Cláusulas RCOS: [6.1.1](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [6.1.2](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [6.1.3](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [6.1.4](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [6.1.5](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#61-conflict-classification), [6.5.3](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts), [6.6.4](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#66-layer-invariants), [6.7.1](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#67-explicitness-rules)*
 
 <details data-kind="rationale">
 <summary>¿Por qué clasificar los conflictos?</summary>
@@ -43,7 +43,7 @@ Para cada clase, define los criterios de entrada, el paso de entrada en la escal
 
 ## Pasos de la Escalera de Resolución
 
-*Cláusulas RCOS: [6.2.1](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.2.2](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.2.3](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.2.4](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.2.5](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.5.3](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)*
+*Cláusulas RCOS: [6.2.1](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.2.2](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.2.3](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.2.4](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.2.5](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#62-resolution-pathways), [6.5.3](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts), [6.6.1](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#66-layer-invariants)*
 
 <details data-kind="rationale">
 <summary>¿Por qué una escalera escalonada en lugar de un proceso único?</summary>
@@ -146,7 +146,7 @@ Indica qué pasos son completamente confidenciales, qué información mínima pu
 
 ## Salvaguardas
 
-*Cláusulas RCOS: [6.3.1](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [6.3.2](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [6.3.3](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [6.3.4](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [6.3.5](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards)*
+*Cláusulas RCOS: [6.3.1](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [6.3.2](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [6.3.3](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [6.3.4](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [6.3.5](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#63-safeguards), [6.6.2](/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#66-layer-invariants)*
 
 <details data-kind="rationale">
 <summary>¿Por qué existen salvaguardas además de la escalera?</summary>

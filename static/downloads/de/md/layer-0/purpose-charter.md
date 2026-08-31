@@ -2,7 +2,7 @@
 
 # Zweckcharta
 
-- **Generiert:** 2026-07-07
+- **Generiert:** 2026-08-31
 - **Quelle (aktuelle Version):** [https://rcos.ecohubs.community/de/articles/rcos-templates/layer-0/purpose-charter](https://rcos.ecohubs.community/de/articles/rcos-templates/layer-0/purpose-charter)
 - **Alle RCOS-Vorlagen:** [https://rcos.ecohubs.community/de/articles/rcos-templates](https://rcos.ecohubs.community/de/articles/rcos-templates)
 
@@ -56,6 +56,8 @@ Listet konkrete sekundäre Ergebnisse auf, die die Gemeinschaft verfolgt. Sie d�
 3. _<Sekundärer Zweck 3.>_
 
 ## Nicht-Ziele und Ausschlüsse
+
+*RCOS-Klauseln: [2.1.5](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#21-purpose-definition)*
 
 <details data-kind="rationale">
 <summary>Warum festhalten, was die Gemeinschaft nicht ist?</summary>

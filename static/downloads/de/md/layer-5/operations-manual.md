@@ -2,7 +2,7 @@
 
 # Betriebshandbuch
 
-- **Generiert:** 2026-07-07
+- **Generiert:** 2026-08-31
 - **Quelle (aktuelle Version):** [https://rcos.ecohubs.community/de/articles/rcos-templates/layer-5/operations-manual](https://rcos.ecohubs.community/de/articles/rcos-templates/layer-5/operations-manual)
 - **Alle RCOS-Vorlagen:** [https://rcos.ecohubs.community/de/articles/rcos-templates](https://rcos.ecohubs.community/de/articles/rcos-templates)
 
@@ -94,7 +94,7 @@ Benennt für jedes Rollenpaar, das Arbeit weitergibt, die Übergabe und die Art 
 
 ## Belastungsgrenzen
 
-*RCOS-Klauseln: [7.4.1](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.2](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.3](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.7.3](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants)*
+*RCOS-Klauseln: [7.4.1](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.2](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.3](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.4](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.7.3](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants)*
 
 <details data-kind="rationale">
 <summary>Warum Belastungsgrenzen explizit machen?</summary>
@@ -114,6 +114,7 @@ Legt Grenzen für Sitzungsbelastung, Rollenbelastung, Reaktionszeit-Erwartungen 
 - **Rollenbelastung:** _<Obergrenze falls vorhanden; Regel zur Überlastungsmeldung; Lösungsfrist.>_
 - **Reaktionszeit-Erwartungen:** _<Nicht-dringend asynchron; dringend betrieblich; sicherheitskritisch.>_
 - **Neuverhandlung und Entlastung:** _<Verfahren zur Umverteilung von Verantwortlichkeiten; Lösungsfrist.>_
+- **Anhaltende Überlastung:** _<Wie anhaltende Überlastung, Burnout-Risiko, chronische Nichtbeteiligung oder Abhängigkeit von überfunktionierenden Personen erkannt und in den Review- oder Reparaturprozess von Schicht 4 überführt wird.>_
 
 ## Betriebliche Kontinuität
 
@@ -167,7 +168,7 @@ Haltet fest, welche Unterlagen allen Vollmitgliedern zugänglich sind, wie lang 
 
 ## Dokumentationsstandorte und Aktualisierungsverfahren
 
-*RCOS-Klauseln: [7.3.1](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.2](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.3](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow)*
+*RCOS-Klauseln: [7.3.1](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.2](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.3](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.8.1](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-5-operations-coordination#78-explicitness-rules)*
 
 <details data-kind="rationale">
 <summary>Warum festhalten, wo jedes Dokument lebt?</summary>

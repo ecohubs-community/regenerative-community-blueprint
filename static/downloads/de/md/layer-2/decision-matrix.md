@@ -2,7 +2,7 @@
 
 # Entscheidungsmatrix
 
-- **Generiert:** 2026-07-07
+- **Generiert:** 2026-08-31
 - **Quelle (aktuelle Version):** [https://rcos.ecohubs.community/de/articles/rcos-templates/layer-2/decision-matrix](https://rcos.ecohubs.community/de/articles/rcos-templates/layer-2/decision-matrix)
 - **Alle RCOS-Vorlagen:** [https://rcos.ecohubs.community/de/articles/rcos-templates](https://rcos.ecohubs.community/de/articles/rcos-templates)
 
@@ -17,7 +17,7 @@
 
 ## Abstimmungsgrundsätze
 
-*RCOS-Klauseln: [4.2.1](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.3](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.4](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms)*
+*RCOS-Klauseln: [4.2.1](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.2](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.3](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.4](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms)*
 
 <details data-kind="rationale">
 <summary>Warum Mechanismus, Schwelle und Zeitrahmen vorab festlegen?</summary>

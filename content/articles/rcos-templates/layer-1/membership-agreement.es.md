@@ -4,7 +4,7 @@ title: Acuerdo de Membresía
 parentId: 2c750c19
 order: 0
 lang: es
-sourceHash: 45634fff
+sourceHash: a1d3eea6
 ---
 
 - **Capa:** 1 — Sistema de Membresía
@@ -114,6 +114,8 @@ Establece un mínimo medible (frecuencia × categoría), reglas de sustitución 
 
 ## Referencia al Debido Proceso
 
+*Cláusulas RCOS: [3.6.3](/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation)*
+
 <details data-kind="rationale">
 <summary>¿Por qué reiterar el debido proceso aquí?</summary>
 
@@ -131,6 +133,8 @@ Haz referencia a la Escalera de Resolución de Conflictos (Capa 4) y al Protocol
 Cualquier salida forzada, suspensión o restricción de acceso sigue el debido proceso de la Capa 4 y el Protocolo de Salida y Separación.
 
 ## Reconocimiento de Consentimiento
+
+*Cláusulas RCOS: [3.2.2](/articles/rcos-core/v0-1/layer-1-membership-system#32-entry-and-onboarding)*
 
 <details data-kind="rationale">
 <summary>¿Por qué exigir consentimiento explícito?</summary>

@@ -2,7 +2,7 @@
 
 # Protocolo de Responsabilização
 
-- **Gerado em:** 2026-07-07
+- **Gerado em:** 2026-08-31
 - **Fonte (versão mais recente):** [https://rcos.ecohubs.community/pt-br/articles/rcos-templates/layer-4/accountability-protocol](https://rcos.ecohubs.community/pt-br/articles/rcos-templates/layer-4/accountability-protocol)
 - **Todos os modelos RCOS:** [https://rcos.ecohubs.community/pt-br/articles/rcos-templates](https://rcos.ecohubs.community/pt-br/articles/rcos-templates)
 
@@ -106,7 +106,7 @@ _<A retaliação contra um membro por participar de qualquer parte deste process
 
 ## Opções de Sanção e Reparação
 
-*Cláusulas RCOS: [6.4.1](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.2](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.3](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.5](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.6](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.5.4](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts)*
+*Cláusulas RCOS: [6.4.1](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.2](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.3](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.5](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.4.6](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#64-sanctions-repair-and-separation), [6.5.4](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#65-artifacts), [6.6.3](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-4-conflict-repair-accountability#66-layer-invariants)*
 
 <details data-kind="rationale">
 <summary>Por que pré-definir o menu de sanções?</summary>

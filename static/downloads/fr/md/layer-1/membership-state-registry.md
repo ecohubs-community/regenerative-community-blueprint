@@ -2,14 +2,14 @@
 
 # Registre des états de membre
 
-- **Généré:** 2026-07-07
+- **Généré:** 2026-08-31
 - **Source (version la plus récente):** [https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-1/membership-state-registry](https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-1/membership-state-registry)
 - **Tous les modèles RCOS:** [https://rcos.ecohubs.community/fr/articles/rcos-templates](https://rcos.ecohubs.community/fr/articles/rcos-templates)
 
 ---
 - **Couche :** 1 — Système de membres
 - **Statut :** Modèle — à adapter pour ta communauté
-- **Référence RCOS :** [§3.1](https://rcos.ecohubs.community/fr/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states), [§3.8](https://rcos.ecohubs.community/fr/articles/rcos-core/v0-1/layer-1-membership-system#38-artifacts)
+- **Référence RCOS :** [§3.1](https://rcos.ecohubs.community/fr/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states)
 
 ---
 
@@ -40,48 +40,6 @@ Définis chaque état de membre que ta communauté reconnaît (par ex. Candidat�
 
 > Aucune personne ne peut détenir plusieurs états de membre simultanément.
 > Aucun droit ni obligation ne peut être assumé en dehors de l'état de membre actuel de la personne.
-
-## Notes techniques
-
-<details data-kind="rationale">
-<summary>Pourquoi conserver les données après la sortie ?</summary>
-
-L'historique de la communauté appartient à la communauté, pas à un compte individuel. Conserver les traces de contribution après la sortie protège l'intégrité des pistes d'audit, de l'historique de gouvernance et de la comptabilité de reconnaissance — tout en respectant le caractère définitif du départ par la révocation des accès et le retrait de la personne des listes actives.
-
-</details>
-
-<details data-kind="instructions">
-<summary>Comment remplir cette section</summary>
-
-Décris quels enregistrements sont conservés après la sortie, où les affectations d'état sont suivies opérationnellement, et comment la révocation d'accès interagit avec les capacités de la plateforme.
-
-</details>
-
-- _<Historique des contributions et de la gouvernance conservé après la sortie ; décris la politique de conservation.>_
-- _<Les membres sorti·e·s sont retirés des listes de membres actifs ; décris la révocation d'accès par plateforme.>_
-- _<Emplacement opérationnel des affectations d'état — voir « Liste actuelle des membres » ci-dessous.>_
-
-## Liste actuelle des membres
-
-*Clauses RCOS : [3.8.2](https://rcos.ecohubs.community/fr/articles/rcos-core/v0-1/layer-1-membership-system#38-artifacts)*
-
-<details data-kind="rationale">
-<summary>Pourquoi séparer la définition de la liste ?</summary>
-
-Ce document définit ce que les états signifient ; le registre opérationnel suit qui se trouve dans quel état aujourd'hui. Les séparer permet de garder les définitions stables et gouvernables tandis que les affectations restent à jour — et personne n'a besoin de modifier un artefact ratifié à chaque fois qu'un·e membre rejoint ou quitte la communauté.
-
-</details>
-
-<details data-kind="instructions">
-<summary>Comment remplir cette section</summary>
-
-Indique un lien vers le système ou le document opérationnel où les affectations membre-état actuelles sont suivies. Cet artefact ne devrait pas avoir besoin d'être modifié à chaque fois qu'un·e membre rejoint ou quitte la communauté.
-
-</details>
-
-> La liste des membres est maintenue dans _<système / emplacement>_. Ce document définit les états ; l'outil de registre contient les affectations actuelles.
-
-_<Lien ou emplacement du répertoire des membres.>_
 
 ---
 

@@ -4,7 +4,7 @@ title: Carta de Propósito
 parentId: 622cbd20
 order: 0
 lang: es
-sourceHash: 0804bed1
+sourceHash: '5e137680'
 ---
 
 - **Capa:** 0 — Identidad y Alcance
@@ -56,6 +56,8 @@ Enumera los resultados secundarios concretos que la comunidad persigue. NO DEBEN
 3. _<Propósito secundario 3.>_
 
 ## No-Objetivos y Exclusiones
+
+*Cláusulas RCOS: [2.1.5](/articles/rcos-core/v0-1/layer-0-identity-scope#21-purpose-definition)*
 
 <details data-kind="rationale">
 <summary>¿Por qué declarar lo que la comunidad no es?</summary>

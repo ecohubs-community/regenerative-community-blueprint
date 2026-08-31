@@ -167,6 +167,8 @@ List current declared income channels, name potential future channels, and requi
 
 ## Dispute Resolution for Economic Records
 
+*RCOS clauses: [5.5.3](/articles/rcos-core/v0-1/layer-3-economic-resource-system#55-artifacts)*
+
 <details data-kind="rationale">
 <summary>Why time-box economic disputes?</summary>
 

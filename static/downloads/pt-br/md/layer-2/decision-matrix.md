@@ -2,7 +2,7 @@
 
 # Matriz de Decisão
 
-- **Gerado em:** 2026-07-07
+- **Gerado em:** 2026-08-31
 - **Fonte (versão mais recente):** [https://rcos.ecohubs.community/pt-br/articles/rcos-templates/layer-2/decision-matrix](https://rcos.ecohubs.community/pt-br/articles/rcos-templates/layer-2/decision-matrix)
 - **Todos os modelos RCOS:** [https://rcos.ecohubs.community/pt-br/articles/rcos-templates](https://rcos.ecohubs.community/pt-br/articles/rcos-templates)
 
@@ -17,7 +17,7 @@
 
 ## Princípios de Votação
 
-*Cláusulas RCOS: [4.2.1](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.3](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.4](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms)*
+*Cláusulas RCOS: [4.2.1](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.2](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.3](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.4](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms)*
 
 <details data-kind="rationale">
 <summary>Por que fixar mecanismo, limiar e prazos?</summary>

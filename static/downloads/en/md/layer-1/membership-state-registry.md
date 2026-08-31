@@ -2,14 +2,14 @@
 
 # Membership State Registry
 
-- **Generated:** 2026-07-07
+- **Generated:** 2026-08-31
 - **Source (latest version):** [https://rcos.ecohubs.community/articles/rcos-templates/layer-1/membership-state-registry](https://rcos.ecohubs.community/articles/rcos-templates/layer-1/membership-state-registry)
 - **All RCOS templates:** [https://rcos.ecohubs.community/articles/rcos-templates](https://rcos.ecohubs.community/articles/rcos-templates)
 
 ---
 - **Layer:** 1 — Membership System
 - **Status:** Template — adapt for your community
-- **RCOS reference:** [§3.1](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states), [§3.8](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-1-membership-system#38-artifacts)
+- **RCOS reference:** [§3.1](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states)
 
 ---
 
@@ -40,48 +40,6 @@ Define every membership state your community recognizes (e.g. Applicant, Trial M
 
 > No individual may hold multiple membership states simultaneously.
 > No rights or obligations may be assumed outside of the individual's current membership state.
-
-## Technical Notes
-
-<details data-kind="rationale">
-<summary>Why preserve data after exit?</summary>
-
-The community's history belongs to the community, not to any individual account. Retaining contribution records after exit protects the integrity of audit trails, governance history, and recognition accounting — while revoking access and removing the person from active listings respects the finality of their departure.
-
-</details>
-
-<details data-kind="instructions">
-<summary>How to fill this in</summary>
-
-Describe which records persist after exit, where state assignments are tracked operationally, and how access revocation interacts with platform capabilities.
-
-</details>
-
-- _<Contribution and governance history retained after exit; describe the retention policy.>_
-- _<Exited members are removed from active member listings; describe access revocation per platform.>_
-- _<Operational location of state assignments — see "Current Member List" below.>_
-
-## Current Member List
-
-*RCOS clauses: [3.8.2](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-1-membership-system#38-artifacts)*
-
-<details data-kind="rationale">
-<summary>Why separate the definition from the list?</summary>
-
-This document defines what the states mean; the live registry tracks who is in which state today. Keeping them separate means the definitions are stable and governable while the assignments stay current — and nobody has to change a ratified artifact every time a member joins or leaves.
-
-</details>
-
-<details data-kind="instructions">
-<summary>How to fill this in</summary>
-
-Link to the operational system or document where current member-to-state assignments are tracked. This artifact should not need to be changed every time a member joins or leaves.
-
-</details>
-
-> The live member list is maintained in _<system / location>_. This document defines the states; the registry tool holds the current assignments.
-
-_<Link or location of the live member directory.>_
 
 ---
 

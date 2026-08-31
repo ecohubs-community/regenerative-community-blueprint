@@ -4,7 +4,7 @@ title: Matrice de décision
 parentId: b7e62f01
 order: 0
 lang: fr
-sourceHash: c8735d68
+sourceHash: 626ae17f
 ---
 
 - **Couche :** 2 — Gouvernance et logique de décision
@@ -17,7 +17,7 @@ sourceHash: c8735d68
 
 ## Principes de vote
 
-*Clauses RCOS : [4.2.1](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.3](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.4](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms)*
+*Clauses RCOS : [4.2.1](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.2](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.3](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.4](/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms)*
 
 <details data-kind="rationale">
 <summary>Pourquoi fixer le mécanisme, le seuil et le calendrier ?</summary>

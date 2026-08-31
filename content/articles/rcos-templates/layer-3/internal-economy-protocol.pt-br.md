@@ -4,7 +4,7 @@ title: Protocolo de Economia Interna
 parentId: 7fcb6634
 order: 0
 lang: pt-br
-sourceHash: 2eadd45e
+sourceHash: 6c608255
 ---
 
 - **Camada:** 3 — Sistema Econômico e de Recursos
@@ -168,6 +168,8 @@ Liste os canais de receita atualmente declarados, nomeie potenciais canais futur
 - _<Regra: qualquer nova interface de receita externa deve ser declarada e aprovada via uma decisão Estratégica antes que os fundos sejam recebidos ou compromissos sejam assumidos.>_
 
 ## Resolução de Disputas para Registros Econômicos
+
+*Cláusulas RCOS: [5.5.3](/articles/rcos-core/v0-1/layer-3-economic-resource-system#55-artifacts)*
 
 <details data-kind="rationale">
 <summary>Por que delimitar o tempo das disputas econômicas?</summary>

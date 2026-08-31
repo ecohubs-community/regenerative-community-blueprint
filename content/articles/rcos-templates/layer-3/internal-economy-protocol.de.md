@@ -4,7 +4,7 @@ title: Protokoll für die interne Wirtschaft
 parentId: 7fcb6634
 order: 0
 lang: de
-sourceHash: 2eadd45e
+sourceHash: 6c608255
 ---
 
 - **Ebene:** 3 — Wirtschafts- & Ressourcensystem
@@ -168,6 +168,8 @@ Liste die aktuell erklärten Einkommenskanäle auf, benenne potenzielle zukünft
 - _<Regel: Jede neue externe Einkommensschnittstelle muss erklärt und durch eine strategische Entscheidung genehmigt werden, bevor Mittel empfangen oder Verpflichtungen eingegangen werden.>_
 
 ## Streitbeilegung für wirtschaftliche Aufzeichnungen
+
+*RCOS-Klauseln: [5.5.3](/articles/rcos-core/v0-1/layer-3-economic-resource-system#55-artifacts)*
 
 <details data-kind="rationale">
 <summary>Warum wirtschaftliche Streitigkeiten zeitlich begrenzen?</summary>

@@ -2,7 +2,7 @@
 
 # Identity Constraints Register
 
-- **Generated:** 2026-07-07
+- **Generated:** 2026-08-31
 - **Source (latest version):** [https://rcos.ecohubs.community/articles/rcos-templates/layer-0/identity-constraints-register](https://rcos.ecohubs.community/articles/rcos-templates/layer-0/identity-constraints-register)
 - **All RCOS templates:** [https://rcos.ecohubs.community/articles/rcos-templates](https://rcos.ecohubs.community/articles/rcos-templates)
 
@@ -17,7 +17,7 @@
 
 ## Active Identity Constraints
 
-*RCOS clauses: [2.4.1](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.3](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.4](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints)*
+*RCOS clauses: [2.4.1](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.2](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.3](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.4](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints)*
 
 <details data-kind="rationale">
 <summary>Why declare identity constraints explicitly?</summary>

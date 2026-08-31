@@ -2,7 +2,7 @@
 
 # Register der Identitätsbeschränkungen
 
-- **Generiert:** 2026-07-07
+- **Generiert:** 2026-08-31
 - **Quelle (aktuelle Version):** [https://rcos.ecohubs.community/de/articles/rcos-templates/layer-0/identity-constraints-register](https://rcos.ecohubs.community/de/articles/rcos-templates/layer-0/identity-constraints-register)
 - **Alle RCOS-Vorlagen:** [https://rcos.ecohubs.community/de/articles/rcos-templates](https://rcos.ecohubs.community/de/articles/rcos-templates)
 
@@ -17,7 +17,7 @@
 
 ## Aktive Identitätsbeschränkungen
 
-*RCOS-Klauseln: [2.4.1](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.3](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.4](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints)*
+*RCOS-Klauseln: [2.4.1](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.2](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.3](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints), [2.4.4](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-0-identity-scope#24-identity-constraints)*
 
 <details data-kind="rationale">
 <summary>Warum Identitätsbeschränkungen explizit festhalten?</summary>

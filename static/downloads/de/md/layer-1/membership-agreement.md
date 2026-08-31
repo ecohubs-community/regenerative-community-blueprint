@@ -2,7 +2,7 @@
 
 # Mitgliedschaftsvereinbarung
 
-- **Generiert:** 2026-07-07
+- **Generiert:** 2026-08-31
 - **Quelle (aktuelle Version):** [https://rcos.ecohubs.community/de/articles/rcos-templates/layer-1/membership-agreement](https://rcos.ecohubs.community/de/articles/rcos-templates/layer-1/membership-agreement)
 - **Alle RCOS-Vorlagen:** [https://rcos.ecohubs.community/de/articles/rcos-templates](https://rcos.ecohubs.community/de/articles/rcos-templates)
 
@@ -114,6 +114,8 @@ Gib ein messbares Minimum an (Häufigkeit × Kategorie), Vertretungs- und Abwese
 
 ## Verweis auf ordentliches Verfahren
 
+*RCOS-Klauseln: [3.6.3](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation)*
+
 <details data-kind="rationale">
 <summary>Warum das ordentliche Verfahren hier nochmals erwähnen?</summary>
 
@@ -131,6 +133,8 @@ Verweise auf die Konfliktlösungsstufen (Schicht 4) und das Austritts- und Trenn
 Jeder erzwungene Austritt, jede Suspendierung oder Zugangsbeschränkung folgt dem ordentlichen Verfahren der Schicht 4 und dem Austritts- und Trennungsprotokoll.
 
 ## Zustimmungserklärung
+
+*RCOS-Klauseln: [3.2.2](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#32-entry-and-onboarding)*
 
 <details data-kind="rationale">
 <summary>Warum ausdrückliche Zustimmung verlangen?</summary>

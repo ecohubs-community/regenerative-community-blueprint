@@ -2,7 +2,7 @@
 
 # Membership Agreement
 
-- **Generated:** 2026-07-07
+- **Generated:** 2026-08-31
 - **Source (latest version):** [https://rcos.ecohubs.community/articles/rcos-templates/layer-1/membership-agreement](https://rcos.ecohubs.community/articles/rcos-templates/layer-1/membership-agreement)
 - **All RCOS templates:** [https://rcos.ecohubs.community/articles/rcos-templates](https://rcos.ecohubs.community/articles/rcos-templates)
 
@@ -114,6 +114,8 @@ State a measurable minimum (frequency × category), substitution and absence rul
 
 ## Due Process Reference
 
+*RCOS clauses: [3.6.3](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation)*
+
 <details data-kind="rationale">
 <summary>Why re-state due process here?</summary>
 
@@ -131,6 +133,8 @@ Reference the Conflict Resolution Ladder (Layer 4) and the Exit & Separation Pro
 Any forced exit, suspension, or access restriction follows Layer 4 due process and the Exit & Separation Protocol.
 
 ## Consent Acknowledgment
+
+*RCOS clauses: [3.2.2](https://rcos.ecohubs.community/articles/rcos-core/v0-1/layer-1-membership-system#32-entry-and-onboarding)*
 
 <details data-kind="rationale">
 <summary>Why require explicit consent?</summary>

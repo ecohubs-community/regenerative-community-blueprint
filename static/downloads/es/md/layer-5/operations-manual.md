@@ -2,7 +2,7 @@
 
 # Manual de Operaciones
 
-- **Generado:** 2026-07-07
+- **Generado:** 2026-08-31
 - **Fuente (versión más reciente):** [https://rcos.ecohubs.community/es/articles/rcos-templates/layer-5/operations-manual](https://rcos.ecohubs.community/es/articles/rcos-templates/layer-5/operations-manual)
 - **Todas las plantillas RCOS:** [https://rcos.ecohubs.community/es/articles/rcos-templates](https://rcos.ecohubs.community/es/articles/rcos-templates)
 
@@ -94,7 +94,7 @@ Para cada par de roles que se pasan trabajo entre sí, nombra el traspaso y el t
 
 ## Límites de Carga de Trabajo
 
-*Cláusulas RCOS: [7.4.1](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.2](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.3](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.7.3](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants)*
+*Cláusulas RCOS: [7.4.1](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.2](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.3](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.4.4](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-5-operations-coordination#74-workload-and-capacity-boundaries), [7.7.3](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-5-operations-coordination#77-layer-invariants)*
 
 <details data-kind="rationale">
 <summary>¿Por qué hacer explícitos los límites de carga de trabajo?</summary>
@@ -114,6 +114,7 @@ Establece límites para la carga de reuniones, carga de roles, expectativas de t
 - **Carga de roles:** _<tope si lo hay; regla para señalar sobrecarga; plazo de resolución.>_
 - **Expectativas de tiempo de respuesta:** _<asíncrono no urgente; operativo urgente; crítico para la seguridad.>_
 - **Renegociación y alivio:** _<proceso para redistribuir responsabilidades; plazo de resolución.>_
+- **Sobrecarga persistente:** _<cómo se detecta la sobrecarga persistente, el riesgo de agotamiento, la no participación crónica o la dependencia de personas que sobrefuncionan, y cómo se deriva al proceso de revisión o reparación de la Capa 4.>_
 
 ## Continuidad Operativa
 
@@ -167,7 +168,7 @@ Indica qué registros están abiertos a todos los Miembros Plenos, el plazo de r
 
 ## Ubicaciones de Documentación y Procedimientos de Actualización
 
-*Cláusulas RCOS: [7.3.1](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.2](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.3](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow)*
+*Cláusulas RCOS: [7.3.1](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.2](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.3.3](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-5-operations-coordination#73-documentation-and-information-flow), [7.8.1](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-5-operations-coordination#78-explicitness-rules)*
 
 <details data-kind="rationale">
 <summary>¿Por qué nombrar dónde vive cada documento?</summary>

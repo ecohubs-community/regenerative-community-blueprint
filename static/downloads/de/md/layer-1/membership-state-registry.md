@@ -2,14 +2,14 @@
 
 # Mitgliedschaftsstatus-Register
 
-- **Generiert:** 2026-07-07
+- **Generiert:** 2026-08-31
 - **Quelle (aktuelle Version):** [https://rcos.ecohubs.community/de/articles/rcos-templates/layer-1/membership-state-registry](https://rcos.ecohubs.community/de/articles/rcos-templates/layer-1/membership-state-registry)
 - **Alle RCOS-Vorlagen:** [https://rcos.ecohubs.community/de/articles/rcos-templates](https://rcos.ecohubs.community/de/articles/rcos-templates)
 
 ---
 - **Ebene:** 1 — Mitgliedschaftssystem
 - **Status:** Vorlage — an eure Gemeinschaft anpassen
-- **RCOS-Referenz:** [§3.1](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states), [§3.8](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#38-artifacts)
+- **RCOS-Referenz:** [§3.1](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#31-membership-states)
 
 ---
 
@@ -40,48 +40,6 @@ Definiert jeden Mitgliedschaftsstatus, den eure Gemeinschaft anerkennt (z. B. Be
 
 > Keine Person darf mehrere Mitgliedschaftsstatus gleichzeitig innehaben.
 > Keine Rechte oder Pflichten dürfen außerhalb des aktuellen Mitgliedschaftsstatus der Person angenommen werden.
-
-## Technische Hinweise
-
-<details data-kind="rationale">
-<summary>Warum Daten nach dem Austritt aufbewahren?</summary>
-
-Die Geschichte der Gemeinschaft gehört der Gemeinschaft, nicht einem einzelnen Konto. Beitragsaufzeichnungen nach dem Austritt beizubehalten schützt die Integrität von Prüfpfaden, Governance-Historien und Anerkennungsbuchhaltung — während das Entziehen des Zugangs und das Entfernen der Person aus aktiven Auflistungen die Endgültigkeit ihres Ausscheidens respektiert.
-
-</details>
-
-<details data-kind="instructions">
-<summary>Wie ihr das ausfüllt</summary>
-
-Beschreibt, welche Aufzeichnungen nach dem Austritt erhalten bleiben, wo Statuszuweisungen operativ nachverfolgt werden und wie der Zugangsentzug mit den Plattform-Funktionen zusammenwirkt.
-
-</details>
-
-- _<Beitrags- und Governance-Historie wird nach dem Austritt aufbewahrt; beschreibt die Aufbewahrungsrichtlinie.>_
-- _<Ausgetretene Mitglieder werden aus den aktiven Mitgliederlisten entfernt; beschreibt den Zugangsentzug pro Plattform.>_
-- _<Operativer Speicherort der Statuszuweisungen — siehe „Aktuelle Mitgliederliste" unten.>_
-
-## Aktuelle Mitgliederliste
-
-*RCOS-Klauseln: [3.8.2](https://rcos.ecohubs.community/de/articles/rcos-core/v0-1/layer-1-membership-system#38-artifacts)*
-
-<details data-kind="rationale">
-<summary>Warum Definition und Liste trennen?</summary>
-
-Dieses Dokument definiert, was die Status bedeuten; das aktive Register verfolgt, wer sich heute in welchem Status befindet. Beides getrennt zu halten bedeutet, dass die Definitionen stabil und steuerbar bleiben, während die Zuweisungen aktuell sind — und niemand ein ratifiziertes Artefakt ändern muss, wenn ein Mitglied beitritt oder austritt.
-
-</details>
-
-<details data-kind="instructions">
-<summary>Wie ihr das ausfüllt</summary>
-
-Verlinkt auf das operative System oder Dokument, in dem die aktuellen Mitglied-zu-Status-Zuweisungen nachverfolgt werden. Dieses Artefakt sollte nicht jedes Mal geändert werden müssen, wenn ein Mitglied beitritt oder austritt.
-
-</details>
-
-> Die aktive Mitgliederliste wird in _<System / Speicherort>_ gepflegt. Dieses Dokument definiert die Status; das Register-Tool enthält die aktuellen Zuweisungen.
-
-_<Link oder Speicherort des aktiven Mitgliederverzeichnisses.>_
 
 ---
 

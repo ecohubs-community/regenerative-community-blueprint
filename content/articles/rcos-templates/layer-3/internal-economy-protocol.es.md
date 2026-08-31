@@ -4,7 +4,7 @@ title: Protocolo de Economía Interna
 parentId: 7fcb6634
 order: 0
 lang: es
-sourceHash: 2eadd45e
+sourceHash: 6c608255
 ---
 
 - **Capa:** 3 — Sistema Económico y de Recursos
@@ -168,6 +168,8 @@ Enumera los canales de ingresos actuales declarados, nombra posibles canales fut
 - _<Regla: cualquier nueva interfaz de ingresos externos DEBE ser declarada y aprobada mediante una decisión Estratégica antes de que se reciban fondos o se asuman compromisos.>_
 
 ## Resolución de Disputas para Registros Económicos
+
+*Cláusulas RCOS: [5.5.3](/articles/rcos-core/v0-1/layer-3-economic-resource-system#55-artifacts)*
 
 <details data-kind="rationale">
 <summary>¿Por qué acotar las disputas económicas en el tiempo?</summary>

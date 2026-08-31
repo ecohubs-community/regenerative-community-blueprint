@@ -2,7 +2,7 @@
 
 # Modelos de Reunião
 
-- **Gerado em:** 2026-07-07
+- **Gerado em:** 2026-08-31
 - **Fonte (versão mais recente):** [https://rcos.ecohubs.community/pt-br/articles/rcos-templates/layer-5/meeting-templates](https://rcos.ecohubs.community/pt-br/articles/rcos-templates/layer-5/meeting-templates)
 - **Todos os modelos RCOS:** [https://rcos.ecohubs.community/pt-br/articles/rcos-templates](https://rcos.ecohubs.community/pt-br/articles/rcos-templates)
 

@@ -2,7 +2,7 @@
 
 # Acordo de Associação
 
-- **Gerado em:** 2026-07-07
+- **Gerado em:** 2026-08-31
 - **Fonte (versão mais recente):** [https://rcos.ecohubs.community/pt-br/articles/rcos-templates/layer-1/membership-agreement](https://rcos.ecohubs.community/pt-br/articles/rcos-templates/layer-1/membership-agreement)
 - **Todos os modelos RCOS:** [https://rcos.ecohubs.community/pt-br/articles/rcos-templates](https://rcos.ecohubs.community/pt-br/articles/rcos-templates)
 
@@ -114,6 +114,8 @@ Indique um mínimo mensurável (frequência × categoria), regras de substituiç
 
 ## Referência ao Devido Processo
 
+*Cláusulas RCOS: [3.6.3](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation)*
+
 <details data-kind="rationale">
 <summary>Por que reafirmar o devido processo aqui?</summary>
 
@@ -131,6 +133,8 @@ Faça referência à Escada de Resolução de Conflitos (Camada 4) e ao Protocol
 Qualquer saída forçada, suspensão ou restrição de acesso segue o devido processo da Camada 4 e o Protocolo de Saída e Separação.
 
 ## Reconhecimento de Consentimento
+
+*Cláusulas RCOS: [3.2.2](https://rcos.ecohubs.community/pt-br/articles/rcos-core/v0-1/layer-1-membership-system#32-entry-and-onboarding)*
 
 <details data-kind="rationale">
 <summary>Por que exigir consentimento explícito?</summary>

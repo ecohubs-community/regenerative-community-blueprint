@@ -112,6 +112,8 @@ State a measurable minimum (frequency × category), substitution and absence rul
 
 ## Due Process Reference
 
+*RCOS clauses: [3.6.3](/articles/rcos-core/v0-1/layer-1-membership-system#36-exit-and-separation)*
+
 <details data-kind="rationale">
 <summary>Why re-state due process here?</summary>
 
@@ -129,6 +131,8 @@ Reference the Conflict Resolution Ladder (Layer 4) and the Exit & Separation Pro
 Any forced exit, suspension, or access restriction follows Layer 4 due process and the Exit & Separation Protocol.
 
 ## Consent Acknowledgment
+
+*RCOS clauses: [3.2.2](/articles/rcos-core/v0-1/layer-1-membership-system#32-entry-and-onboarding)*
 
 <details data-kind="rationale">
 <summary>Why require explicit consent?</summary>

@@ -4,7 +4,7 @@ title: Charte de raison d'être
 parentId: 622cbd20
 order: 0
 lang: fr
-sourceHash: 0804bed1
+sourceHash: '5e137680'
 ---
 
 - **Couche :** 0 — Identité et périmètre
@@ -56,6 +56,8 @@ Liste les résultats secondaires concrets que la communauté poursuit. Ils NE DO
 3. _<Raison d'être secondaire 3.>_
 
 ## Non-objectifs et exclusions
+
+*Clauses RCOS : [2.1.5](/articles/rcos-core/v0-1/layer-0-identity-scope#21-purpose-definition)*
 
 <details data-kind="rationale">
 <summary>Pourquoi énoncer ce que la communauté n'est pas ?</summary>

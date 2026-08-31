@@ -2,7 +2,7 @@
 
 # Matriz de Decisiones
 
-- **Generado:** 2026-07-07
+- **Generado:** 2026-08-31
 - **Fuente (versión más reciente):** [https://rcos.ecohubs.community/es/articles/rcos-templates/layer-2/decision-matrix](https://rcos.ecohubs.community/es/articles/rcos-templates/layer-2/decision-matrix)
 - **Todas las plantillas RCOS:** [https://rcos.ecohubs.community/es/articles/rcos-templates](https://rcos.ecohubs.community/es/articles/rcos-templates)
 
@@ -17,7 +17,7 @@
 
 ## Principios de Votación
 
-*Cláusulas RCOS: [4.2.1](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.3](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.4](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms)*
+*Cláusulas RCOS: [4.2.1](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.2](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.3](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms), [4.2.4](https://rcos.ecohubs.community/es/articles/rcos-core/v0-1/layer-2-governance-decision-logic#42-decision-mechanisms)*
 
 <details data-kind="rationale">
 <summary>¿Por qué fijar mecanismo, umbral y plazos?</summary>

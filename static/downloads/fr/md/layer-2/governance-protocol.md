@@ -2,7 +2,7 @@
 
 # Protocole de gouvernance
 
-- **Généré:** 2026-07-07
+- **Généré:** 2026-08-31
 - **Source (version la plus récente):** [https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-2/governance-protocol](https://rcos.ecohubs.community/fr/articles/rcos-templates/layer-2/governance-protocol)
 - **Tous les modèles RCOS:** [https://rcos.ecohubs.community/fr/articles/rcos-templates](https://rcos.ecohubs.community/fr/articles/rcos-templates)
 

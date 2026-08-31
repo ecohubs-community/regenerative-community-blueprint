@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-07",
+  "generated": "2026-08-31",
   "defaultLocale": "en",
   "locales": [
     "en",
@@ -18,7 +18,7 @@
         "fr": "Spécification RCOS Core — v0.1",
         "pt-br": "Especificação do RCOS Core — v0.1"
       },
-      "generated": "2026-07-07",
+      "generated": "2026-08-31",
       "formats": [
         "md"
       ],
