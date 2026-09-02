@@ -1,0 +1,970 @@
+- key: accountability
+  i18n:
+    en:
+      term: Accountability
+      definition: >-
+        The expectation that roles and members can be asked to explain actions, outcomes, and
+        adherence to agreed rules, with defined review and correction mechanisms.
+    de:
+      term: Rechenschaftspflicht
+      definition: >-
+        Die Erwartung, dass Rollen und Mitglieder aufgefordert werden können, Handlungen, Ergebnisse
+        und die Einhaltung vereinbarter Regeln zu erklären, mit definierten Überprüfungs- und
+        Korrekturmechanismen.
+    es:
+      term: Rendición de cuentas (Accountability)
+      definition: >-
+        La expectativa de que los roles y los miembros puedan ser llamados a explicar acciones,
+        resultados y cumplimiento de las reglas acordadas, con mecanismos definidos de revisión y
+        corrección.
+    fr:
+      term: Redevabilité (Accountability)
+      definition: >-
+        L'attente que les rôles et les membres puissent être invités à expliquer leurs actions,
+        résultats et conformité aux règles convenues, avec des mécanismes définis de revue et de
+        correction.
+    pt-br:
+      term: Prestação de Contas (Accountability)
+      definition: >-
+        A expectativa de que papéis e membros possam ser solicitados a explicar ações, resultados e
+        a aderência às regras acordadas, com mecanismos definidos de revisão e correção.
+- key: accountability-protocol
+  i18n:
+    en:
+      term: Accountability Protocol
+      definition: >-
+        An artifact defining how violations, harms, or repeated failures are reviewed, documented,
+        and addressed, including due process, safeguards, and escalation paths.
+    de:
+      term: Rechenschaftsprotokoll
+      definition: >-
+        Ein Artefakt, das festlegt, wie Verstöße, Schäden oder wiederholte Fehler überprüft,
+        dokumentiert und behandelt werden, einschließlich ordentlichem Verfahren, Schutzmaßnahmen
+        und Eskalationspfaden.
+    es:
+      term: Protocolo de rendición de cuentas (Accountability Protocol)
+      definition: >-
+        Un artefacto que define cómo se revisan, documentan y abordan las violaciones, daños o
+        fallos reiterados, incluyendo el debido proceso, salvaguardas y vías de escalamiento.
+    fr:
+      term: Protocole de redevabilité
+      definition: >-
+        Un artéfact définissant comment les violations, préjudices ou manquements répétés sont
+        examinés, documentés et traités, y compris la procédure régulière, les garanties et les
+        voies d'escalade.
+    pt-br:
+      term: Protocolo de Prestação de Contas
+      definition: >-
+        Um artefato que define como violações, danos ou falhas repetidas são revisados, documentados
+        e tratados, incluindo devido processo, salvaguardas e caminhos de escalonamento.
+- key: artifact
+  i18n:
+    en:
+      term: Artifact
+      definition: >-
+        A documented, versioned object (e.g. protocol, registry, charter) adopted through an
+        authorized process and used to operationalize RCOS layers.
+    de:
+      term: Artefakt
+      definition: >-
+        Ein dokumentiertes, versioniertes Objekt (z. B. Protokoll, Register, Satzung), das durch
+        einen autorisierten Prozess beschlossen und zur Operationalisierung von RCOS-Schichten
+        verwendet wird.
+    es:
+      term: Artefacto
+      definition: >-
+        Un objeto documentado y versionado (p. ej., protocolo, registro, carta fundacional) adoptado
+        mediante un proceso autorizado y utilizado para operativizar las capas de RCOS.
+    fr:
+      term: Artéfact
+      definition: >-
+        Un objet documenté et versionné (par ex. protocole, registre, charte) adopté par un
+        processus autorisé et utilisé pour opérationnaliser les couches RCOS.
+    pt-br:
+      term: Artefato
+      definition: >-
+        Um objeto documentado e versionado (ex.: protocolo, registro, carta) adotado por meio de um
+        processo autorizado e usado para operacionalizar as Camadas do RCOS.
+- key: authority-boundary
+  i18n:
+    en:
+      term: Authority Boundary
+      definition: The explicit limits within which a role, circle, or body may make decisions or act.
+    de:
+      term: Kompetenzgrenze
+      definition: >-
+        Die expliziten Grenzen, innerhalb derer eine Rolle, ein Kreis oder ein Gremium
+        Entscheidungen treffen oder handeln darf.
+    es:
+      term: Límite de autoridad (Authority Boundary)
+      definition: >-
+        Los límites explícitos dentro de los cuales un rol, círculo u órgano puede tomar decisiones
+        o actuar.
+    fr:
+      term: Limite d'autorité
+      definition: >-
+        Les limites explicites dans lesquelles un rôle, un cercle ou un organe peut prendre des
+        décisions ou agir.
+    pt-br:
+      term: Limite de Autoridade
+      definition: >-
+        Os limites explícitos dentro dos quais um papel, círculo ou corpo pode tomar decisões ou
+        agir.
+- key: change-protocol
+  i18n:
+    en:
+      term: Change Protocol
+      definition: >-
+        An artifact defining how changes are proposed, reviewed, adopted, published, and rolled
+        back, including decision type classification and emergency provisions.
+    de:
+      term: Änderungsprotokoll
+      definition: >-
+        Ein Artefakt, das festlegt, wie Änderungen vorgeschlagen, überprüft, beschlossen,
+        veröffentlicht und zurückgerollt werden, einschließlich der Klassifizierung von
+        Entscheidungstypen und Notfallregelungen.
+    es:
+      term: Protocolo de cambios (Change Protocol)
+      definition: >-
+        Un artefacto que define cómo se proponen, revisan, adoptan, publican y revierten los
+        cambios, incluyendo la clasificación del tipo de decisión y las disposiciones de emergencia.
+    fr:
+      term: Protocole de changement
+      definition: >-
+        Un artéfact définissant comment les changements sont proposés, examinés, adoptés, publiés et
+        annulés, y compris la classification des types de décision et les dispositions d'urgence.
+    pt-br:
+      term: Protocolo de Mudança
+      definition: >-
+        Um artefato que define como as mudanças são propostas, revisadas, adotadas, publicadas e
+        revertidas, incluindo classificação do tipo de decisão e disposições para emergências.
+- key: commons
+  i18n:
+    en:
+      term: Commons
+      definition: Resources governed collectively under explicit stewardship, access, and decision rules.
+    de:
+      term: Gemeingüter
+      definition: >-
+        Ressourcen, die kollektiv unter expliziten Verwaltungs-, Zugangs- und Entscheidungsregeln
+        geführt werden.
+    es:
+      term: Bienes comunes (Commons)
+      definition: >-
+        Recursos gobernados colectivamente bajo reglas explícitas de custodia, acceso y toma de
+        decisiones.
+    fr:
+      term: Communs
+      definition: >-
+        Ressources gouvernées collectivement selon des règles explicites d'intendance, d'accès et de
+        décision.
+    pt-br:
+      term: Bens Comuns (Commons)
+      definition: Recursos governados coletivamente sob regras explícitas de zeladoria, acesso e decisão.
+- key: community
+  i18n:
+    en:
+      term: Community
+      definition: >-
+        A group of people who voluntarily coordinate around a shared purpose within a defined scope
+        and governance system.
+    de:
+      term: Gemeinschaft
+      definition: >-
+        Eine Gruppe von Menschen, die sich freiwillig um einen gemeinsamen Zweck innerhalb eines
+        definierten Geltungsbereichs und Governance-Systems koordinieren.
+    es:
+      term: Comunidad
+      definition: >-
+        Un grupo de personas que se coordinan voluntariamente en torno a un propósito compartido
+        dentro de un ámbito y sistema de gobernanza definidos.
+    fr:
+      term: Communauté
+      definition: >-
+        Un groupe de personnes qui se coordonnent volontairement autour d'un objectif partagé, dans
+        un périmètre défini et un système de gouvernance.
+    pt-br:
+      term: Comunidade
+      definition: >-
+        Um grupo de pessoas que se coordenam voluntariamente em torno de um propósito compartilhado
+        dentro de um escopo e sistema de governança definidos.
+- key: compliance
+  i18n:
+    en:
+      term: Compliance
+      definition: The state of meeting all mandatory requirements of RCOS-Core across Layers 0–6.
+    de:
+      term: Konformität
+      definition: Der Zustand, alle Pflichtanforderungen von RCOS-Core über die Schichten 0–6 zu erfüllen.
+    es:
+      term: Cumplimiento (Compliance)
+      definition: >-
+        El estado de satisfacer todos los requisitos obligatorios de RCOS-Core a lo largo de las
+        Capas 0–6.
+    fr:
+      term: Conformité
+      definition: >-
+        L'état de satisfaction de toutes les exigences obligatoires de RCOS-Core à travers les
+        Couches 0 à 6.
+    pt-br:
+      term: Conformidade
+      definition: O estado de atender a todos os requisitos obrigatórios do RCOS-Core nas Camadas 0–6.
+- key: conflict-resolution-ladder
+  i18n:
+    en:
+      term: Conflict Resolution Ladder
+      definition: >-
+        A staged conflict process defining minimum resolution steps and escalation thresholds, from
+        low-intensity repair to governance review and, if necessary, separation.
+    de:
+      term: Konfliktlösungsleiter
+      definition: >-
+        Ein abgestufter Konfliktprozess, der Mindestlösungsschritte und Eskalationsschwellen
+        definiert, von schwach ausgeprägter Wiedergutmachung bis zur Governance-Überprüfung und,
+        falls nötig, Trennung.
+    es:
+      term: Escalera de resolución de conflictos (Conflict Resolution Ladder)
+      definition: >-
+        Un proceso de conflicto por etapas que define los pasos mínimos de resolución y los umbrales
+        de escalamiento, desde la reparación de baja intensidad hasta la revisión de gobernanza y,
+        si es necesario, la separación.
+    fr:
+      term: Échelle de résolution des conflits
+      definition: >-
+        Un processus de conflit par étapes définissant les étapes minimales de résolution et les
+        seuils d'escalade, allant de la réparation de faible intensité à la revue de gouvernance et,
+        si nécessaire, à la séparation.
+    pt-br:
+      term: Escada de Resolução de Conflitos
+      definition: >-
+        Um processo escalonado de conflitos que define etapas mínimas de resolução e limiares de
+        escalonamento, desde a reparação de baixa intensidade até a revisão pela governança e, se
+        necessário, a separação.
+- key: constitutional-decision
+  i18n:
+    en:
+      term: Constitutional Decision
+      definition: >-
+        A decision that modifies Layer 0 purpose, scope, invariants, or identity constraints, or the
+        governance system itself.
+    de:
+      term: Konstitutionelle Entscheidung
+      definition: >-
+        Eine Entscheidung, die den Zweck, den Geltungsbereich, die Invarianten oder
+        Identitätsbeschränkungen von Schicht 0 oder das Governance-System selbst verändert.
+    es:
+      term: Decisión constitucional
+      definition: >-
+        Una decisión que modifica el propósito, ámbito, invariantes o restricciones de identidad de
+        la Capa 0, o el propio sistema de gobernanza.
+    fr:
+      term: Décision constitutionnelle
+      definition: >-
+        Une décision qui modifie l'objectif, le périmètre, les invariants ou les contraintes
+        d'identité de la Couche 0, ou le système de gouvernance lui-même.
+    pt-br:
+      term: Decisão Constitucional
+      definition: >-
+        Uma decisão que modifica o propósito, escopo, invariantes ou restrições de identidade da
+        Camada 0, ou o próprio sistema de governança.
+- key: decision-matrix
+  i18n:
+    en:
+      term: Decision Matrix
+      definition: >-
+        A governance artifact mapping decision types and domains to authorized roles, mechanisms,
+        thresholds, and escalation paths.
+    de:
+      term: Entscheidungsmatrix
+      definition: >-
+        Ein Governance-Artefakt, das Entscheidungstypen und -domänen autorisierten Rollen,
+        Mechanismen, Schwellenwerten und Eskalationspfaden zuordnet.
+    es:
+      term: Matriz de decisiones (Decision Matrix)
+      definition: >-
+        Un artefacto de gobernanza que asocia tipos de decisiones y dominios con roles autorizados,
+        mecanismos, umbrales y vías de escalamiento.
+    fr:
+      term: Matrice de décision
+      definition: >-
+        Un artéfact de gouvernance associant les types et domaines de décision aux rôles autorisés,
+        mécanismes, seuils et voies d'escalade.
+    pt-br:
+      term: Matriz de Decisões
+      definition: >-
+        Um artefato de governança que mapeia tipos e domínios de decisão para papéis autorizados,
+        mecanismos, limiares e caminhos de escalonamento.
+- key: decision-type
+  i18n:
+    en:
+      term: Decision Type
+      definition: >-
+        A classification of decisions (Operational, Strategic, Constitutional) used to determine
+        authority and process.
+    de:
+      term: Entscheidungstyp
+      definition: >-
+        Eine Klassifizierung von Entscheidungen (Operativ, Strategisch, Konstitutionell), die zur
+        Bestimmung von Zuständigkeit und Prozess verwendet wird.
+    es:
+      term: Tipo de decisión
+      definition: >-
+        Una clasificación de decisiones (Operativa, Estratégica, Constitucional) utilizada para
+        determinar la autoridad y el proceso.
+    fr:
+      term: Type de décision
+      definition: >-
+        Une classification des décisions (opérationnelle, stratégique, constitutionnelle) utilisée
+        pour déterminer l'autorité et le processus.
+    pt-br:
+      term: Tipo de Decisão
+      definition: >-
+        Uma classificação de decisões (Operacionais, Estratégicas, Constitucionais) usada para
+        determinar autoridade e processo.
+- key: due-process
+  i18n:
+    en:
+      term: Due Process
+      definition: >-
+        The minimum fairness guarantees required before restricting rights, applying sanctions, or
+        triggering separation, including notice, review, and appeal pathways as defined.
+    de:
+      term: Ordentliches Verfahren
+      definition: >-
+        Die Mindestgarantien für Fairness, die erforderlich sind, bevor Rechte eingeschränkt,
+        Sanktionen verhängt oder eine Trennung ausgelöst wird, einschließlich Benachrichtigung,
+        Überprüfung und Rechtsmittelpfaden wie definiert.
+    es:
+      term: Debido proceso (Due Process)
+      definition: >-
+        Las garantías mínimas de equidad requeridas antes de restringir derechos, aplicar sanciones
+        o iniciar una separación, incluyendo notificación, revisión y vías de apelación según lo
+        definido.
+    fr:
+      term: Procédure régulière (Due Process)
+      definition: >-
+        Les garanties minimales d'équité requises avant de restreindre des droits, d'appliquer des
+        sanctions ou de déclencher une séparation, y compris les voies de notification, de revue et
+        d'appel telles que définies.
+    pt-br:
+      term: Devido Processo
+      definition: >-
+        As garantias mínimas de justiça exigidas antes de restringir direitos, aplicar sanções ou
+        acionar separação, incluindo notificação, revisão e caminhos de apelação conforme definido.
+- key: emergency-change
+  i18n:
+    en:
+      term: Emergency Change
+      definition: >-
+        A time-bounded change enacted under explicitly defined emergency conditions, requiring
+        post-hoc review and ratification or rollback.
+    de:
+      term: Notfalländerung
+      definition: >-
+        Eine zeitlich begrenzte Änderung, die unter explizit definierten Notfallbedingungen
+        umgesetzt wird und eine nachträgliche Überprüfung und Ratifizierung oder Rücknahme
+        erfordert.
+    es:
+      term: Cambio de emergencia
+      definition: >-
+        Un cambio con duración limitada promulgado bajo condiciones de emergencia explícitamente
+        definidas, que requiere revisión posterior y ratificación o reversión.
+    fr:
+      term: Changement d'urgence
+      definition: >-
+        Un changement limité dans le temps, adopté dans des conditions d'urgence explicitement
+        définies, nécessitant une revue a posteriori et une ratification ou une annulation.
+    pt-br:
+      term: Mudança de Emergência
+      definition: >-
+        Uma mudança com prazo determinado, decretada sob condições de emergência explicitamente
+        definidas, exigindo revisão posterior e ratificação ou reversão.
+- key: explicit
+  i18n:
+    en:
+      term: Explicit
+      definition: Written, adopted, accessible, and reviewable.
+    de:
+      term: Explizit
+      definition: Schriftlich festgelegt, beschlossen, zugänglich und überprüfbar.
+    es:
+      term: Explícito
+      definition: Escrito, adoptado, accesible y revisable.
+    fr:
+      term: Explicite
+      definition: Écrit, adopté, accessible et vérifiable.
+    pt-br:
+      term: Explícito
+      definition: Escrito, adotado, acessível e revisável.
+- key: explicitness-rule
+  i18n:
+    en:
+      term: Explicitness Rule
+      definition: >-
+        The principle that mechanisms allocating power, risk, responsibility, or exit conditions
+        must be written, adopted, and reviewable.
+    de:
+      term: Explizitheitsprinzip
+      definition: >-
+        Das Prinzip, dass Mechanismen zur Zuweisung von Macht, Risiko, Verantwortung oder
+        Austrittsbedingungen schriftlich festgelegt, beschlossen und überprüfbar sein müssen.
+    es:
+      term: Regla de explicitud (Explicitness Rule)
+      definition: >-
+        El principio de que los mecanismos que asignan poder, riesgo, responsabilidad o condiciones
+        de salida DEBEN estar escritos, adoptados y ser revisables.
+    fr:
+      term: Règle d'explicité
+      definition: >-
+        Le principe selon lequel les mécanismes attribuant le pouvoir, le risque, la responsabilité
+        ou les conditions de sortie DOIVENT être écrits, adoptés et vérifiables.
+    pt-br:
+      term: Regra da Explicitude
+      definition: >-
+        O princípio de que os mecanismos que alocam poder, risco, responsabilidade ou condições de
+        saída devem ser escritos, adotados e revisáveis.
+- key: experiment
+  i18n:
+    en:
+      term: Experiment
+      definition: A time-bounded, reversible change adopted for learning and evaluation.
+    de:
+      term: Experiment
+      definition: >-
+        Eine zeitlich begrenzte, reversible Änderung, die zu Lern- und Auswertungszwecken
+        beschlossen wird.
+    es:
+      term: Experimento
+      definition: >-
+        Un cambio con duración limitada y reversible, adoptado con fines de aprendizaje y
+        evaluación.
+    fr:
+      term: Expérimentation
+      definition: >-
+        Un changement limité dans le temps, réversible, adopté à des fins d'apprentissage et
+        d'évaluation.
+    pt-br:
+      term: Experimento
+      definition: Uma mudança com prazo determinado e reversível adotada para aprendizado e avaliação.
+- key: exit-separation-protocol
+  i18n:
+    en:
+      term: Exit & Separation Protocol
+      definition: >-
+        An artifact defining voluntary exit, forced exit due process, and separation of assets,
+        roles, access, and obligations.
+    de:
+      term: Austritts- und Trennungsprotokoll
+      definition: >-
+        Ein Artefakt, das freiwilligen Austritt, ordentliches Verfahren bei erzwungenem Austritt
+        sowie die Trennung von Ressourcen, Rollen, Zugängen und Verpflichtungen definiert.
+    es:
+      term: Protocolo de salida y separación (Exit & Separation Protocol)
+      definition: >-
+        Un artefacto que define la salida voluntaria, el debido proceso para la salida forzosa, y la
+        separación de activos, roles, acceso y obligaciones.
+    fr:
+      term: Protocole de sortie et de séparation
+      definition: >-
+        Un artéfact définissant la sortie volontaire, la procédure régulière de sortie forcée, et la
+        séparation des actifs, rôles, accès et obligations.
+    pt-br:
+      term: Protocolo de Saída e Separação
+      definition: >-
+        Um artefato que define saída voluntária, devido processo para saída forçada e separação de
+        ativos, papéis, acessos e obrigações.
+- key: governance-protocol
+  i18n:
+    en:
+      term: Governance Protocol
+      definition: >-
+        An artifact defining the decision lifecycle (proposal, deliberation, adoption,
+        documentation, review) and how governance conflicts are resolved.
+    de:
+      term: Governance-Protokoll
+      definition: >-
+        Ein Artefakt, das den Entscheidungslebenszyklus (Vorschlag, Beratung, Beschluss,
+        Dokumentation, Überprüfung) und die Lösung von Governance-Konflikten definiert.
+    es:
+      term: Protocolo de gobernanza (Governance Protocol)
+      definition: >-
+        Un artefacto que define el ciclo de vida de las decisiones (propuesta, deliberación,
+        adopción, documentación, revisión) y cómo se resuelven los conflictos de gobernanza.
+    fr:
+      term: Protocole de gouvernance
+      definition: >-
+        Un artéfact définissant le cycle de vie des décisions (proposition, délibération, adoption,
+        documentation, revue) et la manière dont les conflits de gouvernance sont résolus.
+    pt-br:
+      term: Protocolo de Governança
+      definition: >-
+        Um artefato que define o ciclo de vida das decisões (proposta, deliberação, adoção,
+        documentação, revisão) e como os conflitos de governança são resolvidos.
+- key: in-scope-out-of-scope
+  i18n:
+    en:
+      term: In-Scope / Out-of-Scope
+      definition: >-
+        In-scope refers to people, assets, domains, and activities explicitly governed by the
+        community. Out-of-scope refers to everything explicitly excluded or not declared in scope.
+    de:
+      term: Im Geltungsbereich / Außerhalb des Geltungsbereichs
+      definition: >-
+        Im Geltungsbereich bezeichnet Personen, Ressourcen, Domänen und Aktivitäten, die explizit
+        von der Gemeinschaft geregelt werden. Außerhalb des Geltungsbereichs bezeichnet alles, was
+        explizit ausgeschlossen oder nicht im Geltungsbereich deklariert wurde.
+    es:
+      term: Dentro del ámbito / Fuera del ámbito (In-Scope / Out-of-Scope)
+      definition: >-
+        Dentro del ámbito se refiere a las personas, activos, dominios y actividades explícitamente
+        gobernados por la comunidad. Fuera del ámbito se refiere a todo lo explícitamente excluido o
+        no declarado dentro del ámbito.
+    fr:
+      term: Dans le périmètre / Hors périmètre
+      definition: >-
+        Dans le périmètre désigne les personnes, actifs, domaines et activités explicitement
+        gouvernés par la communauté. Hors périmètre désigne tout ce qui est explicitement exclu ou
+        non déclaré dans le périmètre.
+    pt-br:
+      term: Dentro do Escopo / Fora do Escopo
+      definition: >-
+        Dentro do escopo refere-se a pessoas, ativos, domínios e atividades explicitamente
+        governados pela comunidade. Fora do escopo refere-se a tudo que é explicitamente excluído ou
+        não declarado dentro do escopo.
+- key: internal-economy-protocol
+  i18n:
+    en:
+      term: Internal Economy Protocol
+      definition: >-
+        An artifact defining contribution recognition and any internal exchange mechanisms,
+        including accumulation constraints and dispute correction.
+    de:
+      term: Protokoll zur internen Wirtschaft
+      definition: >-
+        Ein Artefakt, das die Anerkennung von Beiträgen und etwaige interne Austauschmechanismen
+        definiert, einschließlich Akkumulationsbeschränkungen und Streitkorrektur.
+    es:
+      term: Protocolo de economía interna (Internal Economy Protocol)
+      definition: >-
+        Un artefacto que define el reconocimiento de contribuciones y cualquier mecanismo de
+        intercambio interno, incluyendo restricciones de acumulación y corrección de disputas.
+    fr:
+      term: Protocole d'économie interne
+      definition: >-
+        Un artéfact définissant la reconnaissance des contributions et tout mécanisme d'échange
+        interne, y compris les contraintes d'accumulation et la correction des litiges.
+    pt-br:
+      term: Protocolo de Economia Interna
+      definition: >-
+        Um artefato que define o reconhecimento de contribuições e quaisquer mecanismos internos de
+        troca, incluindo restrições de acumulação e correção de disputas.
+- key: invariant
+  i18n:
+    en:
+      term: Invariant
+      definition: A non-negotiable constraint that cannot be overridden while it is in force.
+    de:
+      term: Invariante
+      definition: >-
+        Eine nicht verhandelbare Bedingung, die nicht außer Kraft gesetzt werden kann, solange sie
+        gilt.
+    es:
+      term: Invariante
+      definition: Una restricción no negociable que no puede ser anulada mientras esté en vigor.
+    fr:
+      term: Invariant
+      definition: Une contrainte non négociable qui ne PEUT pas être outrepassée tant qu'elle est en vigueur.
+    pt-br:
+      term: Invariante
+      definition: Uma restrição inegociável que não pode ser substituída enquanto estiver em vigor.
+- key: layer
+  i18n:
+    en:
+      term: Layer
+      definition: A functional domain of RCOS that defines a specific aspect of community operation.
+    de:
+      term: Schicht
+      definition: >-
+        Ein funktionaler Bereich von RCOS, der einen bestimmten Aspekt des Gemeinschaftsbetriebs
+        definiert.
+    es:
+      term: Capa (Layer)
+      definition: >-
+        Un dominio funcional de RCOS que define un aspecto específico del funcionamiento de la
+        comunidad.
+    fr:
+      term: Couche
+      definition: >-
+        Un domaine fonctionnel de RCOS qui définit un aspect spécifique du fonctionnement de la
+        communauté.
+    pt-br:
+      term: Camada
+      definition: Um domínio funcional do RCOS que define um aspecto específico da operação da comunidade.
+- key: learning-log
+  i18n:
+    en:
+      term: Learning Log
+      definition: >-
+        An artifact capturing major failures, adaptations, reversals, and lessons learned, including
+        triggers, affected artifacts, and outcomes.
+    de:
+      term: Lernprotokoll
+      definition: >-
+        Ein Artefakt, das wesentliche Fehler, Anpassungen, Rücknahmen und gewonnene Erkenntnisse
+        festhält, einschließlich Auslöser, betroffener Artefakte und Ergebnisse.
+    es:
+      term: Registro de aprendizaje (Learning Log)
+      definition: >-
+        Un artefacto que captura los fallos importantes, adaptaciones, reversiones y lecciones
+        aprendidas, incluyendo desencadenantes, artefactos afectados y resultados.
+    fr:
+      term: Journal d'apprentissage
+      definition: >-
+        Un artéfact consignant les échecs majeurs, adaptations, retours en arrière et leçons tirées,
+        y compris les déclencheurs, les artéfacts affectés et les résultats.
+    pt-br:
+      term: Registro de Aprendizado (Learning Log)
+      definition: >-
+        Um artefato que captura grandes falhas, adaptações, reversões e lições aprendidas, incluindo
+        gatilhos, artefatos afetados e resultados.
+- key: member
+  i18n:
+    en:
+      term: Member
+      definition: A person who has explicitly entered the community through the defined membership process.
+    de:
+      term: Mitglied
+      definition: >-
+        Eine Person, die explizit durch den definierten Mitgliedschaftsprozess in die Gemeinschaft
+        eingetreten ist.
+    es:
+      term: Miembro
+      definition: >-
+        Una persona que ha ingresado explícitamente a la comunidad a través del proceso de membresía
+        definido.
+    fr:
+      term: Membre
+      definition: Une personne qui a explicitement intégré la communauté par le processus d'adhésion défini.
+    pt-br:
+      term: Membro
+      definition: >-
+        Uma pessoa que entrou explicitamente na comunidade por meio do processo de associação
+        definido.
+- key: optional-module
+  i18n:
+    en:
+      term: Optional Module
+      definition: A domain-specific extension that builds on RCOS-Core without altering its mandatory layers.
+    de:
+      term: Optionales Modul
+      definition: >-
+        Eine domänenspezifische Erweiterung, die auf RCOS-Core aufbaut, ohne dessen Pflichtschichten
+        zu verändern.
+    es:
+      term: Módulo opcional
+      definition: >-
+        Una extensión específica de dominio que se basa en RCOS-Core sin alterar sus capas
+        obligatorias.
+    fr:
+      term: Module optionnel
+      definition: >-
+        Une extension spécifique à un domaine qui s'appuie sur RCOS-Core sans modifier ses couches
+        obligatoires.
+    pt-br:
+      term: Módulo Opcional
+      definition: >-
+        Uma extensão específica de domínio que se baseia no RCOS-Core sem alterar suas camadas
+        obrigatórias.
+- key: registry
+  i18n:
+    en:
+      term: Registry
+      definition: >-
+        An artifact that records a set of authoritative entries (e.g., roles, resources, membership
+        states) with clear ownership, update rules, and version history.
+    de:
+      term: Register
+      definition: >-
+        Ein Artefakt, das eine Menge autoritativer Einträge (z. B. Rollen, Ressourcen,
+        Mitgliedschaftszustände) mit klarer Zuständigkeit, Aktualisierungsregeln und
+        Versionshistorie erfasst.
+    es:
+      term: Registro (Registry)
+      definition: >-
+        Un artefacto que registra un conjunto de entradas autoritativas (p. ej., roles, recursos,
+        estados de membresía) con titularidad clara, reglas de actualización e historial de
+        versiones.
+    fr:
+      term: Registre
+      definition: >-
+        Un artéfact qui enregistre un ensemble d'entrées faisant autorité (par ex. rôles,
+        ressources, statuts d'adhésion) avec une propriété claire, des règles de mise à jour et un
+        historique de versions.
+    pt-br:
+      term: Registro (Registry)
+      definition: >-
+        Um artefato que mantém um conjunto de entradas autoritativas (ex.: papéis, recursos, estados
+        de associação) com clareza sobre propriedade, regras de atualização e histórico de versões.
+- key: reference-implementation
+  i18n:
+    en:
+      term: Reference Implementation
+      definition: A real-world community that publicly documents its application of RCOS-Core.
+    de:
+      term: Referenzimplementierung
+      definition: Eine reale Gemeinschaft, die ihre Anwendung von RCOS-Core öffentlich dokumentiert.
+    es:
+      term: Implementación de referencia
+      definition: Una comunidad del mundo real que documenta públicamente su aplicación de RCOS-Core.
+    fr:
+      term: Implémentation de référence
+      definition: Une communauté réelle qui documente publiquement son application de RCOS-Core.
+    pt-br:
+      term: Implementação de Referência
+      definition: Uma comunidade do mundo real que documenta publicamente sua aplicação do RCOS-Core.
+- key: role
+  i18n:
+    en:
+      term: Role
+      definition: >-
+        An explicitly defined bundle of responsibilities, authority, and accountability, independent
+        of the person holding it.
+    de:
+      term: Rolle
+      definition: >-
+        Ein explizit definiertes Bündel aus Verantwortlichkeiten, Befugnissen und
+        Rechenschaftspflicht, unabhängig von der Person, die sie innehat.
+    es:
+      term: Rol
+      definition: >-
+        Un conjunto explícitamente definido de responsabilidades, autoridad y rendición de cuentas,
+        independiente de la persona que lo ocupa.
+    fr:
+      term: Rôle
+      definition: >-
+        Un ensemble explicitement défini de responsabilités, d'autorité et de redevabilité,
+        indépendant de la personne qui l'occupe.
+    pt-br:
+      term: Papel
+      definition: >-
+        Um conjunto explicitamente definido de responsabilidades, autoridade e prestação de contas,
+        independente da pessoa que o ocupa.
+- key: safety-critical
+  i18n:
+    en:
+      term: Safety-Critical
+      definition: >-
+        A condition where physical, psychological, or child safety is at risk, requiring elevated
+        safeguards and potentially immediate protective action.
+    de:
+      term: Sicherheitskritisch
+      definition: >-
+        Ein Zustand, in dem physische, psychische oder Kindersicherheit gefährdet ist, der erhöhte
+        Schutzmaßnahmen und möglicherweise sofortige Schutzmaßnahmen erfordert.
+    es:
+      term: Crítico para la seguridad (Safety-Critical)
+      definition: >-
+        Una condición en la que la seguridad física, psicológica o de menores está en riesgo, que
+        requiere salvaguardas reforzadas y, potencialmente, acción protectora inmediata.
+    fr:
+      term: Critique pour la sécurité
+      definition: >-
+        Une situation dans laquelle la sécurité physique, psychologique ou celle des enfants est en
+        danger, nécessitant des garanties renforcées et potentiellement une action protectrice
+        immédiate.
+    pt-br:
+      term: Crítico para a Segurança (Safety-Critical)
+      definition: >-
+        Uma condição em que a segurança física, psicológica ou infantil está em risco, exigindo
+        salvaguardas elevadas e potencialmente ação protetiva imediata.
+- key: sanction
+  i18n:
+    en:
+      term: Sanction
+      definition: >-
+        A defined, documented restriction or corrective action applied through authorized process,
+        proportionate to a violation and subject to review.
+    de:
+      term: Sanktion
+      definition: >-
+        Eine definierte, dokumentierte Einschränkung oder Korrekturmaßnahme, die durch einen
+        autorisierten Prozess verhängt wird, proportional zu einem Verstoß und einer Überprüfung
+        unterliegt.
+    es:
+      term: Sanción
+      definition: >-
+        Una restricción o acción correctiva definida y documentada, aplicada a través de un proceso
+        autorizado, proporcional a la infracción y sujeta a revisión.
+    fr:
+      term: Sanction
+      definition: >-
+        Une restriction ou action corrective définie et documentée, appliquée par un processus
+        autorisé, proportionnée à une violation et soumise à revue.
+    pt-br:
+      term: Sanção
+      definition: >-
+        Uma restrição ou ação corretiva definida e documentada, aplicada por meio de processo
+        autorizado, proporcional a uma violação e sujeita a revisão.
+- key: scope
+  i18n:
+    en:
+      term: Scope
+      definition: >-
+        The explicitly declared domains, assets, and activities over which the community exercises
+        authority.
+    de:
+      term: Geltungsbereich
+      definition: >-
+        Die explizit deklarierten Domänen, Ressourcen und Aktivitäten, über die die Gemeinschaft
+        Autorität ausübt.
+    es:
+      term: Ámbito (Scope)
+      definition: >-
+        Los dominios, activos y actividades explícitamente declarados sobre los cuales la comunidad
+        ejerce autoridad.
+    fr:
+      term: Périmètre
+      definition: >-
+        Les domaines, actifs et activités explicitement déclarés sur lesquels la communauté exerce
+        son autorité.
+    pt-br:
+      term: Escopo
+      definition: >-
+        Os domínios, ativos e atividades explicitamente declarados sobre os quais a comunidade
+        exerce autoridade.
+- key: stewardship
+  i18n:
+    en:
+      term: Stewardship
+      definition: >-
+        Responsibility for care, maintenance, and governance of a resource within defined
+        boundaries.
+    de:
+      term: Verwaltungsverantwortung
+      definition: >-
+        Verantwortung für Pflege, Instandhaltung und Governance einer Ressource innerhalb
+        definierter Grenzen.
+    es:
+      term: Custodia (Stewardship)
+      definition: >-
+        La responsabilidad del cuidado, mantenimiento y gobernanza de un recurso dentro de límites
+        definidos.
+    fr:
+      term: Intendance
+      definition: >-
+        La responsabilité du soin, de la maintenance et de la gouvernance d'une ressource dans des
+        limites définies.
+    pt-br:
+      term: Zeladoria (Stewardship)
+      definition: >-
+        Responsabilidade pelo cuidado, manutenção e governança de um recurso dentro de limites
+        definidos.
+- key: treasury
+  i18n:
+    en:
+      term: Treasury
+      definition: >-
+        The set of shared resources, balances, obligations, and commitments held under collective
+        rules.
+    de:
+      term: Gemeinschaftskasse
+      definition: >-
+        Die Gesamtheit der gemeinsamen Ressourcen, Salden, Verpflichtungen und Zusagen, die unter
+        kollektiven Regeln gehalten werden.
+    es:
+      term: Tesorería (Treasury)
+      definition: >-
+        El conjunto de recursos compartidos, saldos, obligaciones y compromisos gestionados bajo
+        reglas colectivas.
+    fr:
+      term: Trésorerie
+      definition: >-
+        L'ensemble des ressources partagées, soldes, obligations et engagements détenus selon des
+        règles collectives.
+    pt-br:
+      term: Tesouro (Treasury)
+      definition: >-
+        O conjunto de recursos compartilhados, saldos, obrigações e compromissos mantidos sob regras
+        coletivas.
+- key: treasury-ruleset
+  i18n:
+    en:
+      term: Treasury Ruleset
+      definition: >-
+        An artifact defining how treasury resources are held, spent, reported, audited, and
+        constrained, including thresholds and conflict-of-interest rules.
+    de:
+      term: Kassenregelwerk
+      definition: >-
+        Ein Artefakt, das festlegt, wie Ressourcen der Gemeinschaftskasse gehalten, ausgegeben,
+        berichtet, geprüft und eingeschränkt werden, einschließlich Schwellenwerte und
+        Interessenkonfliktregeln.
+    es:
+      term: Conjunto de reglas de tesorería (Treasury Ruleset)
+      definition: >-
+        Un artefacto que define cómo se mantienen, gastan, reportan, auditan y limitan los recursos
+        de la tesorería, incluyendo umbrales y reglas de conflicto de intereses.
+    fr:
+      term: Règles de trésorerie
+      definition: >-
+        Un artéfact définissant comment les ressources de la trésorerie sont détenues, dépensées,
+        rapportées, auditées et encadrées, y compris les seuils et les règles de conflit d'intérêts.
+    pt-br:
+      term: Conjunto de Regras do Tesouro
+      definition: >-
+        Um artefato que define como os recursos do tesouro são mantidos, gastos, reportados,
+        auditados e restringidos, incluindo limiares e regras de conflito de interesses.
+- key: transparency-exception
+  i18n:
+    en:
+      term: Transparency Exception
+      definition: >-
+        An explicitly defined, justified, time-bounded limitation on information access that still
+        permits compliance auditing.
+    de:
+      term: Transparenzausnahme
+      definition: >-
+        Eine explizit definierte, gerechtfertigte, zeitlich begrenzte Einschränkung des
+        Informationszugangs, die dennoch eine Konformitätsprüfung ermöglicht.
+    es:
+      term: Excepción de transparencia (Transparency Exception)
+      definition: >-
+        Una limitación explícitamente definida, justificada y con duración limitada al acceso a la
+        información, que aún permite la auditoría de cumplimiento.
+    fr:
+      term: Exception de transparence
+      definition: >-
+        Une limitation explicitement définie, justifiée et limitée dans le temps de l'accès à
+        l'information, qui permet néanmoins l'audit de conformité.
+    pt-br:
+      term: Exceção de Transparência
+      definition: >-
+        Uma limitação ao acesso à informação, explicitamente definida, justificada e com prazo
+        determinado, que ainda permite auditoria de conformidade.
+- key: version-history
+  i18n:
+    en:
+      term: Version History
+      definition: >-
+        An artifact recording which version is in force and documenting adopted changes, effective
+        dates, and decision references.
+    de:
+      term: Versionshistorie
+      definition: >-
+        Ein Artefakt, das festhält, welche Version in Kraft ist, und beschlossene Änderungen,
+        Inkrafttretensdaten und Entscheidungsreferenzen dokumentiert.
+    es:
+      term: Historial de versiones (Version History)
+      definition: >-
+        Un artefacto que registra qué versión está en vigor y documenta los cambios adoptados, las
+        fechas de entrada en vigencia y las referencias a las decisiones.
+    fr:
+      term: Historique de versions
+      definition: >-
+        Un artéfact enregistrant quelle version est en vigueur et documentant les changements
+        adoptés, les dates d'entrée en vigueur et les références de décision.
+    pt-br:
+      term: Histórico de Versões
+      definition: >-
+        Um artefato que registra qual versão está em vigor e documenta mudanças adotadas, datas de
+        vigência e referências de decisão.

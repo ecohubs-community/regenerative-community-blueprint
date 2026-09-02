@@ -1,0 +1,43 @@
+{
+  "generated": "2026-09-02",
+  "licence": "CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "RCOS — Regenerative Community Operating System, EcoHubs",
+  "standards": [
+    {
+      "id": "rcos-core",
+      "version": "0.1",
+      "counts": {
+        "clauses": 213,
+        "must": 185,
+        "countable": 173,
+        "artifacts": 22,
+        "mandatoryArtifacts": 21,
+        "sections": 118,
+        "sectionsWithoutClauses": 25,
+        "glossary": 37
+      }
+    }
+  ],
+  "files": {
+    "rcos-core/0.1/clauses.yaml": {
+      "sha256": "1d8e242aba11f6a1db1db74d5aebb7778bb5465d927b46abccf2e5990e68c36f",
+      "bytes": 271484
+    },
+    "rcos-core/0.1/sections.yaml": {
+      "sha256": "c9deb725992bcd3a662b667a758cf103e83b5e96aad2dbd1437f86d975af1477",
+      "bytes": 599266
+    },
+    "rcos-core/0.1/artifacts.yaml": {
+      "sha256": "301be10980b4fb0c4c096e876422b09ac6b52c14b703fea46bbaffc36db457f0",
+      "bytes": 33477
+    },
+    "rcos-core/0.1/glossary.yaml": {
+      "sha256": "5e48c04b5c100c3df602fd760dc38f0fcf4e9cbddc7de91a14cda0c520d18eff",
+      "bytes": 41338
+    },
+    "rcos-core/0.1/meta.yaml": {
+      "sha256": "b5b63749c5d013babbb2536fc663bb827db03712632b9a1904d89c515f53dca7",
+      "bytes": 711
+    }
+  }
+}

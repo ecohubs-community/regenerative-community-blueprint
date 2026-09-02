@@ -1,0 +1,185 @@
+# Clause ownership and dispositions — RCOS-Core 0.1
+#
+# The templates reference clauses generously: a clause about membership states is
+# cited by the Membership Agreement, the Onboarding Protocol and the Membership
+# State Registry, because a reader of any of them wants to see it. That is right
+# for reading and wrong for counting — if three sections "answer" one clause, no
+# tool can say whether it is answered, and an auditor asking "where did you define
+# this?" gets three answers that may disagree.
+#
+# So each clause has exactly ONE owning section. Every other section keeps its
+# reference; it simply does not own it.
+#
+# Two rules governed these decisions:
+#
+#   1. The owner is the section a member would open in order to WRITE the answer.
+#      Where a clause is an umbrella ("the Protocol MUST define, at minimum: …"),
+#      the owner is the artifact's first, most general section.
+#   2. A MUST clause may never be owned by a section of a non-mandatory artifact.
+#      Experiment Template is the only optional artifact in 0.1, so every
+#      experiment obligation is owned by Change Protocol instead — otherwise a
+#      community that never runs an experiment could not reach compliance.
+#
+# Ownership decides only which clause counts where. It does not decide what a
+# community writes: a section that owns no clause still has its own scaffolding
+# and still needs a definition for its artifact to be complete.
+#
+# Reasoning per decision: RCOS-compass docs/12-clause-ownership-report.md
+
+owners:
+  # ---- Layer 0 · Identity & Scope -----------------------------------------
+  '2.1.5': purpose-charter.primary-purpose
+  '2.2.1': scope-declaration.in-scope-assets
+  '2.2.2': scope-declaration.in-scope-assets
+  # The default is the *out of scope* rule, so it belongs there, not with assets.
+  '2.2.4': scope-declaration.explicitly-out-of-scope
+  '2.4.1': identity-constraints-register.active-identity-constraints
+  '2.4.3': identity-constraints-register.enforcement-and-testability
+  '2.4.4': identity-constraints-register.enforcement-and-testability
+
+  # ---- Layer 1 · Membership ------------------------------------------------
+  # States are defined in the registry; the agreement and the onboarding protocol
+  # both quote them.
+  '3.1.2': membership-state-registry.defined-membership-states
+  '3.1.4': membership-state-registry.defined-membership-states
+  '3.2.2': onboarding-protocol.onboarding-steps
+  # An obligation with no matching right binds obligations, so it lives there.
+  '3.4.4': membership-agreement.member-obligations
+  '3.6.3': exit-protocol.forced-exit
+  '3.6.4': exit-protocol.voluntary-exit
+
+  # ---- Layer 2 · Governance ------------------------------------------------
+  '4.5.1': governance-protocol.proposal-submission
+  '4.5.2': governance-protocol.proposal-submission
+  '4.5.4': governance-protocol.documentation-and-publication
+  '4.6.2': governance-protocol.safeguards-and-failure-modes
+
+  # ---- Layer 3 · Economy ---------------------------------------------------
+  '5.2.5': internal-economy-protocol.contribution-recognition-mechanism
+  # Income is treasury business even when the interface is an internal one.
+  '5.3.2': treasury-ruleset.income-sources
+  '5.4.3': internal-economy-protocol.accumulation-constraints
+
+  # ---- Layer 4 · Conflict --------------------------------------------------
+  '6.1.5': conflict-resolution-ladder.conflict-classification
+  '6.2.5': conflict-resolution-ladder.resolution-ladder-steps
+  '6.3.1': conflict-resolution-ladder.safeguards
+  # The Accountability Protocol has a section named for exactly this obligation.
+  '6.3.2': accountability-protocol.anti-retaliation-protections
+  '6.3.3': conflict-resolution-ladder.safeguards
+  '6.4.1': accountability-protocol.sanction-and-repair-options
+  '6.4.2': accountability-protocol.sanction-and-repair-options
+  '6.4.3': accountability-protocol.sanction-and-repair-options
+  '6.4.4': accountability-protocol.coordination-with-layer-1
+  '6.4.6': accountability-protocol.sanction-and-repair-options
+  '6.5.3': conflict-resolution-ladder.conflict-classification
+  '6.5.4': accountability-protocol.triggers
+
+  # ---- Layer 5 · Operations ------------------------------------------------
+  '7.1.1': role-registry.overview
+  '7.1.2': role-registry.overview
+  '7.1.4': role-registry.overview
+  '7.2.1': meeting-templates.meeting-type-operations
+  '7.2.2': meeting-templates.meeting-type-operations
+  '7.2.3': meeting-templates.meeting-type-operations
+  '7.3.2': operations-manual.documentation-locations-and-update-procedures
+  '7.3.4': operations-manual.core-operational-processes
+  '7.6.3': operations-manual.core-operational-processes
+  '7.6.4': meeting-templates.meeting-type-operations
+  '7.7.1': role-registry.overview
+
+  # ---- Layer 6 · Evolution -------------------------------------------------
+  '8.1.2': change-protocol.how-proposals-are-classified
+  # The Version History is the artifact that records versions; the Change Protocol
+  # references it.
+  '8.2.1': version-history.entry-format
+  '8.2.2': version-history.entry-format
+  '8.2.4': version-history.entry-format
+  # What counts as a valid adopted change is the Change Protocol's business.
+  '8.2.5': change-protocol.adoption-and-publication
+  # Every experiment obligation belongs to the Change Protocol: Experiment
+  # Template is optional, and a MUST clause owned by an optional artifact would
+  # put compliance out of reach for a community that never experiments.
+  '8.3.1': change-protocol.experiments
+  '8.3.2': change-protocol.experiments
+  '8.3.3': change-protocol.experiments
+  '8.3.4': change-protocol.experiments
+  '8.3.5': change-protocol.experiments
+  '8.5.1': change-protocol.rollback
+  '8.6.3': change-protocol.how-changes-are-proposed
+  '8.6.5': learning-log.what-constitutes-a-learnable-event
+  '8.7.3': change-protocol.experiments
+
+# Clauses no community answers.
+#
+# Marking these is not a convenience. Counted as ordinary requirements they put a
+# ceiling on readiness that no community could ever reach, because there is no
+# text anyone could write that would satisfy them.
+dispositions:
+  # "Layer N artifacts MUST be explicit, versioned, accessible to all members,
+  # adopted through an authorized process." A tool that versions every definition,
+  # shows it to every member by default, and records the decision that adopted it
+  # satisfies these structurally.
+  '4.7.2':
+    disposition: satisfied_by_platform
+    note: >-
+      Every definition is versioned, member-visible by default, and adopted only
+      through a recorded decision. "Explicit and unambiguous" is the one half a
+      tool cannot guarantee; the definition linter assists but does not certify.
+  '5.5.2':
+    disposition: satisfied_by_platform
+    note: >-
+      As 4.7.2. Bounded exceptions to member visibility exist only as recorded,
+      expiring Transparency Exceptions.
+  '6.5.2':
+    disposition: satisfied_by_platform
+    note: >-
+      As 4.7.2, with privacy boundaries expressed as Transparency Exceptions
+      rather than as silent permissions.
+  '7.6.2':
+    disposition: satisfied_by_platform
+    note: >-
+      As 4.7.2. "Maintained as living documents with defined ownership and review
+      cycles" is met by review dates and the definition's recorded author.
+  '8.6.2':
+    disposition: satisfied_by_platform
+    note: 'As 4.7.2.'
+
+  # "If artifacts are missing or contradictory, the community MUST be considered
+  # non-compliant." Addressed to whoever evaluates compliance, not to the
+  # community. The tool implements it directly.
+  '2.5.3':
+    disposition: satisfied_by_platform
+    note: >-
+      Compliance is computed as false while any mandatory artifact is incomplete,
+      and a published claim is withdrawn automatically when that happens.
+  '3.8.3':
+    disposition: satisfied_by_platform
+    note: 'As 2.5.3.'
+  '4.7.3':
+    disposition: satisfied_by_platform
+    note: 'As 2.5.3.'
+
+  # "The following MUST remain optional and out of scope." A constraint on what
+  # the standard itself may demand. A community writing an answer here would be a
+  # category error — the clause exists to stop anyone requiring one.
+  '5.7.3':
+    disposition: not_a_definition
+    note: >-
+      Bounds the standard, not the community: attitudes toward wealth, equal vs
+      differentiated outcomes, and personal financial choices stay out of scope.
+  '6.7.3':
+    disposition: not_a_definition
+    note: >-
+      Bounds the standard: emotional expression norms and therapeutic, spiritual
+      or ideological framings of conflict stay out of scope.
+  '7.8.3':
+    disposition: not_a_definition
+    note: >-
+      Bounds the standard: personal work styles, aesthetic preferences and
+      informal social coordination stay out of scope.
+  '8.8.3':
+    disposition: not_a_definition
+    note: >-
+      Bounds the standard: pace of innovation and cultural attitudes to risk stay
+      out of scope.

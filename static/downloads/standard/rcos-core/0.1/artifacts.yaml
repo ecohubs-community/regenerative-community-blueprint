@@ -1,0 +1,806 @@
+- key: identity-constraints-register
+  sourceId: t2e1fdh8
+  layer: 0
+  order: 3
+  i18n:
+    en:
+      title: Identity Constraints Register
+      summary: >-
+        Identity constraints are the non-negotiable behavioural, ethical, and structural boundaries
+        that shape who the community is. Unlike invariants (which protect the system itself),
+        identity constraints define how members and the community relate to people, ecosystems, and
+        ideologies.
+    de:
+      title: Register der Identitätsbeschränkungen
+      summary: >-
+        Identitätsbeschränkungen sind die nicht verhandelbaren verhaltensbezogenen, ethischen und
+        strukturellen Grenzen, die bestimmen, wer die Gemeinschaft ist. Anders als Invarianten (die
+        das System selbst schützen) definieren Identitätsbeschränkungen, wie Mitglieder und die
+        Gemeinschaft sich zu Menschen, Ökosystemen und Ideologien verhalten.
+    es:
+      title: Registro de Restricciones de Identidad
+      summary: >-
+        Las restricciones de identidad son los límites conductuales, éticos y estructurales no
+        negociables que definen quién es la comunidad. A diferencia de los invariantes (que protegen
+        el sistema en sí), las restricciones de identidad definen cómo los miembros y la comunidad
+        se relacionan con las personas, los ecosistemas y las ideologías.
+    fr:
+      title: Registre des contraintes d'identité
+      summary: >-
+        Les contraintes d'identité sont les limites comportementales, éthiques et structurelles non
+        négociables qui définissent ce qu'est la communauté. Contrairement aux invariants (qui
+        protègent le système lui-même), les contraintes d'identité définissent la manière dont les
+        membres et la communauté se rapportent aux personnes, aux écosystèmes et aux idéologies.
+    pt-br:
+      title: Registro de Restrições de Identidade
+      summary: >-
+        Restrições de identidade são os limites comportamentais, éticos e estruturais inegociáveis
+        que definem quem a comunidade é. Diferente dos invariantes (que protegem o próprio sistema),
+        as restrições de identidade definem como os membros e a comunidade se relacionam com
+        pessoas, ecossistemas e ideologias.
+  mandatory: true
+  sectionKeys:
+    - identity-constraints-register.active-identity-constraints
+    - identity-constraints-register.enforcement-and-testability
+    - identity-constraints-register.conditions-for-change
+    - identity-constraints-register.ratification-record
+- key: invariants-register
+  sourceId: 0672a85f
+  layer: 0
+  order: 2
+  i18n:
+    en:
+      title: Invariants Register
+      summary: >-
+        Invariants are constraints that MUST NOT be violated while they are in force. No decision,
+        role, process, or emergency measure may override an invariant. If a conflict arises between
+        an invariant and any other rule, the invariant prevails.
+    de:
+      title: Invariantenregister
+      summary: >-
+        Invarianten sind Rahmenbedingungen, die DARF NICHT verletzt werden, solange sie in Kraft
+        sind. Keine Entscheidung, Rolle, Prozess oder Notfallmaßnahme darf eine Invariante außer
+        Kraft setzen. Entsteht ein Konflikt zwischen einer Invariante und einer anderen Regel, hat
+        die Invariante Vorrang.
+    es:
+      title: Registro de Invariantes
+      summary: >-
+        Las invariantes son restricciones que NO DEBEN ser violadas mientras estén en vigor. Ninguna
+        decisión, rol, proceso o medida de emergencia puede anular una invariante. Si surge un
+        conflicto entre una invariante y cualquier otra regla, la invariante prevalece.
+    fr:
+      title: Registre des invariants
+      summary: >-
+        Les invariants sont des contraintes qui NE DOIVENT PAS être violées tant qu'ils sont en
+        vigueur. Aucune décision, aucun rôle, processus ou mesure d'urgence ne PEUT outrepasser un
+        invariant. En cas de conflit entre un invariant et toute autre règle, l'invariant prévaut.
+    pt-br:
+      title: Registro de Invariantes
+      summary: >-
+        Invariantes são restrições que NÃO DEVEM ser violadas enquanto estiverem em vigor. Nenhuma
+        decisão, papel, processo ou medida emergencial pode sobrepor um invariante. Se surgir um
+        conflito entre um invariante e qualquer outra regra, o invariante prevalece.
+  mandatory: true
+  sectionKeys:
+    - invariants-register.active-invariants
+    - invariants-register.ratification-record
+- key: purpose-charter
+  sourceId: 543520dc
+  layer: 0
+  order: 0
+  i18n:
+    en:
+      title: Purpose Charter
+      summary: null
+    de:
+      title: Zweckcharta
+      summary: null
+    es:
+      title: Carta de Propósito
+      summary: null
+    fr:
+      title: Charte de raison d'être
+      summary: null
+    pt-br:
+      title: Carta de Propósito
+      summary: null
+  mandatory: true
+  sectionKeys:
+    - purpose-charter.primary-purpose
+    - purpose-charter.secondary-purposes
+    - purpose-charter.non-goals-and-exclusions
+    - purpose-charter.conditions-for-purpose-change
+    - purpose-charter.ratification-record
+- key: scope-declaration
+  sourceId: 5bfa1b3e
+  layer: 0
+  order: 1
+  i18n:
+    en:
+      title: Scope Declaration
+      summary: null
+    de:
+      title: Geltungsbereichserklärung
+      summary: null
+    es:
+      title: Declaración de Alcance
+      summary: null
+    fr:
+      title: Déclaration de périmètre
+      summary: null
+    pt-br:
+      title: Declaração de Escopo
+      summary: null
+  mandatory: true
+  sectionKeys:
+    - scope-declaration.in-scope-assets
+    - scope-declaration.in-scope-decision-domains
+    - scope-declaration.in-scope-activities-and-responsibilities
+    - scope-declaration.explicitly-out-of-scope
+    - scope-declaration.ratification-record
+- key: exit-protocol
+  sourceId: 0e61a813
+  layer: 1
+  order: 2
+  i18n:
+    en:
+      title: Exit & Separation Protocol
+      summary: null
+    de:
+      title: Austritts- & Trennungsprotokoll
+      summary: null
+    es:
+      title: Protocolo de Salida y Separación
+      summary: null
+    fr:
+      title: Protocole de sortie et de séparation
+      summary: null
+    pt-br:
+      title: Protocolo de Saída e Separação
+      summary: null
+  mandatory: true
+  sectionKeys:
+    - exit-protocol.voluntary-exit
+    - exit-protocol.forced-exit
+    - exit-protocol.suspension
+    - exit-protocol.asset-role-and-responsibility-separation
+    - exit-protocol.ratification-record
+- key: membership-agreement
+  sourceId: 15fe28a6
+  layer: 1
+  order: 0
+  i18n:
+    en:
+      title: Membership Agreement
+      summary: >-
+        Signed (or explicitly acknowledged) by every member at the time of admission. Defines the
+        rights and obligations of each membership state.
+    de:
+      title: Mitgliedschaftsvereinbarung
+      summary: >-
+        Wird von jedem Mitglied zum Zeitpunkt der Aufnahme unterschrieben (oder ausdrücklich
+        bestätigt). Definiert die Rechte und Pflichten jedes Mitgliedschaftsstatus.
+    es:
+      title: Acuerdo de Membresía
+      summary: >-
+        Firmado (o reconocido explícitamente) por cada miembro en el momento de su admisión. Define
+        los derechos y obligaciones de cada estado de membresía.
+    fr:
+      title: Accord d'adhésion
+      summary: >-
+        Signé (ou explicitement reconnu) par chaque membre au moment de l'admission. Définit les
+        droits et obligations de chaque état d'adhésion.
+    pt-br:
+      title: Acordo de Associação
+      summary: >-
+        Assinado (ou explicitamente reconhecido) por cada membro no momento da admissão. Define os
+        direitos e obrigações de cada estado de associação.
+  mandatory: true
+  sectionKeys:
+    - membership-agreement.membership-state-on-signing
+    - membership-agreement.member-rights
+    - membership-agreement.member-obligations
+    - membership-agreement.participation-and-contribution-expectations
+    - membership-agreement.due-process-reference
+    - membership-agreement.consent-acknowledgment
+    - membership-agreement.ratification-record
+- key: membership-state-registry
+  sourceId: b6d4e7f9
+  layer: 1
+  order: 3
+  i18n:
+    en:
+      title: Membership State Registry
+      summary: No individual may hold multiple membership states simultaneously.
+    de:
+      title: Mitgliedschaftsstatus-Register
+      summary: Keine Person darf mehrere Mitgliedschaftsstatus gleichzeitig innehaben.
+    es:
+      title: Registro de Estados de Membresía
+      summary: Ninguna persona puede tener múltiples estados de membresía simultáneamente.
+    fr:
+      title: Registre des états de membre
+      summary: Aucune personne ne peut détenir plusieurs états de membre simultanément.
+    pt-br:
+      title: Registro de Estados de Associação
+      summary: Nenhuma pessoa pode estar em múltiplos estados de associação ao mesmo tempo.
+  mandatory: true
+  sectionKeys:
+    - membership-state-registry.defined-membership-states
+    - membership-state-registry.ratification-record
+- key: onboarding-protocol
+  sourceId: 8f3a5c21
+  layer: 1
+  order: 1
+  i18n:
+    en:
+      title: Onboarding Protocol
+      summary: null
+    de:
+      title: Onboarding-Protokoll
+      summary: null
+    es:
+      title: Protocolo de Incorporación
+      summary: null
+    fr:
+      title: Protocole d'intégration
+      summary: null
+    pt-br:
+      title: Protocolo de Integração
+      summary: null
+  mandatory: true
+  sectionKeys:
+    - onboarding-protocol.admission-criteria
+    - onboarding-protocol.onboarding-steps
+    - onboarding-protocol.initial-membership-state
+    - onboarding-protocol.trial-and-evaluation
+    - onboarding-protocol.completion-record
+    - onboarding-protocol.ratification-record
+- key: authority-registry
+  sourceId: 2e9c4a18
+  layer: 2
+  order: 2
+  i18n:
+    en:
+      title: Authority Registry
+      summary: >-
+        Lists all roles, circles, or bodies that hold decision-making authority, along with their
+        explicit scope, limits, and term.
+    de:
+      title: Autoritätenregister
+      summary: >-
+        Listet alle Rollen, Kreise oder Gremien auf, die Entscheidungsbefugnis besitzen, zusammen
+        mit ihrem expliziten Geltungsbereich, ihren Grenzen und ihrer Amtszeit.
+    es:
+      title: Registro de Autoridades
+      summary: >-
+        Enumera todos los roles, círculos u órganos que poseen autoridad de toma de decisiones,
+        junto con su alcance explícito, límites y duración del mandato.
+    fr:
+      title: Registre des autorités
+      summary: >-
+        Répertorie tous les rôles, cercles ou organes détenant une autorité décisionnelle, ainsi que
+        leur périmètre explicite, leurs limites et leur durée de mandat.
+    pt-br:
+      title: Registro de Autoridades
+      summary: >-
+        Lista todos os papéis, círculos ou órgãos que detêm autoridade decisória, junto com seu
+        escopo explícito, limites e duração.
+  mandatory: true
+  sectionKeys:
+    - authority-registry.registered-authorities
+    - authority-registry.ratification-record
+- key: decision-matrix
+  sourceId: 4885248e
+  layer: 2
+  order: 0
+  i18n:
+    en:
+      title: Decision Matrix
+      summary: >-
+        Maps every decision type and domain to an authorized role or body, mechanism, threshold, and
+        escalation path. Decisions made outside this matrix are considered invalid.
+    de:
+      title: Entscheidungsmatrix
+      summary: >-
+        Ordnet jeden Entscheidungstyp und -bereich einer autorisierten Rolle oder einem Gremium,
+        einem Mechanismus, einer Schwelle und einem Eskalationspfad zu. Entscheidungen, die
+        außerhalb dieser Matrix getroffen werden, gelten als ungültig.
+    es:
+      title: Matriz de Decisiones
+      summary: >-
+        Asigna cada tipo de decisión y dominio a un rol o cuerpo autorizado, mecanismo, umbral y vía
+        de escalamiento. Las decisiones tomadas fuera de esta matriz se consideran inválidas.
+    fr:
+      title: Matrice de décision
+      summary: >-
+        Associe chaque type et domaine de décision à un rôle ou organe autorisé, un mécanisme, un
+        seuil et un chemin d'escalade. Toute décision prise en dehors de cette matrice est
+        considérée comme invalide.
+    pt-br:
+      title: Matriz de Decisão
+      summary: >-
+        Mapeia cada tipo e domínio de decisão para um papel ou órgão autorizado, mecanismo, limiar e
+        caminho de escalonamento. Decisões tomadas fora desta matriz são consideradas inválidas.
+  mandatory: true
+  sectionKeys:
+    - decision-matrix.voting-principles
+    - decision-matrix.matrix
+    - decision-matrix.decision-type-definitions
+    - decision-matrix.ratification-record
+- key: governance-protocol
+  sourceId: 1403643f
+  layer: 2
+  order: 1
+  i18n:
+    en:
+      title: Governance Protocol
+      summary: >-
+        Defines the full lifecycle of a collective decision — from proposal submission to
+        documentation and appeal.
+    de:
+      title: Governance-Protokoll
+      summary: >-
+        Definiert den vollständigen Lebenszyklus einer kollektiven Entscheidung — von der
+        Antragseinreichung bis zur Dokumentation und zum Einspruch.
+    es:
+      title: Protocolo de Gobernanza
+      summary: >-
+        Define el ciclo de vida completo de una decisión colectiva — desde la presentación de la
+        propuesta hasta la documentación y la apelación.
+    fr:
+      title: Protocole de gouvernance
+      summary: >-
+        Définit le cycle de vie complet d'une décision collective — de la soumission de proposition
+        à la documentation et à l'appel.
+    pt-br:
+      title: Protocolo de Governança
+      summary: >-
+        Define o ciclo de vida completo de uma decisão coletiva — desde a submissão da proposta até
+        a documentação e o recurso.
+  mandatory: true
+  sectionKeys:
+    - governance-protocol.proposal-submission
+    - governance-protocol.review-and-deliberation
+    - governance-protocol.decision-execution
+    - governance-protocol.documentation-and-publication
+    - governance-protocol.appeal-and-review
+    - governance-protocol.conflict-between-decisions
+    - governance-protocol.safeguards-and-failure-modes
+    - governance-protocol.ratification-record
+- key: internal-economy-protocol
+  sourceId: 1496e7ff
+  layer: 3
+  order: 0
+  i18n:
+    en:
+      title: Internal Economy Protocol
+      summary: >-
+        Any unclassified resource must not be allocated, encumbered, monetized, or transferred until
+        classification is completed.
+    de:
+      title: Protokoll für die interne Wirtschaft
+      summary: >-
+        Nicht klassifizierte Ressourcen dürfen weder zugewiesen, belastet, monetarisiert noch
+        übertragen werden, bis die Klassifikation abgeschlossen ist.
+    es:
+      title: Protocolo de Economía Interna
+      summary: >-
+        Cualquier recurso sin clasificar no DEBE ser asignado, gravado, monetizado ni transferido
+        hasta que se complete la clasificación.
+    fr:
+      title: Protocole d'économie interne
+      summary: >-
+        Toute ressource non classifiée NE DOIT PAS être allouée, grevée, monétisée ou transférée
+        tant que la classification n'est pas complétée.
+    pt-br:
+      title: Protocolo de Economia Interna
+      summary: >-
+        Qualquer recurso não classificado não deve ser alocado, onerado, monetizado ou transferido
+        até que a classificação seja concluída.
+  mandatory: true
+  sectionKeys:
+    - internal-economy-protocol.commons-vs-private-classification
+    - internal-economy-protocol.recognized-contribution-categories
+    - internal-economy-protocol.contribution-recognition-mechanism
+    - internal-economy-protocol.internal-units
+    - internal-economy-protocol.accumulation-constraints
+    - internal-economy-protocol.external-income-interfaces
+    - internal-economy-protocol.dispute-resolution-for-economic-records
+    - internal-economy-protocol.ratification-record
+- key: treasury-ruleset
+  sourceId: 9ead12cf
+  layer: 3
+  order: 1
+  i18n:
+    en:
+      title: Treasury Ruleset
+      summary: null
+    de:
+      title: Kassensatzung
+      summary: null
+    es:
+      title: Reglamento de Tesorería
+      summary: null
+    fr:
+      title: Règles de trésorerie
+      summary: null
+    pt-br:
+      title: Regulamento da Tesouraria
+      summary: null
+  mandatory: true
+  sectionKeys:
+    - treasury-ruleset.treasury-scope
+    - treasury-ruleset.income-sources
+    - treasury-ruleset.spending-authority
+    - treasury-ruleset.transparency-and-reporting
+    - treasury-ruleset.reserve-risk-and-debt-constraints
+    - treasury-ruleset.conflict-of-interest-rules
+    - treasury-ruleset.ratification-record
+- key: accountability-protocol
+  sourceId: d0c21119
+  layer: 4
+  order: 1
+  i18n:
+    en:
+      title: Accountability Protocol
+      summary: >-
+        **Breach severity guidance:** _<medium = non-compliance with a Membership Agreement
+        obligation that does not threaten member safety or community integrity; serious = Layer 0
+        invariant violation, credible safety concern, persistent bad-faith conduct.>_
+    de:
+      title: Rechenschaftsprotokoll
+      summary: >-
+        **Leitlinie zur Verstoßschwere:** _<mittel = Nichteinhaltung einer Pflicht aus der
+        Mitgliedschaftsvereinbarung, die weder die Sicherheit von Mitgliedern noch die Integrität
+        der Gemeinschaft gefährdet; schwer = Verletzung einer Invariante der Schicht 0, glaubwürdige
+        Sicherheitsbedenken, anhaltend bösgläubiges Verhalten.>_
+    es:
+      title: Protocolo de Rendición de Cuentas
+      summary: >-
+        **Guía de gravedad del incumplimiento:** _<intermedio = incumplimiento de una obligación del
+        Acuerdo de Membresía que no amenaza la seguridad de los miembros ni la integridad de la
+        comunidad; grave = violación de invariante de la Capa 0, preocupación creíble de seguridad,
+        conducta persistente de mala fe.>_
+    fr:
+      title: Protocole de responsabilisation
+      summary: >-
+        **Guide de gravité des manquements :** _<intermédiaire = non-respect d'une obligation de
+        l'Accord d'adhésion qui ne menace pas la sécurité des membres ni l'intégrité de la
+        communauté ; grave = violation d'un invariant de la Couche 0, préoccupation crédible de
+        sécurité, conduite persistante de mauvaise foi.>_
+    pt-br:
+      title: Protocolo de Responsabilização
+      summary: >-
+        **Orientação sobre a gravidade do descumprimento:** _<médio = descumprimento de uma
+        obrigação do Acordo de Membresia que não ameaça a segurança dos membros ou a integridade da
+        comunidade; sério = violação de invariante da Camada 0, preocupação crível com segurança,
+        conduta persistente de má-fé.>_
+  mandatory: true
+  sectionKeys:
+    - accountability-protocol.triggers
+    - accountability-protocol.investigation-and-review
+    - accountability-protocol.due-process-guarantees
+    - accountability-protocol.anti-retaliation-protections
+    - accountability-protocol.sanction-and-repair-options
+    - accountability-protocol.conditions-for-restoring-rights
+    - accountability-protocol.coordination-with-layer-1
+    - accountability-protocol.ratification-record
+- key: conflict-resolution-ladder
+  sourceId: a1de3ac3
+  layer: 4
+  order: 0
+  i18n:
+    en:
+      title: Conflict Resolution Ladder
+      summary: >-
+        Safety-critical conflicts override participation rights, role continuity, and operational
+        convenience.
+    de:
+      title: Konfliktlösungsleiter
+      summary: >-
+        Sicherheitskritische Konflikte setzen Teilnahmerechte, Rollenkontinuität und betriebliche
+        Zweckmässigkeit ausser Kraft.
+    es:
+      title: Escalera de Resolución de Conflictos
+      summary: >-
+        Los conflictos críticos para la seguridad prevalecen sobre los derechos de participación, la
+        continuidad de roles y la conveniencia operativa.
+    fr:
+      title: Échelle de résolution des conflits
+      summary: >-
+        Les conflits critiques pour la sécurité priment sur les droits de participation, la
+        continuité des rôles et la commodité opérationnelle.
+    pt-br:
+      title: Escada de Resolução de Conflitos
+      summary: >-
+        Conflitos críticos de segurança prevalecem sobre direitos de participação, continuidade de
+        papéis e conveniência operacional.
+  mandatory: true
+  sectionKeys:
+    - conflict-resolution-ladder.conflict-classification
+    - conflict-resolution-ladder.resolution-ladder-steps
+    - conflict-resolution-ladder.non-response-withdrawal-and-deadlock
+    - conflict-resolution-ladder.facilitator-selection-and-replacement
+    - conflict-resolution-ladder.privacy-and-information-access-boundaries
+    - conflict-resolution-ladder.safeguards
+    - conflict-resolution-ladder.ratification-record
+- key: meeting-templates
+  sourceId: c416f3ec
+  layer: 5
+  order: 2
+  i18n:
+    en:
+      title: Meeting Templates
+      summary: >-
+        Meeting templates declare the purpose, decision scope, quorum, and structure of each meeting
+        type. A meeting without a declared template will, given enough time, accumulate authority it
+        should not have. Adapt these templates and add or remove meeting types as your community
+        needs.
+    de:
+      title: Sitzungsvorlagen
+      summary: >-
+        Sitzungsvorlagen legen Zweck, Entscheidungsbereich, Beschlussfähigkeit und Struktur jedes
+        Sitzungstyps fest. Eine Sitzung ohne festgelegte Vorlage wird mit der Zeit Befugnisse
+        ansammeln, die sie nicht haben sollte. Passt diese Vorlagen an und fügt Sitzungstypen hinzu
+        oder entfernt sie, wie es eure Gemeinschaft braucht.
+    es:
+      title: Plantillas de Reuniones
+      summary: >-
+        Las plantillas de reuniones declaran el propósito, el alcance de decisión, el quórum y la
+        estructura de cada tipo de reunión. Una reunión sin una plantilla declarada, dado el tiempo
+        suficiente, acumulará autoridad que no debería tener. Adapta estas plantillas y añade o
+        elimina tipos de reunión según las necesidades de tu comunidad.
+    fr:
+      title: Modèles de réunion
+      summary: >-
+        Les modèles de réunion déclarent l'objectif, le périmètre de décision, le quorum et la
+        structure de chaque type de réunion. Une réunion sans modèle déclaré finira, avec le temps,
+        par accumuler une autorité qu'elle ne devrait pas avoir. Adapte ces modèles et ajoute ou
+        supprime des types de réunion selon les besoins de ta communauté.
+    pt-br:
+      title: Modelos de Reunião
+      summary: >-
+        Os modelos de reunião declaram o propósito, o escopo de decisão, o quórum e a estrutura de
+        cada tipo de reunião. Uma reunião sem um modelo declarado, com tempo suficiente, acumulará
+        autoridade que não deveria ter. Adapte estes modelos e adicione ou remova tipos de reunião
+        conforme sua comunidade precisar.
+  mandatory: true
+  sectionKeys:
+    - meeting-templates.meeting-type-operations
+    - meeting-templates.meeting-type-governance
+    - meeting-templates.meeting-type-coordination-alignment
+    - meeting-templates.meeting-type-reflection-learning
+    - meeting-templates.meeting-type-conflict-handling
+    - meeting-templates.ratification-record
+- key: operations-manual
+  sourceId: 7d1b3f2a
+  layer: 5
+  order: 0
+  i18n:
+    en:
+      title: Operations Manual
+      summary: null
+    de:
+      title: Betriebshandbuch
+      summary: null
+    es:
+      title: Manual de Operaciones
+      summary: null
+    fr:
+      title: Manuel opérationnel
+      summary: null
+    pt-br:
+      title: Manual de Operações
+      summary: null
+  mandatory: true
+  sectionKeys:
+    - operations-manual.core-operational-processes
+    - operations-manual.temporary-and-ad-hoc-responsibilities
+    - operations-manual.role-and-domain-interfaces
+    - operations-manual.workload-boundaries
+    - operations-manual.operational-continuity
+    - operations-manual.information-flow-and-anti-gatekeeping
+    - operations-manual.documentation-locations-and-update-procedures
+    - operations-manual.ratification-record
+- key: role-registry
+  sourceId: 6de5caef
+  layer: 5
+  order: 1
+  i18n:
+    en:
+      title: Role Registry
+      summary: >-
+        **"In good standing"** means a Full Member who has met their participation expectations in
+        the last _<period>_ and is not currently subject to an active accountability process or
+        conflict review under Layer 4.
+    de:
+      title: Rollenverzeichnis
+      summary: >-
+        **„In gutem Status"** bedeutet ein Vollmitglied, das seine Mitwirkungserwartungen in den
+        letzten _<Zeitraum>_ erfüllt hat und derzeit keinem aktiven Rechenschaftsprozess oder
+        Konfliktprüfung nach Schicht 4 unterliegt.
+    es:
+      title: Registro de Roles
+      summary: >-
+        **"En buen estado"** significa un Miembro Pleno que ha cumplido sus expectativas de
+        participación en el último _<período>_ y no está actualmente sujeto a un proceso de
+        rendición de cuentas activo ni a una revisión de conflicto bajo la Capa 4.
+    fr:
+      title: Registre des rôles
+      summary: >-
+        **« En règle »** signifie un Membre à part entière qui a rempli ses attentes de
+        participation au cours de la dernière _<période>_ et qui ne fait pas actuellement l'objet
+        d'un processus de redevabilité ou d'un examen de conflit en cours au titre de la Couche 4.
+    pt-br:
+      title: Registro de Papéis
+      summary: >-
+        **"Em situação regular"** significa um Membro Pleno que cumpriu suas expectativas de
+        participação no último _<período>_ e não está atualmente sujeito a um processo ativo de
+        responsabilização ou revisão de conflito sob a Camada 4.
+  mandatory: true
+  sectionKeys:
+    - role-registry.overview
+    - role-registry.summary-table
+    - role-registry.operational-roles
+    - role-registry.functional-roles
+    - role-registry.ratification-record
+- key: change-protocol
+  sourceId: 0d3486d6
+  layer: 6
+  order: 0
+  i18n:
+    en:
+      title: Change Protocol
+      summary: If classification is unclear, it defaults to the higher-impact type.
+    de:
+      title: Änderungsprotokoll
+      summary: Wenn die Klassifikation unklar ist, wird standardmäßig der höhere Auswirkungstyp angenommen.
+    es:
+      title: Protocolo de Cambios
+      summary: Si la clasificación no está clara, se aplica por defecto el tipo de mayor impacto.
+    fr:
+      title: Protocole de changement
+      summary: En cas de doute sur la classification, le type à impact supérieur s'applique par défaut.
+    pt-br:
+      title: Protocolo de Mudanças
+      summary: Se a classificação não for clara, ela é elevada por padrão ao tipo de maior impacto.
+  mandatory: true
+  sectionKeys:
+    - change-protocol.how-changes-are-proposed
+    - change-protocol.how-proposals-are-classified
+    - change-protocol.review-and-deliberation
+    - change-protocol.adoption-and-publication
+    - change-protocol.rejection
+    - change-protocol.transition-and-migration
+    - change-protocol.rollback
+    - change-protocol.emergency-changes
+    - change-protocol.experiments
+    - change-protocol.ratification-record
+- key: experiment-template
+  sourceId: 896b1777
+  layer: 6
+  order: 3
+  i18n:
+    en:
+      title: Experiment Template
+      summary: >-
+        Experiments let the community try a change without permanently adopting it. To stay safe,
+        every experiment must be time-bounded, labeled, and auto-expiring — and must record its
+        results in the Learning Log.
+    de:
+      title: Experiment-Vorlage
+      summary: >-
+        Experimente erlauben es der Gemeinschaft, eine Änderung auszuprobieren, ohne sie dauerhaft
+        zu übernehmen. Damit das sicher bleibt, muss jedes Experiment zeitlich begrenzt,
+        gekennzeichnet und automatisch ablaufend sein — und seine Ergebnisse im Lernprotokoll
+        festhalten.
+    es:
+      title: Plantilla de Experimento
+      summary: >-
+        Los experimentos permiten que la comunidad pruebe un cambio sin adoptarlo de forma
+        permanente. Para mantener la seguridad, cada experimento DEBE estar acotado en el tiempo,
+        etiquetado y con expiración automática — y DEBE registrar sus resultados en el Registro de
+        Aprendizajes.
+    fr:
+      title: Modèle d'expérimentation
+      summary: >-
+        Les expérimentations permettent à la communauté d'essayer un changement sans l'adopter
+        définitivement. Pour rester sûre, chaque expérimentation DOIT être limitée dans le temps,
+        étiquetée et à expiration automatique — et DOIT consigner ses résultats dans le Journal
+        d'apprentissage.
+    pt-br:
+      title: Modelo de Experimento
+      summary: >-
+        Experimentos permitem que a comunidade teste uma mudança sem adotá-la permanentemente. Para
+        serem seguros, todos os experimentos devem ter prazo definido, estar rotulados e expirar
+        automaticamente — e devem registrar seus resultados no Registro de Aprendizados (Learning
+        Log).
+  mandatory: false
+  sectionKeys:
+    - experiment-template.required-fields
+    - experiment-template.expiry-and-renewal
+    - experiment-template.outcome-record-filled-in-at-experiment-end
+- key: learning-log
+  sourceId: 9a3f7c1e
+  layer: 6
+  order: 2
+  i18n:
+    en:
+      title: Learning Log
+      summary: >-
+        Records major failures, adaptations, reversals, and systemic learnings. Repeated failure
+        patterns must trigger structural review, not individual blame. Entries are prepended (most
+        recent first).
+    de:
+      title: Lernprotokoll
+      summary: >-
+        Dokumentiert größere Fehler, Anpassungen, Rücknahmen und systemische Erkenntnisse.
+        Wiederkehrende Fehlermuster müssen eine strukturelle Überprüfung auslösen, keine
+        individuelle Schuldzuweisung. Einträge werden vorangestellt (neueste zuerst).
+    es:
+      title: Registro de Aprendizajes
+      summary: >-
+        Registra fallos importantes, adaptaciones, reversiones y aprendizajes sistémicos. Los
+        patrones de fallo recurrentes DEBEN activar una revisión estructural, no culpa individual.
+        Las entradas se añaden al inicio (las más recientes primero).
+    fr:
+      title: Journal d'apprentissage
+      summary: >-
+        Consigne les échecs majeurs, les adaptations, les retours en arrière et les apprentissages
+        systémiques. Les schémas d'échec récurrents DOIVENT déclencher une revue structurelle, pas
+        une mise en cause individuelle. Les entrées sont ajoutées en tête de liste (la plus récente
+        en premier).
+    pt-br:
+      title: Registro de Aprendizado
+      summary: >-
+        Registra falhas importantes, adaptações, reversões e aprendizados sistêmicos. Padrões
+        recorrentes de falha devem desencadear uma revisão estrutural, não a culpabilização
+        individual. As entradas são adicionadas no topo (mais recentes primeiro).
+  mandatory: true
+  sectionKeys:
+    - learning-log.what-constitutes-a-learnable-event
+    - learning-log.entry-format
+    - learning-log.yyyy-mm-dd-short-title
+- key: version-history
+  sourceId: 4c8e6d5b
+  layer: 6
+  order: 1
+  i18n:
+    en:
+      title: Version History
+      summary: >-
+        The authoritative human-readable record of all adopted changes to your community's RCOS
+        implementation. The currently active version is the most recent entry at the top of this
+        file. Superseded rules remain accessible via version control.
+    de:
+      title: Versionshistorie
+      summary: >-
+        Das maßgebliche, menschenlesbare Protokoll aller übernommenen Änderungen an der
+        RCOS-Implementierung eurer Gemeinschaft. Die aktuell gültige Version ist der neueste Eintrag
+        am Anfang dieser Datei. Abgelöste Regeln bleiben über die Versionskontrolle zugänglich.
+    es:
+      title: Historial de Versiones
+      summary: >-
+        El registro legible por humanos y con carácter oficial de todos los cambios adoptados en la
+        implementación RCOS de tu comunidad. La versión actualmente vigente es la entrada más
+        reciente en la parte superior de este archivo. Las reglas sustituidas permanecen accesibles
+        a través del control de versiones.
+    fr:
+      title: Historique des versions
+      summary: >-
+        Le registre officiel lisible par les humains de tous les changements adoptés dans
+        l'implémentation RCOS de ta communauté. La version actuellement active est l'entrée la plus
+        récente en haut de ce fichier. Les règles remplacées restent accessibles via le contrôle de
+        version.
+    pt-br:
+      title: Histórico de Versões
+      summary: >-
+        O registro autoritativo legível por humanos de todas as mudanças adotadas na implementação
+        RCOS da sua comunidade. A versão atualmente ativa é a entrada mais recente no topo deste
+        arquivo. Regras substituídas permanecem acessíveis via controle de versão.
+  mandatory: true
+  sectionKeys:
+    - version-history.entry-format
+    - version-history.version-short-title
+    - version-history.current-version-v0-0-repository-initialized
