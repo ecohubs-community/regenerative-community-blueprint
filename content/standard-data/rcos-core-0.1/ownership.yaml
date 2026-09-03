@@ -183,3 +183,98 @@ dispositions:
     note: >-
       Bounds the standard: pace of innovation and cultural attitudes to risk stay
       out of scope.
+
+# ---------------------------------------------------------------------------
+# Section dispositions — what a section IS, not what it says
+# ---------------------------------------------------------------------------
+#
+# The clause dispositions above answer "who answers this obligation". These
+# answer a different question: "is this section something a community writes at
+# all?" Most are. Twenty-five are not, and 118 sections minus those is the
+# difference between a tool that asks a community 21 useful questions per
+# artifact and one that asks 46 and buries the useful ones.
+#
+# Any section that carries no clause reference MUST appear here, even when the
+# answer is `authored`. Silence is how a Ratification Record ends up in a
+# community's queue of things to decide.
+#
+# Vocabulary: authored | filled_from_decision | derived | instance_record
+
+sections:
+  # ---- Ratification records (19) ------------------------------------------
+  #
+  # Every mandatory artifact ends with one: adopted on <date>, by <mechanism>,
+  # <tally>, present <who>. Compass already holds exactly that — it is the
+  # decision that adopted the artifact, in the decision register, with its
+  # mechanism and tally recorded at freeze time.
+  #
+  # Asking a community to type it again would be nineteen pieces of busywork
+  # standing between them and compliance, and every one of them a chance to
+  # record a tally that disagrees with the register. So the platform writes it,
+  # from the adopting decision, and the artifact is complete without it being
+  # asked for.
+  identity-constraints-register.ratification-record: &ratification
+    disposition: filled_from_decision
+    note: >-
+      Written from the decision that adopted this artifact: reference, date,
+      mechanism, tally and attendance as recorded at freeze time.
+  invariants-register.ratification-record: *ratification
+  purpose-charter.ratification-record: *ratification
+  scope-declaration.ratification-record: *ratification
+  exit-protocol.ratification-record: *ratification
+  membership-agreement.ratification-record: *ratification
+  membership-state-registry.ratification-record: *ratification
+  onboarding-protocol.ratification-record: *ratification
+  authority-registry.ratification-record: *ratification
+  decision-matrix.ratification-record: *ratification
+  governance-protocol.ratification-record: *ratification
+  internal-economy-protocol.ratification-record: *ratification
+  treasury-ruleset.ratification-record: *ratification
+  accountability-protocol.ratification-record: *ratification
+  conflict-resolution-ladder.ratification-record: *ratification
+  meeting-templates.ratification-record: *ratification
+  operations-manual.ratification-record: *ratification
+  role-registry.ratification-record: *ratification
+  change-protocol.ratification-record: *ratification
+
+  # ---- Derived (1) ---------------------------------------------------------
+  role-registry.summary-table:
+    disposition: derived
+    note: >-
+      A table of the roles defined in the sections below it. Generated from
+      them, so a community that edits a role does not have to remember to edit
+      the summary — and cannot leave the two disagreeing.
+
+  # ---- Instance records (4) ------------------------------------------------
+  #
+  # These are not definitions with one answer per community; they are the SHAPE
+  # of an entry that recurs. The template shows a specimen ("<YYYY-MM-DD> —
+  # <Short title>"), and a community fills in one per event, forever.
+  learning-log.yyyy-mm-dd-short-title:
+    disposition: instance_record
+    note: >-
+      A specimen learning-log entry, not a definition. One is written per
+      learnable event; the format itself is defined in `entry-format`.
+  version-history.version-short-title:
+    disposition: instance_record
+    note: 'A specimen version-history entry. One per adopted version.'
+  version-history.current-version-v0-0-repository-initialized:
+    disposition: instance_record
+    note: >-
+      The template's own seed entry (v0.0, repository initialised). It describes
+      the starting state of a fresh repository, not something to define.
+  experiment-template.outcome-record-filled-in-at-experiment-end:
+    disposition: instance_record
+    note: >-
+      Filled in per experiment, at its end — the template says so in its own
+      title. Not a one-time community definition.
+
+  # ---- Authored, but owning nothing (1) ------------------------------------
+  experiment-template.expiry-and-renewal:
+    disposition: authored
+    note: >-
+      A real definition a community should write — the auto-expiry rule, the
+      renewal mechanism, the obligation to record results in the Learning Log.
+      It carries no clause reference only because the experiment MUSTs were
+      moved to the Change Protocol (see rule 2 above), so it is written but
+      counts toward nothing.

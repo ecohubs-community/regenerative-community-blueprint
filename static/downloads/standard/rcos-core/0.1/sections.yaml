@@ -206,6 +206,8 @@
         - >-
           Restrição 8, ex.: A diversidade de abordagens à vida regenerativa é uma qualidade, não um
           problema.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 2.4.1
     - 2.4.2
@@ -291,6 +293,8 @@
         - Como as violações são detectadas e reportadas.
         - Qual processo da Camada 4 trata violações de qual classe de restrição.
         - Quais papéis ou instâncias são responsáveis por monitorar e revisar.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 2.4.3
     - 2.4.4
@@ -349,6 +353,8 @@
       placeholders:
         - quórum
         - duração
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 2.5.2
 - key: identity-constraints-register.ratification-record
@@ -381,6 +387,10 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: filled_from_decision
+  dispositionNote: >-
+    Written from the decision that adopted this artifact: reference, date, mechanism, tally and
+    attendance as recorded at freeze time.
   ownsClauses: []
 - key: invariants-register.active-invariants
   artifact: invariants-register
@@ -543,6 +553,8 @@
           Declaração do invariante, ex.: A segurança física, psicológica e infantil sempre tem
           precedência sobre direitos de participação, continuidade de papéis e preocupações
           reputacionais.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 2.3.1
     - 2.3.2
@@ -580,6 +592,10 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: filled_from_decision
+  dispositionNote: >-
+    Written from the decision that adopted this artifact: reference, date, mechanism, tally and
+    attendance as recorded at freeze time.
   ownsClauses: []
 - key: purpose-charter.primary-purpose
   artifact: purpose-charter
@@ -656,6 +672,8 @@
         comunidade existe — não um projeto, estratégia ou meta de curto prazo. Uma ou duas frases.
       placeholders:
         - O propósito primário da sua comunidade, em uma ou duas frases.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 2.1.1
     - 2.1.2
@@ -742,6 +760,8 @@
         - Propósito secundário 1.
         - Propósito secundário 2.
         - Propósito secundário 3.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 2.1.4
 - key: purpose-charter.non-goals-and-exclusions
@@ -825,6 +845,8 @@
         - Não-objetivo 1.
         - Não-objetivo 2.
         - Não-objetivo 3.
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: purpose-charter.conditions-for-purpose-change
   artifact: purpose-charter
@@ -908,6 +930,8 @@
       placeholders:
         - 'limiar, ex.: supermaioria de Membros Plenos ≥⅔ dos votos emitidos'
         - 'duração, ex.: 30 dias'
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 2.1.3
 - key: purpose-charter.ratification-record
@@ -940,6 +964,10 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: filled_from_decision
+  dispositionNote: >-
+    Written from the decision that adopted this artifact: reference, date, mechanism, tally and
+    attendance as recorded at freeze time.
   ownsClauses: []
 - key: scope-declaration.in-scope-assets
   artifact: scope-declaration
@@ -1036,6 +1064,8 @@
         - 'Ativo 2, ex.: o site da comunidade e seu domínio.'
         - 'Ativo 3, ex.: infraestrutura física ou terras compartilhadas.'
         - Ativo 4.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 2.2.1
     - 2.2.2
@@ -1128,6 +1158,8 @@
         - 'Domínio de decisão 2, ex.: regras de associação e admissão (Camada 1).'
         - 'Domínio de decisão 3, ex.: tesouraria e alocação de recursos compartilhados (Camada 3).'
         - Domínio de decisão 4.
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: scope-declaration.in-scope-activities-and-responsibilities
   artifact: scope-declaration
@@ -1218,6 +1250,8 @@
         - Atividade 2.
         - Atividade 3.
         - Atividade 4.
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: scope-declaration.explicitly-out-of-scope
   artifact: scope-declaration
@@ -1337,6 +1371,8 @@
           Item fora do escopo 3, ex.: infraestrutura de servidor subjacente e contratos de serviços
           de terceiros.
         - Item fora do escopo 4.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 2.2.3
     - 2.2.4
@@ -1371,6 +1407,10 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: filled_from_decision
+  dispositionNote: >-
+    Written from the decision that adopted this artifact: reference, date, mechanism, tally and
+    attendance as recorded at freeze time.
   ownsClauses: []
 - key: exit-protocol.voluntary-exit
   artifact: exit-protocol
@@ -1477,6 +1517,8 @@
           removido.
         - Transição de estado resultante (por exemplo, para Membro Saído).
         - Onde e como a saída é registrada com data e hora.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 3.6.1
     - 3.6.2
@@ -1626,6 +1668,8 @@
         - >-
           Privacidade do registro da decisão (referenciar as regras de privacidade da Escada de
           Resolução de Conflitos).
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 3.6.3
 - key: exit-protocol.suspension
@@ -1720,6 +1764,8 @@
           Ou: defina o estado de suspensão com condições de entrada, duração máxima, direitos
           durante a suspensão, mecanismo de revisão obrigatório e saída; ou: declare que a suspensão
           formal não está atualmente definida.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 3.7.1
     - 3.7.2
@@ -1830,6 +1876,8 @@
         - >-
           Obrigações pendentes resolvidas ou transferidas antes que a saída seja finalizada, sempre
           que possível.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 3.6.5
 - key: exit-protocol.ratification-record
@@ -1862,6 +1910,10 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: filled_from_decision
+  dispositionNote: >-
+    Written from the decision that adopted this artifact: reference, date, mechanism, tally and
+    attendance as recorded at freeze time.
   ownsClauses: []
 - key: membership-agreement.membership-state-on-signing
   artifact: membership-agreement
@@ -1944,6 +1996,8 @@
         - >-
           Estado de associação atribuído na assinatura — por exemplo, Membro Experimental na
           aprovação da candidatura; Membro Pleno na conclusão da integração.
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: membership-agreement.member-rights
   artifact: membership-agreement
@@ -2099,6 +2153,8 @@
         - >-
           Direito 8, por exemplo, o direito ao devido processo antes de qualquer saída forçada,
           suspensão ou restrição de acesso.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 3.4.1
     - 3.4.3
@@ -2258,6 +2314,8 @@
         - >-
           Obrigação 7, por exemplo, não exercer autoridade além daquilo que foi explicitamente
           atribuído pelo sistema de governança.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 3.4.2
     - 3.4.4
@@ -2395,6 +2453,8 @@
         - >-
           por exemplo, ausência de contribuição reconhecida por X meses consecutivos sem aviso
           prévio aciona uma verificação de responsabilização (Camada 4).
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 3.5.1
     - 3.5.2
@@ -2468,6 +2528,8 @@
         Separação, para que qualquer membro que leia o Acordo de Associação saiba onde residem as
         proteções procedimentais.
       placeholders: []
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: membership-agreement.consent-acknowledgment
   artifact: membership-agreement
@@ -2531,6 +2593,8 @@
         Descreva o ato de consentimento (assinatura, reconhecimento no aplicativo etc.) e a quais
         versões dos artefatos o membro está consentindo naquele momento.
       placeholders: []
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: membership-agreement.ratification-record
   artifact: membership-agreement
@@ -2562,6 +2626,10 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: filled_from_decision
+  dispositionNote: >-
+    Written from the decision that adopted this artifact: reference, date, mechanism, tally and
+    attendance as recorded at freeze time.
   ownsClauses: []
 - key: membership-state-registry.defined-membership-states
   artifact: membership-state-registry
@@ -2742,6 +2810,8 @@
         - obrigações
         - entrada
         - saída
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 3.1.1
     - 3.1.2
@@ -2778,6 +2848,10 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: filled_from_decision
+  dispositionNote: >-
+    Written from the decision that adopted this artifact: reference, date, mechanism, tally and
+    attendance as recorded at freeze time.
   ownsClauses: []
 - key: onboarding-protocol.admission-criteria
   artifact: onboarding-protocol
@@ -2887,6 +2961,8 @@
         - >-
           Critério 4, ex. preenchimento do formulário de candidatura em boa-fé — sem informações
           falsas.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 3.2.3
     - 3.2.4
@@ -3014,6 +3090,8 @@
         - >-
           Etapa 6, ex. conclusão da integração registrada — o estado de associação transita para
           Membro Pleno.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 3.2.1
     - 3.2.2
@@ -3090,6 +3168,8 @@
       placeholders:
         - ex. Membro em Período de Experiência.
         - ex. Membro Pleno (automático ao concluir).
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: onboarding-protocol.trial-and-evaluation
   artifact: onboarding-protocol
@@ -3210,6 +3290,8 @@
         - >-
           ex. pessoas membros excluídas por integração incompleta NÃO PODEM se recandidatar por X
           meses.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 3.3.1
     - 3.3.2
@@ -3292,6 +3374,8 @@
         - >-
           Descrição do registro de conclusão da integração — onde fica, o que captura e que é retido
           permanentemente após a saída.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 3.8.2
 - key: onboarding-protocol.ratification-record
@@ -3324,6 +3408,10 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: filled_from_decision
+  dispositionNote: >-
+    Written from the decision that adopted this artifact: reference, date, mechanism, tally and
+    attendance as recorded at freeze time.
   ownsClauses: []
 - key: authority-registry.registered-authorities
   artifact: authority-registry
@@ -3508,6 +3596,8 @@
         - ...
         - ...
         - ...
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 4.3.1
     - 4.3.2
@@ -3544,6 +3634,10 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: filled_from_decision
+  dispositionNote: >-
+    Written from the decision that adopted this artifact: reference, date, mechanism, tally and
+    attendance as recorded at freeze time.
   ownsClauses: []
 - key: decision-matrix.voting-principles
   artifact: decision-matrix
@@ -3691,6 +3785,8 @@
           levantada durante a deliberação; discordância geral não qualifica.
         - 'ex.: R$ 0; ou defina um limiar abaixo do qual gastos delegados são permitidos.'
         - Outros princípios de votação que sua comunidade queira declarar.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 4.2.1
     - 4.2.2
@@ -3968,6 +4064,8 @@
         - ...
         - ...
         - ...
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 4.4.1
     - 4.4.2
@@ -4091,6 +4189,8 @@
         - >-
           mudanças na Camada 0 (propósito, escopo, invariantes) ou no próprio sistema de governança;
           requer votação dos Membros Plenos, supermaioria e um período de ratificação.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 4.1.1
     - 4.1.2
@@ -4127,6 +4227,10 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: filled_from_decision
+  dispositionNote: >-
+    Written from the decision that adopted this artifact: reference, date, mechanism, tally and
+    attendance as recorded at freeze time.
   ownsClauses: []
 - key: governance-protocol.proposal-submission
   artifact: governance-protocol
@@ -4254,6 +4358,8 @@
           O tipo de decisão é declarado pela pessoa proponente; em caso de dúvida, assume-se o tipo
           de maior impacto.
         - Regras de retirada — quando uma proposta pode ser retirada e como.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 4.5.1
     - 4.5.2
@@ -4351,6 +4457,8 @@
         - >-
           Expectativa de que as pessoas membras levantem preocupações durante a deliberação para
           evitar a necessidade de nova votação.
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: governance-protocol.decision-execution
   artifact: governance-protocol
@@ -4439,6 +4547,8 @@
           no histórico de versões.
         - 'Em caso de rejeição: onde a proposta é arquivada.'
         - Prazo limite para execução após o encerramento da votação.
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: governance-protocol.documentation-and-publication
   artifact: governance-protocol
@@ -4531,6 +4641,8 @@
           da votação.
         - O artefato da votação (por exemplo, link do Snapshot) serve como registro de decisão.
         - O histórico de versões (Camada 6) é atualizado a cada proposta aprovada.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 4.5.4
 - key: governance-protocol.appeal-and-review
@@ -4626,6 +4738,8 @@
         - Exigência de objeção fundamentada — uma consideração não tratada na deliberação original.
         - A nova votação usa o mesmo mecanismo e limiar da original.
         - Tratamento de pedidos repetidos e frívolos de nova votação.
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: governance-protocol.conflict-between-decisions
   artifact: governance-protocol
@@ -4710,6 +4824,8 @@
           Conflitos no mesmo tipo: a mais recente prevalece, salvo se a anterior travou
           explicitamente mudanças futuras.
         - Onde os conflitos aparecem e como são resolvidos.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 4.5.3
 - key: governance-protocol.safeguards-and-failure-modes
@@ -4838,6 +4954,8 @@
         - >-
           por exemplo, três ou mais falhas de governança em X meses acionam uma revisão
           constitucional.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 4.6.1
     - 4.6.2
@@ -4872,6 +4990,10 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: filled_from_decision
+  dispositionNote: >-
+    Written from the decision that adopted this artifact: reference, date, mechanism, tally and
+    attendance as recorded at freeze time.
   ownsClauses: []
 - key: internal-economy-protocol.commons-vs-private-classification
   artifact: internal-economy-protocol
@@ -5082,6 +5204,8 @@
         - ...
         - ...
         - ...
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 5.1.1
     - 5.1.2
@@ -5229,6 +5353,8 @@
         - exemplos
         - 'ex.: Participação Informal'
         - exemplos
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 5.2.1
     - 5.2.3
@@ -5335,6 +5461,8 @@
           o reconhecimento afeta apenas o saldo da unidade interna; não concede direitos adicionais
           de governança além do estado de membresia.
         - janela e processo para contestar um registro.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 5.2.2
     - 5.2.5
@@ -5493,6 +5621,8 @@
         - ...
         - ...
         - ...
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 5.2.4
 - key: internal-economy-protocol.accumulation-constraints
@@ -5590,6 +5720,8 @@
         - >-
           As unidades internas não podem ser convertidas em autoridade de governança nem usadas para
           contornar a Matriz de Decisão.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 5.4.1
     - 5.4.2
@@ -5689,6 +5821,8 @@
         - >-
           Regra: qualquer nova interface de receita externa deve ser declarada e aprovada via uma
           decisão Estratégica antes que os fundos sejam recebidos ou compromissos sejam assumidos.
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: internal-economy-protocol.dispute-resolution-for-economic-records
   artifact: internal-economy-protocol
@@ -5771,6 +5905,8 @@
         - >-
           Janela para contestar um registro de contribuição ou saldo; responsável nomeado; caminho
           de apelação aos Membros Plenos via processo de governança.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 5.5.3
 - key: internal-economy-protocol.ratification-record
@@ -5803,6 +5939,10 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: filled_from_decision
+  dispositionNote: >-
+    Written from the decision that adopted this artifact: reference, date, mechanism, tally and
+    attendance as recorded at freeze time.
   ownsClauses: []
 - key: treasury-ruleset.treasury-scope
   artifact: treasury-ruleset
@@ -5904,6 +6044,8 @@
           aprovada por uma decisão Estratégica antes de receber recursos. Declare que fundos
           pessoais usados para cobrir custos operacionais não são da tesouraria e não geram nenhum
           direito de reembolso pela comunidade.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 5.3.1
     - 5.5.4
@@ -5991,6 +6133,8 @@
         - >-
           Liste as fontes de receita atuais, ou declare que não há nenhuma. Faça referência à seção
           Interfaces de Receita Externa no Protocolo de Economia Interna.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 5.3.2
 - key: treasury-ruleset.spending-authority
@@ -6122,6 +6266,8 @@
         - Constitucional
         - Membros Plenos
         - Supermaioria + ratificação
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 5.3.3
     - 5.7.1
@@ -6241,6 +6387,8 @@
         - >-
           Todas as decisões de gasto fazem referência ao registro de governança vinculado (ID da
           votação ou registro de decisão delegada).
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 5.3.4
     - 5.3.5
@@ -6331,6 +6479,8 @@
         - custos / contratos recorrentes permitidos apenas via votação Estratégica.
         - meta de reserva, ou declare que ainda não está definida.
         - empréstimos, investimentos, garantias apenas via votação Estratégica.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 5.3.6
 - key: treasury-ruleset.conflict-of-interest-rules
@@ -6431,6 +6581,8 @@
         - >-
           Quem ocupa cargo na tesouraria NÃO DEVE autorizar gastos unilaterais acima do limite
           delegado.
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: treasury-ruleset.ratification-record
   artifact: treasury-ruleset
@@ -6462,6 +6614,10 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: filled_from_decision
+  dispositionNote: >-
+    Written from the decision that adopted this artifact: reference, date, mechanism, tally and
+    attendance as recorded at freeze time.
   ownsClauses: []
 - key: accountability-protocol.triggers
   artifact: accountability-protocol
@@ -6556,6 +6712,8 @@
         - >-
           É feito um encaminhamento a partir da Escada de Resolução de Conflitos (Etapa 3 ou
           superior).
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 6.5.4
 - key: accountability-protocol.investigation-and-review
@@ -6671,6 +6829,8 @@
         - quem contata o membro; janela de resposta; caminhos de desfecho.
         - notificação escrita; janela de resposta; caminhos de resolução / escalonamento.
         - escalonamento direto para a etapa apropriada da Escada de Resolução de Conflitos.
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: accountability-protocol.due-process-guarantees
   artifact: accountability-protocol
@@ -6764,6 +6924,8 @@
         - >-
           qualquer decisão pode ser objeto de recurso por meio do processo de governança (voto
           Estratégico).
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: accountability-protocol.anti-retaliation-protections
   artifact: accountability-protocol
@@ -6844,6 +7006,8 @@
         - >-
           A retaliação contra um membro por participar de qualquer parte deste processo é, ela
           própria, um gatilho de responsabilização.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 6.3.2
 - key: accountability-protocol.sanction-and-repair-options
@@ -7004,6 +7168,8 @@
         - descumprimento sério ou não resolvido, ou decisão dos Membros Plenos
         - Membros Plenos
         - sim — nova votação
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 6.4.1
     - 6.4.2
@@ -7099,6 +7265,8 @@
         - nova candidatura via Protocolo de Integração; sem restauração automática.
         - bloqueio mínimo de nova candidatura; aplica-se o processo padrão de admissão.
         - direitos restaurados mediante confirmação de resolução dentro da janela de revisão.
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: accountability-protocol.coordination-with-layer-1
   artifact: accountability-protocol
@@ -7191,6 +7359,8 @@
           Separação (Camada 1). Uma restrição temporária de acesso não constitui saída e não aciona
           o bloqueio de nova candidatura, a menos que uma saída forçada seja subsequentemente votada
           pelos Membros Plenos.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 6.4.4
 - key: accountability-protocol.ratification-record
@@ -7223,6 +7393,10 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: filled_from_decision
+  dispositionNote: >-
+    Written from the decision that adopted this artifact: reference, date, mechanism, tally and
+    attendance as recorded at freeze time.
   ownsClauses: []
 - key: conflict-resolution-ladder.conflict-classification
   artifact: conflict-resolution-ladder
@@ -7424,6 +7598,8 @@
         - contorna passos anteriores
         - prazo curto
         - desde a abertura; ação imediata permitida
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 6.1.1
     - 6.1.2
@@ -7572,6 +7748,8 @@
           divulgação mínima necessária aos Membros Plenos; período de deliberação; mecanismo de
           votação e limiar.
         - coordenado com o Protocolo de Saída e Separação; bloqueio mínimo para reaplicação.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 6.2.1
     - 6.2.2
@@ -7693,6 +7871,8 @@
         - >-
           Como objeções procedimentais são levantadas; onde são registradas; gatilho para revisão
           deste artefato sob o Protocolo de Mudança.
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: conflict-resolution-ladder.facilitator-selection-and-replacement
   artifact: conflict-resolution-ladder
@@ -7791,6 +7971,8 @@
           Direito de qualquer das partes de recusar um facilitador com conflito de interesse
           declarado.
         - Facilitação externa opcional mediante acordo mútuo.
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: conflict-resolution-ladder.privacy-and-information-access-boundaries
   artifact: conflict-resolution-ladder
@@ -7915,6 +8097,8 @@
         - >-
           Não divulgação: nenhum participante pode compartilhar informações sobre o processo fora
           dos participantes definidos sem o consentimento escrito de todas as partes.
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: conflict-resolution-ladder.safeguards
   artifact: conflict-resolution-ladder
@@ -8073,6 +8257,8 @@
         - >-
           os Membros Plenos podem suspender temporariamente a autoridade delegada de um detentor de
           papel durante a revisão, sem que isso constitua saída forçada.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 6.3.1
     - 6.3.3
@@ -8109,6 +8295,10 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: filled_from_decision
+  dispositionNote: >-
+    Written from the decision that adopted this artifact: reference, date, mechanism, tally and
+    attendance as recorded at freeze time.
   ownsClauses: []
 - key: meeting-templates.meeting-type-operations
   artifact: meeting-templates
@@ -8272,6 +8462,8 @@
         - titular do papel conforme a Matriz de Decisão
         - o que foi decidido
         - localização
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 7.2.1
     - 7.2.2
@@ -8424,6 +8616,8 @@
         - Estratégica / Constitucional
         - mecanismo de votação + limiar
         - Aprovada / Rejeitada / Adiada
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: meeting-templates.meeting-type-coordination-alignment
   artifact: meeting-templates
@@ -8538,6 +8732,8 @@
         - duração
         - duração
         - duração
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: meeting-templates.meeting-type-reflection-learning
   artifact: meeting-templates
@@ -8668,6 +8864,8 @@
         - duração
         - lista ou "nenhuma"
         - lista ou "nenhuma"
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: meeting-templates.meeting-type-conflict-handling
   artifact: meeting-templates
@@ -8786,6 +8984,8 @@
         - duração.
         - duração; registrar conforme regras de privacidade da Camada 4.
         - Acordo alcançado / Escalado para o próximo passo / Suspenso
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: meeting-templates.ratification-record
   artifact: meeting-templates
@@ -8817,6 +9017,10 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: filled_from_decision
+  dispositionNote: >-
+    Written from the decision that adopted this artifact: reference, date, mechanism, tally and
+    attendance as recorded at freeze time.
   ownsClauses: []
 - key: operations-manual.core-operational-processes
   artifact: operations-manual
@@ -8990,6 +9194,8 @@
         - Revisão de acesso a plataformas
         - responsável por infraestrutura
         - cadência de revisão; revogação de acesso de membros que saíram
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 7.3.4
     - 7.6.3
@@ -9096,6 +9302,8 @@
         - >-
           Duração máxima de qualquer responsabilidade temporária antes que precise ser formalmente
           atribuída ou encerrada — por exemplo, 90 dias.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 7.1.5
 - key: operations-manual.role-and-domain-interfaces
@@ -9189,6 +9397,8 @@
         - papel
         - papel
         - ...
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: operations-manual.workload-boundaries
   artifact: operations-manual
@@ -9298,6 +9508,8 @@
           como a sobrecarga persistente, o risco de esgotamento, a não participação crônica ou a
           dependência de pessoas que assumem funções em excesso são detectados, e como são
           encaminhados ao processo de revisão ou reparação da Camada 4.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 7.4.1
     - 7.4.2
@@ -9398,6 +9610,8 @@
           consulte as exigências de transição por papel no Registro de Papéis; a transição DEVE ser
           concluída antes que um papel seja desocupado.
         - trimestral; ad hoc em caso de mudança de papel.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 7.5.1
     - 7.5.2
@@ -9523,6 +9737,8 @@
         - >-
           Nenhum papel ou indivíduo PODE ser o único ponto de acesso a informações requeridas por
           outros responsáveis por papéis.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 7.3.5
     - 7.7.4
@@ -9685,6 +9901,8 @@
         - localização
         - responsável
         - cadência
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 7.3.1
     - 7.3.2
@@ -9720,6 +9938,10 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: filled_from_decision
+  dispositionNote: >-
+    Written from the decision that adopted this artifact: reference, date, mechanism, tally and
+    attendance as recorded at freeze time.
   ownsClauses: []
 - key: role-registry.overview
   artifact: role-registry
@@ -9798,6 +10020,8 @@
         Defina o que você usará como "em situação regular" para fins de elegibilidade.
       placeholders:
         - período
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 7.1.1
     - 7.1.2
@@ -9863,6 +10087,11 @@
         - ...
         - ...
         - ...
+  disposition: derived
+  dispositionNote: >-
+    A table of the roles defined in the sections below it. Generated from them, so a community that
+    edits a role does not have to remember to edit the summary — and cannot leave the two
+    disagreeing.
   ownsClauses: []
 - key: role-registry.operational-roles
   artifact: role-registry
@@ -10045,6 +10274,8 @@
         - >-
           Adicione papéis operacionais adicionais conforme necessário (ex.: Guardião(ã) de
           Infraestrutura, Guardião(ã) de Comunicação).
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 7.1.3
 - key: role-registry.functional-roles
@@ -10178,6 +10409,8 @@
           Camada 4, se relevante.
         - compromissos ativos a serem informados.
         - Adicione papéis funcionais adicionais conforme necessário.
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: role-registry.ratification-record
   artifact: role-registry
@@ -10209,6 +10442,10 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: filled_from_decision
+  dispositionNote: >-
+    Written from the decision that adopted this artifact: reference, date, mechanism, tally and
+    attendance as recorded at freeze time.
   ownsClauses: []
 - key: change-protocol.how-changes-are-proposed
   artifact: change-protocol
@@ -10324,6 +10561,8 @@
         - Riscos e mitigações.
         - Plano de reversão.
         - Data de vigência proposta.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 8.1.1
     - 8.1.3
@@ -10440,6 +10679,8 @@
         - >-
           mudanças na Camada 0 (propósito, escopo, invariantes) ou no próprio sistema de governança
           (Camada 2).
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 8.1.2
     - 8.1.4
@@ -10528,6 +10769,8 @@
         - >-
           deliberação mínima de Y dias; período de ratificação de Z dias após a aprovação da
           votação.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 8.7.1
 - key: change-protocol.adoption-and-publication
@@ -10621,6 +10864,8 @@
         - Artefatos afetados atualizados em até X dias.
         - Entrada de histórico de versão adicionada.
         - Campos de status atualizados nos artefatos afetados.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 8.2.5
 - key: change-protocol.rejection
@@ -10714,6 +10959,8 @@
         - >-
           O mecanismo de nova votação se aplica se surgirem novas informações (conforme a Matriz de
           Decisão, Camada 2).
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: change-protocol.transition-and-migration
   artifact: change-protocol
@@ -10819,6 +11066,8 @@
           Registros anteriores à mudança não são alterados retroativamente, a menos que isso faça
           parte explícita da proposta.
         - Um período de transição pode ser definido na própria proposta.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 8.5.2
 - key: change-protocol.rollback
@@ -10904,6 +11153,8 @@
           Membro Pleno pode acionar uma nova votação ao submeter uma objeção fundamentada por
           escrito que não foi considerada durante a deliberação original. A reversão usa o mesmo
           tipo de decisão da original.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 8.1.5
     - 8.5.1
@@ -11024,6 +11275,8 @@
         - >-
           Ratificadas por meio do tipo de decisão apropriado em até Y dias, ou revertidas
           automaticamente.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 8.5.3
 - key: change-protocol.experiments
@@ -11164,6 +11417,8 @@
           coerção ou dano contínuo, uma suspensão de emergência pode ser invocada conforme Mudanças
           de Emergência acima.
         - Resultados e aprendizados são registrados no Registro de Aprendizado.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 8.3.1
     - 8.3.2
@@ -11201,6 +11456,10 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: filled_from_decision
+  dispositionNote: >-
+    Written from the decision that adopted this artifact: reference, date, mechanism, tally and
+    attendance as recorded at freeze time.
   ownsClauses: []
 - key: experiment-template.required-fields
   artifact: experiment-template
@@ -11360,6 +11619,8 @@
         - >-
           reconheça que uma suspensão de emergência PODE ser invocada nos termos do Protocolo de
           Mudança caso surja um risco de segurança crível.
+  disposition: authored
+  dispositionNote: null
   ownsClauses: []
 - key: experiment-template.expiry-and-renewal
   artifact: experiment-template
@@ -11440,6 +11701,12 @@
           explicitamente renovados por meio de uma nova proposta. A renovação requer uma nova
           votação Estratégica.
         - Os resultados e aprendizados são registrados no Registro de Aprendizados.
+  disposition: authored
+  dispositionNote: >-
+    A real definition a community should write — the auto-expiry rule, the renewal mechanism, the
+    obligation to record results in the Learning Log. It carries no clause reference only because
+    the experiment MUSTs were moved to the Change Protocol (see rule 2 above), so it is written but
+    counts toward nothing.
   ownsClauses: []
 - key: experiment-template.outcome-record-filled-in-at-experiment-end
   artifact: experiment-template
@@ -11499,6 +11766,10 @@
         - link para a votação ou decisão
         - link
         - duas a quatro frases sobre o que foi testado, o que foi observado e o que foi decidido.
+  disposition: instance_record
+  dispositionNote: >-
+    Filled in per experiment, at its end — the template says so in its own title. Not a one-time
+    community definition.
   ownsClauses: []
 - key: learning-log.what-constitutes-a-learnable-event
   artifact: learning-log
@@ -11691,6 +11962,8 @@
           o Registro de Aprendizado é revisado na reunião de Reflexão e Aprendizado; o papel nomeado
           prepara uma breve síntese das entradas desde a última revisão, destacando padrões
           recorrentes.
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 8.4.1
     - 8.4.4
@@ -11765,6 +12038,8 @@
         Use o modelo abaixo para cada entrada. Cada campo impõe uma lente diferente sobre o evento;
         não pule o responsável pelo acompanhamento.
       placeholders: []
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 8.4.2
     - 8.4.3
@@ -11798,6 +12073,10 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: instance_record
+  dispositionNote: >-
+    A specimen learning-log entry, not a definition. One is written per learnable event; the format
+    itself is defined in `entry-format`.
   ownsClauses: []
 - key: version-history.entry-format
   artifact: version-history
@@ -11877,6 +12156,8 @@
         acima da mais recente. Não edite entradas históricas — correções são registradas como novas
         entradas.
       placeholders: []
+  disposition: authored
+  dispositionNote: null
   ownsClauses:
     - 8.2.1
     - 8.2.2
@@ -11914,6 +12195,8 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: instance_record
+  dispositionNote: A specimen version-history entry. One per adopted version.
   ownsClauses: []
 - key: version-history.current-version-v0-0-repository-initialized
   artifact: version-history
@@ -11945,4 +12228,8 @@
       whyItMatters: null
       whatToDefine: null
       placeholders: []
+  disposition: instance_record
+  dispositionNote: >-
+    The template's own seed entry (v0.0, repository initialised). It describes the starting state of
+    a fresh repository, not something to define.
   ownsClauses: []

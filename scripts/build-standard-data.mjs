@@ -410,6 +410,64 @@ async function loadAuthored() {
 	return yaml.load(await readFile(AUTHORED, 'utf8')) ?? {};
 }
 
+/**
+ * Section dispositions — what a section *is*, as distinct from what it says.
+ *
+ * Most sections are written by the community. A handful are not, and treating
+ * them as if they were is the difference between a tool that asks 21 useful
+ * questions and one that asks 46 and buries the useful ones:
+ *
+ *   authored              a community writes it. The default, and the only kind
+ *                         that counts toward artifact completeness.
+ *   filled_from_decision  the platform writes it from the decision that adopted
+ *                         the artifact — every Ratification Record is this.
+ *   derived               a view over other sections, generated, never authored.
+ *   instance_record       one entry per event, not one definition per community:
+ *                         a learning-log entry, a version-history line.
+ */
+const SECTION_DISPOSITIONS = new Set([
+	'authored',
+	'filled_from_decision',
+	'derived',
+	'instance_record'
+]);
+
+function applySectionDispositions(artifacts, authored) {
+	const authoredSections = authored.sections ?? {};
+	const problems = [];
+	const known = new Set();
+
+	for (const artifact of artifacts) {
+		for (const section of artifact.sections) {
+			known.add(section.key);
+			const entry = authoredSections[section.key];
+			section.disposition = entry?.disposition ?? 'authored';
+			section.dispositionNote = entry?.note ?? null;
+
+			if (entry && !SECTION_DISPOSITIONS.has(entry.disposition)) {
+				problems.push(
+					`section ${section.key}: "${entry.disposition}" is not a section disposition`
+				);
+			}
+
+			// The same rule the clauses live under: a section nobody has to write
+			// must say so out loud. Silence here is how a Ratification Record ends
+			// up in a community's queue of things to decide.
+			if (section.clauseRefs.length === 0 && !entry) {
+				problems.push(
+					`section ${section.key}: references no clause and has no disposition — say what it is`
+				);
+			}
+		}
+	}
+
+	for (const key of Object.keys(authoredSections)) {
+		if (!known.has(key)) problems.push(`section disposition names "${key}", which is not a section`);
+	}
+
+	return problems;
+}
+
 function applyAuthored(clauses, artifacts, authored) {
 	const owners = authored.owners ?? {};
 	const dispositions = authored.dispositions ?? {};
@@ -510,7 +568,10 @@ async function main() {
 		artifact.mandatory = mandatoryNames.has(slug(artifact.i18n[DEFAULT_LOCALE].title));
 	}
 
-	const problems = applyAuthored(clauses, artifacts, authored);
+	const problems = [
+		...applyAuthored(clauses, artifacts, authored),
+		...applySectionDispositions(artifacts, authored)
+	];
 
 	const sections = artifacts.flatMap((a) =>
 		a.sections.map((s) => ({
@@ -518,6 +579,17 @@ async function main() {
 			ownsClauses: clauses.filter((c) => c.owner === s.key).map((c) => c.ref)
 		}))
 	);
+
+	// A clause can only be answered by a section someone actually writes. If an
+	// owner were `derived` or `filled_from_decision`, the clause would be counted
+	// against text no member is ever asked for.
+	for (const section of sections) {
+		if (section.ownsClauses.length > 0 && section.disposition !== 'authored') {
+			problems.push(
+				`section ${section.key}: disposition "${section.disposition}" but it owns ${section.ownsClauses.length} clause(s) — only an authored section can answer one`
+			);
+		}
+	}
 	const artifactsOut = artifacts.map(({ sections: s, ...rest }) => ({
 		...rest,
 		sectionKeys: s.map((x) => x.key)
@@ -532,6 +604,9 @@ async function main() {
 		artifacts: artifacts.length,
 		mandatoryArtifacts: artifacts.filter((a) => a.mandatory).length,
 		sections: sections.length,
+		// What a community is actually asked to write, which is the number that
+		// decides whether an artifact can ever be complete.
+		authoredSections: sections.filter((s) => s.disposition === 'authored').length,
 		sectionsWithoutClauses: sections.filter((s) => s.clauseRefs.length === 0).length,
 		glossary: glossary.length
 	};
